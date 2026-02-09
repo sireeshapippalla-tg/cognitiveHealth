@@ -1,0 +1,65 @@
+import { Box, styled } from "@mui/material";
+
+export const SectionContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  maxWidth: "1400px",
+  margin: "0 auto",
+  // padding: "60px 24px",
+  backgroundColor:"#f9fafb",
+  // marginTop:"40px",
+  [theme.breakpoints.down("md")]: {
+    padding: "60px 16px",
+  },
+}));
+
+export const Wrapper = styled(Box)(({ theme }) => ({
+  borderRadius: "20px",
+  padding: "64px 32px",
+  textAlign: "center",
+  maxWidth: "1100px",
+  margin: "0 auto",
+
+  [theme.breakpoints.down("sm")]: {
+    padding: "48px 20px",
+  },
+}));
+
+export const StepsCard = styled(Box)({
+  backgroundColor: "#ffffff",
+  borderRadius: "16px",
+  padding: "28px 24px",
+  marginBottom: "40px",
+});
+
+export const StepsRow = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    gap: "32px",
+  },
+}));
+
+export const ArrowBox = styled(Box)(({ theme }) => ({
+  color: "#f97316",
+  display: "flex",
+  alignItems: "center",
+  margin: "0 12px",
+
+  [theme.breakpoints.down("md")]: {
+    display: "none",
+  },
+}));
+
+export const ButtonsRow = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  gap: "16px",
+
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+}));
