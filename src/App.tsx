@@ -7,10 +7,10 @@ import MainLayout from "./components/layout/MainLayout";
 import LoginPage from "./pages/auth/LoginPage";
 import HomePage from "./pages/home/HomePage";
 import PlatFormPage from "./pages/platform/PlatFormPage";
-import SolutionsPage from "./pages/solutions/SolutionsPage";
 import AboutUsPage from "./pages/aboutUs/AboutUsPage";
 import ResourcesPage from "./pages/resources/ResourcesPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import PaymentPostingPage from "./pages/solutions/PaymentPostingPage";
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
       >
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
-        <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
+        <Route path={ROUTES.PAYMENTPOSTING} element={<PaymentPostingPage />} />
         <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
         <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
       </Route>
