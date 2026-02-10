@@ -128,6 +128,27 @@ const sections: SectionProps[] =  [
       { label: "There is a designated champion to drive the initiative" },
     ],
   },
+  {
+  title: "Low Dollar Denials & Write-Offs",
+  icon: "📉",
+  items: [
+    { label: "High volume of denials under $200–$500 that are written off or outsourced" },
+    { label: "Cost-to-collect exceeds the potential recovery amount" },
+    { label: "Lack of granular visibility into small balance denial trends" },
+    { label: "Manual appeal process is too expensive for low balances" },
+  ],
+},
+{
+  title: "Measurable Impact Potential",
+  icon: "📊",
+  items: [
+    { label: "Leadership has set goals to reduce DSO or AR days" },
+    { label: "Finance team requires ROI within 6–12 months" },
+    { label: "Goal to shift staff from data entry to high-value tasks" },
+    { label: "Need to reduce overall cost-to-collect" },
+  ],
+},
+
 ];
 
 /* MAIN SCREEN */
