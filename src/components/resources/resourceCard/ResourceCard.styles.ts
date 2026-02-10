@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Card, Box, Typography, Chip } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export const StyledCard = styled(Card)(({ theme }) => ({
+export const StyledCard = styled(Card)(() => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
@@ -80,7 +80,7 @@ export const MetaInfo = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const CardTitle = styled(Typography)(({ theme }) => ({
+export const CardTitle = styled(Typography)(() => ({
   fontSize: "16px",
   fontWeight: 700,
   lineHeight: "1.4",

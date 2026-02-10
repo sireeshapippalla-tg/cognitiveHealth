@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import SplitSection from "../ui/SplitSection/SplitSection";
 
 import mainImg from "../../assets/Main Image.svg";

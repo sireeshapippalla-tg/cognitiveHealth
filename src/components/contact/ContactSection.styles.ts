@@ -11,7 +11,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const OuterCard = styled(Box)(({ theme }) => ({
+export const OuterCard = styled(Box)(() => ({
   backgroundColor: "#f5f5f5",
   borderRadius: 28,
   padding: "0",

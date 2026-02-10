@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import SolutionsHeroSection from "../../components/solutions/contractAnalysis/solutionsHeroSection";
 import TransformSection from "../../components/solutions/contractAnalysis/transformSection";
 import CoreCapabilitiesSection from "../../components/solutions/contractAnalysis/coreCapabiltySection";
