@@ -34,7 +34,7 @@ const ImpactSection = () => {
         <Grid container spacing={3}>
           {stats.map((stat, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard value={stat.value} description={stat.description} />
+              <MetricCard value={stat.value} description={stat.description} color="#EB7724" />
             </Grid>
           ))}
         </Grid>

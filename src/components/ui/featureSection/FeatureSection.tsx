@@ -17,6 +17,7 @@ interface FeatureSectionProps {
   items: FeatureItem[];
   linkText?: string;
   cardVariant?: "default" | "pink";
+   columns?: 2 | 3 | 4;
 }
 
 const FeatureSection = ({
@@ -26,7 +27,10 @@ const FeatureSection = ({
   items,
   linkText,
   cardVariant = "default",
+  columns=2
 }: FeatureSectionProps) => {
+    const mdSize = 12 / columns; // 12-grid system
+
   return (
     <Section background={background}>
       <Inner>
@@ -36,7 +40,7 @@ const FeatureSection = ({
 
         <Grid container spacing={4}>
           {items.map((item, index) => (
-            <Grid size={{ xs: 12, sm: 6 }} key={index}>
+            <Grid size={{ xs: 12, sm: 6,md: mdSize }} key={index}>
               {/* Reusing your FeatureCard */}
               <FeatureCard
                 icon={item.icon}

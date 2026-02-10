@@ -7,6 +7,7 @@ interface WrapperProps {
 
 interface SubtitleProps {
   maxWidth: number;
+  textColor?:string
 }
 
 export const Wrapper = styled(Box)<WrapperProps>(({ align }) => ({
@@ -28,16 +29,26 @@ export const Pill = styled(Box)({
   letterSpacing: "0.3px",
 });
 
-export const Title = styled(Typography)(({ theme }) => ({
+
+
+interface TitleProps {
+  textcolor?: string;
+  highlightcolor?: string;
+}
+
+export const Title = styled(Typography, {
+  shouldForwardProp: (prop) =>
+    prop !== "textcolor" && prop !== "highlightcolor",
+})<TitleProps>(({ theme, textcolor, highlightcolor }) => ({
   fontWeight: 800,
-  color: "#111827",
+  color: textcolor || "#111827",
   lineHeight: 1.25,
   fontSize: "34px",
   maxWidth: "900px",
   marginBottom: "16px",
 
   "& span": {
-    color: "#f97316",
+    color: highlightcolor || "#f97316",
   },
 
   [theme.breakpoints.down("md")]: {
@@ -45,9 +56,9 @@ export const Title = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const Subtitle = styled(Typography)<SubtitleProps>(({ maxWidth }) => ({
+export const Subtitle = styled(Typography)<SubtitleProps>(({ maxWidth,textColor }) => ({
   fontSize: "18px",
   lineHeight: 1.6,
-  color: "#6b7280",
+  color: textColor || "#6b7280",
   maxWidth,
 }));
