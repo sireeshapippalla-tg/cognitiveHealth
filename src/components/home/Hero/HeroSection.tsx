@@ -1,6 +1,3 @@
-import { Stack } from "@mui/material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
 import careLogo from "../../../assets/care.svg";
 
 import kaminLogo from "../../../assets/Kamin Logo.svg";
@@ -9,88 +6,51 @@ import mercyLogo from "../../../assets/Mercylogo.svg";
 import mindPathLogo from "../../../assets/mindpath-logo.svg";
 import qualityLogo from "../../../assets/Quality.svg";
 
-
 import {
-  Hero,
-  HeroInner,
-  HeroGrid,
-  Content,
-  Title,
-  Highlight,
-  Subtitle,
-  Actions,
-  DashboardWrapper,
   TrustSection,
   TrustTitle,
   LogoGrid,
-
   LogoImage,
 } from "./HeroSection.style";
-import DashboardMock from "./DashboardMock";
-import AppButton from "../../ui/appButton/AppButton";
+import SplitSection from "../../ui/SplitSection/SplitSection";
+import heroSectionImage from "../../../assets/HomeScreen.svg";
+import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 
 const HeroSection = () => {
   return (
-    <Hero>
-      <HeroInner>
-        <HeroGrid>
-          {/* LEFT */}
-          <Content>
-            <Title>
-              Transform Your Revenue Cycle with{" "}
-              <Highlight>Autonomous AI Agents</Highlight>
-            </Title>
-
-            <Subtitle>
-              Deploy a network of specialized AI agents that automate your most
+    <>
+      <SplitSection
+        title={
+          <>
+            Transform Your Revenue Cycle with{" "}
+            <Highlight>Autonomous AI Agents</Highlight>
+          </>
+        }
+        description="Deploy a network of specialized AI agents that automate your most
               complex RCM workflows—reducing costs by up to 80% while
               accelerating cash flow and empowering your team to deliver
-              exceptional patient experiences.
-            </Subtitle>
+              exceptional patient experiences."
+        image={heroSectionImage}
+        primaryAction={{ label: "Request a Demo" }}
+        secondaryAction={{ label: "See Platform in Action →" }}
+      />
+      {/* TRUSTED BY */}
+      <TrustSection mb={4} p={4}>
+        <TrustTitle>
+          Trusted by leading health systems
+          <span style={{ fontWeight: 600 }}>Learn more →</span>
+        </TrustTitle>
 
-            <Actions>
-              <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                <AppButton
-                  variantType="primary"
-                  endIcon={<ArrowForwardIosIcon />}
-                >
-                  Request a Demo
-                </AppButton>
-
-                <AppButton
-                  variantType="outline"
-                  endIcon={<ArrowForwardIosIcon />}
-                >
-                  See Platform in Action
-                </AppButton>
-              </Stack>
-            </Actions>
-          </Content>
-
-          {/* RIGHT */}
-          <DashboardWrapper>
-            <DashboardMock />
-          </DashboardWrapper>
-        </HeroGrid>
-
-        {/* TRUSTED BY */}
-        <TrustSection>
-          <TrustTitle>
-            Trusted by leading health systems
-            <span style={{ fontWeight: 600 }}>Learn more →</span>
-          </TrustTitle>
-
-          <LogoGrid>
-            <LogoImage src={careLogo} alt="Care Hospice" />
-            <LogoImage src={mcLeranLogo} alt="McLaren Health" />
-            <LogoImage src={kaminLogo} alt="Kamin Health" />
-            <LogoImage src={mindPathLogo} alt="MindPath Health" />
-            <LogoImage src={mercyLogo} alt="Mercy Health" />
-            <LogoImage src={qualityLogo} alt="Quality Care" />
-          </LogoGrid>
-        </TrustSection>
-      </HeroInner>
-    </Hero>
+        <LogoGrid>
+          <LogoImage src={careLogo} alt="Care Hospice" />
+          <LogoImage src={mcLeranLogo} alt="McLaren Health" />
+          <LogoImage src={kaminLogo} alt="Kamin Health" />
+          <LogoImage src={mindPathLogo} alt="MindPath Health" />
+          <LogoImage src={mercyLogo} alt="Mercy Health" />
+          <LogoImage src={qualityLogo} alt="Quality Care" />
+        </LogoGrid>
+      </TrustSection>
+    </>
   );
 };
 

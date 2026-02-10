@@ -15,6 +15,13 @@ export const Section = styled(Box)(({ theme }) => ({
     padding: "48px 16px",
   },
 }));
+export const Highlight = styled("span")(() => ({
+  fontWeight: 800,
+  background: "#EB7724",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+
+}));
 
 export const Grid = styled(Box, {
   shouldForwardProp: (prop) => prop !== "reverse",
