@@ -1,9 +1,17 @@
-import { Stack, IconButton, Drawer, Box, Popper, Paper } from "@mui/material";
+import {
+  Stack,
+  IconButton,
+  Drawer,
+  Box,
+  Popper,
+  Paper,
+  Collapse,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 
 import AppButton from "../../ui/appButton/AppButton";
 import {
@@ -24,23 +32,71 @@ const Header = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [solutionsAnchorEl, setSolutionsAnchorEl] =
     useState<HTMLElement | null>(null);
 
+  /** FIX: browser-safe timer type */
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  /** Active route helpers */
   const isActive = (path: string) => location.pathname === path;
+  const isSolutionsRoute = location.pathname.startsWith("/solutions");
 
-  useEffect(() => {
-    setTimeout(() => {
+  /** ================= DESKTOP HOVER ================= */
+  const handleOpenSolutions = (el: HTMLElement) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setSolutionsAnchorEl(el);
+    setSolutionsOpen(true);
+  };
+
+  const handleCloseSolutions = () => {
+    closeTimer.current = setTimeout(() => {
       setSolutionsOpen(false);
-      setSolutionsAnchorEl(null);
-    }, 0);
-  }, [location.pathname]);
+    }, 200);
+  };
 
+  /** ================= NAVIGATION ================= */
   const handleNavigate = (path: string) => {
     navigate(path);
     setSolutionsOpen(false);
-    setSolutionsAnchorEl(null);
+    setDrawerOpen(false);
+    setMobileSolutionsOpen(false);
   };
+
+  /** ================= SOLUTION LINKS ================= */
+  const solutionLinks = [
+    {
+      title: "Payment Posting",
+      desc: "Automated reconciliation and posting",
+      path: "/solutions/payment-posting",
+    },
+    {
+      title: "Lockbox Management",
+      desc: "AI-powered document ingestion system",
+      path: "/solutions/lockbox",
+    },
+    {
+      title: "Denials Workflow",
+      desc: "Smart prioritization and appeals",
+      path: "/solutions/denials",
+    },
+    {
+      title: "Eligibility Discovery",
+      desc: "Real-time coverage verification portal",
+      path: "/solutions/eligibility",
+    },
+    {
+      title: "Contract Analysis",
+      desc: "Intelligent contract research assistant",
+      path: "/solutions/contract-analysis",
+    },
+    {
+      title: "Pre-Bill Services",
+      desc: "Automated charge capture validation",
+      path: "/solutions/pre-bill",
+    },
+  ];
 
   return (
     <>
@@ -54,61 +110,40 @@ const Header = () => {
             onClick={() => navigate("/")}
           />
 
-          {/* DESKTOP NAV */}
-          <Stack
-            direction="row"
-            spacing={4}
-            sx={{ display: { xs: "none", md: "flex" } }}
-          >
+          {/* ================= DESKTOP NAV ================= */}
+          <Stack direction="row" spacing={4} sx={{ display: { xs: "none", md: "flex" } }}>
             <NavItem active={isActive("/")} onClick={() => navigate("/")}>
               Home
             </NavItem>
 
-            <NavItem
-              active={isActive("/platform")}
-              onClick={() => navigate("/platform")}
-            >
+            <NavItem active={isActive("/platform")} onClick={() => navigate("/platform")}>
               Platform
             </NavItem>
 
-            {/* SOLUTIONS DROPDOWN */}
-
+            {/* SOLUTIONS TAB */}
             <Box
-              onMouseEnter={(e) => {
-                setSolutionsAnchorEl(e.currentTarget);
-                setSolutionsOpen(true);
-              }}
-              onMouseLeave={() => {
-                setTimeout(() => setSolutionsOpen(false), 150);
-              }}
+              onMouseEnter={(e) => handleOpenSolutions(e.currentTarget)}
+              onMouseLeave={handleCloseSolutions}
               sx={{ display: "inline-flex", alignItems: "center" }}
             >
-              <NavItem active={solutionsOpen || isActive("/solutions")}>
+              <NavItem active={solutionsOpen || isSolutionsRoute}>
                 Solutions
                 <KeyboardArrowDownIcon
                   fontSize="small"
                   sx={{
                     ml: 0.5,
-                    transition: "transform 0.2s ease",
-                    transform: solutionsOpen
-                      ? "rotate(180deg)"
-                      : "rotate(0deg)",
+                    transition: "transform 0.2s",
+                    transform: solutionsOpen ? "rotate(180deg)" : "rotate(0deg)",
                   }}
                 />
               </NavItem>
             </Box>
 
-            <NavItem
-              active={isActive("/about-us")}
-              onClick={() => navigate("/about-us")}
-            >
+            <NavItem active={isActive("/about-us")} onClick={() => navigate("/about-us")}>
               About Us
             </NavItem>
 
-            <NavItem
-              active={isActive("/resources")}
-              onClick={() => navigate("/resources")}
-            >
+            <NavItem active={isActive("/resources")} onClick={() => navigate("/resources")}>
               Resources
             </NavItem>
           </Stack>
@@ -118,13 +153,9 @@ const Header = () => {
             <AppButton variantType="primary">Login</AppButton>
           </Box>
 
-          {/* MOBILE MENU */}
+          {/* MOBILE MENU ICON */}
           <IconButton
-            sx={{
-              display: { xs: "flex", md: "none" },
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            sx={{ display: { xs: "flex", md: "none" } }}
             onClick={() => setDrawerOpen(true)}
           >
             <MenuIcon />
@@ -132,81 +163,34 @@ const Header = () => {
         </StyledToolbar>
       </StyledAppBar>
 
-      {/* ================= SOLUTIONS DROPDOWN ================= */}
-      <Popper
-        open={solutionsOpen}
-        anchorEl={solutionsAnchorEl}
-        placement="bottom"
-        disablePortal
-        modifiers={[
-          {
-            name: "offset",
-            options: { offset: [0, 8] },
-          },
-          {
-            name: "preventOverflow",
-            options: {
-              padding: 8,
-            },
-          },
-        ]}
-      >
+      {/* ================= DESKTOP SOLUTIONS DROPDOWN ================= */}
+      <Popper open={solutionsOpen} anchorEl={solutionsAnchorEl} placement="bottom" sx={{ zIndex: 1300 }}>
         <Box
-          onMouseEnter={() => setSolutionsOpen(true)}
-          onMouseLeave={() => setSolutionsOpen(false)}
+          onMouseEnter={() => closeTimer.current && clearTimeout(closeTimer.current)}
+          onMouseLeave={handleCloseSolutions}
         >
-          <Paper
-            elevation={4}
-            sx={{
-              width: 720,
-              borderRadius: 3,
-              padding: 3,
-            }}
-          >
+          <Paper elevation={4} sx={{ width: 720, borderRadius: 3, p: 3 }}>
             <Stack direction="row" spacing={4}>
-              {/* LEFT COLUMN */}
               <Stack spacing={3} flex={1}>
-                <SolutionItem
-                  title="Payment Posting"
-                  desc="Automated reconciliation and posting"
-                  path="/solutions/payment-posting"
-                  highlight
-                  onNavigate={handleNavigate}
-                />
-                <SolutionItem
-                  title="Lockbox Management"
-                  desc="AI-powered document ingestion system"
-                  path="/solutions/lockbox"
-                  onNavigate={handleNavigate}
-                />
-                <SolutionItem
-                  title="Denials Workflow"
-                  desc="Smart prioritization and appeals"
-                  path="/solutions/denials"
-                  onNavigate={handleNavigate}
-                />
+                {solutionLinks.slice(0, 3).map((item) => (
+                  <SolutionItem
+                    key={item.title}
+                    {...item}
+                    active={isActive(item.path)}
+                    onNavigate={handleNavigate}
+                  />
+                ))}
               </Stack>
 
-              {/* RIGHT COLUMN */}
               <Stack spacing={3} flex={1}>
-                <SolutionItem
-                  title="Eligibility Discovery"
-                  desc="Real-time coverage verification portal"
-                  path="/solutions/eligibility"
-                  onNavigate={handleNavigate}
-                />
-                <SolutionItem
-                  title="Contract Analysis"
-                  desc="Intelligent contract research assistant"
-                  path="/solutions/contract-analysis"
-                  onNavigate={handleNavigate}
-                />
-                <SolutionItem
-                  title="Pre-Bill Services"
-                  desc="Automated charge capture validation"
-                  path="/solutions/pre-bill"
-                  onNavigate={handleNavigate}
-                />
+                {solutionLinks.slice(3).map((item) => (
+                  <SolutionItem
+                    key={item.title}
+                    {...item}
+                    active={isActive(item.path)}
+                    onNavigate={handleNavigate}
+                  />
+                ))}
               </Stack>
             </Stack>
           </Paper>
@@ -214,11 +198,7 @@ const Header = () => {
       </Popper>
 
       {/* ================= MOBILE DRAWER ================= */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      >
+      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <DrawerContainer>
           <CloseIconWrapper>
             <IconButton onClick={() => setDrawerOpen(false)}>
@@ -227,17 +207,46 @@ const Header = () => {
           </CloseIconWrapper>
 
           <Stack spacing={3} mt={4}>
-            <DrawerItem onClick={() => handleNavigate("/")}>Home</DrawerItem>
-            <DrawerItem onClick={() => handleNavigate("/platform")}>
+            <DrawerItem active={isActive("/")} onClick={() => handleNavigate("/")}>
+              Home
+            </DrawerItem>
+
+            <DrawerItem active={isActive("/platform")} onClick={() => handleNavigate("/platform")}>
               Platform
             </DrawerItem>
-            <DrawerItem onClick={() => handleNavigate("/solutions")}>
-              Solutions
-            </DrawerItem>
-            <DrawerItem onClick={() => handleNavigate("/about-us")}>
+
+            {/* MOBILE SOLUTIONS */}
+            <Box>
+              <DrawerItem active={isSolutionsRoute} onClick={() => setMobileSolutionsOpen((p) => !p)}>
+                <span>Solutions</span>
+                <KeyboardArrowDownIcon
+                  style={{
+                    transform: mobileSolutionsOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "0.2s",
+                  }}
+                />
+              </DrawerItem>
+
+              <Collapse in={mobileSolutionsOpen}>
+                <Stack spacing={2} pl={2} mt={1}>
+                  {solutionLinks.map((item) => (
+                    <DrawerItem
+                      key={item.title}
+                      active={isActive(item.path)}
+                      onClick={() => handleNavigate(item.path)}
+                    >
+                      {item.title}
+                    </DrawerItem>
+                  ))}
+                </Stack>
+              </Collapse>
+            </Box>
+
+            <DrawerItem active={isActive("/about-us")} onClick={() => handleNavigate("/about-us")}>
               About Us
             </DrawerItem>
-            <DrawerItem onClick={() => handleNavigate("/resources")}>
+
+            <DrawerItem active={isActive("/resources")} onClick={() => handleNavigate("/resources")}>
               Resources
             </DrawerItem>
 

@@ -11,6 +11,11 @@ import AboutUsPage from "./pages/aboutUs/AboutUsPage";
 import ResourcesPage from "./pages/resources/ResourcesPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PaymentPostingPage from "./pages/solutions/PaymentPostingPage";
+import LockBoxAnalysisPage from "./pages/solutions/LockBoxAnalysisPage";
+import ContractAnalysisPage from "./pages/solutions/ContractAnalysisPage";
+import EligibilityDiscoveryPage from "./pages/solutions/EligibilityDiscoveryPage";
+import DenialWorkFlowPage from "./pages/solutions/DenialWorkFlowPage";
+import PreBillServicesPage from "./pages/solutions/PreBillServicesPage";
 
 const App = () => {
   return (
@@ -36,6 +41,11 @@ const App = () => {
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
         <Route path={ROUTES.PAYMENTPOSTING} element={<PaymentPostingPage />} />
+         <Route path={ROUTES.LOCKBOXANALYSIS} element={<LockBoxAnalysisPage />} />
+          <Route path={ROUTES.CONTRACTANALYSIS} element={<ContractAnalysisPage />} />
+           <Route path={ROUTES.ELIGIBILITYDISCOVERY} element={<EligibilityDiscoveryPage />} />
+            <Route path={ROUTES.DENIALWORKFLOW} element={<DenialWorkFlowPage />} />
+             <Route path={ROUTES.PREBILLSERVICES} element={<PreBillServicesPage />} />
         <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
         <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
       </Route>

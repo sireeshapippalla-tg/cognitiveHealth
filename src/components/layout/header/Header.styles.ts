@@ -85,14 +85,20 @@ export const DrawerContainer = styled(Box)(() => ({
   padding: 16,
 }));
 
-export const DrawerItem = styled("span")(() => ({
+export const DrawerItem = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "active",
+})<{ active?: boolean }>(({  active }) => ({
   fontSize: 16,
   cursor: "pointer",
-  color: "var(--color-text-dark)",
+
 
   "&:hover": {
     color: "var(--color-primary)",
   },
+    display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between", // 👈 pushes arrow right
+color: active ? "#f97316" : "var(--color-text-dark)",
 }));
 
 export const CloseIconWrapper = styled(Box)(() => ({
