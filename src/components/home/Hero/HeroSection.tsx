@@ -32,7 +32,7 @@ const HeroSection = () => {
               exceptional patient experiences."
         image={heroSectionImage}
         primaryAction={{ label: "Request a Demo" }}
-        secondaryAction={{ label: "See Platform in Action →" }}
+        secondaryAction={{ label: "See Platform in Action " }}
       />
       {/* TRUSTED BY */}
       <TrustSection mb={4} p={4}>

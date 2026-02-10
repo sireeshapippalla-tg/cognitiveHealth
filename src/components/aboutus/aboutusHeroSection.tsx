@@ -20,7 +20,7 @@ const AboutUsHeroSection: React.FC = () => {
               delivering exceptional patient care."
         image={heroSectionImage}
         primaryAction={{ label: "Request a Demo" }}
-        secondaryAction={{ label: "See Platform in Action →" }}
+        secondaryAction={{ label: "See Platform in Action " }}
       />
     </>
   );

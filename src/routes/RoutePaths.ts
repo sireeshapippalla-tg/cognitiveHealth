@@ -10,6 +10,7 @@ export const ROUTES = {
   ELIGIBILITYDISCOVERY:"/solutions/eligibility",
   ABOUTUS: "/about-us",
   RESOURCES: "/resources",
+  CONTACTUS: "/contact-us",
   NOT_FOUND: "*",
 };
 

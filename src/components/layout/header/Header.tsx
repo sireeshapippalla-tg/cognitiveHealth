@@ -150,7 +150,7 @@ const Header = () => {
 
           {/* DESKTOP LOGIN */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <AppButton variantType="primary">Login</AppButton>
+            <AppButton variantType="primary" onClick={() => navigate("/contact-us")}>Contact Us</AppButton>
           </Box>
 
           {/* MOBILE MENU ICON */}
@@ -250,7 +250,7 @@ const Header = () => {
               Resources
             </DrawerItem>
 
-            <AppButton variantType="primary">Login</AppButton>
+            <AppButton variantType="primary" onClick={() => navigate("/contact-us")}>Contact Us</AppButton>
           </Stack>
         </DrawerContainer>
       </Drawer>

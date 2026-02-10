@@ -36,11 +36,13 @@ const CallToActionSection = () => {
 
           <AppButton
             variantType="outline"
-            sx={OutlineButtonStyles}
+            // sx={OutlineButtonStyles}
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
           >
             See Platform in Action
           </AppButton>
+
+         
         </CtaActions>
       </CtaWrapper>
     </SectionContainer>

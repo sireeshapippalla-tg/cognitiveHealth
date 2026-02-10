@@ -16,6 +16,7 @@ import ContractAnalysisPage from "./pages/solutions/ContractAnalysisPage";
 import EligibilityDiscoveryPage from "./pages/solutions/EligibilityDiscoveryPage";
 import DenialWorkFlowPage from "./pages/solutions/DenialWorkFlowPage";
 import PreBillServicesPage from "./pages/solutions/PreBillServicesPage";
+import ContactUsPage from "./pages/contactUs/ContactUsPage";
 
 const App = () => {
   return (
@@ -48,6 +49,7 @@ const App = () => {
              <Route path={ROUTES.PREBILLSERVICES} element={<PreBillServicesPage />} />
         <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
         <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
+        <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
       </Route>
 
       {/* ---------- FALLBACK ---------- */}

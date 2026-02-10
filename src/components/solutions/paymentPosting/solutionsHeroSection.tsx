@@ -8,7 +8,7 @@ const SolutionsHeroSection = () => {
       description="Super Charge your revenue cycle with AI Agents"
       image={paymentPostingImage}
       primaryAction={{ label: "Request a Demo" }}
-      secondaryAction={{ label: "See Platform in Action →" }}
+      secondaryAction={{ label: "See Platform in Action " }}
     />
   );
 };

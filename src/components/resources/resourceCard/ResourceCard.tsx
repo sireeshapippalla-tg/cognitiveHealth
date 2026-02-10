@@ -1,0 +1,85 @@
+import React from "react";
+import {
+  StyledCard,
+  CardImageWrapper,
+  CardImage,
+  CategoryChip,
+  CardContent,
+  MetaInfo,
+  CardTitle,
+  CardDescription,
+  ReadMoreLink,
+} from "./ResourceCard.styles";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
+interface ResourceCardProps {
+  image: string;
+  category?: string;
+  date?: string;
+  readTime?: string;
+  title: string;
+  description: string;
+  link: string;
+  type: "blog" | "case-study" | "video" | "media";
+}
+
+const ResourceCard: React.FC<ResourceCardProps> = ({
+  image,
+  category,
+  date,
+  readTime,
+  title,
+  description,
+  link,
+  type,
+}) => {
+  const getLinkText = () => {
+    switch (type) {
+      case "video":
+        return "Watch Video";
+      case "case-study":
+        return "Read Case Study";
+      default:
+        return "Read More";
+    }
+  };
+
+  return (
+    <StyledCard>
+      <CardImageWrapper>
+        <CardImage src={image} alt={title} />
+        {category && <CategoryChip label={category} />}
+      </CardImageWrapper>
+
+      <CardContent>
+        <MetaInfo>
+          {date && (
+            <>
+              <CalendarTodayOutlinedIcon />
+              <span>{date}</span>
+            </>
+          )}
+          {date && readTime && <span>•</span>}
+          {readTime && (
+            <>
+              <AccessTimeOutlinedIcon />
+              <span>{readTime}</span>
+            </>
+          )}
+        </MetaInfo>
+
+        <CardTitle variant="h3">{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+
+        <ReadMoreLink to={link} className="read-more-link">
+          {getLinkText()}
+          <ArrowForwardIcon fontSize="small" />
+        </ReadMoreLink>
+      </CardContent>
+    </StyledCard>
+  );
+};
+
+export default ResourceCard;
