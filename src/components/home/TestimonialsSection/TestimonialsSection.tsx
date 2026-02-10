@@ -7,21 +7,21 @@ import { SectionContainer, Wrapper } from "./TestimonialsSection.styles";
 const testimonials = [
   {
     quote:
-      "The iCAN Platform has transformed how we handle cash posting. We've seen a dramatic reduction in errors and our team can now focus on strategic initiatives rather than manual reconciliation.",
+      "By automating the end of the day reconciliation process, we are able to reduce data entry errors and improve efficiency. The timing of this process implementation has been very important for our current situation. The portal has allowed us to transition to a work from home process with no disruption to our workflow.",
     author: "Senior Manager, Corporate Business Services",
     role: "",
     company: "4000+ Bed Health System",
   },
   {
     quote:
-      "In the 15 months of collaboration with the CognitiveHealth team we have successfully implemented automation in the areas of cash posting, reconciliation and correspondence work.",
-    author: "Vice President of Patient Financial Services",
+       "In the 15 months of collaboration with the CognitiveHealth team we have successfully implemented automation in the areas of cash posting, reconciliation and correspondence work. We are pleased with the early results and continuing to expand our partnership with CognitiveHealth.",
+        author: "Vice President of Patient Financial Services",
     role: "",
     company: "3500+ Bed Academic Hospital",
   },
   {
     quote:
-      "Reducing reconciliation complexity and improving accuracy, iCAN platform transformed our workflow by cutting onshore oversight nearly in half while raising productivity.",
+      "Reducing reconciliation complexity and improving accuracy, iCAN platform transformed our workflow by cutting onshore oversight nearly in half while raising productivity. Our team now works more collaboratively and efficiently, with higher job satisfaction across onshore and offshore roles",
     author: "Director, RCM",
     role: "",
     company: "Nationally Servicing Behavioral Health System",

@@ -18,26 +18,29 @@ export const Wrapper = styled(Box)<WrapperProps>(({ align }) => ({
 }));
 
 export const Pill = styled(Box)({
-  backgroundColor: "#2563eb",
+  backgroundColor: "#3A63D2",
+  fontFamily: "Inter",
   color: "#ffffff",
   padding: "4px 14px",
   borderRadius: "999px",
-  fontSize: "11px",
+  fontSize: "14px",
+  lineHeight: "150%",
   fontWeight: 600,
   marginBottom: "20px",
   letterSpacing: "0.3px",
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontWeight: 800,
-  color: "#111827",
-  lineHeight: 1.25,
-  fontSize: "34px",
+  fontFamily: "Inter",
+  fontWeight: 600,
+  color: "var(--color-text-dark)",
+  lineHeight: '48px',
+  fontSize: "32px",
   maxWidth: "900px",
   marginBottom: "16px",
 
   "& span": {
-    color: "#f97316",
+    color: "var(--color-primary)",
   },
 
   [theme.breakpoints.down("md")]: {
@@ -46,8 +49,10 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Subtitle = styled(Typography)<SubtitleProps>(({ maxWidth }) => ({
-  fontSize: "18px",
-  lineHeight: 1.6,
-  color: "#6b7280",
+  fontFamily: "Inter",
+  fontWeight: 400,
+  fontSize: "20px",
+  lineHeight: '150%',
+  color: "var(--color-text-light)",
   maxWidth,
 }));

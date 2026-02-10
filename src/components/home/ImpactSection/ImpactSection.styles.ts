@@ -4,7 +4,7 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
-  backgroundColor: "#f9fafb",
+  backgroundColor: "#F9FAFB",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
     padding: "60px 16px",

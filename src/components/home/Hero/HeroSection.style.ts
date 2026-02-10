@@ -46,9 +46,10 @@ export const Content = styled(Box)(({ theme }) => ({
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "Inter",
   fontSize: "44px",
-  fontWeight: 700,
-  lineHeight: 1.2,
+  fontWeight: 600,
+  lineHeight: '60px',
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
@@ -57,10 +58,13 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Highlight = styled("span")({
-  color: "#ea580c",
+  color: "#EB7724",
 });
 
 export const Subtitle = styled(Box)({
+  fontFamily: "Inter",
+  fontSize: "20px",
+  fontWeight: 400,
   marginTop: "24px",
   maxWidth: "550px",
 });
@@ -85,14 +89,16 @@ export const TrustSection = styled(Box)(({ theme }) => ({
 }));
 
 export const TrustTitle = styled(Box)(({ theme }) => ({
+  fontFamily: "Inter",
+  fontSize: "16px",
+  lineHeight: "24px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   gap: "16px",
   marginBottom: "32px",
-  fontSize: "14px",
-  // color: "#4b5563",
-  fontWeight: 500,
+   color: "#0E0E0E",
+  fontWeight: 400,
 
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",

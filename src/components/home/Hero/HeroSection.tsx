@@ -76,7 +76,7 @@ const HeroSection = () => {
         {/* TRUSTED BY */}
         <TrustSection>
           <TrustTitle>
-            Trusted by leading health systems
+            Trusted by leading health systems and physician groups and specialty providers
             <span style={{ fontWeight: 600 }}>Learn more →</span>
           </TrustTitle>
 

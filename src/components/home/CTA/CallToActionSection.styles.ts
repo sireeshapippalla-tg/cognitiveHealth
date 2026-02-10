@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, colors, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 
@@ -16,7 +16,7 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
 
 /* MAIN WRAPPER */
 export const CtaWrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: "#fff7ed",
+  backgroundColor: "#FFF7F2",
   borderRadius: "20px",
   padding: "64px 32px",
   textAlign: "center",
@@ -30,17 +30,20 @@ export const CtaWrapper = styled(Box)(({ theme }) => ({
 
 /* TITLE */
 export const CtaTitle = styled(Typography)({
-  fontWeight: 700,
+  fontFamily: "Inter",
+  fontWeight: 600,
   fontSize: "32px",
-  lineHeight: 1.25,
-  color: "#111827",
+  lineHeight: '48px',
+  color: "#0E0E0E",
   marginBottom: "16px",
 });
 
 /* SUBTITLE */
 export const CtaSubtitle = styled(Typography)({
-  fontSize: "16px",
-  color: "#6b7280",
+  fontFamily: "Inter",
+  fontSize: "20px",
+  color: "#2F2F2F",
+  lineHeight: '150%',
   maxWidth: "640px",
   margin: "0 auto 32px",
 });
@@ -52,9 +55,9 @@ export const CtaActions = styled(Stack)({
 
 /* PRIMARY BUTTON */
 export const PrimaryButtonStyles = {
-  backgroundColor: "#f97316",
+  backgroundColor: "#EB7724",
   padding: "12px 20px",
-  borderRadius: "999px",
+  borderRadius: "9999px",
   fontSize: "14px",
 
   "&:hover": {
@@ -65,10 +68,10 @@ export const PrimaryButtonStyles = {
 /* OUTLINE BUTTON */
 export const OutlineButtonStyles = {
   padding: "12px 20px",
-  borderRadius: "999px",
+  borderRadius: "9999px",
   fontSize: "14px",
-  borderColor: "#d1d5db",
-  color: "#111827",
+  borderColor: "#2F2F2F",
+  color: "#2F2F2F",
 
   "&:hover": {
     backgroundColor: "#f9fafb",

@@ -12,32 +12,32 @@ import { SectionContainer, Wrapper } from "./ourOfferingSection.styles";
 
 const offerings = [
   {
-    title: "Patient Access and Authorization",
+    title: "Cash Posting and Advanced Recon",
     icon: <DescriptionIcon />,
     link: "#",
   },
   {
-    title: "Claims Management",
+    title: "Lockbox Automation",
     icon: <VerifiedUserIcon />,
     link: "#",
   },
   {
-    title: "Denial Avoidance",
+    title: "Eligibility Discovery ",
     icon: <AccountBalanceWalletIcon />,
     link: "#",
   },
   {
-    title: "Eligibility Discovery",
+    title: "Denials Workflow ",
     icon: <MonitorHeartIcon />,
     link: "#",
   },
   {
-    title: "Clinical Lifecycle",
+    title: "Contract Analytics",
     icon: <BarChartIcon />,
     link: "#",
   },
   {
-    title: "Universal Payer Discovery",
+    title: "Enhanced Pre-bill services",
     icon: <SecurityIcon />,
     link: "#",
   },
@@ -47,7 +47,7 @@ const OurOfferingSection = () => {
   return (
     <SectionContainer>
       <Wrapper>
-        <SectionTitle title="Our Offering" align="center" maxWidth={700} />
+        <SectionTitle title="Our Offering" align="center" maxWidth={700}  />
 
         <Grid container spacing={4}>
           {offerings.map((offering, index) => (
@@ -56,7 +56,7 @@ const OurOfferingSection = () => {
                 title={offering.title}
                 icon={offering.icon}
                 onClick={() => console.log(`Clicked ${offering.title}`)}
-                linkText="Lear More"
+                linkText="Learn More"
               />
             </Grid>
           ))}

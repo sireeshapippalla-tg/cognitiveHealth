@@ -10,7 +10,6 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   },
 }));
 export const Wrapper = styled(Box)(({ theme }) => ({
- 
   padding: "64px 32px",
   textAlign: "center",
   maxWidth: "1100px",

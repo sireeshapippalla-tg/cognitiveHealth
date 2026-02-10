@@ -19,10 +19,12 @@ export const StyledCard = styled(Card)({
 });
 
 export const ValueText = styled(Typography)(({ theme }) => ({
-  color: "#ea580c",
-  fontWeight: 800,
+  color: "#EB7724",
+  fontFamily: "Inter",
+  fontWeight: 600,
   marginBottom: "12px",
-  fontSize: "44px",
+  lineHeight:'150%',
+  fontSize: "32px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "32px",
@@ -30,9 +32,11 @@ export const ValueText = styled(Typography)(({ theme }) => ({
 }));
 
 export const DescriptionText = styled(Typography)({
-  color: "#4b5563",
-  fontSize: "15px",
+  color: "#2F2F2F",
+  fontFamily: "Inter",
+  fontSize: "14px",
   fontWeight: 500,
+  lineHeight: "140%",
   maxWidth: "200px",
   margin: "0 auto",
 });
