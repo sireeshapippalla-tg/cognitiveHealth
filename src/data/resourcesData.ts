@@ -109,6 +109,17 @@ export const resourcesData: Resource[] = [
     category: "Feature Spotlight",
     link: "/videos/correspondence-management",
   },
+  {
+  id: "video-test",
+  type: "video",
+  title: "AI Platform Demo",
+  description: "See how our AI platform works in action.",
+  image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1000",
+  readTime: "3 min",
+  category: "Demo",
+  link: "https://www.youtube.com/watch?v=sz1ZckN2kJM"
+},
+
   // Media
    {
     id: "9",

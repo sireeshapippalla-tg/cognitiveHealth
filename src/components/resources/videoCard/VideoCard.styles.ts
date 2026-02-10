@@ -95,7 +95,7 @@ export const CategoryChip = styled(Chip)({
   },
 });
 
-export const CardTitle = styled(Typography)(({ theme }) => ({
+export const CardTitle = styled(Typography)(() => ({
   fontSize: "16px",
   fontWeight: 700,
   lineHeight: "1.4",

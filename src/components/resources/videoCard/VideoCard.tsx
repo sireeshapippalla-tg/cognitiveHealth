@@ -10,12 +10,13 @@ import {
   CardTitle,
   CardDescription,
   Footer,
-  WatchLink,
+  // WatchLink,
   DurationBadge,
 } from "./VideoCard.styles";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box } from "@mui/material";
 
 interface VideoCardProps {
   image: string;
@@ -32,7 +33,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
   category,
   title,
   description,
-  link,
+  // link,
   duration,
   onPlay,
 }) => {
@@ -59,17 +60,34 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <CardDescription>{description}</CardDescription>
 
         <Footer>
-          <WatchLink to={link} className="read-more-link">
-            Watch Video
-            <ArrowForwardIcon fontSize="small" />
-          </WatchLink>
-          {duration && (
-            <DurationBadge>
-              <AccessTimeOutlinedIcon />
-              <span>{duration}</span>
-            </DurationBadge>
-          )}
-        </Footer>
+  <Box
+    onClick={(e) => {
+      e.stopPropagation();
+      onPlay();
+    }}
+    className="read-more-link"
+    sx={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "4px",
+      fontSize: "15px",
+      fontWeight: 600,
+      color: "#E88D3E",
+      cursor: "pointer",
+    }}
+  >
+    Watch Video
+    <ArrowForwardIcon fontSize="small" />
+  </Box>
+
+  {duration && (
+    <DurationBadge>
+      <AccessTimeOutlinedIcon />
+      <span>{duration}</span>
+    </DurationBadge>
+  )}
+</Footer>
+
       </CardContent>
     </StyledCard>
   );
