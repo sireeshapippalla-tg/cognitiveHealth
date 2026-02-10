@@ -1,7 +1,7 @@
 import React from "react";
 import SplitSection from "../ui/SplitSection/SplitSection";
 
-const HeroSection: React.FC = () => {
+const AboutUsHeroSection: React.FC = () => {
   return (
     <>
       <SplitSection
@@ -20,4 +20,4 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection;
+export default AboutUsHeroSection;

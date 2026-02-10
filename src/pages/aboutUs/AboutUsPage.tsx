@@ -1,29 +1,21 @@
 import React from "react";
 import { Box } from "@mui/material";
-import HeroSection from "../../components/aboutus/heroSection";
 import WhoWeAreSection from "../../components/aboutus/whoWeAre";
 import TeamSection from "../../components/aboutus/teamSecion";
 import AdvisorySection from "../../components/aboutus/advisorySection";
 import CallToActionSection from "../../components/home/CTA/CTASection";
 import WhyWeExistSection from "../../components/aboutus/whyExistSection";
-
-
-
-
-
-
-
+import AboutUsHeroSection from "../../components/aboutus/heroSection";
 
 const CognitiveHealthAboutPage: React.FC = () => {
   return (
     <Box>
-      <HeroSection />
-      <WhoWeAreSection/>
+      <AboutUsHeroSection />
+      <WhoWeAreSection />
       <WhyWeExistSection />
       <TeamSection />
       <AdvisorySection />
-            <CallToActionSection />
-      
+      <CallToActionSection />
     </Box>
   );
 };

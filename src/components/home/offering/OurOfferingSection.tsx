@@ -56,6 +56,7 @@ const OurOfferingSection = () => {
                 title={offering.title}
                 icon={offering.icon}
                 onClick={() => console.log(`Clicked ${offering.title}`)}
+                linkText="Lear More"
               />
             </Grid>
           ))}
