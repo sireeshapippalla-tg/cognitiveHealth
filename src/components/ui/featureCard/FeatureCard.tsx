@@ -20,7 +20,7 @@ export const FeatureCard = ({
   icon,
   title,
   description,
-  linkText = "Learn more",
+  linkText = "",
   onClick,
 }: FeatureCardProps) => (
   <Card onClick={onClick}>

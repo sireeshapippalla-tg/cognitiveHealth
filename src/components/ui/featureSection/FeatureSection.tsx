@@ -20,6 +20,7 @@ interface FeatureSectionProps {
   subtitle?: string;
   background?: string;
   items: FeatureItem[];
+  linkText?:string;
 }
 
 const FeatureSection = ({
@@ -27,6 +28,7 @@ const FeatureSection = ({
   subtitle,
   background,
   items,
+  linkText
 }: FeatureSectionProps) => {
   return (
     <Section background={background}>
@@ -43,6 +45,7 @@ const FeatureSection = ({
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
+                linkText={linkText}
               />
             </Grid>
           ))}

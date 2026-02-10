@@ -30,7 +30,7 @@ export const SectionTitle = ({
     />
 
     {subtitle && (
-      <Subtitle variant="body1" maxWidth={maxWidth}>
+      <Subtitle variant="body1" maxWidth={maxWidth} >
         {subtitle}
       </Subtitle>
     )}
