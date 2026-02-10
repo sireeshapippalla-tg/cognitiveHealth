@@ -250,7 +250,7 @@ const Header = () => {
               Resources
             </DrawerItem>
 
-            <AppButton variantType="primary" onClick={() => navigate("/contact-us")}>Contact Us</AppButton>
+            <AppButton variantType="primary" onClick={() => handleNavigate("/contact-us")}>Contact Us</AppButton>
           </Stack>
         </DrawerContainer>
       </Drawer>
