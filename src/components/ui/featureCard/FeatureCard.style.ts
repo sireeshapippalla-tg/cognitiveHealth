@@ -35,7 +35,7 @@ export const Card = styled(Box, {
   flexDirection: "column",
   justifyContent: "space-between",
   // height: "100%",
-  minHeight: "152px",
+  minHeight: "160px",
   cursor: "pointer",
   transition: "all 0.2s ease",
 
@@ -90,9 +90,9 @@ export const IconBox = styled(Box)({
 // });
 export const Title = styled(Typography)({
   fontWeight: 600,
-  fontSize: "18px",
-  color: "#0E151B",
-  lineHeight: 1.3,
+  fontSize: "20px",
+  color: "#0E0E0E",
+  lineHeight: '150%',
   textAlign: "left",
   flex: 1,
   wordBreak: "break-word",

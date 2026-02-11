@@ -51,7 +51,7 @@ export const Content = styled(Box)(({ theme }) => ({
 export const Eyebrow = styled(Typography)({
   fontSize: "40px",
   fontWeight: 600,
-  color: "#0E0E0E",
+  color:  "var(--color-text-dark)",
   marginBottom: "20px",
   lineHeight: "50px",
 });
@@ -71,7 +71,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const Description = styled(Typography)({
   fontSize: "18px",
   lineHeight: 1.6,
-  color: " #2F2F2F",
+  color:  "var(--color-text-light)",
   marginBottom: "32px",
   fontWeight: 400,
 });

@@ -24,9 +24,10 @@ export const Inner = styled(Box)({
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "28px",
-  fontWeight: 700,
+  fontWeight: 600,
   textAlign: "center",
-  color: "#111827",
+  color: "var(--color-text-dark)",
+  lineHeight: '48px',
   marginBottom: "8px",
 
   "& span": {
@@ -41,7 +42,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const Subtitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   fontSize: "15px",
-  color: "#6b7280",
+  color: "var(--color-text-light)",
   maxWidth: "720px",
   margin: "0 auto 48px",
 
