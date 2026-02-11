@@ -11,28 +11,30 @@ import {
 interface FeatureCardProps {
   icon?: React.ReactNode;
   title: string;
-  description?: string;     // ✅ NEW
+  description?: string;
   linkText?: string;
   onClick?: () => void;
+  variant?: "default" | "pink";
+  headerDirection?: "row" | "column";
 }
 
 export const FeatureCard = ({
   icon,
   title,
   description,
-  linkText = "",
+  linkText,
   onClick,
+  variant = "default",
+  headerDirection = "column",
 }: FeatureCardProps) => (
-  <Card onClick={onClick}>
-    <Header>
+  <Card variant={variant} onClick={onClick}>
+    <Header direction={headerDirection}>
       {icon && <IconBox>{icon}</IconBox>}
-      <Title variant="h6">{title}</Title>
+      <Title>{title}</Title>
     </Header>
 
-    {/* ✅ Optional description */}
     {description && <Description>{description}</Description>}
 
-    {/* ✅ Optional link */}
     {linkText && (
       <LearnMoreButton endIcon={<ArrowForwardIcon />}>
         {linkText}

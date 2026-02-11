@@ -1,9 +1,10 @@
-import { Container, Grid } from "@mui/material";
+import {  Grid } from "@mui/material";
 
 
 import { SectionTitle } from "../ui/sectionTitle/SectionTitle";
 import type { Advisor } from "../ui/advisoryCard/advisoryCard";
 import AdvisorCard from "../ui/advisoryCard/advisoryCard";
+import { GridWrapperAdvisory, SectionContainerAdvisoy } from "./aboutus.style";
 
 const advisoryData: Advisor[] = [
   {
@@ -31,12 +32,13 @@ const advisoryData: Advisor[] = [
 
 const AdvisorySection: React.FC = () => {
   return (
-    <Container sx={{ py: { xs: 6, md: 10 } }}>
+   <SectionContainerAdvisoy>
       <SectionTitle
         title="Advisory Team"
         subtitle="Our advisors are well-known thought leaders drawn from the healthcare industry."
         maxWidth={620}
       />
+      <GridWrapperAdvisory>
 
       <Grid container spacing={3} mt={2}>
         {advisoryData.map((advisor) => (
@@ -45,7 +47,8 @@ const AdvisorySection: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-    </Container>
+      </GridWrapperAdvisory>
+    </SectionContainerAdvisoy>
   );
 };
 

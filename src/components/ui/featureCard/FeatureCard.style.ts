@@ -1,33 +1,66 @@
 import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+interface CardProps {
+  variant?: "default" | "pink";
+}
+interface HeaderProps {
+  direction?: "row" | "column";
+}
+// export const Card = styled(Box)({
+//   backgroundColor: "#FFF7F2",
+//   borderRadius: "20px",
+//   padding: "24px",
+//   display: "flex",
+//   flexDirection: "column",
+//   justifyContent: "space-between",
+//   width: "100%",
+//   minHeight: "152px",
+//   border: "1px solid #ECECEC",
+//   cursor: "pointer",
+//   transition: "all 0.25s ease",
 
-export const Card = styled(Box)({
-  backgroundColor: "#FFF7F2",
+//   "&:hover": {
+//     transform: "translateY(-4px)",
+//     boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+//   },
+// });
+
+export const Card = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "variant",
+})<CardProps>(({ variant }) => ({
   borderRadius: "20px",
   padding: "24px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  width: "100%",
+  // height: "100%",
   minHeight: "152px",
-  border: "1px solid #ECECEC",
   cursor: "pointer",
-  transition: "all 0.25s ease",
+  transition: "all 0.2s ease",
+
+  backgroundColor: variant === "pink" ? "#fff7f2" : "#ffffff",
+  border: "1px solid #ECECEC",
 
   "&:hover": {
+    backgroundColor: variant === "pink" ? "#ffedd5" : "#f9fafb",
+    boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
     transform: "translateY(-4px)",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
   },
-});
+}));
 
-
-export const Header = styled(Box)({
+export const Header = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "direction",
+})<HeaderProps>(({ theme, direction = "column" }) => ({
   display: "flex",
-  alignItems: "flex-start",
   gap: "12px",
   marginBottom: "12px",
-});
+  flexDirection: direction,
+  alignItems: "flex-start",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
 
 export const IconBox = styled(Box)({
   backgroundColor: "#3A63D2",
@@ -41,22 +74,36 @@ export const IconBox = styled(Box)({
   alignItems: "center",
   justifyContent: "center",
 
+  flexShrink: 0,
+  flexGrow: 0,
+
   "& svg": {
     fontSize: 18,
   },
 });
 
+// export const Title = styled(Typography)({
+//   fontFamily: "Inter",
+//   fontWeight: 600,
+//   fontSize: "20px",
+//   color: "#0E151B",
+// });
 export const Title = styled(Typography)({
-  fontFamily: "Inter",
   fontWeight: 600,
-  fontSize: "20px",
+  fontSize: "18px",
   color: "#0E151B",
+  lineHeight: 1.3,
+  textAlign: "left",
+  flex: 1,
+  wordBreak: "break-word",
+  minWidth: 0,
+  margin: "auto",
 });
 
 export const Description = styled(Typography)({
-  fontSize: "14px",
+  fontSize: "16px",
   lineHeight: 1.6,
-  color: "#6b7280",
+  color: " #2F2F2F",
   marginBottom: "12px",
 });
 
@@ -69,10 +116,4 @@ export const LearnMoreButton = styled(Button)({
   color: "#3A63D2",
   textTransform: "none",
   fontWeight: 500,
-  backgroundColor: "transparent",
-
-  "&:hover": {
-    backgroundColor: "transparent",
-    textDecoration: "underline",
-  },
 });

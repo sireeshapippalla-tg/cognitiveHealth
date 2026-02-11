@@ -80,7 +80,7 @@ const OurOfferingSection = () => {
   return (
     <SectionContainer>
       <Wrapper>
-        <SectionTitle title="Our Offering" align="center" maxWidth={700}  />
+        <SectionTitle title="Our Offering" align="center" maxWidth={700} textColor="var(--color-primary)"/>
 
         <Grid container spacing={4}>
           {offerings.map((offering, index) => (
@@ -90,6 +90,8 @@ const OurOfferingSection = () => {
                 icon={offering.icon}
                 onClick={() => console.log(`Clicked ${offering.title}`)}
                 linkText="Learn More"
+                variant="pink"
+                headerDirection="row"
               />
             </Grid>
           ))}

@@ -1,4 +1,10 @@
-import { Card, Typography,Avatar } from "@mui/material";
+import {
+  StyledCard,
+  StyledAvatar,
+  NameText,
+  RoleText,
+  DescriptionText,
+} from "./advisory.style";
 
 export interface Advisor {
   id: number;
@@ -13,42 +19,15 @@ interface Props {
 
 const AdvisorCard: React.FC<Props> = ({ advisor }) => {
   return (
-    <Card
-      sx={{
-        borderRadius: 3,
-        p: 3,
-        textAlign: "center",
-        boxShadow: "0 0 0 1px #e5e7eb",
-        height: "100%",
-        backgroundColor: "#f9fafb",
-      }}
-    >
-      <Avatar
-        sx={{
-          width: 70,
-          height: 70,
-          mx: "auto",
-          mb: 2,
-          bgcolor: "#f97316",
-        }}
-      />
+    <StyledCard>
+      <StyledAvatar />
 
-      <Typography fontWeight={600}>{advisor.name}</Typography>
+      <NameText>{advisor.name}</NameText>
 
-      <Typography
-        fontSize={13}
-        fontWeight={600}
-        color="#f97316"
-        mt={0.5}
-        mb={1.5}
-      >
-        {advisor.role}
-      </Typography>
+      <RoleText>{advisor.role}</RoleText>
 
-      <Typography fontSize={14} color="text.secondary" lineHeight={1.7}>
-        {advisor.description}
-      </Typography>
-    </Card>
+      <DescriptionText>{advisor.description}</DescriptionText>
+    </StyledCard>
   );
 };
 

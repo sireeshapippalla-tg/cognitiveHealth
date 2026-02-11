@@ -58,6 +58,7 @@ export const QuoteText = styled(Typography)({
   color: "#0E151B",
   lineHeight: '130%',
   marginBottom: "32px",
+  textAlign:"left"
 });
 
 export const Footer = styled(Box)({
@@ -79,12 +80,14 @@ export const AuthorName = styled(Typography)({
   fontSize: "18px",
   marginBottom: "4px",
   lineHeight: "130%",
+  textAlign:"left"
 });
 
 export const RoleText = styled(Typography)({
   color: "#9ca3af",
   fontSize: "13px",
   marginBottom: "2px",
+ 
 });
 
 export const CompanyText = styled(Typography)({
@@ -92,4 +95,5 @@ export const CompanyText = styled(Typography)({
   fontWeight: 400,
   color: "#2F2F2F",
   fontSize: "16px",
+  textAlign:"left"
 });

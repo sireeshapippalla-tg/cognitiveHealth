@@ -1,4 +1,4 @@
-import { Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledCard = styled(Card)({
@@ -22,7 +22,7 @@ export const ValueText = styled(Typography)(({ theme }) => ({
   color: "#EB7724",
   fontFamily: "Inter",
   fontWeight: 600,
-  marginBottom: "12px",
+  // marginBottom: "12px",
   lineHeight:'150%',
   fontSize: "32px",
 
@@ -40,3 +40,23 @@ export const DescriptionText = styled(Typography)({
   maxWidth: "200px",
   margin: "0 auto",
 });
+
+
+export const IconWrapper = styled(Box)(() => ({
+  width: 44,
+  height: 44,
+  margin: "0 auto 12px",
+  borderRadius: 12,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "#f0fdf4", // light green bg (can enhance later)
+}));
+
+
+export const TitleText = styled(Typography)(() => ({
+  fontWeight: 600,
+  marginBottom: 4,
+}));
+
+

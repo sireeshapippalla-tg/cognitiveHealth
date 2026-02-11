@@ -11,6 +11,7 @@ interface SectionTitleProps {
   subtitle?: string;
   align?: "center" | "left";
   maxWidth?: number;
+  textColor?:string;
 }
 
 export const SectionTitle = ({
@@ -19,6 +20,7 @@ export const SectionTitle = ({
   subtitle,
   align = "center",
   maxWidth = 700,
+  textColor
 }: SectionTitleProps) => (
   <Wrapper align={align}>
     {pillText && <Pill>{pillText}</Pill>}
@@ -26,11 +28,12 @@ export const SectionTitle = ({
     <Title
       variant="h2"
       dangerouslySetInnerHTML={{ __html: title }}
-      sx={{ marginBottom: subtitle ? "16px" : "20px" }} // optional dynamic spacing
+      textcolor={textColor}
+      sx={{ marginBottom: subtitle ? "16px" : "20px" }} 
     />
 
     {subtitle && (
-      <Subtitle variant="body1" maxWidth={maxWidth} >
+      <Subtitle variant="body1" maxWidth={maxWidth} textColor={textColor} >
         {subtitle}
       </Subtitle>
     )}

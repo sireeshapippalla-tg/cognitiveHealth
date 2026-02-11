@@ -8,7 +8,7 @@ import {
   CtaSubtitle,
   CtaActions,
   PrimaryButtonStyles,
-  OutlineButtonStyles,
+  // OutlineButtonStyles,
   SectionContainer,
 } from "./CallToActionSection.styles";
 
@@ -21,8 +21,7 @@ const CallToActionSection = () => {
         </CtaTitle>
 
         <CtaSubtitle>
-          Join leading healthcare organizations transforming their revenue cycle
-          with AI
+          Join leading healthcare organizations transforming their revenue cycle with AI
         </CtaSubtitle>
 
         <CtaActions direction={{ xs: "column", sm: "row" }} spacing={2}>
@@ -36,11 +35,13 @@ const CallToActionSection = () => {
 
           <AppButton
             variantType="outline"
-            sx={OutlineButtonStyles}
+            // sx={OutlineButtonStyles}
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
           >
             See Platform in Action
           </AppButton>
+
+         
         </CtaActions>
       </CtaWrapper>
     </SectionContainer>
