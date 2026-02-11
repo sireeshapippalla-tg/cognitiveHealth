@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "Reducing reconciliation complexity and improving accuracy, iCAN platform transformed our workflow by cutting onshore oversight nearly in half while raising productivity. Our team now works more collaboratively and efficiently, with higher job satisfaction across onshore and offshore roles",
+      "Reducing reconciliation complexity and improving accuracy, iCAN platform transformed our workflow by cutting onshore oversight nearly in half while raising productivity. Our team now works more collaboratively and efficiently, with higher job satisfaction across onshore and offshore roles. Partnering with CognitiveHealth helped us uncover process gaps we didn’t realize existed. The ongoing improvements to iCAN’s reporting and dashboards, combined with a collaborative approach, have driven measurable improvements across our operations",
     author: "Director, RCM",
     role: "",
     company: "Nationally Servicing Behavioral Health System",

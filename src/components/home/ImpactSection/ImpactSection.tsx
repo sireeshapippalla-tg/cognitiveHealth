@@ -27,7 +27,7 @@ const ImpactSection = () => {
     <SectionContainer>
       <Wrapper>
         <SectionTitle
-          pillText="Functional Outcomes"
+          pillText="Proven Results That Matter"
           title="Real Impact Across Every Dimension Of Revenue<br/>Cycle Performance"
           maxWidth={800}
         />

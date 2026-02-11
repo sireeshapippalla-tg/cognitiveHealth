@@ -23,6 +23,7 @@ export const Inner = styled(Box)({
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "Inter",
   fontSize: "28px",
   fontWeight: 600,
   textAlign: "center",
@@ -40,6 +41,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
+  fontFamily: "Inter",
   textAlign: "center",
   fontSize: "15px",
   color: "var(--color-text-light)",

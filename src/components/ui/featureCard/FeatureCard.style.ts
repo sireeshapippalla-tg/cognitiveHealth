@@ -91,7 +91,7 @@ export const IconBox = styled(Box)({
 export const Title = styled(Typography)({
   fontWeight: 600,
   fontSize: "20px",
-  color: "#0E0E0E",
+  color: "var(--color-text-dark)",
   lineHeight: '150%',
   textAlign: "left",
   flex: 1,
@@ -103,7 +103,7 @@ export const Title = styled(Typography)({
 export const Description = styled(Typography)({
   fontSize: "16px",
   lineHeight: 1.6,
-  color: " #2F2F2F",
+  color: "var(--color-text-light)",
   marginBottom: "12px",
 });
 

@@ -19,7 +19,7 @@ export const Inner = styled(Box)({
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "28px",
   fontWeight: 700,
-  color: "#111827",
+  color: "var(--color-text-dark)",
   marginBottom: "8px",
 
   [theme.breakpoints.down("md")]: {
@@ -29,34 +29,38 @@ export const Title = styled(Typography)(({ theme }) => ({
 
 export const Subtitle = styled(Typography)({
   fontSize: "15px",
-  color: "#6b7280",
+  color: "var(--color-text-light)",
   marginBottom: "48px",
 });
 
 /* STAT CARD */
 export const StatCard = styled(Box)({
-  backgroundColor: "#fff7ed",
+  backgroundColor: "#FFF7F2",
   borderRadius: "16px",
+  border: "1px solid #ECECEC",
   padding: "28px",
   textAlign: "center",
   height: "100%",
 });
 
 export const StatValue = styled(Typography)({
-  fontSize: "22px",
-  fontWeight: 700,
-  color: "#f97316",
+  fontFamily: "Inter",
+  fontSize: "32px",
+  fontWeight: 600,
+  color: "var(--color-primary)",
   marginBottom: "6px",
 });
 
 export const StatTitle = styled(Typography)({
-  fontSize: "14px",
+  fontFamily: "Inter",
+  fontSize: "20px",
   fontWeight: 600,
-  color: "#111827",
+  color: "var(--color-text-dark)",
   marginBottom: "4px",
 });
 
 export const StatDescription = styled(Typography)({
-  fontSize: "12px",
-  color: "#6b7280",
+  fontFamily: "Inter",
+  fontSize: "14px",
+  color: "var(--color-text-light)",
 });
