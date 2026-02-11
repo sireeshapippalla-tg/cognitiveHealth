@@ -20,7 +20,7 @@ const HeroSection = () => {
   return (
     <>
       <SplitSection
-        title={
+        eyebrow={
           <>
             Transform Your Revenue Cycle with{" "}
             <Highlight>Autonomous AI Agents</Highlight>

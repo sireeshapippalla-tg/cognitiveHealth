@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <>
       <SplitSection
-        title="iCAN ONE"
-        description="Super Charge your revenue cycle with AI Agents"
+        eyebrow="iCAN ONE"
+        title="Super Charge your revenue cycle with AI Agents"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}
         primaryAction={{ label: "Request a Demo" }}

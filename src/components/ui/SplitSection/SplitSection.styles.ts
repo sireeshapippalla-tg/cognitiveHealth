@@ -47,17 +47,19 @@ export const Content = styled(Box)(({ theme }) => ({
   },
 }));
 
+
 export const Eyebrow = styled(Typography)({
-  fontSize: "14px",
-  fontWeight: 700,
-  color: "#111827",
-  marginBottom: "12px",
+  fontSize: "40px",
+  fontWeight: 600,
+  color: "#0E0E0E",
+  marginBottom: "20px",
+  lineHeight: "50px",
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "44px",
+  fontSize: "23px",
   fontWeight: 600,
-  lineHeight: "60px",
+  lineHeight: "32px",
   color: "background: #0E0E0E",
   marginBottom: "16px",
 
@@ -67,7 +69,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Description = styled(Typography)({
-  fontSize: "20px",
+  fontSize: "18px",
   lineHeight: 1.6,
   color: " #2F2F2F",
   marginBottom: "32px",

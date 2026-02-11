@@ -20,7 +20,7 @@ interface Action {
 
 interface SplitSectionProps {
   eyebrow?: React.ReactNode;
-  title: React.ReactNode;
+  title?: React.ReactNode;
   description?: string;
   image: string;
   reverse?: boolean;
