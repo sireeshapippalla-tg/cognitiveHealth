@@ -1,6 +1,9 @@
 import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+interface OutlineButtonProps {
+  showBorder?: boolean;
+}
 /* Shared base button */
 export const BaseButton = styled(Button)({
   borderRadius: "999px",
@@ -24,10 +27,15 @@ export const PrimaryButton = styled(BaseButton)({
 });
 
 /* Outline button */
-export const OutlineButton = styled(BaseButton)({
+export const OutlineButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== "showBorder",
+})<OutlineButtonProps>(({ showBorder }) => ({
   color: "#2F2F2F",
-  border: "1px solid #2F2F2F",
-
+  border: showBorder ? "1px solid #2F2F2F" : "none",
+  borderRadius: "999px",
+  padding: "10px 20px",
+  textTransform: "none",
+  fontWeight: 600,
   "&:hover": {
     backgroundColor: "rgba(249, 115, 22, 0.08)",
   },
@@ -35,4 +43,4 @@ export const OutlineButton = styled(BaseButton)({
   "& .MuiButton-startIcon, & .MuiButton-endIcon": {
     color: "#2F2F2F",
   },
-});
+}));

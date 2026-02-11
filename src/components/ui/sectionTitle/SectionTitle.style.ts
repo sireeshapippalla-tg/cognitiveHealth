@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 
 interface WrapperProps {
   align: "center" | "left";
+  marginBottom?:number
 }
 
 interface SubtitleProps {
@@ -13,12 +14,13 @@ interface TitleProps {
   textcolor?: string;
   highlightcolor?: string;
 }
-export const Wrapper = styled(Box)<WrapperProps>(({ align }) => ({
+export const Wrapper = styled(Box)<WrapperProps>(({ align,marginBottom }) => ({
   display: "flex",
   flexDirection: "column",
   width: "100%",
   textAlign: align,
   alignItems: align === "center" ? "center" : "flex-start",
+  marginBottom: marginBottom || 0,
 }));
 
 export const Pill = styled(Box)({

@@ -42,7 +42,7 @@ const FeatureSection = ({
 
         <Grid container spacing={4}>
           {items.map((item, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: mdSize }} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: mdSize }} key={index} >
               {/* Reusing your FeatureCard */}
               <FeatureCard
                 icon={item.icon}

@@ -7,11 +7,13 @@ import {
 
 interface SectionTitleProps {
   pillText?: string;
+  pillIcon?: string; 
   title: string;
   subtitle?: React.ReactNode
   align?: "center" | "left";
   maxWidth?: number;
   textColor?:string;
+  marginBottom?:number;
 }
 
 export const SectionTitle = ({
@@ -20,10 +22,17 @@ export const SectionTitle = ({
   subtitle,
   align = "center",
   maxWidth = 700,
-  textColor
+   pillIcon,
+  textColor,
+  marginBottom
 }: SectionTitleProps) => (
-  <Wrapper align={align}>
-    {pillText && <Pill>{pillText}</Pill>}
+  <Wrapper align={align} marginBottom={marginBottom}>
+   {pillText && (
+      <Pill>
+        {pillIcon && <img src={pillIcon} alt="" style={{ marginRight: 8, marginBottom: -4 }} />}
+        {pillText}
+      </Pill>
+    )}
 
     <Title
       variant="h2"
