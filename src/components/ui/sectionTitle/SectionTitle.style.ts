@@ -7,7 +7,7 @@ interface WrapperProps {
 
 interface SubtitleProps {
   maxWidth: number;
-  textColor?:string
+  textColor?: string;
 }
 interface TitleProps {
   textcolor?: string;
@@ -38,10 +38,10 @@ export const Title = styled(Typography, {
   shouldForwardProp: (prop) =>
     prop !== "textcolor" && prop !== "highlightcolor",
 })<TitleProps>(({ theme, textcolor, highlightcolor }) => ({
-   fontFamily: "Inter",
+  fontFamily: "Inter",
   fontWeight: 600,
   color: textcolor || "var(--color-text-dark)",
-  lineHeight: '48px',
+  lineHeight: "48px",
   fontSize: "32px",
   maxWidth: "900px",
   marginBottom: "16px",
@@ -55,30 +55,14 @@ export const Title = styled(Typography, {
   },
 }));
 
-
-// export const Title = styled(Typography)(({ theme }) => ({
-//   fontFamily: "Inter",
-//   fontWeight: 600,
-//   color: "var(--color-text-dark)",
-//   lineHeight: '48px',
-//   fontSize: "32px",
-//   maxWidth: "900px",
-//   marginBottom: "16px",
-
-//   "& span": {
-//     color: "var(--color-primary)",
-//   },
-
-//   [theme.breakpoints.down("md")]: {
-//     fontSize: "26px",
-//   },
-// }));
-
-export const Subtitle = styled(Typography)<SubtitleProps>(({ maxWidth , textColor}) => ({
-  fontFamily: "Inter",
-  fontWeight: 400,
-  fontSize: "20px",
-  lineHeight: '150%',
-  color: textColor || "var(--color-text-light)",
-  maxWidth,
-}));
+export const Subtitle = styled(Typography)<SubtitleProps>(
+  ({ maxWidth, textColor }) => ({
+    fontFamily: "Inter",
+    fontWeight: 400,
+    fontSize: "19px",
+    lineHeight: "150%",
+    color: textColor || "var(--color-text-light)",
+    maxWidth,
+    textAlign: "center",
+  }),
+);

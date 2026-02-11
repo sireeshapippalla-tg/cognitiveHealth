@@ -8,7 +8,7 @@ import {
 interface SectionTitleProps {
   pillText?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode
   align?: "center" | "left";
   maxWidth?: number;
   textColor?:string;

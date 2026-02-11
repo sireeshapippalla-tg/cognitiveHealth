@@ -7,6 +7,9 @@ interface CardProps {
 interface HeaderProps {
   direction?: "row" | "column";
 }
+interface TitleProps {
+  direction?: "row" | "column";
+}
 // export const Card = styled(Box)({
 //   backgroundColor: "#FFF7F2",
 //   borderRadius: "20px",
@@ -82,13 +85,9 @@ export const IconBox = styled(Box)({
   },
 });
 
-// export const Title = styled(Typography)({
-//   fontFamily: "Inter",
-//   fontWeight: 600,
-//   fontSize: "20px",
-//   color: "#0E151B",
-// });
-export const Title = styled(Typography)({
+export const Title = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "direction",
+})<TitleProps>(({ direction = "column" }) => ({
   fontWeight: 600,
   fontSize: "18px",
   color: "#0E151B",
@@ -97,8 +96,8 @@ export const Title = styled(Typography)({
   flex: 1,
   wordBreak: "break-word",
   minWidth: 0,
-  margin: "auto",
-});
+  margin: direction === "row" ? "auto" : "0",
+}));
 
 export const Description = styled(Typography)({
   fontSize: "16px",

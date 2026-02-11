@@ -38,12 +38,11 @@ const teamData: ExpandableItem[] = [
 
 const TeamSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer  maxWidth={false}>
       <HeaderTitle variant="h4">Our Team</HeaderTitle>
 
       <HeaderSubtitle>
-        Our experienced team of professionals from the healthcare industry is
-        committed to delivering results for our customers.
+        Our experienced team of professionals from the healthcare industry is committed to delivering results for our customers.
       </HeaderSubtitle>
 
       <GridWrapper>

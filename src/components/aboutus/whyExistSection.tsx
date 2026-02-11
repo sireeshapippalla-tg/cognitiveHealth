@@ -34,12 +34,15 @@ const features = [
 
 const WhyWeExistSection = () => {
   return (
-    <FeatureSection
-      title="Why We Exist"
-      subtitle="Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points."
-      background="#f3f4f6"   // light grey like screenshot
-      items={features}
-    />
+    <div style={{ padding: "60px" }}>
+      <FeatureSection
+        // align="left"
+        title="Why We Exist"
+        subtitle="Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points."
+        background=" #F9FAFB"
+        items={features}
+      />
+    </div>
   );
 };
 
