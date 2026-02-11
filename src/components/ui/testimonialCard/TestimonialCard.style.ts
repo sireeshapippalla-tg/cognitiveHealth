@@ -49,6 +49,17 @@ export const CardWrapper = styled(Box)({
   height: "100%",
   display: "flex",
   flexDirection: "column",
+  transition: "all 0.3s ease-in-out",
+
+  "&:hover": {
+
+    transform: "translateY(-4px)",
+    borderColor: "transparent",
+    "& .read-more-link": {
+      color: "#E88D3E", // Orange
+ 
+    },
+  }
 });
 
 export const QuoteText = styled(Typography)({

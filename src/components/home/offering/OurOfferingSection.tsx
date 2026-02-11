@@ -1,10 +1,4 @@
 import { Grid } from "@mui/material";
-// import DescriptionIcon from "@mui/icons-material/Description"; // Placeholder icons
-// import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-// import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import SecurityIcon from "@mui/icons-material/Security";
 
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { FeatureCard } from "../../ui/featureCard/FeatureCard";
@@ -13,8 +7,8 @@ import Vector from "../../../assets/Vector.svg";
 import Frame from "../../../assets/Frame.svg";
 import Workflow from "../../../assets/Workflow.svg";
 import Eligibility from "../../../assets/Eligibility.svg";
-
-
+import Analysis from "../../../assets/Analysis.svg";
+import PreBill from "../../../assets/PreBill.svg";
 
 
 
@@ -66,12 +60,22 @@ const offerings = [
   },
   {
     title: "Contract Analytics",
-    icon: <BarChartIcon />,
+    icon: (
+  <img    src={Analysis}
+    alt="Analysis Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
   {
     title: "Enhanced Pre-bill services",
-    icon: <SecurityIcon />,
+    icon: (
+  <img    src={PreBill}
+    alt="PreBill Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
 ];
