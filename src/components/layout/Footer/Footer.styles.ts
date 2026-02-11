@@ -2,7 +2,7 @@ import { Box, Stack, Divider, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const FooterRoot = styled(Box)(({ theme }) => ({
-  backgroundColor: "#2c2c2c",
+  backgroundColor: "#2F2F2F",
   color: "#ffffff",
   padding: "72px 24px 32px",
 
@@ -51,9 +51,10 @@ export const LogoWrapper = styled(Box)({
 
 
 export const Description = styled(Typography)({
+  fontFamily: "Inter",
   fontSize: 14,
   lineHeight: 1.6,
-  color: "#cfd3d8",
+  color: "#ECECEC",
   marginBottom: 20,
 });
 
@@ -87,8 +88,10 @@ export const List = styled("ul")({
 });
 
 export const ListItem = styled("li")({
-  fontSize: 14,
-  color: "#cfd3d8",
+  fontFamily: "Inter",
+  fontSize: '14px',
+  fontWeight: 400,
+  color: "#ECECEC",
   marginBottom: 5,
   cursor: "pointer",
 
@@ -100,16 +103,19 @@ export const ListItem = styled("li")({
 /* DIVIDER */
 export const FooterDivider = styled(Divider)({
   margin: "40px 0 24px",
-  backgroundColor: "#4b4b4b",
+  // width: '1224px',
+  border: "1px solid",
+  backgroundColor: "#9F9F9F",
 });
 
 /* BOTTOM */
 export const Bottom = styled(Stack)(({ theme }) => ({
-  fontSize: 14,
+  fontFamily: "Inter",
+  fontSize: '14px',
   color: "#cfd3d8",
 
   "& a": {
-    color: "#f97316",
+    color: "#EB7724",
   },
 
   [theme.breakpoints.down("sm")]: {

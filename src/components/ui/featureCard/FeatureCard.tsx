@@ -14,7 +14,8 @@ interface FeatureCardProps {
   description?: string;
   linkText?: string;
   onClick?: () => void;
-  variant?: "default" | "pink"; 
+  variant?: "default" | "pink";
+  headerDirection?: "row" | "column";
 }
 
 export const FeatureCard = ({
@@ -24,11 +25,12 @@ export const FeatureCard = ({
   linkText,
   onClick,
   variant = "default",
+  headerDirection = "column",
 }: FeatureCardProps) => (
   <Card variant={variant} onClick={onClick}>
-    <Header>
+    <Header direction={headerDirection}>
       {icon && <IconBox>{icon}</IconBox>}
-      <Title>{title}</Title>
+      <Title direction={headerDirection}>{title}</Title>
     </Header>
 
     {description && <Description>{description}</Description>}

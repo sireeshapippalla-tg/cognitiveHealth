@@ -25,14 +25,14 @@ export const PrimaryButton = styled(BaseButton)({
 
 /* Outline button */
 export const OutlineButton = styled(BaseButton)({
-  color: "var(--color-primary)",
-  border: "1px solid var(--color-primary)",
+  color: "#2F2F2F",
+  border: "1px solid #2F2F2F",
 
   "&:hover": {
     backgroundColor: "rgba(249, 115, 22, 0.08)",
   },
 
   "& .MuiButton-startIcon, & .MuiButton-endIcon": {
-    color: "var(--color-primary)",
+    color: "#2F2F2F",
   },
 });

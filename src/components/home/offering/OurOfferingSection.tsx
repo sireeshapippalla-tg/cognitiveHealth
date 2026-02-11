@@ -1,44 +1,81 @@
 import { Grid } from "@mui/material";
-import DescriptionIcon from "@mui/icons-material/Description"; // Placeholder icons
-import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import SecurityIcon from "@mui/icons-material/Security";
 
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { FeatureCard } from "../../ui/featureCard/FeatureCard";
 import { SectionContainer, Wrapper } from "./ourOfferingSection.styles";
+import Vector from "../../../assets/Vector.svg"; 
+import Frame from "../../../assets/Frame.svg";
+import Workflow from "../../../assets/Workflow.svg";
+import Eligibility from "../../../assets/Eligibility.svg";
+import Analysis from "../../../assets/Analysis.svg";
+import PreBill from "../../../assets/PreBill.svg";
+
+
 
 const offerings = [
   {
-    title: "Patient Access and Authorization",
-    icon: <DescriptionIcon />,
+    title: "Cash Posting and Advanced Recon",
+    icon: (
+  <img
+    src={Vector}
+    alt="Vector Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
+
     link: "#",
   },
   {
-    title: "Claims Management",
-    icon: <VerifiedUserIcon />,
+    title: "Lockbox Automation",
+   icon: (
+  <img
+    src={Frame}
+    alt="Frame Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
   {
-    title: "Denial Avoidance",
-    icon: <AccountBalanceWalletIcon />,
+    title: "Eligibility Discovery ",
+   icon: (
+  <img
+    src={Eligibility}
+    alt="Eligibility Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
   {
-    title: "Eligibility Discovery",
-    icon: <MonitorHeartIcon />,
+    title: "Denials Workflow ",
+   icon: (
+  <img
+    src={Workflow}
+    alt="Workflow Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
   {
-    title: "Clinical Lifecycle",
-    icon: <BarChartIcon />,
+    title: "Contract Analytics",
+    icon: (
+  <img    src={Analysis}
+    alt="Analysis Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
   {
-    title: "Universal Payer Discovery",
-    icon: <SecurityIcon />,
+    title: "Enhanced Pre-bill services",
+    icon: (
+  <img    src={PreBill}
+    alt="PreBill Icon"
+    style={{ width: 24, height: 24 }}
+  />
+),
     link: "#",
   },
 ];
@@ -47,7 +84,7 @@ const OurOfferingSection = () => {
   return (
     <SectionContainer>
       <Wrapper>
-        <SectionTitle title="Our Offering" align="center" maxWidth={700} />
+        <SectionTitle title="Our Offering" align="center" maxWidth={700} textColor="var(--color-primary)"/>
 
         <Grid container spacing={4}>
           {offerings.map((offering, index) => (
@@ -56,7 +93,9 @@ const OurOfferingSection = () => {
                 title={offering.title}
                 icon={offering.icon}
                 onClick={() => console.log(`Clicked ${offering.title}`)}
-                linkText="Lear More"
+                linkText="Learn More"
+                variant="pink"
+                headerDirection="row"
               />
             </Grid>
           ))}

@@ -7,9 +7,12 @@ interface WrapperProps {
 
 interface SubtitleProps {
   maxWidth: number;
-  textColor?:string
+  textColor?: string;
 }
-
+interface TitleProps {
+  textcolor?: string;
+  highlightcolor?: string;
+}
 export const Wrapper = styled(Box)<WrapperProps>(({ align }) => ({
   display: "flex",
   flexDirection: "column",
@@ -19,36 +22,32 @@ export const Wrapper = styled(Box)<WrapperProps>(({ align }) => ({
 }));
 
 export const Pill = styled(Box)({
-  backgroundColor: "#2563eb",
+  backgroundColor: "#3A63D2",
+  fontFamily: "Inter",
   color: "#ffffff",
   padding: "4px 14px",
   borderRadius: "999px",
-  fontSize: "11px",
+  fontSize: "14px",
+  lineHeight: "150%",
   fontWeight: 600,
   marginBottom: "20px",
   letterSpacing: "0.3px",
 });
 
-
-
-interface TitleProps {
-  textcolor?: string;
-  highlightcolor?: string;
-}
-
 export const Title = styled(Typography, {
   shouldForwardProp: (prop) =>
     prop !== "textcolor" && prop !== "highlightcolor",
 })<TitleProps>(({ theme, textcolor, highlightcolor }) => ({
-  fontWeight: 800,
-  color: textcolor || "#111827",
-  lineHeight: 1.25,
-  fontSize: "34px",
+  fontFamily: "Inter",
+  fontWeight: 600,
+  color: textcolor || "var(--color-text-dark)",
+  lineHeight: "48px",
+  fontSize: "32px",
   maxWidth: "900px",
   marginBottom: "16px",
 
   "& span": {
-    color: highlightcolor || "#f97316",
+    color: highlightcolor || "var(--color-primary)",
   },
 
   [theme.breakpoints.down("md")]: {
@@ -56,9 +55,14 @@ export const Title = styled(Typography, {
   },
 }));
 
-export const Subtitle = styled(Typography)<SubtitleProps>(({ maxWidth,textColor }) => ({
-  fontSize: "18px",
-  lineHeight: 1.6,
-  color: textColor || "#6b7280",
-  maxWidth,
-}));
+export const Subtitle = styled(Typography)<SubtitleProps>(
+  ({ maxWidth, textColor }) => ({
+    fontFamily: "Inter",
+    fontWeight: 400,
+    fontSize: "19px",
+    lineHeight: "150%",
+    color: textColor || "var(--color-text-light)",
+    maxWidth,
+    textAlign: "center",
+  }),
+);

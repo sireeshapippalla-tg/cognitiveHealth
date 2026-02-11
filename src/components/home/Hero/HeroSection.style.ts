@@ -5,6 +5,7 @@ export const HeroInner = styled(Box)(({ theme }) => ({
   maxWidth: "1600px",
   margin: "0 auto",
   padding: "0 32px",
+  
 
   [theme.breakpoints.down("sm")]: {
     padding: "0",
@@ -46,9 +47,10 @@ export const Content = styled(Box)(({ theme }) => ({
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "Inter",
   fontSize: "44px",
-  fontWeight: 700,
-  lineHeight: 1.2,
+  fontWeight: 600,
+  lineHeight: '60px',
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
@@ -57,10 +59,13 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Highlight = styled("span")({
-  color: "#ea580c",
+  color: "#EB7724",
 });
 
 export const Subtitle = styled(Box)({
+  fontFamily: "Inter",
+  fontSize: "20px",
+  fontWeight: 400,
   marginTop: "24px",
   maxWidth: "550px",
 });
@@ -76,23 +81,25 @@ export const Actions = styled(Box)(({ theme }) => ({
 
 /* TRUST SECTION */
 export const TrustSection = styled(Box)(({ theme }) => ({
-  marginTop: "80px",
+  marginTop: "0px",
 
   [theme.breakpoints.down("md")]: {
-    marginTop: "64px",
+    // marginTop: "64px",
     textAlign: "center",
   },
 }));
 
 export const TrustTitle = styled(Box)(({ theme }) => ({
+  fontFamily: "Inter",
+  fontSize: "16px",
+  lineHeight: "24px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   gap: "16px",
   marginBottom: "32px",
-  fontSize: "14px",
-  // color: "#4b5563",
-  fontWeight: 500,
+   color: "#0E0E0E",
+  fontWeight: 400,
 
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
@@ -115,7 +122,7 @@ export const LogoGrid = styled(Box)(({ theme }) => ({
 }));
 
 export const LogoImage = styled("img")(({ theme }) => ({
-  height: "28px",
+  height: "50px",
   maxWidth: "140px",
   objectFit: "contain",
 

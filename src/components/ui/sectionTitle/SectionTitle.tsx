@@ -8,7 +8,7 @@ import {
 interface SectionTitleProps {
   pillText?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode
   align?: "center" | "left";
   maxWidth?: number;
   textColor?:string;
@@ -29,7 +29,7 @@ export const SectionTitle = ({
       variant="h2"
       dangerouslySetInnerHTML={{ __html: title }}
       textcolor={textColor}
-      sx={{ marginBottom: subtitle ? "16px" : "20px" }} // optional dynamic spacing
+      sx={{ marginBottom: subtitle ? "16px" : "20px" }} 
     />
 
     {subtitle && (

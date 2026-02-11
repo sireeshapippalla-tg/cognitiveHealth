@@ -5,7 +5,7 @@ import { SectionContainer, Wrapper } from "./ImpactSection.styles";
 
 const stats = [
   {
-    value: "93.4%",
+    value: "93.8%",
     description: "Fully Reconciled Payments - Virtually Zero Posting Errors",
   },
   {
@@ -13,7 +13,7 @@ const stats = [
     description: "Faster Turnaround Time - From 3-5 Days To Under 4 Hours",
   },
   {
-    value: "80%",
+    value: "85%",
     description: "Staff Savings - Efforts Re-Directed To Value Added Tasks",
   },
   {

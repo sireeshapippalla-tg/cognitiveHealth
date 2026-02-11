@@ -21,8 +21,7 @@ const CallToActionSection = () => {
         </CtaTitle>
 
         <CtaSubtitle>
-          Join leading healthcare organizations transforming their revenue cycle
-          with AI
+          Join leading healthcare organizations transforming their revenue cycle with AI
         </CtaSubtitle>
 
         <CtaActions direction={{ xs: "column", sm: "row" }} spacing={2}>

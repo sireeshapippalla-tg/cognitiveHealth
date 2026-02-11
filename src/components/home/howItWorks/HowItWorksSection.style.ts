@@ -8,25 +8,26 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   backgroundColor:"#f9fafb",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
-    padding: "60px 16px",
+    padding: "16px",
   },
 }));
 
 export const Wrapper = styled(Box)(({ theme }) => ({
   borderRadius: "20px",
-  padding: "64px 32px",
+  padding: "32px",
   textAlign: "center",
   maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {
-    padding: "48px 20px",
+    padding: "20px",
   },
 }));
 
 export const StepsCard = styled(Box)({
   backgroundColor: "#ffffff",
   borderRadius: "16px",
+  border: "1px solid #ECECEC",
   padding: "28px 24px",
   marginBottom: "40px",
 });
@@ -43,7 +44,7 @@ export const StepsRow = styled(Box)(({ theme }) => ({
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
-  color: "#f97316",
+  color: "#EB7724",
   display: "flex",
   alignItems: "center",
   margin: "0 12px",
