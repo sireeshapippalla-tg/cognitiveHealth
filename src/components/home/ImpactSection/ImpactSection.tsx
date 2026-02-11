@@ -5,7 +5,7 @@ import { SectionContainer, Wrapper } from "./ImpactSection.styles";
 
 const stats = [
   {
-    value: "93.4%",
+    value: "93.8%",
     description: "Fully Reconciled Payments - Virtually Zero Posting Errors",
   },
   {
@@ -13,7 +13,7 @@ const stats = [
     description: "Faster Turnaround Time - From 3-5 Days To Under 4 Hours",
   },
   {
-    value: "80%",
+    value: "85%",
     description: "Staff Savings - Efforts Re-Directed To Value Added Tasks",
   },
   {
@@ -34,7 +34,7 @@ const ImpactSection = () => {
         <Grid container spacing={3}>
           {stats.map((stat, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard value={stat.value} description={stat.description} />
+              <MetricCard value={stat.value} description={stat.description} color="#EB7724" />
             </Grid>
           ))}
         </Grid>

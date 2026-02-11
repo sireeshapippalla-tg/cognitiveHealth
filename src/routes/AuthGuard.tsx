@@ -1,6 +1,8 @@
 // import { Navigate } from 'react-router-dom';
 // import { useAppSelector } from '../app/hooks';
 
+import type { JSX } from "react";
+
 type Props = {
   children: JSX.Element;
 };

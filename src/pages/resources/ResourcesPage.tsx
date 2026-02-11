@@ -1,10 +1,17 @@
+import ResourceHero from "../../components/resources/resourceHero/ResourceHero";
+import ResourceTabs from "../../components/resources/resourceTabs/ResourceTabs";
+// import NewsletterSection from "../../components/resources/newsletter/NewsletterSection";
+import { Box } from "@mui/material";
+import CTASection from "../../components/home/CTA/CTASection";
+
 const ResourcesPage = () => {
   return (
-    <>
-      <div style={{ padding: "2rem", textAlign: "center" }}>
-        <h1>Welcome to the Resources Page</h1>
-      </div>
-    </>
+    <Box sx={{ bgcolor: "#fff", minHeight: "100vh" }}>
+      <ResourceHero />
+      <ResourceTabs />
+      {/* <NewsletterSection /> */}
+      <CTASection/>
+    </Box>
   );
 };
 

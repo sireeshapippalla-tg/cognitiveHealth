@@ -8,6 +8,8 @@ type Props = {
   path: string;
   highlight?: boolean;
   onNavigate: (path: string) => void;
+    active?: boolean;            // ✅ ADDED
+
 };
 
 export const SolutionItem = ({
@@ -16,9 +18,10 @@ export const SolutionItem = ({
   path,
   highlight,
   onNavigate,
+  active
 }: Props) => {
   const navigate = useNavigate();
-
+ const isHighlighted = highlight || active;
   return (
     <Box
       onClick={() => {
@@ -38,7 +41,7 @@ export const SolutionItem = ({
           width: 40,
           height: 40,
           borderRadius: 2,
-          backgroundColor: highlight
+          backgroundColor: isHighlighted
             ? "var(--color-primary)"
             : "#3b5bdb",
           display: "flex",
@@ -55,7 +58,7 @@ export const SolutionItem = ({
       <Box>
         <Typography
           fontWeight={600}
-          color={highlight ? "var(--color-primary)" : "#111"}
+          color={isHighlighted ? "var(--color-primary)" : "#111"}
         >
           {title}
         </Typography>

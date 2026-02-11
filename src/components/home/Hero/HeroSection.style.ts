@@ -5,6 +5,7 @@ export const HeroInner = styled(Box)(({ theme }) => ({
   maxWidth: "1600px",
   margin: "0 auto",
   padding: "0 32px",
+  
 
   [theme.breakpoints.down("sm")]: {
     padding: "0",
@@ -80,7 +81,7 @@ export const Actions = styled(Box)(({ theme }) => ({
 
 /* TRUST SECTION */
 export const TrustSection = styled(Box)(({ theme }) => ({
-  marginTop: "80px",
+  marginTop: "0px",
 
   [theme.breakpoints.down("md")]: {
     marginTop: "64px",
@@ -121,7 +122,7 @@ export const LogoGrid = styled(Box)(({ theme }) => ({
 }));
 
 export const LogoImage = styled("img")(({ theme }) => ({
-  height: "28px",
+  height: "50px",
   maxWidth: "140px",
   objectFit: "contain",
 

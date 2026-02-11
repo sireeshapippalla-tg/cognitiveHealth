@@ -15,6 +15,13 @@ export const Section = styled(Box)(({ theme }) => ({
     padding: "48px 16px",
   },
 }));
+export const Highlight = styled("span")(() => ({
+  fontWeight: 800,
+  background: "#EB7724",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+
+}));
 
 export const Grid = styled(Box, {
   shouldForwardProp: (prop) => prop !== "reverse",
@@ -48,10 +55,10 @@ export const Eyebrow = styled(Typography)({
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "36px",
-  fontWeight: 800,
-  lineHeight: 1.2,
-  color: "#111827",
+  fontSize: "44px",
+  fontWeight: 600,
+  lineHeight: "60px",
+  color: "background: #0E0E0E",
   marginBottom: "16px",
 
   [theme.breakpoints.down("md")]: {
@@ -60,10 +67,11 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Description = styled(Typography)({
-  fontSize: "16px",
+  fontSize: "20px",
   lineHeight: 1.6,
-  color: "#6b7280",
+  color: " #2F2F2F",
   marginBottom: "32px",
+  fontWeight: 400,
 });
 
 export const Actions = styled(Box)(({ theme }) => ({

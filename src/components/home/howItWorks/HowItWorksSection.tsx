@@ -1,6 +1,7 @@
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import AppButton from "../../ui/appButton/AppButton";
@@ -14,6 +15,7 @@ import {
   Wrapper,
   SectionContainer
 } from "./HowItWorksSection.style";
+
 
 const steps = [
   {
@@ -61,8 +63,8 @@ const HowItWorksSection = () => {
         </StepsCard>
 
         <ButtonsRow>
-          <AppButton variantType="primary">Request a Demo</AppButton>
-          <AppButton variantType="outline">See Platform in Action</AppButton>
+          <AppButton variantType="primary" endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>Request a Demo</AppButton>
+          <AppButton variantType="outline" endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>See Platform in Action</AppButton>
         </ButtonsRow>
       </Wrapper>
     </SectionContainer>

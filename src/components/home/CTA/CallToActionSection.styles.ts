@@ -1,4 +1,4 @@
-import { Box, colors, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 
@@ -44,7 +44,7 @@ export const CtaSubtitle = styled(Typography)({
   fontSize: "20px",
   color: "#2F2F2F",
   lineHeight: '150%',
-  maxWidth: "640px",
+  maxWidth: "740px",
   margin: "0 auto 32px",
 });
 

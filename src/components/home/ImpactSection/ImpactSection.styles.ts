@@ -1,11 +1,17 @@
 import { Box, styled } from "@mui/material";
 
-export const SectionContainer = styled(Box)(({ theme }) => ({
+interface SectionContainerProps {
+  bg?: string;
+}
+
+export const SectionContainer = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "bg",
+})<SectionContainerProps>(({ theme, bg }) => ({
   width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
-  backgroundColor: "#F9FAFB",
-  // marginTop:"40px",
+  backgroundColor: bg || "#f9fafb",
+
   [theme.breakpoints.down("md")]: {
     padding: "60px 16px",
   },

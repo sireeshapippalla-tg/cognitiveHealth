@@ -19,8 +19,8 @@ interface Action {
 }
 
 interface SplitSectionProps {
-  eyebrow?: string;
-  title: string;
+  eyebrow?: React.ReactNode;
+  title: React.ReactNode;
   description?: string;
   image: string;
   reverse?: boolean;
@@ -75,7 +75,7 @@ const SplitSection = ({
 
         {/* IMAGE */}
         <ImageWrapper>
-          <Image src={image} alt={title} />
+          <Image src={image} alt={"image"} />
         </ImageWrapper>
       </Grid>
     </Section>
