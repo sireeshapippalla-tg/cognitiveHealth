@@ -4,6 +4,7 @@ import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
 
 import FeatureSection from "../ui/featureSection/FeatureSection";
+import { Box } from "@mui/material";
 
 const features = [
   {
@@ -34,15 +35,19 @@ const features = [
 
 const WhyWeExistSection = () => {
   return (
-    <div style={{ padding: "60px" }}>
+   <Box
+      sx={{
+        px: { xs: 2, sm: 4, md: 6, lg: 8 }, // left & right padding
+        py: { xs: 4, sm: 6, md: 8 },        // top & bottom padding
+      }}
+    >
       <FeatureSection
-        // align="left"
         title="Why We Exist"
         subtitle="Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points."
-        background=" #F9FAFB"
+        background="#F9FAFB"
         items={features}
       />
-    </div>
+    </Box>
   );
 };
 

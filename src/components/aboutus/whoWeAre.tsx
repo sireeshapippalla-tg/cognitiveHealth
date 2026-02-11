@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 
 const WhoWeAreSection: React.FC = () => {
   return (
-    <Box mt={4}>
+   <Box mt={{ xs: 2, sm: 3, md: 4, lg: 6 }}>
       <SectionContainer>
         <Wrapper>
           <SectionTitle

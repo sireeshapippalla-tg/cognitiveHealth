@@ -8,19 +8,19 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   backgroundColor:"#f9fafb",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
-    padding: "60px 16px",
+    padding: "16px",
   },
 }));
 
 export const Wrapper = styled(Box)(({ theme }) => ({
   borderRadius: "20px",
-  padding: "64px 32px",
+  padding: "32px",
   textAlign: "center",
   maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {
-    padding: "48px 20px",
+    padding: "20px",
   },
 }));
 

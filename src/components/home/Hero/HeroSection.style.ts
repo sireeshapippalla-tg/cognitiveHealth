@@ -84,7 +84,7 @@ export const TrustSection = styled(Box)(({ theme }) => ({
   marginTop: "0px",
 
   [theme.breakpoints.down("md")]: {
-    marginTop: "64px",
+    // marginTop: "64px",
     textAlign: "center",
   },
 }));

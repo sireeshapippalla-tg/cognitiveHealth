@@ -9,8 +9,8 @@ import { styled, Box, Typography, Container } from "@mui/material";
 export const SectionContainer = styled(Container)(({ theme }) => ({
   width: "100%",
   backgroundColor: "var(--color-bg-lite)",
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(10),
+  paddingTop: theme.spacing(4),
+  paddingBottom: theme.spacing(14),
 }));
 export const HeaderTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
@@ -36,15 +36,23 @@ export const HeaderSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 export const SectionContainerAdvisoy = styled(Container)(({ theme }) => ({
-  paddingTop: theme.spacing(10),
-  paddingBottom: theme.spacing(10),
+  paddingTop: theme.spacing(4),
+  paddingBottom: theme.spacing(4),
 }));
 
 export const GridWrapperAdvisory = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(2),
 }));
-
-export const GridWrapper = styled(Box)(({theme}) => ({
+export const GridWrapper = styled(Box)(({ theme }) => ({
   width: "100%",
   padding: "0px 60px",
+
+  [theme.breakpoints.down("md")]: {
+    padding: "0px", // tablet & mobile
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    padding: "0px", // small mobile (optional)
+  },
 }));
+
