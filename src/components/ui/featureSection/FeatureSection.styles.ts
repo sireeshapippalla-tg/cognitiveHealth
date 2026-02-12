@@ -44,9 +44,10 @@ export const Title = styled(Typography, {
 }));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
+  fontFamily: "Inter",
   textAlign: "center",
   fontSize: "15px",
-  color: "#6b7280",
+  color: "var(--color-text-light)",
   maxWidth: "720px",
   margin: "0 auto 48px",
 

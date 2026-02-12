@@ -26,7 +26,8 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
 export const CtaWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#FFF7F2",
   borderRadius: "20px",
-  padding: "64px 32px",
+  border: "1px solid #ECECEC",
+  padding: "64px 120px",
   textAlign: "center",
   maxWidth: "1100px",
   margin: "0 auto",

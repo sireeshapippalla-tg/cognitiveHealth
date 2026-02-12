@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Box, Typography, Button } from "@mui/material";
 
 export const NewsletterWrapper = styled(Box)({
-  backgroundColor: "#fff7ed", // Light orange background
+  backgroundColor: "#FFF7F2", // Light orange background
   borderRadius: "24px",
   padding: "64px 24px",
   textAlign: "center",

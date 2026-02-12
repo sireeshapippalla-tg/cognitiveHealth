@@ -88,9 +88,9 @@ export const Title = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "direction",
 })<TitleProps>(({ direction = "column" }) => ({
   fontWeight: 600,
-  fontSize: "18px",
-  color: "#0E151B",
-  lineHeight: 1.3,
+  fontSize: "20px",
+  color: "var(--color-text-dark)",
+  lineHeight: '150%',
   textAlign: "left",
   flex: 1,
   wordBreak: "break-word",
@@ -101,7 +101,7 @@ export const Title = styled(Typography, {
 export const Description = styled(Typography)({
   fontSize: "16px",
   lineHeight: 1.6,
-  color: " #2F2F2F",
+  color: "var(--color-text-light)",
   marginBottom: "12px",
 });
 
