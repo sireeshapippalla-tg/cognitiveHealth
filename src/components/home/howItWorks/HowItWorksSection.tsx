@@ -3,7 +3,7 @@ import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
+import { useNavigate } from "react-router-dom";
 import AppButton from "../../ui/appButton/AppButton";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { ProcessStep } from "../../ui/processStep/ProcessStep";
@@ -13,9 +13,8 @@ import {
   ArrowBox,
   ButtonsRow,
   Wrapper,
-  SectionContainer
+  SectionContainer,
 } from "./HowItWorksSection.style";
-
 
 const steps = [
   {
@@ -36,6 +35,7 @@ const steps = [
 ];
 
 const HowItWorksSection = () => {
+  const navigate = useNavigate();
   return (
     <SectionContainer sx={{ backgroundColor: "#f9fafb" }}>
       <Wrapper>
@@ -63,8 +63,20 @@ const HowItWorksSection = () => {
         </StepsCard>
 
         <ButtonsRow>
-          <AppButton variantType="primary" endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>Request a Demo</AppButton>
-          <AppButton variantType="outline" showBorder={true} endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>See Platform in Action</AppButton>
+          <AppButton
+            variantType="primary"
+            endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+            onClick = {() => navigate("/Contact-us")}
+          >
+            Request a Demo
+          </AppButton>
+          <AppButton
+            variantType="outline"
+            showBorder={true}
+            endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+          >
+            See Platform in Action
+          </AppButton>
         </ButtonsRow>
       </Wrapper>
     </SectionContainer>

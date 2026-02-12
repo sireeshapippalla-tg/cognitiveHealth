@@ -134,7 +134,7 @@ const solutionLinks = [
           <LogoImage
             src={cognitiveLogo}
             alt="CognitiveHealth"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/", { replace: false })}
           />
 
           {/* ================= DESKTOP NAV ================= */}

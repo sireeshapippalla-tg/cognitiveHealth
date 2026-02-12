@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -23,6 +24,7 @@ import {
 } from "./Footer.styles";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <FooterRoot>
       <Container>
@@ -35,7 +37,12 @@ const Footer = () => {
           {/* BRAND */}
           <Brand>
             <LogoWrapper>
-              <img src={cognitiveLogo} alt="CognitiveHealth" height={55} />
+              <img
+                src={cognitiveLogo}
+                alt="CognitiveHealth"
+                height={55}
+                onClick={() => navigate("/", { replace: false })}
+              />
             </LogoWrapper>
 
             <Description>
@@ -56,11 +63,23 @@ const Footer = () => {
           <Box>
             <Heading>Solutions</Heading>
             <List>
-              <ListItem>Cash Posting</ListItem>
-              <ListItem>Lockbox Automation</ListItem>
-              <ListItem>Eligibility Discovery</ListItem>
-              <ListItem>Denials Workflow</ListItem>
-              <ListItem>Contract Analytics</ListItem>
+              <ListItem onClick={() => navigate("/solutions/payment-posting")}>
+                Cash Posting
+              </ListItem>
+              <ListItem onClick={() => navigate("/solutions/lockbox")}>
+                Lockbox Automation
+              </ListItem>
+              <ListItem onClick={() => navigate("/solutions/eligibility")}>
+                Eligibility Discovery
+              </ListItem>
+              <ListItem onClick={() => navigate("/solutions/denials")}>
+                Denials Workflow
+              </ListItem>
+              <ListItem
+                onClick={() => navigate("/solutions/contract-analysis")}
+              >
+                Contract Analytics
+              </ListItem>
             </List>
           </Box>
 
@@ -68,10 +87,18 @@ const Footer = () => {
           <Box>
             <Heading>Company</Heading>
             <List>
-              <ListItem>Leadership</ListItem>
-              <ListItem>Customers</ListItem>
-              <ListItem>Resources</ListItem>
-              <ListItem>Blog</ListItem>
+              <ListItem onClick={() => navigate("/about-us#team")}>
+                Leadership
+              </ListItem>
+              <ListItem onClick={() => navigate("/#customers")}>
+                Customers
+              </ListItem>
+              <ListItem onClick={() => navigate("/resources")}>
+                Resources
+              </ListItem>
+              <ListItem onClick={() => navigate("/resources#blog")}>
+                Blog
+              </ListItem>
               <ListItem>Careers</ListItem>
             </List>
           </Box>
@@ -80,7 +107,9 @@ const Footer = () => {
           <Box>
             <Heading>Contact</Heading>
             <List>
-              <ListItem>Request Demo</ListItem>
+              <ListItem onClick={() => navigate("/contact-us")}>
+                Request Demo
+              </ListItem>
               <ListItem>Support</ListItem>
               <ListItem>Privacy Policy</ListItem>
               <ListItem>Terms of Service</ListItem>
