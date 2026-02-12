@@ -20,13 +20,13 @@ export const IconBox = styled(Box)({
 });
 
 export const StepTitle = styled(Typography)({
-  fontSize: "14px",
+  fontSize: "16px",
   fontWeight: 700,
   color: "#111827",
   marginBottom: "6px",
 });
 
 export const StepDescription = styled(Typography)({
-  fontSize: "12px",
+  fontSize: "14px",
   color: "#6b7280",
 });

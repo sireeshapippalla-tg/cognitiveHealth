@@ -14,7 +14,9 @@ const capabilities: ExpandableItem[] = [
     id: 1,
     title: "Low Dollar Denial Prioritization Engine",
     description: `This intelligent worklist system ranks denials based on claim value, appeal success probability, filing deadlines, and resolution effort. Historical data and machine learning predict which denials are most likely to result in successful appeals, ensuring focus on the highest-impact opportunities. Automated escalation ensures urgent or high-value denials receive immediate expert attention.`,
-    icon: <img src={paymentImage5} alt="Low Dollar Denial Prioritization Engine" />,
+    icon: (
+      <img src={paymentImage5} alt="Low Dollar Denial Prioritization Engine" />
+    ),
     defaultOpen: true,
   },
   {
@@ -33,20 +35,30 @@ const capabilities: ExpandableItem[] = [
     id: 4,
     title: "Medical Records Request Orchestrator",
     description: `This automated workflow identifies when denied claims require medical record submission and manages the full lifecycle from retrieval through delivery. It integrates with EHR systems, compiles documentation per payer specifications, submits through secure channels, and tracks status with automated follow-ups for additional information.`,
-    icon: <img src={paymentImage7} alt="Medical Records Request Orchestrator" />,
+    icon: (
+      <img src={paymentImage7} alt="Medical Records Request Orchestrator" />
+    ),
   },
   {
     id: 5,
     title: "AI-Powered Resolution Recommendation Assistant",
     description: `This intelligent advisory system analyzes complex denials and recommends the most effective resolution approach using historical outcomes, payer behavior, denial codes, and contract terms. It also flags cases needing expert consultation or legal review, helping teams allocate resources effectively and improve appeal success rates.`,
-    icon: <img src={paymentImage8} alt="AI-Powered Resolution Recommendation Assistant" />,
+    icon: (
+      <img
+        src={paymentImage8}
+        alt="AI-Powered Resolution Recommendation Assistant"
+      />
+    ),
   },
 ];
 
-
 const CoreCapabilitiesSection = () => {
   return (
-    <Container sx={{ p: "40px" }}>
+    <Container
+      sx={{
+        p: { xs: 0, sm: 0, md: "40px" },
+      }}
+    >
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"

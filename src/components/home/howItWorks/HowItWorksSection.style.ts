@@ -25,9 +25,9 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const StepsCard = styled(Box)({
-  backgroundColor: "#ffffff",
+  // backgroundColor: "#ffffff",
   borderRadius: "16px",
-  border: "1px solid #ECECEC",
+  // border: "1px solid #ECECEC",
   padding: "28px 24px",
   marginBottom: "40px",
 });

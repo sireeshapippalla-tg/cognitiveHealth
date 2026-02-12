@@ -14,7 +14,9 @@ const capabilities: ExpandableItem[] = [
     id: 1,
     title: "Real-Time Coverage Verification Portal",
     description: `This instant verification system connects directly to insurance company databases and clearinghouses to provide immediate eligibility confirmation at the point of service. It retrieves benefit details such as active coverage dates, copayment amounts, deductible status, and coverage limitations within seconds. Results are displayed in an easy-to-read format so registration staff can collect correct payments and identify coverage issues before services are rendered.`,
-    icon: <img src={paymentImage5} alt="Real-Time Coverage Verification Portal" />,
+    icon: (
+      <img src={paymentImage5} alt="Real-Time Coverage Verification Portal" />
+    ),
     defaultOpen: true,
   },
   {
@@ -33,20 +35,27 @@ const capabilities: ExpandableItem[] = [
     id: 4,
     title: "Authorization Tracking and Alert System",
     description: `This proactive monitoring solution maintains a comprehensive database of prior authorization requirements by payer, service type, and procedure code. It flags services needing authorization during scheduling, tracks request status, and sends automated alerts when authorizations are nearing expiration—ensuring continuous coverage and preventing service disruptions.`,
-    icon: <img src={paymentImage7} alt="Authorization Tracking and Alert System" />,
+    icon: (
+      <img src={paymentImage7} alt="Authorization Tracking and Alert System" />
+    ),
   },
   {
     id: 5,
     title: "Scheduled Re-Verification Automation",
     description: `This automated system re-verifies patient eligibility at configurable intervals before scheduled appointments to detect coverage changes between scheduling and service delivery. It compares current eligibility with prior verification data and alerts staff to changes in coverage, benefits, or patient responsibility—preventing check-in delays and reducing denials caused by coverage termination or updates.`,
-    icon: <img src={paymentImage8} alt="Scheduled Re-Verification Automation" />,
+    icon: (
+      <img src={paymentImage8} alt="Scheduled Re-Verification Automation" />
+    ),
   },
 ];
 
-
 const CoreCapabilitiesSection = () => {
   return (
-    <Container sx={{ p: "40px" }}>
+    <Container
+      sx={{
+        p: { xs: 0, sm: 0, md: "40px" },
+      }}
+    >
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"

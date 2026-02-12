@@ -45,7 +45,11 @@ const capabilities: ExpandableItem[] = [
 
 const CoreCapabilitiesSection = () => {
   return (
-    <Container sx={{ p: "40px" }}>
+    <Container
+      sx={{
+        p: { xs: 0, sm: 0, md: "40px" },
+      }}
+    >
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"

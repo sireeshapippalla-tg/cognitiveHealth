@@ -16,9 +16,12 @@ export const MeasureWrapper = styled(Box)(() => ({
 
 
 
-export const HowItSectionContainer = styled(Box)(() => ({
+export const HowItSectionContainer = styled(Box)(({theme}) => ({
   background: "#f9fafb",
   padding: "80px 0",
+    [theme.breakpoints.down("md")]: {
+    padding: "48px 16px",
+  },
 }));
 
 export const HowItWrapper = styled(Box)(() => ({
