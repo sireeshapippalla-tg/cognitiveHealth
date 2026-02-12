@@ -60,7 +60,7 @@ const CoreCapabilitiesSection = () => {
     <div>
       <Wrapper>
         <SectionTitle
-          title="Core Capabilities1"
+          title="Core Capabilities"
           subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />

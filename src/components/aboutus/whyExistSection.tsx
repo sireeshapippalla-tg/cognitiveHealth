@@ -5,6 +5,20 @@ import containerThreeImg from "../../assets/aboutUs/Container (3).svg";
 
 import FeatureSection from "../ui/featureSection/FeatureSection";
 import { Box } from "@mui/material";
+import { styled } from "@mui/system";
+const HowItWrapper = styled(Box)(({ theme }) => ({
+  // maxWidth: 1200,
+  margin: "0 auto",
+  padding: "16px 80px",
+  textAlign: "center",
+  marginTop: "30px",
+  marginBottom: "30px",
+  [theme.breakpoints.down("md")]: {
+    marginTop: "0px",
+    marginBottom: "0px",
+    padding: 0,
+  },
+}));
 const features = [
   {
     icon: <img src={containerImg} alt="Operational Complexity" />,
@@ -37,12 +51,13 @@ const features = [
 
 const WhyWeExistSection = () => {
   return (
-    <Box
-      sx={{
-        px: { xs: 2, sm: 4, md: 6, lg: 8 }, // left & right padding
-        py: { xs: 4, sm: 6, md: 8 },
-      }}
-    >
+    // <Box
+    //   sx={{
+    //     px: { xs: 2, sm: 4, md: 6, lg: 8 },
+    //     py: { xs: 4, sm: 6, md: 8 },
+    //   }}
+    // >
+    <HowItWrapper>
       <FeatureSection
         title="Why We Exist"
         subtitle="Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points:"
@@ -50,7 +65,7 @@ const WhyWeExistSection = () => {
         items={features}
         borderRadius="18px"
       />
-    </Box>
+    </HowItWrapper>
   );
 };
 

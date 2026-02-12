@@ -2,19 +2,22 @@ import { styled, Box } from "@mui/material";
 
 export const Wrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(10),
-    [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("md")]: {
     padding: " 20px",
   },
 }));
-export const SectionContainer = styled(Box)(() => ({
+export const SectionContainer = styled(Box)(({ theme }) => ({
   background: "#ea580c",
-  padding: "80px 0",
+  padding: "30px 80px",
+  [theme.breakpoints.down("md")]: {
+    padding: "20px",
+  },
 }));
 
 export const MeasureWrapper = styled(Box)(() => ({
-  maxWidth: 1200,
+  // maxWidth: 1200,
   margin: "0 auto",
-  padding: "0 16px",
+  padding: "40 80px",
 }));
 
 export const HowItSectionContainer = styled(Box)(({ theme }) => ({
@@ -25,13 +28,17 @@ export const HowItSectionContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const HowItWrapper = styled(Box)(() => ({
-  maxWidth: 1200,
-  margin: "0 auto",
-  padding: "0 16px",
-  textAlign: "center",
-}));
 
+export const HowItWrapper = styled(Box)(({theme}) => ({
+  // maxWidth: 1200,
+  margin: "0 auto",
+  padding: "16px",
+  textAlign: "center",
+  marginTop:"30px",
+  [theme.breakpoints.down("md")]: {
+    marginTop:"0px",
+  },
+}));
 export const StepsCard = styled(Box)(() => ({
   marginTop: 40,
 }));

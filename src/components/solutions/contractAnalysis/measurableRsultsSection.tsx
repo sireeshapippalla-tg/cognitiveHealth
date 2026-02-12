@@ -2,10 +2,10 @@ import { Grid } from "@mui/material";
 import { MetricCard } from "../../ui/metricCard/MetricCard";
 import { MeasureWrapper, SectionContainer } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import paymentImage9 from '../../../assets/solutions/paymentImage9.png';
-import paymentImage10 from '../../../assets/solutions/paymentImage10.svg';
-import paymentImage11 from '../../../assets/solutions/paymentImage11.svg';
-import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
+import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage10 from "../../../assets/solutions/paymentImage10.svg";
+import paymentImage11 from "../../../assets/solutions/paymentImage11.svg";
+import paymentImage12 from "../../../assets/solutions/paymentImage12.svg";
 
 const stats = [
   {
@@ -39,9 +39,9 @@ const MeasurableResultsSection = () => {
     <SectionContainer>
       <MeasureWrapper>
         <SectionTitle
-        pillIcon={paymentImage9}
+          pillIcon={paymentImage9}
           pillText="Organizations see ROI within the first 6 months of deployment"
-          title="Measurable Results"
+          title="Measurable Results1"
           subtitle="Real outcomes from healthcare organizations using the iCAN™ Payment Posting solution"
           textColor="white"
         />

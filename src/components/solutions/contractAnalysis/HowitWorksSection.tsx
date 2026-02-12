@@ -1,5 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { HowItSectionContainer, HowItWrapper } from "./solutions.style";
+import {  HowItWrapper } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { ProcessStep } from "../../ui/processStep/ProcessStep";
 import paymentImage13 from ".././../../assets/solutions/paymentImage13.svg";
@@ -34,7 +34,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <HowItSectionContainer>
+    // <HowItSectionContainer>
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
@@ -62,7 +62,7 @@ const HowItWorksSection = () => {
           </StepsRow>
         </StepsCard>
       </HowItWrapper>
-    </HowItSectionContainer>
+    // {/* </HowItSectionContainer> */}
   );
 };
 
