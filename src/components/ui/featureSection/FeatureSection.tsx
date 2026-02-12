@@ -19,6 +19,7 @@ interface FeatureSectionProps {
   cardVariant?: "default" | "pink";
   columns?: 2 | 3 | 4;
   align?: "center" | "left";
+  borderRadius?:string
 }
 
 const FeatureSection = ({
@@ -30,11 +31,12 @@ const FeatureSection = ({
   cardVariant = "default",
   columns = 2,
   align = "center",
+  borderRadius="0px"
 }: FeatureSectionProps) => {
-  const mdSize = 12 / columns; // 12-grid system
+  const mdSize = 12 / columns;
 
   return (
-    <Section background={background}>
+    <Section background={background} borderRadius={borderRadius}>
       <Inner>
         <Title align={align} dangerouslySetInnerHTML={{ __html: title }} />
 
@@ -42,7 +44,7 @@ const FeatureSection = ({
 
         <Grid container spacing={4}>
           {items.map((item, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: mdSize }} key={index} >
+            <Grid size={{ xs: 12, sm: 6, md: mdSize }} key={index}>
               {/* Reusing your FeatureCard */}
               <FeatureCard
                 icon={item.icon}

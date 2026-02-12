@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
@@ -14,7 +14,9 @@ const capabilities: ExpandableItem[] = [
     id: 1,
     title: "Contract Intelligence Research Assistant",
     description: `This AI-powered analysis tool uses small language models to extract and organize key payment terms from complex insurance contracts. The assistant can quickly locate specific reimbursement rates, payment methodologies, covered services, and special provisions across hundreds of pages of contract language. Users can query the system with natural language questions like "What's the reimbursement rate for CPT 99213 under the Blue Cross contract?" and receive immediate, accurate responses with source references. `,
-    icon: <img src={paymentImage5} alt="Contract Intelligence Research Assistant" />,
+    icon: (
+      <img src={paymentImage5} alt="Contract Intelligence Research Assistant" />
+    ),
     defaultOpen: true,
   },
   {
@@ -33,19 +35,23 @@ const capabilities: ExpandableItem[] = [
     id: 4,
     title: "Charge Master Synchronization Engine ",
     description: `This alignment tool ensures that the organization's charge master remains current with contracted rates across all payers and identifies opportunities for strategic pricing adjustments. The engine compares internal pricing against contracted allowables and market rates, flagging services that may be under-priced or over-priced relative to reimbursement levels. The system provides recommendations for charge master updates based on contract terms, cost analysis, and strategic pricing objectives.`,
-    icon: <img src={paymentImage7} alt="Charge Master Synchronization Engine" />,
+    icon: (
+      <img src={paymentImage7} alt="Charge Master Synchronization Engine" />
+    ),
   },
   {
     id: 5,
     title: "Contract Performance Analytics Dashboard ",
     description: `This comprehensive reporting platform tracks financial performance metrics by payer contract, providing visibility into collection rates, payment timeliness, denial patterns, and overall contract profitability. The dashboard compares actual performance against contract expectations and historical trends, helping revenue cycle leaders identify underperforming contracts that may require operational improvements or renegotiation. Interactive reports allow users to drill down into specific performance issues and identify actionable improvement opportunities.`,
-    icon: <img src={paymentImage8} alt="Contract Performance Analytics Dashboard" />,
+    icon: (
+      <img src={paymentImage8} alt="Contract Performance Analytics Dashboard" />
+    ),
   },
 ];
 
 const CoreCapabilitiesSection = () => {
   return (
-    <Container sx={{ p: "40px" }}>
+    <div>
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
@@ -61,7 +67,7 @@ const CoreCapabilitiesSection = () => {
           ))}
         </Grid>
       </Wrapper>
-    </Container>
+    </div>
   );
 };
 

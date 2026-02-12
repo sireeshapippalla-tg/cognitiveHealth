@@ -1,21 +1,22 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {
-  HowItSectionContainer,
-  HowItWrapper,
-} from "./solutions.style";
+import { HowItSectionContainer, HowItWrapper } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { ProcessStep } from "../../ui/processStep/ProcessStep";
-import paymentImage13 from '.././../../assets/solutions/paymentImage13.svg';
-import paymentImage14 from '.././../../assets/solutions/paymentImage14.svg'
-import paymentImage15 from '.././../../assets/solutions/paymentImage15.svg'
-import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
+import paymentImage13 from ".././../../assets/solutions/paymentImage13.svg";
+import paymentImage14 from ".././../../assets/solutions/paymentImage14.svg";
+import paymentImage15 from ".././../../assets/solutions/paymentImage15.svg";
+import {
+  ArrowBox,
+  StepsCard,
+  StepsRow,
+} from "../../home/howItWorks/HowItWorksSection.style";
 
 const steps = [
   {
     title: "Payment Intake",
     description:
       "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
-     icon: <img src={paymentImage13} alt="Payment Intake" />,
+    icon: <img src={paymentImage13} alt="Payment Intake" />,
   },
   {
     title: "Automated Matching & Handling",
@@ -40,7 +41,7 @@ const HowItWorksSection = () => {
           subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
-    <StepsCard sx={{marginTop:4}}>
+        <StepsCard sx={{ marginTop: 4 }}>
           <StepsRow>
             {steps.map((step, index) => (
               <>

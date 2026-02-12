@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const Section = styled(Box)(({ theme }) => ({
   width: "100%",
-  padding: "64px 24px",
+  padding: "30px 60px",
   textAlign: "center",
 
   [theme.breakpoints.down("md")]: {
@@ -12,7 +12,7 @@ export const Section = styled(Box)(({ theme }) => ({
 }));
 
 export const Inner = styled(Box)({
-  maxWidth: "1200px",
+  // maxWidth: "1200px",
   margin: "0 auto",
 });
 

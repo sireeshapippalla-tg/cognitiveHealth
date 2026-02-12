@@ -40,7 +40,7 @@ const WhyWeExistSection = () => {
     <Box
       sx={{
         px: { xs: 2, sm: 4, md: 6, lg: 8 }, // left & right padding
-        py: { xs: 4, sm: 6, md: 8 }, // top & bottom padding
+        py: { xs: 4, sm: 6, md: 8 },
       }}
     >
       <FeatureSection
@@ -48,6 +48,7 @@ const WhyWeExistSection = () => {
         subtitle="Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points:"
         background="#F9FAFB"
         items={features}
+        borderRadius="18px"
       />
     </Box>
   );

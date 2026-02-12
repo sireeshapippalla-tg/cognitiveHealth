@@ -6,7 +6,7 @@ const SolutionsHeroSection = () => {
   const navigate = useNavigate();
   return (
     <SplitSection
-      title="Payment Posting & Advanced Reconciliation"
+      eyebrow="Payment Posting & Advanced Reconciliation"
       description="Super Charge your revenue cycle with AI Agents"
       image={paymentPostingImage}
        primaryAction={{

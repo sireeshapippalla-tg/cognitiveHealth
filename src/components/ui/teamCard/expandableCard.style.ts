@@ -55,7 +55,7 @@ export const ExpandButton = styled(IconButton)(() => ({
 
 /* Description */
 export const DescriptionText = styled(Typography)(({ theme }) => ({
-  fontSize: 14,
+  fontSize: 16,
   color: theme.palette.text.secondary,
   lineHeight: 1.7,
 }));

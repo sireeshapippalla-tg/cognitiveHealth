@@ -9,7 +9,7 @@ const Hero = () => {
     <>
       <SplitSection
         eyebrow="iCAN ONE"
-        title="Super Charge your revenue cycle with AI Agents"
+        description="Super Charge your revenue cycle with AI Agents"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}
         primaryAction={{

@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
@@ -57,7 +57,7 @@ const capabilities: ExpandableItem[] = [
 
 const CoreCapabilitiesSection = () => {
   return (
-    <Container sx={{ p: "40px" }}>
+    <div>
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
@@ -73,7 +73,7 @@ const CoreCapabilitiesSection = () => {
           ))}
         </Grid>
       </Wrapper>
-    </Container>
+    </div>
   );
 };
 

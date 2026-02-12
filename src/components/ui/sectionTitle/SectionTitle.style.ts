@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 interface WrapperProps {
   align: "center" | "left";
-  marginBottom?:number
+  marginBottom?: number;
 }
 
 interface SubtitleProps {
@@ -14,7 +14,10 @@ interface TitleProps {
   textcolor?: string;
   highlightcolor?: string;
 }
-export const Wrapper = styled(Box)<WrapperProps>(({ align,marginBottom }) => ({
+interface PillProps {
+  variant?: "primary" | "orange";
+}
+export const Wrapper = styled(Box)<WrapperProps>(({ align, marginBottom }) => ({
   display: "flex",
   flexDirection: "column",
   width: "100%",
@@ -23,8 +26,11 @@ export const Wrapper = styled(Box)<WrapperProps>(({ align,marginBottom }) => ({
   marginBottom: marginBottom || 0,
 }));
 
-export const Pill = styled(Box)({
-  backgroundColor: "#3A63D2",
+export const Pill = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "variant",
+})<PillProps>(({ variant = "primary" }) => ({
+  backgroundColor: variant === "orange" ? "#F97316" : "#3A63D2",
+
   fontFamily: "Inter",
   color: "#ffffff",
   padding: "4px 14px",
@@ -34,7 +40,7 @@ export const Pill = styled(Box)({
   fontWeight: 600,
   marginBottom: "20px",
   letterSpacing: "0.3px",
-});
+}));
 
 export const Title = styled(Typography, {
   shouldForwardProp: (prop) =>
@@ -54,6 +60,7 @@ export const Title = styled(Typography, {
 
   [theme.breakpoints.down("md")]: {
     fontSize: "26px",
+    lineHeight:"40px"
   },
 }));
 

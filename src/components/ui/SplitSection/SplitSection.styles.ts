@@ -9,7 +9,7 @@ export const Section = styled(Box)(({ theme }) => ({
   width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
-  padding: "64px 24px",
+  padding: "80px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px",
