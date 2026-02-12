@@ -25,6 +25,12 @@ import {
 } from "./Header.styles";
 import { SolutionItem } from "./SolutionItem";
 import cognitiveLogo from "../../../assets/cognitiveLogo.svg";
+import Vector from "../../../assets/Vector.svg";
+import Frame from "../../../assets/Frame.svg";
+import Workflow from "../../../assets/Workflow.svg";
+import Eligibility from "../../../assets/Eligibility.svg";
+import Analysis from "../../../assets/Analysis.svg";
+import PreBill from "../../../assets/Prebill.svg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -65,38 +71,59 @@ const Header = () => {
   };
 
   /** ================= SOLUTION LINKS ================= */
-  const solutionLinks = [
-    {
-      title: "Payment Posting",
-      desc: "Automated reconciliation and posting",
-      path: "/solutions/payment-posting",
-    },
-    {
-      title: "Lockbox Management",
-      desc: "AI-powered document ingestion system",
-      path: "/solutions/lockbox",
-    },
-    {
-      title: "Denials Workflow",
-      desc: "Smart prioritization and appeals",
-      path: "/solutions/denials",
-    },
-    {
-      title: "Eligibility Discovery",
-      desc: "Real-time coverage verification portal",
-      path: "/solutions/eligibility",
-    },
-    {
-      title: "Contract Analysis",
-      desc: "Intelligent contract research assistant",
-      path: "/solutions/contract-analysis",
-    },
-    {
-      title: "Pre-Bill Services",
-      desc: "Automated charge capture validation",
-      path: "/solutions/pre-bill",
-    },
-  ];
+const solutionLinks = [
+  {
+    title: "Payment Posting",
+    desc: "Automated reconciliation and posting",
+    path: "/solutions/payment-posting",
+    icon:  (
+      <img src={Vector} alt="Vector Icon" style={{ width: 24, height: 24 }} />
+    ),
+  },
+  {
+    title: "Lockbox Management",
+    desc: "AI-powered document ingestion system",
+    path: "/solutions/lockbox",
+    icon:  (
+      <img src={Frame} alt="Frame Icon" style={{ width: 24, height: 24 }} />
+    )
+  },
+  {
+    title: "Denials Workflow",
+    desc: "Smart prioritization and appeals",
+    path: "/solutions/denials",
+    icon: <img
+        src={Eligibility}
+        alt="Eligibility Icon"
+        style={{ width: 24, height: 24 }}
+      />,
+  },
+  {
+    title: "Eligibility Discovery",
+    desc: "Real-time coverage verification portal",
+    path: "/solutions/eligibility",
+    icon: (
+      <img
+        src={Workflow}
+        alt="Workflow Icon"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
+  },
+  {
+    title: "Contract Analysis",
+    desc: "Intelligent contract research assistant",
+    path: "/solutions/contract-analysis",
+    icon: <img src={Analysis} alt="Analysis Icon" style={{ width: 24, height: 24 }} />,
+  },
+  {
+    title: "Pre-Bill Services",
+    desc: "Automated charge capture validation",
+    path: "/solutions/pre-bill",
+    icon: <img src={PreBill} alt="PreBill Icon" style={{ width: 24, height: 24 }} />,
+  },
+];
+
 
   return (
     <>
