@@ -11,6 +11,9 @@ export const SectionContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "var(--color-bg-lite)",
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(14),
+  [theme.breakpoints.down("md")]: {
+    paddingBottom: theme.spacing(10),
+  },
 }));
 export const HeaderTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,

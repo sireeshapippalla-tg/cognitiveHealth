@@ -13,11 +13,7 @@ const AboutUsHeroSection: React.FC = () => {
           </>
         }
         title="Agentic AI platform instead of Intelligent Process Automation"
-        description=" Healthcare technology company focused on transforming revenue
-              cycle operations through intelligent automation. We help
-              healthcare organizations reduce operational complexity,
-              improve financial outcomes, and enable teams to focus on
-              delivering exceptional patient care."
+        description="Healthcare technology company focused on transforming revenue cycle operations through intelligent automation. We help healthcare organizations reduce operational complexity, improve financial outcomes, and enable teams to focus on delivering exceptional patient care."
         image={heroSectionImage}
         primaryAction={{ label: "Request a Demo" }}
         secondaryAction={{ label: "See Platform in Action " }}
