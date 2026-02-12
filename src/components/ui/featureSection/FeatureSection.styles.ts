@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 
 interface SectionProps {
   background?: string;
+  borderRadius?: string;
 }
 interface TitleProps {
   align?: "center" | "left";
@@ -10,18 +11,18 @@ interface TitleProps {
 
 export const Section = styled(Box, {
   shouldForwardProp: (prop) => prop !== "background",
-})<SectionProps>(({ theme, background }) => ({
+})<SectionProps>(({ theme, background, borderRadius }) => ({
   width: "100%",
   background: background ?? "#ffffff",
-  padding: "64px 24px",
-
+  padding: "30px 60px",
+  borderRadius: borderRadius ?? "0px",
   [theme.breakpoints.down("md")]: {
     padding: "16px",
   },
 }));
 
 export const Inner = styled(Box)({
-  maxWidth: "1200px",
+  // maxWidth: "1200px",
   margin: "0 auto",
 });
 

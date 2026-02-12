@@ -2,9 +2,9 @@ import { Box, styled } from "@mui/material";
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  maxWidth: "1400px",
+  // maxWidth: "1400px",
   margin: "0 auto",
-  // padding: "60px 24px",
+  padding: "30px 80px",
   backgroundColor:"#f9fafb",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
@@ -14,9 +14,9 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
 
 export const Wrapper = styled(Box)(({ theme }) => ({
   borderRadius: "20px",
-  padding: "32px",
+  // padding: "32px",
   textAlign: "center",
-  maxWidth: "1100px",
+  // maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {
@@ -25,7 +25,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const StepsCard = styled(Box)({
-  // backgroundColor: "#ffffff",
+  backgroundColor: "#ffffff",
   borderRadius: "16px",
   // border: "1px solid #ECECEC",
   padding: "28px 24px",

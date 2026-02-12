@@ -2,11 +2,14 @@ import { styled } from "@mui/material/styles";
 import { AppBar, Toolbar, Box } from "@mui/material";
 
 /* APP BAR */
-export const StyledAppBar = styled(AppBar)(() => ({
+export const StyledAppBar = styled(AppBar)(({theme}) => ({
   backgroundColor: "#ffffff",
   borderBottom: "1px solid #e5e7eb",
   // padding:"10px 30px"
-   padding: 0,
+   padding: "0px 60px",
+   [theme.breakpoints.down("md")]: {
+   padding:"0px"
+  },
 }));
 
 /* TOOLBAR */
@@ -25,7 +28,7 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "0 32px",
+  // padding: "0 32px",
 
   minHeight: 72, // desktop height
 
@@ -82,7 +85,7 @@ export const NavItem = styled("span")<{
 /* DRAWER */
 export const DrawerContainer = styled(Box)(() => ({
   width: 260,
-  padding: 16,
+  // padding: 16,
 }));
 
 export const DrawerItem = styled(Box, {

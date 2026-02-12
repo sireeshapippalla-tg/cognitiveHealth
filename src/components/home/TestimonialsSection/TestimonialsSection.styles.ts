@@ -2,7 +2,8 @@ import { Box, styled } from "@mui/material";
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  maxWidth: "1400px",
+  // maxWidth: "1400px",
+  padding:"30px 80px",
   margin: "0 auto",
 
   // marginTop:"40px",
@@ -12,9 +13,9 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
 }));
 export const Wrapper = styled(Box)(({ theme }) => ({
  
-  padding: "32px",
+  // padding: "32px",
   textAlign: "center",
-  maxWidth: "1100px",
+  // maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {

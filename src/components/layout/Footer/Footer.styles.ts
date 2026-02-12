@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 export const FooterRoot = styled(Box)(({ theme }) => ({
   backgroundColor: "#2F2F2F",
   color: "#ffffff",
-  padding: "72px 24px 32px",
+  padding: "30px 60px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px 24px",
