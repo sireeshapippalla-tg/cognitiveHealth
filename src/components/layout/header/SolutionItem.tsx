@@ -8,9 +8,8 @@ type Props = {
   path: string;
   highlight?: boolean;
   onNavigate: (path: string) => void;
-    active?: boolean;        
-     icon?: React.ReactNode; 
-
+  active?: boolean;
+  icon?: React.ReactNode;
 };
 
 export const SolutionItem = ({
@@ -20,10 +19,10 @@ export const SolutionItem = ({
   highlight,
   onNavigate,
   active,
-  icon
+  icon,
 }: Props) => {
   const navigate = useNavigate();
- const isHighlighted = highlight || active;
+  const isHighlighted = highlight || active;
   return (
     <Box
       onClick={() => {
@@ -38,21 +37,20 @@ export const SolutionItem = ({
       }}
     >
       {/* ICON */}
-  <Box
-  sx={{
-    width: 40,
-    height: 40,
-    borderRadius: 2,
-    backgroundColor: isHighlighted ? "var(--color-primary)" : "#3b5bdb",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
-  }}
->
-  {icon}
-</Box>
-
+      <Box
+        sx={{
+          width: 40,
+          height: 40,
+          borderRadius: 2,
+          backgroundColor: isHighlighted ? "var(--color-primary)" : "#3b5bdb",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </Box>
 
       {/* TEXT */}
       <Box>
