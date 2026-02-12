@@ -97,18 +97,20 @@ export const CategoryChip = styled(Chip)({
 });
 
 export const CardTitle = styled(Typography)(() => ({
+  fontFamily: "Inter",
   fontSize: "16px",
-  fontWeight: 700,
+  fontWeight: 600,
   lineHeight: "1.4",
-  color: "var(--color-text-blue)",
+  color: "#3A63D2",
   // marginBottom: "8px",
   marginTop: "8px",
 }));
 
-export const CardDescription = styled(Typography)(({ theme }) => ({
-  fontSize: "13px",
-  lineHeight: "1.6",
-  color: theme.palette.text.secondary,
+export const CardDescription = styled(Typography)(({ }) => ({
+  fontFamily: "Inter",
+  fontSize: "14px",
+  lineHeight: "22.4px",
+  color: "#4A5565",
   marginBottom: "24px",
   display: "-webkit-box",
   WebkitLineClamp: 3,
@@ -135,14 +137,14 @@ export const WatchLink = styled(Link)({
   transition: "all 0.2s ease",
 });
 
-export const DurationBadge = styled(Box)(({ theme }) => ({
+export const DurationBadge = styled(Box)(({ }) => ({
   display: "flex",
   alignItems: "center",
   gap: "6px",
   padding: "6px 12px",
   borderRadius: "20px",
   border: "1px solid #E5E7EB",
-  color: theme.palette.text.secondary,
+  color: "#656565",
   fontSize: "13px",
   fontWeight: 500,
   "& svg": {

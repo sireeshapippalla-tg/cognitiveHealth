@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Container, MenuItem, Select, FormControl } from "@mui/material";
-import BookOutlinedIcon from "@mui/icons-material/BookOutlined";
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import ResourceList from "../resourceList/ResourceList";
 import { StyledTabs, StyledTab, FilterContainer } from "./ResourceTabs.styles";
+import BlogIcon from "../../../assets/Resources/Blog.svg";
+import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
+import VideoIcon from "../../../assets/Resources/video.svg"
+import MediaIcon from "../../../assets/Resources/Media.svg"
 
 const ResourceTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -30,22 +30,22 @@ const ResourceTabs = () => {
           aria-label="resource tabs"
         >
           <StyledTab
-            icon={<BookOutlinedIcon fontSize="small" />}
+            icon={<img src={BlogIcon} alt="Blog Icon" width={16} height={16} />}
             iconPosition="start"
             label="Blog"
           />
           <StyledTab
-            icon={<DescriptionOutlinedIcon fontSize="small" />}
+            icon={<img src={CaseStudyIcon} alt="Case Study Icon" width={16} height={16} />}
             iconPosition="start"
             label="Case Studies"
           />
           <StyledTab
-            icon={<PlayCircleOutlineIcon fontSize="small" />}
+            icon={<img src={VideoIcon} alt="Video Icon" width={16} height={16} />}
             iconPosition="start"
             label="Videos"
           />
           <StyledTab
-            icon={<ArticleOutlinedIcon fontSize="small" />}
+            icon={<img src={MediaIcon} alt="Media Icon" width={16} height={16} />}
             iconPosition="start"
             label="Media"
           />
@@ -58,7 +58,10 @@ const ResourceTabs = () => {
             displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
             sx={{
+                fontFamily: 'Inter',
+                fontSize: '14px',
                 bgcolor: '#fff',
+                color: '#656565',
                 borderRadius: '8px',
                 '& .MuiOutlinedInput-notchedOutline': {
                     borderColor: '#E5E7EB',

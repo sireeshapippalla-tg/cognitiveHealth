@@ -13,7 +13,7 @@ import {
   ReadMoreLink,
 } from "./CaseStudyCard.styles";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import BusinessIcon from "../../../assets/Resources/BusinessIcon.svg" // Example icon for category
+import BusinessIcon from "../../../assets/Resources/BusinessIcon.svg" 
 
 interface CaseStudyCardProps {
   image: string;
