@@ -103,7 +103,7 @@ export const ListItem = styled("li")({
 /* DIVIDER */
 export const FooterDivider = styled(Divider)({
   margin: "40px 0 24px",
-  width: '1224px',
+  // width: '1224px',
   border: "1px solid",
   backgroundColor: "#9F9F9F",
 });

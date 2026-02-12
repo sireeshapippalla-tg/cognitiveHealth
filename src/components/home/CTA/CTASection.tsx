@@ -35,6 +35,7 @@ const CallToActionSection = () => {
 
           <AppButton
             variantType="outline"
+            showBorder={true}
             // sx={OutlineButtonStyles}
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
           >

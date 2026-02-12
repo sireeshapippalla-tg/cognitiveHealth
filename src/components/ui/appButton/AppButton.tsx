@@ -8,12 +8,14 @@ type AppButtonProps = ButtonProps & {
   variantType?: "primary" | "outline";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  showBorder?:boolean;
 };
 
 const AppButton = ({
   variantType = "primary",
   startIcon,
   endIcon,
+  showBorder,
   ...props
 }: AppButtonProps) => {
   const ButtonComponent =
@@ -26,6 +28,7 @@ const AppButton = ({
       disableElevation
       startIcon={startIcon}
       endIcon={endIcon}
+      showBorder={showBorder}
     />
   );
 };

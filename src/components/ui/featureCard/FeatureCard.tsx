@@ -30,7 +30,7 @@ export const FeatureCard = ({
   <Card variant={variant} onClick={onClick}>
     <Header direction={headerDirection}>
       {icon && <IconBox>{icon}</IconBox>}
-      <Title>{title}</Title>
+      <Title direction={headerDirection}>{title}</Title>
     </Header>
 
     {description && <Description>{description}</Description>}

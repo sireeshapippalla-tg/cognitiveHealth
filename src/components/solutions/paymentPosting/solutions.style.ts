@@ -1,10 +1,12 @@
 import { styled, Box } from "@mui/material";
 
 export const Wrapper = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(10, 0),
+  padding: theme.spacing(4),
+  backgroundColor:'#ECECEC',
+  borderRadius:'40px'
 }));
 export const SectionContainer = styled(Box)(() => ({
-  background: "#ea580c",
+  background: "#DC7328",
   padding: "80px 0",
 }));
 
@@ -17,8 +19,7 @@ export const MeasureWrapper = styled(Box)(() => ({
 
 
 export const HowItSectionContainer = styled(Box)(() => ({
-  background: "#f9fafb",
-  padding: "80px 0",
+  padding: "80px 0 0 0",
 }));
 
 export const HowItWrapper = styled(Box)(() => ({
@@ -41,7 +42,7 @@ export const StepsRow = styled(Box)(() => ({
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
-  color: "#f97316",
+  color: "#EB7724",
   display: "flex",
   alignItems: "center",
 

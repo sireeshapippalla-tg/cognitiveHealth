@@ -20,7 +20,6 @@ export const Highlight = styled("span")(() => ({
   background: "#EB7724",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
-
 }));
 
 export const Grid = styled(Box, {
@@ -47,14 +46,17 @@ export const Content = styled(Box)(({ theme }) => ({
   },
 }));
 
-
-export const Eyebrow = styled(Typography)({
+export const Eyebrow = styled(Typography)(({ theme }) => ({
   fontSize: "40px",
   fontWeight: 600,
   color:  "var(--color-text-dark)",
   marginBottom: "20px",
   lineHeight: "50px",
-});
+  [theme.breakpoints.down("md")]: {
+    fontSize: "28px",
+    lineHeight: "35px",
+  },
+}));
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "23px",
@@ -64,7 +66,8 @@ export const Title = styled(Typography)(({ theme }) => ({
   marginBottom: "16px",
 
   [theme.breakpoints.down("md")]: {
-    fontSize: "28px",
+    fontSize: "20px",
+    lineHeight: "35px",
   },
 }));
 
@@ -80,6 +83,9 @@ export const Actions = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "16px",
 
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "center",
+  },
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
     alignItems: "center",

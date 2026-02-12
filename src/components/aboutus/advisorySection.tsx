@@ -36,11 +36,11 @@ const AdvisorySection: React.FC = () => {
       <SectionTitle
         title="Advisory Team"
         subtitle="Our advisors are well-known thought leaders drawn from the healthcare industry."
-        maxWidth={620}
+        maxWidth={750}
       />
       <GridWrapperAdvisory>
 
-      <Grid container spacing={3} mt={2}>
+      <Grid container spacing={3} mt={4}>
         {advisoryData.map((advisor) => (
           <Grid  size={{xs:12,sm:6,md:4}} key={advisor.id}>
             <AdvisorCard advisor={advisor} />

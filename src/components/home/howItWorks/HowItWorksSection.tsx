@@ -64,7 +64,7 @@ const HowItWorksSection = () => {
 
         <ButtonsRow>
           <AppButton variantType="primary" endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>Request a Demo</AppButton>
-          <AppButton variantType="outline" endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>See Platform in Action</AppButton>
+          <AppButton variantType="outline" showBorder={true} endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}>See Platform in Action</AppButton>
         </ButtonsRow>
       </Wrapper>
     </SectionContainer>

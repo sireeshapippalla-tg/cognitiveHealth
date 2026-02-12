@@ -4,6 +4,9 @@ import { styled } from "@mui/material/styles";
 interface SectionProps {
   background?: string;
 }
+interface TitleProps {
+  align?: "center" | "left";
+}
 
 export const Section = styled(Box, {
   shouldForwardProp: (prop) => prop !== "background",
@@ -22,13 +25,13 @@ export const Inner = styled(Box)({
   margin: "0 auto",
 });
 
-export const Title = styled(Typography)(({ theme }) => ({
-  fontFamily: "Inter",
+export const Title = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "align",
+})<TitleProps>(({ theme, align = "center" }) => ({
   fontSize: "28px",
-  fontWeight: 600,
-  textAlign: "center",
-  color: "var(--color-text-dark)",
-  lineHeight: '48px',
+  fontWeight: 700,
+  textAlign: align,
+  color: "#111827",
   marginBottom: "8px",
 
   "& span": {
