@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const Section = styled(Box)(({ theme }) => ({
   width: "100%",
-  padding: "30px 60px",
+  padding: "30px 80px",
   textAlign: "center",
 
   [theme.breakpoints.down("md")]: {

@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   // maxWidth: "1400px",
- padding: "30px 60px",
+ padding: "30px 80px",
   margin: `${theme.spacing(3)} auto`,
 
   [theme.breakpoints.up("sm")]: {
@@ -27,7 +27,7 @@ export const CtaWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#FFF7F2",
   borderRadius: "20px",
   border: "1px solid #ECECEC",
-  padding: "30px 60px",
+  padding: "30px 80px",
   textAlign: "center",
   // maxWidth: "1100px",
   margin: "0 auto",

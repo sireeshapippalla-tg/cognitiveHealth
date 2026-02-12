@@ -1,6 +1,6 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
-  HowItSectionContainer,
+  // HowItSectionContainer,
   HowItWrapper,
 } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
@@ -33,7 +33,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <HowItSectionContainer>
+    // <HowItSectionContainer>
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
@@ -61,7 +61,7 @@ const HowItWorksSection = () => {
           </StepsRow>
         </StepsCard>
       </HowItWrapper>
-    </HowItSectionContainer>
+    // {/* </HowItSectionContainer> */}
   );
 };
 

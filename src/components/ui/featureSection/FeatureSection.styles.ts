@@ -14,7 +14,7 @@ export const Section = styled(Box, {
 })<SectionProps>(({ theme, background, borderRadius }) => ({
   width: "100%",
   background: background ?? "#ffffff",
-  padding: "30px 60px",
+  padding: "30px 80px",
   borderRadius: borderRadius ?? "0px",
   [theme.breakpoints.down("md")]: {
     padding: "16px",

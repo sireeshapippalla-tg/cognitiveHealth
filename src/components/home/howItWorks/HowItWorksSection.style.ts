@@ -5,7 +5,7 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   // maxWidth: "1400px",
   margin: "0 auto",
   padding: "30px 80px",
-  backgroundColor:"#f9fafb",
+  backgroundColor: "#f9fafb",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
     padding: "16px",
@@ -28,7 +28,7 @@ export const StepsCard = styled(Box)({
   backgroundColor: "#ffffff",
   borderRadius: "16px",
   // border: "1px solid #ECECEC",
-  padding: "28px 24px",
+  // padding: "28px 24px",
   marginBottom: "40px",
 });
 
@@ -36,10 +36,11 @@ export const StepsRow = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-
+  padding: "30px 80px",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     gap: "32px",
+    padding:0
   },
 }));
 

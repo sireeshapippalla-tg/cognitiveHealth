@@ -45,6 +45,11 @@ export const SectionContainerAdvisoy = styled(Container)(({ theme }) => ({
 
 export const GridWrapperAdvisory = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(2),
+  paddingLeft: " 60px",
+  paddingRight: "60px",
+  [theme.breakpoints.down("md")]: {
+    padding: "0px",
+  },
 }));
 export const GridWrapper = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -58,4 +63,3 @@ export const GridWrapper = styled(Box)(({ theme }) => ({
     padding: "0px", // small mobile (optional)
   },
 }));
-
