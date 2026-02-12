@@ -64,8 +64,8 @@ const handlePlayVideo = (url: string) => {
               <ResourceCard
                 image={resource.image}
                 category={resource.category}
-                date={resource.date}
-                readTime={resource.readTime}
+                date={"date" in resource ? resource.date : undefined}
+                readTime={"readTime" in resource ? resource.readTime : undefined}
                 title={resource.title}
                 description={resource.description}
                 link={resource.link}

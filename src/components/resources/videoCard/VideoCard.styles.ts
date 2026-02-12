@@ -80,11 +80,12 @@ export const CardContent = styled(Box)({
 });
 
 export const CategoryChip = styled(Chip)({
+  fontFamily: "Inter",
   position: "absolute",
   top: "16px",
   left: "16px",
   backgroundColor: "#FFFFFF",
-  color: "#0284C7", 
+  color: "#3A63D2", 
   fontWeight: 600,
   fontSize: "12px",
   height: "28px",
@@ -129,7 +130,7 @@ export const WatchLink = styled(Link)({
   gap: "4px",
   fontSize: "15px",
   fontWeight: 600,
-  color: "#E88D3E", // Orange
+  color: "#EB7724", // Orange
   textDecoration: "none",
   transition: "all 0.2s ease",
 });
