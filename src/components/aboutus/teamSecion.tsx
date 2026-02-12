@@ -74,7 +74,7 @@ const teamData: ExpandableItem[] = [
 
 const TeamSection = () => {
   return (
-    <SectionContainer maxWidth={false}>
+    <SectionContainer id="team" maxWidth={false}>
       <HeaderTitle variant="h4">Our Team</HeaderTitle>
 
       <HeaderSubtitle>

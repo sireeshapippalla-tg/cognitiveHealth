@@ -44,6 +44,7 @@ export const LogoWrapper = styled(Box)({
   backgroundColor: "#ffffff",
   borderRadius: "10px",
   marginBottom: "16px",
+  cursor:"pointer",
 
   /* optional subtle shadow like design */
   boxShadow: "0 6px 16px rgba(0, 0, 0, 0.15)",

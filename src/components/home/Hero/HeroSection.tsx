@@ -15,8 +15,10 @@ import {
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import heroSectionImage from "../../../assets/HomeScreen.svg";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <>
       <SplitSection
@@ -31,13 +33,20 @@ const HeroSection = () => {
               accelerating cash flow and empowering your team to deliver
               exceptional patient experiences."
         image={heroSectionImage}
-        primaryAction={{ label: "Request a Demo" }}
-        secondaryAction={{ label: "See Platform in Action " }}
+        primaryAction={{
+          label: "Request a Demo",
+          onClick: () => navigate("/contact-us"),
+        }}
+        secondaryAction={{
+          label: "See Platform in Action",
+          onClick: () => {},
+        }}
       />
       {/* TRUSTED BY */}
-      <TrustSection mb={4} p={4}>
+      <TrustSection mb={4} p={4} id="customers">
         <TrustTitle>
-          Trusted by leading health systems and physician groups and specialty providers 
+          Trusted by leading health systems and physician groups and specialty
+          providers
           <span style={{ fontWeight: 600 }}>Learn more →</span>
         </TrustTitle>
 

@@ -1,5 +1,6 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AppButton from "../../ui/appButton/AppButton";
+import { useNavigate } from "react-router-dom";
 
 
 import {
@@ -13,6 +14,7 @@ import {
 } from "./CallToActionSection.styles";
 
 const CallToActionSection = () => {
+  const navigate = useNavigate();
   return (
     <SectionContainer>
       <CtaWrapper>
@@ -29,6 +31,7 @@ const CallToActionSection = () => {
             variantType="primary"
             sx={PrimaryButtonStyles}
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+            onClick={() => navigate("/contact-us")}
           >
             Request a Demo
           </AppButton>
