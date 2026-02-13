@@ -1,10 +1,11 @@
-import careLogo from "../../../assets/care.svg";
+// import careLogo from "../../../assets/care.svg";
 
 import kaminLogo from "../../../assets/Kamin Logo.svg";
-import mcLeranLogo from "../../../assets/mcLeran.svg";
-import mercyLogo from "../../../assets/Mercylogo.svg";
+// import mcLeranLogo from "../../../assets/mcLeran.svg";
+// import mercyLogo from "../../../assets/Mercylogo.svg";
 import mindPathLogo from "../../../assets/mindpath-logo.svg";
-import qualityLogo from "../../../assets/Quality.svg";
+// import qualityLogo from "../../../assets/Quality.svg";
+import mercyImg from "../../../assets/Resources/mercy.jpeg";
 
 import {
   TrustSection,
@@ -51,12 +52,33 @@ const HeroSection = () => {
         </TrustTitle>
 
         <LogoGrid>
-          <LogoImage src={careLogo} alt="Care Hospice" />
-          <LogoImage src={mcLeranLogo} alt="McLaren Health" />
+          <LogoImage
+            src={"https://www.carehospice.com/images/care-logo.gif"}
+            alt="Care Hospice"
+          />
+          <LogoImage
+            src={
+              "https://www.mclaren.org/uploads/images/mclaren-logo-color.svg"
+            }
+            alt="McLaren Health"
+          />
+
+          {/* <LogoImage
+            src={
+              "https://www.ynhhs.org/-/media/Images/Logo/YNHHS_hor_clr_484x127.ashx?h=127&iar=0&w=484&hash=11E8047061263B1C6342665F74BC888B"
+            }
+            alt="yaleNewHAvenHEalth"
+          /> */}
+          <LogoImage
+            src={
+              "https://azure-na-images.contentstack.com/v3/assets/blt3667c0ff4b42a45d/bltec3bcf779857babf/6698b9d4da94e2baeab2d9d7/wellstreet_logo.svg"
+            }
+            alt="wellstreet"
+          />
           <LogoImage src={kaminLogo} alt="Kamin Health" />
           <LogoImage src={mindPathLogo} alt="MindPath Health" />
-          <LogoImage src={mercyLogo} alt="Mercy Health" />
-          <LogoImage src={qualityLogo} alt="Quality Care" />
+          <LogoImage src={mercyImg} alt="Mercy Health" />
+          {/* <LogoImage src={qualityLogo} alt="Quality Care" /> */}
         </LogoGrid>
       </TrustSection>
     </>
