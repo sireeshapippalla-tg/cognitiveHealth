@@ -103,6 +103,7 @@ export const Description = styled(Typography)({
   lineHeight: 1.6,
   color: "var(--color-text-light)",
   marginBottom: "12px",
+textAlign:"left"
 });
 
 export const LearnMoreButton = styled(Button)({
