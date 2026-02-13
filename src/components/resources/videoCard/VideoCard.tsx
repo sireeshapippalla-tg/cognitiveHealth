@@ -55,7 +55,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       </CardImageWrapper>
 
       <CardContent>
-        <CardTitle variant="h3">{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
         <Footer>
