@@ -12,13 +12,12 @@ interface ResourceListProps {
 
 const ResourceList = ({ activeTab }: ResourceListProps) => {
   const [open, setOpen] = useState(false);
-const [videoUrl, setVideoUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
 
-const handlePlayVideo = (url: string) => {
-  setVideoUrl(url);
-  setOpen(true);
-};
-
+  const handlePlayVideo = (url: string) => {
+    setVideoUrl(url);
+    setOpen(true);
+  };
 
   const filteredResources = (() => {
     switch (activeTab) {
@@ -65,7 +64,9 @@ const handlePlayVideo = (url: string) => {
                 image={resource.image}
                 category={resource.category}
                 date={"date" in resource ? resource.date : undefined}
-                readTime={"readTime" in resource ? resource.readTime : undefined}
+                readTime={
+                  "readTime" in resource ? resource.readTime : undefined
+                }
                 title={resource.title}
                 description={resource.description}
                 link={resource.link}
@@ -85,5 +86,3 @@ const handlePlayVideo = (url: string) => {
 };
 
 export default ResourceList;
-
-

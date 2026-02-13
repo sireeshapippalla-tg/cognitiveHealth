@@ -9,6 +9,7 @@ import {
   CardTitle,
   CardDescription,
   ReadMoreLink,
+  MetaItem,
 } from "./ResourceCard.styles";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
@@ -56,21 +57,21 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
       <CardContent>
         <MetaInfo>
           {date && (
-            <>
+            <MetaItem>
               <CalendarTodayOutlinedIcon />
               <span>{date}</span>
-            </>
+            </MetaItem>
           )}
           {date && readTime && <span>•</span>}
           {readTime && (
-            <>
+            <MetaItem>
               <AccessTimeOutlinedIcon />
               <span>{readTime}</span>
-            </>
+            </MetaItem>
           )}
         </MetaInfo>
 
-        <CardTitle variant="h3">{title}</CardTitle>
+        <CardTitle >{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
         <ReadMoreLink to={link} className="read-more-link">

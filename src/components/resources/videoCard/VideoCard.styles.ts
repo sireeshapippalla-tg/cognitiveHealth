@@ -106,16 +106,16 @@ export const CardTitle = styled(Typography)(() => ({
   marginTop: "8px",
 }));
 
-export const CardDescription = styled(Typography)(({ }) => ({
+export const CardDescription = styled(Typography)(() => ({
   fontFamily: "Inter",
   fontSize: "14px",
   lineHeight: "22.4px",
   color: "#4A5565",
   marginBottom: "24px",
-  display: "-webkit-box",
-  WebkitLineClamp: 3,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
+  // display: "-webkit-box",
+  // WebkitLineClamp: 3,
+  // WebkitBoxOrient: "vertical",
+  // overflow: "hidden",
   flexGrow: 1,
 }));
 
@@ -137,7 +137,7 @@ export const WatchLink = styled(Link)({
   transition: "all 0.2s ease",
 });
 
-export const DurationBadge = styled(Box)(({ }) => ({
+export const DurationBadge = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
   gap: "6px",

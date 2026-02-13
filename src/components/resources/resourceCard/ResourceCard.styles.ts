@@ -78,7 +78,18 @@ export const MetaInfo = styled(Box)(({ theme }) => ({
     fontSize: "16px",
     color: theme.palette.text.secondary,
   },
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "6px",
+  },
 }));
+export const MetaItem = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  gap: "6px",
+});
+
 
 export const CardTitle = styled(Typography)(() => ({
   fontSize: "16px",
@@ -86,10 +97,10 @@ export const CardTitle = styled(Typography)(() => ({
   lineHeight: "1.4",
   color: "var(--color-text-blue)",
   // marginBottom: "4px",
-  display: "-webkit-box",
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
+  // display: "-webkit-box",
+  // WebkitLineClamp: 2,
+  // WebkitBoxOrient: "vertical",
+  // overflow: "hidden",
 }));
 
 export const CardDescription = styled(Typography)(({ theme }) => ({
@@ -97,10 +108,10 @@ export const CardDescription = styled(Typography)(({ theme }) => ({
   lineHeight: "1.6",
   color: theme.palette.text.secondary,
   marginBottom: "16px",
-  display: "-webkit-box",
-  WebkitLineClamp: 3,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
+  // display: "-webkit-box",
+  // WebkitLineClamp: 3,
+  // WebkitBoxOrient: "vertical",
+  // overflow: "hidden",
   flexGrow: 1,
 }));
 

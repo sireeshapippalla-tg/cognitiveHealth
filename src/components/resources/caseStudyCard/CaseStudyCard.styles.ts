@@ -116,10 +116,10 @@ export const CardTitle = styled(Typography)(() => ({
   lineHeight: "24px ",
   color: "#3A63D2",
   // marginBottom: "4px",
-   display: "-webkit-box",
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
+  //  display: "-webkit-box",
+  // WebkitLineClamp: 2,
+  // WebkitBoxOrient: "vertical",
+  // overflow: "hidden",
 }));
 
 export const CardDescription = styled(Typography)(() => ({
@@ -128,10 +128,10 @@ export const CardDescription = styled(Typography)(() => ({
   lineHeight: "22.4px",
   color: "#4A5565",
   // marginBottom: "16px",
-  display: "-webkit-box",
-  WebkitLineClamp: 3,
-  WebkitBoxOrient: "vertical",
-  overflow: "hidden",
+  // display: "-webkit-box",
+  // WebkitLineClamp: 3,
+  // WebkitBoxOrient: "vertical",
+  // overflow: "hidden",
   flexGrow: 1,
 }));
 

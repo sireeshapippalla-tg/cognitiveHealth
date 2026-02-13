@@ -53,7 +53,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             size="small" 
         />
         
-        <CardTitle variant="h3">{title}</CardTitle>
+        <CardTitle >{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
         <ReadMoreLink to={link} className="read-more-link">
