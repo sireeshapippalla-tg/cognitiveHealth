@@ -18,46 +18,67 @@ import DenialWorkFlowPage from "./pages/solutions/DenialWorkFlowPage";
 import PreBillServicesPage from "./pages/solutions/PreBillServicesPage";
 import ContactUsPage from "./pages/contactUs/ContactUsPage";
 import RCMReadinessScreen from "./pages/RcmreadinessScreen";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const App = () => {
   return (
-    <Routes>
-      {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
-      <Route
-        path={ROUTES.LOGIN}
-        element={
-          <PublicRoute>
-            <LoginPage />
-          </PublicRoute>
-        }
-      />
+    <>
+      <ScrollToTop />
+      <Routes>
+        {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
+        <Route
+          path={ROUTES.LOGIN}
+          element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
+          }
+        />
 
-      {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
-      <Route
-        element={
-          <AuthGuard>
-            <MainLayout />
-          </AuthGuard>
-        }
-      >
-        <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
-        <Route path={ROUTES.PAYMENTPOSTING} element={<PaymentPostingPage />} />
-         <Route path={ROUTES.LOCKBOXANALYSIS} element={<LockBoxAnalysisPage />} />
-          <Route path={ROUTES.CONTRACTANALYSIS} element={<ContractAnalysisPage />} />
-           <Route path={ROUTES.ELIGIBILITYDISCOVERY} element={<EligibilityDiscoveryPage />} />
-            <Route path={ROUTES.DENIALWORKFLOW} element={<DenialWorkFlowPage />} />
-             <Route path={ROUTES.PREBILLSERVICES} element={<PreBillServicesPage />} />
-        <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
-        <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
-        <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
-                <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
+        {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
+        <Route
+          element={
+            <AuthGuard>
+              <MainLayout />
+            </AuthGuard>
+          }
+        >
+          <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
+          <Route
+            path={ROUTES.PAYMENTPOSTING}
+            element={<PaymentPostingPage />}
+          />
+          <Route
+            path={ROUTES.LOCKBOXANALYSIS}
+            element={<LockBoxAnalysisPage />}
+          />
+          <Route
+            path={ROUTES.CONTRACTANALYSIS}
+            element={<ContractAnalysisPage />}
+          />
+          <Route
+            path={ROUTES.ELIGIBILITYDISCOVERY}
+            element={<EligibilityDiscoveryPage />}
+          />
+          <Route
+            path={ROUTES.DENIALWORKFLOW}
+            element={<DenialWorkFlowPage />}
+          />
+          <Route
+            path={ROUTES.PREBILLSERVICES}
+            element={<PreBillServicesPage />}
+          />
+          <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
+          <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
+          <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
+          <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
+        </Route>
 
-      </Route>
-
-      {/* ---------- FALLBACK ---------- */}
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+        {/* ---------- FALLBACK ---------- */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 };
 

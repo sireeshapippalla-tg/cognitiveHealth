@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Container, MenuItem, Select, FormControl } from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
 import { StyledTabs, StyledTab, FilterContainer } from "./ResourceTabs.styles";
@@ -8,7 +9,26 @@ import VideoIcon from "../../../assets/Resources/video.svg"
 import MediaIcon from "../../../assets/Resources/Media.svg"
 
 const ResourceTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const location = useLocation();
+  const getTabFromHash = () => {
+  const hash = location.hash.replace("#", "");
+
+  switch (hash) {
+    case "case-studies":
+      return 1;
+    case "videos":
+      return 2;
+    case "media":
+      return 3;
+    case "blog":
+    default:
+      return 0;
+  }
+};
+
+const [activeTab, setActiveTab] = useState(getTabFromHash());
+
+  // const [activeTab, setActiveTab] = useState(0);
   const [filter, setFilter] = useState("Filter By");
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
@@ -18,9 +38,10 @@ const ResourceTabs = () => {
   const handleFilterChange = (event: any) => {
     setFilter(event.target.value);
   };
+ 
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
+    <Container maxWidth="lg" sx={{ py: 6 }} id="blog">
       <FilterContainer>
         <StyledTabs
           value={activeTab}
@@ -52,11 +73,11 @@ const ResourceTabs = () => {
         </StyledTabs>
 
         <FormControl size="small" sx={{ minWidth: 120 }}>
-           <Select
+          <Select
             value={filter}
             onChange={handleFilterChange}
             displayEmpty
-            inputProps={{ 'aria-label': 'Without label' }}
+            inputProps={{ "aria-label": "Without label" }}
             sx={{
                 fontFamily: 'Inter',
                 fontSize: '14px',

@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 export const FooterRoot = styled(Box)(({ theme }) => ({
   backgroundColor: "#2F2F2F",
   color: "#ffffff",
-  padding: "72px 24px 32px",
+  padding: "30px 80px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px 24px",
@@ -44,6 +44,7 @@ export const LogoWrapper = styled(Box)({
   backgroundColor: "#ffffff",
   borderRadius: "10px",
   marginBottom: "16px",
+  cursor:"pointer",
 
   /* optional subtle shadow like design */
   boxShadow: "0 6px 16px rgba(0, 0, 0, 0.15)",
@@ -103,7 +104,7 @@ export const ListItem = styled("li")({
 /* DIVIDER */
 export const FooterDivider = styled(Divider)({
   margin: "40px 0 24px",
-  width: '1224px',
+  // width: '1224px',
   border: "1px solid",
   backgroundColor: "#9F9F9F",
 });

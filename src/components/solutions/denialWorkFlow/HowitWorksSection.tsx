@@ -1,52 +1,46 @@
-
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
-import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-
 import {
-  HowItSectionContainer,
+  // HowItSectionContainer,
   HowItWrapper,
-  StepsCard,
-  StepsRow,
-  ArrowBox,
-  ButtonsRow,
 } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { ProcessStep } from "../../ui/processStep/ProcessStep";
-import AppButton from "../../ui/appButton/AppButton";
+import paymentImage13 from '.././../../assets/solutions/paymentImage13.svg';
+import paymentImage14 from '.././../../assets/solutions/paymentImage14.svg'
+import paymentImage15 from '.././../../assets/solutions/paymentImage15.svg'
+import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
 
 const steps = [
   {
     title: "Payment Intake",
     description:
       "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
-    icon: <CloudUploadOutlinedIcon fontSize="small" />,
+     icon: <img src={paymentImage13} alt="Payment Intake" />,
   },
   {
     title: "Automated Matching & Handling",
     description:
       "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
-    icon: <SyncAltOutlinedIcon fontSize="small" />,
+    icon: <img src={paymentImage14} alt="Automated Matching & Handling" />,
   },
   {
     title: "Real-Time Reporting",
     description:
       "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
-    icon: <BarChartOutlinedIcon fontSize="small" />,
+    icon: <img src={paymentImage15} alt="Real-Time Reporting" />,
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    <HowItSectionContainer>
+    // <HowItSectionContainer>
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
           subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
-        <StepsCard>
+    <StepsCard sx={{marginTop:4}}>
           <StepsRow>
             {steps.map((step, index) => (
               <>
@@ -66,15 +60,8 @@ const HowItWorksSection = () => {
             ))}
           </StepsRow>
         </StepsCard>
-
-        <ButtonsRow>
-          <AppButton variantType="primary">Request a Demo</AppButton>
-          <AppButton variantType="outline">
-            See Platform in Action
-          </AppButton>
-        </ButtonsRow>
       </HowItWrapper>
-    </HowItSectionContainer>
+    // {/* </HowItSectionContainer> */}
   );
 };
 

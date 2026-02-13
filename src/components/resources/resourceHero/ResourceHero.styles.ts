@@ -1,11 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Chip, IconButton, InputBase, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const Hero = styled(Box)(({ theme }) => ({
   backgroundColor: "#fff7ed",
-  padding: "80px 24px 100px", // Increased padding at bottom for overlap effect if needed, but design looks clean
+  padding: "80px 24px 100px",
   textAlign: "center",
-  backgroundImage: "radial-gradient(circle at top right, #fff1e0 0%, #fff7ed 40%)",
+  backgroundImage: " linear-gradient(180deg, #FFE0CD 0%, #FFFFFF 100%)",
   position: "relative",
   overflow: "hidden",
 
@@ -32,7 +32,7 @@ export const Subtitle = styled(Typography)(({ }) => ({
   lineHeight: "150%",
 }));
 
-export const SearchWrapper = styled(Box)(({theme}) => ({
+export const SearchWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 520,
   margin: "0 auto",
   position: "relative",
@@ -45,7 +45,7 @@ export const SearchWrapper = styled(Box)(({theme}) => ({
   border: "1px solid #ECECEC",
   transition: "all 0.2s ease",
   "&:hover, &:focus-within": {
-      boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.08)",
-      borderColor: theme.palette.primary.main,
-  }
+    boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.08)",
+    borderColor: theme.palette.primary.main,
+  },
 }));

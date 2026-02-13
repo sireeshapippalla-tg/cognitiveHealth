@@ -14,8 +14,8 @@ const testimonials = [
   },
   {
     quote:
-       "In the 15 months of collaboration with the CognitiveHealth team we have successfully implemented automation in the areas of cash posting, reconciliation and correspondence work. We are pleased with the early results and continuing to expand our partnership with CognitiveHealth.",
-        author: "Vice President of Patient Financial Services",
+      "In the 15 months of collaboration with the CognitiveHealth team we have successfully implemented automation in the areas of cash posting, reconciliation and correspondence work. We are pleased with the early results and continuing to expand our partnership with CognitiveHealth.",
+    author: "Vice President of Patient Financial Services",
     role: "",
     company: "3500+ Bed Academic Hospital",
   },
@@ -32,23 +32,24 @@ const TestimonialsSection = () => {
   return (
     <SectionContainer>
       <Wrapper>
-      <SectionTitle
-        pillText="See What Revenue Cycle Executives Are Saying"
-        title="Trusted By Healthcare Leaders"
-        maxWidth={700}
-      />
-      <Grid container spacing={3}>
-        {testimonials.map((testimonial, index) => (
-          <Grid size={{ xs: 12, md: 4 }} key={index}>
-            <TestimonialCard
-              quote={testimonial.quote}
-              author={testimonial.author}
-              role={testimonial.role}
-              company={testimonial.company}
-            />
-          </Grid>
-        ))}
-      </Grid>
+        <SectionTitle
+          pillVariant="orange"
+          pillText="See What Revenue Cycle Executives Are Saying"
+          title="Trusted By Healthcare Leaders"
+          maxWidth={700}
+        />
+        <Grid container spacing={3}>
+          {testimonials.map((testimonial, index) => (
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
+              <TestimonialCard
+                quote={testimonial.quote}
+                author={testimonial.author}
+                role={testimonial.role}
+                company={testimonial.company}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </Wrapper>
     </SectionContainer>
   );

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
@@ -8,8 +8,8 @@ type Props = {
   path: string;
   highlight?: boolean;
   onNavigate: (path: string) => void;
-    active?: boolean;            // ✅ ADDED
-
+  active?: boolean;
+  icon?: React.ReactNode;
 };
 
 export const SolutionItem = ({
@@ -18,10 +18,11 @@ export const SolutionItem = ({
   path,
   highlight,
   onNavigate,
-  active
+  active,
+  icon,
 }: Props) => {
   const navigate = useNavigate();
- const isHighlighted = highlight || active;
+  const isHighlighted = highlight || active;
   return (
     <Box
       onClick={() => {
@@ -41,17 +42,14 @@ export const SolutionItem = ({
           width: 40,
           height: 40,
           borderRadius: 2,
-          backgroundColor: isHighlighted
-            ? "var(--color-primary)"
-            : "#3b5bdb",
+          backgroundColor: isHighlighted ? "var(--color-primary)" : "#3b5bdb",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#fff",
           flexShrink: 0,
         }}
       >
-        <ArrowForwardIosIcon fontSize="small" />
+        {icon}
       </Box>
 
       {/* TEXT */}

@@ -1,63 +1,62 @@
-import { Container, Grid } from "@mui/material";
-
-import {
-  Dashboard,
-  Bolt,
-  ErrorOutline,
-  Insights,
-  Storage,
-} from "@mui/icons-material";
+import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
+import paymentImage5 from "../../../assets/solutions/paymentImage5.svg";
+import paymentImage2 from "../../../assets/solutions/paymentImage2.svg";
+import paymentImage6 from "../../../assets/solutions/paymentImage6.svg";
+import paymentImage7 from "../../../assets/solutions/paymentImage7.svg";
+import paymentImage8 from "../../../assets/solutions/paymentImage8.svg";
 
 const capabilities: ExpandableItem[] = [
   {
     id: 1,
-    title: "AI-Powered Correspondence Management System",
-    description:
-      "This generative AI solution automatically processes incoming lockbox documents using large language models and machine learning algorithms. The system can handle multiple document formats simultaneously, from handwritten checks to printed EOBs, denials, appeals, medical record requests and other correspondence, extracting key information such as payment amounts, account numbers, and payer details.",
-    icon: <Dashboard />,
+    title: "Contract Intelligence Research Assistant",
+    description: `This AI-powered analysis tool uses small language models to extract and organize key payment terms from complex insurance contracts. The assistant can quickly locate specific reimbursement rates, payment methodologies, covered services, and special provisions across hundreds of pages of contract language. Users can query the system with natural language questions like "What's the reimbursement rate for CPT 99213 under the Blue Cross contract?" and receive immediate, accurate responses with source references. `,
+    icon: (
+      <img src={paymentImage5} alt="Contract Intelligence Research Assistant" />
+    ),
     defaultOpen: true,
   },
   {
     id: 2,
-    title: "Multi-Batch Processing Console",
-    description:
-      "This centralized processing hub manages multiple lockbox batches from different banks and service providers in parallel workflows. The console automatically splits large PDF files containing mixed document types into individual items, categorizes them by type and priority, and routes them to appropriate processing queues.",
-    icon: <Bolt />,
+    title: "Payment Variance Detection System ",
+    description: `This analytical tool continuously compares actual payments received from insurance companies against contracted rates to identify underpayments and systematic discrepancies. The system analyzes payment patterns across different procedure codes, providers, and locations to detect both isolated incidents and recurring issues. When variances are identified, the system generates detailed reports with supporting documentation that can be used to request payment corrections from payers. `,
+    icon: <img src={paymentImage2} alt="Payment Variance Detection System" />,
   },
   {
     id: 3,
-    title: "Intelligent Document Classification Engine",
-    description:
-      "This sophisticated categorization system organizes lockbox documents into hierarchical categories with four or more levels of detail, such as Payer > Plan Type > Document Type > Processing Date. Continuously improve classification accuracy based on user corrections and feedback, while maintaining detailed audit logs of all classification decisions.",
-    icon: <ErrorOutline />,
+    title: "Contract Change Monitoring Service",
+    description: `This automated tracking system monitors all payer contracts for amendments, rate updates, and policy changes that could impact reimbursement. The service maintains a comprehensive version history of contract modifications, tracking what changed, when it became effective, and how it impacts payment expectations. Automated alerts notify relevant staff when significant changes are detected, ensuring that billing systems and processes are updated to reflect new terms and requirements. `,
+    icon: <img src={paymentImage6} alt="Contract Change Monitoring Service" />,
   },
   {
     id: 4,
-    title: "Bank Integration and Download Automation",
-    description:
-      "This automated system securely connects to multiple bank portals to download lockbox files at scheduled intervals without manual intervention. The integration uses secure authentication protocols and encrypted data transfer to maintain security while ensuring timely access to new deposits",
-    icon: <Insights />,
+    title: "Charge Master Synchronization Engine ",
+    description: `This alignment tool ensures that the organization's charge master remains current with contracted rates across all payers and identifies opportunities for strategic pricing adjustments. The engine compares internal pricing against contracted allowables and market rates, flagging services that may be under-priced or over-priced relative to reimbursement levels. The system provides recommendations for charge master updates based on contract terms, cost analysis, and strategic pricing objectives.`,
+    icon: (
+      <img src={paymentImage7} alt="Charge Master Synchronization Engine" />
+    ),
   },
   {
     id: 5,
-    title: "Continuous Quality Assurance Module",
-    description:
-      "The module randomly samples processed items for manual review, tracks error rates by document type and processing rule, and identifies patterns indicating needed algorithm adjustments. Feedback from quality reviews is automatically incorporated into the AI training data, while detailed reporting helps managers monitor processing performance and identify training needs for staff.",
-    icon: <Storage />,
+    title: "Contract Performance Analytics Dashboard ",
+    description: `This comprehensive reporting platform tracks financial performance metrics by payer contract, providing visibility into collection rates, payment timeliness, denial patterns, and overall contract profitability. The dashboard compares actual performance against contract expectations and historical trends, helping revenue cycle leaders identify underperforming contracts that may require operational improvements or renegotiation. Interactive reports allow users to drill down into specific performance issues and identify actionable improvement opportunities.`,
+    icon: (
+      <img src={paymentImage8} alt="Contract Performance Analytics Dashboard" />
+    ),
   },
 ];
 
 const CoreCapabilitiesSection = () => {
   return (
-    <Container>
+    <div>
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
           subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          marginBottom={30}
         />
 
         <Grid container spacing={2}>
@@ -68,7 +67,7 @@ const CoreCapabilitiesSection = () => {
           ))}
         </Grid>
       </Wrapper>
-    </Container>
+    </div>
   );
 };
 

@@ -4,24 +4,32 @@ import { styled } from "@mui/material/styles";
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  maxWidth: "1400px",
-  margin: "0 auto",
+  // maxWidth: "1400px",
+ padding: "30px 80px",
+  margin: `${theme.spacing(3)} auto`,
 
-  marginTop:"40px",
-  marginBottom:"40px",
+  [theme.breakpoints.up("sm")]: {
+    margin: `${theme.spacing(2)} auto`,
+  },
+
+  [theme.breakpoints.up("md")]: {
+    margin: `${theme.spacing(3)} auto`, // ≈ 40px auto on desktop
+  },
+
   [theme.breakpoints.down("md")]: {
-    padding: "60px 16px",
+    padding: theme.spacing(2),
   },
 }));
+
 
 /* MAIN WRAPPER */
 export const CtaWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#FFF7F2",
   borderRadius: "20px",
   border: "1px solid #ECECEC",
-  padding: "64px 120px",
+  padding: "30px 80px",
   textAlign: "center",
-  maxWidth: "1100px",
+  // maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {

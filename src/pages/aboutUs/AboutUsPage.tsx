@@ -12,7 +12,7 @@ const CognitiveHealthAboutPage: React.FC = () => {
     <Box>
       <AboutUsHeroSection />
       <WhoWeAreSection />
-      <WhyWeExistSection />
+      <WhyWeExistSection/>
       <TeamSection />
       <AdvisorySection />
       <CallToActionSection />

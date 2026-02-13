@@ -2,7 +2,7 @@ import { Box, Typography, Button, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const Wrapper = styled(Box)(({ theme }) => ({
-  maxWidth: 1200,
+  // maxWidth: 1200,
   margin: "0 auto",
   padding: "64px 24px",
 

@@ -1,17 +1,15 @@
-import {
-  Wrapper,
-  Pill,
-  Title,
-  Subtitle,
-} from "./SectionTitle.style";
+import { Wrapper, Pill, Title, Subtitle } from "./SectionTitle.style";
 
 interface SectionTitleProps {
   pillText?: string;
+  pillIcon?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   align?: "center" | "left";
   maxWidth?: number;
-  textColor?:string;
+  textColor?: string;
+  marginBottom?: number;
+  pillVariant?: "primary" | "orange";
 }
 
 export const SectionTitle = ({
@@ -20,20 +18,34 @@ export const SectionTitle = ({
   subtitle,
   align = "center",
   maxWidth = 700,
-  textColor
+  pillIcon,
+  textColor,
+  marginBottom,
+  pillVariant,
 }: SectionTitleProps) => (
-  <Wrapper align={align}>
-    {pillText && <Pill>{pillText}</Pill>}
+  <Wrapper align={align} marginBottom={marginBottom}>
+    {pillText && (
+      <Pill variant={pillVariant}>
+        {pillIcon && (
+          <img
+            src={pillIcon}
+            alt=""
+            style={{ marginRight: 8, marginBottom: -4 }}
+          />
+        )}
+        {pillText}
+      </Pill>
+    )}
 
     <Title
       variant="h2"
       dangerouslySetInnerHTML={{ __html: title }}
       textcolor={textColor}
-      sx={{ marginBottom: subtitle ? "16px" : "20px" }} 
+      sx={{ marginBottom: subtitle ? "16px" : "20px" }}
     />
 
     {subtitle && (
-      <Subtitle variant="body1" maxWidth={maxWidth} textColor={textColor} >
+      <Subtitle variant="body1" maxWidth={maxWidth} textColor={textColor}>
         {subtitle}
       </Subtitle>
     )}

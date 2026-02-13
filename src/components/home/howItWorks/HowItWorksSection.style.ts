@@ -2,33 +2,33 @@ import { Box, styled } from "@mui/material";
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  maxWidth: "1400px",
+  // maxWidth: "1400px",
   margin: "0 auto",
-  // padding: "60px 24px",
-  backgroundColor:"#f9fafb",
+  padding: "30px 80px",
+  backgroundColor: "#f9fafb",
   // marginTop:"40px",
   [theme.breakpoints.down("md")]: {
-    padding: "60px 16px",
+    padding: "16px",
   },
 }));
 
 export const Wrapper = styled(Box)(({ theme }) => ({
   borderRadius: "20px",
-  padding: "64px 32px",
+  // padding: "32px",
   textAlign: "center",
-  maxWidth: "1100px",
+  // maxWidth: "1100px",
   margin: "0 auto",
 
   [theme.breakpoints.down("sm")]: {
-    padding: "48px 20px",
+    padding: "20px",
   },
 }));
 
 export const StepsCard = styled(Box)({
   backgroundColor: "#ffffff",
   borderRadius: "16px",
-  border: "1px solid #ECECEC",
-  padding: "28px 24px",
+  // border: "1px solid #ECECEC",
+  // padding: "28px 24px",
   marginBottom: "40px",
 });
 
@@ -36,10 +36,11 @@ export const StepsRow = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-
+  padding: "30px 80px",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     gap: "32px",
+    padding:0
   },
 }));
 

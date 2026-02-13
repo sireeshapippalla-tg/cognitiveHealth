@@ -1,63 +1,62 @@
-import { Container, Grid } from "@mui/material";
-
-import {
-  Dashboard,
-  Bolt,
-  ErrorOutline,
-  Insights,
-  Storage,
-} from "@mui/icons-material";
+import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
+import paymentImage5 from "../../../assets/solutions/paymentImage5.svg";
+import paymentImage2 from "../../../assets/solutions/paymentImage2.svg";
+import paymentImage6 from "../../../assets/solutions/paymentImage6.svg";
+import paymentImage7 from "../../../assets/solutions/paymentImage7.svg";
+import paymentImage8 from "../../../assets/solutions/paymentImage8.svg";
 
 const capabilities: ExpandableItem[] = [
   {
     id: 1,
-    title: "AI-Powered Correspondence Management System",
-    description:
-      "This generative AI solution automatically processes incoming lockbox documents using large language models and machine learning algorithms. The system can handle multiple document formats simultaneously, from handwritten checks to printed EOBs, denials, appeals, medical record requests and other correspondence, extracting key information such as payment amounts, account numbers, and payer details.",
-    icon: <Dashboard />,
+    title: "Real-Time Coverage Verification Portal",
+    description: `This instant verification system connects directly to insurance company databases and clearinghouses to provide immediate eligibility confirmation at the point of service. It retrieves benefit details such as active coverage dates, copayment amounts, deductible status, and coverage limitations within seconds. Results are displayed in an easy-to-read format so registration staff can collect correct payments and identify coverage issues before services are rendered.`,
+    icon: (
+      <img src={paymentImage5} alt="Real-Time Coverage Verification Portal" />
+    ),
     defaultOpen: true,
   },
   {
     id: 2,
-    title: "Multi-Batch Processing Console",
-    description:
-      "This centralized processing hub manages multiple lockbox batches from different banks and service providers in parallel workflows. The console automatically splits large PDF files containing mixed document types into individual items, categorizes them by type and priority, and routes them to appropriate processing queues.",
-    icon: <Bolt />,
+    title: "Multi-Payer Coordination Manager",
+    description: `This system automatically identifies coordination of benefits situations and determines the correct billing sequence when patients have multiple insurance coverages. It applies industry-standard rules to establish primary, secondary, and tertiary payers, sequences claims to maximize reimbursement, tracks payer responses, and adjusts subsequent claims accordingly. The system connects to most commercial payers, clearinghouses, Medicare, and most state Medicaid programs.`,
+    icon: <img src={paymentImage2} alt="Multi-Payer Coordination Manager" />,
   },
   {
     id: 3,
-    title: "Intelligent Document Classification Engine",
-    description:
-      "This sophisticated categorization system organizes lockbox documents into hierarchical categories with four or more levels of detail, such as Payer > Plan Type > Document Type > Processing Date. Continuously improve classification accuracy based on user corrections and feedback, while maintaining detailed audit logs of all classification decisions.",
-    icon: <ErrorOutline />,
+    title: "Automated Patient Benefit Summaries",
+    description: `This communication tool generates clear, patient-friendly explanations of insurance benefits and estimated out-of-pocket costs for scheduled services. It translates complex insurance terminology into understandable language, including deductible status, coinsurance percentages, and coverage limitations—helping patients understand financial responsibility before care and improving point-of-service collections.`,
+    icon: <img src={paymentImage6} alt="Automated Patient Benefit Summaries" />,
   },
   {
     id: 4,
-    title: "Bank Integration and Download Automation",
-    description:
-      "This automated system securely connects to multiple bank portals to download lockbox files at scheduled intervals without manual intervention. The integration uses secure authentication protocols and encrypted data transfer to maintain security while ensuring timely access to new deposits",
-    icon: <Insights />,
+    title: "Authorization Tracking and Alert System",
+    description: `This proactive monitoring solution maintains a comprehensive database of prior authorization requirements by payer, service type, and procedure code. It flags services needing authorization during scheduling, tracks request status, and sends automated alerts when authorizations are nearing expiration—ensuring continuous coverage and preventing service disruptions.`,
+    icon: (
+      <img src={paymentImage7} alt="Authorization Tracking and Alert System" />
+    ),
   },
   {
     id: 5,
-    title: "Continuous Quality Assurance Module",
-    description:
-      "The module randomly samples processed items for manual review, tracks error rates by document type and processing rule, and identifies patterns indicating needed algorithm adjustments. Feedback from quality reviews is automatically incorporated into the AI training data, while detailed reporting helps managers monitor processing performance and identify training needs for staff.",
-    icon: <Storage />,
+    title: "Scheduled Re-Verification Automation",
+    description: `This automated system re-verifies patient eligibility at configurable intervals before scheduled appointments to detect coverage changes between scheduling and service delivery. It compares current eligibility with prior verification data and alerts staff to changes in coverage, benefits, or patient responsibility—preventing check-in delays and reducing denials caused by coverage termination or updates.`,
+    icon: (
+      <img src={paymentImage8} alt="Scheduled Re-Verification Automation" />
+    ),
   },
 ];
 
 const CoreCapabilitiesSection = () => {
   return (
-    <Container>
+    <div>
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
           subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          marginBottom={30}
         />
 
         <Grid container spacing={2}>
@@ -68,7 +67,7 @@ const CoreCapabilitiesSection = () => {
           ))}
         </Grid>
       </Wrapper>
-    </Container>
+    </div>
   );
 };
 

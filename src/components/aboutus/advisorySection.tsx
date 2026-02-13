@@ -1,5 +1,4 @@
-import {  Grid } from "@mui/material";
-
+import { Grid } from "@mui/material";
 
 import { SectionTitle } from "../ui/sectionTitle/SectionTitle";
 import type { Advisor } from "../ui/advisoryCard/advisoryCard";
@@ -32,21 +31,22 @@ const advisoryData: Advisor[] = [
 
 const AdvisorySection: React.FC = () => {
   return (
-   <SectionContainerAdvisoy>
+    <SectionContainerAdvisoy maxWidth={false}>
       <SectionTitle
         title="Advisory Team"
         subtitle="Our advisors are well-known thought leaders drawn from the healthcare industry."
-        maxWidth={620}
+        maxWidth={750}
       />
       <GridWrapperAdvisory>
-
-      <Grid container spacing={3} mt={2}>
-        {advisoryData.map((advisor) => (
-          <Grid  size={{xs:12,sm:6,md:4}} key={advisor.id}>
-            <AdvisorCard advisor={advisor} />
+        {/* <div> */}
+          <Grid container spacing={3} mt={4}>
+            {advisoryData.map((advisor) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={advisor.id}>
+                <AdvisorCard advisor={advisor} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        {/* </div> */}
       </GridWrapperAdvisory>
     </SectionContainerAdvisoy>
   );
