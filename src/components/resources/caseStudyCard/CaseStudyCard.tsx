@@ -13,7 +13,7 @@ import {
   ReadMoreLink,
 } from "./CaseStudyCard.styles";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import BusinessIcon from "@mui/icons-material/Business"; // Example icon for category
+import BusinessIcon from "../../../assets/Resources/BusinessIcon.svg" 
 
 interface CaseStudyCardProps {
   image: string;
@@ -48,7 +48,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
 
       <CardContent>
         <CategoryChip 
-            icon={<BusinessIcon style={{ fontSize: 16 }} />} 
+            icon={<img src={BusinessIcon} alt="icon" width={14} height={14} />} 
             label={category} 
             size="small" 
         />

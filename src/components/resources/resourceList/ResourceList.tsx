@@ -36,7 +36,7 @@ const handlePlayVideo = (url: string) => {
   })();
 
   return (
-    <Box sx={{ flexGrow: 1, py: 4 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={4}>
         {filteredResources.map((resource) => (
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} key={resource.id}>
@@ -64,8 +64,8 @@ const handlePlayVideo = (url: string) => {
               <ResourceCard
                 image={resource.image}
                 category={resource.category}
-                date={resource.date}
-                readTime={resource.readTime}
+                date={"date" in resource ? resource.date : undefined}
+                readTime={"readTime" in resource ? resource.readTime : undefined}
                 title={resource.title}
                 description={resource.description}
                 link={resource.link}

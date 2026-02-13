@@ -13,7 +13,7 @@ export const StyledCard = styled(Card)({
   transition: "all 0.3s ease-in-out",
   backgroundColor: "#FFFFFF",
   position: "relative",
-  marginTop: "24px", // Give space for top overlay if needed, or normal flow
+  // marginTop: "24px", // Give space for top overlay if needed, or normal flow
   "&:hover": {
     boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.08)",
     transform: "translateY(-4px)",
@@ -67,16 +67,17 @@ export const MetricOverlay = styled(Box)({
 });
 
 export const MetricValue = styled(Typography)({
-  fontSize: "28px",
-  fontWeight: 800,
-  color: "#E88D3E", // Orange
-  lineHeight: 1.2,
+  fontSize: "20px",
+  fontWeight: 700,
+  color: "#EB7724", // Orange
+  lineHeight: "28px",
 });
 
 export const MetricLabel = styled(Typography)({
-  fontSize: "13px",
+  fontFamily: "Inter",
+  fontSize: "12px",
   fontWeight: 600,
-  color: "#374151", // text.primary usually, hardcoding or using theme correctly? I'll just remove theme and use a hex for now or assume default. Actually, I should keep theme if I use it.
+  color: "var(--color-text-light)", // text.primary usually, hardcoding or using theme correctly? I'll just remove theme and use a hex for now or assume default. Actually, I should keep theme if I use it.
   marginTop: "4px",
 });
 
@@ -89,11 +90,11 @@ export const CardContent = styled(Box)({
 });
 
 export const CategoryChip = styled(Chip)({
-  backgroundColor: "#E0F2FE", // Light blue
-  color: "#0284C7", // Darker blue text
+  backgroundColor: "#EAF4FF", // Light blue
+  color: "#3A63D2", // Darker blue text
   fontWeight: 600,
-  fontSize: "12px",
-  height: "28px",
+  fontSize: "14px",
+  lineHeight: "22px",
   border: "none",
   alignSelf: "flex-start",
   marginBottom: "8px",
@@ -109,10 +110,11 @@ export const CategoryChip = styled(Chip)({
 });
 
 export const CardTitle = styled(Typography)(() => ({
+  fontFamily: "Inter",
   fontSize: "16px",
-  fontWeight: 700,
-  lineHeight: "1.4",
-  color: "var(--color-text-blue)",
+  fontWeight: 600,
+  lineHeight: "24px ",
+  color: "#3A63D2",
   // marginBottom: "4px",
    display: "-webkit-box",
   WebkitLineClamp: 2,
@@ -120,10 +122,11 @@ export const CardTitle = styled(Typography)(() => ({
   overflow: "hidden",
 }));
 
-export const CardDescription = styled(Typography)(({ theme }) => ({
+export const CardDescription = styled(Typography)(() => ({
+  fontFamily: "Inter",
   fontSize: "13px",
-  lineHeight: "1.6",
-  color: theme.palette.text.secondary,
+  lineHeight: "22.4px",
+  color: "#4A5565",
   // marginBottom: "16px",
   display: "-webkit-box",
   WebkitLineClamp: 3,
@@ -138,7 +141,7 @@ export const ReadMoreLink = styled(Link)({
   gap: "4px",
   fontSize: "15px",
   fontWeight: 600,
-  color: "#E88D3E", // Orange
+  color: "#EB7724", // Orange
   textDecoration: "none",
   marginTop: "auto",
   transition: "all 0.2s ease",

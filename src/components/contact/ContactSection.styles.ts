@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 export const Wrapper = styled(Box)(({ theme }) => ({
   // maxWidth: 1200,
   margin: "0 auto",
-  padding: "64px 24px",
+  padding: "30px 80px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px",

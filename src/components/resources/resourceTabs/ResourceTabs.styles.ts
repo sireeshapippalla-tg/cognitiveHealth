@@ -1,9 +1,18 @@
 import { styled } from "@mui/material/styles";
 import { Tabs, Tab } from "@mui/material";
 
+export const BlogContainer = styled("div")(({ theme }) => ({
+  padding: "30px 80px",
+
+  [theme.breakpoints.down("md")]: {
+    padding: "20px",
+  },
+}));
+
 export const StyledTabs = styled(Tabs)({
-  backgroundColor: "#f9fafb", // Light gray background like in the image
+  backgroundColor: "#F5F5F5", // Light gray background like in the image
   borderRadius: "8px",
+  border: "1px solid #ECECEC", // Light border for separation
   padding: "4px",
   minHeight: "48px",
   width: "fit-content",
@@ -19,7 +28,7 @@ export const StyledTab = styled(Tab)(({ theme }) => ({
   color: theme.palette.text.secondary,
   minHeight: "40px",
   borderRadius: "6px",
-  padding: "8px 16px",
+  // padding: "8px 16px",
   transition: "all 0.2s ease",
   "&.Mui-selected": {
     backgroundColor: "#ffffff",
@@ -33,6 +42,7 @@ export const StyledTab = styled(Tab)(({ theme }) => ({
 }));
 
 export const FilterContainer = styled("div")({
+  color: "#FFFFFF",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
