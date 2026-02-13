@@ -5,7 +5,7 @@ import kaminLogo from "../../../assets/Kamin Logo.svg";
 // import mercyLogo from "../../../assets/Mercylogo.svg";
 import mindPathLogo from "../../../assets/mindpath-logo.svg";
 // import qualityLogo from "../../../assets/Quality.svg";
-import mercyImg from "../../../assets/Resources/mercy.jpeg";
+import mercyImg from "../../../assets/Resources/mercyLogo.png";
 
 import {
   TrustSection,
