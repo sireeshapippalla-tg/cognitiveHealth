@@ -1,32 +1,37 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Container, MenuItem, Select, FormControl } from "@mui/material";
+import { MenuItem, Select, FormControl, type SelectChangeEvent } from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
-import { StyledTabs, StyledTab, FilterContainer } from "./ResourceTabs.styles";
+import {
+  StyledTabs,
+  StyledTab,
+  FilterContainer,
+  BlogContainer,
+} from "./ResourceTabs.styles";
 import BlogIcon from "../../../assets/Resources/Blog.svg";
 import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
-import VideoIcon from "../../../assets/Resources/video.svg"
-import MediaIcon from "../../../assets/Resources/Media.svg"
+import VideoIcon from "../../../assets/Resources/video.svg";
+import MediaIcon from "../../../assets/Resources/Media.svg";
 
 const ResourceTabs = () => {
   const location = useLocation();
   const getTabFromHash = () => {
-  const hash = location.hash.replace("#", "");
+    const hash = location.hash.replace("#", "");
 
-  switch (hash) {
-    case "case-studies":
-      return 1;
-    case "videos":
-      return 2;
-    case "media":
-      return 3;
-    case "blog":
-    default:
-      return 0;
-  }
-};
+    switch (hash) {
+      case "case-studies":
+        return 1;
+      case "videos":
+        return 2;
+      case "media":
+        return 3;
+      case "blog":
+      default:
+        return 0;
+    }
+  };
 
-const [activeTab, setActiveTab] = useState(getTabFromHash());
+  const [activeTab, setActiveTab] = useState(getTabFromHash());
 
   // const [activeTab, setActiveTab] = useState(0);
   const [filter, setFilter] = useState("Filter By");
@@ -35,13 +40,12 @@ const [activeTab, setActiveTab] = useState(getTabFromHash());
     setActiveTab(newValue);
   };
 
-  const handleFilterChange = (event: any) => {
+  const handleFilterChange = (event: SelectChangeEvent) => {
     setFilter(event.target.value);
   };
- 
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }} id="blog">
+    <BlogContainer id="blog">
       <FilterContainer>
         <StyledTabs
           value={activeTab}
@@ -56,17 +60,28 @@ const [activeTab, setActiveTab] = useState(getTabFromHash());
             label="Blog"
           />
           <StyledTab
-            icon={<img src={CaseStudyIcon} alt="Case Study Icon" width={16} height={16} />}
+            icon={
+              <img
+                src={CaseStudyIcon}
+                alt="Case Study Icon"
+                width={16}
+                height={16}
+              />
+            }
             iconPosition="start"
             label="Case Studies"
           />
           <StyledTab
-            icon={<img src={VideoIcon} alt="Video Icon" width={16} height={16} />}
+            icon={
+              <img src={VideoIcon} alt="Video Icon" width={16} height={16} />
+            }
             iconPosition="start"
             label="Videos"
           />
           <StyledTab
-            icon={<img src={MediaIcon} alt="Media Icon" width={16} height={16} />}
+            icon={
+              <img src={MediaIcon} alt="Media Icon" width={16} height={16} />
+            }
             iconPosition="start"
             label="Media"
           />
@@ -79,19 +94,19 @@ const [activeTab, setActiveTab] = useState(getTabFromHash());
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
             sx={{
-                fontFamily: 'Inter',
-                fontSize: '14px',
-                bgcolor: '#fff',
-                color: '#656565',
-                borderRadius: '8px',
-                '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#E5E7EB',
-                },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#D1D5DB',
-                },
-                 typography: 'body2',
-                 fontWeight: 500
+              fontFamily: "Inter",
+              fontSize: "14px",
+              bgcolor: "#fff",
+              color: "#656565",
+              borderRadius: "8px",
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#E5E7EB",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#D1D5DB",
+              },
+              typography: "body2",
+              fontWeight: 500,
             }}
           >
             <MenuItem value="Filter By">Filter By</MenuItem>
@@ -102,7 +117,7 @@ const [activeTab, setActiveTab] = useState(getTabFromHash());
       </FilterContainer>
 
       <ResourceList activeTab={activeTab} />
-    </Container>
+    </BlogContainer>
   );
 };
 

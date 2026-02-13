@@ -13,7 +13,7 @@ export const StyledCard = styled(Card)({
   transition: "all 0.3s ease-in-out",
   backgroundColor: "#FFFFFF",
   position: "relative",
-  marginTop: "24px", // Give space for top overlay if needed, or normal flow
+  // marginTop: "24px", // Give space for top overlay if needed, or normal flow
   "&:hover": {
     boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.08)",
     transform: "translateY(-4px)",
@@ -122,7 +122,7 @@ export const CardTitle = styled(Typography)(() => ({
   overflow: "hidden",
 }));
 
-export const CardDescription = styled(Typography)(({ theme }) => ({
+export const CardDescription = styled(Typography)(() => ({
   fontFamily: "Inter",
   fontSize: "13px",
   lineHeight: "22.4px",

@@ -14,7 +14,31 @@ export const Hero = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const Title = styled(Typography)(({ }) => ({
+export const ResourceCenterChip = styled(Chip)({
+  backgroundColor: "#FFFFFF99",
+  border: " 1px solid #FFFFFFB2",
+  borderRadius: "16px",
+  fontWeight: 600,
+  fontSize: "18px",
+  // marginBottom: "24px",
+  padding: "18px",
+});
+
+export const StyledInput = styled(InputBase)({
+  flex: 1,
+  marginLeft: "16px",
+  fontSize: "16px",
+});
+
+export const SearchButton = styled(IconButton)({
+  backgroundColor: "#E88D3E",
+  color: "white",
+  padding: "8px",
+  "&:hover": {
+    backgroundColor: "#d67d2e",
+  },
+});
+export const Title = styled(Typography)(() => ({
   fontFamily: "Inter",
   fontSize: "32px",
   fontWeight: 600,
@@ -22,18 +46,18 @@ export const Title = styled(Typography)(({ }) => ({
   color: "var(--color-text-dark)",
 }));
 
-export const Subtitle = styled(Typography)(({ }) => ({
+export const Subtitle = styled(Typography)(() => ({
   fontFamily: "Inter",
   fontWeight: 400,
   color: "var(--color-text-light)",
-  maxWidth: "600px",
+  maxWidth: "655px",
   margin: "0 auto 40px",
   fontSize: "20px",
   lineHeight: "150%",
 }));
 
 export const SearchWrapper = styled(Box)(({ theme }) => ({
-  maxWidth: 520,
+  maxWidth: 550,
   margin: "0 auto",
   position: "relative",
   backgroundColor: "#fff",

@@ -45,13 +45,12 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <PlayButtonOverlay className="play-button">
           <PlayButton
             onClick={(e) => {
-                e.stopPropagation();
+              e.stopPropagation();
               onPlay();
             }}
           >
             <PlayArrowIcon />
-</PlayButton>
-
+          </PlayButton>
         </PlayButtonOverlay>
       </CardImageWrapper>
 
@@ -60,34 +59,33 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <CardDescription>{description}</CardDescription>
 
         <Footer>
-  <Box
-    onClick={(e) => {
-      e.stopPropagation();
-      onPlay();
-    }}
-    className="read-more-link"
-    sx={{
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "4px",
-      fontSize: "15px",
-      fontWeight: 600,
-      color: "#E88D3E",
-      cursor: "pointer",
-    }}
-  >
-    Watch Video
-    <ArrowForwardIcon fontSize="small" />
-  </Box>
+          <Box
+            onClick={(e) => {
+              e.stopPropagation();
+              onPlay();
+            }}
+            className="read-more-link"
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              fontSize: "15px",
+              fontWeight: 600,
+              color: "#E88D3E",
+              cursor: "pointer",
+            }}
+          >
+            Watch Video
+            <ArrowForwardIcon fontSize="small" />
+          </Box>
 
-  {duration && (
-    <DurationBadge>
-      <AccessTimeOutlinedIcon />
-      <span>{duration}</span>
-    </DurationBadge>
-  )}
-</Footer>
-
+          {duration && (
+            <DurationBadge>
+              <AccessTimeOutlinedIcon />
+              <span>{duration}</span>
+            </DurationBadge>
+          )}
+        </Footer>
       </CardContent>
     </StyledCard>
   );

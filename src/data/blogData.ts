@@ -21,7 +21,7 @@ export const blogData: Blog[] = [
     date: "November 28, 2024",
     readTime: "5 min read",
     category: "Document Processing",
-    link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    link: "",
   },
   {
     id: "2",
@@ -33,7 +33,7 @@ export const blogData: Blog[] = [
     date: "November 28, 2024",
     readTime: "8 min read",
     category: "Best Practices",
-    link: "/blog/lockbox-chaos-to-clarity",
+    link: "",
   },
   {
     id: "3",
@@ -45,7 +45,7 @@ export const blogData: Blog[] = [
     date: "November 28, 2024",
     readTime: "6 min read",
     category: "Revenue Cycle",
-    link: "/blog/ai-powered-idp",
+    link: "",
   },
   {
     id: "4",
@@ -57,6 +57,6 @@ export const blogData: Blog[] = [
     date: "November 28, 2024",
     readTime: "6 min read",
     category: "Strategy",
-    link: "/blog/maximizing-business-value",
+    link: "",
   },
 ];
