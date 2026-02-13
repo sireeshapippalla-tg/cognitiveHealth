@@ -122,7 +122,7 @@ export const LogoGrid = styled(Box)(({ theme }) => ({
 }));
 
 export const LogoImage = styled("img")(({ theme }) => ({
-  height: "50px",
+  height: "60px",
   maxWidth: "140px",
   objectFit: "contain",
 
