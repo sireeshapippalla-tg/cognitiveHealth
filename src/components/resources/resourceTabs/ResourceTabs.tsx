@@ -11,7 +11,7 @@ import {
 import BlogIcon from "../../../assets/Resources/Blog.svg";
 import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
-import MediaIcon from "../../../assets/Resources/Media.svg";
+import MediaIcon from "../../../assets/Resources/media.svg";
 
 const ResourceTabs = () => {
   const location = useLocation();
