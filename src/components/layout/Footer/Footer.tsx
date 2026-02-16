@@ -111,8 +111,12 @@ const Footer = () => {
                 Request Demo
               </ListItem>
               <ListItem>Support</ListItem>
-              <ListItem>Privacy Policy</ListItem>
-              <ListItem onClick={() => navigate("/terms")}>Terms of Service</ListItem>
+              <ListItem onClick={() => navigate("/privacy-policy")}>
+                Privacy Policy
+              </ListItem>
+              <ListItem onClick={() => navigate("/terms")}>
+                Terms of Service
+              </ListItem>
             </List>
           </Box>
         </Stack>
@@ -130,11 +134,19 @@ const Footer = () => {
 
           <Typography>
             All Rights Reserved |{" "}
-            <Link href="#" underline="hover">
+            <Link
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/terms")}
+              underline="hover"
+            >
               Terms and Conditions
             </Link>{" "}
             |{" "}
-            <Link href="#" underline="hover">
+            <Link
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/privacy-policy")}
+              underline="hover"
+            >
               Privacy Policy
             </Link>
           </Typography>

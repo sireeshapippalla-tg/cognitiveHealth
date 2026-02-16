@@ -19,6 +19,7 @@ import PreBillServicesPage from "./pages/solutions/PreBillServicesPage";
 import ContactUsPage from "./pages/contactUs/ContactUsPage";
 import RCMReadinessScreen from "./pages/RcmreadinessScreen";
 import TermsPage from "./pages/terms&Conditions/TermsPage";
+import PrivacyPolicyPage from "./pages/privacyPolicy/PrivacyPolicyPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 const App = () => {
@@ -74,7 +75,8 @@ const App = () => {
           <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
           <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
           <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
-           <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
+          <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
+          <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
         </Route>
 
         {/* ---------- FALLBACK ---------- */}
