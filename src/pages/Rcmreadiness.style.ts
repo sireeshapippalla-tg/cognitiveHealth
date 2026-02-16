@@ -27,6 +27,13 @@ export const HeaderWrapper = styled(Box)(({ theme }) => ({
   padding: "40px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 16px" },
 }));
+export const ResultsWrapper = styled(Box)(({ theme }) => ({
+  maxWidth: 1000,
+  margin: "0 auto",
+  textAlign: "center",
+  // padding: "10px 16px",
+  [theme.breakpoints.up("md")]: { padding: "64px 16px" },
+}));
 
 export const HeaderTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
@@ -71,7 +78,7 @@ export const StyledCheckbox = styled(Checkbox)({
 
 /* RESULT */
 export const ResultPaper = styled(Paper)(({ theme }) => ({
-  marginTop: 48,
+  // marginTop: 48,
   padding: 24,
   borderRadius: 12,
   textAlign: "center",
@@ -82,7 +89,7 @@ export const ResultPaper = styled(Paper)(({ theme }) => ({
 
 /* FOOTER */
 export const FooterWrapper = styled(Box)({
-  marginTop: 64,
+  marginTop: 10,
   textAlign: "center",
 });
 

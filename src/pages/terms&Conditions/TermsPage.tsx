@@ -1,3 +1,4 @@
+import { UpdatedBadge } from "../privacyPolicy/PrivacyPolicy.styles";
 import {
   HeroSection,
   HeroInner,
@@ -5,8 +6,8 @@ import {
   HeroSubtitle,
   ContentWrapper,
   ContentInner,
-  PageTitle,
-  UpdatedText,
+  // PageTitle,
+  // UpdatedText,
   SectionBlock,
   SectionTitle,
   Paragraph,
@@ -14,7 +15,7 @@ import {
   StyledListItem,
 } from "./Terms.styles";
 
-type TermBlock = 
+type TermBlock =
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
 
@@ -64,7 +65,7 @@ const TermsPage = () => {
         },
       ],
     },
-      {
+    {
       id: "links",
       title: "Links",
       blocks: [
@@ -107,11 +108,11 @@ const TermsPage = () => {
       ],
     },
 
-     {
+    {
       id: "mustnot",
       title: "You must not:",
       blocks: [
-       {
+        {
           type: "list",
           items: [
             "Modify copies of any materials from this site.",
@@ -142,7 +143,7 @@ const TermsPage = () => {
         },
       ],
     },
-     {
+    {
       id: "limitations",
       title: "Changes to Our Terms of Use and Privacy Policy",
       blocks: [
@@ -160,6 +161,7 @@ const TermsPage = () => {
       <HeroSection>
         <HeroInner>
           <HeroTitle>Terms of Service</HeroTitle>
+             <UpdatedBadge>  This Terms of Use is effective January 1, 2024</UpdatedBadge>
           <HeroSubtitle>
             These Terms and Conditions govern your use of the CognitiveHealth
             platform and services.
@@ -170,9 +172,11 @@ const TermsPage = () => {
       {/* CONTENT */}
       <ContentWrapper>
         <ContentInner>
-          <PageTitle>Terms of Use</PageTitle>
-          <UpdatedText>Last Updated: January 1, 2024</UpdatedText>
-
+          {/* <PageTitle>Terms of Use</PageTitle>
+          <UpdatedText>Last Updated: January 1, 2024</UpdatedText> */}
+          {/* <UpdatedText>
+            This Terms of Use is effective January 1, 2024
+          </UpdatedText> */}
           {termsSections.map((section) => (
             <SectionBlock key={section.id} id={section.id}>
               <SectionTitle>{section.title}</SectionTitle>

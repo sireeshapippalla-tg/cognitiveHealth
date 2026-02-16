@@ -5,14 +5,14 @@ import {
   HeroSubtitle,
   ContentWrapper,
   ContentInner,
-  PageTitle,
-  UpdatedText,
+  // PageTitle,
+  // UpdatedText,
   SectionBlock,
   SectionTitle,
   Paragraph,
   StyledList,
   StyledListItem,
-  UpdatedBadge
+  UpdatedBadge,
 } from "./PrivacyPolicy.styles";
 
 type TermBlock =
@@ -56,8 +56,7 @@ const PrivacyPolicyPage = () => {
         },
         {
           type: "paragraph",
-          text: "BY USING OR ACCESSING THE WEBSITE, YOU ARE ACCEPTING THE PRACTICES DESCRIBED IN THIS PRIVACY POLICY."
-          
+          text: "BY USING OR ACCESSING THE WEBSITE, YOU ARE ACCEPTING THE PRACTICES DESCRIBED IN THIS PRIVACY POLICY.",
         },
         {
           type: "paragraph",
@@ -71,7 +70,7 @@ const PrivacyPolicyPage = () => {
       blocks: [
         {
           type: "paragraph",
-          text: `Non-Personally-Identifying Information" is information that, without the aid of additional information, cannot be directly associated with a specific
+          text: `"Non-Personally-Identifying Information" is information that, without the aid of additional information, cannot be directly associated with a specific
                 person. "Personally-Identifying Information," by contrast, is information such as a name or email address that, without more, can be directly
                 associated with a specific person. Like most website operators, Company gathers from users of the Website Non-Personally-Identifying Information of
                 the sort that Web browsers, depending on their settings, may make available. That information includes the user's Internet Protocol (IP) address,
@@ -86,7 +85,7 @@ const PrivacyPolicyPage = () => {
       ],
     },
 
-     {
+    {
       id: "web-cookies",
       title: "Web Cookies",
       blocks: [
@@ -105,14 +104,14 @@ const PrivacyPolicyPage = () => {
       ],
     },
 
-   {
-  id: "third-party-advertisers-inline",
-  title: "Third Party Advertisers",
-  blocks: [
     {
-      type: "paragraph",
-      text: `We may use third-party advertising companies to serve ads when you visit the Website. These companies may use information (not including any Personally-Identifying Information) about your visits to this and other websites that are contained in Web Cookies in order to provide advertisements about goods and services of interest to you. Using a tool created by the Network Advertising Initiative, you can opt out of several third party ad servers’ and networks’ Web Cookies simultaneously. If you would like more information about this practice and to know your choices about not having this information used by these companies, please follow the following links: <a href="http://networkadvertising.org/managing/opt_out.asp" target="_blank">http://networkadvertising.org/managing/opt_out.asp</a>, <a href="http://preferences-mgr.truste.com/" target="_blank">http://preferences-mgr.truste.com/</a>, or <a href="http://www.aboutads.info/choices/" target="_blank">http://www.aboutads.info/choices/</a>. Please contact us if you would like to know the identity of the third-party advertising companies we are currently using to serve ads.`,
-    },
+      id: "third-party-advertisers-inline",
+      title: "Third Party Advertisers",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `We may use third-party advertising companies to serve ads when you visit the Website. These companies may use information (not including any Personally-Identifying Information) about your visits to this and other websites that are contained in Web Cookies in order to provide advertisements about goods and services of interest to you. Using a tool created by the Network Advertising Initiative, you can opt out of several third party ad servers’ and networks’ Web Cookies simultaneously. If you would like more information about this practice and to know your choices about not having this information used by these companies, please follow the following links: <a href="http://networkadvertising.org/managing/opt_out.asp" target="_blank">http://networkadvertising.org/managing/opt_out.asp</a>, <a href="http://preferences-mgr.truste.com/" target="_blank">http://preferences-mgr.truste.com/</a>, or <a href="http://www.aboutads.info/choices/" target="_blank">http://www.aboutads.info/choices/</a>. Please contact us if you would like to know the identity of the third-party advertising companies we are currently using to serve ads.`,
+        },
 
         {
           type: "paragraph",
@@ -122,7 +121,7 @@ const PrivacyPolicyPage = () => {
         },
       ],
     },
-       {
+    {
       id: "web-beacons",
       title: "Web Beacons",
       blocks: [
@@ -138,23 +137,22 @@ const PrivacyPolicyPage = () => {
         },
       ],
     },
-   {
-  id: "analytics",
-  title: "Analytics",
-  blocks: [
     {
-      type: "paragraph",
-      text: `We may use third-party vendors, including Google, who use first-party cookies (such as the Google Analytics cookie) and third-party cookies (such as the DoubleClick cookie) together to provide analytics services, inform, optimize, 
+      id: "analytics",
+      title: "Analytics",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `We may use third-party vendors, including Google, who use first-party cookies (such as the Google Analytics cookie) and third-party cookies (such as the DoubleClick cookie) together to provide analytics services, inform, optimize, 
             and serve ads based on your past activity on our websites and applications, including Google Analytics for Display Advertising. These vendors may use Web Cookies, Web Beacons and other technologies to collect information about your use of the Website, 
             our service and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked and conversion information. This information may be used by us and others to, among other things, analyze and track data, determine the popularity of certain content,
              deliver advertising and content targeted to your interests on our service and other websites and better understand your online activity. If you do not want any information to be collected and used by Google Analytics, you can install an opt-out in your web browser (<a href="https://tools.google.com/dlpage/gaoptout/" target="_blank">https://tools.google.com/dlpage/gaoptout/</a>) and/or opt out from Google Analytics
-           for Display Advertising or the Google Display Network. You can do so by using Google’s Ads Settings (<a href="https://www.google.com/settings/ads" target="_blank">www.google.com/settings/ads</a>). For more information about interest-based ads, or to opt out in general of having your web browsing information used for behavioral advertising purposes, please visit <a href="https://www.aboutads.info/choices" target="_blank">www.aboutads.info/choices</a>.`
-    }
-  ]
-},
+           for Display Advertising or the Google Display Network. You can do so by using Google’s Ads Settings (<a href="https://www.google.com/settings/ads" target="_blank">www.google.com/settings/ads</a>). For more information about interest-based ads, or to opt out in general of having your web browsing information used for behavioral advertising purposes, please visit <a href="https://www.aboutads.info/choices" target="_blank">www.aboutads.info/choices</a>.`,
+        },
+      ],
+    },
 
-
-     {
+    {
       id: "aggregated-information",
       title: "Aggregated and Non-Personally-Identifying Information",
       blocks: [
@@ -171,44 +169,45 @@ const PrivacyPolicyPage = () => {
       ],
     },
 
-      {
-  id: "personal-information-collection",
-  title: "Collection, Use and Disclosure of Personally-Identifying Information",
-  blocks: [
     {
-      type: "heading",
-      text: "Collection of Information"
-    },
-    {
-      type: "paragraph",
-      text: `As defined above, Personally-Identifying Information is information that can be directly associated with a specific person. Company may collect a
+      id: "personal-information-collection",
+      title:
+        "Collection, Use and Disclosure of Personally-Identifying Information",
+      blocks: [
+        {
+          type: "heading",
+          text: "Collection of Information",
+        },
+        {
+          type: "paragraph",
+          text: `As defined above, Personally-Identifying Information is information that can be directly associated with a specific person. Company may collect a
             range of Personally-Identifying Information from and about Website users. Much of the Personally-Identifying Information collected by Company
             about users is information provided by users themselves when (1) participating in polls, surveys or other features of our service, or responding to
             offers or advertisements, (2) communicating with us, (3) creating a public profile, or (4) signing up to receive newsletters. That information may
             include each user's name, address, email address, and telephone number. We also may request information about your interests and activities, and
             other relevant information as determined by Company from time to time. Users of the Website are under no obligation to provide Company with
-            Personally-Identifying Information of any kind, with the caveat that a user's refusal to do so may prevent the user from using certain Website features.`
+            Personally-Identifying Information of any kind, with the caveat that a user's refusal to do so may prevent the user from using certain Website features.`,
+        },
+        {
+          type: "paragraph",
+          text: `BY USING THE WEBSITE, YOU CONSENT TO THE USE AND DISCLOSURE OF YOUR PERSONALLY IDENTIFYING INFORMATION AS DESCRIBED IN THIS
+            "COLLECTION, USE AND DISCLOSURE OF PERSONALLY-IDENTIFYING INFORMATION" SECTION.`,
+        },
+      ],
     },
-    {
-      type: "paragraph",
-      text: `BY USING THE WEBSITE, YOU CONSENT TO THE USE AND DISCLOSURE OF YOUR PERSONALLY IDENTIFYING INFORMATION AS DESCRIBED IN THIS
-            "COLLECTION, USE AND DISCLOSURE OF PERSONALLY-IDENTIFYING INFORMATION" SECTION.`
-    }
-  ]
-},
 
-   {
-  id: "company-communications",
-  title: "Company Communications",
-  blocks: [
     {
-      type: "paragraph",
-      text: `We may occasionally use your name and email address to send you notifications regarding new services offered by the Website that we think you
+      id: "company-communications",
+      title: "Company Communications",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `We may occasionally use your name and email address to send you notifications regarding new services offered by the Website that we think you
           may find valuable. We may also send you service-related announcements from time to time. You may opt out of such emails, though we reserve the
-          right to send you service announcements, and administrative messages, even if you opt out of all voluntary email notifications.`
+          right to send you service announcements, and administrative messages, even if you opt out of all voluntary email notifications.`,
+        },
+      ],
     },
-  ]
-},
 
     {
       id: "company-disclosures",
@@ -235,131 +234,128 @@ const PrivacyPolicyPage = () => {
               customer service and marketing assistance, performing business and sales analysis, supporting our website functionality, and supporting surveys and
               other features offered through our Website. These service providers may have access to personal information needed to perform their functions but are
               not permitted to share or use such information for any other purpose.`,
-              `<strong>Business Transfers; Bankruptcy.</strong> Company reserves the right to transfer all Personally-Identifying Information in its possession to a successor organization
+            `<strong>Business Transfers; Bankruptcy.</strong> Company reserves the right to transfer all Personally-Identifying Information in its possession to a successor organization
               in the event of a merger, acquisition, or bankruptcy or other sale of all or a portion of Company's assets. Other than to the extent ordered by a bankruptcy or
               other court, the use and disclosure of all transferred Personally-Identifying Information will be subject to this Privacy Policy, or to a new privacy policy if you
               are given notice of that new privacy policy and are given an opportunity to affirmatively opt-out of it. Personally-Identifying Information submitted or
-              collected after a transfer, however, may be subject to a new privacy policy adopted by the successor organization.`
+              collected after a transfer, however, may be subject to a new privacy policy adopted by the successor organization.`,
           ],
         },
       ],
     },
-  {
-  id: "changing-personally-identifying-information",
-  title: "Changing Personally-Identifying Information",
-  blocks: [
     {
-      type: "paragraph",
-      text: `You may at any time review or change or delete your Personally-Identifying Information by contacting us using the contact information below. We
+      id: "changing-personally-identifying-information",
+      title: "Changing Personally-Identifying Information",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `You may at any time review or change or delete your Personally-Identifying Information by contacting us using the contact information below. We
             will retain in our files some personal information to prevent fraud, to troubleshoot problems, to assist with any investigations, and to comply with
             legal requirements as is permitted by law. Therefore, you should not expect that all your personal information will be completely removed from our
-            databases in response to your requests. Additionally, we keep a history of changed information to investigate suspected fraud.`
+            databases in response to your requests. Additionally, we keep a history of changed information to investigate suspected fraud.`,
+        },
+      ],
     },
-  ]
-},
 
-   {
-  id: "third-party-collection",
-  title: "COLLECTION AND USE OF INFORMATION BY THIRD PARTIES GENERALLY",
-  blocks: [
     {
-      type: "paragraph",
-      text: `Company contractually prohibits its contractors, affiliates, vendors and suppliers from disclosing Personally-Identifying Information received from
+      id: "third-party-collection",
+      title: "COLLECTION AND USE OF INFORMATION BY THIRD PARTIES GENERALLY",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `Company contractually prohibits its contractors, affiliates, vendors and suppliers from disclosing Personally-Identifying Information received from
             Company, other than in accordance with this Privacy Policy. Third parties are under no obligation to comply with this Privacy Policy, however, with
             respect to Personally-Identifying Information that users provide directly to those third parties or that those third parties collect for themselves.
             Company neither owns nor controls the third-party websites and applications accessible through the Website. Thus, this Privacy Policy does not apply
             to information provided to or gathered by the third parties that operate them. Before visiting a third-party, or using a third party application, whether
             by means of a link on the Website, directly through the Website, or otherwise, and before providing any Personally-Identifying Information to any
             such third party, users should inform themselves of the privacy policies and practices (if any) of the third party responsible for that website or
-            application, and should take those steps necessary to, in those users' discretion, protect their privacy.`
+            application, and should take those steps necessary to, in those users' discretion, protect their privacy.`,
+        },
+      ],
     },
-  ]
-},
 
-    
-   {
-  id: "security",
-  title: "SECURITY",
-  blocks: [
     {
-      type: "paragraph",
-      text: `We take security of your Personally-Identifying Information seriously and use reasonable electronic, personnel, and physical measures to protect it
+      id: "security",
+      title: "SECURITY",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `We take security of your Personally-Identifying Information seriously and use reasonable electronic, personnel, and physical measures to protect it
             from loss, theft, alteration, or misuse. However, please be advised that even the best security measures cannot fully eliminate all risks. We cannot
             guarantee that only authorized persons will view your information. We are not responsible for third party circumvention of any privacy settings or
-            security measures.`
+            security measures.`,
+        },
+      ],
     },
-  ]
-},
 
-     {
-  id: "privacy-policy-changes",
-  title: "PRIVACY POLICY CHANGES",
-  blocks: [
     {
-      type: "paragraph",
-      text: `Company may, in its sole discretion, change this Privacy Policy from time to time. Any and all changes to Company's Privacy Policy will be reflected on
+      id: "privacy-policy-changes",
+      title: "PRIVACY POLICY CHANGES",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `Company may, in its sole discretion, change this Privacy Policy from time to time. Any and all changes to Company's Privacy Policy will be reflected on
             this page and the date new versions are posted will be stated at the top of this Privacy Policy. Unless stated otherwise, our current Privacy Policy
             applies to all information that we have about you. Users should regularly check this page for any changes to its Privacy Policy. Company will always
             post new versions of the Privacy Policy on the Website. However, Company may, as determined in its discretion, decide to notify users of changes
-            made to this Privacy Policy via email or otherwise. Accordingly, it is important that users always maintain and update their contact information.`
+            made to this Privacy Policy via email or otherwise. Accordingly, it is important that users always maintain and update their contact information.`,
+        },
+      ],
     },
-  ]
-},
 
-       {
-  id: "california-privacy-rights",
-  title: "CALIFORNIA PRIVACY RIGHTS",
-  blocks: [
     {
-      type: "paragraph",
-      text: `California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain
+      id: "california-privacy-rights",
+      title: "CALIFORNIA PRIVACY RIGHTS",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain
             from us once a year, free of charge, information about the personal information (if any) we disclosed to third parties for direct marketing purposes in
             the preceding calendar year. If applicable, this information would include a list of the categories of personal information that was shared and the
             names and addresses of all third parties with which we shared information in the immediately preceding calendar year. If you are a California
-            resident and would like to make such a request, please submit your request in writing to our privacy officer as listed below.`
+            resident and would like to make such a request, please submit your request in writing to our privacy officer as listed below.`,
+        },
+      ],
     },
-  ]
-},
 
-   {
-  id: "do-not-track-policy",
-  title: "DO NOT TRACK POLICY",
-  blocks: [
     {
-      type: "paragraph",
-      text: `Our Website does not respond to "Do Not Track" signals or mechanisms.`,
-    },
-  ]
-},
- {
-  id: "contact-information",
-  title: "Contact",
-  blocks: [
-    {
-      type: "paragraph",
-      text: "If you have any questions regarding our Privacy Policy, please contact our privacy officer at:"
+      id: "do-not-track-policy",
+      title: "DO NOT TRACK POLICY",
+      blocks: [
+        {
+          type: "paragraph",
+          text: `Our Website does not respond to "Do Not Track" signals or mechanisms.`,
+        },
+      ],
     },
     {
-      type: "paragraph",
-      text: "Attention: Legal Department"
+      id: "contact-information",
+      title: "Contact",
+      blocks: [
+        {
+          type: "paragraph",
+          text: "If you have any questions regarding our Privacy Policy, please contact our privacy officer at:",
+        },
+        {
+          type: "paragraph",
+          text: "Attention: Legal Department",
+        },
+        {
+          type: "paragraph",
+          text: "1345, Avenue of the Americas, St. 200",
+        },
+        {
+          type: "paragraph",
+          text: "New York, NY 10105",
+        },
+        {
+          type: "link",
+          text: "legal@cognitivehealthit.com",
+          url: "mailto:legal@cognitivehealthit.com",
+        },
+      ],
     },
-    {
-      type: "paragraph",
-      text: "1345, Avenue of the Americas, St. 200"
-    },
-    {
-      type: "paragraph",
-      text: "New York, NY 10105"
-    },
-    {
-     type: "link",
-    text: "legal@cognitivehealthit.com",
-    url: "mailto:legal@cognitivehealthit.com"
-}
-
-  ]
-},
-
   ];
 
   return (
@@ -376,50 +372,45 @@ const PrivacyPolicyPage = () => {
       {/* CONTENT */}
       <ContentWrapper>
         <ContentInner>
-          <PageTitle>Privacy Policy</PageTitle>
-          <UpdatedText>Last Updated: January 1, 2024</UpdatedText>
+          {/* <PageTitle>Privacy Policy</PageTitle>
+          <UpdatedText>Last Updated: January 1, 2024</UpdatedText> */}
 
           {termsSections.map((section) => (
             <SectionBlock key={section.id} id={section.id}>
               <SectionTitle>{section.title}</SectionTitle>
 
               {section.blocks.map((block: TermBlock, index: number) => {
-
-            if (block.type === "heading") {
-             return (
-              <SectionTitle key={index}>
-             {block.text}
-          </SectionTitle>
-            );
-            }
-          if (block.type === "paragraph") {
-            return (
-           <Paragraph
-            key={index}
-         dangerouslySetInnerHTML={{ __html: block.text }}
-        />
-          );
-        }  
-        if (block.type === "list") {
-          return (
-           <StyledList key={index}>
-            {block.items.map((item: string, i: number) => (
-           <StyledListItem
-             key={i}
-             dangerouslySetInnerHTML={{ __html: item }}
-            />
-            ))}
-        </StyledList>
-        );
-      }
+                if (block.type === "heading") {
+                  return <SectionTitle key={index}>{block.text}</SectionTitle>;
+                }
+                if (block.type === "paragraph") {
+                  return (
+                    <Paragraph
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: block.text }}
+                    />
+                  );
+                }
+                if (block.type === "list") {
+                  return (
+                    <StyledList key={index}>
+                      {block.items.map((item: string, i: number) => (
+                        <StyledListItem
+                          key={i}
+                          dangerouslySetInnerHTML={{ __html: item }}
+                        />
+                      ))}
+                    </StyledList>
+                  );
+                }
 
                 if (block.type === "link") {
-              return (
-                <a key={index} href={block.url}>
-               {block.text}
-              </a>
-               );
-             }
+                  return (
+                    <a key={index} href={block.url}>
+                      {block.text}
+                    </a>
+                  );
+                }
 
                 return null;
               })}

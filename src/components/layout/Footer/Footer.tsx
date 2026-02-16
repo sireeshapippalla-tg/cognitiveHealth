@@ -110,7 +110,14 @@ const Footer = () => {
               <ListItem onClick={() => navigate("/contact-us")}>
                 Request Demo
               </ListItem>
-              <ListItem>Support</ListItem>
+              <ListItem
+                sx={{
+                  cursor: "default",
+                  pointerEvents: "none",
+                }}
+              >
+                Support
+              </ListItem>
               <ListItem onClick={() => navigate("/privacy-policy")}>
                 Privacy Policy
               </ListItem>
