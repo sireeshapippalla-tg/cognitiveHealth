@@ -6,6 +6,7 @@ import kaminLogo from "../../../assets/Kamin Logo.svg";
 import mindPathLogo from "../../../assets/mindpath-logo.svg";
 // import qualityLogo from "../../../assets/Quality.svg";
 import mercyImg from "../../../assets/Resources/mercyLogo.png";
+import yaleImg from "../../../assets/yale.svg";
 
 import {
   TrustSection,
@@ -63,12 +64,7 @@ const HeroSection = () => {
             alt="McLaren Health"
           />
 
-          {/* <LogoImage
-            src={
-              "https://www.ynhhs.org/-/media/Images/Logo/YNHHS_hor_clr_484x127.ashx?h=127&iar=0&w=484&hash=11E8047061263B1C6342665F74BC888B"
-            }
-            alt="yaleNewHAvenHEalth"
-          /> */}
+          <LogoImage src={yaleImg} alt="yaleNewHAvenHEalth" style={{width:"140px"}} />
           <LogoImage
             src={
               "https://azure-na-images.contentstack.com/v3/assets/blt3667c0ff4b42a45d/bltec3bcf779857babf/6698b9d4da94e2baeab2d9d7/wellstreet_logo.svg"
