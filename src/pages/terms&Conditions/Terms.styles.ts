@@ -34,10 +34,10 @@ export const HeroSubtitle = styled(Typography)({
 
 export const ContentWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "#ffffff",
-  padding: "30px 80px",
+  padding: "60px 80px",
 
   [theme.breakpoints.down("md")]: {
-    padding: "20px",
+    padding: "40px 20px",
   },
 }));
 
@@ -72,4 +72,18 @@ export const Paragraph = styled(Typography)({
   lineHeight: 1.8,
   color: "#374151",
   marginBottom: "16px",
+});
+
+/* ================= LIST STYLES ================= */
+
+export const StyledList = styled("ul")({
+  paddingLeft: "20px",
+  marginBottom: "16px",
+});
+
+export const StyledListItem = styled("li")({
+  marginBottom: "10px",
+  fontSize: "16px",
+  lineHeight: 1.8,
+  color: "#374151",
 });
