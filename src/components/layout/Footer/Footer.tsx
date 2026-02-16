@@ -99,7 +99,7 @@ const Footer = () => {
               <ListItem onClick={() => navigate("/resources#blog")}>
                 Blog
               </ListItem>
-              <ListItem>Careers</ListItem>
+              {/* <ListItem>Careers</ListItem> */}
             </List>
           </Box>
 
@@ -112,7 +112,7 @@ const Footer = () => {
               </ListItem>
               <ListItem>Support</ListItem>
               <ListItem>Privacy Policy</ListItem>
-              <ListItem>Terms of Service</ListItem>
+              <ListItem onClick={() => navigate("/terms")}>Terms of Service</ListItem>
             </List>
           </Box>
         </Stack>

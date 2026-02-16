@@ -12,6 +12,7 @@ export const ROUTES = {
   RESOURCES: "/resources",
   CONTACTUS: "/contact-us",
   RCMREADINESS:'/rcm-readines',
+  TERMSCONDITIONS:'/terms',
   NOT_FOUND: "*",
 };
 
