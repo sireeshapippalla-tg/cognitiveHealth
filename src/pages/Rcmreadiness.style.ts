@@ -15,7 +15,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 export const Container = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
   background: "#ffffff",
-  padding: "32px 16px",
+  // padding: "32px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 32px" },
 }));
 
@@ -24,7 +24,7 @@ export const HeaderWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 1000,
   margin: "0 auto",
   textAlign: "center",
-  padding: "40px 16px",
+  // padding: "40px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 16px" },
 }));
 export const ResultsWrapper = styled(Box)(({ theme }) => ({
