@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
         <SectionTitle title="How It Works" />
 
         <StepsCard>
-          <StepsRow>
+          <StepsRow id="howItWorks">
             {steps.map((step, index) => (
               <>
                 <ProcessStep
@@ -66,16 +66,9 @@ const HowItWorksSection = () => {
           <AppButton
             variantType="primary"
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
-            onClick = {() => navigate("/Contact-us")}
+            onClick={() => navigate("/rcm-readines")}
           >
-            Request a Demo
-          </AppButton>
-          <AppButton
-            variantType="outline"
-            showBorder={true}
-            endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
-          >
-            See Platform in Action
+            Take Assessment
           </AppButton>
         </ButtonsRow>
       </Wrapper>

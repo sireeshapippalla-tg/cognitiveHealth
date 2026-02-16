@@ -23,6 +23,7 @@ import {
   TrendingStyledIcon,
   InsightsStyledIcon,
   SuccessStyledIcon,
+  ResultsWrapper,
 } from "./Rcmreadiness.style";
 
 /* TYPES */
@@ -133,9 +134,10 @@ const RCMReadinessScreen: React.FC = () => {
     setSubmitted(true);
   };
 
-  const handleBack = () =>
-    window.history.length > 1 ? navigate(-1) : navigate("/");
+  const handleBack = () =>navigate("/#howItWorks")
   const isAnyChecked = Object.values(checkedItems).some(Boolean);
+  //   window.history.length > 1 ? navigate(-1) : navigate("/#howItWorks");
+  // const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
   return (
     <Container>
@@ -149,7 +151,6 @@ const RCMReadinessScreen: React.FC = () => {
             AI-driven automation.
           </HeaderSubText>
         </Stack>
-
         <Grid container spacing={3}>
           {sections.map((section, sIndex) => (
             <Grid key={sIndex} size={{ xs: 12, md: 6 }}>
@@ -190,7 +191,6 @@ const RCMReadinessScreen: React.FC = () => {
             </Grid>
           ))}
         </Grid>
-
         {!submitted && (
           <Stack alignItems="center" mt={5}>
             <Button
@@ -203,8 +203,7 @@ const RCMReadinessScreen: React.FC = () => {
             </Button>
           </Stack>
         )}
-
-        {submitted && (
+        {/* {submitted && (
           <ResultPaper elevation={0}>
             <Stack alignItems="center" spacing={2}>
               <SuccessStyledIcon />
@@ -224,8 +223,69 @@ const RCMReadinessScreen: React.FC = () => {
               </Button>
             </Stack>
           </ResultPaper>
-        )}
+        )} */}
 
+        {submitted && (
+          <ResultsWrapper>
+            <Stack alignItems="center">
+              <ResultPaper elevation={0} sx={{ maxWidth: 700, p: 6 }}>
+                <Stack spacing={2} alignItems="center">
+                  <SuccessStyledIcon sx={{ fontSize: 60 }} />
+
+                  <Typography variant="h5" fontWeight={700}>
+                    Results Analysis
+                  </Typography>
+
+                  <Typography align="center">
+                    You have checked <strong>{score}</strong> boxes.
+                  </Typography>
+
+                  <Typography align="center" color="#374151">
+                    {score >= 15 ? (
+                      <>
+                        If you checked <strong>15 or more boxes</strong>, your
+                        organization is a prime candidate for AI-driven
+                        automation.
+                      </>
+                    ) : (
+                      <>
+                        If you checked <strong>fewer than 15 boxes</strong>,
+                        your organization shows partial readiness for AI
+                        automation.
+                      </>
+                    )}
+                  </Typography>
+
+                  <Typography align="center" color="#374151">
+                    {score >= 15 ? (
+                      <>
+                        You are likely facing significant manual burdens and
+                        operational complexity that intelligent automation can
+                        alleviate immediately.
+                      </>
+                    ) : (
+                      <>
+                        There are opportunities to improve workflows and
+                        operational efficiency before fully scaling automation
+                        initiatives.
+                      </>
+                    )}
+                  </Typography>
+
+                  {/* 
+                  <Typography align="center" color="#374151">
+                    {score >= 15
+                      ? "You are likely facing significant manual burdens that intelligent automation can alleviate immediately."
+                      : "Your organization shows moderate readiness. There are opportunities where automation could improve efficiency and reduce operational burden."}
+                  </Typography> */}
+                  <Button variant="contained" size="large" onClick={handleBack}>
+                    Back to Assessment
+                  </Button>
+                </Stack>
+              </ResultPaper>
+            </Stack>
+          </ResultsWrapper>
+        )}
         <FooterWrapper>
           <Typography variant="h5" color="#1e3a8a">
             Ready to automate your RCM workflows?
