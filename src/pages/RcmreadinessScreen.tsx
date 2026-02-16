@@ -3,7 +3,7 @@ import { Typography, Grid, Stack, Divider, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import {
-  Container,
+  // Container,
   HeaderWrapper,
   HeaderTitle,
   HeaderSubText,
@@ -140,7 +140,7 @@ const RCMReadinessScreen: React.FC = () => {
   // const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
   return (
-    <Container>
+ 
       <HeaderWrapper>
         <Stack spacing={2} mb={6}>
           <HeaderTitle>
@@ -297,7 +297,7 @@ const RCMReadinessScreen: React.FC = () => {
           </FooterCaption>
         </FooterWrapper>
       </HeaderWrapper>
-    </Container>
+
   );
 };
 
