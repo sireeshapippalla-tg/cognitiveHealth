@@ -96,7 +96,7 @@ const teamData: ExpandableItem[] = [
                  an innate ability to direct cross-functional teams of experts to analyze systems
                  processes and implement infrastructural and process improvements in a
                  global environment.
-
+                \n\n
                  In addition, he brings a wealth of knowledge in Security, Telecom, Data Center,
                  Cloud Systems and Application Integration. His insight to future Hyper-
                  Convergent cloud technologies weaves together performance, risk,
@@ -112,7 +112,7 @@ const teamData: ExpandableItem[] = [
                  financial analysis, tax and business consulting across a wide spectrum of
                  industries. These include manufacturing, real estate, wholesale distribution,
                  retail, information technology and healthcare.
-                
+                 \n\n
                  For the past 10 years he has been a partner at Saul N. Friedman & Company, a
                  prestigious accounting firm established in 1973. In this position he had firm-
                  wide management responsibilities of a large team of accountants and other
@@ -142,7 +142,7 @@ const TeamSection = () => {
           ))}
         </Grid>
       </GridWrapper>
-    </SectionContainer>
+    </SectionContainer> 
   );
 };
 
