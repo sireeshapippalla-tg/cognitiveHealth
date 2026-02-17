@@ -27,7 +27,7 @@ const NewsletterSection = () => {
           >
             Request a Demo
           </PrimaryButton>
-          <SecondaryButton endIcon={<ArrowForwardIcon />}>
+          <SecondaryButton endIcon={<ArrowForwardIcon />} onClick={() => navigate("/resources#videos")}>
             See Platform in Action
           </SecondaryButton>
         </ButtonContainer>

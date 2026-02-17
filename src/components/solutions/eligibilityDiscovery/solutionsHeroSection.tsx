@@ -15,7 +15,7 @@ const SolutionsHeroSection = () => {
       }}
       secondaryAction={{
         label: "See Platform in Action",
-        onClick: () => {},
+        onClick: () => {navigate("/resources#videos")},
       }}
     />
   );
