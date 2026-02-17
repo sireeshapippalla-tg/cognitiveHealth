@@ -14,6 +14,7 @@ export const ROUTES = {
   RCMREADINESS:'/rcm-readines',
   TERMSCONDITIONS:'/terms',
   PRIVACYPOLICY:"/privacy-policy",
+  FAQ:"/faq",
   NOT_FOUND: "*",
 };
 
