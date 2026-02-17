@@ -23,7 +23,7 @@ const AboutUsHeroSection: React.FC = () => {
         }}
         secondaryAction={{
           label: "See Platform in Action",
-          onClick: () => {},
+           onClick: () => navigate("/resources#videos"),
         }}
       />
     </>

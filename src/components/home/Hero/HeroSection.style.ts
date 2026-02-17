@@ -5,7 +5,6 @@ export const HeroInner = styled(Box)(({ theme }) => ({
   maxWidth: "1600px",
   margin: "0 auto",
   padding: "0 32px",
-  
 
   [theme.breakpoints.down("sm")]: {
     padding: "0",
@@ -50,7 +49,7 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontFamily: "Inter",
   fontSize: "44px",
   fontWeight: 600,
-  lineHeight: '60px',
+  lineHeight: "60px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
@@ -98,7 +97,7 @@ export const TrustTitle = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   gap: "16px",
   marginBottom: "32px",
-   color: "#0E0E0E",
+  color: "#0E0E0E",
   fontWeight: 400,
 
   [theme.breakpoints.down("md")]: {
@@ -113,7 +112,7 @@ export const LogoGrid = styled(Box)(({ theme }) => ({
   justifyContent: "space-between",
   gap: "40px",
   flexWrap: "wrap",
-  opacity: 0.8,
+  // opacity: 0.8,
 
   [theme.breakpoints.down("md")]: {
     justifyContent: "center",
@@ -125,8 +124,8 @@ export const LogoImage = styled("img")(({ theme }) => ({
   height: "60px",
   maxWidth: "140px",
   objectFit: "contain",
-
-  filter: "none",
+  margin: "0 40px",
+  filter: "brightness(1)",
   opacity: 1,
 
   [theme.breakpoints.down("md")]: {
@@ -138,4 +137,25 @@ export const LogoText = styled("span")({
   fontSize: "18px",
   fontWeight: 700,
   color: "#9ca3af",
+});
+export const LogoScrollWrapper = styled("div")({
+  overflow: "hidden",
+  width: "100%",
+
+  "&:hover div": {
+    animationPlayState: "paused",
+  },
+});
+
+export const LogoTrack = styled("div")({
+  display: "flex",
+  width: "max-content",
+  animation: "scroll 40s linear infinite",
+  "&:hover": {
+    animationPlayState: "paused",
+  },
+  "@keyframes scroll": {
+    "0%": { transform: "translateX(0)" },
+    "100%": { transform: "translateX(-50%)" },
+  },
 });

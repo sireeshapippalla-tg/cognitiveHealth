@@ -39,7 +39,7 @@ const SuperChargeSection = () => {
       subtitle="Enterprise-grade AI platform built specifically for healthcare revenue cycle operations."
       background="#f9fafb"
       items={features}
-      linkText="Learn More"
+      // linkText="Learn More"
     />
   );
 };

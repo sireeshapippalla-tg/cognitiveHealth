@@ -39,7 +39,7 @@ const ProductIntelligence = () => {
       subtitle="Bulit for scale with enterprise-grade integrations and infrastructure."
     //   background="#f9fafb"
       items={productIntelligenceItems}
-      linkText="Learn More"
+      // linkText="Learn More"
        cardVariant="pink"
     />
   );
