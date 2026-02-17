@@ -25,6 +25,8 @@ import {
   SuccessStyledIcon,
   ResultsWrapper,
 } from "./Rcmreadiness.style";
+import AppButton from "../components/ui/appButton/AppButton";
+import jsPDF from "jspdf";
 
 /* TYPES */
 type ChecklistItem = { label: string };
@@ -67,6 +69,29 @@ const sections: SectionProps[] = [
     ],
   },
   {
+    title: "Low Dollar Denials & Write-Offs",
+    icon: <TrendingStyledIcon />,
+    items: [
+      {
+        label:
+          "High volume of denials under $200–$500 that are written off or outsourced",
+      },
+      { label: "Cost-to-collect exceeds the potential recovery amount" },
+      { label: "Lack of granular visibility into small balance denial trends" },
+      { label: "Manual appeal process is too expensive for low balances" },
+    ],
+  },
+  {
+    title: "Measurable Impact Potential",
+    icon: <InsightsStyledIcon />,
+    items: [
+      { label: "Leadership has set goals to reduce DSO or AR days" },
+      { label: "Finance team requires ROI within 6–12 months" },
+      { label: "Goal to shift staff from data entry to high-value tasks" },
+      { label: "Need to reduce overall cost-to-collect" },
+    ],
+  },
+  {
     title: "Operational Challenges",
     icon: <TimeStyledIcon />,
     items: [
@@ -95,29 +120,6 @@ const sections: SectionProps[] = [
       { label: "There is a designated champion to drive the initiative" },
     ],
   },
-  {
-    title: "Low Dollar Denials & Write-Offs",
-    icon: <TrendingStyledIcon />,
-    items: [
-      {
-        label:
-          "High volume of denials under $200–$500 that are written off or outsourced",
-      },
-      { label: "Cost-to-collect exceeds the potential recovery amount" },
-      { label: "Lack of granular visibility into small balance denial trends" },
-      { label: "Manual appeal process is too expensive for low balances" },
-    ],
-  },
-  {
-    title: "Measurable Impact Potential",
-    icon: <InsightsStyledIcon />,
-    items: [
-      { label: "Leadership has set goals to reduce DSO or AR days" },
-      { label: "Finance team requires ROI within 6–12 months" },
-      { label: "Goal to shift staff from data entry to high-value tasks" },
-      { label: "Need to reduce overall cost-to-collect" },
-    ],
-  },
 ];
 
 const RCMReadinessScreen: React.FC = () => {
@@ -134,76 +136,131 @@ const RCMReadinessScreen: React.FC = () => {
     setSubmitted(true);
   };
 
-  const handleBack = () =>navigate("/#howItWorks")
+  // const handleBack = () => navigate("/#howItWorks");
   const isAnyChecked = Object.values(checkedItems).some(Boolean);
   //   window.history.length > 1 ? navigate(-1) : navigate("/#howItWorks");
   // const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
+  const generatePdfBlob = (): Blob => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text("RCM AI Readiness Assessment", 20, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Assessment Score: ${score}`, 20, 40);
+
+    let startY = 60;
+    let counter = 1;
+
+    sections.forEach((section, sIndex) => {
+      section.items.forEach((item, iIndex) => {
+        const key = `${sIndex}-${iIndex}`;
+        if (checkedItems[key]) {
+          doc.text(`${counter}. ${item.label}`, 20, startY);
+          startY += 8;
+          counter++;
+        }
+      });
+    });
+
+    return doc.output("blob");
+  };
+
+  // const handleSendEmail = async (): Promise<void> => {
+  //   try {
+  //     const pdfBlob = generatePdfBlob();
+
+  //     const formData = new FormData();
+  //     formData.append("file", pdfBlob, "RCM-Assessment.pdf");
+  //     formData.append("score", score.toString());
+
+  //     await fetch("/api/send-email", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+
+  //     alert("Email sent successfully!");
+  //   } catch (error) {
+  //     console.error("Email failed:", error);
+  //   }
+  // };
+
+  const handleSendEmail = (): void => {
+    const doc = new jsPDF();
+
+    doc.text("RCM AI Readiness Assessment", 20, 20);
+    doc.text(`Assessment Score: ${score}`, 20, 40);
+
+    doc.save("RCM-Assessment.pdf");
+
+    window.location.href = `mailto:info@cognitivehealthit.com?subject=RCM AI Assessment - ${score}`;
+  };
+
   return (
- 
-      <HeaderWrapper>
-        <Stack spacing={2} mb={6}>
-          <HeaderTitle>
-            Revenue Cycle Management AI Readiness Assessment
-          </HeaderTitle>
-          <HeaderSubText>
-            Use this checklist to determine if your organization is ready for
-            AI-driven automation.
-          </HeaderSubText>
-        </Stack>
-        <Grid container spacing={3}>
-          {sections.map((section, sIndex) => (
-            <Grid key={sIndex} size={{ xs: 12, md: 6 }}>
-              <SectionPaper elevation={0}>
-                <Stack spacing={2}>
-                  <Stack direction="row" spacing={1} alignItems="center">
-                    {section.icon}
-                    <SectionTitle variant="h6">{section.title}</SectionTitle>
-                  </Stack>
-
-                  <Divider />
-
-                  <Stack spacing={1}>
-                    {section.items.map((item, iIndex) => {
-                      const key = `${sIndex}-${iIndex}`;
-                      return (
-                        <Stack
-                          key={key}
-                          direction="row"
-                          spacing={1}
-                          alignItems="flex-start"
-                        >
-                          <StyledCheckbox
-                            size="small"
-                            checked={!!checkedItems[key]}
-                            onChange={() => handleCheck(key)}
-                            disabled={submitted}
-                          />
-                          <Typography variant="body2" color="#1f2937">
-                            {item.label}
-                          </Typography>
-                        </Stack>
-                      );
-                    })}
-                  </Stack>
+    <HeaderWrapper>
+      <Stack spacing={2} mb={6}>
+        <HeaderTitle>
+          Revenue Cycle Management AI Readiness Assessment
+        </HeaderTitle>
+        <HeaderSubText>
+          Use this checklist to determine if your organization is ready for
+          AI-driven automation.
+        </HeaderSubText>
+      </Stack>
+      <Grid container spacing={3}>
+        {sections.map((section, sIndex) => (
+          <Grid key={sIndex} size={{ xs: 12, md: 6 }}>
+            <SectionPaper elevation={0}>
+              <Stack spacing={2}>
+                <Stack direction="row" spacing={1} alignItems="center">
+                  {section.icon}
+                  <SectionTitle variant="h6">{section.title}</SectionTitle>
                 </Stack>
-              </SectionPaper>
-            </Grid>
-          ))}
-        </Grid>
-        {!submitted && (
-          <Stack alignItems="center" mt={5}>
-            <Button
-              variant="contained"
-              size="large"
-              onClick={handleSubmit}
-              disabled={!isAnyChecked}
-            >
-              Submit Assessment
-            </Button>
-          </Stack>
-        )}
-        {/* {submitted && (
+
+                <Divider />
+
+                <Stack spacing={1}>
+                  {section.items.map((item, iIndex) => {
+                    const key = `${sIndex}-${iIndex}`;
+                    return (
+                      <Stack
+                        key={key}
+                        direction="row"
+                        spacing={1}
+                        alignItems="flex-start"
+                      >
+                        <StyledCheckbox
+                          size="small"
+                          checked={!!checkedItems[key]}
+                          onChange={() => handleCheck(key)}
+                          disabled={submitted}
+                        />
+                        <Typography variant="body2" color="#1f2937">
+                          {item.label}
+                        </Typography>
+                      </Stack>
+                    );
+                  })}
+                </Stack>
+              </Stack>
+            </SectionPaper>
+          </Grid>
+        ))}
+      </Grid>
+      {!submitted && (
+        <Stack alignItems="center" mt={5}>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={handleSubmit}
+            disabled={!isAnyChecked}
+          >
+            Submit Assessment
+          </Button>
+        </Stack>
+      )}
+      {/* {submitted && (
           <ResultPaper elevation={0}>
             <Stack alignItems="center" spacing={2}>
               <SuccessStyledIcon />
@@ -225,79 +282,95 @@ const RCMReadinessScreen: React.FC = () => {
           </ResultPaper>
         )} */}
 
-        {submitted && (
-          <ResultsWrapper>
-            <Stack alignItems="center">
-              <ResultPaper elevation={0} sx={{ maxWidth: 700, p: 6 }}>
-                <Stack spacing={2} alignItems="center">
-                  <SuccessStyledIcon sx={{ fontSize: 60 }} />
+      {submitted && (
+        <ResultsWrapper>
+          <Stack alignItems="center">
+            <ResultPaper elevation={0} sx={{ maxWidth: 700, p: 6 }}>
+              <Stack spacing={2} alignItems="center">
+                <SuccessStyledIcon sx={{ fontSize: 60 }} />
 
-                  <Typography variant="h5" fontWeight={700}>
-                    Results Analysis
-                  </Typography>
+                <Typography variant="h5" fontWeight={700}>
+                  Results Analysis
+                </Typography>
 
-                  <Typography align="center">
-                    You have checked <strong>{score}</strong> boxes.
-                  </Typography>
+                <Typography align="center">
+                  You have checked <strong>{score}</strong> boxes.
+                </Typography>
 
-                  <Typography align="center" color="#374151">
-                    {score >= 15 ? (
-                      <>
-                        If you checked <strong>15 or more boxes</strong>, your
-                        organization is a prime candidate for AI-driven
-                        automation.
-                      </>
-                    ) : (
-                      <>
-                        If you checked <strong>fewer than 15 boxes</strong>,
-                        your organization shows partial readiness for AI
-                        automation.
-                      </>
-                    )}
-                  </Typography>
+                <Typography align="center" color="#374151">
+                  {score >= 15 ? (
+                    <>
+                      If you checked <strong>15 or more boxes</strong>, your
+                      organization is a prime candidate for AI-driven
+                      automation.
+                    </>
+                  ) : (
+                    <>
+                      If you checked <strong>fewer than 15 boxes</strong>, your
+                      organization shows partial readiness for AI automation.
+                    </>
+                  )}
+                </Typography>
 
-                  <Typography align="center" color="#374151">
-                    {score >= 15 ? (
-                      <>
-                        You are likely facing significant manual burdens and
-                        operational complexity that intelligent automation can
-                        alleviate immediately.
-                      </>
-                    ) : (
-                      <>
-                        There are opportunities to improve workflows and
-                        operational efficiency before fully scaling automation
-                        initiatives.
-                      </>
-                    )}
-                  </Typography>
+                <Typography align="center" color="#374151">
+                  {score >= 15 ? (
+                    <>
+                      You are likely facing significant manual burdens and
+                      operational complexity that intelligent automation can
+                      alleviate immediately.
+                    </>
+                  ) : (
+                    <>
+                      There are opportunities to improve workflows and
+                      operational efficiency before fully scaling automation
+                      initiatives.
+                    </>
+                  )}
+                </Typography>
 
-                  {/* 
-                  <Typography align="center" color="#374151">
-                    {score >= 15
-                      ? "You are likely facing significant manual burdens that intelligent automation can alleviate immediately."
-                      : "Your organization shows moderate readiness. There are opportunities where automation could improve efficiency and reduce operational burden."}
-                  </Typography> */}
-                  <Button variant="contained" size="large" onClick={handleBack}>
-                    Back to Assessment
-                  </Button>
+                <Stack
+                  direction={{ xs: "column", sm: "row" }}
+                  spacing={2}
+                  mt={2}
+                >
+                  {/* Send Email Button */}
+                  <AppButton
+                    variantType="primary"
+                    size="large"
+                    onClick={handleSendEmail}
+                  >
+                    Send Email
+                  </AppButton>
+
+                  {/* Connect With Experts Button */}
+                  <AppButton
+                    variantType="primary"
+                    size="large"
+                    onClick={() => navigate("/contact-us")}
+                  >
+                    Connect with Our Experts
+                  </AppButton>
                 </Stack>
-              </ResultPaper>
-            </Stack>
-          </ResultsWrapper>
-        )}
-        <FooterWrapper>
-          <Typography variant="h5" color="#1e3a8a">
-            Ready to automate your RCM workflows?
-          </Typography>
-          <Typography color="#374151">Contact us at</Typography>
-          <FooterEmail variant="h6">info@cognitivehealthit.com</FooterEmail>
-          <FooterCaption variant="caption">
-            © CognitiveHealth – RCM Automation Solutions
-          </FooterCaption>
-        </FooterWrapper>
-      </HeaderWrapper>
 
+                {/* <Button variant="contained" size="large" onClick={handleBack}>
+                    Back to Assessment
+                  </Button> */}
+              </Stack>
+            </ResultPaper>
+          </Stack>
+        </ResultsWrapper>
+      )}
+      <FooterWrapper>
+        <Typography variant="h5" color="#1e3a8a">
+          Ready to automate your RCM workflows?
+        </Typography>
+        <Typography color="#374151">Contact us at</Typography>
+        <FooterEmail variant="h6">info@cognitivehealthit.com</FooterEmail>
+        <FooterCaption variant="caption">
+          © CognitiveHealth – RCM Automation Solutions
+        </FooterCaption>
+      </FooterWrapper>
+    </HeaderWrapper>
   );
 };
 

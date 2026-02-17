@@ -18,7 +18,7 @@ const Hero = () => {
         }}
         secondaryAction={{
           label: "See Platform in Action",
-          onClick: () => {},
+         onClick:() => navigate("/resources#videos")
         }}
       />
     </>
