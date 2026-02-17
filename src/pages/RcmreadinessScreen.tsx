@@ -141,31 +141,31 @@ const RCMReadinessScreen: React.FC = () => {
   //   window.history.length > 1 ? navigate(-1) : navigate("/#howItWorks");
   // const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
-  const generatePdfBlob = (): Blob => {
-    const doc = new jsPDF();
+  // const generatePdfBlob = (): Blob => {
+  //   const doc = new jsPDF();
 
-    doc.setFontSize(18);
-    doc.text("RCM AI Readiness Assessment", 20, 20);
+  //   doc.setFontSize(18);
+  //   doc.text("RCM AI Readiness Assessment", 20, 20);
 
-    doc.setFontSize(12);
-    doc.text(`Assessment Score: ${score}`, 20, 40);
+  //   doc.setFontSize(12);
+  //   doc.text(`Assessment Score: ${score}`, 20, 40);
 
-    let startY = 60;
-    let counter = 1;
+  //   let startY = 60;
+  //   let counter = 1;
 
-    sections.forEach((section, sIndex) => {
-      section.items.forEach((item, iIndex) => {
-        const key = `${sIndex}-${iIndex}`;
-        if (checkedItems[key]) {
-          doc.text(`${counter}. ${item.label}`, 20, startY);
-          startY += 8;
-          counter++;
-        }
-      });
-    });
+  //   sections.forEach((section, sIndex) => {
+  //     section.items.forEach((item, iIndex) => {
+  //       const key = `${sIndex}-${iIndex}`;
+  //       if (checkedItems[key]) {
+  //         doc.text(`${counter}. ${item.label}`, 20, startY);
+  //         startY += 8;
+  //         counter++;
+  //       }
+  //     });
+  //   });
 
-    return doc.output("blob");
-  };
+  //   return doc.output("blob");
+  // };
 
   // const handleSendEmail = async (): Promise<void> => {
   //   try {
