@@ -16,10 +16,10 @@ import albertImg from "../../assets/aboutUs/albert.svg";
 import nkImg from "../../assets/aboutUs/nk.svg";
 import rambabuImg from "../../assets/aboutUs/rambabu.svg";
 import vispiImg from "../../assets/aboutUs/vispi.svg";
-import simeonImg from "../../assets/aboutUs/simeon.svg";
+// import simeonImg from "../../assets/aboutUs/simeon.svg";
 
 const teamData: ExpandableItem[] = [
-   {
+  {
     id: 1,
     defaultOpen: true,
     title: "Pavani Munjuluri",
@@ -107,8 +107,9 @@ const teamData: ExpandableItem[] = [
     id: 8,
     title: "Simeon Friedman",
     subtitle: "Chief Financial Advisor",
-    image: simeonImg,
-    description:`Simeon Friedman has more than 18 years of experience in accounting,
+    image:
+      "https://cognitivehealthit.com/wp-content/uploads/elementor/thumbs/Simeon-Friedman-op68ukub1a4yjkd7fvvg4vuxvuscmkfjh39c8itrlq.jpg",
+    description: `Simeon Friedman has more than 18 years of experience in accounting,
                  financial analysis, tax and business consulting across a wide spectrum of
                  industries. These include manufacturing, real estate, wholesale distribution,
                  retail, information technology and healthcare.
@@ -118,10 +119,9 @@ const teamData: ExpandableItem[] = [
                  wide management responsibilities of a large team of accountants and other
                  financial professionals, delivering services to hundreds of clients. He has
                  extensive expertise in financial consulting, mergers and acquisitions, forensics
-                 and due diligence.`
+                 and due diligence.`,
   },
 ];
-
 
 const TeamSection = () => {
   return (
@@ -142,7 +142,7 @@ const TeamSection = () => {
           ))}
         </Grid>
       </GridWrapper>
-    </SectionContainer> 
+    </SectionContainer>
   );
 };
 
