@@ -80,7 +80,7 @@ export const IconBox = styled(Box)({
   flexGrow: 0,
 
   "& svg": {
-    fontSize: 18,
+    fontSize: 30,
   },
 });
 

@@ -173,6 +173,9 @@ const solutionLinks = [
             <NavItem active={isActive("/resources")} onClick={() => navigate("/resources")}>
               Resources
             </NavItem>
+              <NavItem active={isActive("/faq")} onClick={() => navigate("/faq")}>
+              FAQ
+            </NavItem>
           </Stack>
 
           {/* DESKTOP LOGIN */}

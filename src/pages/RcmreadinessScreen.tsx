@@ -1,6 +1,19 @@
 import React, { useState } from "react";
-import { Typography, Grid, Stack, Divider, Button } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  Stack,
+  Divider,
+  Button,
+  Dialog,
+  DialogContent,
+  TextField,
+  CircularProgress,
+  IconButton,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Close";
+import { toast } from "react-toastify";
 
 import {
   // Container,
@@ -24,6 +37,9 @@ import {
   InsightsStyledIcon,
   SuccessStyledIcon,
   ResultsWrapper,
+  StyledDialogTitle,
+  StyledDialogActions,
+  PrimaryButton,
 } from "./Rcmreadiness.style";
 import AppButton from "../components/ui/appButton/AppButton";
 import jsPDF from "jspdf";
@@ -127,6 +143,9 @@ const RCMReadinessScreen: React.FC = () => {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [openEmailDialog, setOpenEmailDialog] = useState(false);
+  const [email, setEmail] = useState("");
+  const [sending, setSending] = useState(false);
 
   const handleCheck = (key: string) =>
     setCheckedItems((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -186,15 +205,47 @@ const RCMReadinessScreen: React.FC = () => {
   //   }
   // };
 
-  const handleSendEmail = (): void => {
-    const doc = new jsPDF();
+  const handleSendEmail = async () => {
+    if (!email) return;
 
-    doc.text("RCM AI Readiness Assessment", 20, 20);
-    doc.text(`Assessment Score: ${score}`, 20, 40);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    doc.save("RCM-Assessment.pdf");
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
 
-    window.location.href = `mailto:info@cognitivehealthit.com?subject=RCM AI Assessment - ${score}`;
+    try {
+      setSending(true);
+
+      const doc = new jsPDF();
+
+      doc.setFontSize(18);
+      doc.text("RCM AI Readiness Assessment", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Assessment Score: ${score}`, 20, 40);
+
+      const pdfBlob = doc.output("blob");
+
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("score", score.toString());
+      formData.append("file", pdfBlob, "RCM-Assessment.pdf");
+
+      await fetch("/api/send-assessment-email", {
+        method: "POST",
+        body: formData,
+      });
+
+      toast.success("Assessment report sent successfully!");
+      setOpenEmailDialog(false);
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send assessment report");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -337,7 +388,7 @@ const RCMReadinessScreen: React.FC = () => {
                   <AppButton
                     variantType="primary"
                     size="large"
-                    onClick={handleSendEmail}
+                    onClick={() => setOpenEmailDialog(true)}
                   >
                     Send Email
                   </AppButton>
@@ -348,7 +399,7 @@ const RCMReadinessScreen: React.FC = () => {
                     size="large"
                     onClick={() => navigate("/contact-us")}
                   >
-                    Connect with Our Experts
+                    Meet Our Experts
                   </AppButton>
                 </Stack>
 
@@ -370,6 +421,59 @@ const RCMReadinessScreen: React.FC = () => {
           © CognitiveHealth – RCM Automation Solutions
         </FooterCaption>
       </FooterWrapper>
+
+      <Dialog
+        open={openEmailDialog}
+        onClose={() => !sending && setOpenEmailDialog(false)}
+        maxWidth="xs"
+        fullWidth
+      >
+        <StyledDialogTitle>
+          Send Assessment Report
+          <IconButton
+            size="small"
+            onClick={() => setOpenEmailDialog(false)}
+            disabled={sending}
+            sx={{ color:"var(--color-text-blue)", backgroundColor:"#fff",
+              borderRadius:"100%"
+             }}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        </StyledDialogTitle>
+
+        <DialogContent sx={{ padding: "24px" }}>
+          <Typography variant="body2" color="text.secondary" mb={2} mt={2}>
+            Enter the email address where you would like to receive the report.
+          </Typography>
+
+          <TextField
+            label="Email Address"
+            type="email"
+            fullWidth
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="example@company.com"
+          />
+        </DialogContent>
+
+        <StyledDialogActions>
+          <Button onClick={() => setOpenEmailDialog(false)} disabled={sending}>
+            Cancel
+          </Button>
+
+          <PrimaryButton
+            variant="contained"
+            disabled={!email || sending}
+            onClick={handleSendEmail}
+            startIcon={
+              sending ? <CircularProgress size={16} color="inherit" /> : null
+            }
+          >
+            {sending ? "Sending..." : "Send Report"}
+          </PrimaryButton>
+        </StyledDialogActions>
+      </Dialog>
     </HeaderWrapper>
   );
 };
