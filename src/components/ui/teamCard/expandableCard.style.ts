@@ -1,4 +1,11 @@
-import { styled, Card, Box, Avatar, Typography, IconButton } from "@mui/material";
+import {
+  styled,
+  Card,
+  Box,
+  Avatar,
+  Typography,
+  IconButton,
+} from "@mui/material";
 
 /* Root card */
 export const StyledCard = styled(Card, {
