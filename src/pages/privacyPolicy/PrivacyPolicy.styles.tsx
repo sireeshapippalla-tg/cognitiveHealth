@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 /* ================= HERO ================= */
 
 export const HeroSection = styled(Box)(({ theme }) => ({
-  background: "linear-gradient(135deg, #1E3A8A, #3A63D2)",
+  background: "linear-gradient(135deg, #1E3A8A, #3b82f6)",
   padding: "80px 20px",
   color: "#fff",
   textAlign: "center",

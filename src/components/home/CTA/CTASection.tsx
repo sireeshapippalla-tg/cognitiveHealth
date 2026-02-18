@@ -17,7 +17,7 @@ const CallToActionSection = () => {
   return (
     <SectionContainer>
       <CtaWrapper>
-        <CtaTitle>See What Autonomous RCM Can Do For You</CtaTitle>
+        <CtaTitle>Redefine your revenue management through the power of autonomous AI</CtaTitle>
 
         <CtaSubtitle>
           Join leading healthcare organizations transforming their revenue cycle

@@ -29,7 +29,7 @@ export const Wrapper = styled(Box)<WrapperProps>(({ align, marginBottom }) => ({
 export const Pill = styled(Box, {
   shouldForwardProp: (prop) => prop !== "variant",
 })<PillProps>(({ variant = "primary" }) => ({
-  backgroundColor: variant === "orange" ? "#F97316" : "#3A63D2",
+  backgroundColor: variant === "orange" ? "#F97316" : "var(--color-text-blue)",
 
   fontFamily: "Inter",
   color: "#ffffff",

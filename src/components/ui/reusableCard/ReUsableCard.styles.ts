@@ -27,7 +27,7 @@ export const IconWrapper = styled(Box)({
 
   "& svg": {
     fontSize: 20,
-    color: "#3b82f6",
+    color: "var(--color-text-blue)",
   },
 });
 

@@ -10,7 +10,7 @@ interface ProgressBarProps {
 export const ProgressBar = ({
   value,
   height = 8,
-  color = "#2563eb",
+  color = "var(--color-text-blue)",
   trackColor = "#e5e7eb",
 }: ProgressBarProps) => {
   return (

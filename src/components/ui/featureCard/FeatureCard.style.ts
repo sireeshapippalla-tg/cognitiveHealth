@@ -65,7 +65,7 @@ export const Header = styled(Box, {
 }));
 
 export const IconBox = styled(Box)({
-  backgroundColor: "#3A63D2",
+  backgroundColor: "var(--color-text-blue)",
   color: "#ffffff",
   width: "56px",
   height: "56px",
@@ -112,7 +112,7 @@ export const LearnMoreButton = styled(Button)({
   lineHeight: "140%",
   padding: 0,
   alignSelf: "flex-start",
-  color: "#3A63D2",
+  color: "var(--color-text-blue)",
   textTransform: "none",
   fontWeight: 500,
 });
