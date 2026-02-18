@@ -1,4 +1,7 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { AuthGuard, PublicRoute } from "./routes";
 import { ROUTES } from "./routes/RoutePaths";
 
@@ -27,6 +30,7 @@ const App = () => {
   return (
     <>
       <ScrollToTop />
+      <ToastContainer position="top-right" autoClose={3000} />
       <Routes>
         {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
         <Route

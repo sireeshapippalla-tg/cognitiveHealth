@@ -52,7 +52,7 @@ const HeroSection = () => {
         <TrustTitle>
           Trusted by leading health systems and physician groups and specialty
           providers
-          <span style={{ fontWeight: 600 }}>Learn more →</span>
+          {/* <span style={{ fontWeight: 600 }}>Learn more →</span> */}
         </TrustTitle>
 
         <LogoScrollWrapper>

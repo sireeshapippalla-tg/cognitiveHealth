@@ -39,7 +39,7 @@ const CallToActionSection = () => {
             showBorder={true}
             // sx={OutlineButtonStyles}
             endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
-            onClick={() => navigate(" /resources#videos")}
+            onClick={() => navigate("/resources#videos")}
           >
             See Platform in Action
           </AppButton>

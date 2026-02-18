@@ -1,5 +1,13 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography, Paper, Checkbox } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Paper,
+  Checkbox,
+  DialogTitle,
+  DialogActions,
+  Button,
+} from "@mui/material";
 
 import FolderIcon from "@mui/icons-material/Folder";
 import PaymentsIcon from "@mui/icons-material/Payments";
@@ -119,3 +127,26 @@ export const SuccessStyledIcon = styled(CheckCircleIcon)({
   color: "#22c55e",
   fontSize: 48,
 });
+export const StyledDialogTitle = styled(DialogTitle)(() => ({
+  backgroundColor: "var(--color-text-blue)",
+  color: "#FFFFFF",
+  fontWeight: 600,
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "16px 24px",
+}));
+
+export const StyledDialogActions = styled(DialogActions)(() => ({
+  padding: "16px 24px",
+}));
+
+export const PrimaryButton = styled(Button)(() => ({
+  backgroundColor: "var(--color-text-blue)",
+  color: "#fff",
+  textTransform: "none",
+  fontWeight: 500,
+  "&:hover": {
+    backgroundColor: "#1E40AF",
+  },
+}));
