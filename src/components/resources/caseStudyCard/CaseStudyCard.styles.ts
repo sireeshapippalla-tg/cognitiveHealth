@@ -91,7 +91,7 @@ export const CardContent = styled(Box)({
 
 export const CategoryChip = styled(Chip)({
   backgroundColor: "#EAF4FF", // Light blue
-  color: "#3A63D2", // Darker blue text
+  color: "var(--color-text-blue)", // Darker blue text
   fontWeight: 600,
   fontSize: "14px",
   lineHeight: "22px",
@@ -114,7 +114,7 @@ export const CardTitle = styled(Typography)(() => ({
   fontSize: "16px",
   fontWeight: 600,
   lineHeight: "24px ",
-  color: "#3A63D2",
+  color: "var(--color-text-blue)",
   // marginBottom: "4px",
   //  display: "-webkit-box",
   // WebkitLineClamp: 2,

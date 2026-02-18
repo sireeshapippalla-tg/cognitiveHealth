@@ -3,7 +3,7 @@ import { Box, Button, Typography, styled } from "@mui/material";
 
 export const DashboardOuter = styled(Box)(({ theme }) => ({
   width: "100%",
-  backgroundColor: "#2563eb",
+  backgroundColor: "var(--color-text-blue)",
   display: "flex",
   justifyContent: "center",
 
@@ -16,7 +16,7 @@ export const DashboardContainer = styled(Box)(({ theme }) => ({
   maxWidth: "760px",
   padding: "24px",
   borderRadius: "28px",
-  backgroundColor: "#2563eb",
+  backgroundColor: "var(--color-text-blue)",
 
   [theme.breakpoints.down("sm")]: {
     maxWidth: "100%",     

@@ -20,6 +20,7 @@ import ContactUsPage from "./pages/contactUs/ContactUsPage";
 import RCMReadinessScreen from "./pages/RcmreadinessScreen";
 import TermsPage from "./pages/terms&Conditions/TermsPage";
 import PrivacyPolicyPage from "./pages/privacyPolicy/PrivacyPolicyPage";
+import Faq from "./pages/faq/FaqPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 const App = () => {
@@ -77,6 +78,7 @@ const App = () => {
           <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
           <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
           <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
+          <Route path={ROUTES.FAQ} element={<Faq />} />
         </Route>
 
         {/* ---------- FALLBACK ---------- */}

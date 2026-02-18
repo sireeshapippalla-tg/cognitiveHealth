@@ -68,7 +68,7 @@ const DashboardMock = () => {
                 <CardTitle>Return on Investment (ROI)</CardTitle>
                 <IconWrapper>
                   <HelpOutlineOutlinedIcon
-                    sx={{ fontSize: 14, color: "#2563eb" }}
+                    sx={{ fontSize: 14, color: "var(--color-text-blue)" }}
                   />
                 </IconWrapper>
               </CardHeader>
@@ -77,7 +77,7 @@ const DashboardMock = () => {
                 426.79x
               </MetricValue>
               <CardTitle
-                sx={{ fontSize: "11px", fontWeight: 400, color: "#2563eb" }}
+                sx={{ fontSize: "11px", fontWeight: 400, color: "var(--color-text-blue)" }}
               >
                 return on investment
               </CardTitle>
@@ -90,13 +90,13 @@ const DashboardMock = () => {
                 <CardTitle>Payback Period</CardTitle>
 
                 <HelpOutlineOutlinedIcon
-                  sx={{ fontSize: 13, color: "#2563eb" }}
+                  sx={{ fontSize: 13, color: "var(--color-text-blue)" }}
                 />
               </PaybackHeader>
 
               <PaybackHeader>
                 <RocketLaunchOutlinedIcon
-                  sx={{ fontSize: 13, color: "#2563eb" }}
+                  sx={{ fontSize: 13, color: "var(--color-text-blue)" }}
                 />
 
                 <Typography
@@ -108,7 +108,7 @@ const DashboardMock = () => {
                 >
                   44%
                 </Typography>
-                <FlagOutlinedIcon sx={{ fontSize: 13, color: "#2563eb" }} />
+                <FlagOutlinedIcon sx={{ fontSize: 13, color: "var(--color-text-blue)" }} />
               </PaybackHeader>
 
               {/* Progress bar – aligned like reference */}
@@ -120,7 +120,7 @@ const DashboardMock = () => {
                 <Typography
                   sx={{
                     fontSize: "11px",
-                    color: "#2563eb",
+                    color: "var(--color-text-blue)",
                   }}
                 >
                   $117,812.50 to recoup.

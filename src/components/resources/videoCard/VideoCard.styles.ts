@@ -85,7 +85,7 @@ export const CategoryChip = styled(Chip)({
   top: "16px",
   left: "16px",
   backgroundColor: "#FFFFFF",
-  color: "#3A63D2", 
+  color: "var(--color-text-blue)", 
   fontWeight: 600,
   fontSize: "12px",
   height: "28px",
@@ -101,7 +101,7 @@ export const CardTitle = styled(Typography)(() => ({
   fontSize: "16px",
   fontWeight: 600,
   lineHeight: "1.4",
-  color: "#3A63D2",
+  color: "var(--color-text-blue)",
   // marginBottom: "8px",
   marginTop: "8px",
 }));

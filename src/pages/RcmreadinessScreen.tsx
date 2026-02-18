@@ -361,10 +361,10 @@ const RCMReadinessScreen: React.FC = () => {
         </ResultsWrapper>
       )}
       <FooterWrapper>
-        <Typography variant="h5" color="#1e3a8a">
+        <Typography variant="h5" color="var(--color-text-blue)">
           Ready to automate your RCM workflows?
         </Typography>
-        <Typography color="#374151">Contact us at</Typography>
+        <Typography color="var(--color-text-blue)">Contact us at</Typography>
         <FooterEmail variant="h6">info@cognitivehealthit.com</FooterEmail>
         <FooterCaption variant="caption">
           © CognitiveHealth – RCM Automation Solutions

@@ -124,6 +124,9 @@ const Footer = () => {
               <ListItem onClick={() => navigate("/terms")}>
                 Terms of Service
               </ListItem>
+               <ListItem onClick={() => navigate("/faq")}>
+                FAQ
+              </ListItem>
             </List>
           </Box>
         </Stack>

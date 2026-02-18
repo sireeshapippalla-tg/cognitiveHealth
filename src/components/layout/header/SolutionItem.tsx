@@ -42,7 +42,7 @@ export const SolutionItem = ({
           width: 40,
           height: 40,
           borderRadius: 2,
-          backgroundColor: isHighlighted ? "var(--color-primary)" : "#3b5bdb",
+          backgroundColor: isHighlighted ? "var(--color-primary)" : "var(--color-text-blue)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

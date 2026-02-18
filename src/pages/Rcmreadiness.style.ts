@@ -37,7 +37,7 @@ export const ResultsWrapper = styled(Box)(({ theme }) => ({
 
 export const HeaderTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
-  color: "#1e3a8a",
+  color: "var(--color-text-blue)",
   lineHeight: 1.2,
   fontSize: "28px",
   [theme.breakpoints.up("sm")]: { fontSize: "36px" },
@@ -66,7 +66,7 @@ export const SectionPaper = styled(Paper)(({ theme }) => ({
 
 export const SectionTitle = styled(Typography)({
   fontWeight: 600,
-  color: "#2563eb",
+  color: "var(--color-text-blue)",
 });
 
 export const StyledCheckbox = styled(Checkbox)({
