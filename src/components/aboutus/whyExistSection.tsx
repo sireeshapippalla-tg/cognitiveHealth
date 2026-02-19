@@ -1,7 +1,8 @@
-import containerImg from "../../assets/aboutUs/Container.svg";
-import containerOneImg from "../../assets/aboutUs/Container (1).svg";
-import containerTwoImg from "../../assets/aboutUs/Container (2).svg";
-import containerThreeImg from "../../assets/aboutUs/Container (3).svg";
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
+import PeopleIcon from '@mui/icons-material/People';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+
 
 import FeatureSection from "../ui/featureSection/FeatureSection";
 import { Box } from "@mui/material";
@@ -21,27 +22,27 @@ const HowItWrapper = styled(Box)(({ theme }) => ({
 }));
 const features = [
   {
-    icon: <img src={containerImg} alt="Operational Complexity" />,
+    icon: <ErrorOutlineIcon />,
     title: "Operational Complexity",
     description:
       "Healthcare revenue cycle operations involve countless manual tasks, exceptions, and edge cases that slow down teams and increase costs.",
   },
   {
-    icon: <img src={containerOneImg} alt="Operational Complexity" />,
+    icon: <StorageOutlinedIcon />,
 
     title: "Fragmented Systems and Data",
     description:
       "Disconnected systems, inconsistent data formats, and lack of integration create inefficiencies and limit visibility across the revenue cycle.",
   },
   {
-    icon: <img src={containerTwoImg} alt="Operational Complexity" />,
+    icon: <PeopleIcon />,
 
     title: "Staffing Shortages",
     description:
       "Healthcare organizations face persistent challenges recruiting and retaining skilled revenue cycle staff, making automation critical.",
   },
   {
-    icon: <img src={containerThreeImg} alt="Operational Complexity" />,
+    icon: <TrendingDownIcon />,
 
     title: "Rising Costs and Slower Cash Flow",
     description:

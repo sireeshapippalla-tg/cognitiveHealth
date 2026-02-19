@@ -29,7 +29,7 @@ interface Props {
 }
 
 const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
-  const [open, setOpen] = useState(item.defaultOpen ?? false);
+  const [open, setOpen] = useState(false);
 
   const isCapability = variant === "capability";
 
@@ -65,21 +65,20 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
 
       {/* Expandable description */}
       {open && item.description && (
-  <CardContent sx={{ px: 0, pt: 2 }}>
-    {item.description.split("\n\n").map((para, index) => (
-      <DescriptionText
-        key={index}
-        sx={{
-          mb: 2,
-          lineHeight: 1.8,
-        }}
-      >
-        {para.trim()}
-      </DescriptionText>
-    ))}
-  </CardContent>
-)}
-
+        <CardContent sx={{ px: 0, pt: 2 }}>
+          {item.description.split("\n\n").map((para, index) => (
+            <DescriptionText
+              key={index}
+              sx={{
+                mb: 2,
+                lineHeight: 1.8,
+              }}
+            >
+              {para.trim()}
+            </DescriptionText>
+          ))}
+        </CardContent>
+      )}
     </StyledCard>
   );
 };
