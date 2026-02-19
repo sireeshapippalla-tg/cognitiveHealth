@@ -41,7 +41,7 @@ const MeasurableResultsSection = () => {
         <SectionTitle
           pillIcon={paymentImage9}
           pillText="Organizations see ROI within the first 6 months of deployment"
-          title="Measurable Results1"
+          title="Measurable Results"
           subtitle="Real outcomes from healthcare organizations using the iCAN™ Payment Posting solution"
           textColor="white"
         />
