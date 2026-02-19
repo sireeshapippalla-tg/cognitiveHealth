@@ -1,7 +1,7 @@
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
-import PeopleIcon from '@mui/icons-material/People';
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import Compatibility from "../../assets/Platform/ProductIntellijence/Compatibility.svg";
 
 
 import FeatureSection from "../ui/featureSection/FeatureSection";
@@ -28,14 +28,14 @@ const features = [
       "Healthcare revenue cycle operations involve countless manual tasks, exceptions, and edge cases that slow down teams and increase costs.",
   },
   {
-    icon: <StorageOutlinedIcon />,
+    icon:<img src={Compatibility} alt="Compatibility" />,
 
     title: "Fragmented Systems and Data",
     description:
       "Disconnected systems, inconsistent data formats, and lack of integration create inefficiencies and limit visibility across the revenue cycle.",
   },
   {
-    icon: <PeopleIcon />,
+    icon:<PeopleOutlineIcon />,
 
     title: "Staffing Shortages",
     description:

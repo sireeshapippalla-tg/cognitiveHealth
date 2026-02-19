@@ -18,7 +18,8 @@ export const TrustTitle = styled(Box)(({ theme }) => ({
   gap: "16px",
   marginBottom: "32px",
   color: "#0E0E0E",
-  fontWeight: 400,
+  fontWeight: 600,
+  
 
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",

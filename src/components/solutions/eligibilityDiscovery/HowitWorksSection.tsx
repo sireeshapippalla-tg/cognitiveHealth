@@ -24,13 +24,13 @@ const steps = [
     title: "Automated Matching & Handling",
     description:
       "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
-    icon: <InsertChartOutlinedIcon />,
+    icon: <SyncAltOutlinedIcon />,
   },
   {
     title: "Real-Time Reporting",
     description:
       "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
-    icon: <SyncAltOutlinedIcon />,
+    icon: <InsertChartOutlinedIcon />,
   },
 ];
 
