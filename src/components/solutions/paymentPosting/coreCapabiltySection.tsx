@@ -6,7 +6,7 @@ import { Wrapper } from "./solutions.style";
 import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
 import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/Barchart.png";
+import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 
 
@@ -40,7 +40,7 @@ const capabilities: ExpandableItem[] = [
     id: 4,
     title: "Real-Time Cash Analytics Dashboard",
     description: `This comprehensive and interactive reporting hub provides instant visibility into cash flow patterns, payment trends, and reconciliation and opportunities for revenue cycle optimization.The dashboard displays key metrics such as daily cash receipts, outstanding balances by aging category, payer mix analysis, and collection performance indicators, extending into the requirements of finance teams reporting and analysis. `,
-    icon: <img src={Barchart} alt="Real-Time Cash Analytics Dashboard" />,
+    icon: <img src={BarChart} alt="Real-Time Cash Analytics Dashboard" />,
         
   },
   {
