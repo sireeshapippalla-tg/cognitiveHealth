@@ -6,7 +6,7 @@ import { Wrapper } from "./solutions.style";
 import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
 import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/Barchart.png";
+import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 
 
@@ -51,7 +51,7 @@ const capabilities: ExpandableItem[] = [
     title: "Streamlined Pre-Bill Review Workflow ",
     description: `This organized review system creates prioritized work queues for charges requiring human validation, organizing items by complexity, dollar value, and staff expertise requirements. The workflow presents reviewers with all relevant information including clinical documentation, coding suggestions, contract terms, and compliance alerts in a unified interface. Built-in productivity tracking and bottleneck identification help managers optimize staffing levels and improve turnaround times from service delivery to claim submission. `,
     icon: (
-      <img src={Barchart} alt="Streamlined Pre-Bill Review Workflow" />
+      <img src={BarChart} alt="Streamlined Pre-Bill Review Workflow" />
     ),
     
   },
