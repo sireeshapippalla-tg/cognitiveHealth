@@ -1,6 +1,11 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { MenuItem, Select, FormControl, type SelectChangeEvent } from "@mui/material";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  MenuItem,
+  Select,
+  FormControl,
+  type SelectChangeEvent,
+} from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
 import {
   StyledTabs,
@@ -15,37 +20,26 @@ import MediaIcon from "../../../assets/Resources/media.svg";
 
 const ResourceTabs = () => {
   const location = useLocation();
-  const getTabFromHash = () => {
-    const hash = location.hash.replace("#", "");
+  const navigate = useNavigate();
 
-    switch (hash) {
-      case "case-studies":
-        return 1;
-      case "videos":
-        return 2;
-      case "media":
-        return 3;
-      case "blog":
-      default:
-        return 0;
-    }
-  };
+  const tabHashMap = ["blog", "case-study", "videos", "media"];
 
-  const [activeTab, setActiveTab] = useState(getTabFromHash());
-
-  // const [activeTab, setActiveTab] = useState(0);
-  const [filter, setFilter] = useState("Filter By");
+  const activeTab = tabHashMap.indexOf(
+    location.hash.replace("#", "") || "blog",
+  );
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setActiveTab(newValue);
+    navigate(`/resources#${tabHashMap[newValue]}`, { replace: true });
   };
+
+  const [filter, setFilter] = useState("Filter By");
 
   const handleFilterChange = (event: SelectChangeEvent) => {
     setFilter(event.target.value);
   };
 
   return (
-    <BlogContainer id="blog">
+    <BlogContainer>
       <FilterContainer>
         <StyledTabs
           value={activeTab}
@@ -58,6 +52,7 @@ const ResourceTabs = () => {
             icon={<img src={BlogIcon} alt="Blog Icon" width={16} height={16} />}
             iconPosition="start"
             label="Blog"
+            id="blog"
           />
           <StyledTab
             icon={
@@ -66,6 +61,7 @@ const ResourceTabs = () => {
                 alt="Case Study Icon"
                 width={16}
                 height={16}
+                id="case-study"
               />
             }
             iconPosition="start"
@@ -77,6 +73,7 @@ const ResourceTabs = () => {
             }
             iconPosition="start"
             label="Videos"
+            id="videos"
           />
           <StyledTab
             icon={
@@ -84,6 +81,7 @@ const ResourceTabs = () => {
             }
             iconPosition="start"
             label="Media"
+            id="media"
           />
         </StyledTabs>
 
