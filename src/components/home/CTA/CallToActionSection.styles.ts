@@ -58,7 +58,7 @@ export const CtaSubtitle = styled(Typography)({
 });
 
 
-export const CtaTrustText = styled(Typography)(({ theme }) => ({
+export const CtaTrustText = styled(Typography)(() => ({
   marginTop: "24px",
   fontSize: "14px",
   lineHeight: "22px",
