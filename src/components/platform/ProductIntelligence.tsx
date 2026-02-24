@@ -7,36 +7,37 @@ import Compatibility from "../../assets/Platform/ProductIntellijence/Compatibili
 
 const productIntelligenceItems = [
   {
-    icon: <img src={Healthcare} alt="Healthcare Expertise" />,
-    title: "Healthcare Expertise Meets AI Innovation",
-    description:
-      "Built by RCM veterans and technologists. Decades of healthcare operations and IT experience.",
-  },
-  {
     icon: <img src={Architecture} alt="Architecture" />,
-    title: "Advanced AI Architecture",
+    title: "Hybrid AI Models ",
     description:
-      "Generative AI combined with deep domain knowledge. Continuous learning from healthcare workflows.",
+      "Combines large language models with specialized healthcare domain models trained on claims, physician notes, payer policies and correspondence, and regulatory frameworks, delivering accuracy that generic AI cannot match.",
   },
   {
-    icon: <img src={Enterprise} alt="Enterprise Scale" />,
-    title: "Proven at Enterprise Scale",
+    icon: <img src={Healthcare} alt="Healthcare Expertise" />,
+    title: "Deep Healthcare Domain Knowledge",
     description:
-      "Deployed across health systems and professional provider setups. Handles millions of transactions.",
+      "Purpose-built for healthcare complexity: 1,200+ payer rules, 20+ EMR integrations, specialty-specific workflows, and continuous regulatory updates, handling what makes healthcare unique.",
   },
   {
     icon: <img src={Compatibility} alt="Compatibility" />,
-    title: "Comprehensive Compatibility",
+    title: "Comprehensive Interoperability",
     description:
-      "Supports multiple EMRs, payer requirements, and regulations. Built for healthcare complexity.",
+      "Native support for HL7, FHIR, X12 EDI, and modern APIs. Seamlessly connects with Epic, Cerner, Meditech, athenahealth, NextGen, and 15+ other EMRs plus hundreds of peripheral systems.",
   },
+  {
+    icon: <img src={Enterprise} alt="Enterprise Scale" />,
+    title: "Intelligent Process Orchestration ",
+    description:
+      "AI agents work together across your entire revenue cycle, sharing insights, coordinating handoffs, and optimizing workflows from patient registration through final payment reconciliation.",
+  },
+  
 ];
 
 const ProductIntelligence = () => {
   return (
     <FeatureSection
-      title="Product Intelligence & Enterprise Scale"
-      subtitle="Bulit for scale with enterprise-grade integrations and infrastructure."
+      title="Enterprise AI Architecture Built for Healthcare"
+      subtitle="Cutting-edge technology designed specifically for the complexity of healthcare operations"
     //   background="#f9fafb"
       items={productIntelligenceItems}
       // linkText="Learn More"

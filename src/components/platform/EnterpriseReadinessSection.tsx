@@ -9,34 +9,35 @@ const EnterpriseReadinessSection = () => {
   const enterpriseItems = [
     {
       icon: <img src={Integration} alt="Integration" />,
-      title: "Multi-Source Integrations",
+      title: "Proven at Enterprise Scale",
       description:
-        "Seamlessly connect to banks, clearinghouses, payment processors, EHR systems, and practice management platforms.",
-    },
-    {
-      icon: <img src={Connectivity} alt="Connectivity" />,
-      title: "Standards-Based Connectivity",
-      description:
-        "Native support for HL7, FHIR, X12 835/837, and modern RESTful APIs ensures compatibility with your existing technology stack.",
-    },
-    {
-      icon: <img src={API} alt="API" />,
-      title: "UI-Based & API Integrations",
-      description:
-        "Flexible integration options including pre-built connectors, custom API integrations, and user-friendly interface-based data entry.",
+        "Deployed across health systems processing 10M+ transactions monthly. Handles multiple facilities, diverse payer portfolios, varied specialties, and constantly evolving regulations simultaneously.",
     },
     {
       icon:  <img src={Deployement} alt="Deployment" />,
-      title: "Enterprise-Scale Deployment",
+      title: "Security & Compliance First",
       description:
-        "Proven infrastructure supporting high-volume processing with 99.9% uptime, comprehensive security, and dedicated support for large organizations.",
+        "HITRUST CSF, SOC 2 Type II, with 95% uptime. Enterprise-grade encryption, role-based access controls, and comprehensive audit logging ensure your data stays secure.",
     },
+    {
+      icon: <img src={Connectivity} alt="Connectivity" />,
+      title: "Flexible Deployment Options",
+      description:
+        "Cloud-hosted (multi-tenant or single-tenant), private cloud deployment. Choose the option that fits your organization's security, compliance, and infrastructure requirements.",
+    },
+    {
+      icon: <img src={API} alt="API" />,
+      title: "White-Glove Enterprise Support ",
+      description:
+        "Dedicated Customer Success Manager, 24/7/365 technical support with <15min response times, quarterly business reviews, and on-site training for large deployments.",
+    },
+    
   ];
 
   return (
     <FeatureSection
-      title="Enterprise Readiness"
-      subtitle="Built for scale with enterprise-grade integrations and infrastructure"
+      title="Built for Scale, Security, and Reliability"
+      subtitle="Enterprise-grade infrastructure trusted by organizations processing billions in annual revenue"
       background="#f9fafb"
       items={enterpriseItems}
     />

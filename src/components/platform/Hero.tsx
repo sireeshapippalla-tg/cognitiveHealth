@@ -8,8 +8,8 @@ const Hero = () => {
   return (
     <>
       <SplitSection
-        eyebrow="iCAN ONE"
-        description="Super Charge your revenue cycle with AI Agents"
+        eyebrow="iCAN™ ONE"
+        description="The AI Agent Platform for Healthcare RCM"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}
         primaryAction={{

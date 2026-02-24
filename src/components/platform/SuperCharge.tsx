@@ -10,25 +10,25 @@ const features = [
     icon: <img src={Network} alt="Network" />,
     title: "Purpose-Built AI Agent Network",
     description:
-      "Unlike generic automation tools, iCAN™ ONE is a unified network of specialized AI agents designed exclusively for healthcare revenue cycle complexity. Each agent masters specific workflows—from pre-bill edits to appeals management—working together to orchestrate your entire revenue cycle.",
+      "Unlike generic automation tools, iCAN™ ONE is a unified network of specialized AI agents designed exclusively for healthcare revenue cycle workflows, from pre-authorization to final payment posting and reporting.",
   },
   {
     icon: <img src={Innovation} alt="Innovation" />,
-    title: "Healthcare Expertise Meets AI Innovation",
+    title: "Built by RCM Veterans",
     description:
-      "Built by RCM veterans and technologists with decades of healthcare operations and IT experience, our platform combines deep domain knowledge with cutting-edge generative AI. We understand your challenges because we've lived them."
+      "Developed by revenue cycle executives and healthcare IT leaders with decades of operational experience. We understand your challenges because we've lived them."
   },
   {
     icon: <img src={Scale} alt="Scale" />,
-    title: "Proven at Enterprise Scale",
+    title: "Rapid Time-to-Value",
     description:
-      "Deployed across health systems and professional provider set-ups processing millions of transactions, iCAN™ ONE handles the complexity of real-world healthcare operations—multiple EMRs, diverse payer requirements, and constantly evolving regulations."
+      "Pre-configured workflows and seamless integrations mean you see value fast. Our AI agents connect to any EMR through HL7, FHIR, API, or  UI-based methods, no expensive custom development required."
   },
   {
     icon: <img src={Deploy} alt="Deploy" />,
-    title: "Deploy in Weeks, Not Months",
+    title: "Continuous Learning AI",
     description:
-      "Pre-configured workflows and seamless integrations mean you see value fast. Our AI agents connect to any EMR through HL7, FHIR, API, or even UI-based methods—no expensive custom development required.",
+      "Every claim processed, every denial overturned, every authorization obtained makes your AI agents smarter. The platform continuously learns from your unique workflows and improves over time.",
   },
 ];
 
@@ -36,7 +36,7 @@ const SuperChargeSection = () => {
   return (
     <FeatureSection
       title="Super Charge Your Revenue Cycle With <span>AI Agents</span>"
-      subtitle="Enterprise-grade AI platform built specifically for healthcare revenue cycle operations."
+      subtitle="A unified network of specialized AI agents designed exclusively for revenue cycle operations."
       background="#f9fafb"
       items={features}
       // linkText="Learn More"
