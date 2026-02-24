@@ -7,9 +7,10 @@ import {
   CtaTitle,
   CtaSubtitle,
   CtaActions,
+  CtaTrustText,
   PrimaryButtonStyles,
   // OutlineButtonStyles,
-  SectionContainer,
+  SectionContainer
 } from "./CallToActionSection.styles";
 
 const CallToActionSection = () => {
@@ -17,11 +18,10 @@ const CallToActionSection = () => {
   return (
     <SectionContainer>
       <CtaWrapper>
-        <CtaTitle>Redefine your revenue management through the power of autonomous AI</CtaTitle>
+        <CtaTitle>Ready to Experience the CognitiveHealth Difference?</CtaTitle>
 
         <CtaSubtitle>
-          Join leading healthcare organizations transforming their revenue cycle
-          with AI
+         See how our healthcare expertise, advanced AI technology, and partnership approach can transform your revenue cycle operations.
         </CtaSubtitle>
 
         <CtaActions direction={{ xs: "column", sm: "row" }} spacing={2}>
@@ -43,7 +43,11 @@ const CallToActionSection = () => {
           >
             See Platform in Action
           </AppButton>
+
         </CtaActions>
+         <CtaTrustText>
+          Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
+        </CtaTrustText>
       </CtaWrapper>
     </SectionContainer>
   );

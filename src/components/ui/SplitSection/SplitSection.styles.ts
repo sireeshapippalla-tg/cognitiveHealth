@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+
 interface GridProps {
   reverse?: boolean;
 }
@@ -58,11 +59,12 @@ export const Eyebrow = styled(Typography)(({ theme }) => ({
   },
 }));
 
+
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "23px",
   fontWeight: 600,
   lineHeight: "32px",
-  color: "background: #0E0E0E",
+  color: "#0E0E0E",
   marginBottom: "16px",
 
   [theme.breakpoints.down("md")]: {

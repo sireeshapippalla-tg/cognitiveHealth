@@ -57,6 +57,18 @@ export const CtaSubtitle = styled(Typography)({
   margin: "0 auto 32px",
 });
 
+
+export const CtaTrustText = styled(Typography)(({ theme }) => ({
+  marginTop: "24px",
+  fontSize: "14px",
+  lineHeight: "22px",
+  color: "#2F2F2F",
+  textAlign: "center",
+  maxWidth: "720px",
+  marginLeft: "auto",
+  marginRight: "auto",
+}));
+
 /* BUTTON GROUP */
 export const CtaActions = styled(Stack)({
   justifyContent: "center",
