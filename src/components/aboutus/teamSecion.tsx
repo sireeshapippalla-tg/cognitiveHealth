@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import ExpandableCard, {
+import  {
   type ExpandableItem,
 } from "../ui/teamCard/expandableCard";
 import {
@@ -16,6 +16,7 @@ import albertImg from "../../assets/aboutUs/albert.svg";
 import nkImg from "../../assets/aboutUs/nk.svg";
 import rambabuImg from "../../assets/aboutUs/rambabu.svg";
 import vispiImg from "../../assets/aboutUs/vispi.svg";
+import TeamMemberCard from "../ui/teamCard/TeamMemberCard";
 // import simeonImg from "../../assets/aboutUs/simeon.svg";
 
 const teamData: ExpandableItem[] = [
@@ -136,8 +137,8 @@ const TeamSection = () => {
       <GridWrapper>
         <Grid container spacing={3}>
           {teamData.map((member) => (
-            <Grid size={{ xs: 12, sm: 6, md: 6 }} key={member.id}>
-              <ExpandableCard item={member} variant="team" />
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={member.id}>
+              <TeamMemberCard member={member} />
             </Grid>
           ))}
         </Grid>

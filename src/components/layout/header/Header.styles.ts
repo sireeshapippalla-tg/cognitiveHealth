@@ -85,7 +85,7 @@ export const NavItem = styled("span")<{
 /* DRAWER */
 export const DrawerContainer = styled(Box)(() => ({
   width: 260,
-  // padding: 16,
+  padding: 16,
 }));
 
 export const DrawerItem = styled(Box, {
