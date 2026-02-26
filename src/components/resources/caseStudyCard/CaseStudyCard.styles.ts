@@ -74,7 +74,7 @@ export const MetricValue = styled(Typography)({
 });
 
 export const MetricLabel = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "12px",
   fontWeight: 600,
   color: "var(--color-text-light)", // text.primary usually, hardcoding or using theme correctly? I'll just remove theme and use a hex for now or assume default. Actually, I should keep theme if I use it.
@@ -110,7 +110,7 @@ export const CategoryChip = styled(Chip)({
 });
 
 export const CardTitle = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "16px",
   fontWeight: 600,
   lineHeight: "24px ",
@@ -123,7 +123,7 @@ export const CardTitle = styled(Typography)(() => ({
 }));
 
 export const CardDescription = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "13px",
   lineHeight: "22.4px",
   color: "#4A5565",

@@ -44,7 +44,7 @@ export const StatCard = styled(Box)({
 });
 
 export const StatValue = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "32px",
   fontWeight: 600,
   color: "var(--color-primary)",
@@ -52,7 +52,7 @@ export const StatValue = styled(Typography)({
 });
 
 export const StatTitle = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "20px",
   fontWeight: 600,
   color: "var(--color-text-dark)",
@@ -60,7 +60,7 @@ export const StatTitle = styled(Typography)({
 });
 
 export const StatDescription = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "14px",
   color: "var(--color-text-light)",
 });

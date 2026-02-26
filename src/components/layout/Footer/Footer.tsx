@@ -6,7 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import cognitiveLogo from "../../../assets/cognitiveLogo.svg";
+import cognitiveLogo from "../../../assets/white-logo.webp";
 
 import {
   FooterRoot,
@@ -20,7 +20,7 @@ import {
   ListItem,
   FooterDivider,
   Bottom,
-  LogoWrapper,
+  // LogoWrapper,
 } from "./Footer.styles";
 
 const Footer = () => {
@@ -36,14 +36,14 @@ const Footer = () => {
         >
           {/* BRAND */}
           <Brand>
-            <LogoWrapper>
+            {/* <LogoWrapper> */}
               <img
                 src={cognitiveLogo}
                 alt="CognitiveHealth"
-                height={55}
+                height={70}
                 onClick={() => navigate("/", { replace: false })}
               />
-            </LogoWrapper>
+            {/* </LogoWrapper> */}
 
             <Description>
               Transform your revenue cycle

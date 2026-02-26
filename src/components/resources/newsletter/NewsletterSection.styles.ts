@@ -13,16 +13,16 @@ export const NewsletterWrapper = styled(Box)({
   margin: "64px 0",
 });
 
-export const Title = styled(Typography)(({}) => ({
-  fontFamily: "Inter",
+export const Title = styled(Typography)(() => ({
+  // fontFamily: "Inter",
   fontWeight: 600,
   lineHeight: "48px",
   color: "var(--color-text-dark)",
   marginBottom: "8px",
 }));
 
-export const Subtitle = styled(Typography)(({ }) => ({
-  fontFamily: "Inter",
+export const Subtitle = styled(Typography)(() => ({
+  // fontFamily: "Inter",
   color: "var(--color-text-light)",
   fontSize: "20px",
   maxWidth: "700px",
@@ -38,7 +38,7 @@ export const ButtonContainer = styled(Box)({
 });
 
 export const PrimaryButton = styled(Button)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   backgroundColor: "#EB7724", // Orange color
   color: "#fff",
   textTransform: "none",
@@ -55,7 +55,7 @@ export const PrimaryButton = styled(Button)({
 });
 
 export const SecondaryButton = styled(Button)(({ theme }) => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   backgroundColor: "#fff",
   color: theme.palette.text.primary,
   border: "1px solid #2F2F2F",

@@ -63,7 +63,7 @@ export const CardWrapper = styled(Box)({
 });
 
 export const QuoteText = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 400,
   fontSize: "18px",
   color: "#0E151B",
@@ -85,7 +85,7 @@ export const Divider = styled(Box)({
 });
 
 export const AuthorName = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   color: "#EB7724",
   fontWeight: 500,
   fontSize: "18px",
@@ -102,7 +102,7 @@ export const RoleText = styled(Typography)({
 });
 
 export const CompanyText = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 400,
   color: "#2F2F2F",
   fontSize: "16px",

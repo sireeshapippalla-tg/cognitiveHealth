@@ -52,7 +52,7 @@ export const Eyebrow = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   color:  "var(--color-text-dark)",
   marginBottom: "20px",
-  lineHeight: "50px",
+  lineHeight: "55px",
   [theme.breakpoints.down("md")]: {
     fontSize: "28px",
     lineHeight: "35px",
@@ -61,9 +61,9 @@ export const Eyebrow = styled(Typography)(({ theme }) => ({
 
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "23px",
-  fontWeight: 600,
-  lineHeight: "32px",
+  fontSize: "35px",
+  fontWeight: 400,
+  lineHeight: "50px",
   color: "#0E0E0E",
   marginBottom: "16px",
 
@@ -74,8 +74,8 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Description = styled(Typography)({
-  fontSize: "18px",
-  lineHeight: 1.6,
+  fontSize: "16px",
+  lineHeight: "28px",
   color:  "var(--color-text-light)",
   marginBottom: "32px",
   fontWeight: 400,

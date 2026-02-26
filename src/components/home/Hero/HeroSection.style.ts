@@ -46,7 +46,7 @@ export const Content = styled(Box)(({ theme }) => ({
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "44px",
   fontWeight: 600,
   lineHeight: "60px",
@@ -62,7 +62,7 @@ export const Highlight = styled("span")({
 });
 
 export const Subtitle = styled(Box)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "20px",
   fontWeight: 400,
   marginTop: "24px",
@@ -89,7 +89,7 @@ export const TrustSection = styled(Box)(({ theme }) => ({
 }));
 
 export const TrustTitle = styled(Box)(({ theme }) => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "16px",
   lineHeight: "24px",
   display: "flex",

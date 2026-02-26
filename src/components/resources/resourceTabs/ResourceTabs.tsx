@@ -92,7 +92,7 @@ const ResourceTabs = () => {
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
             sx={{
-              fontFamily: "Inter",
+              // fontFamily: "Inter",
               fontSize: "14px",
               bgcolor: "#fff",
               color: "#656565",

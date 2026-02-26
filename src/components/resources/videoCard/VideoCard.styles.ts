@@ -80,7 +80,7 @@ export const CardContent = styled(Box)({
 });
 
 export const CategoryChip = styled(Chip)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   position: "absolute",
   top: "16px",
   left: "16px",
@@ -97,7 +97,7 @@ export const CategoryChip = styled(Chip)({
 });
 
 export const CardTitle = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "16px",
   fontWeight: 600,
   lineHeight: "1.4",
@@ -107,7 +107,7 @@ export const CardTitle = styled(Typography)(() => ({
 }));
 
 export const CardDescription = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "14px",
   lineHeight: "22.4px",
   color: "#4A5565",

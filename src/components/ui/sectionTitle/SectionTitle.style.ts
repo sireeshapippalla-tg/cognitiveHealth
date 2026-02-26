@@ -31,7 +31,7 @@ export const Pill = styled(Box, {
 })<PillProps>(({ variant = "primary" }) => ({
   backgroundColor: variant === "orange" ? "#F97316" : "var(--color-text-blue)",
 
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   color: "#ffffff",
   padding: "4px 14px",
   borderRadius: "999px",
@@ -46,7 +46,7 @@ export const Title = styled(Typography, {
   shouldForwardProp: (prop) =>
     prop !== "textcolor" && prop !== "highlightcolor",
 })<TitleProps>(({ theme, textcolor, highlightcolor }) => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 600,
   color: textcolor || "var(--color-text-dark)",
   lineHeight: "48px",
@@ -66,9 +66,9 @@ export const Title = styled(Typography, {
 
 export const Subtitle = styled(Typography)<SubtitleProps>(
   ({ maxWidth, textColor }) => ({
-    fontFamily: "Inter",
+    // fontFamily: "Inter",
     fontWeight: 400,
-    fontSize: "19px",
+    fontSize: "16px",
     lineHeight: "150%",
     color: textColor || "var(--color-text-light)",
     maxWidth,

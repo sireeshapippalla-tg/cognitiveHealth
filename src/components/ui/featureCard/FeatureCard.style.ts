@@ -107,7 +107,7 @@ textAlign:"left"
 });
 
 export const LearnMoreButton = styled(Button)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "14px",
   lineHeight: "140%",
   padding: 0,

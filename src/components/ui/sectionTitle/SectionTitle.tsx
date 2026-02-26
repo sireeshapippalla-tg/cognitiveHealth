@@ -38,14 +38,13 @@ export const SectionTitle = ({
     )}
 
     <Title
-      variant="h2"
       dangerouslySetInnerHTML={{ __html: title }}
       textcolor={textColor}
       sx={{ marginBottom: subtitle ? "16px" : "20px" }}
     />
 
     {subtitle && (
-      <Subtitle variant="body1" maxWidth={maxWidth} textColor={textColor}>
+      <Subtitle maxWidth={maxWidth} textColor={textColor}>
         {subtitle}
       </Subtitle>
     )}

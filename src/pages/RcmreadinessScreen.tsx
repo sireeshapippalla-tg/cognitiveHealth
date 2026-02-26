@@ -24,9 +24,9 @@ import {
   SectionTitle,
   StyledCheckbox,
   ResultPaper,
-  FooterWrapper,
-  FooterEmail,
-  FooterCaption,
+  // FooterWrapper,
+  // FooterEmail,
+  // FooterCaption,
   FolderStyledIcon,
   PaymentsStyledIcon,
   HospitalStyledIcon,
@@ -411,7 +411,7 @@ const RCMReadinessScreen: React.FC = () => {
           </Stack>
         </ResultsWrapper>
       )}
-      <FooterWrapper>
+      {/* <FooterWrapper>
         <Typography variant="h5" color="var(--color-text-blue)">
           Ready to automate your RCM workflows?
         </Typography>
@@ -420,7 +420,7 @@ const RCMReadinessScreen: React.FC = () => {
         <FooterCaption variant="caption">
           © CognitiveHealth – RCM Automation Solutions
         </FooterCaption>
-      </FooterWrapper>
+      </FooterWrapper> */}
 
       <Dialog
         open={openEmailDialog}

@@ -20,7 +20,7 @@ export const StyledCard = styled(Card)({
 
 export const ValueText = styled(Typography)(({ theme }) => ({
   color: "#EB7724",
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 600,
   // marginBottom: "12px",
   lineHeight:'150%',
@@ -33,7 +33,7 @@ export const ValueText = styled(Typography)(({ theme }) => ({
 
 export const DescriptionText = styled(Typography)({
   color: "#2F2F2F",
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "14px",
   fontWeight: 500,
   lineHeight: "140%",
