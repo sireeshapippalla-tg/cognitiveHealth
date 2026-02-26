@@ -39,7 +39,7 @@ export const SearchButton = styled(IconButton)({
   },
 });
 export const Title = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "32px",
   fontWeight: 600,
   marginBottom: "16px",
@@ -47,7 +47,7 @@ export const Title = styled(Typography)(() => ({
 }));
 
 export const Subtitle = styled(Typography)(() => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 400,
   color: "var(--color-text-light)",
   maxWidth: "655px",

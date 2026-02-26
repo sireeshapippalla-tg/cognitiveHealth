@@ -39,7 +39,7 @@ export const CtaWrapper = styled(Box)(({ theme }) => ({
 
 /* TITLE */
 export const CtaTitle = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontWeight: 600,
   fontSize: "32px",
   lineHeight: '48px',
@@ -49,7 +49,7 @@ export const CtaTitle = styled(Typography)({
 
 /* SUBTITLE */
 export const CtaSubtitle = styled(Typography)({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "20px",
   color: "#2F2F2F",
   lineHeight: '150%',

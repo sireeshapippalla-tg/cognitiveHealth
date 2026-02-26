@@ -9,7 +9,7 @@ export const TrustSection = styled(Box)(({ theme }) => ({
 }));
 
 export const TrustTitle = styled(Box)(({ theme }) => ({
-  fontFamily: "Inter",
+  // fontFamily: "Inter",
   fontSize: "16px",
   lineHeight: "24px",
   display: "flex",

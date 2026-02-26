@@ -30,14 +30,14 @@ export const MetricCard = ({
     {icon && <IconWrapper sx={{ color }}>{icon}</IconWrapper>}
 
     {/* Value */}
-    <ValueText variant="h3" sx={{ color }}>
+    <ValueText  sx={{ color }}>
       {value}
     </ValueText>
 
     {/* Title (optional) */}
-    {title && <TitleText variant="subtitle1" >{title}</TitleText>}
+    {title && <TitleText  >{title}</TitleText>}
 
     {/* Description */}
-    <DescriptionText variant="body2">{description}</DescriptionText>
+    <DescriptionText >{description}</DescriptionText>
   </StyledCard>
 );

@@ -29,24 +29,63 @@ export const SolutionItem = ({
         navigate(path);
         onNavigate(path);
       }}
+      // sx={{
+      //   display: "flex",
+      //   gap: 2,
+      //   cursor: "pointer",
+      //   alignItems: "flex-start",
+      // }}
       sx={{
         display: "flex",
         gap: 2,
+        p: 2,
+        borderRadius: 2,
         cursor: "pointer",
         alignItems: "flex-start",
+        transition: "all 0.2s ease",
+
+        "&:hover": {
+          backgroundColor: "#ecfdf5",
+          color: "#16a34a",
+        },
       }}
     >
       {/* ICON */}
       <Box
+        // sx={{
+        //   width: 40,
+        //   height: 40,
+        //   borderRadius: 2,
+        //   backgroundColor: isHighlighted
+        //     ? "var(--color-primary)"
+        //     : "var(--color-text-blue)",
+        //   display: "flex",
+        //   alignItems: "center",
+        //   justifyContent: "center",
+        //   flexShrink: 0,
+        // }}
         sx={{
-          width: 40,
-          height: 40,
-          borderRadius: 2,
-          backgroundColor: isHighlighted ? "var(--color-primary)" : "var(--color-text-blue)",
+          width: 42,
+          height: 42,
+          borderRadius: "10px",
+          // backgroundColor: "#f3f4f6",
+          backgroundColor: isHighlighted
+            ? "var(--color-primary)"
+            : "var(--color-text-blue)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
+          transition: "all 0.2s ease",
+
+          // "&:hover": {
+          //   backgroundColor: "#fff7ed",
+          // },
+
+          "&:hover": {
+            // backgroundColor: "#ecfdf5",
+            color: "#16a34a",
+          },
         }}
       >
         {icon}
@@ -54,13 +93,20 @@ export const SolutionItem = ({
 
       {/* TEXT */}
       <Box>
-        <Typography
+        {/* <Typography
           fontWeight={600}
           color={isHighlighted ? "var(--color-primary)" : "#111"}
         >
           {title}
         </Typography>
         <Typography fontSize={14} color="#6b7280">
+          {desc}
+        </Typography> */}
+        <Typography fontWeight={600} fontSize="15px" color="#111827" >
+          {title}
+        </Typography>
+
+        <Typography fontSize="13px" color="#6b7280" mt={0.5}>
           {desc}
         </Typography>
       </Box>

@@ -23,7 +23,7 @@ import {
   DrawerItem,
   CloseIconWrapper,
 } from "./Header.styles";
-import { SolutionItem } from "./SolutionItem";
+// import { SolutionItem } from "./SolutionItem";
 import cognitiveLogo from "../../../assets/cognitiveLogo.svg";
 import Vector from "../../../assets/Vector.svg";
 import Frame from "../../../assets/Frame.svg";
@@ -31,6 +31,12 @@ import Workflow from "../../../assets/Workflow.svg";
 import Eligibility from "../../../assets/Eligibility.svg";
 import Analysis from "../../../assets/Analysis.svg";
 import PreBill from "../../../assets/Prebill.svg";
+import PopoverCard from "../../ui/popoverCard/PopoverCard";
+
+import BlogIcon from "../../../assets/Resources/Blog.svg";
+import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
+import VideoIcon from "../../../assets/Resources/video.svg";
+import MediaIcon from "../../../assets/Resources/media.svg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -56,6 +62,7 @@ const Header = () => {
   /** ================= DESKTOP HOVER ================= */
   const handleOpenSolutions = (el: HTMLElement) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    setResourcesOpen(false);
     setSolutionsAnchorEl(el);
     setSolutionsOpen(true);
   };
@@ -143,14 +150,71 @@ const Header = () => {
   ];
 
   const resourceLinks = [
-    { title: "Blog", hash: "blog" },
-    { title: "Case Studies", hash: "case-study" },
-    { title: "Videos", hash: "videos" },
-    { title: "Media", hash: "media" },
+    {
+      title: "Blog",
+      hash: "blog",
+      icon: (
+        <img
+          src={BlogIcon}
+          alt="Blog Icon"
+          style={{
+            width: 24,
+            height: 24,
+            filter: "brightness(0) invert(1)",
+          }}
+        />
+      ),
+    },
+    {
+      title: "Case Studies",
+      hash: "case-study",
+      icon: (
+        <img
+          src={CaseStudyIcon}
+          alt="Case Study Icon"
+          style={{
+            width: 24,
+            height: 24,
+            filter: "brightness(0) invert(1)",
+          }}
+        />
+      ),
+    },
+    {
+      title: "Videos",
+      hash: "videos",
+      icon: (
+        <img
+          src={VideoIcon}
+          alt="Video Icon"
+          style={{
+            width: 24,
+            height: 24,
+            filter: "brightness(0) invert(1)",
+          }}
+        />
+      ),
+    },
+    {
+      title: "Media",
+      hash: "media",
+      icon: (
+        <img
+          src={MediaIcon}
+          alt="Media Icon"
+          style={{
+            width: 24,
+            height: 24,
+            filter: "brightness(0) invert(1)",
+          }}
+        />
+      ),
+    },
   ];
 
   const handleOpenResources = (el: HTMLElement) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    setSolutionsOpen(false);
     setResourcesAnchorEl(el);
     setResourcesOpen(true);
   };
@@ -276,26 +340,58 @@ const Header = () => {
           }
           onMouseLeave={handleCloseSolutions}
         >
-          <Paper elevation={4} sx={{ width: 720, borderRadius: 3, p: 3 }}>
+          <Paper
+            elevation={4}
+            // sx={{ width: 720, borderRadius: 3, p: 3, mt: 2.5 }}
+            sx={{
+              width: 720,
+              borderRadius: "16px",
+              p: 3,
+              mt: 2.5,
+              backgroundColor: "#ffffff",
+              border: "1px solid #E5E7EB",
+              boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+            }}
+          >
             <Stack direction="row" spacing={4}>
               <Stack spacing={3} flex={1}>
                 {solutionLinks.slice(0, 3).map((item) => (
-                  <SolutionItem
+                  // <SolutionItem
+                  //   key={item.title}
+                  //   {...item}
+                  //   active={isActive(item.path)}
+                  //   onNavigate={handleNavigate}
+                  // />
+                  <PopoverCard
                     key={item.title}
-                    {...item}
-                    active={isActive(item.path)}
-                    onNavigate={handleNavigate}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.desc}
+                    onClick={() => {
+                      navigate(item.path);
+                      setSolutionsOpen(false);
+                    }}
                   />
                 ))}
               </Stack>
 
               <Stack spacing={3} flex={1}>
                 {solutionLinks.slice(3).map((item) => (
-                  <SolutionItem
+                  // <SolutionItem
+                  //   key={item.title}
+                  //   {...item}
+                  //   active={isActive(item.path)}
+                  //   onNavigate={handleNavigate}
+                  // />
+                  <PopoverCard
                     key={item.title}
-                    {...item}
-                    active={isActive(item.path)}
-                    onNavigate={handleNavigate}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.desc}
+                    onClick={() => {
+                      navigate(item.path);
+                      setSolutionsOpen(false);
+                    }}
                   />
                 ))}
               </Stack>
@@ -316,24 +412,82 @@ const Header = () => {
           }
           onMouseLeave={handleCloseResources}
         >
-          <Paper elevation={4} sx={{ width: 240, borderRadius: 3, p: 2 }}>
+          {/* <Paper elevation={4} sx={{ width: 240, borderRadius: 3, p: 2 }}>
             <Stack spacing={2}>
-              {resourceLinks.map((item) => (
-                <Box
-                  key={item.hash}
-                  sx={{
-                    cursor: "pointer",
-                    fontWeight: 500,
-                    "&:hover": { color: "#1976d2" },
-                  }}
-                  onClick={() => {
-                    navigate(`/resources#${item.hash}`);
-                    setResourcesOpen(false);
-                  }}
-                >
-                  {item.title}
-                </Box>
-              ))}
+            
+              <Stack spacing={2}>
+             
+                {resourceLinks.slice(0, 2).map((item) => (
+                  <PopoverCard
+                    key={item.hash}
+                    icon={item.icon}
+                    label="Resource"
+                    title={item.title}
+                    accentColor="#16a34a" // green
+                    onClick={() => {
+                      navigate(`/resources#${item.hash}`);
+                      setResourcesOpen(false);
+                    }}
+                  />
+                ))}
+              </Stack>
+            </Stack>
+          </Paper> */}
+
+          <Paper
+            elevation={4}
+            sx={{
+              width: 720,
+              borderRadius: "16px",
+              p: 3,
+              mt: 2.5,
+              backgroundColor: "#ffffff",
+              border: "1px solid #E5E7EB",
+              boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+            }}
+          >
+            <Stack direction="row" spacing={4}>
+              <Stack spacing={3} flex={1}>
+                {resourceLinks.slice(0, 2).map((item) => (
+                  // <SolutionItem
+                  //   key={item.title}
+                  //   {...item}
+                  //   active={isActive(item.path)}
+                  //   onNavigate={handleNavigate}
+                  // />
+                  <PopoverCard
+                    key={item.hash}
+                    icon={item.icon}
+                    label="Resource"
+                    title={item.title}
+                    onClick={() => {
+                      navigate(`/resources#${item.hash}`);
+                      setResourcesOpen(false);
+                    }}
+                  />
+                ))}
+              </Stack>
+
+              <Stack spacing={3} flex={1}>
+                {resourceLinks.slice(2).map((item) => (
+                  // <SolutionItem
+                  //   key={item.title}
+                  //   {...item}
+                  //   active={isActive(item.path)}
+                  //   onNavigate={handleNavigate}
+                  // />
+                  <PopoverCard
+                    key={item.hash}
+                    icon={item.icon}
+                    label="Resource"
+                    title={item.title}
+                    onClick={() => {
+                      navigate(`/resources#${item.hash}`);
+                      setResourcesOpen(false);
+                    }}
+                  />
+                ))}
+              </Stack>
             </Stack>
           </Paper>
         </Box>

@@ -9,28 +9,28 @@ const theme = createTheme({
   },
 
   typography: {
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Montserrat, sans-serif",
 
-    h3: {
-      fontSize: "38px",
-      fontWeight: 600,
-      lineHeight: "56px",
-      letterSpacing: "-0.02em",
+    // h3: {
+    //   fontSize: "38px",
+    //   fontWeight: 600,
+    //   lineHeight: "56px",
+    //   letterSpacing: "-0.02em",
 
-      "@media (max-width:900px)": {
-        fontSize: "36px",
-        lineHeight: "44px",
-      },
+    //   "@media (max-width:900px)": {
+    //     fontSize: "36px",
+    //     lineHeight: "44px",
+    //   },
 
-      "@media (max-width:600px)": {
-        fontSize: "30px",
-        lineHeight: "38px",
-      },
-    },
-    h4: {
-      lineHeight: "56px",
-      fontWeight:600
-    },
+    //   "@media (max-width:600px)": {
+    //     fontSize: "30px",
+    //     lineHeight: "38px",
+    //   },
+    // },
+    // h4: {
+    //   lineHeight: "56px",
+    //   fontWeight: 600,
+    // },
 
     body1: {
       fontSize: "18px",
