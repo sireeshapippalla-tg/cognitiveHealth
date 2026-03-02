@@ -25,15 +25,17 @@ export const Container = styled(Box)(({ theme }) => ({
   background: "#ffffff",
   // padding: "32px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 32px" },
+   [theme.breakpoints.down("md")]: { padding: "20px" },
 }));
 
 /* HEADER */
 export const HeaderWrapper = styled(Box)(({ theme }) => ({
-  maxWidth: 1000,
+  maxWidth: 1200,
   margin: "0 auto",
-  textAlign: "center",
+  // textAlign: "center",
   // padding: "40px 16px",
-  [theme.breakpoints.up("md")]: { padding: "64px 16px" },
+  [theme.breakpoints.up("md")]: { padding: "34px 16px" },
+   [theme.breakpoints.down("md")]: { padding: "20px" },
 }));
 export const ResultsWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 1000,
@@ -48,6 +50,7 @@ export const HeaderTitle = styled(Typography)(({ theme }) => ({
   color: "var(--color-text-blue)",
   lineHeight: 1.2,
   fontSize: "28px",
+   textAlign: "center",
   [theme.breakpoints.up("sm")]: { fontSize: "36px" },
   [theme.breakpoints.up("md")]: { fontSize: "44px" },
 }));

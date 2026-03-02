@@ -24,6 +24,7 @@ import RCMReadinessScreen from "./pages/RcmreadinessScreen";
 import TermsPage from "./pages/terms&Conditions/TermsPage";
 import PrivacyPolicyPage from "./pages/privacyPolicy/PrivacyPolicyPage";
 import Faq from "./pages/faq/FaqPage";
+import SolutionsPage from "./pages/solutions/SolutionsPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 const App = () => {
@@ -83,6 +84,7 @@ const App = () => {
           <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
           <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
           <Route path={ROUTES.FAQ} element={<Faq />} />
+          <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
         </Route>
 
         {/* ---------- FALLBACK ---------- */}

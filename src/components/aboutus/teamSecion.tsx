@@ -1,7 +1,5 @@
 import { Grid } from "@mui/material";
-import  {
-  type ExpandableItem,
-} from "../ui/teamCard/expandableCard";
+// import { type ExpandableItem } from "../ui/teamCard/expandableCard";
 import {
   SectionContainer,
   HeaderTitle,
@@ -18,11 +16,17 @@ import rambabuImg from "../../assets/aboutUs/rambabu.svg";
 import vispiImg from "../../assets/aboutUs/vispi.svg";
 import TeamMemberCard from "../ui/teamCard/TeamMemberCard";
 // import simeonImg from "../../assets/aboutUs/simeon.svg";
-
+type ExpandableItem = {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  description: string;
+};
 const teamData: ExpandableItem[] = [
   {
     id: 1,
-    defaultOpen: true,
+    // defaultOpen: true,
     title: "Pavani Munjuluri",
     subtitle: "Chief Executive Officer",
     image: pavaniImg,
@@ -126,7 +130,16 @@ const teamData: ExpandableItem[] = [
 
 const TeamSection = () => {
   return (
-    <SectionContainer id="team" maxWidth={false}>
+    <SectionContainer
+      id="team"
+      maxWidth={false}
+    
+      // sx={{
+      //   py: 12,
+      //   background: "radial-gradient(circle at top, #eef2ff 0%, #ffffff 60%)",
+      //   position: "relative",
+      // }}
+    >
       <HeaderTitle variant="h4">Our Team</HeaderTitle>
 
       <HeaderSubtitle>

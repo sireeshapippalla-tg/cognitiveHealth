@@ -86,7 +86,8 @@ const Header = () => {
     {
       title: "Payment Posting",
       desc: "Automated reconciliation and posting",
-      path: "/solutions/payment-posting",
+      // path: "/solutions/payment-posting",
+      hash: "paymentPosting",
       icon: (
         <img src={Vector} alt="Vector Icon" style={{ width: 24, height: 24 }} />
       ),
@@ -94,7 +95,8 @@ const Header = () => {
     {
       title: "Lockbox Management",
       desc: "AI-powered document ingestion system",
-      path: "/solutions/lockbox",
+      // path: "/solutions/lockbox",
+      hash: "lockboxManagement",
       icon: (
         <img src={Frame} alt="Frame Icon" style={{ width: 24, height: 24 }} />
       ),
@@ -102,7 +104,8 @@ const Header = () => {
     {
       title: "Denials Workflow",
       desc: "Smart prioritization and appeals",
-      path: "/solutions/denials",
+      // path: "/solutions/denials",
+      hash: "denialWorkflow",
       icon: (
         <img
           src={Eligibility}
@@ -114,7 +117,8 @@ const Header = () => {
     {
       title: "Eligibility Discovery",
       desc: "Real-time coverage verification portal",
-      path: "/solutions/eligibility",
+      // path: "/solutions/eligibility",
+      hash: "eligibilityDiscovery",
       icon: (
         <img
           src={Workflow}
@@ -126,7 +130,8 @@ const Header = () => {
     {
       title: "Contract Analysis",
       desc: "Intelligent contract research assistant",
-      path: "/solutions/contract-analysis",
+      // path: "/solutions/contract-analysis",
+      hash: "contractAnalytics",
       icon: (
         <img
           src={Analysis}
@@ -138,7 +143,8 @@ const Header = () => {
     {
       title: "Pre-Bill Services",
       desc: "Automated charge capture validation",
-      path: "/solutions/pre-bill",
+      // path: "/solutions/pre-bill",
+      hash: "preBillReview",
       icon: (
         <img
           src={PreBill}
@@ -368,7 +374,7 @@ const Header = () => {
                     title={item.title}
                     description={item.desc}
                     onClick={() => {
-                      navigate(item.path);
+                      navigate(`/solutions#${item.hash}`);
                       setSolutionsOpen(false);
                     }}
                   />
@@ -389,7 +395,7 @@ const Header = () => {
                     title={item.title}
                     description={item.desc}
                     onClick={() => {
-                      navigate(item.path);
+                      navigate(`/solutions#${item.hash}`);
                       setSolutionsOpen(false);
                     }}
                   />
@@ -543,8 +549,11 @@ const Header = () => {
                   {solutionLinks.map((item) => (
                     <DrawerItem
                       key={item.title}
-                      active={isActive(item.path)}
-                      onClick={() => handleNavigate(item.path)}
+                      active={location.hash === `#${item.hash}`}
+                      onClick={() => {
+                        navigate(`/solutions#${item.hash}`);
+                        setDrawerOpen(false);
+                      }}
                     >
                       {item.title}
                     </DrawerItem>
