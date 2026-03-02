@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -21,7 +21,6 @@ const SolutionsTabs = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   const tabs = [
     { value: "paymentPosting", label: "Payment Posting" },
     { value: "lockboxManagement", label: "Lockbox Management" },
@@ -33,25 +32,64 @@ const SolutionsTabs = () => {
 
   const activeTab =
     tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")) || 0;
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+  // useEffect(() => {
+  //   const element = document.getElementById("solutions-content");
+
+  //   if (!element) return;
+
+  //   const yOffset = -120; // adjust to header height
+  //   const y =
+  //     element.getBoundingClientRect().top +
+  //     window.scrollY +
+  //     yOffset;
+
+  //   window.scrollTo({
+  //     top: y,
+  //     behavior: "smooth",
+  //   });
+  // }, [activeTab]);
+
+  useEffect(() => {
+    const element = document.getElementById("solutions-content");
+    if (!element) return;
+
+    requestAnimationFrame(() => {
+      const yOffset = -150;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    });
+  }, [activeTab]);
+
+  // const handleTabChange = (_event: React.MouseEvent<HTMLButtonElement>, newValue: number) => {
+  //  navigate(`/solutions#${tabs[newValue].value}`, { replace: true });
+  //   setTimeout(() => {
+  //     const yOffset = -150;
+  //     const element = document.getElementById("solutions-content");
+
+  //     if (element) {
+  //       const y =
+  //         element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+  //       window.scrollTo({
+  //         top: y,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //   }, 0);
+  // };
 
   const handleTabChange = (_event: React.MouseEvent<HTMLButtonElement>, newValue: number) => {
-   navigate(`/solutions#${tabs[newValue].value}`, { replace: true });
-    setTimeout(() => {
-      const yOffset = -150;
-      const element = document.getElementById("solutions-content");
-
-      if (element) {
-        const y =
-          element.getBoundingClientRect().top + window.scrollY + yOffset;
-
-        window.scrollTo({
-          top: y,
-          behavior: "smooth",
-        });
-      }
-    }, 0);
+    navigate(`/solutions#${tabs[newValue].value}`, { replace: true });
   };
-
   return (
     <BlogContainer>
       <StickyTabsWrapper>
