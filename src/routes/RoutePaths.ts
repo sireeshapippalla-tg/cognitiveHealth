@@ -2,6 +2,7 @@ export const ROUTES = {
   LOGIN: "/login",
   HOME: "/",
   PLATFORM: "/platform",
+  SOLUTIONS: "/solutions",
   PAYMENTPOSTING: "/solutions/payment-posting",
   LOCKBOXANALYSIS: "/solutions/lockbox",
   DENIALWORKFLOW: "/solutions/denials",

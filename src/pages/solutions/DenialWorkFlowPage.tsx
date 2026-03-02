@@ -1,4 +1,4 @@
-import SolutionsHeroSection from "../../components/solutions/denialWorkFlow/solutionsHeroSection";
+// import SolutionsHeroSection from "../../components/solutions/denialWorkFlow/solutionsHeroSection";
 import TransformSection from "../../components/solutions/denialWorkFlow/transformSection";
 import CoreCapabilitiesSection from "../../components/solutions/denialWorkFlow/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/denialWorkFlow/measurableRsultsSection";
@@ -42,7 +42,7 @@ const DenialWorkFlowPage = () => {
   ];
   return (
     <>
-      <SolutionsHeroSection />
+      {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />
       {/* Clearing house */}

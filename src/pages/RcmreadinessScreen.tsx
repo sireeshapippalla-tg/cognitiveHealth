@@ -10,6 +10,7 @@ import {
   TextField,
   CircularProgress,
   IconButton,
+  Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
@@ -250,7 +251,7 @@ const RCMReadinessScreen: React.FC = () => {
 
   return (
     <HeaderWrapper>
-      <Stack spacing={2} mb={6}>
+      <Stack spacing={2} mb={2}>
         <HeaderTitle>
           Revenue Cycle Management AI Readiness Assessment
         </HeaderTitle>
@@ -275,22 +276,53 @@ const RCMReadinessScreen: React.FC = () => {
                   {section.items.map((item, iIndex) => {
                     const key = `${sIndex}-${iIndex}`;
                     return (
-                      <Stack
+                      // <Stack
+                      //   key={key}
+                      //   direction="row"
+                      //   spacing={1}
+                      //   alignItems="flex-start"
+                      // >
+                      //   <StyledCheckbox
+                      //     size="small"
+                      //     checked={!!checkedItems[key]}
+                      //     onChange={() => handleCheck(key)}
+                      //     disabled={submitted}
+                      //   />
+                      //   <Typography variant="body2" color="#1f2937">
+                      //     {item.label}
+                      //   </Typography>
+                      // </Stack>
+                      <Box
                         key={key}
-                        direction="row"
-                        spacing={1}
-                        alignItems="flex-start"
+                        sx={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                        }}
                       >
                         <StyledCheckbox
                           size="small"
                           checked={!!checkedItems[key]}
                           onChange={() => handleCheck(key)}
                           disabled={submitted}
+                          sx={{
+                            p: 0,
+                            mt: "3px",
+                            mr: 1.5,
+                            flexShrink: 0,
+                          }}
                         />
-                        <Typography variant="body2" color="#1f2937">
+
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            flex: 1,
+                            lineHeight: 1.6,
+                            color: "#1f2937",
+                          }}
+                        >
                           {item.label}
                         </Typography>
-                      </Stack>
+                      </Box>
                     );
                   })}
                 </Stack>
@@ -434,9 +466,11 @@ const RCMReadinessScreen: React.FC = () => {
             size="small"
             onClick={() => setOpenEmailDialog(false)}
             disabled={sending}
-            sx={{ color:"var(--color-text-blue)", backgroundColor:"#fff",
-              borderRadius:"100%"
-             }}
+            sx={{
+              color: "var(--color-text-blue)",
+              backgroundColor: "#fff",
+              borderRadius: "100%",
+            }}
           >
             <CloseIcon fontSize="small" />
           </IconButton>

@@ -65,11 +65,12 @@ export const CardWrapper = styled(Box)({
 export const QuoteText = styled(Typography)({
   // fontFamily: "Inter",
   fontWeight: 400,
-  fontSize: "18px",
+  fontSize: "17px",
   color: "#0E151B",
-  lineHeight: '130%',
+  lineHeight: "1.5",
   marginBottom: "32px",
-  textAlign:"left"
+  textAlign:"left",
+  
 });
 
 export const Footer = styled(Box)({
