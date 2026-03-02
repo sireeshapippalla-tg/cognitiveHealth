@@ -20,7 +20,7 @@ import PreBillServicesPage from "../../../pages/solutions/PreBillServicesPage";
 const SolutionsTabs = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const isTabClickRef = React.useRef(false);
   const tabs = [
     { value: "paymentPosting", label: "Payment Posting" },
     { value: "lockboxManagement", label: "Lockbox Management" },
@@ -32,29 +32,22 @@ const SolutionsTabs = () => {
 
   const activeTab =
     tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")) || 0;
+
   useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+    // If there is NO hash, user came from another page
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "auto" });
     }
   }, []);
-  // useEffect(() => {
-  //   const element = document.getElementById("solutions-content");
-
-  //   if (!element) return;
-
-  //   const yOffset = -120; // adjust to header height
-  //   const y =
-  //     element.getBoundingClientRect().top +
-  //     window.scrollY +
-  //     yOffset;
-
-  //   window.scrollTo({
-  //     top: y,
-  //     behavior: "smooth",
-  //   });
-  // }, [activeTab]);
 
   useEffect(() => {
+    if (!isTabClickRef.current) {
+      // Came from another page → start at top
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+
+    // Internal tab click → scroll to content
     const element = document.getElementById("solutions-content");
     if (!element) return;
 
@@ -67,28 +60,19 @@ const SolutionsTabs = () => {
         behavior: "smooth",
       });
     });
-  }, [activeTab]);
 
-  // const handleTabChange = (_event: React.MouseEvent<HTMLButtonElement>, newValue: number) => {
-  //  navigate(`/solutions#${tabs[newValue].value}`, { replace: true });
-  //   setTimeout(() => {
-  //     const yOffset = -150;
-  //     const element = document.getElementById("solutions-content");
+    isTabClickRef.current = false;
+  }, [location.hash]);
 
-  //     if (element) {
-  //       const y =
-  //         element.getBoundingClientRect().top + window.scrollY + yOffset;
+  const handleTabChange = (
+    _event: React.MouseEvent<HTMLButtonElement>,
+    newValue: number,
+  ) => {
+    isTabClickRef.current = true;
 
-  //       window.scrollTo({
-  //         top: y,
-  //         behavior: "smooth",
-  //       });
-  //     }
-  //   }, 0);
-  // };
-
-  const handleTabChange = (_event: React.MouseEvent<HTMLButtonElement>, newValue: number) => {
-    navigate(`/solutions#${tabs[newValue].value}`, { replace: true });
+    navigate(`/solutions#${tabs[newValue].value}`, {
+      replace: true,
+    });
   };
   return (
     <BlogContainer>
