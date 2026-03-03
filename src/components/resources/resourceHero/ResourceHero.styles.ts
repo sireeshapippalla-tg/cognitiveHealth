@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const Hero = styled(Box)(({ theme }) => ({
   backgroundColor: "#fff7ed",
-  padding: "80px 24px 100px",
+  padding: "80px 24px 30px",
   textAlign: "center",
   backgroundImage: " linear-gradient(180deg, #FFE0CD 0%, #FFFFFF 100%)",
   position: "relative",

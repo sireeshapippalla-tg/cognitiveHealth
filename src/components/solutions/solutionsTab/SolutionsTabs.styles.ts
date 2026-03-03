@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 
 export const BlogContainer = styled("div")(({ theme }) => ({
-  padding: "30px 80px",
+  padding: "0px 80px",
   [theme.breakpoints.down("md")]: {
     padding: "20px",
   },

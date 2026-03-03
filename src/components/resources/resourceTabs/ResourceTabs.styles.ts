@@ -1,52 +1,81 @@
 import { styled } from "@mui/material/styles";
-import { Tabs, Tab } from "@mui/material";
+
+import { motion } from "framer-motion";
 
 export const BlogContainer = styled("div")(({ theme }) => ({
-  padding: "30px 80px",
-
+  padding: "0px 80px",
   [theme.breakpoints.down("md")]: {
     padding: "20px",
   },
 }));
 
-export const StyledTabs = styled(Tabs)({
-  backgroundColor: "#F5F5F5", // Light gray background like in the image
-  borderRadius: "8px",
-  border: "1px solid #ECECEC", // Light border for separation
-  padding: "4px",
-  minHeight: "48px",
-  width: "fit-content",
-  "& .MuiTabs-indicator": {
-    display: "none", // Hide default indicator
-  },
+export const StickyTabsWrapper = styled("div")({
+  position: "sticky",
+  top: 70,
+  zIndex: 1200,
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "16px 0",
+  background: "#ffffff",
+  borderBottom: "1px solid rgba(0,0,0,0.05)",
 });
 
-export const StyledTab = styled(Tab)(({ theme }) => ({
-  textTransform: "none",
-  fontWeight: 600,
-  fontSize: "15px",
-  color: theme.palette.text.secondary,
-  minHeight: "40px",
-  borderRadius: "6px",
-  // padding: "8px 16px",
-  transition: "all 0.2s ease",
-  "&.Mui-selected": {
-    backgroundColor: "#ffffff",
-    color: theme.palette.text.primary,
-    boxShadow: "0px 1px 3px rgba(0, 0, 0, 0.1)",
+export const TabsContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  gap: "8px",
+  padding: "6px",
+  borderRadius: "999px",
+  background: "#e5e7eb",
+
+  overflowX: "auto",
+  scrollbarWidth: "none", // Firefox
+  msOverflowStyle: "none",
+
+  "&::-webkit-scrollbar": {
+    display: "none",
   },
-  "&:hover": {
-    color: theme.palette.text.primary,
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
+
+  [theme.breakpoints.down("md")]: {
+    padding: "6px 12px",
   },
 }));
 
-export const FilterContainer = styled("div")({
-  color: "#FFFFFF",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "32px",
-  flexWrap: "wrap",
-  gap: "16px",
+
+export const TabButton = styled(motion.button)<{
+  $active: boolean;
+}>(({ theme }) => ({
+  position: "relative",
+  padding: "10px 18px",
+  borderRadius: "999px",
+  border: "none",
+  background: "transparent",
+  cursor: "pointer",
+  fontWeight: 600,
+  fontSize: "14px",
+  whiteSpace: "nowrap", 
+  flexShrink: 0, 
+  transition: "all 0.3s ease",
+
+  [theme.breakpoints.down("md")]: {
+    padding: "8px 14px",
+    fontSize: "13px",
+  },
+}));
+
+export const ActiveBackground = styled(motion.div)({
+  position: "absolute",
+  inset: 0,
+  borderRadius: "999px",
+  background: "var(--color-text-blue)",
+  boxShadow: "0 8px 24px rgba(37,99,235,0.45)",
+  zIndex: 0,
 });
+
+export const TabText = styled("span")<{
+  $active: boolean;
+}>(({ $active }) => ({
+  position: "relative",
+  zIndex: 1,
+  color: $active ? "#ffffff" : "#6b7280",
+  transition: "color 0.3s ease",
+}));

@@ -348,7 +348,6 @@ const Header = () => {
         >
           <Paper
             elevation={4}
-            // sx={{ width: 720, borderRadius: 3, p: 3, mt: 2.5 }}
             sx={{
               width: 720,
               borderRadius: "16px",
@@ -362,12 +361,6 @@ const Header = () => {
             <Stack direction="row" spacing={4}>
               <Stack spacing={3} flex={1}>
                 {solutionLinks.slice(0, 3).map((item) => (
-                  // <SolutionItem
-                  //   key={item.title}
-                  //   {...item}
-                  //   active={isActive(item.path)}
-                  //   onNavigate={handleNavigate}
-                  // />
                   <PopoverCard
                     key={item.title}
                     icon={item.icon}
@@ -383,12 +376,6 @@ const Header = () => {
 
               <Stack spacing={3} flex={1}>
                 {solutionLinks.slice(3).map((item) => (
-                  // <SolutionItem
-                  //   key={item.title}
-                  //   {...item}
-                  //   active={isActive(item.path)}
-                  //   onNavigate={handleNavigate}
-                  // />
                   <PopoverCard
                     key={item.title}
                     icon={item.icon}
@@ -443,7 +430,7 @@ const Header = () => {
           <Paper
             elevation={4}
             sx={{
-              width: 720,
+              width: 500,
               borderRadius: "16px",
               p: 3,
               mt: 2.5,

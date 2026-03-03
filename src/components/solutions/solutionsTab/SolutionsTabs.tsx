@@ -17,17 +17,74 @@ import EligibilityDiscoveryPage from "../../../pages/solutions/EligibilityDiscov
 import ContractAnalysisPage from "../../../pages/solutions/ContractAnalysisPage";
 import PreBillServicesPage from "../../../pages/solutions/PreBillServicesPage";
 
+import Vector from "../../../assets/Vector.svg";
+import Frame from "../../../assets/Frame.svg";
+import Workflow from "../../../assets/Workflow.svg";
+import Eligibility from "../../../assets/Eligibility.svg";
+import Analysis from "../../../assets/Analysis.svg";
+import PreBill from "../../../assets/Prebill.svg";
+
 const SolutionsTabs = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTabClickRef = React.useRef(false);
   const tabs = [
-    { value: "paymentPosting", label: "Payment Posting" },
-    { value: "lockboxManagement", label: "Lockbox Management" },
-    { value: "denialWorkflow", label: "Denials Workflow" },
-    { value: "eligibilityDiscovery", label: "Eligibility Discovery" },
-    { value: "contractAnalytics", label: "Contract Analytics" },
-    { value: "preBillReview", label: "Pre-Bill Review" },
+    {
+      value: "paymentPosting",
+      label: "Payment Posting",
+      icon: (
+        <img src={Vector} alt="Vector Icon" style={{ width: 24, height: 24 }} />
+      ),
+    },
+    {
+      value: "lockboxManagement",
+      label: "Lockbox Management",
+      icon: <img src={Frame} alt="Frame Icon" style={{ color: "black" }} />,
+    },
+    {
+      value: "denialWorkflow",
+      label: "Denials Workflow",
+      icon: (
+        <img
+          src={Workflow}
+          alt="Workflow Icon"
+          style={{ width: 24, height: 24 }}
+        />
+      ),
+    },
+    {
+      value: "eligibilityDiscovery",
+      label: "Eligibility Discovery",
+      icon: (
+        <img
+          src={Eligibility}
+          alt="Eligibility Icon"
+          style={{ width: 24, height: 24 }}
+        />
+      ),
+    },
+    {
+      value: "contractAnalytics",
+      label: "Contract Analytics",
+      icon: (
+        <img
+          src={Analysis}
+          alt="Analysis Icon"
+          style={{ width: 24, height: 24 }}
+        />
+      ),
+    },
+    {
+      value: "preBillReview",
+      label: "Pre-Bill Review",
+      icon: (
+        <img
+          src={PreBill}
+          alt="Pre-Bill Icon"
+          style={{ width: 24, height: 24 }}
+        />
+      ),
+    },
   ];
 
   const activeTab =
