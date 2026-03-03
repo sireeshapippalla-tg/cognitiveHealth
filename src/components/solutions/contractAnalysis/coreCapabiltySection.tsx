@@ -10,6 +10,7 @@ import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
 import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+import BulletList from "../../ui/BulletList";
 
 
 
@@ -17,44 +18,93 @@ const capabilities: ExpandableItem[] = [
   {
     id: 1,
     title: "Contract Intelligence Research Assistant",
-    description: `This AI-powered analysis tool uses small language models to extract and organize key payment terms from complex insurance contracts. The assistant can quickly locate specific reimbursement rates, payment methodologies, covered services, and special provisions across hundreds of pages of contract language. Users can query the system with natural language questions like "What's the reimbursement rate for CPT 99213 under the Blue Cross contract?" and receive immediate, accurate responses with source references. `,
-    icon: (
-      <img src={Workbench} alt="Contract Intelligence Research Assistant" />
+    description: (
+      <BulletList
+        items={[
+          "Digitization of paper and PDF contracts",
+          "AI extraction of fee schedules, terms, and conditions",
+          "Contract clause interpretation and modeling",
+          "Version control and amendment tracking",
+        ]}
+      />
     ),
-    
+    icon: (
+      <img
+        src={Workbench}
+        alt="Contract Intelligence Research Assistant"
+      />
+    ),
     defaultOpen: true,
   },
   {
     id: 2,
-    title: "Payment Variance Detection System ",
-    description: `This analytical tool continuously compares actual payments received from insurance companies against contracted rates to identify underpayments and systematic discrepancies. The system analyzes payment patterns across different procedure codes, providers, and locations to detect both isolated incidents and recurring issues. When variances are identified, the system generates detailed reports with supporting documentation that can be used to request payment corrections from payers. `,
+    title: "Payment Variance Detection System",
+    description: (
+      <BulletList
+        items={[
+          "Real-time comparison of payments vs contract terms",
+          "Automated calculation of expected reimbursement",
+          "Variance flagging and prioritization by dollar amount",
+          "Trend analysis for systematic underpayments",
+        ]}
+      />
+    ),
     icon: <img src={Zap} alt="Payment Variance Detection System" />,
-    
   },
   {
     id: 3,
     title: "Contract Change Monitoring Service",
-    description: `This automated tracking system monitors all payer contracts for amendments, rate updates, and policy changes that could impact reimbursement. The service maintains a comprehensive version history of contract modifications, tracking what changed, when it became effective, and how it impacts payment expectations. Automated alerts notify relevant staff when significant changes are detected, ensuring that billing systems and processes are updated to reflect new terms and requirements. `,
+    description: (
+      <BulletList
+        items={[
+          "Automated alerts for contract amendments and updates",
+          "Payer portal monitoring for policy changes",
+          "Federal register tracking for Medicare updates",
+          "Impact analysis of contract changes on revenue",
+        ]}
+      />
+    ),
     icon: <img src={Info} alt="Contract Change Monitoring Service" />,
-    
   },
   {
     id: 4,
-    title: "Charge Master Synchronization Engine ",
-    description: `This alignment tool ensures that the organization's charge master remains current with contracted rates across all payers and identifies opportunities for strategic pricing adjustments. The engine compares internal pricing against contracted allowables and market rates, flagging services that may be under-priced or over-priced relative to reimbursement levels. The system provides recommendations for charge master updates based on contract terms, cost analysis, and strategic pricing objectives.`,
-    icon: (
-      <img src={Barchart} alt="Charge Master Synchronization Engine" />
+    title: "Charge Master Synchronization Engine",
+    description: (
+      <BulletList
+        items={[
+          "Alignment of charge master with contract fee schedules",
+          "Automated pricing updates when contracts change",
+          "Multi-payer charge master optimization",
+          "Compliance validation against CMS and state regulations",
+        ]}
+      />
     ),
-   
+    icon: (
+      <img
+        src={Barchart}   // ⚠ ensure correct import name
+        alt="Charge Master Synchronization Engine"
+      />
+    ),
   },
   {
     id: 5,
-    title: "Contract Performance Analytics Dashboard ",
-    description: `This comprehensive reporting platform tracks financial performance metrics by payer contract, providing visibility into collection rates, payment timeliness, denial patterns, and overall contract profitability. The dashboard compares actual performance against contract expectations and historical trends, helping revenue cycle leaders identify underperforming contracts that may require operational improvements or renegotiation. Interactive reports allow users to drill down into specific performance issues and identify actionable improvement opportunities.`,
-    icon: (
-      <img src={Data} alt="Contract Performance Analytics Dashboard" />
+    title: "Contract Performance Analytics Dashboard",
+    description: (
+      <BulletList
+        items={[
+          "Payer compliance scorecards",
+          "Revenue leakage quantification",
+          "Contract vs actual reimbursement trending",
+          "Negotiation leverage insights and recommendations",
+        ]}
+      />
     ),
-    
+    icon: (
+      <img
+        src={Data}
+        alt="Contract Performance Analytics Dashboard"
+      />
+    ),
   },
 ];
 
@@ -64,7 +114,7 @@ const CoreCapabilitiesSection = () => {
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
-          subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          // subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />
 

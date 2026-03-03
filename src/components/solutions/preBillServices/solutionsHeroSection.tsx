@@ -7,7 +7,7 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="PreBill Services"
-      description="Super Charge your revenue cycle with AI Agents"
+      description="Catch errors before submission with AI-powered claim scrubbing, coding validation, and compliance checking—achieving 95%+ clean claim rates."
       image={paymentPostingImage}
       primaryAction={{
         label: "Request a Demo",

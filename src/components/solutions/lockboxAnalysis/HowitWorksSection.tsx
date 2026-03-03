@@ -8,25 +8,32 @@ import { ProcessStep } from "../../ui/processStep/ProcessStep";
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
 import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
+import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
 
 const steps = [
   {
-    title: "Payment Intake",
+    title: "Batch receipt and separating",
     description:
-      "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
+      "Receive digital image of the batches.separate individual unique letters ",
      icon: <InboxOutlinedIcon />,
   },
   {
-    title: "Automated Matching & Handling",
+    title: "AI Classification & Extraction",
     description:
-      "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
+      "Document type identification. Payment amount and payer data extraction. Check image and MICR data capture",
     icon: <SyncAltOutlinedIcon />,
   },
   {
-    title: "Real-Time Reporting",
+    title: "Validation & Quality Check",
     description:
-      "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
+      "Automated business rule validation. Confidence scoring and exception flagging. Human review of low-confidence items",
+    icon: <FactCheckOutlinedIcon />,
+  },
+  {
+    title: "Payment Data Output",
+    description:
+      "Structured payment data sent to payment posting. Bank reconciliation file generation. Correspondence routed to appropriate teams",
     icon: <InsertChartOutlinedIcon />,
   },
 ];
@@ -37,7 +44,7 @@ const HowItWorksSection = () => {
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
-          subtitle="Streamlined workflow from payment intake to final reconciliation"
+          // subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
     <StepsCard sx={{marginTop:4}}>

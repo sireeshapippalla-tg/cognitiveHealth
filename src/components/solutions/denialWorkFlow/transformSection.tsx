@@ -11,27 +11,27 @@ import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentI
 const features = [
   {
     icon: <img src={paymentImage1} alt="Centralized Payment" />,
-    title: "Centralized Payment Processing",
+    title: "Proactive Denial Prevention",
     description:
-      "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
+      "AI analyzes claim data pre-submission to identify and correct issues that would lead to denials, reducing denial rates by 40-60% before claims ever leave your system.",
   },
   {
     icon: <img src={paymentImage2} alt="Automated Posting" />,
-    title: "Automated Posting and Reconciliation",
+    title: "Intelligent Denial Prioritization",
     description:
-      "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
+      "Focus your team's energy on high-value, winnable denials. Our engine scores each denial by recovery probability, dollar amount, and time sensitivity—maximizing ROI on appeals efforts.",
   },
   {
     icon: <img src={paymentImage3} alt="Reduced Errors" />,
-    title: "Reduced Errors and Faster Turnaround",
+    title: "Automated Appeal Generation ",
     description:
-      "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
+      "AI writes compelling, evidence-based appeal letters in seconds, pulling relevant clinical documentation, payer policies, and regulatory citations—reducing appeal preparation time by 85%.",
   },
   {
     icon: <img src={paymentImage4} alt="Cash Visibility" />,
-    title: "Real-Time Cash Visibility",
+    title: "Root Cause Intelligence ",
     description:
-      "Gain instant insights into your cash position with live dashboards and analytics that drive informed decision-making.",
+      "Identify systemic issues driving denials across payers, providers, and service lines. Our analytics pinpoint exactly where to focus process improvements for maximum impact.",
   },
 ];
 
@@ -39,8 +39,11 @@ const features = [
 const TransformSection = () => {
   return (
     <FeatureSection
-      title="Transform Your Payment Operations"
-      subtitle="The iCAN™ Payment Posting & Advanced Reconciliation solution delivers end-to-end automation for healthcare payment processing, combining AI-driven intelligence with enterprise-grade reliability to optimize your revenue cycle performance."
+      title="Transform Denials from Revenue Drain to Recovery Engine"
+      subtitle="The iCAN™ Denials Workflow solution doesn't just help you work denials faster—
+                it prevents them from happening in the first place. Our AI agents identify 
+                denial patterns, generate evidence-based appeals, and provide actionable 
+                insights to eliminate root causes across your revenue cycle."
       background="#F9FAFB"
       items={features}
       columns={4}

@@ -9,35 +9,38 @@ import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentI
 const features = [
   {
     icon: <img src={paymentImage1} alt="Centralized Payment" />,
-    title: "Centralized Payment Processing",
+    title: "Intelligent Contract Modeling",
     description:
-      "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
+      "AI digitizes and models complex payer contract terms including tiered fee schedules, outlier payments, carve-outs, and incentive clauses—creating a single source of truth for expected reimbursement.",
   },
   {
     icon: <img src={paymentImage2} alt="Automated Posting" />,
-    title: "Automated Posting and Reconciliation",
+    title: "Automated Variance Detection",
     description:
-      "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
+      "Compare every payment against contract terms in real-time, flagging underpayments, incorrect contractual adjustments, and policy violations automatically—no manual calculation required.",
   },
   {
     icon: <img src={paymentImage3} alt="Reduced Errors" />,
-    title: "Reduced Errors and Faster Turnaround",
+    title: "Underpayment Recovery Engine",
     description:
-      "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
+      "Generate evidence-based underpayment appeals with contract citations, expected vs actual calculations, and supporting documentation—recovering 85%+ of identified variances.",
   },
   {
     icon: <img src={paymentImage4} alt="Cash Visibility" />,
-    title: "Real-Time Cash Visibility",
+    title: "Contract Performance Analytics",
     description:
-      "Gain instant insights into your cash position with live dashboards and analytics that drive informed decision-making.",
+      "Track payer compliance across all contracts, identify systematic underpayment patterns, and quantify revenue leakage by payer, service line, and facility for strategic negotiations.",
   },
 ];
 
 const TransformSection = () => {
   return (
     <FeatureSection
-      title="Transform Your Payment Operations"
-      subtitle="The iCAN™ Payment Posting & Advanced Reconciliation solution delivers end-to-end automation for healthcare payment processing, combining AI-driven intelligence with enterprise-grade reliability to optimize your revenue cycle performance."
+      title="Turn Payer Contracts into Revenue Assurance"
+      subtitle="The iCAN™ Contract Analysis solution ensures you receive every dollar 
+                you're entitled to under your payer contracts. Our AI agents model complex 
+                contract terms, detect payment variances, and automatically generate 
+                underpayment appeals—recovering millions in lost revenue."
       background="#F9FAFB"
       items={features}
       columns={4}

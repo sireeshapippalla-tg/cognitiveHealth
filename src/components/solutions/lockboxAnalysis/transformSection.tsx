@@ -13,30 +13,30 @@ const features = [
   {
     icon: <img src={paymentImage1} alt="Centralized Payment" />,
     
-    title: "Centralized Payment Processing",
+    title: "Intelligent Document Processing ",
     description:
-      "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
+      "Extract payment and remittance data from paper EOBs, checks, and correspondence with 99%+ accuracy using advanced OCR and AI classification.",
   },
   {
     icon: <img src={paymentImage2} alt="Automated Posting" />,
    
-    title: "Automated Posting and Reconciliation",
+    title: "Automated Correspondence Routing ",
     description:
-      "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
+      "Classify incoming mail by document type (EOB, patient payment, correspondence) and route to appropriate work queues automatically, eliminating manual sorting.",
   },
   {
     icon: <img src={paymentImage3} alt="Reduced Errors" />,
     
-    title: "Reduced Errors and Faster Turnaround",
+    title: "Accelerated Payment Recognition ",
     description:
-      "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
+      "Convert paper payments into digital posting data within hours of receipt, dramatically reducing mail-to-posting cycle time and improving cash flow visibility.",
   },
   {
     icon: <img src={paymentImage4} alt="Cash Visibility" />,
    
-    title: "Real-Time Cash Visibility",
+    title: "Exception Management ",
     description:
-      "Gain instant insights into your cash position with live dashboards and analytics that drive informed decision-making.",
+      "AI flags low-confidence extractions for human review, ensuring accuracy while automating 85%+ of lockbox volume straight-through.",
   },
 ];
 
@@ -44,8 +44,8 @@ const features = [
 const TransformSection = () => {
   return (
     <FeatureSection
-      title="Transform Your Payment Operations"
-      subtitle="The iCAN™ Payment Posting & Advanced Reconciliation solution delivers end-to-end automation for healthcare payment processing, combining AI-driven intelligence with enterprise-grade reliability to optimize your revenue cycle performance."
+      title="Automate Your Lockbox Processing"
+      subtitle="The iCAN™ Lockbox Management solution combines intelligent document classification with automated data extraction converting paper EOBs,  patient payments and payor correspondence like denials and approvals into structured data ready for posting in minutes, not days."
       background="#F9FAFB"
       items={features}
       columns={4}

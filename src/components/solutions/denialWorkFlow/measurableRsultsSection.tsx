@@ -9,27 +9,27 @@ import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
 
 const stats = [
   {
-    value: "93.8%",
-    title: "Fully Reconciled Payments",
-    description: "Industry-leading reconciliation accuracy",
+    value: "60%",
+    // title: "Fully Reconciled Payments",
+    description: "Denial Rate Reduction Proactive prevention eliminates denials before submission",
     icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
-    description: "Virtually zero error rate with AI automation",
-    icon: <img src={paymentImage10} alt="Posting Errors" />,
+    value: "85%",
+    // title: "Posting Errors",
+    description: "Appeal Success Rate AI-generated appeals with evidence-based arguments",
+    icon: <img src={paymentImage10} alt="Appeal Success Rate" />,
   },
   {
-    value: "41.6%",
-    title: "Faster Turnaround",
-    description: "Dramatic reduction in processing time",
+    value: "3 Days",
+    // title: "Faster Turnaround",
+    description: "Average Appeal Turnaround From denial receipt to appeal submission",
     icon: <img src={paymentImage11} alt="Faster Turnaround" />,
   },
   {
-    value: "26%",
-    title: "Faster Cash Application",
-    description: "Accelerated revenue recognition",
+    value: "2M+",
+    // title: "Faster Cash Application",
+    description: "Average Annual Recovery Per facility from improved denial management",
     icon: <img src={paymentImage12} alt="Faster Cash Application" />,
   },
 ];

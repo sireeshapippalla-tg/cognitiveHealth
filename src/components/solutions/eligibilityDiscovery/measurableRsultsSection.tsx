@@ -9,27 +9,27 @@ import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
 
 const stats = [
   {
-    value: "93.8%",
-    title: "Fully Reconciled Payments",
-    description: "Industry-leading reconciliation accuracy",
+    value: "98%",
+    // title: "Fully Reconciled Payments",
+    description: "Pre-Service Verification Rate Virtually all appointments verified before patient arrival",
     icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
-    description: "Virtually zero error rate with AI automation",
+    value: "75%",
+    // title: "Posting Errors",
+    description: "Reduction in Eligibility Denials Catch coverage issues before service delivery",
     icon: <img src={paymentImage10} alt="Posting Errors" />,
   },
   {
-    value: "41.6%",
-    title: "Faster Turnaround",
-    description: "Dramatic reduction in processing time",
+    value: "30 Seconds",
+    // title: "Faster Turnaround",
+    description: "Average Verification Time From patient check-in to confirmed eligibility",
     icon: <img src={paymentImage11} alt="Faster Turnaround" />,
   },
   {
-    value: "26%",
-    title: "Faster Cash Application",
-    description: "Accelerated revenue recognition",
+    value: "40%",
+    // title: "Faster Cash Application",
+    description: "Decrease in Bad Debt Better coverage verification = fewer uncompensated services",
     icon: <img src={paymentImage12} alt="Faster Cash Application" />,
   },
 ];

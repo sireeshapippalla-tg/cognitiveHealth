@@ -17,7 +17,7 @@ export interface ExpandableItem {
   id: number;
   title: string;
   subtitle?: string;
-  description?: string;
+  description?: React.ReactNode;
   image?: string;
   icon?: React.ReactNode;
   defaultOpen?: boolean;
@@ -63,7 +63,7 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
         )}
       </HeaderRow>
 
-      {/* Expandable description */}
+      {/* Expandable description
       {open && item.description && (
         <CardContent sx={{ px: 0, pt: 2 }}>
           {item.description.split("\n\n").map((para, index) => (
@@ -78,7 +78,29 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
             </DescriptionText>
           ))}
         </CardContent>
-      )}
+      )} */}
+
+
+      {/* Expandable description */}
+{open && item.description && (
+  <CardContent sx={{ px: 0, pt: 2 }}>
+    {typeof item.description === "string" ? (
+      item.description.split("\n\n").map((para, index) => (
+        <DescriptionText
+          key={index}
+          sx={{
+            mb: 2,
+            lineHeight: 1.8,
+          }}
+        >
+          {para.trim()}
+        </DescriptionText>
+      ))
+    ) : (
+      item.description
+    )}
+  </CardContent>
+)}
     </StyledCard>
   );
 };

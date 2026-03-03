@@ -7,7 +7,7 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="Payment Posting & Advanced Reconciliation"
-      description="Super Charge your revenue cycle with AI Agents"
+      description="Eliminate manual payment processing with AI-powered automation that achieves 93.8% clean reconciliation rates while accelerating cash flow."
       image={paymentPostingImage}
        primaryAction={{
           label: "Request a Demo",

@@ -5,6 +5,7 @@ import { ProcessStep } from "../../ui/processStep/ProcessStep";
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
 import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
+import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import {
   ArrowBox,
   StepsCard,
@@ -13,21 +14,27 @@ import {
 
 const steps = [
   {
-    title: "Payment Intake",
+    title: "Contract Digitization & Modeling",
     description:
-      "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
+      "Upload contracts (PDF, paper, digital). AI extracts terms, schedules, and rules. System models expected reimbursement logic.",
     icon: <InboxOutlinedIcon />,
   },
   {
-    title: "Automated Matching & Handling",
+    title: "Automated Payment Validation",
     description:
-      "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
+      "Every payment checked against contract. Expected vs actual reimbursement comparison. Expected vs actual reimbursement comparison.",
     icon: <SyncAltOutlinedIcon />,
   },
   {
-    title: "Real-Time Reporting",
+    title: "Underpayment Recovery",
     description:
-      "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
+      "Auto-generation of appeal letters with contract citations. Supporting documentation compilation. Payer portal submission or mailing.",
+    icon: <FactCheckOutlinedIcon />,
+  },
+   {
+    title: "Performance Monitoring & Insights",
+    description:
+      "Payer compliance tracking. Revenue leakage quantification. Strategic insights for contract negotiations.",
     icon: <InsertChartOutlinedIcon />,
   },
 ];
@@ -38,7 +45,7 @@ const HowItWorksSection = () => {
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
-          subtitle="Streamlined workflow from payment intake to final reconciliation"
+          // subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
         <StepsCard sx={{ marginTop: 4 }}>

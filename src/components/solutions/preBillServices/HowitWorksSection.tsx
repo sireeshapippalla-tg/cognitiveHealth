@@ -12,21 +12,27 @@ import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksS
 
 const steps = [
   {
-    title: "Payment Intake",
+    title: "Pre-Submission Claim Intake",
     description:
-      "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
+      "Claims staged from billing system. Clinical documentation attached. Patient eligibility and authorization verified.",
      icon: <InboxOutlinedIcon />,
   },
   {
-    title: "Automated Matching & Handling",
+    title: "AI Validation & Scrubbing",
     description:
-      "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
+      "Comprehensive edit checking (payer, NCCI, compliance). Coding validation against documentation. Reimbursement optimization analysis.",
     icon: <SyncAltOutlinedIcon />,
   },
   {
-    title: "Real-Time Reporting",
+    title: "Exception Review & Correction",
     description:
-      "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
+      "Flagged claims routed to coding staff. AI provides correction suggestions. Bulk resolution for recurring issues.",
+    icon: <InsertChartOutlinedIcon />,
+  },
+   {
+    title: "Clean Claim Submission",
+    description:
+      "Validated claims released to clearinghouse. Real-time submission tracking. Error monitoring and continuous improvement.",
     icon: <InsertChartOutlinedIcon />,
   },
 ];
@@ -37,7 +43,7 @@ const HowItWorksSection = () => {
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
-          subtitle="Streamlined workflow from payment intake to final reconciliation"
+          // subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
     <StepsCard sx={{marginTop:4}}>

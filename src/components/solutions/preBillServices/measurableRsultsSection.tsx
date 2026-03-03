@@ -9,27 +9,27 @@ import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
 
 const stats = [
   {
-    value: "93.8%",
-    title: "Fully Reconciled Payments",
-    description: "Industry-leading reconciliation accuracy",
+    value: "95%",
+    // title: "Fully Reconciled Payments",
+    description: "Clean Claim Rate First-pass acceptance without errors or denials",
     icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
-    description: "Virtually zero error rate with AI automation",
+    value: "70%",
+    // title: "Posting Errors",
+    description: "Reduction in Claim Rework Catch and fix issues before submission",
     icon: <img src={paymentImage10} alt="Posting Errors" />,
   },
   {
-    value: "41.6%",
-    title: "Faster Turnaround",
-    description: "Dramatic reduction in processing time",
+    value: "50%",
+    // title: "Faster Turnaround",
+    description: "Faster Coding Turnaround AI-assisted coding accelerates chart review",
     icon: <img src={paymentImage11} alt="Faster Turnaround" />,
   },
   {
-    value: "26%",
-    title: "Faster Cash Application",
-    description: "Accelerated revenue recognition",
+    value: "2-4%",
+    // title: "Faster Cash Application",
+    description: "Revenue Capture Improvement Optimized coding captures appropriate reimbursement",
     icon: <img src={paymentImage12} alt="Faster Cash Application" />,
   },
 ];
