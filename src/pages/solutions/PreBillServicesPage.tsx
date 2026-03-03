@@ -1,5 +1,5 @@
 // import React from 'react'
-// import SolutionsHeroSection from '../../components/solutions/preBillServices/solutionsHeroSection'
+import SolutionsHeroSection from '../../components/solutions/preBillServices/solutionsHeroSection'
 import TransformSection from '../../components/solutions/preBillServices/transformSection'
 import CoreCapabilitiesSection from '../../components/solutions/preBillServices/coreCapabiltySection'
 import MeasurableResultsSection from '../../components/solutions/preBillServices/measurableRsultsSection'
@@ -48,7 +48,7 @@ const PreBillServicesPage = () => {
   ];
   return (
      <>
-      {/* <SolutionsHeroSection /> */}
+      <SolutionsHeroSection />
       <TransformSection />
       <CoreCapabilitiesSection/>
         {/* EMR logos */}

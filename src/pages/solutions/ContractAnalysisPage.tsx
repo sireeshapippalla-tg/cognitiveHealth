@@ -1,5 +1,5 @@
 // import React from "react";
-// import SolutionsHeroSection from "../../components/solutions/contractAnalysis/solutionsHeroSection";
+import SolutionsHeroSection from "../../components/solutions/contractAnalysis/solutionsHeroSection";
 import TransformSection from "../../components/solutions/contractAnalysis/transformSection";
 import CoreCapabilitiesSection from "../../components/solutions/contractAnalysis/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/contractAnalysis/measurableRsultsSection";
@@ -48,7 +48,7 @@ const ContractAnalysisPage = () => {
   ];
   return (
     <>
-      {/* <SolutionsHeroSection /> */}
+      <SolutionsHeroSection />
       <TransformSection />
       <CoreCapabilitiesSection />
         {/* Payer Portal logos */}

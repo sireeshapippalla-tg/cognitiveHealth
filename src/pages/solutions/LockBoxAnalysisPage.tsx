@@ -1,5 +1,5 @@
 // import React from 'react'
-// import SolutionsHeroSection from "../../components/solutions/lockboxAnalysis/solutionsHeroSection";
+import SolutionsHeroSection from "../../components/solutions/lockboxAnalysis/solutionsHeroSection";
 import TransformSection from "../../components/solutions/lockboxAnalysis/transformSection";
 import CoreCapabilitiesSection from "../../components/solutions/lockboxAnalysis/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/lockboxAnalysis/measurableRsultsSection";
@@ -48,7 +48,7 @@ const LockBoxAnalysisPage = () => {
   ];
   return (
     <>
-      {/* <SolutionsHeroSection /> */}
+      <SolutionsHeroSection />
       <TransformSection />
       <CoreCapabilitiesSection />
       {/* Payer Portal logos */}
