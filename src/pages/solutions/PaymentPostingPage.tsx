@@ -53,7 +53,7 @@ const PaymentPostingPage = () => {
       {/* EMR logos */}
       <div style={{ marginBottom: "50px" }}>
         <TrustedLogos
-          title="EMR systems already Cognitive AI Agents works on"
+          title="Trusted connectors with 20+ leading EMR systems "
           logos={logos}
           speed={40}
         />

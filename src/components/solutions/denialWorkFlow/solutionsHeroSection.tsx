@@ -7,7 +7,7 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="Denials Workflow "
-      description="Super Charge your revenue cycle with AI Agents"
+      description="Turn denials into recoveries with AI-powered prevention, root cause analysis, and automated appeal generation."
       image={paymentPostingImage}
    primaryAction={{
           label: "Request a Demo",

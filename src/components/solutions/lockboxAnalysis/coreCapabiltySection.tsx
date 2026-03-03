@@ -9,6 +9,7 @@ import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
 import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+import BulletList from "../../ui/BulletList";
 
 
 
@@ -16,50 +17,93 @@ const capabilities: ExpandableItem[] = [
   {
     id: 1,
     title: "AI-Powered Correspondence Management System",
-    description: `This generative AI solution automatically processes incoming lockbox documents using large language models and machine learning algorithms. The system handles multiple document formats simultaneously—from handwritten checks to printed EOBs, denials, appeals, medical record requests, and other correspondence—extracting key information such as payment amounts, account numbers, and payer details.`,
+    description: (
+      <BulletList
+        items={[
+          "Intelligent classification of mail types (EOBs, checks, letters, notices)",
+          "Multi-page document handling and splitting",
+          "Automated routing based on document type and content",
+          "Integration with physical lockbox services and scanning vendors",
+        ]}
+      />
+    ),
     icon: (
       <img
         src={Workbench}
         alt="AI-Powered Correspondence Management System"
       />
     ),
-    
     defaultOpen: true,
   },
   {
     id: 2,
     title: "Multi-Batch Processing Console",
-    description: `This centralized processing hub manages multiple lockbox batches from different banks and service providers in parallel workflows. It automatically splits large PDF files containing mixed document types into individual items, categorizes them by type and priority, and routes them to appropriate processing queues for efficient handling.`,
+    description: (
+      <BulletList
+        items={[
+          "Process thousands of pages per hour",
+          "Batch-level quality control and validation",
+          "Real-time processing status tracking",
+          "Workload balancing across team members",
+        ]}
+      />
+    ),
     icon: <img src={Zap} alt="Multi-Batch Processing Console" />,
-    
   },
   {
     id: 3,
     title: "Intelligent Document Classification Engine",
-    description: `This advanced categorization system organizes lockbox documents into hierarchical categories with four or more levels of detail, such as Payer > Plan Type > Document Type > Processing Date. It continuously improves classification accuracy based on user corrections and feedback while maintaining detailed audit logs of all classification decisions.`,
+    description: (
+      <BulletList
+        items={[
+          "Automatic payer identification from EOB formats",
+          "Patient vs insurance payment detection",
+          "Correspondence vs remittance separation",
+          "Check image capture and validation",
+        ]}
+      />
+    ),
     icon: (
       <img
         src={Info}
         alt="Intelligent Document Classification Engine"
       />
     ),
-    
   },
   {
     id: 4,
     title: "Bank Integration and Download Automation",
-    description: `This automated solution securely connects to multiple bank portals to download lockbox files at scheduled intervals without manual intervention. It uses secure authentication protocols and encrypted data transfer to maintain data security while ensuring timely access to new deposits.`,
-    icon: (
-      <img src={Barchart} alt="Bank Integration and Download Automation" />
+    description: (
+      <BulletList
+        items={[
+          "Direct bank file downloads (BAI, BAI2, MT940 formats)",
+          "Automatic check clearing reconciliation",
+          "Deposit slip matching and verification",
+          "Missing payment detection and alerts",
+        ]}
+      />
     ),
-    
+    icon: (
+      <img
+        src={Barchart}   
+        alt="Bank Integration and Download Automation"
+      />
+    ),
   },
   {
     id: 5,
     title: "Continuous Quality Assurance Module",
-    description: `This module randomly samples processed items for manual review, tracks error rates by document type and processing rule, and identifies patterns that indicate required algorithm adjustments. Feedback from quality reviews is automatically incorporated into AI training data, while detailed reporting helps managers monitor processing performance and identify staff training needs.`,
+    description: (
+      <BulletList
+        items={[
+          "Real-time accuracy monitoring",
+          "Confidence scoring for each extraction",
+          "Automated validation against business rules",
+          "Audit trail for compliance and quality review",
+        ]}
+      />
+    ),
     icon: <img src={Data} alt="Continuous Quality Assurance Module" />,
-    
   },
 ];
 
@@ -69,7 +113,7 @@ const CoreCapabilitiesSection = () => {
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
-          subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          // subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />
 

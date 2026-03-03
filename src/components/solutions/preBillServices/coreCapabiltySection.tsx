@@ -8,59 +8,99 @@ import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
 import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
-
-
-
-
+import BulletList from "../../ui/BulletList";
 
 const capabilities: ExpandableItem[] = [
   {
     id: 1,
-    title: "Pre-Submission Validation and Edit Engine ",
-    description: `This comprehensive quality control system performs extensive claim validation before submission to identify and correct potential issues that could result in denials. The engine checks for common problems such as invalid code combinations, missing required information, services not covered by patient insurance, and charges exceeding contracted rates. Claims with identified issues are automatically held for correction, while clean claims proceed directly to submission, significantly reducing denial rates and rework.`,
+    title: "Pre-Submission Validation and Edit Engine",
+    description: (
+      <BulletList
+        items={[
+          "10,000+ payer-specific edit rules",
+          "NCCI edit checking and modifier logic",
+          "DRG validation for inpatient claims",
+          "Duplicate claim detection",
+        ]}
+      />
+    ),
     icon: (
       <img
         src={Workbench}
         alt="Pre-Submission Validation and Edit Engine"
       />
     ),
-    
     defaultOpen: true,
   },
   {
     id: 2,
-    title: "AI-Powered Coding Support Assistant ",
-    description: `This advanced coding tool analyzes clinical documentation and provides intelligent suggestions for diagnosis and procedure codes based on documented services and treatments. The assistant highlights areas where documentation may be insufficient to support specific codes and provides guidance on additional information needed for optimal coding. The system learns from coder feedback and stays current with coding guidelines and updates, continuously improving its accuracy and usefulness.`,
+    title: "AI-Powered Coding Support Assistant",
+    description: (
+      <BulletList
+        items={[
+          "Clinical documentation analysis",
+          "Coding suggestion generation from provider notes",
+          "HCC and risk adjustment optimization",
+          "Modifier appropriateness validation",
+        ]}
+      />
+    ),
     icon: <img src={Zap} alt="AI-Powered Coding Support Assistant" />,
-    
   },
   {
     id: 3,
-    title: "Intelligent Compliance Verification System ",
-    description: `This regulatory compliance tool automatically reviews all charges against applicable healthcare regulations, payer policies, and medical necessity criteria. The system maintains current databases of Medicare coverage policies, commercial payer guidelines, and regulatory requirements, checking each claim for compliance before submission. Potential compliance risks are flagged with detailed explanations of specific requirements, helping organizations avoid costly audits and payment recoupments. `,
+    title: "Intelligent Compliance Verification System",
+    description: (
+      <BulletList
+        items={[
+          "LCD/NCD policy checking",
+          "Medical necessity validation",
+          "Timely filing verification",
+          "Authorization requirement checking",
+        ]}
+      />
+    ),
     icon: (
       <img
         src={Info}
         alt="Intelligent Compliance Verification System"
       />
     ),
-    
   },
   {
     id: 4,
-    title: "Streamlined Pre-Bill Review Workflow ",
-    description: `This organized review system creates prioritized work queues for charges requiring human validation, organizing items by complexity, dollar value, and staff expertise requirements. The workflow presents reviewers with all relevant information including clinical documentation, coding suggestions, contract terms, and compliance alerts in a unified interface. Built-in productivity tracking and bottleneck identification help managers optimize staffing levels and improve turnaround times from service delivery to claim submission. `,
-    icon: (
-      <img src={BarChart} alt="Streamlined Pre-Bill Review Workflow" />
+    title: "Streamlined Pre-Bill Review Workflow",
+    description: (
+      <BulletList
+        items={[
+          "Prioritized worklists by error type and dollar value",
+          "One-click correction application",
+          "Bulk resolution for systematic issues",
+          "Coder productivity tracking",
+        ]}
+      />
     ),
-    
+    icon: (
+      <img
+        src={BarChart}   
+        alt="Streamlined Pre-Bill Review Workflow"
+      />
+    ),
   },
   {
     id: 5,
     title: "Multi-Source Data Connector",
-    description: `This integration platform establishes secure, automated connections to banks, clearing houses, payer portals, EMRs and internal systems to ensure seamless data flow.Built-in data validation ensures information integrity, while error handling procedures automatically retry failed connections and alert administrators to persistent issues.`,
+    description: (
+      <BulletList
+        items={[
+          "EMR integration for clinical data",
+          "Practice management system connectivity",
+          "Claim scrubber engine integration",
+          "Real-time payer policy updates",
+        ]}
+      />
+    ),
     icon: <img src={Data} alt="Multi-Source Data Connector" />,
-    
   },
 ];
 
@@ -70,7 +110,7 @@ const CoreCapabilitiesSection = () => {
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
-          subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          // subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />
 

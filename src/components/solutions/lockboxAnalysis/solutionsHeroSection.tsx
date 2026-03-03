@@ -7,7 +7,7 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="Lockbox management "
-      description="Super Charge your revenue cycle with AI Agents"
+      description="Transform paper remittances and correspondence into digital workflows with AI-powered lockbox management that eliminates manual data entry and tracking"
       image={paymentPostingImage}
      primaryAction={{
           label: "Request a Demo",

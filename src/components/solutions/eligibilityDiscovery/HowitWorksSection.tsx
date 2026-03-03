@@ -8,6 +8,8 @@ import { ProcessStep } from "../../ui/processStep/ProcessStep";
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
 import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
+import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
+import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 // import paymentImage13 from '.././../../assets/solutions/paymentImage13.svg';
 // import paymentImage14 from '.././../../assets/solutions/paymentImage14.svg'
 // import paymentImage15 from '.././../../assets/solutions/paymentImage15.svg'
@@ -15,22 +17,34 @@ import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksS
 
 const steps = [
   {
-    title: "Payment Intake",
+    title: "Automated Eligibility Check",
     description:
-      "Automated ingestion from multiple sources including credit cards, paper checks, EFTs, and electronic remittances (835 files). All payment data flows into the unified workbench.",
+      "Real-time verification at scheduling or registration. Multi-payer batch verification overnight. Integration with EMR/practice management systems",
      icon: <InboxOutlinedIcon />,
   },
   {
-    title: "Automated Matching & Handling",
+    title: "Benefit Discovery & Analysis",
     description:
-      "AI-powered engine applies configurable business rules to automatically match payments with patient accounts, claims, and invoices. Unmatched payments and variances are intelligently identified and routed for resolution.",
+      "Extract detailed coverage information. Identify authorization requirements. Calculate patient responsibility estimates.",
     icon: <SyncAltOutlinedIcon />,
   },
-  {
-    title: "Real-Time Reporting",
+   {
+    title: "Alert & Workflow Triggering",
     description:
-      "Comprehensive analytics dashboards provide instant visibility into cash positions, reconciliation status, team performance, and operational KPIs.",
+      "Flag coverage issues for resolution. Trigger authorization workflows when needed. Notify financial counseling for high patient liability.",
+    icon: <FactCheckOutlinedIcon />,
+  },
+  {
+    title: "Continuous Monitoring",
+    description:
+      "Scheduled re-verification before appointments. Coverage change detection. Expired authorization alerts",
     icon: <InsertChartOutlinedIcon />,
+  },
+  {
+    title: "Multiple Provider Settings",
+    description:
+      "Acute Care & Hospital Systems. Home Health & Hospice. Behavioral Health & Substance Use. Long-Term Care & Skilled Nursing Facilities. Specialty & Ambulatory Providers. Physician Practices & Medical Groups.",
+    icon: <BusinessOutlinedIcon />,
   },
 ];
 
@@ -40,7 +54,7 @@ const HowItWorksSection = () => {
       <HowItWrapper>
         <SectionTitle
           title="How It Works"
-          subtitle="Streamlined workflow from payment intake to final reconciliation"
+          // subtitle="Streamlined workflow from payment intake to final reconciliation"
         />
 
     <StepsCard sx={{marginTop:4}}>

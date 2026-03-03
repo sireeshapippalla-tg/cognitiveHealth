@@ -11,30 +11,30 @@ const features = [
   {
     icon: <img src={paymentImage1} alt="Centralized Payment" />,
    
-    title: "Centralized Payment Processing",
+    title: "Real-Time Coverage Verification",
     description:
-      "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
+      "Verify active coverage across all major payers in seconds using automated 270/271 transactions and payer portal connectivity—eliminating coverage-related denials before they happen.",
   },
   {
     icon: <img src={paymentImage2} alt="Automated Posting" />,
     
-    title: "Automated Posting and Reconciliation",
+    title: "Automated Re-Verification",
     description:
-      "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
+      "Continuous monitoring of patient eligibility with scheduled re-checks before appointments, ensuring coverage changes are caught proactively rather than after service delivery.",
   },
   {
     icon: <img src={paymentImage3} alt="Reduced Errors" />,
     
-    title: "Reduced Errors and Faster Turnaround",
+    title: "Comprehensive Benefit Discovery",
     description:
-      "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
+      "Extract detailed benefit information including deductibles, co-pays, out-of-pocket maximums, and service-specific coverage—enabling accurate patient estimates and financial counseling.",
   },
   {
     icon: <img src={paymentImage4} alt="Cash Visibility" />,
     
-    title: "Real-Time Cash Visibility",
+    title: "Proactive Authorization Alerts",
     description:
-      "Gain instant insights into your cash position with live dashboards and analytics that drive informed decision-making.",
+      "Automatically identify services requiring prior authorization based on payer rules and patient benefits, triggering authorization workflows before denials occur.",
   },
 ];
 
@@ -42,8 +42,11 @@ const features = [
 const TransformSection = () => {
   return (
     <FeatureSection
-      title="Transform Your Payment Operations"
-      subtitle="The iCAN™ Payment Posting & Advanced Reconciliation solution delivers end-to-end automation for healthcare payment processing, combining AI-driven intelligence with enterprise-grade reliability to optimize your revenue cycle performance."
+      title="Stop Eligibility Issues Before They Become Denials"
+      subtitle="The iCAN™ Eligibility Discovery solution provides real-time insurance 
+                verification across 1,200+ payers, automated benefit discovery, and 
+                intelligent coordination of benefits—ensuring you know exactly what's 
+                covered before rendering services."
       background="#F9FAFB"
       items={features}
       columns={4}

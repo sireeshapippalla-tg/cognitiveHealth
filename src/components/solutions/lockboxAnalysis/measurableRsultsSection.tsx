@@ -9,27 +9,27 @@ import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
 
 const stats = [
   {
-    value: "93.8%",
-    title: "Fully Reconciled Payments",
-    description: "Industry-leading reconciliation accuracy",
+    value: "95%",
+    // title: "Fully Reconciled Payments",
+    description: "Straight-Through Processing Rate Majority of lockbox items require no human intervention",
     icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
-    description: "Virtually zero error rate with AI automation",
+    value: "Same Business Day",
+    // title: "Posting Errors",
+    description: "Average Mail-to-Data Time From mailbox receipt to posting-ready data",
     icon: <img src={paymentImage10} alt="Posting Errors" />,
   },
   {
-    value: "41.6%",
-    title: "Faster Turnaround",
-    description: "Dramatic reduction in processing time",
+    value: "70%",
+    // title: "Faster Turnaround",
+    description: "Reduction in Manual Data Entry Eliminate typing from paper EOBs",
     icon: <img src={paymentImage11} alt="Faster Turnaround" />,
   },
   {
-    value: "26%",
-    title: "Faster Cash Application",
-    description: "Accelerated revenue recognition",
+    value: "2 Days",
+    // title: "Faster Cash Application",
+    description: "Faster Cash Application Accelerated recognition of payments",
     icon: <img src={paymentImage12} alt="Faster Cash Application" />,
   },
 ];

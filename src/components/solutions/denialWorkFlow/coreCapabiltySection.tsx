@@ -9,6 +9,8 @@ import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
 import Info from "../../../assets/solutions/Core Capabilities/Info.png";
 import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
 import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+import BulletList from "../../ui/BulletList";
+
 
 
 
@@ -16,47 +18,93 @@ const capabilities: ExpandableItem[] = [
   {
     id: 1,
     title: "Low Dollar Denial Prioritization Engine",
-    description: `This intelligent worklist system ranks denials based on claim value, appeal success probability, filing deadlines, and resolution effort. Historical data and machine learning predict which denials are most likely to result in successful appeals, ensuring focus on the highest-impact opportunities. Automated escalation ensures urgent or high-value denials receive immediate expert attention.`,
+    description: (
+      <BulletList
+        items={[
+          "Automatic filtering of denials by dollar threshold",
+          "Cost-benefit analysis for appeal pursuit",
+          "Bulk resolution strategies for recurring low-value denials",
+          "Trend analysis to prevent future occurrences",
+        ]}
+      />
+    ),
     icon: (
-      <img src={Workbench} alt="Low Dollar Denial Prioritization Engine" />
+      <img
+        src={Workbench}
+        alt="Low Dollar Denial Prioritization Engine"
+      />
     ),
     
-    defaultOpen: true,
   },
   {
     id: 2,
     title: "Proactive Denial Trigger System",
-    description: `This real-time monitoring solution automatically creates denial tasks as ERA and remittance data are processed, eliminating delays in identification and response. The system extracts denial codes and explanations, then routes tasks to appropriate staff based on denial type and complexity. Automated notifications ensure immediate attention to new denials.`,
+    description: (
+      <BulletList
+        items={[
+          "Real-time pre-submission claim scrubbing",
+          "Predictive denial modeling based on historical data",
+          "Automated correction suggestions before submission",
+          "Payer-specific rule enforcement",
+        ]}
+      />
+    ),
     icon: <img src={Zap} alt="Proactive Denial Trigger System" />,
-    
   },
   {
     id: 3,
     title: "Automated Appeals Letter Generator",
-    description: `This template-based system generates customized appeal letters using payer-specific formats and language. It pulls information from patient records, original claim data, and contract terms to create compelling appeals with correct attachments and submission methods, significantly reducing preparation time for professional appeal submissions.`,
+    description: (
+      <BulletList
+        items={[
+          "Evidence-based appeal composition using clinical notes",
+          "Payer policy and LCD/NCD citation integration",
+          "Customizable templates by denial reason and payer",
+          "Bulk appeal generation for systemic denials",
+        ]}
+      />
+    ),
     icon: <img src={Info} alt="Automated Appeals Letter Generator" />,
-    
   },
   {
     id: 4,
     title: "Medical Records Request Orchestrator",
-    description: `This automated workflow identifies when denied claims require medical record submission and manages the full lifecycle from retrieval through delivery. It integrates with EHR systems, compiles documentation per payer specifications, submits through secure channels, and tracks status with automated follow-ups for additional information.`,
-    icon: (
-      <img src={Barchart} alt="Medical Records Request Orchestrator" />
+    description: (
+      <BulletList
+        items={[
+          "Automated identification of required documentation",
+          "EMR integration for record retrieval",
+          "Intelligent redaction and HIPAA compliance",
+          "Fax, portal, and mail submission automation",
+        ]}
+      />
     ),
-   
+    icon: (
+      <img
+        src={Barchart}   
+        alt="Medical Records Request Orchestrator"
+      />
+    ),
   },
   {
     id: 5,
     title: "AI-Powered Resolution Recommendation Assistant",
-    description: `This intelligent advisory system analyzes complex denials and recommends the most effective resolution approach using historical outcomes, payer behavior, denial codes, and contract terms. It also flags cases needing expert consultation or legal review, helping teams allocate resources effectively and improve appeal success rates.`,
+    description: (
+      <BulletList
+        items={[
+          "Pattern recognition across historical denials",
+          "Suggested resolution actions based on success rates",
+          "Payer-specific strategy recommendations",
+          "Escalation guidance for complex cases",
+        ]}
+      />
+    ),
     icon: (
       <img
         src={Data}
         alt="AI-Powered Resolution Recommendation Assistant"
       />
     ),
-   
   },
 ];
 
@@ -66,7 +114,7 @@ const CoreCapabilitiesSection = () => {
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
-          subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
+          // subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />
 

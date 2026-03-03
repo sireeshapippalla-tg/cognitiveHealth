@@ -11,30 +11,30 @@ const features = [
   {
     icon: <img src={paymentImage1} alt="Centralized Payment" />,
     
-    title: "Centralized Payment Processing",
+    title: "Comprehensive Claim Scrubbing",
     description:
-      "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
+      "Validate every claim against 10,000+ payer-specific edits, NCCI edits, LCD/NCD policies, and state regulations—catching errors that would lead to denials or delays before submission.",
   },
   {
     icon: <img src={paymentImage2} alt="Automated Posting" />,
     
-    title: "Automated Posting and Reconciliation",
+    title: "AI-Powered Coding Validation",
     description:
-      "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
+      "Intelligent review of CPT/ICD-10 coding against clinical documentation, identifying missing codes, incorrect modifiers, and upcoding/downcoding opportunities to optimize compliant reimbursement.",
   },
   {
     icon: <img src={paymentImage3} alt="Reduced Errors" />,
    
-    title: "Reduced Errors and Faster Turnaround",
+    title: "Proactive Compliance Verification",
     description:
-      "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
+      "Automated checking against CMS regulations, payer medical policies, and billing guidelines—preventing compliance issues, audits, and takebacks before they occur.",
   },
   {
     icon: <img src={paymentImage4} alt="Cash Visibility" />,
     
-    title: "Real-Time Cash Visibility",
+    title: "Pre-Submission Edit Review",
     description:
-      "Gain instant insights into your cash position with live dashboards and analytics that drive informed decision-making.",
+      "Streamlined worklists for coding staff to resolve flagged issues efficiently, with AI-suggested corrections and historical resolution patterns to accelerate review and reduce rework.",
   },
 ];
 
@@ -42,8 +42,11 @@ const features = [
 const TransformSection = () => {
   return (
     <FeatureSection
-      title="Transform Your Payment Operations"
-      subtitle="The iCAN™ Payment Posting & Advanced Reconciliation solution delivers end-to-end automation for healthcare payment processing, combining AI-driven intelligence with enterprise-grade reliability to optimize your revenue cycle performance."
+      title="Submit Clean Claims the First Time, Every Time"
+      subtitle="The iCAN™ PreBill Services solution acts as your final quality gate 
+                before claim submission—using AI to validate coding accuracy, ensure 
+                compliance, detect potential denials, and optimize reimbursement. Stop 
+                revenue leakage and rework before claims ever leave your organization."
       background="#F9FAFB"
       items={features}
       columns={4}

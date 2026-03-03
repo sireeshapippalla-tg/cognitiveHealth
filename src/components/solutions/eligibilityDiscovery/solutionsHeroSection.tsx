@@ -7,7 +7,8 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="Eligibility Discovery "
-      description="Super Charge your revenue cycle with AI Agents"
+      description="Verify coverage in real-time and eliminate claim denials due to 
+                  eligibility issues before patients ever walk through your door."
       image={paymentPostingImage}
       primaryAction={{
         label: "Request a Demo",

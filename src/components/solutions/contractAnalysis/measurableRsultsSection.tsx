@@ -9,27 +9,27 @@ import paymentImage12 from "../../../assets/solutions/paymentImage12.svg";
 
 const stats = [
   {
-    value: "93.8%",
-    title: "Fully Reconciled Payments",
-    description: "Industry-leading reconciliation accuracy",
+    value: "1.5M+",
+    // title: "Fully Reconciled Payments",
+    description: "Average Annual Underpayment Recovery Per facility from variance detection and appeals",
     icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
-    description: "Virtually zero error rate with AI automation",
+    value: "99.9%",
+    // title: "Posting Errors",
+    description: "Payment Accuracy Validation Every payment checked against contract terms",
     icon: <img src={paymentImage10} alt="Posting Errors" />,
   },
   {
-    value: "41.6%",
-    title: "Faster Turnaround",
-    description: "Dramatic reduction in processing time",
+    value: "24 Hours",
+    // title: "Faster Turnaround",
+    description: "Variance Detection Time From payment receipt to underpayment identification",
     icon: <img src={paymentImage11} alt="Faster Turnaround" />,
   },
   {
-    value: "26%",
-    title: "Faster Cash Application",
-    description: "Accelerated revenue recognition",
+    value: "85%",
+    // title: "Faster Cash Application",
+    description: "Underpayment Appeal Success Rate Contract-based appeals with documented evidence",
     icon: <img src={paymentImage12} alt="Faster Cash Application" />,
   },
 ];
