@@ -470,6 +470,7 @@ const RCMReadinessScreen: React.FC = () => {
               color: "var(--color-text-blue)",
               backgroundColor: "#fff",
               borderRadius: "100%",
+              ":hover": { backgroundColor: "#f3f4f6" },
             }}
           >
             <CloseIcon fontSize="small" />
