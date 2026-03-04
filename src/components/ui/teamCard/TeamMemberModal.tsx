@@ -132,10 +132,10 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
             onClick={onClose}
             sx={{
               position: "absolute",
-              top: -22,
-              right: -22, 
-              width: 48,
-              height: 48,
+              top: -18,
+              right: -18, 
+              width: 38,
+              height: 38,
               background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
               color: "#fff",
               boxShadow: "0 10px 25px rgba(14,165,233,0.4)",
