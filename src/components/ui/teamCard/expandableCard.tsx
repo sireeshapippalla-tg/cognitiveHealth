@@ -80,27 +80,26 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
         </CardContent>
       )} */}
 
-
       {/* Expandable description */}
-{open && item.description && (
-  <CardContent sx={{ px: 0, pt: 2 }}>
-    {typeof item.description === "string" ? (
-      item.description.split("\n\n").map((para, index) => (
-        <DescriptionText
-          key={index}
-          sx={{
-            mb: 2,
-            lineHeight: 1.8,
-          }}
-        >
-          {para.trim()}
-        </DescriptionText>
-      ))
-    ) : (
-      item.description
-    )}
-  </CardContent>
-)}
+      {open && item.description && (
+        <CardContent sx={{ px: 0, pt: 2 }}>
+          {typeof item.description === "string" ? (
+            item.description.split("\n\n").map((para, index) => (
+              <DescriptionText
+                key={index}
+                sx={{
+                  mb: 2,
+                  lineHeight: 1.8,
+                }}
+              >
+                {para.trim()}
+              </DescriptionText>
+            ))
+          ) : (
+            <DescriptionText>{item.description}</DescriptionText>
+          )}
+        </CardContent>
+      )}
     </StyledCard>
   );
 };

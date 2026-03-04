@@ -3,22 +3,43 @@ import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 
 export const BlogContainer = styled("div")(({ theme }) => ({
-  padding: "0px 80px",
+  padding: "30px 80px",
   [theme.breakpoints.down("md")]: {
     padding: "20px",
   },
 }));
 
-export const StickyTabsWrapper = styled("div")({
+// export const StickyTabsWrapper = styled("div")({
+//   position: "sticky",
+//   top: 70,
+//   zIndex: 1200,
+//   display: "flex",
+//   justifyContent: "space-between",
+//   padding: "16px 0",
+//   background: "#ffffff",
+//   borderBottom: "1px solid rgba(0,0,0,0.05)",
+// });
+export const StickyTabsWrapper = styled("div")(({ theme }) => ({
   position: "sticky",
-  top: 70,
-  zIndex: 1200,
+  top: 65,
+  zIndex: 2000, 
+  width: "100%", 
+  left: 0,
+  right: 0,
   display: "flex",
   justifyContent: "space-between",
-  padding: "16px 0",
-  background: "#ffffff",
-  borderBottom: "1px solid rgba(0,0,0,0.05)",
-});
+  // padding: "16px 0",
+  backgroundColor: "#ffffff", 
+  boxShadow: "0 4px 12px rgba(0,0,0,0.05)", 
+  padding: "20px 80px",
+  overflow: "visible",
+  [theme.breakpoints.down("md")]: {
+    padding: "20px",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "12px",
+  },
+}));
 
 export const TabsContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -40,7 +61,6 @@ export const TabsContainer = styled("div")(({ theme }) => ({
   },
 }));
 
-
 export const TabButton = styled(motion.button)<{
   $active: boolean;
 }>(({ theme }) => ({
@@ -52,8 +72,8 @@ export const TabButton = styled(motion.button)<{
   cursor: "pointer",
   fontWeight: 600,
   fontSize: "14px",
-  whiteSpace: "nowrap", 
-  flexShrink: 0, 
+  whiteSpace: "nowrap",
+  flexShrink: 0,
   transition: "all 0.3s ease",
 
   [theme.breakpoints.down("md")]: {

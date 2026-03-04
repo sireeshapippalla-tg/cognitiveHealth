@@ -1,21 +1,25 @@
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 
-export const BlogContainer = styled("div")(({ theme }) => ({
-  padding: "0px 80px",
-  [theme.breakpoints.down("md")]: {
-    padding: "20px",
-  },
+export const BlogContainer = styled("div")(() => ({
+  // padding: "0px 80px",
+  // [theme.breakpoints.down("md")]: {
+  //   padding: "20px",
+  // },
 }));
 
 export const StickyTabsWrapper = styled("div")({
   position: "sticky",
-  top: 70,
-  zIndex: 1200,
+  top: 65,
+  zIndex: 2000,
+  width: "100%",
+  left: 0,
+  right: 0,
   display: "flex",
   justifyContent: "center",
   padding: "16px 0",
   background: "#ffffff",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
   borderBottom: "1px solid rgba(0,0,0,0.05)",
 });
 
@@ -26,8 +30,7 @@ export const TabsContainer = styled("div")(({ theme }) => ({
   borderRadius: "999px",
   background: "#e5e7eb",
 
-
-   overflowX: "auto",
+  overflowX: "auto",
   scrollbarWidth: "none", // Firefox
   msOverflowStyle: "none",
 
@@ -37,7 +40,7 @@ export const TabsContainer = styled("div")(({ theme }) => ({
 
   [theme.breakpoints.down("md")]: {
     padding: "6px 12px",
-  }
+  },
 }));
 
 // export const TabButton = styled(motion.button)<{
@@ -66,8 +69,8 @@ export const TabButton = styled(motion.button)<{
   cursor: "pointer",
   fontWeight: 600,
   fontSize: "14px",
-  whiteSpace: "nowrap",   // important
-  flexShrink: 0,          // important
+  whiteSpace: "nowrap", // important
+  flexShrink: 0, // important
   transition: "all 0.3s ease",
 
   [theme.breakpoints.down("md")]: {

@@ -73,7 +73,7 @@ const ResourceTabs = () => {
     if (!element) return;
 
     requestAnimationFrame(() => {
-      const yOffset = -150;
+      const yOffset = -190;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({
@@ -103,7 +103,7 @@ const ResourceTabs = () => {
   };
 
   return (
-    <BlogContainer>
+    <>
       <StickyTabsWrapper>
         <TabsContainer>
           {tabs.map((tab, index) => (
@@ -133,6 +133,14 @@ const ResourceTabs = () => {
             onChange={handleFilterChange}
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
+            MenuProps={{
+               disablePortal: true,
+              PaperProps: {
+                sx: {
+                  zIndex: 3000,
+                },
+              },
+            }}
             sx={{
               // fontFamily: "Inter",
               fontSize: "14px",
@@ -155,17 +163,18 @@ const ResourceTabs = () => {
           </Select>
         </FormControl>
       </StickyTabsWrapper>
-
-      <motion.div
-        id="resources-content"
-        key={activeTab}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <ResourceList activeTab={activeTab} />
-      </motion.div>
-    </BlogContainer>
+      <BlogContainer>
+        <motion.div
+          id="resources-content"
+          key={activeTab}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ResourceList activeTab={activeTab} />
+        </motion.div>
+      </BlogContainer>
+    </>
   );
 };
 

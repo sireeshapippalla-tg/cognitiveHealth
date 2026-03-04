@@ -3,7 +3,7 @@ import TransformSection from "../../components/solutions/denialWorkFlow/transfor
 import CoreCapabilitiesSection from "../../components/solutions/denialWorkFlow/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/denialWorkFlow/measurableRsultsSection";
 import HowItWorksSection from "../../components/solutions/denialWorkFlow/HowitWorksSection";
-import CallToActionSection from "../../components/home/CTA/CTASection";
+// import CallToActionSection from "../../components/home/CTA/CTASection";
 
 import avalityLogo from "../../assets/ClearingHouseLogos/availity.svg";
 import jpmorganLogo from "../../assets/ClearingHouseLogos/jp morgan.svg";
@@ -55,7 +55,7 @@ const DenialWorkFlowPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };

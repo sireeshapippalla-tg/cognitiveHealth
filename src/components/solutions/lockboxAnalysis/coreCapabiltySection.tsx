@@ -4,14 +4,18 @@ import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
 
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
 
-
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import BoltIcon from "@mui/icons-material/Bolt";
+import DescriptionIcon from "@mui/icons-material/Description";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -27,12 +31,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Workbench}
-        alt="AI-Powered Correspondence Management System"
-      />
-    ),
+    icon: <AutoAwesomeIcon sx={{ fontSize: 30 }} />,
+    // icon: (
+    //   <img
+    //     src={Workbench}
+    //     alt="AI-Powered Correspondence Management System"
+    //   />
+    // ),
     defaultOpen: true,
   },
   {
@@ -48,7 +53,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="Multi-Batch Processing Console" />,
+    // icon: <img src={Zap} alt="Multi-Batch Processing Console" />,
+    icon: <BoltIcon sx={{ fontSize: 30}} />,
   },
   {
     id: 3,
@@ -63,12 +69,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Info}
-        alt="Intelligent Document Classification Engine"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Info}
+    //     alt="Intelligent Document Classification Engine"
+    //   />
+    // ),
+    icon: <DescriptionIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 4,
@@ -83,12 +90,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Barchart}   
-        alt="Bank Integration and Download Automation"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Barchart}   
+    //     alt="Bank Integration and Download Automation"
+    //   />
+    // ),
+    icon: <AccountBalanceIcon sx={{ fontSize: 30 }} />
   },
   {
     id: 5,
@@ -103,7 +111,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Data} alt="Continuous Quality Assurance Module" />,
+    // icon: <img src={Data} alt="Continuous Quality Assurance Module" />,
+    icon: <VerifiedIcon sx={{ fontSize: 30}} />
   },
 ];
 

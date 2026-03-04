@@ -23,11 +23,11 @@ export const ValueText = styled(Typography)(({ theme }) => ({
   // fontFamily: "Inter",
   fontWeight: 600,
   // marginBottom: "12px",
-  lineHeight:'150%',
-  fontSize: "32px",
-
+  lineHeight: 1,
+  fontSize: "30px",
+  marginTop: "8px",
   [theme.breakpoints.down("md")]: {
-    fontSize: "32px",
+    fontSize: "30px",
   },
 }));
 
@@ -39,12 +39,12 @@ export const DescriptionText = styled(Typography)({
   lineHeight: "140%",
   maxWidth: "200px",
   margin: "0 auto",
+  marginTop: "8px",
 });
 
-
 export const IconWrapper = styled(Box)(() => ({
-  width: 44,
-  height: 44,
+  width: 40,
+  height: 40,
   margin: "0 auto 12px",
   borderRadius: 12,
   display: "flex",
@@ -53,10 +53,7 @@ export const IconWrapper = styled(Box)(() => ({
   background: "#f0fdf4", // light green bg (can enhance later)
 }));
 
-
 export const TitleText = styled(Typography)(() => ({
   fontWeight: 600,
   marginBottom: 4,
 }));
-
-

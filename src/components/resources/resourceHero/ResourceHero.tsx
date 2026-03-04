@@ -12,7 +12,7 @@ import {
 const ResourceHero = () => (
   <Hero>
     <ResourceCenterChip label="Resource Center" size="small" />
-    <Title variant="h3">Insights, Innovation & Impact</Title>
+    <Title variant="h3" mt={1}>Insights, Innovation & Impact</Title>
     <Subtitle>
       Discover the latest trends, thought leadership, and success stories in
       healthcare revenue cycle automation

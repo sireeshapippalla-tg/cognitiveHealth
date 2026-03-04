@@ -40,7 +40,7 @@ export const StepsRow = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     gap: "32px",
-    padding:0
+    padding:"30px 20px"
   },
 }));
 

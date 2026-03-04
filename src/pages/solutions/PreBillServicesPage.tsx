@@ -4,7 +4,7 @@ import TransformSection from '../../components/solutions/preBillServices/transfo
 import CoreCapabilitiesSection from '../../components/solutions/preBillServices/coreCapabiltySection'
 import MeasurableResultsSection from '../../components/solutions/preBillServices/measurableRsultsSection'
 import HowItWorksSection from '../../components/solutions/preBillServices/HowitWorksSection'
-import CallToActionSection from '../../components/home/CTA/CTASection'
+// import CallToActionSection from '../../components/home/CTA/CTASection'
 
 import nextgenLogo from "../../assets/EMRLogos/Nxtgen.svg";
 import amdLogo from "../../assets/EMRLogos/amd.svg";
@@ -61,7 +61,7 @@ const PreBillServicesPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   )
 }

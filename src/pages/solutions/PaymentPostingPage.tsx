@@ -1,4 +1,4 @@
-import CallToActionSection from "../../components/home/CTA/CTASection";
+// import CallToActionSection from "../../components/home/CTA/CTASection";
 import CoreCapabilitiesSection from "../../components/solutions/paymentPosting/coreCapabiltySection";
 import HowItWorksSection from "../../components/solutions/paymentPosting/HowitWorksSection";
 import MeasurableResultsSection from "../../components/solutions/paymentPosting/measurableRsultsSection";
@@ -60,7 +60,7 @@ const PaymentPostingPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };

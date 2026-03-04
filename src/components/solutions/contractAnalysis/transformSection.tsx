@@ -1,32 +1,39 @@
 import FeatureSection from "../../ui/featureSection/FeatureSection";
-import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.png';
-import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.png';
-import paymentImage3 from '../../../assets/solutions/Payment Operations/paymentImage3.png';
-import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentImage4.png';
+// import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.png';
+// import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.png';
+// import paymentImage3 from '../../../assets/solutions/Payment Operations/paymentImage3.png';
+// import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentImage4.png';
 
-
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";
+import CurrencyExchangeOutlinedIcon from "@mui/icons-material/CurrencyExchangeOutlined";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 
 const features = [
   {
-    icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    // icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    icon: <DescriptionOutlinedIcon />,
     title: "Intelligent Contract Modeling",
     description:
       "AI digitizes and models complex payer contract terms including tiered fee schedules, outlier payments, carve-outs, and incentive clauses—creating a single source of truth for expected reimbursement.",
   },
   {
-    icon: <img src={paymentImage2} alt="Automated Posting" />,
+    // icon: <img src={paymentImage2} alt="Automated Posting" />,
+    icon: <AnalyticsOutlinedIcon />,
     title: "Automated Variance Detection",
     description:
       "Compare every payment against contract terms in real-time, flagging underpayments, incorrect contractual adjustments, and policy violations automatically—no manual calculation required.",
   },
   {
-    icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    // icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    icon: <CurrencyExchangeOutlinedIcon />,
     title: "Underpayment Recovery Engine",
     description:
       "Generate evidence-based underpayment appeals with contract citations, expected vs actual calculations, and supporting documentation—recovering 85%+ of identified variances.",
   },
   {
-    icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    // icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    icon: <InsightsOutlinedIcon />,
     title: "Contract Performance Analytics",
     description:
       "Track payer compliance across all contracts, identify systematic underpayment patterns, and quantify revenue leakage by payer, service line, and facility for strategic negotiations.",

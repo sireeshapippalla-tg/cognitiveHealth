@@ -28,15 +28,14 @@ export const HowItSectionContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-
-export const HowItWrapper = styled(Box)(({theme}) => ({
+export const HowItWrapper = styled(Box)(({ theme }) => ({
   // maxWidth: 1200,
   margin: "0 auto",
   padding: "16px",
   textAlign: "center",
-  marginTop:"30px",
+  marginTop: "30px",
   [theme.breakpoints.down("md")]: {
-    marginTop:"0px",
+    marginTop: "0px",
   },
 }));
 export const StepsCard = styled(Box)(() => ({
@@ -68,3 +67,14 @@ export const ButtonsRow = styled(Box)(() => ({
   gap: 16,
   flexWrap: "wrap",
 }));
+
+export const IconWrapper = styled("div")({
+  width: 46,
+  height: 46,
+  border: "2px solid #78BD43",
+  borderRadius: "8px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "#78BD43",
+});

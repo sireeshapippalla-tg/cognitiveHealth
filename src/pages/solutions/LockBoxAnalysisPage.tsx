@@ -4,7 +4,7 @@ import TransformSection from "../../components/solutions/lockboxAnalysis/transfo
 import CoreCapabilitiesSection from "../../components/solutions/lockboxAnalysis/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/lockboxAnalysis/measurableRsultsSection";
 import HowItWorksSection from "../../components/solutions/lockboxAnalysis/HowitWorksSection";
-import CallToActionSection from "../../components/home/CTA/CTASection";
+// import CallToActionSection from "../../components/home/CTA/CTASection";
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
 
 import waystarLogo from "../../assets/PayerPortalLogos/waystar.svg";
@@ -61,7 +61,7 @@ const LockBoxAnalysisPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };

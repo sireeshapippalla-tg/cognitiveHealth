@@ -3,7 +3,7 @@ import TransformSection from "../../components/solutions/eligibilityDiscovery/tr
 import CoreCapabilitiesSection from "../../components/solutions/eligibilityDiscovery/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/eligibilityDiscovery/measurableRsultsSection";
 import HowItWorksSection from "../../components/solutions/eligibilityDiscovery/HowitWorksSection";
-import CallToActionSection from "../../components/home/CTA/CTASection";
+// import CallToActionSection from "../../components/home/CTA/CTASection";
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
 
 import avalityLogo from "../../assets/ClearingHouseLogos/availity.svg";
@@ -55,7 +55,7 @@ const EligibilityDiscoveryPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };

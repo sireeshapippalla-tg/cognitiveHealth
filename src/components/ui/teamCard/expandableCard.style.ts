@@ -27,8 +27,8 @@ export const HeaderRow = styled(Box)(() => ({
 
 /* Capability icon box */
 export const CapabilityIcon = styled(Box)(() => ({
-  width: 44,
-  height: 44,
+  width: 40,
+  height: 40,
   borderRadius: 8,
   background: "#3b82f6",
   display: "flex",

@@ -1,43 +1,45 @@
-
 import FeatureSection from "../../ui/featureSection/FeatureSection";
-import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.png';
-import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.png';
-import paymentImage3 from '../../../assets/solutions/Payment Operations/paymentImage3.png';
-import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentImage4.png';
+// import paymentImage1 from "../../../assets/solutions/Payment Operations/paymentImage1.png";
+// import paymentImage2 from "../../../assets/solutions/Payment Operations/paymentImage2.png";
+// import paymentImage3 from "../../../assets/solutions/Payment Operations/paymentImage3.png";
+// import paymentImage4 from "../../../assets/solutions/Payment Operations/paymentImage4.png";
 
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
+import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
+import FactCheckOutlinedIcon from "@mui/icons-material/FactCheckOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 
 
 const features = [
   {
-    icon: <img src={paymentImage1} alt="Centralized Payment" />,
-   
+    // icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    icon: <VerifiedUserOutlinedIcon />,
     title: "Real-Time Coverage Verification",
     description:
       "Verify active coverage across all major payers in seconds using automated 270/271 transactions and payer portal connectivity—eliminating coverage-related denials before they happen.",
   },
   {
-    icon: <img src={paymentImage2} alt="Automated Posting" />,
-    
+    // icon: <img src={paymentImage2} alt="Automated Posting" />,
+    icon: <AutorenewOutlinedIcon />,
     title: "Automated Re-Verification",
     description:
       "Continuous monitoring of patient eligibility with scheduled re-checks before appointments, ensuring coverage changes are caught proactively rather than after service delivery.",
   },
   {
-    icon: <img src={paymentImage3} alt="Reduced Errors" />,
-    
+    // icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    icon: <FactCheckOutlinedIcon />,
     title: "Comprehensive Benefit Discovery",
     description:
       "Extract detailed benefit information including deductibles, co-pays, out-of-pocket maximums, and service-specific coverage—enabling accurate patient estimates and financial counseling.",
   },
   {
-    icon: <img src={paymentImage4} alt="Cash Visibility" />,
-    
+    // icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    icon: <NotificationsActiveOutlinedIcon />,
     title: "Proactive Authorization Alerts",
     description:
       "Automatically identify services requiring prior authorization based on payer rules and patient benefits, triggering authorization workflows before denials occur.",
   },
 ];
-
 
 const TransformSection = () => {
   return (

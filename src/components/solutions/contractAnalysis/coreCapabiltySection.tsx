@@ -4,15 +4,18 @@ import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
 
-
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
 
-
+import ManageSearchOutlinedIcon from "@mui/icons-material/ManageSearchOutlined";
+import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -28,12 +31,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Workbench}
-        alt="Contract Intelligence Research Assistant"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Workbench}
+    //     alt="Contract Intelligence Research Assistant"
+    //   />
+    // ),
+    icon: <ManageSearchOutlinedIcon sx={{ fontSize: 30 }} />,
     defaultOpen: true,
   },
   {
@@ -49,7 +53,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="Payment Variance Detection System" />,
+    // icon: <img src={Zap} alt="Payment Variance Detection System" />,
+    icon: <BoltOutlinedIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 3,
@@ -64,7 +69,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Info} alt="Contract Change Monitoring Service" />,
+    // icon: <img src={Info} alt="Contract Change Monitoring Service" />,
+    icon: <NotificationsActiveOutlinedIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 4,
@@ -79,12 +85,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Barchart}   // ⚠ ensure correct import name
-        alt="Charge Master Synchronization Engine"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Barchart} // ⚠ ensure correct import name
+    //     alt="Charge Master Synchronization Engine"
+    //   />
+    // ),
+    icon: <SyncAltOutlinedIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 5,
@@ -99,12 +106,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Data}
-        alt="Contract Performance Analytics Dashboard"
-      />
-    ),
+    // icon: <img src={Data} alt="Contract Performance Analytics Dashboard" />,
+    icon: <BarChartOutlinedIcon sx={{ fontSize: 30 }} />,
   },
 ];
 

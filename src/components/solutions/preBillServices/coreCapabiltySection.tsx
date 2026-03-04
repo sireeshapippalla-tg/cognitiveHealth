@@ -3,12 +3,18 @@ import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
+
+import FactCheckOutlinedIcon from "@mui/icons-material/FactCheckOutlined";
+import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
+import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
+import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -24,12 +30,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Workbench}
-        alt="Pre-Submission Validation and Edit Engine"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Workbench}
+    //     alt="Pre-Submission Validation and Edit Engine"
+    //   />
+    // ),
+      icon: <FactCheckOutlinedIcon/>,
     defaultOpen: true,
   },
   {
@@ -45,7 +52,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="AI-Powered Coding Support Assistant" />,
+    // icon: <img src={Zap} alt="AI-Powered Coding Support Assistant" />,
+    icon: <BiotechOutlinedIcon />,
   },
   {
     id: 3,
@@ -60,12 +68,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Info}
-        alt="Intelligent Compliance Verification System"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Info}
+    //     alt="Intelligent Compliance Verification System"
+    //   />
+    // ),
+    icon: <VerifiedUserOutlinedIcon />,
   },
   {
     id: 4,
@@ -80,12 +89,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={BarChart}   
-        alt="Streamlined Pre-Bill Review Workflow"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={BarChart}   
+    //     alt="Streamlined Pre-Bill Review Workflow"
+    //   />
+    // ),
+    icon: <AssignmentTurnedInOutlinedIcon />,
   },
   {
     id: 5,
@@ -100,7 +110,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    // icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    icon: <HubOutlinedIcon />,
   },
 ];
 

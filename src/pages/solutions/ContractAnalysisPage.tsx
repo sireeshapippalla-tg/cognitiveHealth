@@ -4,7 +4,7 @@ import TransformSection from "../../components/solutions/contractAnalysis/transf
 import CoreCapabilitiesSection from "../../components/solutions/contractAnalysis/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/contractAnalysis/measurableRsultsSection";
 import HowItWorksSection from "../../components/solutions/contractAnalysis/HowitWorksSection";
-import CallToActionSection from "../../components/home/CTA/CTASection";
+// import CallToActionSection from "../../components/home/CTA/CTASection";
 
 import waystarLogo from "../../assets/PayerPortalLogos/waystar.svg";
 import paySpanLogo from "../../assets/PayerPortalLogos/payspan.png";
@@ -61,7 +61,7 @@ const ContractAnalysisPage = () => {
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };

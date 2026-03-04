@@ -38,7 +38,7 @@ export const Pill = styled(Box, {
   fontSize: "14px",
   lineHeight: "150%",
   fontWeight: 600,
-  marginBottom: "20px",
+  marginBottom: "10px",
   letterSpacing: "0.3px",
 }));
 
@@ -52,7 +52,7 @@ export const Title = styled(Typography, {
   lineHeight: "48px",
   fontSize: "32px",
   maxWidth: "900px",
-  marginBottom: "16px",
+  marginBottom: "10px",
 
   "& span": {
     color: highlightcolor || "var(--color-primary)",
@@ -73,5 +73,6 @@ export const Subtitle = styled(Typography)<SubtitleProps>(
     color: textColor || "var(--color-text-light)",
     maxWidth,
     textAlign: "center",
+    marginBottom:10
   }),
 );

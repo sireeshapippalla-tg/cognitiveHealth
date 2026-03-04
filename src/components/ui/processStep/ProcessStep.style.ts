@@ -8,8 +8,8 @@ export const StepWrapper = styled(Box)({
 });
 
 export const IconBox = styled(Box)({
-  width: "44px",
-  height: "44px",
+  width: "40px",
+  height: "40px",
   backgroundColor: "var(--color-text-blue)",
   borderRadius: "10px",
   display: "flex",

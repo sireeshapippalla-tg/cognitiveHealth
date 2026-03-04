@@ -1,36 +1,45 @@
 import { Grid } from "@mui/material";
 import { MetricCard } from "../../ui/metricCard/MetricCard";
-import { MeasureWrapper, SectionContainer } from "./solutions.style";
+import { IconWrapper, MeasureWrapper, SectionContainer } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import paymentImage9 from '../../../assets/solutions/paymentImage9.png';
-import paymentImage10 from '../../../assets/solutions/paymentImage10.svg';
-import paymentImage11 from '../../../assets/solutions/paymentImage11.svg';
-import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
+// import paymentImage10 from '../../../assets/solutions/paymentImage10.svg';
+// import paymentImage11 from '../../../assets/solutions/paymentImage11.svg';
+// import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
+
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
+import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 
 const stats = [
   {
     value: "60%",
     // title: "Fully Reconciled Payments",
     description: "Denial Rate Reduction Proactive prevention eliminates denials before submission",
-    icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
+    // icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
+    icon: (<IconWrapper><ShieldOutlinedIcon /></IconWrapper>) 
   },
   {
     value: "85%",
     // title: "Posting Errors",
     description: "Appeal Success Rate AI-generated appeals with evidence-based arguments",
-    icon: <img src={paymentImage10} alt="Appeal Success Rate" />,
+    // icon: <img src={paymentImage10} alt="Appeal Success Rate" />,
+    icon: (<IconWrapper><CheckCircleOutlineOutlinedIcon /></IconWrapper>) 
   },
   {
     value: "3 Days",
     // title: "Faster Turnaround",
     description: "Average Appeal Turnaround From denial receipt to appeal submission",
-    icon: <img src={paymentImage11} alt="Faster Turnaround" />,
+    // icon: <img src={paymentImage11} alt="Faster Turnaround" />,
+    icon: (<IconWrapper><AccessTimeOutlinedIcon /></IconWrapper>) 
   },
   {
     value: "2M+",
     // title: "Faster Cash Application",
     description: "Average Annual Recovery Per facility from improved denial management",
-    icon: <img src={paymentImage12} alt="Faster Cash Application" />,
+    // icon: <img src={paymentImage12} alt="Faster Cash Application" />,
+    icon: (<IconWrapper><PaymentsOutlinedIcon /></IconWrapper>) 
   },
 ];
 

@@ -67,8 +67,8 @@ export const Header = styled(Box, {
 export const IconBox = styled(Box)({
   backgroundColor: "var(--color-text-blue)",
   color: "#ffffff",
-  width: "56px",
-  height: "56px",
+  width: "40px",
+  height: "40px",
   borderRadius: "8px",
   padding: "16px",
   gap: "8px",

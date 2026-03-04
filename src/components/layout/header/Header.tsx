@@ -338,7 +338,7 @@ const Header = () => {
         open={solutionsOpen}
         anchorEl={solutionsAnchorEl}
         placement="bottom"
-        sx={{ zIndex: 1300 }}
+        sx={{ zIndex: 2000 }}
       >
         <Box
           onMouseEnter={() =>
@@ -397,7 +397,7 @@ const Header = () => {
         open={resourcesOpen}
         anchorEl={resourcesAnchorEl}
         placement="bottom"
-        sx={{ zIndex: 1300 }}
+        sx={{ zIndex: 2000 }}
       >
         <Box
           onMouseEnter={() =>

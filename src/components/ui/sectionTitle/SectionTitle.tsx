@@ -40,7 +40,7 @@ export const SectionTitle = ({
     <Title
       dangerouslySetInnerHTML={{ __html: title }}
       textcolor={textColor}
-      sx={{ marginBottom: subtitle ? "16px" : "20px" }}
+      // sx={{ marginBottom: subtitle ? "1px" : "20px" }}
     />
 
     {subtitle && (

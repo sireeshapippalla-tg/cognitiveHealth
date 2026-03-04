@@ -3,14 +3,18 @@ import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import BarChart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
 
-
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import AutoModeOutlinedIcon from "@mui/icons-material/AutoModeOutlined";
+import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
+import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -26,7 +30,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Workbench} alt="Unified Payment Workbench" />,
+    // icon: <img src={Workbench} alt="Unified Payment Workbench" />,
+    icon: <DashboardOutlinedIcon />,
   },
   {
     id: 2,
@@ -41,7 +46,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="Automated Payment Posting Engine" />,
+    // icon: <img src={Zap} alt="Automated Payment Posting Engine" />,
+    icon: <AutoModeOutlinedIcon />,
   },
   {
     id: 3,
@@ -56,7 +62,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Info} alt="Exception and Variance Manager" />,
+    // icon: <img src={Info} alt="Exception and Variance Manager" />,
+    icon: <ReportProblemOutlinedIcon />,
   },
   {
     id: 4,
@@ -71,7 +78,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={BarChart} alt="Real-Time Cash Analytics Dashboard" />,
+    // icon: <img src={BarChart} alt="Real-Time Cash Analytics Dashboard" />,
+    icon: <InsightsOutlinedIcon />,
   },
   {
     id: 5,
@@ -86,7 +94,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    // icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    icon: <HubOutlinedIcon />,
   },
 ];
 
@@ -113,5 +122,3 @@ const CoreCapabilitiesSection = () => {
 };
 
 export default CoreCapabilitiesSection;
-
-

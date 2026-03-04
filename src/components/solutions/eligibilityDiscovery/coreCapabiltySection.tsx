@@ -3,13 +3,18 @@ import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
 
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
+import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
+import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -25,12 +30,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Workbench}
-        alt="Real-Time Coverage Verification Portal"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Workbench}
+    //     alt="Real-Time Coverage Verification Portal"
+    //   />
+    // ),
+    icon: <VerifiedUserOutlinedIcon />,
     defaultOpen: true,
   },
   {
@@ -46,7 +52,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="Multi-Payer Coordination Manager" />,
+    // icon: <img src={Zap} alt="Multi-Payer Coordination Manager" />,
+    icon: <AccountTreeOutlinedIcon />,
   },
   {
     id: 3,
@@ -61,7 +68,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Info} alt="Automated Patient Benefit Summaries" />,
+    // icon: <img src={Info} alt="Automated Patient Benefit Summaries" />,
+    icon: <AssignmentOutlinedIcon />,
   },
   {
     id: 4,
@@ -76,12 +84,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Barchart}   
-        alt="Authorization Tracking and Alert System"
-      />
-    ),
+    // icon: <img src={Barchart} alt="Authorization Tracking and Alert System" />,
+    icon: <NotificationsActiveOutlinedIcon />,
   },
   {
     id: 5,
@@ -96,16 +100,10 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Data}
-        alt="Scheduled Re-Verification Automation"
-      />
-    ),
+    // icon: <img src={Data} alt="Scheduled Re-Verification Automation" />,
+    icon: <AutorenewOutlinedIcon />,
   },
 ];
-
-
 
 const CoreCapabilitiesSection = () => {
   return (

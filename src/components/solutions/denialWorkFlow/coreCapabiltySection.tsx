@@ -4,14 +4,19 @@ import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
 
-import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
+// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
 import BulletList from "../../ui/BulletList";
 
 
+import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import MedicalInformationOutlinedIcon from "@mui/icons-material/MedicalInformationOutlined";
+import PsychologyAltOutlinedIcon from "@mui/icons-material/PsychologyAltOutlined";
 
 
 const capabilities: ExpandableItem[] = [
@@ -28,12 +33,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Workbench}
-        alt="Low Dollar Denial Prioritization Engine"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Workbench}
+    //     alt="Low Dollar Denial Prioritization Engine"
+    //   />
+    // ),
+    icon: <PriceCheckOutlinedIcon />,
     
   },
   {
@@ -49,7 +55,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Zap} alt="Proactive Denial Trigger System" />,
+    // icon: <img src={Zap} alt="Proactive Denial Trigger System" />,
+    icon: <ShieldOutlinedIcon />,
   },
   {
     id: 3,
@@ -64,7 +71,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <img src={Info} alt="Automated Appeals Letter Generator" />,
+    // icon: <img src={Info} alt="Automated Appeals Letter Generator" />,
+    icon: <DescriptionOutlinedIcon />,
   },
   {
     id: 4,
@@ -79,12 +87,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Barchart}   
-        alt="Medical Records Request Orchestrator"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Barchart}   
+    //     alt="Medical Records Request Orchestrator"
+    //   />
+    // ),
+    icon: <MedicalInformationOutlinedIcon />,
   },
   {
     id: 5,
@@ -99,12 +108,13 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: (
-      <img
-        src={Data}
-        alt="AI-Powered Resolution Recommendation Assistant"
-      />
-    ),
+    // icon: (
+    //   <img
+    //     src={Data}
+    //     alt="AI-Powered Resolution Recommendation Assistant"
+    //   />
+    // ),
+    icon: <PsychologyAltOutlinedIcon />,
   },
 ];
 
