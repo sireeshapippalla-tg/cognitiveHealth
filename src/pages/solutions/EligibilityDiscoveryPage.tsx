@@ -1,4 +1,4 @@
-import SolutionsHeroSection from "../../components/solutions/eligibilityDiscovery/solutionsHeroSection";
+// import SolutionsHeroSection from "../../components/solutions/eligibilityDiscovery/solutionsHeroSection";
 import TransformSection from "../../components/solutions/eligibilityDiscovery/transformSection";
 import CoreCapabilitiesSection from "../../components/solutions/eligibilityDiscovery/coreCapabiltySection";
 import MeasurableResultsSection from "../../components/solutions/eligibilityDiscovery/measurableRsultsSection";
@@ -42,7 +42,7 @@ const EligibilityDiscoveryPage = () => {
   ];
   return (
     <>
-      <SolutionsHeroSection />
+      {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />
       {/* Clearing house */}

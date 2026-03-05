@@ -64,8 +64,8 @@ const SolutionsTabs = () => {
       ),
     },
     {
-      value: "contractAnalytics",
-      label: "Contract Analytics",
+      value: "contractAnalysis",
+      label: "Contract Analysis",
       icon: (
         <img
           src={Analysis}

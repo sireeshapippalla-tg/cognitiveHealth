@@ -10,7 +10,7 @@ export const Section = styled(Box)(({ theme }) => ({
   width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
-  padding: "80px",
+  padding: "60px 80px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px",
@@ -51,7 +51,7 @@ export const Eyebrow = styled(Typography)(({ theme }) => ({
   fontSize: "40px",
   fontWeight: 600,
   color:  "var(--color-text-dark)",
-  marginBottom: "20px",
+  marginBottom: "16px",
   lineHeight: "55px",
   [theme.breakpoints.down("md")]: {
     fontSize: "28px",

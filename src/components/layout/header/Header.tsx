@@ -131,7 +131,7 @@ const Header = () => {
       title: "Contract Analysis",
       desc: "Intelligent contract research assistant",
       // path: "/solutions/contract-analysis",
-      hash: "contractAnalytics",
+      hash: "contractAnalysis",
       icon: (
         <img
           src={Analysis}
