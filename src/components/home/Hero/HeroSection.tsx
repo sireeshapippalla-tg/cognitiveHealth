@@ -67,7 +67,7 @@ const HeroSection = () => {
         logos={logos}
         speed={40}
       />
-      ;
+      
     </>
   );
 };
