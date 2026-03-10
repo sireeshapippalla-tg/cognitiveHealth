@@ -31,6 +31,7 @@ export const IconWrapper = styled(Box)({
   height: 40,
   borderRadius: "12px",
   backgroundColor: "#F97316",
+  // backgroundColor:"--var(--color-primary)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

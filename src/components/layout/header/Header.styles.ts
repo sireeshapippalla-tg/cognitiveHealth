@@ -101,7 +101,7 @@ export const DrawerItem = styled(Box, {
     display: "flex",
   alignItems: "center",
   justifyContent: "space-between", // 👈 pushes arrow right
-color: active ? "#f97316" : "var(--color-text-dark)",
+color: active ? "var(--color-primary)" : "var(--color-text-dark)",
 }));
 
 export const CloseIconWrapper = styled(Box)(() => ({

@@ -63,7 +63,7 @@ export const Description = styled(Typography)({
 /* SOCIAL */
 export const Social = styled(Stack)({
   "& svg": {
-    color: "#f97316", // orange
+    color: "var(--color-primary)", // orange
     fontSize: 20,
     cursor: "pointer",
     transition: "opacity 0.2s ease",
@@ -98,7 +98,7 @@ export const ListItem = styled("li")({
   cursor: "pointer",
 
   "&:hover": {
-    color: "#f97316",
+    color: "var(--color-primary)", // orange
   },
 });
 

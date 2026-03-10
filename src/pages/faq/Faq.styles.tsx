@@ -32,7 +32,7 @@ export const HeroSubtitle = styled(Typography)({
 export const UpdatedBadge = styled(Box)({
   display: "inline-block",
   marginTop: "20px",
-  backgroundColor: "#F97316",
+  backgroundColor: "-var(--color-primary)",
   padding: "6px 16px",
   borderRadius: "20px",
   fontSize: "14px",

@@ -169,7 +169,7 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
                 width: isMobile ? 180 : 220,
                 height: isMobile ? 180 : 220,
                 borderRadius: "50%",
-                background: "conic-gradient(#f97316, #3b82f6, #f97316)",
+                background: "conic-gradient(-var(--color-primary), #3b82f6, -var(--color-primary))",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

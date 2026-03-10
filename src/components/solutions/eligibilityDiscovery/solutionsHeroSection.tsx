@@ -1,4 +1,4 @@
-import paymentPostingImage from "../../../assets/paymentpostingImage.svg";
+import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 

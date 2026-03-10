@@ -78,7 +78,7 @@ const MeasurableResultsSection = () => {
         <Grid container spacing={3}>
           {stats.map((stat, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard {...stat} color="#78BD43" />
+              <MetricCard {...stat} color="var(--color-green)" />
             </Grid>
           ))}
         </Grid>

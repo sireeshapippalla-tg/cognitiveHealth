@@ -25,7 +25,7 @@ export const Container = styled(Box)(({ theme }) => ({
   background: "#ffffff",
   // padding: "32px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 32px" },
-   [theme.breakpoints.down("md")]: { padding: "20px" },
+  [theme.breakpoints.down("md")]: { padding: "20px" },
 }));
 
 /* HEADER */
@@ -34,8 +34,8 @@ export const HeaderWrapper = styled(Box)(({ theme }) => ({
   margin: "0 auto",
   // textAlign: "center",
   // padding: "40px 16px",
-  [theme.breakpoints.up("md")]: { padding: "34px 16px" },
-   [theme.breakpoints.down("md")]: { padding: "20px" },
+  // [theme.breakpoints.up("md")]: { padding: "34px 16px" },
+  [theme.breakpoints.down("md")]: { padding: "20px" },
 }));
 export const ResultsWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 1000,
@@ -50,7 +50,7 @@ export const HeaderTitle = styled(Typography)(({ theme }) => ({
   color: "var(--color-text-blue)",
   lineHeight: 1.2,
   fontSize: "28px",
-   textAlign: "center",
+  textAlign: "center",
   [theme.breakpoints.up("sm")]: { fontSize: "36px" },
   [theme.breakpoints.up("md")]: { fontSize: "44px" },
 }));
@@ -66,13 +66,22 @@ export const HeaderSubText = styled(Typography)(({ theme }) => ({
 }));
 
 /* SECTION CARD */
-export const SectionPaper = styled(Paper)(({ theme }) => ({
+export const SectionPaper = styled(Paper)(() => ({
+  // background: "#ffffff",
+  // border: "1px solid #e5e7eb",
+  // borderRadius: 12,
+  // padding: 16,
+  // height: "100%",
+  // [theme.breakpoints.up("md")]: { padding: 24 },
+
   background: "#ffffff",
   border: "1px solid #e5e7eb",
   borderRadius: 12,
-  padding: 16,
+  padding: 20,
   height: "100%",
-  [theme.breakpoints.up("md")]: { padding: 24 },
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 }));
 
 export const SectionTitle = styled(Typography)({
@@ -81,10 +90,10 @@ export const SectionTitle = styled(Typography)({
 });
 
 export const StyledCheckbox = styled(Checkbox)({
-  color: "#f97316",
+  color: "-var(--color-primary)",
   padding: 4,
   marginTop: 2,
-  "&.Mui-checked": { color: "#f97316" },
+  "&.Mui-checked": { color: "-var(--color-primary)" },
 });
 
 /* RESULT */
@@ -105,7 +114,7 @@ export const FooterWrapper = styled(Box)({
 });
 
 export const FooterEmail = styled(Typography)({
-  color: "#f97316",
+  color: "-var(--color-primary)",
   fontWeight: 700,
 });
 
@@ -115,19 +124,59 @@ export const FooterCaption = styled(Typography)({
 });
 
 /* ICON BASE */
-const iconStyle = { color: "#f97316", fontSize: 18 };
+// const iconStyle = { color: "-var(--color-primary)", fontSize: 18 };
 
-export const FolderStyledIcon = styled(FolderIcon)(iconStyle);
-export const PaymentsStyledIcon = styled(PaymentsIcon)(iconStyle);
-export const HospitalStyledIcon = styled(LocalHospitalIcon)(iconStyle);
-export const TimeStyledIcon = styled(AccessTimeIcon)(iconStyle);
-export const AIStyledIcon = styled(SmartToyIcon)(iconStyle);
-export const HandshakeStyledIcon = styled(HandshakeIcon)(iconStyle);
-export const TrendingStyledIcon = styled(TrendingDownIcon)(iconStyle);
-export const InsightsStyledIcon = styled(InsightsIcon)(iconStyle);
+// export const FolderStyledIcon = styled(FolderIcon)(iconStyle);
+// export const PaymentsStyledIcon = styled(PaymentsIcon)(iconStyle);
+// export const HospitalStyledIcon = styled(LocalHospitalIcon)(iconStyle);
+// export const TimeStyledIcon = styled(AccessTimeIcon)(iconStyle);
+// export const AIStyledIcon = styled(SmartToyIcon)(iconStyle);
+// export const HandshakeStyledIcon = styled(HandshakeIcon)(iconStyle);
+// export const TrendingStyledIcon = styled(TrendingDownIcon)(iconStyle);
+// export const InsightsStyledIcon = styled(InsightsIcon)(iconStyle);
+
+export const FolderStyledIcon = styled(FolderIcon)({
+  color: "#6366F1",
+  fontSize: 22,
+});
+
+export const PaymentsStyledIcon = styled(PaymentsIcon)({
+  color: "#22C55E",
+  fontSize: 22,
+});
+
+export const HospitalStyledIcon = styled(LocalHospitalIcon)({
+  color: "#F97316",
+  fontSize: 22,
+});
+
+export const TimeStyledIcon = styled(AccessTimeIcon)({
+  color: "#06B6D4",
+  fontSize: 22,
+});
+
+export const AIStyledIcon = styled(SmartToyIcon)({
+  color: "#8B5CF6",
+  fontSize: 22,
+});
+
+export const HandshakeStyledIcon = styled(HandshakeIcon)({
+  color: "#F59E0B",
+  fontSize: 22,
+});
+
+export const TrendingStyledIcon = styled(TrendingDownIcon)({
+  color: "#EF4444",
+  fontSize: 22,
+});
+
+export const InsightsStyledIcon = styled(InsightsIcon)({
+  color: "#3B82F6",
+  fontSize: 22,
+});
 
 export const SuccessStyledIcon = styled(CheckCircleIcon)({
-  color: "#22c55e",
+  color: "var(--color-green)",
   fontSize: 48,
 });
 export const StyledDialogTitle = styled(DialogTitle)(() => ({
@@ -153,3 +202,22 @@ export const PrimaryButton = styled(Button)(() => ({
     backgroundColor: "#1E40AF",
   },
 }));
+
+export const HeroSection = styled(Box)({
+  background: "var(--color-text-blue)",
+  padding: "70px 20px",
+  textAlign: "center",
+  color: "#fff",
+  marginBottom: "40px",
+});
+
+export const HeroTitle = styled(Typography)({
+  fontSize: "40px",
+  fontWeight: 700,
+});
+
+export const HeroSubtitle = styled(Typography)({
+  marginTop: "16px",
+  fontSize: "18px",
+  opacity: 0.9,
+});

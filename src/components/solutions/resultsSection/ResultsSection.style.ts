@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, DialogActions, DialogTitle, Stack, Typography } from "@mui/material";
 
 export const SectionContainer = styled(Box)({
   background: "#f9fafb",
@@ -55,3 +55,25 @@ export const PrimaryButtonStyles = {
     backgroundColor: "#ea580c",
   },
 };
+export const StyledDialogTitle = styled(DialogTitle)(() => ({
+  backgroundColor: "var(--color-text-blue)",
+  color: "#FFFFFF",
+  fontWeight: 600,
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "16px 24px",
+}));
+
+export const StyledDialogActions = styled(DialogActions)(() => ({
+  padding: "16px 24px",
+}));
+export const PrimaryButton = styled(Button)(() => ({
+  backgroundColor: "var(--color-text-blue)",
+  color: "#fff",
+  textTransform: "none",
+  fontWeight: 500,
+  "&:hover": {
+    backgroundColor: "#1E40AF",
+  },
+}));

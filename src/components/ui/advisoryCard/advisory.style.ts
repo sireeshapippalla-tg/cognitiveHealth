@@ -15,7 +15,7 @@ export const StyledAvatar = styled(Avatar)(() => ({
   width: 70,
   height: 70,
   margin: "0 auto 16px",
-  backgroundColor: "#f97316",
+  backgroundColor: "-var(--color-primary)",
 }));
 
 /* Name */
@@ -27,7 +27,7 @@ export const NameText = styled(Typography)(() => ({
 export const RoleText = styled(Typography)(() => ({
   fontSize: 13,
   fontWeight: 600,
-  color: "#f97316",
+  color: "-var(--color-primary)",
   marginTop: 4,
   marginBottom: 12,
 }));

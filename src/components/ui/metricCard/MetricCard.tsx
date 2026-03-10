@@ -23,7 +23,7 @@ export const MetricCard = ({
   title,
   description,
   icon,
-  color = "#16a34a", // default green
+  color = "var(--color-green)", // default green
 }: MetricCardProps) => (
   <StyledCard elevation={0}>
     {/* Icon */}

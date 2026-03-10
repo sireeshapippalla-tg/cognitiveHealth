@@ -15,7 +15,7 @@ export const StyledCard = styled(Card, {
   padding: 16,
   transition: "0.3s",
   boxShadow: "0 0 0 1px #e5e7eb",
-  border: open && iscapability ? "1px solid #f97316" : "1px solid #e5e7eb",
+  border: open && iscapability ? "1px solid -var(--color-primary)" : "1px solid #e5e7eb",
 }));
 
 /* Header row */
@@ -51,7 +51,7 @@ export const TitleText = styled(Typography)(() => ({
 /* Subtitle */
 export const SubtitleText = styled(Typography)(() => ({
   fontSize: 14,
-  color: "#f97316",
+  color: "-var(--color-primary)",
   fontWeight: 500,
 }));
 

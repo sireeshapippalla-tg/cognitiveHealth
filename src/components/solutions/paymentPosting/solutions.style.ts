@@ -52,7 +52,7 @@ export const StepsRow = styled(Box)(() => ({
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
-  color: "#f97316",
+  color: "-var(--color-primary)",
   display: "flex",
   alignItems: "center",
 
@@ -72,10 +72,10 @@ export const ButtonsRow = styled(Box)(() => ({
 export const IconWrapper = styled("div")({
   width: 46,
   height: 46,
-  border: "2px solid #78BD43",
+  border: "2px solid var(--color-green)",
   borderRadius: "8px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#78BD43",
+  color: "var(--color-green)",
 });
