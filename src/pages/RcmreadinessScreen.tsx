@@ -268,8 +268,6 @@ const RCMReadinessScreen: React.FC = () => {
   return (
     // <HeaderWrapper>
     <>
-      
-
       <HeroSection>
         <HeroTitle>Revenue Cycle Management AI Readiness Assessment</HeroTitle>
 
@@ -279,8 +277,17 @@ const RCMReadinessScreen: React.FC = () => {
         </HeroSubtitle>
       </HeroSection>
       <HeaderWrapper ref={pdfRef}>
-       
-        <Box mb={4}>
+        <Box
+          sx={{
+            position: "sticky",
+            top: 60,
+            zIndex: 1000,
+            background: "#fff",
+            paddingTop: "16px",
+            paddingBottom: "16px",
+            borderBottom: "1px solid #e5e7eb",
+          }}
+        >
           <Stack
             direction="row"
             justifyContent="space-between"
