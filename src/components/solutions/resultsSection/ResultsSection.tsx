@@ -346,13 +346,19 @@ const ResultsSection = () => {
         open={openPdfViewer}
         onClose={handleCloseAll}
         maxWidth="lg"
-        fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: "16px",
-            overflow: "hidden",
-          },
-        }}
+        // fullWidth
+        // PaperProps={{
+        //   sx: {
+        //     borderRadius: "16px",
+        //     overflow: "hidden",
+        //   },
+        // }}
+        fullScreen
+  PaperProps={{
+    sx: {
+      backgroundColor: "#fff",
+    },
+  }}
       >
         <DialogContent sx={{ padding: "16px" }}>
           <Box
