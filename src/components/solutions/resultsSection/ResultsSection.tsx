@@ -193,36 +193,6 @@ const ResultsSection = () => {
 
       {/* dialog for view pdf */}
 
-      {/* <Dialog open={openPdf} onClose={handleClosePdf} maxWidth="lg" fullWidth>
-        <DialogContent sx={{ position: "relative", padding: 0 }}>
-         
-          <IconButton
-            onClick={handleClosePdf}
-            sx={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              background: "#fff",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-              "&:hover": { background: "#f5f5f5" },
-              zIndex: 10,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-
-     
-          <iframe
-            // src="/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf"
-            src={pdfFile}
-            width="100%"
-            height="700px"
-            style={{ border: "none" }}
-            title="Customer Success Story"
-          />
-        </DialogContent>
-      </Dialog> */}
-
       <Dialog
         open={openPdf}
         onClose={handleClosePdf}
@@ -258,7 +228,14 @@ const ResultsSection = () => {
             <CloseIcon fontSize="small" />
           </IconButton>
         </StyledDialogTitle>
-        <DialogContent sx={{ padding: "24px", marginTop: "30px" }}>
+        <DialogContent
+          // sx={{ padding: "24px", marginTop: "30px" }}
+          sx={{
+            padding: "32px",
+            // background: "#FAFAFA",
+            margin: "30px"
+          }}
+        >
           {/* <IconButton
             onClick={() => {
               if (selectedPdf) {
@@ -299,59 +276,73 @@ const ResultsSection = () => {
                       onClick={() => setSelectedPdf(pdf.file)}
                       sx={{
                         border: "1px solid #E5E7EB",
-                        borderRadius: "14px",
-                        padding: "18px 22px",
+                        borderRadius: "16px",
+                        overflow: "hidden",
                         cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        background: "#ffffff",
+                        background: "#fff",
                         transition: "all 0.25s ease",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
                         "&:hover": {
+                          transform: "translateY(-4px)",
+                          boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
                           borderColor: "#EB7724",
-                          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                          // transform: "translateY(-2px)",
                         },
                       }}
                     >
+                      {/* Thumbnail */}
                       <Box
-                        sx={{ display: "flex", alignItems: "center", gap: 2 }}
+                        sx={{
+                          height: 160,
+                          background: "#F3F4F6",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: 50,
+                        }}
                       >
-                        {/* Document Icon */}
-                        <Box
-                          sx={{
-                            width: 42,
-                            height: 42,
-                            borderRadius: "10px",
-                            background: "#F3F4F6",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontSize: 18,
-                          }}
-                        >
-                          📄
-                        </Box>
-
-                        <Box>
-                          <Typography sx={{ fontWeight: 600, fontSize: 15 }}>
-                            {pdf.name}
-                          </Typography>
-
-                          <Typography
-                            sx={{
-                              fontSize: 13,
-                              color: "#6B7280",
-                            }}
-                          >
-                            Customer Success Story
-                          </Typography>
-                        </Box>
+                        📄
                       </Box>
 
-                      <ArrowForwardIosIcon
-                        sx={{ fontSize: 16, color: "#9CA3AF" }}
-                      />
+                      {/* Content */}
+                      <Box sx={{ padding: "20px" }}>
+                        <Typography
+                          sx={{
+                            fontSize: 16,
+                            fontWeight: 600,
+                            marginBottom: "6px",
+                          }}
+                        >
+                          {pdf.name}
+                        </Typography>
+
+                        <Typography
+                          sx={{
+                            fontSize: 14,
+                            color: "#6B7280",
+                            marginBottom: "16px",
+                          }}
+                        >
+                          Customer Success Story
+                        </Typography>
+
+                        <Button
+                          variant="contained"
+                          sx={{
+                            backgroundColor: "#EB7724",
+                            borderRadius: "999px",
+                            textTransform: "none",
+                            fontSize: 13,
+                            padding: "6px 14px",
+                            "&:hover": {
+                              backgroundColor: "#ea580c",
+                            },
+                          }}
+                        >
+                          View Story
+                        </Button>
+                      </Box>
                     </Box>
                   </Grid>
                 ))}
@@ -361,19 +352,35 @@ const ResultsSection = () => {
 
           {/* Show SELECTED PDF */}
           {selectedPdf && (
-            <>
-              <Button onClick={() => setSelectedPdf(null)} sx={{ mb: 2 }}>
-                ← Back
+            <Box>
+              <Button
+                onClick={() => setSelectedPdf(null)}
+                sx={{
+                  mb: 2,
+                  textTransform: "none",
+                  fontWeight: 500,
+                }}
+              >
+                ← Back to Stories
               </Button>
 
-              <iframe
-                src={selectedPdf}
-                width="100%"
-                height="700px"
-                style={{ border: "none" }}
-                title="Customer Success Story"
-              />
-            </>
+              <Box
+                sx={{
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  border: "1px solid #E5E7EB",
+                  background: "#fff",
+                }}
+              >
+                <iframe
+                  src={selectedPdf}
+                  width="100%"
+                  height="720px"
+                  style={{ border: "none" }}
+                  title="Customer Success Story"
+                />
+              </Box>
+            </Box>
           )}
         </DialogContent>
       </Dialog>
