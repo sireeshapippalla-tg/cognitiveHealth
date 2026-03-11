@@ -1,4 +1,5 @@
-import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
+import eligibilityDiscoveryImage from "../../../assets/solutions/bannerImages/eligibility_workflow_transparent.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +10,7 @@ const SolutionsHeroSection = () => {
       eyebrow="Eligibility Discovery "
       description="Verify coverage in real-time and eliminate claim denials due to 
                   eligibility issues before patients ever walk through your door."
-      image={paymentPostingImage}
+      image={eligibilityDiscoveryImage}
       primaryAction={{
         label: "Request a Demo",
         onClick: () => navigate("/contact-us"),

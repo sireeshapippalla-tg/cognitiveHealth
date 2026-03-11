@@ -1,4 +1,5 @@
-import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.jpeg";
+import denialsImage from "../../../assets/solutions/bannerImages/denials_workflow_transparent.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 
@@ -8,15 +9,17 @@ const SolutionsHeroSection = () => {
     <SplitSection
       eyebrow="Denials Workflow "
       description="Turn denials into recoveries with AI-powered prevention, root cause analysis, and automated appeal generation."
-      image={paymentPostingImage}
-   primaryAction={{
-          label: "Request a Demo",
-          onClick: () => navigate("/contact-us"),
-        }}
-        secondaryAction={{
-          label: "See Platform in Action",
-          onClick: () => {navigate("/resources#videos")},
-        }}
+      image={denialsImage}
+      primaryAction={{
+        label: "Request a Demo",
+        onClick: () => navigate("/contact-us"),
+      }}
+      secondaryAction={{
+        label: "See Platform in Action",
+        onClick: () => {
+          navigate("/resources#videos");
+        },
+      }}
     />
   );
 };

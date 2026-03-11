@@ -1,4 +1,5 @@
-import paymentPostingImage from "../../../assets/solutions/bannerImages/payBill.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/payBill.jpeg";
+import prebillImage from "../../../assets/solutions/bannerImages/prebill_services_transparent.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +9,7 @@ const SolutionsHeroSection = () => {
     <SplitSection
       eyebrow="PreBill Services"
       description="Catch errors before submission with AI-powered claim scrubbing, coding validation, and compliance checking—achieving 95%+ clean claim rates."
-      image={paymentPostingImage}
+      image={prebillImage}
       primaryAction={{
         label: "Request a Demo",
         onClick: () => navigate("/contact-us"),

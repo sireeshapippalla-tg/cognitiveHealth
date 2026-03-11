@@ -93,15 +93,14 @@ export const Actions = styled(Box)(({ theme }) => ({
 }));
 
 export const ImageWrapper = styled(Box)(() => ({
-  // width: "100%",
-  // display: "flex",
-  // justifyContent: "center",
-   width: "100%",
+  width: "100%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
-  // maxHeight: "480px",   // control section height
-  // overflow: "hidden",
+  //  width: "100%",
+  // display: "flex",
+  // justifyContent: "center",
+  // alignItems: "center",
+
 }));
 // export const ImageWrapper = styled(Box)(() => ({
 //   width: "100%",
@@ -112,25 +111,26 @@ export const ImageWrapper = styled(Box)(() => ({
 //   // overflow: "hidden",
 // }));
 
-// export const Image = styled("img")({
-//   width: "100%",
-//   maxWidth: "700px",
-//   height: "auto",
-// });
-export const Image = styled("img")(() => ({
-  // width: "100%",
-  // maxWidth: "700px",
-  // maxHeight: "480px",
-  // objectFit: "contain",
+export const Image = styled("img")({
+  width: "100%",
+  maxWidth: "700px",
+  height: "auto",
+});
 
-  // [theme.breakpoints.down("md")]: {
-  //   maxHeight: "350px",
-  // },
-   width: "100%",
-  maxWidth: "560px",
-  height: "100%",
-  objectFit: "contain",
-}));
+// export const Image = styled("img")(() => ({
+//   // width: "100%",
+//   // maxWidth: "700px",
+//   // maxHeight: "480px",
+//   // objectFit: "contain",
+
+//   // [theme.breakpoints.down("md")]: {
+//   //   maxHeight: "350px",
+//   // },
+//    width: "100%",
+//   maxWidth: "560px",
+//   height: "100%",
+//   objectFit: "contain",
+// }));
 
 // export const Image = styled("img")(({ theme }) => ({
 //   width: "100%",
