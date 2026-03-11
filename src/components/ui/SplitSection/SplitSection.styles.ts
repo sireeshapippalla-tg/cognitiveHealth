@@ -5,11 +5,11 @@ interface GridProps {
   reverse?: boolean;
 }
 
-export const Section = styled(Box)(({ theme }) => ({
+export const Section = styled(Box)<{ padding?: string }>(({ theme, padding }) => ({
   width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
-  padding: "60px 80px 10px 80px",
+  padding: padding ||"60px 80px 10px 80px",
 
   [theme.breakpoints.down("md")]: {
     padding: "48px 16px",

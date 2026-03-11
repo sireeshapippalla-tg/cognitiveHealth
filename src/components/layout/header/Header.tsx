@@ -347,18 +347,27 @@ const Header = () => {
           onMouseLeave={handleCloseSolutions}
         >
           <Paper
-            elevation={4}
+            // elevation={4}
+            // sx={{
+            //   width: 720,
+            //   borderRadius: "16px",
+            //   p: 3,
+            //   mt: 2.5,
+            //   backgroundColor: "#ffffff",
+            //   border: "1px solid #E5E7EB",
+            //   boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+            // }}
+            elevation={0}
             sx={{
-              width: 720,
-              borderRadius: "16px",
-              p: 3,
+              width: 700,
+              borderRadius: "10px",
+              p: 2,
               mt: 2.5,
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
-              boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
             }}
           >
-            <Stack direction="row" spacing={4}>
+            {/* <Stack direction="row" spacing={4}>
               <Stack spacing={3} flex={1}>
                 {solutionLinks.slice(0, 3).map((item) => (
                   <PopoverCard
@@ -388,7 +397,27 @@ const Header = () => {
                   />
                 ))}
               </Stack>
-            </Stack>
+            </Stack> */}
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 1,
+              }}
+            >
+              {solutionLinks.map((item) => (
+                <PopoverCard
+                  key={item.title}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.desc}
+                  onClick={() => {
+                    navigate(`/solutions#${item.hash}`);
+                    setSolutionsOpen(false);
+                  }}
+                />
+              ))}
+            </Box>
           </Paper>
         </Box>
       </Popper>
@@ -428,18 +457,27 @@ const Header = () => {
           </Paper> */}
 
           <Paper
-            elevation={4}
+            // elevation={4}
+            // sx={{
+            //   width: 500,
+            //   borderRadius: "16px",
+            //   p: 3,
+            //   mt: 2.5,
+            //   backgroundColor: "#ffffff",
+            //   border: "1px solid #E5E7EB",
+            //   boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+            // }}
+            elevation={0}
             sx={{
-              width: 500,
-              borderRadius: "16px",
-              p: 3,
+              width: 380,
+              borderRadius: "10px",
+              p: 2,
               mt: 2.5,
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
-              boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
             }}
           >
-            <Stack direction="row" spacing={4}>
+            {/* <Stack direction="row" spacing={4}>
               <Stack spacing={3} flex={1}>
                 {resourceLinks.slice(0, 2).map((item) => (
                   // <SolutionItem
@@ -463,12 +501,6 @@ const Header = () => {
 
               <Stack spacing={3} flex={1}>
                 {resourceLinks.slice(2).map((item) => (
-                  // <SolutionItem
-                  //   key={item.title}
-                  //   {...item}
-                  //   active={isActive(item.path)}
-                  //   onNavigate={handleNavigate}
-                  // />
                   <PopoverCard
                     key={item.hash}
                     icon={item.icon}
@@ -481,7 +513,27 @@ const Header = () => {
                   />
                 ))}
               </Stack>
-            </Stack>
+            </Stack> */}
+             <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 1,
+              }}
+            >
+              {resourceLinks.map((item) => (
+                <PopoverCard
+                 key={item.hash}
+                    icon={item.icon}
+                    // label="Resource"
+                    title={item.title}
+                    onClick={() => {
+                      navigate(`/resources#${item.hash}`);
+                      setResourcesOpen(false);
+                    }}
+                />
+              ))}
+            </Box>
           </Paper>
         </Box>
       </Popper>

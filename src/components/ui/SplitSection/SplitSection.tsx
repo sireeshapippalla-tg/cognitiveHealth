@@ -26,6 +26,7 @@ interface SplitSectionProps {
   reverse?: boolean;
   primaryAction?: Action;
   secondaryAction?: Action;
+  padding?: string;
 }
 
 const SplitSection = ({
@@ -36,9 +37,10 @@ const SplitSection = ({
   reverse = false,
   primaryAction,
   secondaryAction,
+  padding
 }: SplitSectionProps) => {
   return (
-    <Section>
+    <Section padding={padding}>
       <Grid reverse={reverse}>
         {/* CONTENT */}
         <Content>

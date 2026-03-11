@@ -268,15 +268,7 @@ const RCMReadinessScreen: React.FC = () => {
   return (
     // <HeaderWrapper>
     <>
-      {/* <Stack spacing={2} mb={2}>
-        <HeaderTitle>
-          Revenue Cycle Management AI Readiness Assessment
-        </HeaderTitle>
-        <HeaderSubText>
-          Use this checklist to determine if your organization is ready for
-          AI-driven automation.
-        </HeaderSubText>
-      </Stack> */}
+      
 
       <HeroSection>
         <HeroTitle>Revenue Cycle Management AI Readiness Assessment</HeroTitle>
@@ -287,7 +279,7 @@ const RCMReadinessScreen: React.FC = () => {
         </HeroSubtitle>
       </HeroSection>
       <HeaderWrapper ref={pdfRef}>
-        <Box display="flex" alignItems="center" mb={3}></Box>
+       
         <Box mb={4}>
           <Stack
             direction="row"

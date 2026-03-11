@@ -1,5 +1,5 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxMAnagement.jpeg";
-import paymentPostingImage from "../../../assets/solutions/bannerImages/lockbox_workflow_transparent.png";
+import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxNew.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 
