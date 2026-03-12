@@ -1,5 +1,5 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxMAnagement.jpeg";
-import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxNew.png";
+import paymentPostingImage from "../../../assets/solutions/editedimgs/lockbox.jpeg";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const SolutionsHeroSection = () => {
   return (
     <SplitSection
       eyebrow="Lockbox management "
+      padding="20px 80px 10px 80px"
       description="Transform paper remittances and correspondence into digital workflows with AI-powered lockbox management that eliminates manual data entry and tracking"
       image={paymentPostingImage}
      primaryAction={{
