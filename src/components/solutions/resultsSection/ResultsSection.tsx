@@ -28,6 +28,7 @@ import AppButton from "../../ui/appButton/AppButton";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import emailjs from "@emailjs/browser";
 
 const stats = [
   {
@@ -134,19 +135,22 @@ const ResultsSection = () => {
     try {
       setLoading(true);
 
-      // fetch the pdf file
-      const response = await fetch(pdfFile);
-      const blob = await response.blob();
+      // Using EmailJS to send the email directly from the frontend
+      // IMPORTANT: You need to replace these with your actual EmailJS IDs
+      // Create an account at https://www.emailjs.com/
+      // Ensure the PDF link has the full, absolute URL so it works in the email
+      // Example locally: http://localhost:3000/National-Provider-Organization...pdf
+      const absolutePdfLink = window.location.origin + pdfFile;
 
-      // create form data
-      const formData = new FormData();
-      formData.append("email", email);
-      formData.append("file", blob, "results.pdf");
-
-      await fetch("/api/send-results-pdf", {
-        method: "POST",
-        body: formData,
-      });
+      await emailjs.send(
+        "service_87hf7ak", // Replace with your EmailJS Service ID
+        "template_xs1xiis", // Replace with your EmailJS Template ID
+        {
+          to_email: email,
+          pdf_link: absolutePdfLink, // Send the full clickable URL to the PDF
+        },
+        "97EUcQj5LwbXO5vNo" // Replace with your EmailJS Public Key
+      );
 
       toast.success("PDF sent successfully to your email!");
       setOpenEmailDialog(false);
