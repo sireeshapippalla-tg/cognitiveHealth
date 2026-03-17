@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const TrustSection = styled(Box)(({ theme }) => ({
-  marginTop: "0px",
+  marginTop: "30px",
   [theme.breakpoints.down("md")]: {
     textAlign: "center",
   },
