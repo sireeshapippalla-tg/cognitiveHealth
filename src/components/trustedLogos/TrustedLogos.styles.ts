@@ -94,7 +94,7 @@ export const TrustSection = styled(Box)(() => ({
   },
 }));
 
-export const TrustTitle = styled(Box)(({ theme }) => ({
+export const TrustTitle = styled(Box)(() => ({
   fontSize: "13px",
   textTransform: "uppercase",
   letterSpacing: "0.25em",
