@@ -1,25 +1,25 @@
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useNavigate } from "react-router-dom";
-import AppButton from "../../ui/appButton/AppButton";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import { ProcessStep } from "../../ui/processStep/ProcessStep";
-import {
-  StepsCard,
-  StepsRow,
-  ArrowBox,
-  ButtonsRow,
-  Wrapper,
-  SectionContainer,
-} from "./HowItWorksSection.style";
+// import AppButton from "../../ui/appButton/AppButton";
+// import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
+// import { ProcessStep } from "../../ui/processStep/ProcessStep";
+// import {
+//   StepsCard,
+//   StepsRow,
+//   ArrowBox,
+//   ButtonsRow,
+//   Wrapper,
+//   SectionContainer,
+// } from "./HowItWorksSection.style";
 
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import MapIcon from "@mui/icons-material/Map";
+// import LightbulbIcon from "@mui/icons-material/Lightbulb";
+// import MapIcon from "@mui/icons-material/Map";
 import { motion } from "framer-motion";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 const steps = [
   {
@@ -81,12 +81,12 @@ const HowItWorksSection = () => {
 
     <Box sx={{ py: 12, px: { xs: 2, md: 8 }, background: "#f9fafb" }}>
       {/* Title */}
-      <Typography 
-        variant="h4" 
-        align="center" 
-        fontWeight={700} 
+      <Typography
+        variant="h4"
+        align="center"
+        fontWeight={700}
         mb={10}
-       
+
         sx={{
           fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
           lineHeight: 1.3,

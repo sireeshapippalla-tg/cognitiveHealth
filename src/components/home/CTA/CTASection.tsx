@@ -1,10 +1,6 @@
-import { useRef } from "react";
-import { Box, Typography, Button, Container, Stack } from "@mui/material";
+import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import { motion, useInView } from "framer-motion";
-import useCountUp from "../../ui/useCountUp";
+import { motion } from "framer-motion";
 
 const CTASection = () => {
   return (
@@ -189,115 +185,8 @@ const CTASection = () => {
             </motion.div>
           </Box>
 
-          {/* 🔥 REDESIGNED TOTAL SECTION (Statistics)
-          <Box
-            sx={{
-              background: "rgba(248, 250, 252, 0.6)",
-              borderRadius: "24px",
-              p: { xs: 3, md: 4 },
-              border: "1px solid rgba(0, 0, 0, 0.05)",
-            }}
-          >
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={{ xs: 4, sm: 6, md: 10 }}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <StatItem
-                number={50}
-                suffix="+"
-                label="Healthcare Organizations"
-                icon={<BusinessCenterIcon sx={{ fontSize: 32, color: "#6BBF59" }} />}
-              />
-              <Box
-                sx={{
-                  width: { xs: "80%", sm: "1px" },
-                  height: { xs: "1px", sm: "50px" },
-                  background: "rgba(0,0,0,0.1)",
-                }}
-              />
-              <StatItem
-                number={10}
-                suffix="M+"
-                label="Claims Processed Monthly"
-                icon={<ReceiptLongIcon sx={{ fontSize: 32, color: "#4A90E2" }} />}
-              />
-            </Stack>
-          </Box> */}
         </Box>
       </Container>
-    </Box>
-  );
-};
-
-interface StatItemProps {
-  number: number;
-  suffix: string;
-  label: string;
-  icon: React.ReactNode;
-}
-
-const StatItem = ({ number, suffix, label, icon }: StatItemProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.5 });
-  const count = useCountUp(isInView ? number : 0, 2000);
-
-  return (
-    <Box
-      ref={ref}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        flex: 1,
-      }}
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, type: "spring" }}
-        viewport={{ once: false }}
-      >
-        <Box
-          sx={{
-            p: 1.5,
-            borderRadius: "16px",
-            background: "#ffffff",
-            mb: 2,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.05)",
-          }}
-        >
-          {icon}
-        </Box>
-      </motion.div>
-      <Box display="flex" alignItems="baseline">
-        <Typography
-          variant="h4"
-          fontWeight={800}
-          sx={{
-            color: "#0f172a",
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            lineHeight: 1,
-            mb: 1
-          }}
-        >
-          {Math.floor(count)}
-          {suffix}
-        </Typography>
-      </Box>
-      <Typography
-        variant="body2"
-        sx={{
-          color: "#475569",
-          fontWeight: 600,
-          letterSpacing: "0.5px",
-          textTransform: "uppercase",
-          fontSize: "0.75rem",
-        }}
-      >
-        {label}
-      </Typography>
     </Box>
   );
 };
