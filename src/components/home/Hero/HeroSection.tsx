@@ -13,7 +13,9 @@ import heroSectionImage from "../../../assets/HomeScreen.svg";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
-
+import { Box, Typography, Button } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { motion } from "framer-motion";
 const HeroSection = () => {
   const navigate = useNavigate();
   const logos = [
@@ -40,7 +42,7 @@ const HeroSection = () => {
   ];
   return (
     <>
-      <SplitSection
+      {/* <SplitSection
         eyebrow={
           <>
             Transform Your Revenue Cycle with{" "}
@@ -60,14 +62,213 @@ const HeroSection = () => {
           label: "See Platform in Action",
           onClick: () => navigate("/resources#videos"),
         }}
-      />
+      /> */}
+
+      <Box
+        sx={{
+          px: { xs: 3, md: 10 },
+          py: 12,
+          position: "relative",
+          overflow: "hidden",
+          background: "#F9FAFB",
+        }}
+      >
+        {/* 🔥 FLOATING BACKGROUND BLOBS */}
+        <motion.div
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          style={{
+            position: "absolute",
+            width: 250,
+            height: 250,
+            background: "radial-gradient(circle, #F47A20, transparent)",
+            filter: "blur(120px)",
+            top: "-80px",
+            left: "-80px",
+            opacity: 0.2,
+          }}
+        />
+        <motion.div
+          animate={{ y: [0, 20, 0] }}
+          transition={{ duration: 7, repeat: Infinity }}
+          style={{
+            position: "absolute",
+            width: 250,
+            height: 250,
+            background: "radial-gradient(circle, #6BBF59, transparent)",
+            filter: "blur(120px)",
+            bottom: "-80px",
+            right: "-80px",
+            opacity: 0.2,
+          }}
+        />
+
+        <Box
+          display="grid"
+          gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
+          gap={8}
+          alignItems="center"
+        >
+          {/* 🔥 LEFT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* HEADLINE */}
+            <Typography
+              variant="h2"
+              fontWeight="bold"
+              sx={{
+                mb: 3,
+                color: "#1F2937",
+                lineHeight: 1.2,
+              }}
+            >
+              Transform Your Revenue Cycle with{" "}
+              <Box
+                component="span"
+                sx={{
+                  background:
+                    "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  animation: "gradientMove 5s linear infinite",
+                  backgroundSize: "200% auto",
+                }}
+              >
+                Autonomous AI Agents
+              </Box>
+            </Typography>
+
+            {/* SUBTEXT */}
+            <Typography
+              sx={{
+                color: "#6B7280",
+                mb: 5,
+                fontSize: "17px",
+                maxWidth: "520px",
+              }}
+            >
+              Deploy a network of specialized AI agents that automate your most
+              complex RCM workflows—reducing costs by up to 80% while
+              accelerating cash flow and empowering your team to deliver
+              exceptional patient experiences.
+            </Typography>
+
+            {/* BUTTONS */}
+            <Box display="flex" gap={2} flexWrap="wrap">
+              {/* PRIMARY */}
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button
+                  variant="contained"
+                  endIcon={<ArrowForwardIcon />}
+                  sx={{
+                    px: 5,
+                    py: 1.6,
+                    borderRadius: "40px",
+                    fontWeight: "bold",
+                    textTransform: "none",
+                    position: "relative",
+                    overflow: "hidden",
+
+                    background:
+                      "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+
+                    boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: "-80%",
+                      width: "60%",
+                      height: "100%",
+                      background:
+                        "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                      transform: "skewX(-20deg)",
+                    },
+
+                    "&:hover::after": {
+                      left: "130%",
+                      transition: "0.7s",
+                    },
+                  }}
+                  onClick={() => navigate("/contact-us")}
+                >
+                  Request a Demo
+                </Button>
+              </motion.div>
+
+              {/* SECONDARY */}
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button
+                  onClick={() => navigate("/resources#videos")}
+                  variant="outlined"
+                  endIcon={<ArrowForwardIcon />}
+                  sx={{
+                    px: 5,
+                    py: 1.6,
+                    borderRadius: "40px",
+                    textTransform: "none",
+                    fontWeight: 500,
+                    borderColor: "#6BBF59",
+                    color: "#1F2937",
+
+                    "&:hover": {
+                      background: "rgba(107,191,89,0.1)",
+                      borderColor: "#F47A20",
+                    },
+                  }}
+                >
+                  See Platform in Action
+                </Button>
+              </motion.div>
+            </Box>
+          </motion.div>
+
+          {/* 🔥 RIGHT DASHBOARD (FLOATING + DEPTH) */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ rotate: 1 }}
+          >
+            <Box
+              sx={{
+                borderRadius: "20px",
+                overflow: "hidden",
+                background: "#fff",
+                border: "1px solid #E5E7EB",
+                boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
+                transform: "perspective(1000px) rotateX(3deg)",
+              }}
+            >
+              <img
+                src={heroSectionImage}
+                alt="dashboard"
+                style={{ width: "100%", display: "block" }}
+              />
+            </Box>
+          </motion.div>
+        </Box>
+
+        {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
+        <style>
+          {`
+          @keyframes gradientMove {
+            0% { background-position: 0% }
+            100% { background-position: 200% }
+          }
+        `}
+        </style>
+      </Box>
       {/* TRUSTED BY */}
       <TrustedLogos
         title="Trusted by leading health systems and physician groups and specialty providers"
         logos={logos}
         speed={40}
       />
-      
     </>
   );
 };

@@ -19,7 +19,6 @@
 //   marginBottom: "32px",
 //   color: "#0E0E0E",
 //   fontWeight: 600,
-  
 
 //   [theme.breakpoints.down("md")]: {
 //     flexDirection: "column",
@@ -71,67 +70,109 @@
 //   },
 // });
 
-
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const TrustSection = styled(Box)(() => ({
-  marginTop: "120px",
-  padding: "80px 0",
+  // marginTop: "100px",
+  padding: "60px 0",
   position: "relative",
-  // backgroundColor: "transparent",
-  borderTop: "1px solid var(--color-divider)",
-  borderBottom: "1px solid var(--color-divider)",
+  overflow: "hidden",
+  // background: "#F9FAFB",
+
+  // 🔥 background glow (brand)
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    width: "220px",
+    height: "220px",
+    background: "radial-gradient(circle, #F47A20, transparent)",
+    filter: "blur(120px)",
+    top: "-60px",
+    left: "-60px",
+    opacity: 0.15,
+  },
 }));
 
 export const TrustTitle = styled(Box)(({ theme }) => ({
-  fontSize: "0.8rem",
+  fontSize: "13px",
   textTransform: "uppercase",
   letterSpacing: "0.25em",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "32px",
-  marginBottom: "64px",
-  color: "var(--color-primary)",
-  fontWeight: 800,
-  fontFamily: '"Outfit", sans-serif',
-  opacity: 0.6,
+  textAlign: "center",
+  marginBottom: "40px",
+  fontWeight: 700,
 
-  "&::before, &::after": {
-    content: '""',
-    height: "1px",
-    width: "40px",
-    background: "currentColor",
-    opacity: 0.3,
-  },
-
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-    textAlign: "center",
-    gap: "12px",
-    "&::before, &::after": { display: "none" },
-  },
+  // 🔥 gradient text
+  background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
 }));
+
+export const LogoScrollWrapper = styled("div")({
+  overflow: "hidden",
+  width: "100%",
+  position: "relative",
+
+  // 🔥 edge fade mask
+  WebkitMaskImage:
+    "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+  maskImage:
+    "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+
+  "&:hover div": {
+    animationPlayState: "paused",
+  },
+
+  // 🔥 center spotlight
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "200px",
+    height: "100%",
+    background:
+      "radial-gradient(circle, rgba(255,255,255,0.9), transparent 70%)",
+    pointerEvents: "none",
+    zIndex: 2,
+  },
+});
+
+export const LogoTrack = styled("div")({
+  display: "flex",
+  width: "fit-content",
+
+  animation: "scroll 30s linear infinite",
+
+  "@keyframes scroll": {
+    "0%": {
+      transform: "translateX(0)",
+    },
+    "100%": {
+      transform: "translateX(-50%)", // must match duplication
+    },
+  },
+});
 
 export const LogoGrid = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
-  justifyContent: "space-between",
-  gap: "100px",
-  padding: "0 50px",
+  gap: "80px",
+  padding: "0 40px",
 }));
 
 export const LogoImage = styled("img")(({ theme }) => ({
-  height: "36px",
-  maxWidth: "180px",
+  height: "40px",
+  maxWidth: "160px",
   objectFit: "contain",
-  filter: "grayscale(1) contrast(0.8) opacity(0.5)",
+
+  // 🔥 default faded look
+  // filter: "grayscale(1) opacity(0.4)",
   transition: "all 0.4s ease",
-  cursor: "pointer",
 
   "&:hover": {
-    filter: "grayscale(0) contrast(1) opacity(1)",
+    filter: "grayscale(0) opacity(1)",
     transform: "scale(1.1)",
   },
 
@@ -139,21 +180,3 @@ export const LogoImage = styled("img")(({ theme }) => ({
     height: "28px",
   },
 }));
-
-export const LogoScrollWrapper = styled("div")({
-  overflow: "hidden",
-  width: "100%",
-  WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
-  maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
-});
-
-export const LogoTrack = styled("div")({
-  display: "flex",
-  width: "max-content",
-  animation: "scroll 40s linear infinite",
-  alignItems: "center",
-  "@keyframes scroll": {
-    "0%": { transform: "translateX(0)" },
-    "100%": { transform: "translateX(-50%)" },
-  },
-});
