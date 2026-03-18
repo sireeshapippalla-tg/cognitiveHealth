@@ -29,11 +29,12 @@ export const Inner = styled(Box)({
 export const Title = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "align",
 })<TitleProps>(({ theme, align = "center" }) => ({
-  fontSize: "28px",
+  fontSize: "40px",
   fontWeight: 700,
   textAlign: align,
   color: "#111827",
   marginBottom: "8px",
+  lineHeight:"52px",
 
   "& span": {
     color: "#ea580c",
@@ -47,7 +48,7 @@ export const Title = styled(Typography, {
 export const Subtitle = styled(Typography)(({ theme }) => ({
   // fontFamily: "Inter",
   textAlign: "center",
-  fontSize: "15px",
+  fontSize: "18px",
   color: "var(--color-text-light)",
   maxWidth: "720px",
   margin: "0 auto 48px",
