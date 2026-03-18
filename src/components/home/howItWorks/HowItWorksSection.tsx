@@ -16,7 +16,6 @@ import {
   SectionContainer,
 } from "./HowItWorksSection.style";
 
-
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import MapIcon from "@mui/icons-material/Map";
 import { motion } from "framer-motion";
@@ -81,7 +80,6 @@ const HowItWorksSection = () => {
     // </SectionContainer>
 
     <Box sx={{ py: 12, px: { xs: 2, md: 8 }, background: "#f9fafb" }}>
-      
       {/* Title */}
       <Typography variant="h4" align="center" fontWeight={700} mb={10}>
         How It Works
@@ -89,7 +87,6 @@ const HowItWorksSection = () => {
 
       {/* Timeline */}
       <Box sx={{ position: "relative", maxWidth: 900, mx: "auto" }}>
-        
         {/* Center Line */}
         <Box
           sx={{
@@ -137,7 +134,7 @@ const HowItWorksSection = () => {
                       width: 70,
                       height: 70,
                       borderRadius: "50%",
-                      background: "#ff6b35",
+                      background: "#F47A20",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -174,19 +171,37 @@ const HowItWorksSection = () => {
         <motion.div whileHover={{ scale: 1.05 }}>
           <Button
             sx={{
-              background: "#ff6b35",
-              color: "#fff",
               px: 5,
-              py: 1.5,
-              borderRadius: "30px",
-              fontWeight: 600,
+              py: 1.6,
+              borderRadius: "40px",
+              fontWeight: "bold",
               textTransform: "none",
-              fontSize: 16,
-              "&:hover": {
-                background: "#e55a2b",
+              position: "relative",
+              overflow: "hidden",
+              background: "#F47A20",
+              // background:
+              //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+              color: "white",
+              boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: "-80%",
+                width: "60%",
+                height: "100%",
+                background:
+                  "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                transform: "skewX(-20deg)",
+              },
+
+              "&:hover::after": {
+                left: "130%",
+                transition: "0.7s",
               },
             }}
-             onClick={() => navigate("/rcm-readines")}
+            onClick={() => navigate("/rcm-readines")}
           >
             Take Assessment →
           </Button>

@@ -170,9 +170,9 @@ const HeroSection = () => {
                     textTransform: "none",
                     position: "relative",
                     overflow: "hidden",
-
-                    background:
-                      "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                    background: "#F47A20",
+                    // background:
+                    //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
 
                     boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
 
@@ -211,8 +211,8 @@ const HeroSection = () => {
                     borderRadius: "40px",
                     textTransform: "none",
                     fontWeight: 500,
-                    borderColor: "#6BBF59",
-                    color: "#1F2937",
+                    borderColor: "#F47A20",
+                    color: "#F47A20",
 
                     "&:hover": {
                       background: "rgba(107,191,89,0.1)",

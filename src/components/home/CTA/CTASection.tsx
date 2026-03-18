@@ -124,22 +124,37 @@ const CTASection = () => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 aria-label="Request a Demo"
-                sx={{
-                  px: 5,
-                  py: 1.8,
-                  borderRadius: "50px",
-                  fontWeight: 700,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  color: "#fff",
-                  background: "linear-gradient(90deg, #F47A20, #E06912)",
-                  boxShadow: "0 10px 30px rgba(244, 122, 32, 0.3)",
-                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  "&:hover": {
-                    background: "linear-gradient(90deg, #E06912, #F47A20)",
-                    boxShadow: "0 15px 40px rgba(244, 122, 32, 0.5)",
-                  },
-                }}
+                 sx={{
+                    px: 5,
+                    py: 1.6,
+                    borderRadius: "40px",
+                    fontWeight: "bold",
+                    textTransform: "none",
+                    position: "relative",
+                    overflow: "hidden",
+                    background: "#F47A20",
+                    // background:
+                    //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+
+                    boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: "-80%",
+                      width: "60%",
+                      height: "100%",
+                      background:
+                        "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                      transform: "skewX(-20deg)",
+                    },
+
+                    "&:hover::after": {
+                      left: "130%",
+                      transition: "0.7s",
+                    },
+                  }}
               >
                 Request a Demo
               </Button>
@@ -151,23 +166,20 @@ const CTASection = () => {
                 variant="outlined"
                 endIcon={<ArrowForwardIcon />}
                 aria-label="See Platform in Action"
-                sx={{
-                  px: 5,
-                  py: 1.8,
-                  borderRadius: "50px",
-                  fontWeight: 600,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  color: "#0f172a",
-                  borderColor: "rgba(15, 23, 42, 0.2)",
-                  background: "rgba(255, 255, 255, 0.8)",
-                  backdropFilter: "blur(10px)",
-                  "&:hover": {
-                    borderColor: "#6BBF59",
-                    background: "rgba(107, 191, 89, 0.1)",
-                    color: "#6BBF59",
-                  },
-                }}
+              sx={{
+                    px: 5,
+                    py: 1.6,
+                    borderRadius: "40px",
+                    textTransform: "none",
+                    fontWeight: 500,
+                    borderColor: "#F47A20",
+                    color: "#F47A20",
+
+                    "&:hover": {
+                      background: "rgba(107,191,89,0.1)",
+                      borderColor: "#F47A20",
+                    },
+                  }}
               >
                 See Platform in Action
               </Button>

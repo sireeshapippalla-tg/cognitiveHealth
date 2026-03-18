@@ -98,8 +98,9 @@ const ImpactSection = () => {
             borderRadius: "20px",
             background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
             color: "#fff",
-            fontSize: "12px",
+            fontSize: "14px",
             mb: 2,
+            fontWeight:600
           }}
         >
           Proven Results That Matter
