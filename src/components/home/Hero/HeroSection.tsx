@@ -8,9 +8,7 @@ import mindPathLogo from "../../../assets/mindpath-logo.svg";
 import mercyImg from "../../../assets/Resources/mercyLogo.png";
 import yaleImg from "../../../assets/yale.svg";
 
-import SplitSection from "../../ui/SplitSection/SplitSection";
 import heroSectionImage from "../../../assets/HomeScreen.svg";
-import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
 import { Box, Typography, Button } from "@mui/material";
@@ -114,6 +112,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             {/* HEADLINE */}
             <Typography
@@ -232,6 +231,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
             whileHover={{ rotate: 1 }}
           >
             <Box

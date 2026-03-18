@@ -71,7 +71,7 @@ const CTASection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <Typography
               variant="h3"
@@ -93,7 +93,7 @@ const CTASection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <Typography
               sx={{
@@ -174,7 +174,7 @@ const CTASection = () => {
             </motion.div>
           </Box>
 
-          {/* 🔥 REDESIGNED TOTAL SECTION (Statistics) */}
+          {/* 🔥 REDESIGNED TOTAL SECTION (Statistics)
           <Box
             sx={{
               background: "rgba(248, 250, 252, 0.6)",
@@ -209,7 +209,7 @@ const CTASection = () => {
                 icon={<ReceiptLongIcon sx={{ fontSize: 32, color: "#4A90E2" }} />}
               />
             </Stack>
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </Box>
@@ -225,7 +225,7 @@ interface StatItemProps {
 
 const StatItem = ({ number, suffix, label, icon }: StatItemProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
   const count = useCountUp(isInView ? number : 0, 2000);
 
   return (
@@ -242,7 +242,7 @@ const StatItem = ({ number, suffix, label, icon }: StatItemProps) => {
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
       >
         <Box
           sx={{

@@ -128,7 +128,7 @@ const ImpactSection = () => {
 
 const StatCard = ({ item }: any) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: false });
 
   const radius = 60;
   const stroke = 8;
