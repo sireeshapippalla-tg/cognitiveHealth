@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Box, Typography, Container, Grid } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Integration from "../../assets/Platform/Enterprise/Integration.svg";
 import Connectivity from "../../assets/Platform/Enterprise/Connectivity.svg";
 import API from "../../assets/Platform/Enterprise/API.svg";
 import Deployement from "../../assets/Platform/Enterprise/Deployement.svg";
 
 const EnterpriseReadinessSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const enterpriseItems = [
     {
       icon: <img src={Integration} alt="Integration" />,
@@ -34,7 +37,7 @@ const EnterpriseReadinessSection = () => {
   ];
 
   return (
-    <Box sx={{ py: 12, bgcolor: "#f8fafc", position: "relative" }}>
+    <Box sx={{ py: 12, bgcolor: "#f8fafc", position: "relative", overflow: "hidden" }}>
       <Container maxWidth="lg">
         {/* Header Section */}
         <motion.div
@@ -42,7 +45,7 @@ const EnterpriseReadinessSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: "80px" }}
+          style={{ textAlign: "center", marginBottom: "60px" }}
         >
           <Typography
             sx={{
@@ -66,109 +69,217 @@ const EnterpriseReadinessSection = () => {
           </Typography>
         </motion.div>
 
-        {/* Alternating Zig-Zag Features */}
-        <Box display="flex" flexDirection="column" gap={{ xs: 8, md: 12 }}>
-          {enterpriseItems.map((item, index) => {
-            const isEven = index % 2 === 0;
-
-            return (
-              <Grid
-                container
-                spacing={8}
-                alignItems="center"
-                direction={{ xs: "column-reverse", md: isEven ? "row" : "row-reverse" }}
-                key={index}
-              >
-                {/* Text Content */}
-                <Grid size={{ xs: 12, md: 6 }}>
+        {/* Interactive Interactive Stage */}
+        <Grid container spacing={6} alignItems="center">
+          {/* LEFT SIDE: Navigation List */}
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Box display="flex" flexDirection="column" gap={3}>
+              {enterpriseItems.map((item, index) => {
+                const isActive = activeIndex === index;
+                return (
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.7, type: "spring" }}
-                  >
-                    <Box sx={{ pr: isEven ? 4 : 0, pl: isEven ? 0 : 4, textAlign: "left" }}>
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          fontWeight: 800,
-                          fontSize: { xs: "1.75rem", md: "2.25rem" },
-                          color: "#0f172a",
-                          mb: 3,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: "1.125rem",
-                          lineHeight: 1.8,
-                          color: "#475569",
-                        }}
-                      >
-                        {item.description}
-                      </Typography>
-                    </Box>
-                  </motion.div>
-                </Grid>
-
-                {/* Big Visual Icon */}
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.7, type: "spring", delay: 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    onClick={() => setActiveIndex(index)}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    style={{ cursor: "pointer" }}
                   >
                     <Box
                       sx={{
-                        width: "100%",
-                        height: "300px",
-                        position: "relative",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
-                        borderRadius: "32px",
-                        background: "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
-                        boxShadow: "0 20px 40px rgba(74, 144, 226, 0.3)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        overflow: "hidden",
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          width: "300px",
-                          height: "300px",
-                          background: "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%)",
-                          filter: "blur(40px)",
-                          zIndex: 0,
+                        gap: 3,
+                        p: 3,
+                        pr: 4,
+                        borderRadius: "20px",
+                        background: isActive ? "#ffffff" : "transparent",
+                        boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.06)" : "none",
+                        border: "1px solid",
+                        borderColor: isActive ? "rgba(74, 144, 226, 0.2)" : "transparent",
+                        transition: "all 0.3s ease",
+                        transform: isActive ? "scale(1.02)" : "scale(1)",
+                        "&:hover": {
+                          background: isActive ? "#ffffff" : "rgba(255,255,255,0.4)",
                         },
                       }}
                     >
+                      {/* Small Icon */}
                       <Box
                         sx={{
-                          position: "relative",
-                          zIndex: 1,
-                          width: "100px",
-                          height: "100px",
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "14px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                          background: isActive
+                            ? "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)"
+                            : "#e2e8f0",
+                          boxShadow: isActive ? "0 10px 20px rgba(74, 144, 226, 0.3)" : "none",
                           "& img": {
-                            width: "100%",
-                            height: "100%",
+                            width: "28px",
+                            height: "28px",
                             objectFit: "contain",
-                            filter: "brightness(0) invert(1) drop-shadow(0 10px 15px rgba(0,0,0,0.2))",
-                            transform: "scale(1.2)",
+                            filter: isActive
+                              ? "brightness(0) invert(1)"
+                              : "brightness(0) opacity(0.5)",
+                            transition: "all 0.3s ease",
                           },
                         }}
                       >
                         {item.icon}
                       </Box>
+
+                      {/* Title */}
+                      <Typography
+                        sx={{
+                          fontWeight: isActive ? 800 : 600,
+                          fontSize: "1.15rem",
+                          color: isActive ? "#0f172a" : "#64748b",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+
+                      {/* Active Indicator Line */}
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeIndicator"
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            top: "20%",
+                            bottom: "20%",
+                            width: "4px",
+                            background: "#4A90E2",
+                            borderRadius: "0 4px 4px 0",
+                          }}
+                        />
+                      )}
                     </Box>
                   </motion.div>
-                </Grid>
-              </Grid>
-            );
-          })}
-        </Box>
+                );
+              })}
+            </Box>
+          </Grid>
+
+          {/* RIGHT SIDE: Massive Display Stage */}
+          <Grid size={{ xs: 12, md: 7 }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                style={{ height: "100%" }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    borderRadius: "32px",
+                    background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)",
+                    border: "1px solid rgba(255,255,255,0.8)",
+                    boxShadow: "0 40px 80px rgba(0, 0, 0, 0.08)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    p: { xs: 4, md: 8 },
+                    minHeight: { xs: "auto", md: "500px" },
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      width: "400px",
+                      height: "400px",
+                      background: "radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%)",
+                      top: "-100px",
+                      right: "-100px",
+                      filter: "blur(60px)",
+                      zIndex: 0,
+                    },
+                  }}
+                >
+                  <Box sx={{ position: "relative", zIndex: 1 }}>
+                    {/* Massive Faint Icon in Background */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "-20px",
+                        right: "-20px",
+                        width: "200px",
+                        height: "200px",
+                        opacity: 0.05,
+                        pointerEvents: "none",
+                        "& img": {
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          filter: "grayscale(100%)",
+                        },
+                      }}
+                    >
+                      {enterpriseItems[activeIndex].icon}
+                    </Box>
+
+                    {/* Stage Presentation Icon */}
+                    <Box
+                      sx={{
+                        width: "90px",
+                        height: "90px",
+                        borderRadius: "24px",
+                        background: "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 15px 30px rgba(74, 144, 226, 0.3)",
+                        mb: 5,
+                        "& img": {
+                          width: "45px",
+                          height: "45px",
+                          objectFit: "contain",
+                          filter: "brightness(0) invert(1)",
+                        },
+                      }}
+                    >
+                      {enterpriseItems[activeIndex].icon}
+                    </Box>
+
+                    {/* Stage Presentation Text */}
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontWeight: 800,
+                        fontSize: { xs: "1.8rem", md: "2.5rem" },
+                        color: "#0f172a",
+                        mb: 3,
+                        lineHeight: 1.2,
+                        letterSpacing: "-0.5px",
+                      }}
+                    >
+                      {enterpriseItems[activeIndex].title}
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        fontSize: "1.15rem",
+                        lineHeight: 1.8,
+                        color: "#475569",
+                      }}
+                    >
+                      {enterpriseItems[activeIndex].description}
+                    </Typography>
+                  </Box>
+                </Box>
+              </motion.div>
+            </AnimatePresence>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );
