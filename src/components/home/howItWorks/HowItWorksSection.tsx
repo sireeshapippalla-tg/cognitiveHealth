@@ -97,13 +97,13 @@ const HowItWorksSection = () => {
 
       {/* Timeline */}
       <Box sx={{ position: "relative", maxWidth: 900, mx: "auto" }}>
-        {/* Center Line */}
+        {/* Vertical Line */}
         <Box
           sx={{
             position: "absolute",
-            left: "50%",
+            left: { xs: "35px", md: "50%" },
             top: 0,
-            transform: "translateX(-50%)",
+            transform: { xs: "none", md: "translateX(-50%)" },
             width: "3px",
             height: "100%",
             background: "#e0e0e0",
@@ -124,14 +124,15 @@ const HowItWorksSection = () => {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: isLeft ? "flex-start" : "flex-end",
+                  justifyContent: { xs: "flex-start", md: isLeft ? "flex-start" : "flex-end" },
                   mb: 8,
                 }}
               >
                 <Box
                   sx={{
-                    width: { xs: "100%", md: "45%" },
-                    textAlign: isLeft ? "right" : "left",
+                    width: { xs: "calc(100% - 70px)", md: "45%" },
+                    ml: { xs: "70px", md: 0 },
+                    textAlign: { xs: "left", md: isLeft ? "right" : "left" },
                     position: "relative",
                   }}
                 >
@@ -140,7 +141,10 @@ const HowItWorksSection = () => {
                     sx={{
                       position: "absolute",
                       top: 0,
-                      [isLeft ? "right" : "left"]: "-70px",
+                      [isLeft ? "right" : "left"]: { xs: "-70px", md: "-70px" },
+                      // On mobile we already shifted the container by 70px, so left: -70px puts it exactly on the line
+                      left: { xs: "-70px", md: isLeft ? "auto" : "-70px" },
+                      right: { xs: "auto", md: isLeft ? "-70px" : "auto" },
                       width: 70,
                       height: 70,
                       borderRadius: "50%",
