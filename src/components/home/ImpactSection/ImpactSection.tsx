@@ -98,10 +98,15 @@ const ImpactSection = () => {
             borderRadius: "20px",
             background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
             color: "#fff",
-            fontSize: "14px",
+            // fontSize: "14px",
+             fontSize: { xs: "0.75rem", sm: "0.85rem" },
             mb: 2,
-            fontWeight:600
+            fontWeight:600,
+             letterSpacing: "1px",
+                textTransform: "uppercase",
+                
           }}
+              
         >
           Proven Results That Matter
         </Typography>

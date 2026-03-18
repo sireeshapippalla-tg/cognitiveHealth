@@ -16,11 +16,17 @@ const TrustDeploymentSection = () => {
 
   const itemVariants: any = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, type: "spring", bounce: 0.4 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, type: "spring", bounce: 0.4 },
+    },
   };
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: "#f8fafc", position: "relative" }}>
+    <Box
+      sx={{ py: { xs: 8, md: 12 }, bgcolor: "#f8fafc", position: "relative" }}
+    >
       <Container maxWidth="lg">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 40 }}
@@ -45,14 +51,20 @@ const TrustDeploymentSection = () => {
                 right: 0,
                 width: "600px",
                 height: "600px",
-                background: "radial-gradient(circle, rgba(74, 144, 226, 0.08) 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, rgba(74, 144, 226, 0.08) 0%, transparent 70%)",
                 transform: "translate(30%, -30%)",
                 zIndex: 0,
               },
             }}
           >
             <Box sx={{ position: "relative", zIndex: 1 }}>
-              <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }}>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+              >
                 <motion.div variants={itemVariants}>
                   <Typography
                     variant="h2"
@@ -89,7 +101,15 @@ const TrustDeploymentSection = () => {
                 >
                   {/* LEFT SIDE: Quote */}
                   <motion.div variants={itemVariants}>
-                    <Box sx={{ position: "relative", p: 4, bgcolor: "rgba(74, 144, 226, 0.05)", borderRadius: "24px", border: "1px solid rgba(74, 144, 226, 0.15)" }}>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        p: 4,
+                        bgcolor: "rgba(74, 144, 226, 0.05)",
+                        borderRadius: "24px",
+                        border: "1px solid rgba(74, 144, 226, 0.15)",
+                      }}
+                    >
                       <Typography
                         sx={{
                           position: "absolute",
@@ -115,7 +135,9 @@ const TrustDeploymentSection = () => {
                           zIndex: 1,
                         }}
                       >
-                        Processing millions of claims across 12 facilities with zero disruption — CognitiveHealth scales with our growth.
+                        Processing millions of claims across 12 facilities with
+                        zero disruption — CognitiveHealth scales with our
+                        growth.
                       </Typography>
                       <Typography
                         sx={{
@@ -133,16 +155,38 @@ const TrustDeploymentSection = () => {
 
                   {/* RIGHT SIDE: Checklist */}
                   <motion.div variants={itemVariants}>
-                    <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap: 4 }}>
+                    <Box
+                      sx={{
+                        display: "grid",
+                        gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+                        gap: 4,
+                      }}
+                    >
                       {[
                         "20+ EMR Integrations",
                         "Pre-built Connectors",
                         "HL7, FHIR, API Ready",
                         "Operational in 4–6 Weeks",
                       ].map((item, index) => (
-                        <Box key={index} sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                          <CheckCircleIcon sx={{ color: "#4A90E2", fontSize: "1.8rem", filter: "drop-shadow(0 4px 6px rgba(74,144,226,0.2))" }} />
-                          <Typography sx={{ fontWeight: 600, fontSize: "1.1rem", color: "#334155" }}>
+                        <Box
+                          key={index}
+                          sx={{ display: "flex", alignItems: "center", gap: 2 }}
+                        >
+                          <CheckCircleIcon
+                            sx={{
+                              color: "#4A90E2",
+                              fontSize: "1.8rem",
+                              filter:
+                                "drop-shadow(0 4px 6px rgba(74,144,226,0.2))",
+                            }}
+                          />
+                          <Typography
+                            sx={{
+                              fontWeight: 600,
+                              fontSize: "1.1rem",
+                              color: "#334155",
+                            }}
+                          >
                             {item}
                           </Typography>
                         </Box>
@@ -155,19 +199,40 @@ const TrustDeploymentSection = () => {
                 <motion.div variants={itemVariants}>
                   <Box sx={{ textAlign: "center", mt: 8 }}>
                     <PrimaryButton
-                      endIcon={<ArrowForwardIosIcon sx={{ fontSize: "1rem" }} />}
+                      endIcon={
+                        <ArrowForwardIosIcon sx={{ fontSize: "1rem" }} />
+                      }
                       onClick={() => setOpenModal(true)}
                       sx={{
-                        background: "linear-gradient(90deg, #4A90E2, #6BBF59)",
                         px: 5,
-                        py: 2,
-                        fontSize: "1.1rem",
-                        boxShadow: "0 10px 25px rgba(74,144,226,0.3)",
-                        color: "#fff",
-                        "&:hover": {
-                          background: "linear-gradient(90deg, #3A70B2, #4A90E2)",
-                          boxShadow: "0 15px 35px rgba(74,144,226,0.5)",
-                        }
+                        py: 1.6,
+                        borderRadius: "40px",
+                        fontWeight: "bold",
+                        textTransform: "none",
+                        position: "relative",
+                        overflow: "hidden",
+                        background: "#F47A20",
+                        // background:
+                        //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                        color: "white",
+                        boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          top: 0,
+                          left: "-80%",
+                          width: "60%",
+                          height: "100%",
+                          background:
+                            "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                          transform: "skewX(-20deg)",
+                        },
+
+                        "&:hover::after": {
+                          left: "130%",
+                          transition: "0.7s",
+                        },
                       }}
                     >
                       Learn About Our Implementation Process
