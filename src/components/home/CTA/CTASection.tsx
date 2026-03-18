@@ -74,11 +74,14 @@ const CTASection = () => {
             viewport={{ once: false }}
           >
             <Typography
-              variant="h3"
+             
               fontWeight={800}
               sx={{
                 mb: 2,
-                fontSize: { xs: "2rem", md: "3rem" },
+               
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            lineHeight: 1.3,
+     
                 background: "linear-gradient(135deg, #0f172a, #334155)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",

@@ -79,8 +79,12 @@ const PlatformIntroSection = () => {
             variant="h2"
             sx={{
               fontWeight: 800,
-              fontSize: { xs: "2rem", sm: "2.8rem", md: "3.8rem" },
-              lineHeight: 1.2,
+          
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+       
+        
+              lineHeight: 1.3,
+              letterSpacing: "-0.01em",
               mb: 4,
               maxWidth: "1000px",
               mx: "auto",
@@ -115,7 +119,7 @@ const PlatformIntroSection = () => {
           <Typography
             sx={{
               color: "#475569",
-              fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
+              fontSize: { xs: "1.125rem", md: "1.25rem" },
               lineHeight: 1.7,
               maxWidth: "860px",
               mx: "auto",

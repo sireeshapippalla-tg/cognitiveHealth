@@ -81,7 +81,17 @@ const HowItWorksSection = () => {
 
     <Box sx={{ py: 12, px: { xs: 2, md: 8 }, background: "#f9fafb" }}>
       {/* Title */}
-      <Typography variant="h4" align="center" fontWeight={700} mb={10}>
+      <Typography 
+        variant="h4" 
+        align="center" 
+        fontWeight={700} 
+        mb={10}
+       
+        sx={{
+          fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+          lineHeight: 1.3,
+        }}
+      >
         How It Works
       </Typography>
 

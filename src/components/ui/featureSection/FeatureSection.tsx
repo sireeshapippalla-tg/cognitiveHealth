@@ -34,7 +34,7 @@ const FeatureSection = ({
   return (
     <Section background={background} borderRadius={borderRadius}>
       <Inner>
-        <Container maxWidth="md">
+        <Container >
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const FeatureSection = ({
           </motion.div>
 
           {/* Timeline Container */}
-          <Box sx={{ position: "relative", py: 4 }}>
+          <Box sx={{ position: "relative", py: 4, }}>
             {/* The Continuous Vertical Line connecting all nodes */}
             <motion.div
               initial={{ height: 0 }}

@@ -116,12 +116,15 @@ const HeroSection = () => {
           >
             {/* HEADLINE */}
             <Typography
-              variant="h2"
+              // Changed to h1 for semantic meaning
               fontWeight="bold"
               sx={{
                 mb: 3,
                 color: "#1F2937",
-                lineHeight: 1.2,
+                lineHeight: 1.3,
+                letterSpacing: "-0.02em",
+
+                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
               }}
             >
               Transform Your Revenue Cycle with{" "}
@@ -145,8 +148,9 @@ const HeroSection = () => {
               sx={{
                 color: "#6B7280",
                 mb: 5,
-                fontSize: "17px",
-                maxWidth: "520px",
+                fontSize: { xs: "1.125rem", md: "1.25rem" },
+                lineHeight: 1.7,
+                maxWidth: "600px", // Slightly increased max width for bigger text
               }}
             >
               Deploy a network of specialized AI agents that automate your most

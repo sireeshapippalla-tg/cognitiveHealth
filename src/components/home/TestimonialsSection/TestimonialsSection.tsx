@@ -95,10 +95,14 @@ export default function TestimonialSection() {
       
       {/* Title */}
       <Typography
-        variant="h4"
+       
         align="center"
         fontWeight={700}
         mb={8}
+          sx={{
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            lineHeight: 1.3,
+          }}
       >
         Trusted By Healthcare Leaders
       </Typography>

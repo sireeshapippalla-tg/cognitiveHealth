@@ -111,7 +111,14 @@ const ImpactSection = () => {
           Proven Results That Matter
         </Typography>
 
-        <Typography variant="h4" fontWeight="bold">
+        <Typography 
+          // variant="h4" 
+          fontWeight="bold"
+          sx={{
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            lineHeight: 1.3,
+          }}
+        >
           Real Impact Across Every Dimension Of Revenue
           <br />
           Cycle Performance

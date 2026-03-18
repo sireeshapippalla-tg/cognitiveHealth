@@ -252,10 +252,10 @@ const EnterpriseReadinessSection = () => {
 
                     {/* Stage Presentation Text */}
                     <Typography
-                      variant="h3"
+                     
                       sx={{
                         fontWeight: 800,
-                        fontSize: { xs: "1.8rem", md: "2.5rem" },
+                        fontSize: "1.5rem",
                         color: "#0f172a",
                         mb: 3,
                         lineHeight: 1.2,

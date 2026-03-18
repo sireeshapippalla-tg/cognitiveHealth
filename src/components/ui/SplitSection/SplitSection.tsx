@@ -86,13 +86,16 @@ const SplitSection = ({
         >
           {eyebrow && (
             <Typography
-              variant="h2"
+              variant="h3"
               fontWeight="bold"
               sx={{
                 mb: title ? 1 : 3,
                 color: "#1F2937",
-                lineHeight: 1.2,
-                fontSize: { xs: "2rem", md: "3.5rem" },
+               
+           
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            lineHeight: 1.3,
+      
               }}
             >
               {eyebrow}
@@ -101,12 +104,12 @@ const SplitSection = ({
 
           {title && (
             <Typography
-              variant="h2"
+              variant="h3"
               fontWeight="bold"
               sx={{
                 mb: 3,
                 lineHeight: 1.2,
-                fontSize: { xs: "2rem", md: "3.5rem" },
+                fontSize: { xs: "1.75rem", sm: "2.25rem", md: "3rem" },
               }}
             >
               {title}
@@ -118,7 +121,8 @@ const SplitSection = ({
               sx={{
                 color: "#6B7280",
                 mb: 5,
-                fontSize: "17px",
+                fontSize: { xs: "1rem", md: "1.125rem" },
+                lineHeight: 1.7,
                 maxWidth: "520px",
               }}
             >

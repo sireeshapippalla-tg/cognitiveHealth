@@ -59,7 +59,10 @@ const ProductIntelligence = () => {
         >
           <Typography
             sx={{
-              fontSize: { xs: "2rem", md: "2.5rem" },
+              
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            lineHeight: 1.3,
+         
               fontWeight: 800,
               textAlign: "center",
               color: "#0f172a",
