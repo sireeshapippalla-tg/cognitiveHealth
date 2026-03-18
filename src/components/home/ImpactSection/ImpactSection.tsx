@@ -83,9 +83,8 @@ const ImpactSection = () => {
       sx={{
         px: 5,
         py: 10,
-        // background: "linear-gradient(135deg, #0f172a, #020617)",
-        background: "radial-gradient(circle at top, #1a233a, #020617)",
-        color: "#fff",
+        background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
+        color: "#0f172a",
         minHeight: "100vh",
       }}
     >
@@ -97,8 +96,8 @@ const ImpactSection = () => {
             px: 3,
             py: 1,
             borderRadius: "20px",
-            // background: "linear-gradient(90deg,#3b82f6,#9333ea)",
             background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
+            color: "#fff",
             fontSize: "12px",
             mb: 2,
           }}
@@ -140,14 +139,15 @@ const StatCard = ({ item }: any) => {
   return (
     <motion.div
       ref={ref}
-      whileHover={{ scale: 1.05, boxShadow: `0 20px 40px ${item.color}40` }}
+      whileHover={{ scale: 1.05, boxShadow: `0 20px 40px ${item.color}20` }}
       style={{
         position: "relative",
         borderRadius: "20px",
         padding: "30px",
-        background: "rgba(255,255,255,0.05)",
+        background: "rgba(255,255,255,1)",
         backdropFilter: "blur(12px)",
-        border: "1px solid rgba(255,255,255,0.1)",
+        border: "1px solid rgba(0,0,0,0.05)",
+        boxShadow: "0 8px 30px rgba(0,0,0,0.05)",
         cursor: "pointer",
         overflow: "hidden",
       }}
@@ -157,7 +157,7 @@ const StatCard = ({ item }: any) => {
         sx={{
           position: "absolute",
           inset: 0,
-          background: `radial-gradient(circle at top, ${item.color}33, transparent)`,
+          background: `radial-gradient(circle at top, ${item.color}11, transparent)`,
           opacity: 0,
           transition: "0.4s",
           ".MuiBox-root:hover &": { opacity: 1 },
@@ -189,7 +189,7 @@ const StatCard = ({ item }: any) => {
 
           {/* Background circle */}
           <circle
-            stroke="#1e293b"
+            stroke="#f1f5f9"
             fill="transparent"
             strokeWidth={stroke}
             r={normalizedRadius}
@@ -237,7 +237,7 @@ const StatCard = ({ item }: any) => {
       </Box>
 
       {/* Title */}
-      <Typography fontWeight="bold" textAlign="center">
+      <Typography fontWeight="bold" textAlign="center" color="#0f172a">
         {item.title}
       </Typography>
 
@@ -250,7 +250,7 @@ const StatCard = ({ item }: any) => {
           variant="body2"
           textAlign="center"
           mt={1}
-          sx={{ opacity: 0.7 }}
+          sx={{ color: "#475569" }}
         >
           {item.desc}
         </Typography>
