@@ -120,7 +120,8 @@ const HeroSection = () => {
                 sx={{
                   mb: 2.5,
                   color: "#1F2937",
-                  lineHeight: 1.2,
+                  // lineHeight: 1.2,
+                  lineHeight: {xs:1.3, sm:1.3, md:1.2},
                   letterSpacing: "-0.02em",
                   fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
                 }}

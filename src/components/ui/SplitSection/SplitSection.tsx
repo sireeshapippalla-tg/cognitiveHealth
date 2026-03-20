@@ -101,7 +101,8 @@ const SplitSection = ({
                   sx={{
                     display: "inline-block",
                     color: "#1F2937",
-                    lineHeight: 1.2,
+                    // lineHeight: 1.2,
+                    lineHeight: {xs:1.3, sm:1.3, md:1.2},
                     mb: 1,
                    
                     fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
@@ -114,7 +115,8 @@ const SplitSection = ({
                     fontWeight="bold"
                     sx={{
                       fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
-                      lineHeight: 1.2,
+                      // lineHeight: 1.2,
+                      lineHeight: {xs:1.3, sm:1.3, md:1.2},
                       // letterSpacing: "-0.02em",
                       mb: 2.5,
                       color: "#1F2937",
