@@ -102,7 +102,8 @@ const ResultsSection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 12 },
+        // py: { xs: 8, md: 12 },
+        paddingBottom:"30px",
         background: "#fff",
         position: "relative",
         overflow: "hidden",
@@ -215,10 +216,11 @@ const ResultsSection = () => {
                   </Typography>
                   <Box
                     sx={{
-                      width: "50px",
+                      width: "95px",
                       height: "4px",
                       mx: "auto",
-                      my: 2,
+                      // my: 2,
+                      marginBottom:"10px",
                       borderRadius: "10px",
                       background:
                         "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",

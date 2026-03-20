@@ -160,7 +160,7 @@ const SolutionsTabs = () => {
                 gap: 1.5,
                 filter: activeTab === index ? "brightness(0) invert(1)" : "none"
               }}>
-                {tab.icon}
+                {/* {tab.icon} */}
                 <TabText $active={activeTab === index}>{tab.label}</TabText>
               </Box>
             </TabButton>
