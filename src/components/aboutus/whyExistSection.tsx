@@ -1,7 +1,8 @@
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-import Compatibility from "../../assets/Platform/ProductIntellijence/Compatibility.svg";
+import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
+import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import { Box, Container, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -12,9 +13,14 @@ const features = [
     description: "Healthcare revenue cycle operations involve countless manual tasks, exceptions, and edge cases that slow down teams and increase costs.",
   },
   {
-    icon: <Box component="img" src={Compatibility} alt="Compatibility" sx={{ width: 40, height: 40 }} />,
+    icon: <StorageOutlinedIcon sx={{ fontSize: 40 }} />,
     title: "Fragmented Systems and Data",
     description: "Disconnected systems, inconsistent data formats, and lack of integration create inefficiencies and limit visibility across the revenue cycle.",
+  },
+  {
+    icon: <HandshakeOutlinedIcon sx={{ fontSize: 40 }} />,
+    title: "Compatibility",
+    description: "Our solutions seamlessly integrate with your existing EHR, HIS, and financial systems, ensuring minimal disruption and maximum ROI.",
   },
   {
     icon: <PeopleOutlineIcon sx={{ fontSize: 40 }} />,
@@ -30,11 +36,11 @@ const features = [
 
 const WhyWeExistSection = () => {
   return (
-    <Box sx={{ 
-      py: { xs: 12, md: 18 }, 
-      background: "#fff", 
+    <Box sx={{
+      py: { xs: 12, md: 18 },
+      background: "#fff",
       position: "relative",
-      overflow: "hidden" 
+      overflow: "hidden"
     }}>
       {/* Background abstract element */}
       <Box sx={{
@@ -58,19 +64,7 @@ const WhyWeExistSection = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Typography
-                sx={{
-                  color: "#F47A20",
-                  fontWeight: 800,
-                  fontSize: "1rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "2px",
-                  mb: 2,
-                  display: "block"
-                }}
-              >
-                The Challenge
-              </Typography>
+
               <Typography
                 variant="h2"
                 fontWeight={900}
@@ -81,8 +75,7 @@ const WhyWeExistSection = () => {
                   lineHeight: 1.1
                 }}
               >
-                Why Healthcare <br />
-                Needs <Box component="span" sx={{ color: "#F47A20" }}>AI Agents</Box>
+                Why We Exist
               </Typography>
               <Typography
                 sx={{
@@ -92,13 +85,12 @@ const WhyWeExistSection = () => {
                   mb: 4
                 }}
               >
-                Traditional approaches are no longer enough. Healthcare organizations face unprecedented operational hurdles that demand a new category of intelligent automation.
-              </Typography>
-              <Box sx={{ 
-                width: "60px", 
-                height: "6px", 
-                background: "#6BBF59", 
-                borderRadius: "3px" 
+                Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points:              </Typography>
+              <Box sx={{
+                width: "60px",
+                height: "6px",
+                background: "#6BBF59",
+                borderRadius: "3px"
               }} />
             </motion.div>
           </Grid>
@@ -114,9 +106,9 @@ const WhyWeExistSection = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Box sx={{ 
-                    display: "flex", 
-                    gap: 4, 
+                  <Box sx={{
+                    display: "flex",
+                    gap: 4,
                     alignItems: "flex-start",
                     transition: "all 0.3s ease",
                     "&:hover": {
@@ -148,9 +140,9 @@ const WhyWeExistSection = () => {
                         {feature.title}
                       </Typography>
                       <Typography
-                        sx={{ 
-                          color: "#6B7280", 
-                          fontSize: "1.1rem", 
+                        sx={{
+                          color: "#6B7280",
+                          fontSize: "1.1rem",
                           lineHeight: 1.6,
                           maxWidth: "500px"
                         }}

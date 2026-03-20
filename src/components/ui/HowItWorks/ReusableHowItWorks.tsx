@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Box, Typography, Container, Button } from "@mui/material";
+import { Box, Typography, Container, Button, useTheme, useMediaQuery } from "@mui/material";
 import { SectionTitle } from "../sectionTitle/SectionTitle";
 
 export interface HowItWorksStep {
@@ -32,8 +32,11 @@ export const ReusableHowItWorks: React.FC<ReusableHowItWorksProps> = ({
   themeColor = "#F47A20",
   backgroundColor = "#f9fafb",
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Box sx={{ py: { xs: 8, md: 10 }, px: { xs: 2, md: 8 }, background: backgroundColor }}>
+    <Box sx={{ py: { xs: 8, md: 10 }, px: { xs: 2, md: 8 }, background: backgroundColor, overflow: "hidden" }}>
       <Container maxWidth="lg">
         {/* Title Section */}
         <Box sx={{ mb: 8, textAlign: "center" }}>
@@ -102,8 +105,12 @@ export const ReusableHowItWorks: React.FC<ReusableHowItWorksProps> = ({
                 }}
               >
                 <motion.div
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ 
+                    opacity: 0, 
+                    x: isMobile ? 0 : (isLeft ? -50 : 50),
+                    y: isMobile ? 30 : 0 
+                  }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.7, delay: index * 0.1 }}
                   viewport={{ once: false, amount: 0.3 }}
                   style={{ width: "100%" }}

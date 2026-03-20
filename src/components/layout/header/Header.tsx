@@ -6,7 +6,9 @@ import {
   Popper,
   Paper,
   Collapse,
+  Typography,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -338,204 +340,136 @@ const Header = () => {
         open={solutionsOpen}
         anchorEl={solutionsAnchorEl}
         placement="bottom"
-        sx={{ zIndex: 2000 }}
+        sx={{ zIndex: 2000, pt: 1 }}
       >
-        <Box
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           onMouseEnter={() =>
             closeTimer.current && clearTimeout(closeTimer.current)
           }
           onMouseLeave={handleCloseSolutions}
         >
           <Paper
-            // elevation={4}
-            // sx={{
-            //   width: 720,
-            //   borderRadius: "16px",
-            //   p: 3,
-            //   mt: 2.5,
-            //   backgroundColor: "#ffffff",
-            //   border: "1px solid #E5E7EB",
-            //   boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
-            // }}
             elevation={0}
             sx={{
-              width: 700,
-              borderRadius: "10px",
-              p: 2,
-              mt: 2.5,
+              width: 800,
+              borderRadius: "24px",
+              p: 4,
+              mt: 1,
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+              overflow: "hidden"
             }}
           >
-            {/* <Stack direction="row" spacing={4}>
-              <Stack spacing={3} flex={1}>
-                {solutionLinks.slice(0, 3).map((item) => (
-                  <PopoverCard
-                    key={item.title}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.desc}
-                    onClick={() => {
-                      navigate(`/solutions#${item.hash}`);
-                      setSolutionsOpen(false);
-                    }}
-                  />
-                ))}
-              </Stack>
+            <Box display="flex" gap={4}>
+              {/* Left Side: Featured / Category */}
+              <Box sx={{ width: 220, borderRight: "1px solid #F3F4F6", pr: 3 }}>
+                <Typography variant="overline" color="#F47A20" fontWeight={800} letterSpacing={1.2}>
+                  Our Ecosystem
+                </Typography>
+                <Typography variant="h6" fontWeight={800} sx={{ mt: 1, mb: 2, color: "#111827", lineHeight: 1.2 }}>
+                  Specialized AI Solutions for RCM
+                </Typography>
+                <Typography variant="body2" color="#6B7280" sx={{ mb: 3 }}>
+                  Deploy tailored AI agents to automate complexity across your entire revenue cycle.
+                </Typography>
+                <AppButton
+                  variantType="outline"
+                  onClick={() => navigate("/solutions")}
+                  sx={{ fontSize: "0.8rem", py: 1 }}
+                >
+                  View All Solutions
+                </AppButton>
+              </Box>
 
-              <Stack spacing={3} flex={1}>
-                {solutionLinks.slice(3).map((item) => (
-                  <PopoverCard
-                    key={item.title}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.desc}
-                    onClick={() => {
-                      navigate(`/solutions#${item.hash}`);
-                      setSolutionsOpen(false);
-                    }}
-                  />
-                ))}
-              </Stack>
-            </Stack> */}
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 1,
-              }}
-            >
-              {solutionLinks.map((item) => (
-                <PopoverCard
-                  key={item.title}
-                  icon={item.icon}
-                  title={item.title}
-                  description={item.desc}
-                  onClick={() => {
-                    navigate(`/solutions#${item.hash}`);
-                    setSolutionsOpen(false);
+              {/* Right Side: Grid of Solutions */}
+              <Box flex={1}>
+                <Box
+                  sx={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: 2,
                   }}
-                />
-              ))}
+                >
+                  {solutionLinks.map((item) => (
+                    <PopoverCard
+                      key={item.title}
+                      icon={item.icon}
+                      title={item.title}
+                      description={item.desc}
+                      onClick={() => {
+                        navigate(`/solutions#${item.hash}`);
+                        setSolutionsOpen(false);
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
             </Box>
           </Paper>
-        </Box>
+        </motion.div>
       </Popper>
 
       <Popper
         open={resourcesOpen}
         anchorEl={resourcesAnchorEl}
         placement="bottom"
-        sx={{ zIndex: 2000 }}
+        sx={{ zIndex: 2000, pt: 1 }}
       >
-        <Box
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           onMouseEnter={() =>
             closeTimer.current && clearTimeout(closeTimer.current)
           }
           onMouseLeave={handleCloseResources}
         >
-          {/* <Paper elevation={4} sx={{ width: 240, borderRadius: 3, p: 2 }}>
-            <Stack spacing={2}>
-            
-              <Stack spacing={2}>
-             
-                {resourceLinks.slice(0, 2).map((item) => (
-                  <PopoverCard
-                    key={item.hash}
-                    icon={item.icon}
-                    label="Resource"
-                    title={item.title}
-                    accentColor="#16a34a" // green
-                    onClick={() => {
-                      navigate(`/resources#${item.hash}`);
-                      setResourcesOpen(false);
-                    }}
-                  />
-                ))}
-              </Stack>
-            </Stack>
-          </Paper> */}
-
           <Paper
-            // elevation={4}
-            // sx={{
-            //   width: 500,
-            //   borderRadius: "16px",
-            //   p: 3,
-            //   mt: 2.5,
-            //   backgroundColor: "#ffffff",
-            //   border: "1px solid #E5E7EB",
-            //   boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
-            // }}
             elevation={0}
             sx={{
-              width: 380,
-              borderRadius: "10px",
-              p: 2,
-              mt: 2.5,
+              width: 500,
+              borderRadius: "24px",
+              p: 3,
+              mt: 1,
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+              overflow: "hidden"
             }}
           >
-            {/* <Stack direction="row" spacing={4}>
-              <Stack spacing={3} flex={1}>
-                {resourceLinks.slice(0, 2).map((item) => (
-                  // <SolutionItem
-                  //   key={item.title}
-                  //   {...item}
-                  //   active={isActive(item.path)}
-                  //   onNavigate={handleNavigate}
-                  // />
-                  <PopoverCard
-                    key={item.hash}
-                    icon={item.icon}
-                    label="Resource"
-                    title={item.title}
-                    onClick={() => {
-                      navigate(`/resources#${item.hash}`);
-                      setResourcesOpen(false);
-                    }}
-                  />
-                ))}
-              </Stack>
-
-              <Stack spacing={3} flex={1}>
-                {resourceLinks.slice(2).map((item) => (
-                  <PopoverCard
-                    key={item.hash}
-                    icon={item.icon}
-                    label="Resource"
-                    title={item.title}
-                    onClick={() => {
-                      navigate(`/resources#${item.hash}`);
-                      setResourcesOpen(false);
-                    }}
-                  />
-                ))}
-              </Stack>
-            </Stack> */}
-             <Box
+            <Box sx={{ mb: 2, px: 1 }}>
+              <Typography variant="overline" color="#F47A20" fontWeight={800} letterSpacing={1.2}>
+                Knowledge Center
+              </Typography>
+            </Box>
+            <Box
               sx={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
-                gap: 1,
+                gap: 1.5,
               }}
             >
               {resourceLinks.map((item) => (
                 <PopoverCard
-                 key={item.hash}
-                    icon={item.icon}
-                    // label="Resource"
-                    title={item.title}
-                    onClick={() => {
-                      navigate(`/resources#${item.hash}`);
-                      setResourcesOpen(false);
-                    }}
+                  key={item.hash}
+                  icon={item.icon}
+                  title={item.title}
+                  onClick={() => {
+                    navigate(`/resources#${item.hash}`);
+                    setResourcesOpen(false);
+                  }}
                 />
               ))}
             </Box>
+            <Box sx={{ mt: 3, pt: 2, borderTop: "1px solid #F3F4F6", textAlign: "center" }}>
+              <Typography variant="body2" color="#6B7280">
+                Need help? <Box component="span" sx={{ color: "#F47A20", cursor: "pointer", fontWeight: 600 }} onClick={() => navigate("/contact-us")}>Contact Support</Box>
+              </Typography>
+            </Box>
           </Paper>
-        </Box>
+        </motion.div>
       </Popper>
 
       {/* ================= MOBILE DRAWER ================= */}
