@@ -7,7 +7,7 @@ const CTASection = () => {
     <Box
       sx={{
         px: { xs: 2, sm: 4 },
-        py: { xs: 8, md: 12 },
+        py: { xs: 6, md: 8 },
         display: "flex",
         justifyContent: "center",
         background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
@@ -75,7 +75,7 @@ const CTASection = () => {
               sx={{
                 mb: 2,
                
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
             lineHeight: 1.3,
      
                 background: "linear-gradient(135deg, #0f172a, #334155)",

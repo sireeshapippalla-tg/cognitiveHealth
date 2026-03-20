@@ -64,40 +64,40 @@ const HeroSection = () => {
 
       <Box
         sx={{
-          px: { xs: 3, md: 10 },
-          py: 12,
-          position: "relative",
+        px: { xs: 2, sm: 4 },
+        py: { xs: 8, md: 10 },
+        position: "relative",
           overflow: "hidden",
           background: "#F9FAFB",
         }}
       >
         {/* 🔥 FLOATING BACKGROUND BLOBS */}
         <motion.div
-          animate={{ y: [0, -20, 0] }}
+          animate={{ y: [0, -15, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
           style={{
             position: "absolute",
-            width: 250,
-            height: 250,
+            width: 220,
+            height: 220,
             background: "radial-gradient(circle, #F47A20, transparent)",
-            filter: "blur(120px)",
-            top: "-80px",
-            left: "-80px",
-            opacity: 0.2,
+            filter: "blur(100px)",
+            top: "-60px",
+            left: "-60px",
+            opacity: 0.15,
           }}
         />
         <motion.div
-          animate={{ y: [0, 20, 0] }}
+          animate={{ y: [0, 15, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
           style={{
             position: "absolute",
-            width: 250,
-            height: 250,
+            width: 220,
+            height: 220,
             background: "radial-gradient(circle, #6BBF59, transparent)",
-            filter: "blur(120px)",
-            bottom: "-80px",
-            right: "-80px",
-            opacity: 0.2,
+            filter: "blur(100px)",
+            bottom: "-60px",
+            right: "-60px",
+            opacity: 0.15,
           }}
         />
 
@@ -109,22 +109,20 @@ const HeroSection = () => {
         >
           {/* 🔥 LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
           >
             {/* HEADLINE */}
             <Typography
-              // Changed to h1 for semantic meaning
               fontWeight="bold"
               sx={{
-                mb: 3,
+                mb: 2.5,
                 color: "#1F2937",
-                lineHeight: 1.3,
+                lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-
-                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
               }}
             >
               Transform Your Revenue Cycle with{" "}
@@ -147,10 +145,10 @@ const HeroSection = () => {
             <Typography
               sx={{
                 color: "#6B7280",
-                mb: 5,
-                fontSize: { xs: "1.125rem", md: "1.25rem" },
-                lineHeight: 1.7,
-                maxWidth: "600px", // Slightly increased max width for bigger text
+                mb: 4,
+                fontSize: "1.1rem",
+                lineHeight: 1.6,
+                maxWidth: "550px",
               }}
             >
               Deploy a network of specialized AI agents that automate your most
@@ -167,19 +165,16 @@ const HeroSection = () => {
                   variant="contained"
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    px: 5,
-                    py: 1.6,
+                    px: 4,
+                    py: 1.5,
                     borderRadius: "40px",
                     fontWeight: "bold",
                     textTransform: "none",
                     position: "relative",
                     overflow: "hidden",
                     background: "#F47A20",
-                    // background:
-                    //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-
-                    boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
-
+                    fontSize: "1rem",
+                    boxShadow: "0 10px 20px rgba(244,122,32,0.2)",
                     "&::after": {
                       content: '""',
                       position: "absolute",
@@ -191,7 +186,6 @@ const HeroSection = () => {
                         "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
                       transform: "skewX(-20deg)",
                     },
-
                     "&:hover::after": {
                       left: "130%",
                       transition: "0.7s",
@@ -210,16 +204,16 @@ const HeroSection = () => {
                   variant="outlined"
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    px: 5,
-                    py: 1.6,
+                    px: 4,
+                    py: 1.5,
                     borderRadius: "40px",
                     textTransform: "none",
-                    fontWeight: 500,
+                    fontWeight: 600,
                     borderColor: "#F47A20",
                     color: "#F47A20",
-
+                    fontSize: "1rem",
                     "&:hover": {
-                      background: "rgba(107,191,89,0.1)",
+                      background: "rgba(107,191,89,0.05)",
                       borderColor: "#F47A20",
                     },
                   }}

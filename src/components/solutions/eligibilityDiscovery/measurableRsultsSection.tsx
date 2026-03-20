@@ -1,69 +1,183 @@
-import { Grid } from "@mui/material";
-import { MetricCard } from "../../ui/metricCard/MetricCard";
-import { IconWrapper, MeasureWrapper, SectionContainer } from "./solutions.style";
+import { Grid, Box, Typography, Container } from "@mui/material";
+import {
+  MeasureWrapper,
+  SectionContainer,
+} from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import paymentImage9 from '../../../assets/solutions/paymentImage9.png';
-// import paymentImage10 from '../../../assets/solutions/paymentImage10.svg';
-// import paymentImage11 from '../../../assets/solutions/paymentImage11.svg';
-// import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
+import { motion } from "framer-motion";
 
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 
-
 const stats = [
   {
     value: "98%",
-    // title: "Fully Reconciled Payments",
-    description: "Pre-Service Verification Rate Virtually all appointments verified before patient arrival",
-    // icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
-    icon:(<IconWrapper><VerifiedUserOutlinedIcon /></IconWrapper>),
+    title: "Pre-Service Rate",
+    description: "Virtually all appointments verified before patient arrival",
+    icon: <VerifiedUserOutlinedIcon />,
   },
   {
     value: "75%",
-    // title: "Posting Errors",
-    description: "Reduction in Eligibility Denials Catch coverage issues before service delivery",
-    // icon: <img src={paymentImage10} alt="Posting Errors" />,
-    icon: (<IconWrapper><ShieldOutlinedIcon /></IconWrapper>),
+    title: "Denial Reduction",
+    description: "Catch coverage issues before service delivery",
+    icon: <ShieldOutlinedIcon />,
   },
   {
-    value: "30 Seconds",
-    // title: "Faster Turnaround",
-    description: "Average Verification Time From patient check-in to confirmed eligibility",
-    // icon: <img src={paymentImage11} alt="Faster Turnaround" />,
-    icon: (<IconWrapper><AccessTimeOutlinedIcon /></IconWrapper>),
+    value: "30 Sec",
+    title: "Discovery Time",
+    description: "From patient check-in to confirmed eligibility",
+    icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "40%",
-    // title: "Faster Cash Application",
-    description: "Decrease in Bad Debt Better coverage verification = fewer uncompensated services",
-    // icon: <img src={paymentImage12} alt="Faster Cash Application" />,
-    icon: (<IconWrapper><SavingsOutlinedIcon /></IconWrapper>),
+    title: "Bad Debt Decrease",
+    description: "Better verification reduces uncompensated services",
+    icon: <SavingsOutlinedIcon />,
   },
 ];
 
 const MeasurableResultsSection = () => {
   return (
-    <SectionContainer>
-      <MeasureWrapper>
-        <SectionTitle
-        pillIcon={paymentImage9}
-          pillText="Organizations see ROI within the first 6 months of deployment"
-          title="Measurable Results"
-          subtitle="Real outcomes from healthcare organizations using the iCAN™ Payment Posting solution"
-          textColor="white"
-        />
+    <SectionContainer sx={{ 
+      py: { xs: 6, md: 8 }, 
+      background: "#fff", 
+      borderRadius: "0px",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      {/* ORGANIC DECORATION */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.25, 1],
+          opacity: [0.08, 0.15, 0.08]
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          position: "absolute",
+          top: "15%",
+          left: "8%",
+          width: "300px",
+          height: "300px",
+          background: "radial-gradient(circle, rgba(244, 122, 32, 0.08) 0%, transparent 70%)",
+          filter: "blur(75px)",
+          zIndex: 0
+        }}
+      />
+      <motion.div
+        animate={{ 
+          scale: [1, 1.1, 1],
+          opacity: [0.1, 0.18, 0.1]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          right: "10%",
+          width: "380px",
+          height: "380px",
+          background: "radial-gradient(circle, rgba(107, 191, 89, 0.06) 0%, transparent 70%)",
+          filter: "blur(85px)",
+          zIndex: 0
+        }}
+      />
 
-        <Grid container spacing={3}>
-          {stats.map((stat, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard {...stat} color="var(--color-green)" />
-            </Grid>
-          ))}
-        </Grid>
-      </MeasureWrapper>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <MeasureWrapper>
+          <Box sx={{ mb: 8, textAlign: "center" }}>
+             <SectionTitle
+                pillIcon={paymentImage9}
+                pillText="Coverage Verified Instantly"
+                title="Measurable Results"
+                subtitle="Real outcomes from healthcare organizations using the iCAN™ Eligibility Discovery solution"
+                align="center"
+                maxWidth={700}
+             />
+          </Box>
+
+          <Box sx={{ position: "relative" }}>
+             <Grid container spacing={6} justifyContent="center">
+               {stats.map((stat, index) => (
+                 <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7, delay: index * 0.15 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                    >
+                       <Box sx={{ 
+                         textAlign: "center",
+                         position: "relative",
+                         p: 2,
+                         "&:hover .stat-icon": {
+                            transform: "scale(1.1) rotate(-5deg)",
+                            color: "#fff",
+                            background: "#6BBF59"
+                         }
+                       }}>
+                          <Box 
+                            className="stat-icon"
+                            sx={{ 
+                            width: "56px", 
+                            height: "56px", 
+                            mx: "auto", 
+                            mb: 3,
+                            borderRadius: "14px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#F47A20",
+                            background: "rgba(244, 122, 32, 0.1)",
+                            transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                            "& svg": { fontSize: "1.8rem" }
+                          }}>
+                             {stat.icon}
+                          </Box>
+                          
+                          <Typography variant="h2" fontWeight={950} sx={{ 
+                            color: "#111827", 
+                            mb: 1,
+                            fontSize: { xs: "2.5rem", md: "3.2rem" },
+                            letterSpacing: "-0.04em",
+                            lineHeight: 1,
+                            background: "linear-gradient(180deg, #111827 30%, #4B5563 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent"
+                          }}>
+                             {stat.value}
+                          </Typography>
+                          
+                          <Typography variant="h6" fontWeight={800} sx={{ 
+                            color: "#F47A20", 
+                            mb: 2,
+                            textTransform: "uppercase",
+                            letterSpacing: "1.5px",
+                            fontSize: "0.80rem",
+                            lineHeight: 1.2
+                          }}>
+                             {stat.title}
+                          </Typography>
+                          
+                          <Typography sx={{ 
+                            color: "#4B5563", 
+                            fontSize: "0.95rem",
+                            lineHeight: 1.6,
+                            fontWeight: 500,
+                            maxWidth: "200px",
+                            mx: "auto"
+                          }}>
+                             {stat.description}
+                          </Typography>
+                       </Box>
+                    </motion.div>
+                 </Grid>
+               ))}
+             </Grid>
+          </Box>
+        </MeasureWrapper>
+      </Container>
     </SectionContainer>
   );
 };

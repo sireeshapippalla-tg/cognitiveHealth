@@ -37,11 +37,11 @@ const FeatureSection = ({
         <Container >
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            style={{ marginBottom: "60px" }}
+            transition={{ duration: 0.5 }}
+            style={{ marginBottom: "40px" }}
           >
             <Title align={align} dangerouslySetInnerHTML={{ __html: title }} />
             {subtitle && <Subtitle>{subtitle}</Subtitle>}
@@ -94,27 +94,27 @@ const FeatureSection = ({
                   >
                     <Box
                       sx={{
-                        width: "80px",
-                        height: "80px",
+                        width: "64px",
+                        height: "64px",
                         flexShrink: 0,
                         borderRadius: "50%",
                         background: cardVariant === "pink"
                           ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
                           : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
-                        border: "4px solid",
+                        border: "3px solid",
                         borderColor: cardVariant === "pink" ? "rgba(244, 122, 32, 0.2)" : "rgba(74, 144, 226, 0.2)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         boxShadow:
                           cardVariant === "pink"
-                            ? "0 10px 25px rgba(244, 122, 32, 0.4)"
-                            : "0 10px 25px rgba(74, 144, 226, 0.4)",
+                            ? "0 8px 20px rgba(244, 122, 32, 0.3)"
+                            : "0 8px 20px rgba(74, 144, 226, 0.3)",
                         "& img": {
-                          width: "36px",
-                          height: "36px",
+                          width: "28px",
+                          height: "28px",
                           objectFit: "contain",
-                          filter: "brightness(0) invert(1)", // Force icon to be white just in case
+                          filter: "brightness(0) invert(1)", 
                         },
                       }}
                     >
@@ -124,37 +124,37 @@ const FeatureSection = ({
 
                   {/* Text Content Block */}
                   <motion.div
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{
-                      duration: 0.6,
+                      duration: 0.5,
                       ease: "easeOut",
                     }}
-                    style={{ flexGrow: 1, paddingTop: "8px" }}
+                    style={{ flexGrow: 1, paddingTop: "6px" }}
                   >
                     <Box
                       sx={{
                         background: "transparent",
                         borderBottom: "1px solid rgba(0,0,0,0.05)",
-                        pb: 4,
+                        pb: 3,
                       }}
                     >
                       <Typography
                         variant="h4"
                         sx={{
                           fontWeight: 800,
-                          fontSize: { xs: "1.5rem", md: "1.75rem" },
+                          fontSize: { xs: "1.3rem", md: "1.5rem" },
                           color: "#0f172a",
-                          mb: 2,
+                          mb: 1.5,
                         }}
                       >
                         {item.title}
                       </Typography>
                       <Typography
                         sx={{
-                          fontSize: "1.1rem",
-                          lineHeight: 1.8,
+                          fontSize: "1rem",
+                          lineHeight: 1.6,
                           color: "#475569",
                         }}
                       >

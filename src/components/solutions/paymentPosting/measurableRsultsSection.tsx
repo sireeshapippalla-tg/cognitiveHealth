@@ -1,15 +1,12 @@
-import { Grid } from "@mui/material";
-import { MetricCard } from "../../ui/metricCard/MetricCard";
+import { Grid, Box, Typography, Container } from "@mui/material";
+// import { MetricCard } from "../../ui/metricCard/MetricCard";
 import {
-  IconWrapper,
   MeasureWrapper,
   SectionContainer,
 } from "./solutions.style";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
-// import paymentImage10 from '../../../assets/solutions/paymentImage10.svg';
-// import paymentImage11 from '../../../assets/solutions/paymentImage11.svg';
-// import paymentImage12 from '../../../assets/solutions/paymentImage12.svg';
+import { motion } from "framer-motion";
 
 import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
@@ -21,68 +18,168 @@ const stats = [
     value: "93.8%",
     title: "Fully Reconciled Payments",
     description: "Industry-leading reconciliation accuracy",
-    // icon: <img src={paymentImage10} alt="Fully Reconciled Payments" />,
-    icon: (
-      <IconWrapper>
-        <TaskAltOutlinedIcon />
-      </IconWrapper>
-    ),
+    icon: <TaskAltOutlinedIcon />,
   },
   {
     value: "~0%",
     title: "Posting Errors",
     description: "Virtually zero error rate with AI automation",
-    // icon: <img src={paymentImage10} alt="Posting Errors" />,
-    icon: (
-      <IconWrapper>
-        <ShieldOutlinedIcon />
-      </IconWrapper>
-    ),
+    icon: <ShieldOutlinedIcon />,
   },
   {
     value: "41.6%",
     title: "Faster Turnaround",
     description: "Dramatic reduction in processing time",
-    // icon: <img src={paymentImage11} alt="Faster Turnaround" />,
-    icon: (
-      <IconWrapper>
-        <BoltOutlinedIcon />
-      </IconWrapper>
-    ),
+    icon: <BoltOutlinedIcon />,
   },
   {
     value: "26%",
     title: "Faster Cash Application",
     description: "Accelerated revenue recognition",
-    // icon: <img src={paymentImage12} alt="Faster Cash Application" />,
-    icon: (
-      <IconWrapper>
-        <MonetizationOnOutlinedIcon />
-      </IconWrapper>
-    ),
+    icon: <MonetizationOnOutlinedIcon />,
   },
 ];
 
 const MeasurableResultsSection = () => {
   return (
-    <SectionContainer>
-      <MeasureWrapper>
-        <SectionTitle
-          pillIcon={paymentImage9}
-          pillText="Organizations see ROI within the first 6 months of deployment"
-          title="Measurable Results"
-          subtitle="Real outcomes from healthcare organizations using the iCAN™ Payment Posting solution"
-          textColor="white"
-        />
+    <SectionContainer sx={{ 
+      py: { xs: 6, md: 8 }, 
+      background: "#fff", 
+      borderRadius: "0px",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      {/* ORGANIC DECORATION */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.15, 0.25, 0.15]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          position: "absolute",
+          top: "10%",
+          left: "5%",
+          width: "350px",
+          height: "350px",
+          background: "radial-gradient(circle, rgba(107, 191, 89, 0.08) 0%, transparent 70%)",
+          filter: "blur(80px)",
+          zIndex: 0
+        }}
+      />
+      <motion.div
+        animate={{ 
+          scale: [1, 1.1, 1],
+          opacity: [0.03, 0.06, 0.03]
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          right: "5%",
+          width: "450px",
+          height: "450px",
+          background: "radial-gradient(circle, rgba(244, 122, 32, 0.1) 0%, transparent 70%)",
+          filter: "blur(100px)",
+          zIndex: 0
+        }}
+      />
 
-        <Grid container spacing={3}>
-          {stats.map((stat, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard {...stat} color="var(--color-green)" />
-            </Grid>
-          ))}
-        </Grid>
-      </MeasureWrapper>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <MeasureWrapper>
+          <Box sx={{ mb: 8, textAlign: "center" }}>
+             <SectionTitle
+                pillIcon={paymentImage9}
+                pillText="Outcome-Focused Innovation"
+                title="Measurable Results"
+                subtitle="Real outcomes from healthcare organizations using the iCAN™ Payment Posting solution"
+                align="center"
+                maxWidth={700}
+             />
+          </Box>
+
+          {/* ORGANIC CLUSTER DESIGN */}
+          <Box sx={{ position: "relative" }}>
+             <Grid container spacing={6} justifyContent="center">
+               {stats.map((stat, index) => (
+                 <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7, delay: index * 0.15 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                    >
+                       <Box sx={{ 
+                         textAlign: "center",
+                         position: "relative",
+                         p: 2,
+                         "&:hover .stat-icon": {
+                            transform: "scale(1.1) rotate(5deg)",
+                            color: "#fff",
+                            background: "#F47A20"
+                         }
+                       }}>
+                          <Box 
+                            className="stat-icon"
+                            sx={{ 
+                            width: "56px", 
+                            height: "56px", 
+                            mx: "auto", 
+                            mb: 3,
+                            borderRadius: "14px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#6BBF59",
+                            background: "rgba(107, 191, 89, 0.1)",
+                            transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                            "& svg": { fontSize: "1.8rem" }
+                          }}>
+                             {stat.icon}
+                          </Box>
+                          
+                          <Typography variant="h2" fontWeight={950} sx={{ 
+                            color: "#111827", 
+                            mb: 1,
+                            fontSize: { xs: "2.5rem", md: "3.2rem" },
+                            letterSpacing: "-0.04em",
+                            lineHeight: 1,
+                            background: "linear-gradient(180deg, #111827 30%, #4B5563 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent"
+                          }}>
+                             {stat.value}
+                          </Typography>
+                          
+                          <Typography variant="h6" fontWeight={800} sx={{ 
+                            color: "#F47A20", 
+                            mb: 2,
+                            textTransform: "uppercase",
+                            letterSpacing: "1.5px",
+                            fontSize: "0.8rem",
+                            lineHeight: 1.2
+                          }}>
+                             {stat.title}
+                          </Typography>
+                          
+                          <Typography sx={{ 
+                            color: "#4B5563", 
+                            fontSize: "0.95rem",
+                            lineHeight: 1.6,
+                            fontWeight: 500,
+                            maxWidth: "200px",
+                            mx: "auto"
+                          }}>
+                             {stat.description}
+                          </Typography>
+                       </Box>
+                    </motion.div>
+                 </Grid>
+               ))}
+             </Grid>
+          </Box>
+        </MeasureWrapper>
+      </Container>
     </SectionContainer>
   );
 };

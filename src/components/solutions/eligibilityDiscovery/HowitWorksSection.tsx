@@ -1,95 +1,56 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {
-  // HowItSectionContainer,
-  HowItWrapper,
-} from "./solutions.style";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import { ProcessStep } from "../../ui/processStep/ProcessStep";
-// import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
-// import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
-// import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
-// import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
-import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
-// import paymentImage13 from '.././../../assets/solutions/paymentImage13.svg';
-// import paymentImage14 from '.././../../assets/solutions/paymentImage14.svg'
-// import paymentImage15 from '.././../../assets/solutions/paymentImage15.svg'
-import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import SettingsSuggestOutlinedIcon from "@mui/icons-material/SettingsSuggestOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
+import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
+import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
-
-import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
-import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";
-import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
-import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
-
-
-const steps = [
+const steps: HowItWorksStep[] = [
   {
-    title: "Automated Eligibility Check",
+    title: "Patient Search & Data Ingestion",
     description:
-      "Real-time verification at scheduling or registration. Multi-payer batch verification overnight. Integration with EMR/practice management systems",
-    //  icon: <InboxOutlinedIcon />,
-    icon: <VerifiedUserOutlinedIcon />,
+      "Automated capture of patient demographics. Direct integration with scheduling and ADT systems.",
+    icon: <SearchOutlinedIcon />,
   },
   {
-    title: "Benefit Discovery & Analysis",
+    title: "Real-Time Eligibility Check",
     description:
-      "Extract detailed coverage information. Identify authorization requirements. Calculate patient responsibility estimates.",
-    // icon: <SyncAltOutlinedIcon />,
-    icon: <AnalyticsOutlinedIcon />,
-  },
-   {
-    title: "Alert & Workflow Triggering",
-    description:
-      "Flag coverage issues for resolution. Trigger authorization workflows when needed. Notify financial counseling for high patient liability.",
-    // icon: <FactCheckOutlinedIcon />,
-    icon: <NotificationsActiveOutlinedIcon />,
+      "Instant 270/271 electronic transactions. Verification of active coverage, co-pay, and deductibles.",
+    icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Continuous Monitoring",
+    title: "Benefit Level Extraction",
     description:
-      "Scheduled re-verification before appointments. Coverage change detection. Expired authorization alerts",
-    // icon: <InsertChartOutlinedIcon />,
-    icon: <AutorenewOutlinedIcon />,
+      "Detailed breakdown of service-specific benefits. Identification of secondary and tertiary payers.",
+    icon: <DescriptionOutlinedIcon />,
   },
   {
-    title: "Multiple Provider Settings",
+    title: "Payer Policy Content Research",
     description:
-      "Acute Care & Hospital Systems. Home Health & Hospice. Behavioral Health & Substance Use. Long-Term Care & Skilled Nursing Facilities. Specialty & Ambulatory Providers. Physician Practices & Medical Groups.",
-    icon: <BusinessOutlinedIcon />,
+      "AI-driven research of specific payer rules. Documentation of prior authorization requirements.",
+    icon: <GavelOutlinedIcon />,
+  },
+  {
+    title: "Final Verification & Updates",
+    description:
+      "Consolidated verification report. Automatic update of patient records in the HIS/PMS.",
+    icon: <VerifiedOutlinedIcon />,
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    // <HowItSectionContainer>
-      <HowItWrapper>
-        <SectionTitle
-          title="How It Works"
-          // subtitle="Streamlined workflow from payment intake to final reconciliation"
-        />
-
-    <StepsCard sx={{marginTop:4}}>
-          <StepsRow>
-            {steps.map((step, index) => (
-              <>
-                <ProcessStep
-                  key={step.title}
-                  icon={step.icon}
-                  title={step.title}
-                  description={step.description}
-                />
-
-                {index !== steps.length - 1 && (
-                  <ArrowBox>
-                    <ArrowForwardIcon />
-                  </ArrowBox>
-                )}
-              </>
-            ))}
-          </StepsRow>
-        </StepsCard>
-      </HowItWrapper>
-    // {/* </HowItSectionContainer> */}
+    <ReusableHowItWorks
+      pillIcon={paymentImage9}
+      pillText="Coverage Intelligence"
+      title="How It Works"
+      subtitle="Ensuring accurate coverage and reducing front-end denials through automated verification"
+      steps={steps}
+      themeColor="#F47A20"
+      backgroundColor="#fff"
+    />
   );
 };
 

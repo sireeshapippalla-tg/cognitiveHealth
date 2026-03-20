@@ -1,84 +1,49 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {
-  // HowItSectionContainer,
-  HowItWrapper,
-} from "./solutions.style";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import { ProcessStep } from "../../ui/processStep/ProcessStep";
-// import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
-// import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
-// import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
-// import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
-import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
-
 import MoveToInboxOutlinedIcon from "@mui/icons-material/MoveToInboxOutlined";
 import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
+import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
-
-const steps = [
+const steps: HowItWorksStep[] = [
   {
     title: "Denial Detection & Intake",
     description:
-      "Automated capture from 835 remittances. Real-time denial reason classification. Priority scoring and routing",
-    //  icon: <InboxOutlinedIcon />,
+      "Automated capture from 835 remittances. Real-time denial reason classification. Priority scoring and routing.",
     icon: <MoveToInboxOutlinedIcon />,
   },
   {
     title: "Root Cause Analysis",
     description:
-      "AI identifies patterns and systemic issues.Payer-specific denial trend analysis.Provider and service line performance tracking",
-    // icon: <SyncAltOutlinedIcon />,
+      "AI identifies patterns and systemic issues. Payer-specific denial trend analysis. Provider and service line performance tracking.",
     icon: <InsightsOutlinedIcon />,
   },
   {
     title: "Automated Resolution & Appeals",
     description:
-      "Low-dollar denials auto-resolved via payer portals. High-value denials get AI-generated appeals. Medical records automatically attached",
-    // icon: <FactCheckOutlinedIcon />,
+      "Low-dollar denials auto-resolved via payer portals. High-value denials get AI-generated appeals. Medical records automatically attached.",
     icon: <GavelOutlinedIcon />,
   },
   {
     title: "Prevention & Continuous Improvement",
     description:
-      "Insights feed back to pre-submission scrubbing. Training and workflow adjustments. Ongoing monitoring and optimization",
-    // icon: <InsertChartOutlinedIcon />,
+      "Insights feed back to pre-submission scrubbing. Training and workflow adjustments. Ongoing monitoring and optimization.",
     icon: <TrendingUpOutlinedIcon />,
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    // <HowItSectionContainer>
-      <HowItWrapper>
-        <SectionTitle
-          title="How It Works"
-          // subtitle="Streamlined workflow from payment intake to final reconciliation"
-        />
-
-    <StepsCard sx={{marginTop:4}}>
-          <StepsRow>
-            {steps.map((step, index) => (
-              <>
-                <ProcessStep
-                  key={step.title}
-                  icon={step.icon}
-                  title={step.title}
-                  description={step.description}
-                />
-
-                {index !== steps.length - 1 && (
-                  <ArrowBox>
-                    <ArrowForwardIcon />
-                  </ArrowBox>
-                )}
-              </>
-            ))}
-          </StepsRow>
-        </StepsCard>
-      </HowItWrapper>
-    // {/* </HowItSectionContainer> */}
+    <ReusableHowItWorks
+      pillIcon={paymentImage9}
+      pillText="Smart Recovery Process"
+      title="How It Works"
+      subtitle="An intelligent approach to detecting, resolving, and preventing healthcare claim denials"
+      steps={steps}
+      themeColor="#F47A20"
+      backgroundColor="#fff"
+    />
   );
 };
 

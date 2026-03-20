@@ -34,7 +34,7 @@ const productIntelligenceItems = [
 
 const ProductIntelligence = () => {
   return (
-    <Box sx={{ py: 12, bgcolor: "#ffffff", position: "relative", overflow: "hidden" }}>
+    <Box sx={{ py: { xs: 8, md: 10 }, bgcolor: "#ffffff", position: "relative", overflow: "hidden" }}>
       {/* Soft background glow */}
       <Box
         sx={{
@@ -42,8 +42,8 @@ const ProductIntelligence = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "600px",
-          height: "600px",
+          width: "500px",
+          height: "500px",
           background: "radial-gradient(circle, rgba(244,122,32,0.05) 0%, transparent 60%)",
           filter: "blur(40px)",
           zIndex: 0,
@@ -52,17 +52,15 @@ const ProductIntelligence = () => {
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
           <Typography
             sx={{
-              
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-            lineHeight: 1.3,
-         
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.4rem" },
+              lineHeight: 1.2,
               fontWeight: 800,
               textAlign: "center",
               color: "#0f172a",
@@ -73,11 +71,11 @@ const ProductIntelligence = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "1.1rem",
+              fontSize: "1rem",
               textAlign: "center",
               color: "#475569",
-              mb: 10,
-              maxWidth: "800px",
+              mb: { xs: 6, md: 8 },
+              maxWidth: "750px",
               mx: "auto",
             }}
           >
@@ -85,15 +83,15 @@ const ProductIntelligence = () => {
           </Typography>
         </motion.div>
 
-        <Grid container spacing={8}>
+        <Grid container spacing={4}>
           {productIntelligenceItems.map((item, index) => (
             <Grid size={{ xs: 12, md: 6 }} key={index}>
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.01 }}
                 style={{ height: "100%" }}
               >
                 <Box
@@ -109,11 +107,11 @@ const ProductIntelligence = () => {
                   <Typography
                     sx={{
                       position: "absolute",
-                      top: "-20px",
-                      right: "20px",
-                      fontSize: "12rem",
+                      top: "-15px",
+                      right: "15px",
+                      fontSize: "8rem",
                       fontWeight: 900,
-                      color: "rgba(244, 122, 32, 0.15)",
+                      color: "rgba(244, 122, 32, 0.12)",
                       lineHeight: 1,
                       zIndex: -1,
                       userSelect: "none",
@@ -125,18 +123,18 @@ const ProductIntelligence = () => {
                   {/* Icon */}
                   <Box
                     sx={{
-                      width: "70px",
-                      height: "70px",
-                      mb: 4,
-                      borderRadius: "16px",
+                      width: "60px",
+                      height: "60px",
+                      mb: 3,
+                      borderRadius: "14px",
                       background: "linear-gradient(135deg, #F47A20 0%, #E06912 100%)",
-                      boxShadow: "0 10px 25px rgba(244, 122, 32, 0.4)",
+                      boxShadow: "0 8px 16px rgba(244, 122, 32, 0.3)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       "& img": {
-                        height: "36px",
-                        width: "36px",
+                        height: "28px",
+                        width: "28px",
                         objectFit: "contain",
                         filter: "brightness(0) invert(1)",
                       },
@@ -149,11 +147,11 @@ const ProductIntelligence = () => {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontSize: "1.5rem",
+                      fontSize: "1.3rem",
                       fontWeight: 800,
                       color: "#0f172a",
-                      mb: 2,
-                      letterSpacing: "-0.5px",
+                      mb: 1.5,
+                      letterSpacing: "-0.3px",
                     }}
                   >
                     {item.title}
@@ -161,8 +159,8 @@ const ProductIntelligence = () => {
 
                   <Typography
                     sx={{
-                      fontSize: "1rem",
-                      lineHeight: 1.8,
+                      fontSize: "0.95rem",
+                      lineHeight: 1.6,
                       color: "#475569",
                     }}
                   >

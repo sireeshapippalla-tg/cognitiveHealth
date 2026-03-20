@@ -76,7 +76,7 @@ const OurOfferingSection = () => {
           title="Our Offering"
           align="center"
           maxWidth={700}
-          textColor="var(--color-primary)"
+          textColor="var(--color-text-dark)" // Darker color for titles
         />
 
         <Grid container spacing={4}>

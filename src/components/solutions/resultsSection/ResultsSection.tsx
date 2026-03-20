@@ -8,23 +8,11 @@ import {
   Button,
   CircularProgress,
   Box,
+  Container,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import {
-  SectionContainer,
-  Wrapper,
-  Subtitle,
-  CtaActions,
-  FooterText,
-  PrimaryButtonStyles,
-  Title,
-  StyledDialogTitle,
-  StyledDialogActions,
-  PrimaryButton,
-} from "./ResultsSection.style";
-import { MetricCard } from "../../ui/metricCard/MetricCard";
-import AppButton from "../../ui/appButton/AppButton";
+import { motion, AnimatePresence } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
@@ -48,10 +36,8 @@ const stats = [
     label: "Decrease in Manual Work",
   },
 ];
-const pdfFile =
-  "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
-// public
 
+const pdfFile = "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
 const pdfList = [
   {
     name: "National Provider Organization",
@@ -62,24 +48,16 @@ const pdfList = [
     file: "/Copy-of-National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf",
   },
 ];
+
 const ResultsSection = () => {
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
-
   const [openPdfList, setOpenPdfList] = useState(false);
   const [openPdfViewer, setOpenPdfViewer] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
 
-  // const handleOpenPdf = () => {
-  //   setOpenPdf(true);
-  //   setSelectedPdf(null);
-  // };
-
-  const handleOpenPdfList = () => {
-    setOpenPdfList(true);
-  };
+  const handleOpenPdfList = () => setOpenPdfList(true);
   const handleSelectPdf = (file: string) => {
     setSelectedPdf(file);
     setOpenPdfList(false);
@@ -95,63 +73,20 @@ const ResultsSection = () => {
     setSelectedPdf(null);
   };
 
-  // const handleSendEmail = async () => {
-  //   if (!email) {
-  //     toast.error("Please enter work email");
-  //     return;
-  //   }
-
-  //   try {
-  //     setLoading(true);
-
-  //     await fetch("/api/send-results-pdf", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         email,
-  //         pdf: pdfFile,
-  //       }),
-  //     });
-
-  //     toast.success("PDF sent successfully to your email!");
-  //     setOpenEmailDialog(false);
-  //     setEmail("");
-  //   } catch (error) {
-  //     toast.error("Failed to send email");
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   const handleSendEmail = async () => {
     if (!email) {
       toast.error("Please enter work email");
       return;
     }
-
     try {
       setLoading(true);
-
-      // Using EmailJS to send the email directly from the frontend
-      // IMPORTANT: You need to replace these with your actual EmailJS IDs
-      // Create an account at https://www.emailjs.com/
-      // Ensure the PDF link has the full, absolute URL so it works in the email
-      // Example locally: http://localhost:3000/National-Provider-Organization...pdf
       const absolutePdfLink = window.location.origin + pdfFile;
-
       await emailjs.send(
-        "service_87hf7ak", // Replace with your EmailJS Service ID
-        "template_xs1xiis", // Replace with your EmailJS Template ID
-        {
-          to_email: email,
-          pdf_link: absolutePdfLink, // Send the full clickable URL to the PDF
-        },
-        "97EUcQj5LwbXO5vNo" // Replace with your EmailJS Public Key
+        "service_87hf7ak",
+        "template_xs1xiis",
+        { to_email: email, pdf_link: absolutePdfLink },
+        "97EUcQj5LwbXO5vNo"
       );
-
       toast.success("PDF sent successfully to your email!");
       setOpenEmailDialog(false);
       setEmail("");
@@ -164,248 +99,224 @@ const ResultsSection = () => {
   };
 
   return (
-    <SectionContainer>
-      <Wrapper>
-        <Title>See Real Results from Healthcare Organizations Like Yours</Title>
+    <Box sx={{ 
+      py: { xs: 8, md: 12 }, 
+      background: "#fff", 
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      {/* Dynamic Background: Ambient Glowing Orbs */}
+      <motion.div
+        animate={{ 
+          scale: [0.8, 1, 0.8],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        style={{
+          position: "absolute",
+          top: "-10%",
+          left: "0%",
+          width: "500px",
+          height: "500px",
+          background: "radial-gradient(circle, rgba(244, 122, 32, 0.05) 0%, transparent 70%)",
+          zIndex: 0,
+          filter: "blur(80px)"
+        }}
+      />
 
-        <Subtitle>
-          Leading health systems, physician groups, and specialty providers are
-          achieving breakthrough results with CognitiveHealth AI agents.
-        </Subtitle>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <Box textAlign="center" mb={10}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <Typography
+              variant="h2"
+              fontWeight={900}
+              sx={{
+                mb: 2,
+                fontSize: { xs: "2rem", md: "3.2rem" },
+                color: "#111827",
+                lineHeight: 1.1,
+                letterSpacing: "-0.04em"
+              }}
+            >
+              Real World <br />
+              <Box component="span" sx={{ 
+                color: "#F47A20"
+              }}>Proven Impact</Box>
+            </Typography>
+            <Typography
+              sx={{
+                color: "#4B5563",
+                maxWidth: "650px",
+                mx: "auto",
+                fontSize: "1.2rem",
+                lineHeight: 1.6,
+                fontWeight: 500
+              }}
+            >
+              Leading health systems are achieving breakthrough results with <br />
+              <Box component="span" sx={{ color: "#111827", fontWeight: 800 }}>CognitiveHealth AI agents.</Box>
+            </Typography>
+          </motion.div>
+        </Box>
 
-        <Grid container spacing={3} sx={{ marginTop: 4 }}>
+        {/* ORGANIC METRICS CLUSTER: Staggered, Floating, Non-Grid feeling */}
+        <Grid container spacing={6} justifyContent="center">
           {stats.map((stat, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-              <MetricCard
-                value={stat.value}
-                description={stat.label}
-                color="#EB7724"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.2 }}
+              >
+                <Box sx={{ 
+                  textAlign: "center",
+                  "&:hover .stat-val": { color: "#F47A20", transform: "translateY(-5px)" }
+                }}>
+                  <Typography
+                    className="stat-val"
+                    variant="h1"
+                    fontWeight={950}
+                    sx={{
+                      color: "#111827",
+                      fontSize: { xs: "2.8rem", md: "3.8rem" },
+                      lineHeight: 1,
+                      mb: 1.5,
+                      transition: "all 0.4s ease",
+                      letterSpacing: "-0.03em"
+                    }}
+                  >
+                    {stat.value}
+                  </Typography>
+                  <Box sx={{ 
+                    width: "40px", 
+                    height: "3px", 
+                    background: index % 2 === 0 ? "#F47A20" : "#6BBF59", 
+                    mx: "auto", 
+                    mb: 3,
+                    borderRadius: "10px"
+                  }} />
+                  <Typography
+                    sx={{
+                      color: "#4B5563",
+                      fontSize: "1rem",
+                      lineHeight: 1.4,
+                      fontWeight: 600,
+                      maxWidth: "200px",
+                      mx: "auto",
+                      letterSpacing: "0.5px"
+                    }}
+                  >
+                    {stat.label}
+                  </Typography>
+                </Box>
+              </motion.div>
             </Grid>
           ))}
         </Grid>
 
-        <CtaActions direction={{ xs: "column", sm: "row" }} spacing={2}>
-          <AppButton
-            variantType="primary"
-            sx={PrimaryButtonStyles}
-            endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
-            onClick={handleOpenPdfList}
-            //  onClick={() => window.open("/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf", "_blank")}
-          >
-            Read Customer Success Stories
-          </AppButton>
-
-          <AppButton
-            variantType="outline"
-            showBorder={true}
-            // sx={OutlineButtonStyles}
-            endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
-            onClick={() => setOpenEmailDialog(true)}
-          >
-            Download Complete Results Package
-          </AppButton>
-        </CtaActions>
-
-        <FooterText>
-          Join <b>50+ healthcare organizations</b> processing
-          <b> 10M+ claims monthly</b> with CognitiveHealth
-        </FooterText>
-      </Wrapper>
-
-      {/* dialog for download pdf */}
-      <Dialog
-        open={openEmailDialog}
-        onClose={() => setOpenEmailDialog(false)}
-        maxWidth="xs"
-        fullWidth
-      >
-        <StyledDialogTitle>
-          Download Results Package
-          <IconButton
-            size="small"
-            onClick={() => setOpenEmailDialog(false)}
-            // disabled={sending}
-            sx={{
-              color: "var(--color-text-blue)",
-              backgroundColor: "#fff",
-              borderRadius: "100%",
-              ":hover": { backgroundColor: "#f3f4f6" },
-            }}
-          >
-            <CloseIcon fontSize="small" />
-          </IconButton>
-        </StyledDialogTitle>
-        <DialogContent sx={{ padding: "24px" }}>
-          <Typography variant="body2" color="text.secondary" mb={2} mt={2}>
-            Enter your work email and we’ll send the complete results package.
-          </Typography>
-
-          <TextField
-            fullWidth
-            label="Work Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            sx={{ marginBottom: 3 }}
-            type="email"
-            placeholder="example@company.com"
-          />
-        </DialogContent>
-        <StyledDialogActions>
-          <Button onClick={() => setOpenEmailDialog(false)} disabled={loading}>
-            Cancel
-          </Button>
-
-          <PrimaryButton
-            variant="contained"
-            disabled={!email || loading}
-            onClick={handleSendEmail}
-            startIcon={
-              loading ? <CircularProgress size={16} color="inherit" /> : null
-            }
-          >
-            {loading ? "Sending..." : "Send Report"}
-          </PrimaryButton>
-        </StyledDialogActions>
-      </Dialog>
-
-      {/* dialog for view pdf */}
-      <Dialog
-        open={openPdfList}
-        onClose={handleCloseAll}
-        maxWidth="sm"
-        fullWidth
-      >
-        <StyledDialogTitle>
-          Customer Success Stories
-          <IconButton
-            onClick={handleCloseAll}
-            sx={{
-              color: "var(--color-text-blue)",
-              backgroundColor: "#fff",
-              borderRadius: "100%",
-              ":hover": { backgroundColor: "#f3f4f6" },
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </StyledDialogTitle>
-
-        <DialogContent sx={{ padding: "24px" }}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            {pdfList.map((pdf, index) => (
-              <Box
-                key={index}
-                onClick={() => handleSelectPdf(pdf.file)}
+        {/* CTA ACTIONS */}
+        <Box sx={{ textAlign: "center", mt: 10 }}>
+          <Box sx={{ 
+            display: "flex", 
+            flexDirection: { xs: "column", sm: "row" }, 
+            gap: 3, 
+            justifyContent: "center",
+            mb: 6 
+          }}>
+             <Button
+                variant="contained"
+                onClick={handleOpenPdfList}
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "14px 16px",
-                  borderRadius: "10px",
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                  "&:hover": {
-                    backgroundColor: "#F9FAFB",
-                  },
+                  px: 4, py: 1.8, borderRadius: "50px", fontWeight: 900,
+                  background: "#F47A20", fontSize: "1rem", textTransform: "none",
+                  boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
+                  "&:hover": { background: "#e65a00" }
                 }}
-              >
-                {/* LEFT SECTION */}
-                <Box
-                  sx={{ display: "flex", alignItems: "center", gap: "12px" }}
-                >
-                  <PictureAsPdfIcon
-                    sx={{
-                      color: "#EB7724",
-                      fontSize: 26,
-                    }}
-                  />
-
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontSize: "15px",
-                        fontWeight: 500,
-                        color: "#111827",
-                      }}
-                    >
-                      {pdf.name}
-                    </Typography>
-                  </Box>
-                </Box>
-
-                {/* RIGHT ARROW */}
-                <ArrowForwardIosIcon
-                  sx={{
-                    fontSize: 14,
-                    color: "#9CA3AF",
-                  }}
-                />
-              </Box>
-            ))}
+                endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+             >
+                Read Success Stories
+             </Button>
+             <Button
+                variant="outlined"
+                onClick={() => setOpenEmailDialog(true)}
+                sx={{
+                  px: 4, py: 1.8, borderRadius: "50px", fontWeight: 900,
+                  borderColor: "rgba(0,0,0,0.1)", color: "#111827", 
+                  fontSize: "1rem", textTransform: "none",
+                  background: "#fff",
+                  "&:hover": { borderColor: "#F47A20", color: "#F47A20", background: "rgba(244, 122, 32, 0.05)" }
+                }}
+                endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+             >
+                Download Package
+             </Button>
           </Box>
+
+          <Typography sx={{ 
+            color: "#9CA3AF", 
+            fontWeight: 800, 
+            letterSpacing: "2px", 
+            textTransform: "uppercase",
+            fontSize: "0.8rem"
+          }}>
+            Trusted by <Box component="span" sx={{ color: "#111827" }}>50+ Organizations</Box>
+          </Typography>
+        </Box>
+      </Container>
+
+      {/* REUSED DIALOGS - KEEPING LOGIC AS IS */}
+      <Dialog open={openEmailDialog} onClose={() => setOpenEmailDialog(false)} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: "32px", p: 2 } }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2, p: 2 }}>
+           <Typography variant="h5" fontWeight={900}>Download Package</Typography>
+           <IconButton onClick={() => setOpenEmailDialog(false)}><CloseIcon /></IconButton>
+        </Box>
+        <DialogContent sx={{ p: 4, pt: 0 }}>
+           <Typography variant="body1" sx={{ color: "#6B7280", mb: 4 }}>Enter your work email and we'll send the complete results package instantly.</Typography>
+           <TextField fullWidth label="Work Email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" sx={{ "& .MuiOutlinedInput-root": { borderRadius: "16px" } }} />
+           <Button fullWidth variant="contained" disabled={!email || loading} onClick={handleSendEmail} sx={{ mt: 4, py: 2, borderRadius: "16px", background: "#F47A20", fontWeight: 800 }}>
+             {loading ? "Sending..." : "Send Report"}
+           </Button>
         </DialogContent>
       </Dialog>
-      <Dialog
-        open={openPdfViewer}
-        onClose={handleCloseAll}
-        maxWidth="lg"
-        // fullWidth
-        // PaperProps={{
-        //   sx: {
-        //     borderRadius: "16px",
-        //     overflow: "hidden",
-        //   },
-        // }}
-        fullScreen
-  PaperProps={{
-    sx: {
-      backgroundColor: "#fff",
-    },
-  }}
-      >
-        <DialogContent sx={{ padding: "16px" }}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              mb: 2,
-            }}
-          >
-            <Button
-              onClick={handleBackToList}
-              sx={{
-                textTransform: "none",
-                fontWeight: 500,
-              }}
-            >
-              ← Back
-            </Button>
 
-            <IconButton onClick={handleCloseAll}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-
-          <Box
-            sx={{
-              width: "100%",
-              height: "80vh",
-              border: "1px solid #E5E7EB",
-              borderRadius: "8px",
-              overflow: "hidden",
-            }}
-          >
-            <iframe
-              src={`${selectedPdf}#toolbar=0&navpanes=0&scrollbar=0`}
-              width="100%"
-              height="100%"
-              style={{ border: "none" }}
-            />
-          </Box>
+      <Dialog open={openPdfList} onClose={handleCloseAll} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: "40px", p: 2 } }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 3 }}>
+           <Typography variant="h5" fontWeight={900}>Success Stories</Typography>
+           <IconButton onClick={handleCloseAll}><CloseIcon /></IconButton>
+        </Box>
+        <DialogContent sx={{ p: 2 }}>
+           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+             {pdfList.map((pdf, idx) => (
+               <Box key={idx} onClick={() => handleSelectPdf(pdf.file)} sx={{ 
+                 p: 3, borderRadius: "24px", cursor: "pointer", transition: "all 0.3s ease",
+                 background: "rgba(0,0,0,0.03)", display: "flex", alignItems: "center", gap: 3,
+                 "&:hover": { background: "rgba(244, 122, 32, 0.08)", transform: "translateX(10px)" }
+               }}>
+                 <PictureAsPdfIcon sx={{ color: "#F47A20", fontSize: 32 }} />
+                 <Typography fontWeight={700} sx={{ flex: 1 }}>{pdf.name}</Typography>
+                 <ArrowForwardIosIcon sx={{ fontSize: 16, color: "#9CA3AF" }} />
+               </Box>
+             ))}
+           </Box>
         </DialogContent>
       </Dialog>
-    </SectionContainer>
+
+      <Dialog open={openPdfViewer} onClose={handleCloseAll} fullScreen PaperProps={{ sx: { background: "#fff" } }}>
+         <Box sx={{ p: 2, display: "flex", justifyContent: "space-between", borderBottom: "1px solid #eee" }}>
+            <Button onClick={handleBackToList} startIcon={<ArrowForwardIosIcon sx={{ transform: "rotate(180deg)", fontSize: 14 }} />}>Back to Stories</Button>
+            <IconButton onClick={handleCloseAll}><CloseIcon /></IconButton>
+         </Box>
+         <DialogContent sx={{ p: 0 }}>
+            <iframe src={`${selectedPdf}#toolbar=0`} width="100%" height="100%" style={{ border: "none" }} />
+         </DialogContent>
+      </Dialog>
+    </Box>
   );
 };
 

@@ -10,29 +10,29 @@ export const SectionContainer = styled(Container)(({ theme }) => ({
   width: "100%",
   backgroundColor: "var(--color-bg-lite)",
   paddingTop: theme.spacing(4),
-  paddingBottom: theme.spacing(14),
+  paddingBottom: theme.spacing(8),
   [theme.breakpoints.down("md")]: {
-    paddingBottom: theme.spacing(10),
+    paddingBottom: theme.spacing(6),
   },
 }));
 export const HeaderTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   textAlign: "center",
-  marginBottom: theme.spacing(2),
-  fontSize: 32,
+  marginBottom: theme.spacing(1.5),
+  fontSize: 28,
 
   [theme.breakpoints.down("md")]: {
-    fontSize: 26,
+    fontSize: 22,
   },
 }));
 
 export const HeaderSubtitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.secondary,
-  maxWidth: 750,
+  maxWidth: 600,
   margin: "0 auto",
-  marginBottom: theme.spacing(6),
-  fontSize: 16,
+  marginBottom: theme.spacing(4),
+  fontSize: 15,
 
   [theme.breakpoints.down("md")]: {
     fontSize: 14,
