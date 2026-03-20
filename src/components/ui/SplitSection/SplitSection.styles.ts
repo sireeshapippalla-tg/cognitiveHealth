@@ -16,10 +16,12 @@ export const Section = styled(Box)<{ padding?: string }>(({ theme, padding }) =>
   },
 }));
 export const Highlight = styled("span")(() => ({
-  fontWeight: 800,
-  background: "#EB7724",
+  fontWeight: 900,
+  background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
+  animation: "gradientMove 5s linear infinite",
+  backgroundSize: "200% auto",
 }));
 
 export const Grid = styled(Box, {

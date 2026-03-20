@@ -92,7 +92,7 @@ const EnterpriseReadinessSection = () => {
                         display: "flex",
                         alignItems: "center",
                         gap: 3,
-                        p: 3,
+                        p: 2,
                         pr: 4,
                         borderRadius: "20px",
                         background: isActive ? "#ffffff" : "transparent",
@@ -109,8 +109,8 @@ const EnterpriseReadinessSection = () => {
                       {/* Small Icon */}
                       <Box
                         sx={{
-                          width: "60px",
-                          height: "60px",
+                          width: "50px",
+                          height: "50px",
                           borderRadius: "14px",
                           display: "flex",
                           alignItems: "center",
@@ -121,8 +121,8 @@ const EnterpriseReadinessSection = () => {
                             : "#e2e8f0",
                           boxShadow: isActive ? "0 10px 20px rgba(74, 144, 226, 0.3)" : "none",
                           "& img": {
-                            width: "28px",
-                            height: "28px",
+                            width: "20px",
+                            height: "20px",
                             objectFit: "contain",
                             filter: isActive
                               ? "brightness(0) invert(1)"
@@ -190,8 +190,8 @@ const EnterpriseReadinessSection = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    p: { xs: 4, md: 8 },
-                    minHeight: { xs: "auto", md: "500px" },
+                    p: { xs: 2, md: 4 },
+                    minHeight: { xs: "auto", md: "300px" },
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -230,8 +230,8 @@ const EnterpriseReadinessSection = () => {
                     {/* Stage Presentation Icon */}
                     <Box
                       sx={{
-                        width: "90px",
-                        height: "90px",
+                        width: "60px",
+                        height: "60px",
                         borderRadius: "24px",
                         background: "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
                         display: "flex",

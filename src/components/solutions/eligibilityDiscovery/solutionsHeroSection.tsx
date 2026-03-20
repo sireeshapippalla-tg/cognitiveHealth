@@ -2,13 +2,20 @@
 import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.jpeg";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
+import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 
 const SolutionsHeroSection = () => {
   const navigate = useNavigate();
   return (
     <SplitSection
-    padding="10px 80px 10px 80px"
-      eyebrow="Eligibility Discovery "
+
+      // eyebrow="Eligibility Discovery "
+      eyebrow={
+        <>
+          Eligibility{" "}
+          <Highlight>Discovery</Highlight>
+        </>
+      }
       description="Verify coverage in real-time and eliminate claim denials due to 
                   eligibility issues before patients ever walk through your door."
       image={eligibilityDiscoveryImage}

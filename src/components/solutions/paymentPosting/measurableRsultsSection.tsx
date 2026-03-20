@@ -12,6 +12,9 @@ import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import useCountUp from "../../ui/useCountUp";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const stats = [
   {
@@ -39,8 +42,100 @@ const stats = [
     icon: <MonetizationOnOutlinedIcon />,
   },
 ];
+const StatCard = ({ stat, index }: any) => {
+  const ref = useRef(null);
 
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+  });
+
+  const numericValue = parseFloat(stat.value.replace(/[^\d.]/g, ""));
+
+  const count = useCountUp(isInView ? numericValue : 0, 2000);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
+    >
+      <Box
+        // sx={{
+        //   textAlign: "center",
+        //   p: 4,
+        //   borderRadius: "20px",
+        //   background: "linear-gradient(180deg, #fff, #f9fafb)",
+        //   border: "1px solid #E5E7EB",
+        //   transition: "0.3s",
+
+        //   "&:hover": {
+        //     transform: "translateY(-10px)",
+        //     boxShadow: "0 25px 50px rgba(0,0,0,0.12)",
+        //   },
+        // }}
+         sx={{
+    textAlign: "center",
+    p: 2,
+    borderRadius: "20px",
+    background: "linear-gradient(180deg, #fff, #f9fafb)",
+    border: "1px solid #E5E7EB",
+
+    width: "100%",        // ✅ full width
+    height: "100%",       // ✅ equal height
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",  // ✅ evenly spaced
+
+    transition: "0.3s",
+
+    "&:hover": {
+      transform: "translateY(-10px)",
+      boxShadow: "0 25px 50px rgba(0,0,0,0.12)",
+    },
+  }}
+      >
+        {/* VALUE */}
+        <Typography
+          sx={{
+            padding:"10px",
+            fontSize: { xs: "2.2rem", md: "2.8rem" },
+            fontWeight: 900,
+            background:
+              "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {stat.value.includes("~")
+            ? "~0%"
+            : `${count.toFixed(1)}%`}
+        </Typography>
+
+        {/* TITLE */}
+        <Typography
+          sx={{
+            mt: 1,
+            fontSize: "16px",
+            fontWeight: 700,
+            color: "#F47A20",
+            // letterSpacing: "0.1em",
+          }}
+        >
+          {stat.title}
+        </Typography>
+
+        {/* DESC */}
+        <Typography sx={{ mt: 1, color: "#6B7280",  minHeight: "48px", }}>
+          {stat.description}
+        </Typography>
+      </Box>
+    </motion.div>
+  );
+};
 const MeasurableResultsSection = () => {
+  
   return (
     <SectionContainer sx={{ 
       py: { xs: 6, md: 8 }, 
@@ -101,7 +196,7 @@ const MeasurableResultsSection = () => {
           {/* ORGANIC CLUSTER DESIGN */}
           <Box sx={{ position: "relative" }}>
              <Grid container spacing={6} justifyContent="center">
-               {stats.map((stat, index) => (
+               {/* {stats.map((stat, index) => (
                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
@@ -175,7 +270,12 @@ const MeasurableResultsSection = () => {
                        </Box>
                     </motion.div>
                  </Grid>
-               ))}
+               ))} */}
+               {stats.map((stat, index) => (
+  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}   sx={{ display: "flex" }} >
+    <StatCard stat={stat} index={index} />
+  </Grid>
+))}
              </Grid>
           </Box>
         </MeasureWrapper>

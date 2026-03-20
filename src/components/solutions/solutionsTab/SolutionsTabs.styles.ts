@@ -12,7 +12,7 @@ export const StickyTabsWrapper = styled("div")(({ theme }) => ({
   width: "100%",
   display: "flex",
   justifyContent: "center",
-  marginTop: "40px",
+  // marginTop: "40px",
   padding: "16px 0", // Added top padding back for whitespace
   background: "#ffffff",
   backdropFilter: "blur(18px)",
@@ -54,7 +54,7 @@ export const TabButton = styled(motion.button)<{
   $active: boolean;
 }>(({ theme, $active }) => ({
   position: "relative",
-  padding: "16px 32px",
+  padding: "8px 16px",
   borderRadius: "24px",
   border: "none",
   background: "transparent",
@@ -64,7 +64,7 @@ export const TabButton = styled(motion.button)<{
   whiteSpace: "nowrap",
   flexShrink: 0,
   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-  textTransform: "uppercase",
+  // textTransform: "uppercase",
   letterSpacing: "1px",
   color: $active ? "#ffffff" : "#4B5563",
   display: "flex",
@@ -86,9 +86,11 @@ export const ActiveBackground = styled(motion.div)({
   position: "absolute",
   inset: 0,
   borderRadius: "24px",
-  background: "linear-gradient(135deg, #F47A20 0%, #E06912 100%)",
-  boxShadow: "0 10px 30px rgba(244,122,32,0.4)",
-  zIndex: 0,
+  // background: "linear-gradient(135deg, #F47A20 0%, #E06912 100%)",
+  // boxShadow: "0 10px 30px rgba(244,122,32,0.4)",
+   background: "linear-gradient(135deg, #709cd0 0%, #4A90E2 100%)",
+    boxShadow: "0 10px 30px rgba(112,156,208,0.4)",
+   zIndex: 0,
 });
 
 export const TabText = styled("span")<{

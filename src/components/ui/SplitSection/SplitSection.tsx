@@ -31,35 +31,50 @@ const SplitSection = ({
   return (
     <Box
       sx={{
-        px: { xs: 3, md: 0 },
+        px: { xs: 2, sm: 4 },
         py: padding ? padding : { xs: 8, md: 10 },
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(135deg, #fff 0%, #F9FAFB 100%)",
+        background: "#F9FAFB",
       }}
     >
       {/* PREMIUM BACKGROUND ELEMENTS */}
       <motion.div
-        animate={{ 
-          scale: [1, 1.2, 1],
-          rotate: [0, 5, 0],
-          opacity: [0.15, 0.25, 0.15]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        animate={{ y: [0, -15, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
         style={{
           position: "absolute",
-          top: "-10%",
-          left: reverse ? "70%" : "-10%",
-          width: "600px",
-          height: "600px",
-          background: "radial-gradient(circle, rgba(244, 122, 32, 0.1) 0%, transparent 70%)",
+          width: 220,
+          height: 220,
+          background: "radial-gradient(circle, #F47A20, transparent)",
           filter: "blur(100px)",
-          zIndex: 0
+          top: "-60px",
+          left: "-60px",
+          opacity: 0.15,
+        }}
+      />
+      <motion.div
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 7, repeat: Infinity }}
+        style={{
+          position: "absolute",
+          width: 220,
+          height: 220,
+          background: "radial-gradient(circle, #6BBF59, transparent)",
+          filter: "blur(100px)",
+          bottom: "-60px",
+          right: "-60px",
+          opacity: 0.15,
         }}
       />
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
-        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center" direction={reverse ? "row-reverse" : "row"}>
+        <Grid
+          container
+          spacing={{ xs: 6, md: 8 }}
+          alignItems="center"
+          direction={reverse ? "row-reverse" : "row"}
+        >
           {/* TEXT CONTENT: High Typography Control */}
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
@@ -68,155 +83,184 @@ const SplitSection = ({
               viewport={{ once: false, amount: 0.3 }}
               variants={{
                 hidden: { opacity: 0, x: reverse ? 30 : -30 },
-                visible: { 
-                  opacity: 1, 
+                visible: {
+                  opacity: 1,
                   x: 0,
-                  transition: { staggerChildren: 0.1, duration: 0.6 }
-                }
+                  transition: { staggerChildren: 0.1, duration: 0.6 },
+                },
               }}
             >
-              <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 <Typography
+                  fontWeight="bold"
                   sx={{
                     display: "inline-block",
-                    color: "#F47A20",
-                    fontWeight: 900,
-                    textTransform: "uppercase",
-                    letterSpacing: "4px",
-                    mb: 2,
-                    fontSize: "0.8rem"
+                    color: "#1F2937",
+                    lineHeight: 1.2,
+                    mb: 1,
+                   
+                    fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
                   }}
                 >
                   {eyebrow}
                 </Typography>
-                <Typography
-                  variant="h1"
-                  fontWeight={900}
-                  sx={{
-                    fontSize: { xs: "1.8rem", md: "3.2rem" },
-                    color: "#111827",
-                    lineHeight: 1.1,
-                    letterSpacing: "-0.03em",
-                    mb: 3
-                  }}
-                >
-                  {title}
-                </Typography>
+                {title && (
+                  <Typography
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
+                      lineHeight: 1.2,
+                      // letterSpacing: "-0.02em",
+                      mb: 2.5,
+                      color: "#1F2937",
+                    }}
+                  >
+                    {title}
+                  </Typography>
+                )}
               </motion.div>
 
-              <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 <Typography
                   sx={{
-                    color: "#4B5563",
+                    color: "#6B7280",
                     fontSize: "1.1rem",
                     lineHeight: 1.6,
                     mb: 4,
-                    fontWeight: 500,
-                    maxWidth: "500px"
+                    maxWidth: "550px",
                   }}
                 >
                   {description}
                 </Typography>
               </motion.div>
 
-              <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
                   {primaryAction && (
-                    <Button
-                      variant="contained"
-                      onClick={primaryAction.onClick}
-                      sx={{
-                        px: 4,
-                        py: 1.8,
-                        borderRadius: "50px",
-                        fontWeight: 900,
-                        textTransform: "none",
-                        background: "#F47A20",
-                        fontSize: "0.95rem",
-                        boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
-                        "&:hover": { background: "#e65a00" }
-                      }}
-                    >
-                      {primaryAction.label}
-                    </Button>
+                    <motion.div whileHover={{ scale: 1.05 }}>
+                      <Button
+                        variant="contained"
+                        endIcon={<ArrowForwardIcon />}
+                        onClick={primaryAction.onClick}
+                        sx={{
+                          px: 4,
+                          py: 1.5,
+                          borderRadius: "40px",
+                          fontWeight: "bold",
+                          textTransform: "none",
+                          position: "relative",
+                          overflow: "hidden",
+                          background: "#F47A20",
+                          fontSize: "1rem",
+                          boxShadow: "0 10px 20px rgba(244,122,32,0.2)",
+                          "&::after": {
+                            content: '""',
+                            position: "absolute",
+                            top: 0,
+                            left: "-80%",
+                            width: "60%",
+                            height: "100%",
+                            background:
+                              "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                            transform: "skewX(-20deg)",
+                          },
+                          "&:hover::after": {
+                            left: "130%",
+                            transition: "0.7s",
+                          },
+                        }}
+                      >
+                        {primaryAction.label}
+                      </Button>
+                    </motion.div>
                   )}
                   {secondaryAction && (
-                    <Button
-                      variant="outlined"
-                      onClick={secondaryAction.onClick}
-                      sx={{
-                        px: 4,
-                        py: 1.8,
-                        borderRadius: "50px",
-                        fontWeight: 900,
-                        textTransform: "none",
-                        borderColor: "rgba(244, 122, 32, 0.4)",
-                        color: "#F47A20",
-                        fontSize: "0.95rem",
-                        borderWidth: "2px",
-                        "&:hover": { 
-                          borderWidth: "2px", 
+                    <motion.div whileHover={{ scale: 1.05 }}>
+                      <Button
+                        variant="outlined"
+                        onClick={secondaryAction.onClick}
+                        endIcon={<ArrowForwardIcon />}
+                        sx={{
+                          px: 4,
+                          py: 1.5,
+                          borderRadius: "40px",
+                          textTransform: "none",
+                          fontWeight: 600,
                           borderColor: "#F47A20",
-                          background: "rgba(244, 122, 32, 0.05)"
-                        }
-                      }}
-                      endIcon={<ArrowForwardIcon />}
-                    >
-                      {secondaryAction.label}
-                    </Button>
+                          color: "#F47A20",
+                          fontSize: "1rem",
+                          "&:hover": {
+                            background: "rgba(107,191,89,0.05)",
+                            borderColor: "#F47A20",
+                          },
+                        }}
+                      >
+                        {secondaryAction.label}
+                      </Button>
+                    </motion.div>
                   )}
                 </Box>
               </motion.div>
             </motion.div>
           </Grid>
 
-          {/* VISUAL SIDE: Non-Boxed, Organic Image Presentation */}
+          {/* VISUAL SIDE: Depth Presentation */}
           <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: reverse ? -60 : 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, type: "spring", bounce: 0.1 }}
+              whileHover={{ rotate: 1 }}
             >
-              <Box sx={{ position: "relative" }}>
-                 {/* Decorative background accent behind image */}
-                 <motion.div 
-                   animate={{ rotate: 360 }}
-                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                   style={{
-                     position: "absolute",
-                     top: "-15%",
-                     left: "-15%",
-                     width: "130%",
-                     height: "130%",
-                     border: "1px dashed rgba(107, 191, 89, 0.15)",
-                     borderRadius: "35%",
-                     zIndex: -1
-                   }}
-                 />
-
-                 <Box sx={{ 
-                   borderRadius: "32px",
-                   overflow: "hidden",
-                   boxShadow: "0 40px 80px rgba(0,0,0,0.1)",
-                   transform: `perspective(1000px) rotateY(${reverse ? '3deg' : '-3deg'})`,
-                   background: "#fff"
-                 }}>
-                   <img 
-                     src={image} 
-                     alt="Visual" 
-                     style={{ 
-                       width: "100%", 
-                       height: "auto", 
-                       display: "block"
-                     }} 
-                   />
-                 </Box>
+              <Box
+                sx={{
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  background: "#fff",
+                  border: "1px solid #E5E7EB",
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
+                  transform: "perspective(1000px) rotateX(3deg)",
+                }}
+              >
+                <img
+                  src={image}
+                  alt="Visual"
+                  style={{
+                    width: "100%",
+                    display: "block",
+                  }}
+                />
               </Box>
             </motion.div>
           </Grid>
         </Grid>
       </Container>
+      
+      {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
+      <style>
+        {`
+        @keyframes gradientMove {
+          0% { background-position: 0% }
+          100% { background-position: 200% }
+        }
+        `}
+      </style>
     </Box>
   );
 };

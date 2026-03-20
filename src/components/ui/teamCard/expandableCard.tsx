@@ -33,7 +33,7 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
         borderRadius: "32px",
         border: "1px solid",
         borderColor: open ? "rgba(244, 122, 32, 0.3)" : "rgba(0, 0, 0, 0.06)",
-        p: { xs: 2.5, md: 3.5 },
+        p: { xs: 1.5, md: 2.5 },
         position: "relative",
         "&:hover": {
           borderColor: open ? "rgba(244, 122, 32, 0.4)" : "rgba(107, 191, 89, 0.4)",
@@ -54,8 +54,8 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
         {/* ICON - ORGANIC CIRCLE */}
         <Box
           sx={{
-            width: "64px",
-            height: "64px",
+            width: "54px",
+            height: "54px",
             borderRadius: "30%",
             background: open ? "#F47A20" : "rgba(107, 191, 89, 0.15)",
             color: open ? "#fff" : "#6BBF59",
@@ -117,7 +117,7 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
       </Box>
 
       <Collapse in={open}>
-        <Box sx={{ pt: 4, pl: { xs: 0, md: 11.5 }, pr: { xs: 0, md: 4 }, pb: 2 }}>
+        <Box sx={{ pt: 1, pl: { xs: 0, md: 11.5 }, pr: { xs: 0, md: 4 }, pb: 2 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
