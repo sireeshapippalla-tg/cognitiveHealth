@@ -6,13 +6,13 @@ import {
   Typography,
   TextField,
   Button,
-  CircularProgress,
+  // CircularProgress,
   Box,
   Container,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
@@ -103,7 +103,7 @@ const ResultsSection = () => {
     <Box
       sx={{
         // py: { xs: 8, md: 12 },
-        paddingBottom:"30px",
+        paddingBottom: "30px",
         background: "#fff",
         position: "relative",
         overflow: "hidden",
@@ -220,7 +220,7 @@ const ResultsSection = () => {
                       height: "4px",
                       mx: "auto",
                       // my: 2,
-                      marginBottom:"10px",
+                      marginBottom: "10px",
                       borderRadius: "10px",
                       background:
                         "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",

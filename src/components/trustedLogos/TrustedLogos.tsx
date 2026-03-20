@@ -69,7 +69,7 @@
 import React from "react";
 import {
   TrustSection,
-  TrustTitle,
+  // TrustTitle,
   LogoScrollWrapper,
   LogoTrack,
   LogoGrid,
@@ -104,14 +104,14 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
       <TrustSection>
         {/* {title && <TrustTitle>{title}</TrustTitle>} */}
         {title && (
-           <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
-          style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom:"20px" }}
-        >
-          <Box
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+            style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: "20px" }}
+          >
+            <Box
             // sx={{
             //   display: "inline-block",
             //   px: { xs: 2, sm: 4 },
@@ -128,24 +128,24 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
             //   margin: "0 auto",
             //   width: "fit-content",
             // }}
-          >
-            <Typography  
-              sx={{
-                fontSize: { xs: "0.75rem", sm: "0.85rem" },
-                fontWeight: 600,
-                letterSpacing: "1px",
-                // textTransform: "uppercase",
-                // background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-                // WebkitBackgroundClip: "text",
-                // WebkitTextFillColor: "transparent",
-                // color: 'white'
-              }}
             >
-            {title}
-            </Typography>
-          </Box>
-        </motion.div>
-)}
+              <Typography
+                sx={{
+                  fontSize: { xs: "0.75rem", sm: "0.85rem" },
+                  fontWeight: 600,
+                  letterSpacing: "1px",
+                  // textTransform: "uppercase",
+                  // background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                  // WebkitBackgroundClip: "text",
+                  // WebkitTextFillColor: "transparent",
+                  // color: 'white'
+                }}
+              >
+                {title}
+              </Typography>
+            </Box>
+          </motion.div>
+        )}
         <LogoScrollWrapper>
           <LogoTrack style={{ animationDuration: `${speed}s` }}>
             {[...Array(2)].map((_, index) => (

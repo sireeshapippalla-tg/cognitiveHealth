@@ -1,8 +1,8 @@
-import { Grid, Box, Typography, Container } from "@mui/material";
-import { MeasureWrapper, SectionContainer } from "./solutions.style";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
+// import { Grid, Box, Typography, Container } from "@mui/material";
+// import { MeasureWrapper, SectionContainer } from "./solutions.style";
+// import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
