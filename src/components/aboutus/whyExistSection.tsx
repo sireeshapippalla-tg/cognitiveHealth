@@ -37,7 +37,7 @@ const features = [
 const WhyWeExistSection = () => {
   return (
     <Box sx={{
-      py: { xs: 12, md: 18 },
+      py: { xs: 8, md: 9 },
       background: "#fff",
       position: "relative",
       overflow: "hidden"
@@ -70,7 +70,7 @@ const WhyWeExistSection = () => {
                 fontWeight={900}
                 sx={{
                   mb: 4,
-                  fontSize: { xs: "2.5rem", md: "3.5rem" },
+                  fontSize: { xs: "20px", md: "28px" },
                   color: "#111827",
                   lineHeight: 1.1
                 }}
@@ -135,7 +135,7 @@ const WhyWeExistSection = () => {
                       <Typography
                         variant="h5"
                         fontWeight={800}
-                        sx={{ mb: 1.5, color: "#1F2937", fontSize: "1.5rem" }}
+                        sx={{ mb: 1.5, color: "#1F2937", fontSize: "20px" }}
                       >
                         {feature.title}
                       </Typography>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const WhoWeAreSection: React.FC = () => {
   return (
     <Box sx={{
-      py: { xs: 10, md: 18 },
+      py: { xs: 5, md: 9 },
       background: "#fff",
       position: "relative",
       overflow: "hidden"
@@ -38,25 +38,13 @@ const WhoWeAreSection: React.FC = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <Typography
-              sx={{
-                color: "#F47A20",
-                fontWeight: 900,
-                textTransform: "uppercase",
-                letterSpacing: "6px",
-                fontSize: "0.9rem",
-                mb: 2,
-                display: "block"
-              }}
-            >
-              Our Story
-            </Typography>
+           
             <Typography
               variant="h2"
               fontWeight={900}
               sx={{
                 mb: 6,
-                fontSize: { xs: "2.5rem", md: "4rem" },
+               fontSize: { xs: "20px", md: "28px" },
                 color: "#111827",
                 lineHeight: 1.1,
                 letterSpacing: "-0.04em"
@@ -74,7 +62,7 @@ const WhoWeAreSection: React.FC = () => {
           >
             <Box sx={{
               color: "#4B5563",
-              fontSize: { xs: "1.1rem", md: "1.35rem" },
+             fontSize: { xs: "16px", md: "18px" },
               lineHeight: 1.8,
               fontWeight: 500,
               textAlign: "center",

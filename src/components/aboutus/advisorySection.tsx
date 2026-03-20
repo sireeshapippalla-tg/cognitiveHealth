@@ -54,7 +54,7 @@ const AdvisorySection: React.FC = () => {
               fontWeight={900}
               sx={{
                 mb: 3,
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontSize: { xs: "20px", md: "28px" },
                 color: "#1F2937",
                 letterSpacing: "-0.04em",
                 lineHeight: 1.1
@@ -127,7 +127,7 @@ const AdvisorySection: React.FC = () => {
                     sx={{ 
                       mb: 1, 
                       color: "#1F2937", 
-                      fontSize: { xs: "1.8rem", md: "2.4rem" },
+                       fontSize: { xs: "20px", md: "25px" },
                       transition: "color 0.3s ease",
                       letterSpacing: "-0.02em"
                     }}
@@ -138,8 +138,8 @@ const AdvisorySection: React.FC = () => {
                     sx={{ 
                       color: "#F47A20", 
                       fontWeight: 800, 
-                      fontSize: "1rem", 
-                      textTransform: "uppercase",
+                       fontSize: { xs: "16px", md: "18px" },
+                      // textTransform: "uppercase",
                       letterSpacing: "2px",
                       mb: 3,
                       display: "flex",
