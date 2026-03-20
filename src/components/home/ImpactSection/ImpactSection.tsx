@@ -81,42 +81,37 @@ const ImpactSection = () => {
   return (
     <Box
       sx={{
-        px: 5,
-        py: 10,
+        px: { xs: 2, md: 5 }, 
+        py: { xs: 6, md: 8 },
         background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
         color: "#0f172a",
-        minHeight: "100vh",
       }}
     >
       {/* Header */}
-      <Box textAlign="center" mb={8}>
+      <Box textAlign="center" mb={6}>
         <Typography
           sx={{
             display: "inline-block",
-            px: 3,
-            py: 1,
+            px: 2.5,
+            py: 0.8,
             borderRadius: "20px",
-            background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
+            background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)", 
             color: "#fff",
-            // fontSize: "14px",
-             fontSize: { xs: "0.75rem", sm: "0.85rem" },
+            fontSize: "0.75rem",
             mb: 2,
-            fontWeight:600,
-             letterSpacing: "1px",
-                textTransform: "uppercase",
-                
+            fontWeight: 600,
+            letterSpacing: "1px",
+            textTransform: "uppercase",
           }}
-              
         >
           Proven Results That Matter
         </Typography>
 
-        <Typography 
-          // variant="h4" 
+        <Typography
           fontWeight="bold"
           sx={{
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-            lineHeight: 1.3,
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.4rem" },
+            lineHeight: 1.2,
           }}
         >
           Real Impact Across Every Dimension Of Revenue
@@ -135,7 +130,7 @@ const ImpactSection = () => {
           <StatCard key={index} item={item} />
         ))}
       </Box>
-    </Box>
+    </Box >
   );
 };
 
@@ -239,9 +234,7 @@ const StatCard = ({ item }: any) => {
             transform: "translate(-50%, -50%)",
             fontSize: "26px",
             fontWeight: "bold",
-            background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            color: "#F47A20", // Solid color for better readability
             pointerEvents: "none",
           }}
         >

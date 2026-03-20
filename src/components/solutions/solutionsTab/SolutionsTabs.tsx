@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Box } from "@mui/material";
 import {
   BlogContainer,
   StickyTabsWrapper,
@@ -33,13 +34,13 @@ const SolutionsTabs = () => {
       value: "paymentPosting",
       label: "Payment Posting",
       icon: (
-        <img src={Vector} alt="Vector Icon" style={{ width: 24, height: 24 }} />
+        <img src={Vector} alt="Vector Icon" style={{ width: 28, height: 28 }} />
       ),
     },
     {
       value: "lockboxManagement",
       label: "Lockbox Management",
-      icon: <img src={Frame} alt="Frame Icon" style={{ color: "black" }} />,
+      icon: <img src={Frame} alt="Frame Icon" style={{ width: 28, height: 28 }} />,
     },
     {
       value: "denialWorkflow",
@@ -48,7 +49,7 @@ const SolutionsTabs = () => {
         <img
           src={Workflow}
           alt="Workflow Icon"
-          style={{ width: 24, height: 24 }}
+          style={{ width: 28, height: 28 }}
         />
       ),
     },
@@ -59,7 +60,7 @@ const SolutionsTabs = () => {
         <img
           src={Eligibility}
           alt="Eligibility Icon"
-          style={{ width: 24, height: 24 }}
+          style={{ width: 28, height: 28 }}
         />
       ),
     },
@@ -70,7 +71,7 @@ const SolutionsTabs = () => {
         <img
           src={Analysis}
           alt="Analysis Icon"
-          style={{ width: 24, height: 24 }}
+          style={{ width: 28, height: 28 }}
         />
       ),
     },
@@ -81,14 +82,13 @@ const SolutionsTabs = () => {
         <img
           src={PreBill}
           alt="Pre-Bill Icon"
-          style={{ width: 24, height: 24 }}
+          style={{ width: 28, height: 28 }}
         />
       ),
     },
   ];
 
-  const activeTab =
-    tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")) || 0;
+  const activeTab = Math.max(0, tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")));
 
   useEffect(() => {
     // If there is NO hash, user came from another page
@@ -109,7 +109,7 @@ const SolutionsTabs = () => {
     if (!element) return;
 
     requestAnimationFrame(() => {
-      const yOffset = -150;
+      const yOffset = -180;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({
@@ -146,13 +146,23 @@ const SolutionsTabs = () => {
                   layoutId="activeTab"
                   transition={{
                     type: "spring",
-                    stiffness: 500,
-                    damping: 30,
+                    stiffness: 400,
+                    damping: 35,
                   }}
                 />
               )}
 
-              <TabText $active={activeTab === index}>{tab.label}</TabText>
+              <Box sx={{ 
+                position: "relative", 
+                zIndex: 1, 
+                display: "flex", 
+                alignItems: "center", 
+                gap: 1.5,
+                filter: activeTab === index ? "brightness(0) invert(1)" : "none"
+              }}>
+                {/* {tab.icon} */}
+                <TabText $active={activeTab === index}>{tab.label}</TabText>
+              </Box>
             </TabButton>
           ))}
         </TabsContainer>

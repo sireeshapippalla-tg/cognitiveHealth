@@ -2,13 +2,20 @@ import { useNavigate } from "react-router-dom";
 import SplitSection from "../ui/SplitSection/SplitSection";
 
 import mainImg from "../../assets/Main Image.svg";
+import { Highlight } from "../ui/SplitSection/SplitSection.styles";
 
 const Hero = () => {
   const navigate = useNavigate();
   return (
     <>
       <SplitSection
-        eyebrow="iCAN™ ONE"
+        // eyebrow="iCAN™ ONE"
+          eyebrow={
+    <>
+      iCAN™
+      <Highlight> ONE</Highlight>
+    </>
+  }
         description="The AI Agent Platform for Healthcare RCM"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}

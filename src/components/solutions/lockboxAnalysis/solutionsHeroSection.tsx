@@ -2,13 +2,19 @@
 import paymentPostingImage from "../../../assets/solutions/editedimgs/lockbox.jpeg";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
+import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 
 const SolutionsHeroSection = () => {
   const navigate = useNavigate();
   return (
     <SplitSection
-      eyebrow="Lockbox management "
-      padding="20px 80px 10px 80px"
+      // eyebrow="Lockbox management "
+      eyebrow={
+    <>
+      Lockbox {" "}
+      <Highlight>Management</Highlight>
+    </>
+  }
       description="Transform paper remittances and correspondence into digital workflows with AI-powered lockbox management that eliminates manual data entry and tracking"
       image={paymentPostingImage}
      primaryAction={{

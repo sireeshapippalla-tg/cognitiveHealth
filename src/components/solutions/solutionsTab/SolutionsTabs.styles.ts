@@ -3,78 +3,81 @@ import { motion } from "framer-motion";
 
 export const BlogContainer = styled("div")(() => ({
   // padding: "0px 80px",
-  // [theme.breakpoints.down("md")]: {
-  //   padding: "20px",
-  // },
 }));
 
-export const StickyTabsWrapper = styled("div")({
+export const StickyTabsWrapper = styled("div")(({ theme }) => ({
   position: "sticky",
-  top: 65,
-  zIndex: 2000,
+  top: 65, // Secure overlap for header shadow/border
+  zIndex: 1000,
   width: "100%",
-  left: 0,
-  right: 0,
   display: "flex",
   justifyContent: "center",
-  padding: "16px 0",
+  // marginTop: "40px",
+  padding: "16px 0", // Added top padding back for whitespace
   background: "#ffffff",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-  borderBottom: "1px solid rgba(0,0,0,0.05)",
-});
+  backdropFilter: "blur(18px)",
+  borderBottom: "1px solid rgba(0,0,0,0.06)",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+  transition: "all 0.3s ease",
+  [theme.breakpoints.down("md")]: {
+    marginTop: "20px",
+    padding: "8px 0 12px 0",
+    top: 54,
+  },
+}));
 
 export const TabsContainer = styled("div")(({ theme }) => ({
   display: "flex",
-  gap: "8px",
-  padding: "6px",
-  borderRadius: "999px",
-  background: "#e5e7eb",
-
+  gap: "12px",
+  padding: "8px",
+  borderRadius: "32px",
+  background: "rgba(107, 191, 89, 0.05)",
+  border: "1px solid rgba(107, 191, 89, 0.15)",
   overflowX: "auto",
-  scrollbarWidth: "none", // Firefox
+  scrollbarWidth: "none",
   msOverflowStyle: "none",
+  maxWidth: "96%",
+  position: "relative",
 
   "&::-webkit-scrollbar": {
     display: "none",
   },
 
   [theme.breakpoints.down("md")]: {
-    padding: "6px 12px",
+    padding: "6px",
+    gap: "6px",
+    borderRadius: "20px",
   },
 }));
 
-// export const TabButton = styled(motion.button)<{
-//   $active: boolean;
-// }>(() => ({
-//   position: "relative",
-//   padding: "10px 18px",
-//   borderRadius: "999px",
-//   border: "none",
-//   background: "transparent",
-//   cursor: "pointer",
-//   fontWeight: 600,
-//   fontSize: "14px",
-//   overflow: "hidden",
-//   transition: "all 0.3s ease",
-// }));
-
 export const TabButton = styled(motion.button)<{
   $active: boolean;
-}>(({ theme }) => ({
+}>(({ theme, $active }) => ({
   position: "relative",
-  padding: "10px 18px",
-  borderRadius: "999px",
+  padding: "8px 16px",
+  borderRadius: "24px",
   border: "none",
   background: "transparent",
   cursor: "pointer",
-  fontWeight: 600,
-  fontSize: "14px",
-  whiteSpace: "nowrap", // important
-  flexShrink: 0, // important
-  transition: "all 0.3s ease",
+  fontWeight: 900,
+  fontSize: "15px",
+  whiteSpace: "nowrap",
+  flexShrink: 0,
+  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+  // textTransform: "uppercase",
+  letterSpacing: "1px",
+  color: $active ? "#ffffff" : "#4B5563",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+
+  "&:hover": {
+    background: !$active ? "rgba(244, 122, 32, 0.05)" : "transparent",
+    transform: !$active ? "translateY(-2px)" : "none",
+  },
 
   [theme.breakpoints.down("md")]: {
-    padding: "8px 14px",
+    padding: "12px 20px",
     fontSize: "13px",
   },
 }));
@@ -82,17 +85,19 @@ export const TabButton = styled(motion.button)<{
 export const ActiveBackground = styled(motion.div)({
   position: "absolute",
   inset: 0,
-  borderRadius: "999px",
-  background: "var(--color-text-blue)",
-  boxShadow: "0 8px 24px rgba(37,99,235,0.45)",
-  zIndex: 0,
+  borderRadius: "24px",
+  // background: "linear-gradient(135deg, #F47A20 0%, #E06912 100%)",
+  // boxShadow: "0 10px 30px rgba(244,122,32,0.4)",
+   background: "linear-gradient(135deg, #709cd0 0%, #4A90E2 100%)",
+    boxShadow: "0 10px 30px rgba(112,156,208,0.4)",
+   zIndex: 0,
 });
 
 export const TabText = styled("span")<{
   $active: boolean;
-}>(({ $active }) => ({
+}>(() => ({
   position: "relative",
   zIndex: 1,
-  color: $active ? "#ffffff" : "#6b7280",
-  transition: "color 0.3s ease",
+  fontWeight: 900,
+  letterSpacing: "0.5px",
 }));

@@ -14,7 +14,7 @@ export const Section = styled(Box, {
 })<SectionProps>(({ theme, background, borderRadius }) => ({
   width: "100%",
   background: background ?? "#ffffff",
-  padding: "30px 80px",
+  padding: "20px 40px",
   borderRadius: borderRadius ?? "0px",
   [theme.breakpoints.down("md")]: {
     padding: "16px",
@@ -29,12 +29,12 @@ export const Inner = styled(Box)({
 export const Title = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "align",
 })<TitleProps>(({ theme, align = "center" }) => ({
-  fontSize: "40px",
+  fontSize: "32px",
   fontWeight: 700,
   textAlign: align,
   color: "#111827",
   marginBottom: "8px",
-  lineHeight:"52px",
+  lineHeight:"40px",
 
   "& span": {
     color: "#ea580c",
@@ -48,12 +48,12 @@ export const Title = styled(Typography, {
 export const Subtitle = styled(Typography)(({ theme }) => ({
   // fontFamily: "Inter",
   textAlign: "center",
-  fontSize: "18px",
+  fontSize: "15px",
   color: "var(--color-text-light)",
   maxWidth: "720px",
-  margin: "0 auto 48px",
+  margin: "0 auto 32px",
 
   [theme.breakpoints.down("md")]: {
-    marginBottom: "32px",
+    marginBottom: "24px",
   },
 }));

@@ -59,8 +59,12 @@ export const Title = styled(Typography, {
   },
 
   [theme.breakpoints.down("md")]: {
-    fontSize: "26px",
-    lineHeight:"40px"
+    fontSize: "28px", // Slightly increased from 26px
+    lineHeight: "36px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "24px",
+    lineHeight: "32px",
   },
 }));
 

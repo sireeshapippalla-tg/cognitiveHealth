@@ -6,7 +6,7 @@ const PlatformIntroSection = () => {
     <Box
       sx={{
         px: { xs: 2, sm: 4 },
-        py: { xs: 10, md: 14 },
+        py: { xs: 8, md: 10 },
         display: "flex",
         justifyContent: "center",
         background: "radial-gradient(circle at center, #ffffff, #f1f5f9)",
@@ -46,7 +46,7 @@ const PlatformIntroSection = () => {
               py: 1.5,
               mb: 4,
               borderRadius: "50px",
-              background: "rgba(255, 255, 255, 0.7)",
+              background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
               border: "1px solid rgba(0, 0, 0, 0.05)",
               backdropFilter: "blur(10px)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)",
@@ -58,9 +58,10 @@ const PlatformIntroSection = () => {
                 fontWeight: 600,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                // background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                // WebkitBackgroundClip: "text",
+                // WebkitTextFillColor: "transparent",
+                color: 'white'
               }}
             >
               The Future of Healthcare Revenue Cycle Is Here – Unified, Smarter, Better
@@ -79,10 +80,10 @@ const PlatformIntroSection = () => {
             variant="h2"
             sx={{
               fontWeight: 800,
-          
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-       
-        
+
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+
+
               lineHeight: 1.3,
               letterSpacing: "-0.01em",
               mb: 4,

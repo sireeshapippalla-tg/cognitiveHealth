@@ -1,84 +1,49 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { HowItWrapper } from "./solutions.style";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import { ProcessStep } from "../../ui/processStep/ProcessStep";
-// import InboxOutlinedIcon from "@mui/icons-material/InboxOutlined";
-// import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
-// import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
-// import FactCheckOutlinedIcon from "@mui/icons-material/FactCheckOutlined";
-import {
-  ArrowBox,
-  StepsCard,
-  StepsRow,
-} from "../../home/howItWorks/HowItWorksSection.style";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import SettingsSuggestOutlinedIcon from "@mui/icons-material/SettingsSuggestOutlined";
+import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
+import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
+import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
-import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import RuleOutlinedIcon from "@mui/icons-material/RuleOutlined";
-import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
-import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
-
-const steps = [
+const steps: HowItWorksStep[] = [
   {
-    title: "Contract Digitization & Modeling",
+    title: "Contract Ingestion & Storage",
     description:
-      "Upload contracts (PDF, paper, digital). AI extracts terms, schedules, and rules. System models expected reimbursement logic.",
-    // icon: <InboxOutlinedIcon />,
-    icon: <DescriptionOutlinedIcon />,
+      "Centralized repository for all payer contracts. OCR and data extraction from scanned agreements. Automated versioning and renewal tracking.",
+    icon: <Inventory2OutlinedIcon />,
   },
   {
-    title: "Automated Payment Validation",
+    title: "Rule Configuration",
     description:
-      "Every payment checked against contract. Expected vs actual reimbursement comparison.  Variance flagging and prioritization.",
-    // icon: <SyncAltOutlinedIcon />,
-    icon: <RuleOutlinedIcon />,
+      "Translate legalese into computer-parsable logic. Define complex reimbursement models (Fee schedules, % of charges, bundles). Map contract terms to claim data elements.",
+    icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Underpayment Recovery",
+    title: "Real-Time Payment Modeling",
     description:
-      "Auto-generation of appeal letters with contract citations. Supporting documentation compilation. Payer portal submission or mailing.",
-    // icon: <FactCheckOutlinedIcon />,
-    icon: <AssignmentTurnedInOutlinedIcon />,
+      "Calculate expected reimbursement for every claim. Cross-reference actual payments vs. contract terms. Flag underpayments and overpayments for immediate follow-up.",
+    icon: <GavelOutlinedIcon />,
   },
   {
-    title: "Performance Monitoring & Insights",
+    title: "Performance Analytics & Insights",
     description:
-      "Payer compliance tracking. Revenue leakage quantification. Strategic insights for contract negotiations.",
-    // icon: <InsertChartOutlinedIcon />,
-    icon: <InsightsOutlinedIcon />,
+      "Payer compliance reporting. Net-to-expected revenue analysis. Strategy insights for upcoming contract negotiations.",
+    icon: <VerifiedOutlinedIcon />,
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    // <HowItSectionContainer>
-    <HowItWrapper>
-      <SectionTitle
-        title="How It Works"
-        // subtitle="Streamlined workflow from payment intake to final reconciliation"
-      />
-
-      <StepsCard sx={{ marginTop: 4 }}>
-        <StepsRow>
-          {steps.map((step, index) => (
-            <>
-              <ProcessStep
-                key={step.title}
-                icon={step.icon}
-                title={step.title}
-                description={step.description}
-              />
-
-              {index !== steps.length - 1 && (
-                <ArrowBox>
-                  <ArrowForwardIcon />
-                </ArrowBox>
-              )}
-            </>
-          ))}
-        </StepsRow>
-      </StepsCard>
-    </HowItWrapper>
-    // {/* </HowItSectionContainer> */}
+    <ReusableHowItWorks
+      pillIcon={paymentImage9}
+      pillText="Contractual Intelligence"
+      title="How It Works"
+      subtitle="Ensuring clinical outcomes are matched by financial performance through rigorous contract compliance"
+      steps={steps}
+      themeColor="#F47A20"
+      backgroundColor="#fff"
+    />
   );
 };
 

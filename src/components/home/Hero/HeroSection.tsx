@@ -11,7 +11,7 @@ import yaleImg from "../../../assets/yale.svg";
 import heroSectionImage from "../../../assets/HomeScreen.svg";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 const HeroSection = () => {
@@ -64,8 +64,8 @@ const HeroSection = () => {
 
       <Box
         sx={{
-          px: { xs: 3, md: 10 },
-          py: 12,
+          px: { xs: 2, sm: 4 },
+          py: { xs: 8, md: 10 },
           position: "relative",
           overflow: "hidden",
           background: "#F9FAFB",
@@ -73,190 +73,185 @@ const HeroSection = () => {
       >
         {/* 🔥 FLOATING BACKGROUND BLOBS */}
         <motion.div
-          animate={{ y: [0, -20, 0] }}
+          animate={{ y: [0, -15, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
           style={{
             position: "absolute",
-            width: 250,
-            height: 250,
+            width: 220,
+            height: 220,
             background: "radial-gradient(circle, #F47A20, transparent)",
-            filter: "blur(120px)",
-            top: "-80px",
-            left: "-80px",
-            opacity: 0.2,
+            filter: "blur(100px)",
+            top: "-60px",
+            left: "-60px",
+            opacity: 0.15,
           }}
         />
         <motion.div
-          animate={{ y: [0, 20, 0] }}
+          animate={{ y: [0, 15, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
           style={{
             position: "absolute",
-            width: 250,
-            height: 250,
+            width: 220,
+            height: 220,
             background: "radial-gradient(circle, #6BBF59, transparent)",
-            filter: "blur(120px)",
-            bottom: "-80px",
-            right: "-80px",
-            opacity: 0.2,
+            filter: "blur(100px)",
+            bottom: "-60px",
+            right: "-60px",
+            opacity: 0.15,
           }}
         />
-
-        <Box
-          display="grid"
-          gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
-          gap={8}
-          alignItems="center"
-        >
-          {/* 🔥 LEFT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.3 }}
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+          <Box
+            display="grid"
+            gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
+            gap={8}
+            alignItems="center"
           >
-            {/* HEADLINE */}
-            <Typography
-              // Changed to h1 for semantic meaning
-              fontWeight="bold"
-              sx={{
-                mb: 3,
-                color: "#1F2937",
-                lineHeight: 1.3,
-                letterSpacing: "-0.02em",
-
-                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-              }}
+            {/* 🔥 LEFT CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
-              Transform Your Revenue Cycle with{" "}
-              <Box
-                component="span"
+              {/* HEADLINE */}
+              <Typography
+                fontWeight="bold"
                 sx={{
-                  background:
-                    "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  animation: "gradientMove 5s linear infinite",
-                  backgroundSize: "200% auto",
+                  mb: 2.5,
+                  color: "#1F2937",
+                  // lineHeight: 1.2,
+                  lineHeight: {xs:1.3, sm:1.3, md:1.2},
+                  letterSpacing: "-0.02em",
+                  fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
                 }}
               >
-                Autonomous AI Agents
-              </Box>
-            </Typography>
-
-            {/* SUBTEXT */}
-            <Typography
-              sx={{
-                color: "#6B7280",
-                mb: 5,
-                fontSize: { xs: "1.125rem", md: "1.25rem" },
-                lineHeight: 1.7,
-                maxWidth: "600px", // Slightly increased max width for bigger text
-              }}
-            >
-              Deploy a network of specialized AI agents that automate your most
-              complex RCM workflows—reducing costs by up to 80% while
-              accelerating cash flow and empowering your team to deliver
-              exceptional patient experiences.
-            </Typography>
-
-            {/* BUTTONS */}
-            <Box display="flex" gap={2} flexWrap="wrap">
-              {/* PRIMARY */}
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  variant="contained"
-                  endIcon={<ArrowForwardIcon />}
+                Transform Your Revenue Cycle with{" "}
+                <Box
+                  component="span"
                   sx={{
-                    px: 5,
-                    py: 1.6,
-                    borderRadius: "40px",
-                    fontWeight: "bold",
-                    textTransform: "none",
-                    position: "relative",
-                    overflow: "hidden",
-                    background: "#F47A20",
-                    // background:
-                    //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-
-                    boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
-
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: "-80%",
-                      width: "60%",
-                      height: "100%",
-                      background:
-                        "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
-                      transform: "skewX(-20deg)",
-                    },
-
-                    "&:hover::after": {
-                      left: "130%",
-                      transition: "0.7s",
-                    },
+                    background:
+                      "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    animation: "gradientMove 5s linear infinite",
+                    backgroundSize: "200% auto",
                   }}
-                  onClick={() => navigate("/contact-us")}
                 >
-                  Request a Demo
-                </Button>
-              </motion.div>
+                  Autonomous AI Agents
+                </Box>
+              </Typography>
 
-              {/* SECONDARY */}
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  onClick={() => navigate("/resources#videos")}
-                  variant="outlined"
-                  endIcon={<ArrowForwardIcon />}
-                  sx={{
-                    px: 5,
-                    py: 1.6,
-                    borderRadius: "40px",
-                    textTransform: "none",
-                    fontWeight: 500,
-                    borderColor: "#F47A20",
-                    color: "#F47A20",
+              {/* SUBTEXT */}
+              <Typography
+                sx={{
+                  color: "#6B7280",
+                  mb: 4,
+                  fontSize: "1.1rem",
+                  lineHeight: 1.6,
+                  maxWidth: "550px",
+                }}
+              >
+                Deploy a network of specialized AI agents that automate your
+                most complex RCM workflows—reducing costs by up to 80% while
+                accelerating cash flow and empowering your team to deliver
+                exceptional patient experiences.
+              </Typography>
 
-                    "&:hover": {
-                      background: "rgba(107,191,89,0.1)",
+              {/* BUTTONS */}
+              <Box display="flex" gap={2} flexWrap="wrap">
+                {/* PRIMARY */}
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Button
+                    variant="contained"
+                    endIcon={<ArrowForwardIcon />}
+                    sx={{
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: "40px",
+                      fontWeight: "bold",
+                      textTransform: "none",
+                      position: "relative",
+                      overflow: "hidden",
+                      background: "#F47A20",
+                      fontSize: "1rem",
+                      boxShadow: "0 10px 20px rgba(244,122,32,0.2)",
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: "-80%",
+                        width: "60%",
+                        height: "100%",
+                        background:
+                          "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                        transform: "skewX(-20deg)",
+                      },
+                      "&:hover::after": {
+                        left: "130%",
+                        transition: "0.7s",
+                      },
+                    }}
+                    onClick={() => navigate("/contact-us")}
+                  >
+                    Request a Demo
+                  </Button>
+                </motion.div>
+
+                {/* SECONDARY */}
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Button
+                    onClick={() => navigate("/resources#videos")}
+                    variant="outlined"
+                    endIcon={<ArrowForwardIcon />}
+                    sx={{
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: "40px",
+                      textTransform: "none",
+                      fontWeight: 600,
                       borderColor: "#F47A20",
-                    },
-                  }}
-                >
-                  See Platform in Action
-                </Button>
-              </motion.div>
-            </Box>
-          </motion.div>
+                      color: "#F47A20",
+                      fontSize: "1rem",
+                      "&:hover": {
+                        background: "rgba(107,191,89,0.05)",
+                        borderColor: "#F47A20",
+                      },
+                    }}
+                  >
+                    See Platform in Action
+                  </Button>
+                </motion.div>
+              </Box>
+            </motion.div>
 
-          {/* 🔥 RIGHT DASHBOARD (FLOATING + DEPTH) */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.3 }}
-            whileHover={{ rotate: 1 }}
-          >
-            <Box
-              sx={{
-                borderRadius: "20px",
-                overflow: "hidden",
-                background: "#fff",
-                border: "1px solid #E5E7EB",
-                boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
-                transform: "perspective(1000px) rotateX(3deg)",
-              }}
+            {/* 🔥 RIGHT DASHBOARD (FLOATING + DEPTH) */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+              whileHover={{ rotate: 1 }}
             >
-              <img
-                src={heroSectionImage}
-                alt="dashboard"
-                style={{ width: "100%", display: "block" }}
-              />
-            </Box>
-          </motion.div>
-        </Box>
-
+              <Box
+                sx={{
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  background: "#fff",
+                  border: "1px solid #E5E7EB",
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
+                  transform: "perspective(1000px) rotateX(3deg)",
+                }}
+              >
+                <img
+                  src={heroSectionImage}
+                  alt="dashboard"
+                  style={{ width: "100%", display: "block" }}
+                />
+              </Box>
+            </motion.div>
+          </Box>
+        </Container>
         {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
         <style>
           {`

@@ -1,79 +1,49 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {
-  // HowItSectionContainer,
-  HowItWrapper,
-} from "./solutions.style";
-import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
-import { ProcessStep } from "../../ui/processStep/ProcessStep";
-// import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
-// import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
-// import SyncAltOutlinedIcon from '@mui/icons-material/SyncAltOutlined';
-// import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
-import { ArrowBox, StepsCard, StepsRow } from "../../home/howItWorks/HowItWorksSection.style";
+import MoveToInboxOutlinedIcon from "@mui/icons-material/MoveToInboxOutlined";
+import SettingsSuggestOutlinedIcon from "@mui/icons-material/SettingsSuggestOutlined";
+import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
+import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
-import PsychologyAltOutlinedIcon from "@mui/icons-material/PsychologyAltOutlined";
-import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
-import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
-
-const steps = [
+const steps: HowItWorksStep[] = [
   {
-    title: "Batch receipt and separating",
+    title: "Document Ingestion",
     description:
-      "Receive digital image of the batches.separate individual unique letters ",
-     icon: <Inventory2OutlinedIcon />,
+      "Automated capture from physical and digital lockboxes. High-speed scanning and indexing of paper documents.",
+    icon: <MoveToInboxOutlinedIcon />,
   },
   {
-    title: "AI Classification & Extraction",
+    title: "AI Character Recognition",
     description:
-      "Document type identification. Payment amount and payer data extraction. Check image and MICR data capture",
-    icon: <PsychologyAltOutlinedIcon />,
+      "Advanced OCR and machine learning extract data from EOBs and checks. High-accuracy data capture even for non-standard formats.",
+    icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Validation & Quality Check",
+    title: "Validation & Matching",
     description:
-      "Automated business rule validation. Confidence scoring and exception flagging. Human review of low-confidence items",
-    icon: <VerifiedOutlinedIcon />,
+      "Data validated against provider systems. Automatic matching of checks to electronic remits and open invoices.",
+    icon: <ReportProblemOutlinedIcon />,
   },
   {
-    title: "Payment Data Output",
+    title: "Seamless Integration",
     description:
-      "Structured payment data sent to payment posting. Bank reconciliation file generation. Correspondence routed to appropriate teams",
-    icon: <PaymentsOutlinedIcon />,
+      "Direct feed into the billing system. Daily reconciliation reports and unified cash position visibility.",
+    icon: <InsightsOutlinedIcon />,
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    // <HowItSectionContainer>
-      <HowItWrapper>
-        <SectionTitle
-          title="How It Works"
-          // subtitle="Streamlined workflow from payment intake to final reconciliation"
-        />
-
-    <StepsCard sx={{marginTop:4}}>
-          <StepsRow>
-            {steps.map((step, index) => (
-              <>
-                <ProcessStep
-                  key={step.title}
-                  icon={step.icon}
-                  title={step.title}
-                  description={step.description}
-                />
-
-                {index !== steps.length - 1 && (
-                  <ArrowBox>
-                    <ArrowForwardIcon />
-                  </ArrowBox>
-                )}
-              </>
-            ))}
-          </StepsRow>
-        </StepsCard>
-      </HowItWrapper>
-    // </HowItSectionContainer>
+    <ReusableHowItWorks
+      pillIcon={paymentImage9}
+      pillText="Intelligent Ingestion"
+      title="How It Works"
+      subtitle="Transforming paper and digital lockbox data into actionable financial intelligence"
+      steps={steps}
+      themeColor="#F47A20"
+      backgroundColor="#fff"
+    />
   );
 };
 
