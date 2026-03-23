@@ -36,7 +36,7 @@ const ResourceList = ({ activeTab }: ResourceListProps) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={4}>
+      <Grid container spacing={6}>
         {filteredResources.map((resource) => (
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} key={resource.id}>
             {resource.type === "case-study" ? (

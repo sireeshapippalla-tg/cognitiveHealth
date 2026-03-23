@@ -1,37 +1,30 @@
 import { styled } from "@mui/material/styles";
-import { Card, Box, Typography, Chip, IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Card, Box, Typography, Chip } from "@mui/material";
+import { motion } from "framer-motion";
 
-export const StyledCard = styled(Card)({
+export const StyledCard = motion(styled(Card)(() => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  borderRadius: "16px",
-  border: "1px solid #E5E7EB",
-  boxShadow: "none",
+  borderRadius: "20px",
+  border: "1px solid rgba(229, 231, 235, 0.5)",
+  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
   overflow: "hidden",
-  transition: "all 0.3s ease-in-out",
+  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
   backgroundColor: "#FFFFFF",
   "&:hover": {
-    boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.08)",
-    transform: "translateY(-4px)",
-    borderColor: "transparent",
-    "& .play-button": {
-      transform: "translate(-50%, -50%) scale(1.1)",
-      backgroundColor: "#E88D3E",
-    },
-     "& .read-more-link": {
-      color: "#d67d2e",
-      gap: "8px",
-    },
+    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    transform: "translateY(-8px)",
+    borderColor: "var(--color-primary)",
   },
-});
+})));
 
 export const CardImageWrapper = styled(Box)({
   position: "relative",
-  paddingTop: "56.25%", // 16:9 aspect ratio
+  paddingTop: "60%",
   width: "100%",
-  backgroundColor: "#000",
+  overflow: "hidden",
+  background: "#f1f5f9",
 });
 
 export const CardImage = styled("img")({
@@ -41,113 +34,98 @@ export const CardImage = styled("img")({
   width: "100%",
   height: "100%",
   objectFit: "cover",
-  opacity: 0.9,
-  transition: "opacity 0.3s ease",
+  transition: "transform 0.6s ease",
   ".MuiCard-root:hover &": {
-    opacity: 1,
+    transform: "scale(1.08)",
   },
 });
 
-export const PlayButtonOverlay = styled(Box)({
+export const PlayIconOverlay = styled(Box)({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  zIndex: 2,
+  width: "60px",
+  height: "60px",
+  backgroundColor: "rgba(235, 123, 51, 0.9)",
+  borderRadius: "50%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-});
-
-export const PlayButton = styled(IconButton)({
-  backgroundColor: "#FFFFFF",
-  color: "#E88D3E", // Orange icon
-  padding: "16px",
+  color: "#ffffff",
+  zIndex: 2,
+  boxShadow: "0 0 20px rgba(235, 123, 51, 0.4)",
   transition: "all 0.3s ease",
-  "&:hover": {
-    backgroundColor: "#ffffff",
+  ".MuiCard-root:hover &": {
+    transform: "translate(-50%, -50%) scale(1.1)",
+    backgroundColor: "var(--color-primary-hover)",
   },
-  "& svg": {
-    fontSize: "32px",
-  },
-});
-
-export const CardContent = styled(Box)({
-  padding: "24px",
-  display: "flex",
-  flexDirection: "column",
-  flexGrow: 1,
 });
 
 export const CategoryChip = styled(Chip)({
-  // fontFamily: "Inter",
   position: "absolute",
   top: "16px",
   left: "16px",
-  backgroundColor: "#FFFFFF",
-  color: "var(--color-text-blue)", 
-  fontWeight: 600,
+  backgroundColor: "rgba(255, 255, 255, 0.9)",
+  color: "var(--color-primary)",
+  fontWeight: 700,
   fontSize: "12px",
   height: "28px",
-  border: "none",
+  backdropFilter: "blur(8px)",
   zIndex: 2,
-  "& .MuiChip-label": {
-    padding: "0 12px",
+});
+
+export const DurationBadge = styled(Box)({
+  position: "absolute",
+  bottom: "16px",
+  right: "16px",
+  backgroundColor: "rgba(15, 23, 42, 0.8)",
+  color: "#ffffff",
+  padding: "4px 10px",
+  borderRadius: "6px",
+  fontSize: "12px",
+  fontWeight: 600,
+  backdropFilter: "blur(4px)",
+  zIndex: 2,
+});
+
+export const CardContent = styled(Box)({
+  padding: "24px 28px",
+  display: "flex",
+  flexDirection: "column",
+  flexGrow: 1,
+  gap: "12px",
+});
+
+export const CardTitle = styled(Typography)({
+  fontSize: "20px",
+  fontWeight: 800,
+  lineHeight: "1.4",
+  color: "#0f172a",
+  letterSpacing: "-0.02em",
+  ".MuiCard-root:hover &": {
+    color: "var(--color-primary)",
   },
 });
 
-export const CardTitle = styled(Typography)(() => ({
-  // fontFamily: "Inter",
-  fontSize: "16px",
-  fontWeight: 600,
-  lineHeight: "1.4",
-  color: "var(--color-text-blue)",
-  // marginBottom: "8px",
-  marginTop: "8px",
-}));
-
-export const CardDescription = styled(Typography)(() => ({
-  // fontFamily: "Inter",
-  fontSize: "14px",
-  lineHeight: "22.4px",
-  color: "#4A5565",
-  marginBottom: "24px",
-  // display: "-webkit-box",
-  // WebkitLineClamp: 3,
-  // WebkitBoxOrient: "vertical",
-  // overflow: "hidden",
-  flexGrow: 1,
-}));
-
-export const Footer = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginTop: "auto",
+export const CardDescription = styled(Typography)({
+  fontSize: "15px",
+  lineHeight: "1.6",
+  color: "#475569",
+  marginBottom: "16px",
 });
 
-export const WatchLink = styled(Link)({
+export const ActionButton = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
-  gap: "4px",
-  fontSize: "15px",
-  fontWeight: 600,
-  color: "#EB7724", // Orange
-  textDecoration: "none",
-  transition: "all 0.2s ease",
-});
-
-export const DurationBadge = styled(Box)(() => ({
-  display: "flex",
-  alignItems: "center",
   gap: "6px",
-  padding: "6px 12px",
-  borderRadius: "20px",
-  border: "1px solid #E5E7EB",
-  color: "#656565",
-  fontSize: "13px",
-  fontWeight: 500,
-  "& svg": {
-    fontSize: "16px",
+  fontSize: "15px",
+  fontWeight: 700,
+  color: "var(--color-primary)",
+  marginTop: "auto",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    gap: "10px",
   },
-}));
+});

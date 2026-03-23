@@ -1,19 +1,18 @@
 import React from "react";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   StyledCard,
   CardImageWrapper,
   CardImage,
-  MetricOverlay,
+  CategoryChip,
+  MetricBadge,
   MetricValue,
   MetricLabel,
   CardContent,
-  CategoryChip,
   CardTitle,
   CardDescription,
   ReadMoreLink,
 } from "./CaseStudyCard.styles";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import BusinessIcon from "../../../assets/Resources/BusinessIcon.svg" 
 
 interface CaseStudyCardProps {
   image: string;
@@ -35,30 +34,30 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   metricLabel,
 }) => {
   return (
-    <StyledCard>
+    <StyledCard
+      layout
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <CardImageWrapper>
         <CardImage src={image} alt={title} />
-        {metricValue && metricLabel && (
-          <MetricOverlay>
+        {category && <CategoryChip label={category} />}
+        {metricValue && (
+          <MetricBadge>
             <MetricValue>{metricValue}</MetricValue>
             <MetricLabel>{metricLabel}</MetricLabel>
-          </MetricOverlay>
+          </MetricBadge>
         )}
       </CardImageWrapper>
 
       <CardContent>
-        <CategoryChip 
-            icon={<img src={BusinessIcon} alt="icon" width={14} height={14} />} 
-            label={category} 
-            size="small" 
-        />
-        
-        <CardTitle >{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
-        <ReadMoreLink to={link} className="read-more-link">
+        <ReadMoreLink to={link}>
           Read Case Study
-          <ArrowForwardIcon fontSize="small" />
+          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

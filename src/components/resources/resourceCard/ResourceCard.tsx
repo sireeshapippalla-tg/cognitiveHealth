@@ -43,12 +43,17 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
       case "case-study":
         return "Read Case Study";
       default:
-        return "Read More";
+        return "Read More Article";
     }
   };
 
   return (
-    <StyledCard>
+    <StyledCard
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <CardImageWrapper>
         <CardImage src={image} alt={title} />
         {category && <CategoryChip label={category} />}
@@ -71,12 +76,12 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
           )}
         </MetaInfo>
 
-        <CardTitle >{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
-        <ReadMoreLink to={link} className="read-more-link">
+        <ReadMoreLink to={link}>
           {getLinkText()}
-          <ArrowForwardIcon fontSize="small" />
+          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

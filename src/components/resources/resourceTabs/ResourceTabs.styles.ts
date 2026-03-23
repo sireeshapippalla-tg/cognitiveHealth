@@ -1,63 +1,47 @@
 import { styled } from "@mui/material/styles";
-
 import { motion } from "framer-motion";
+import { Box } from "@mui/material";
 
-export const BlogContainer = styled("div")(({ theme }) => ({
-  padding: "30px 80px",
+export const BlogContainer = styled(Box)(({ theme }) => ({
+  padding: "60px 80px",
+  backgroundColor: "#ffffff",
   [theme.breakpoints.down("md")]: {
-    padding: "20px",
+    padding: "40px 20px",
   },
 }));
 
-// export const StickyTabsWrapper = styled("div")({
-//   position: "sticky",
-//   top: 70,
-//   zIndex: 1200,
-//   display: "flex",
-//   justifyContent: "space-between",
-//   padding: "16px 0",
-//   background: "#ffffff",
-//   borderBottom: "1px solid rgba(0,0,0,0.05)",
-// });
-export const StickyTabsWrapper = styled("div")(({ theme }) => ({
+export const StickyTabsWrapper = styled(Box)(({ theme }) => ({
   position: "sticky",
   top: 65,
-  zIndex: 2000, 
+  zIndex: 1000, 
   width: "100%", 
-  left: 0,
-  right: 0,
   display: "flex",
   justifyContent: "space-between",
-  // padding: "16px 0",
-  backgroundColor: "#ffffff", 
-  boxShadow: "0 4px 12px rgba(0,0,0,0.05)", 
-  padding: "20px 80px",
+  alignItems: "center",
+  backgroundColor: "rgba(255, 255, 255, 0.8)", 
+  backdropFilter: "blur(12px)",
+  borderBottom: "1px solid rgba(0,0,0,0.05)",
+  padding: "16px 80px",
   overflow: "visible",
   [theme.breakpoints.down("md")]: {
-    padding: "20px",
+    padding: "16px 20px",
     flexDirection: "column",
-    alignItems: "center",
-    gap: "12px",
+    gap: "16px",
   },
 }));
 
-export const TabsContainer = styled("div")(({ theme }) => ({
+export const TabsContainer = styled(Box)(() => ({
   display: "flex",
-  gap: "8px",
-  padding: "6px",
-  borderRadius: "999px",
-  background: "#e5e7eb",
-
+  gap: "4px",
+  padding: "4px",
+  borderRadius: "100px",
+  background: "#f1f5f9",
+  border: "1px solid rgba(0,0,0,0.03)",
+  maxWidth: "100%",
   overflowX: "auto",
-  scrollbarWidth: "none", // Firefox
-  msOverflowStyle: "none",
-
+  scrollbarWidth: "none",
   "&::-webkit-scrollbar": {
     display: "none",
-  },
-
-  [theme.breakpoints.down("md")]: {
-    padding: "6px 12px",
   },
 }));
 
@@ -65,8 +49,8 @@ export const TabButton = styled(motion.button)<{
   $active: boolean;
 }>(({ theme }) => ({
   position: "relative",
-  padding: "10px 18px",
-  borderRadius: "999px",
+  padding: "10px 20px",
+  borderRadius: "100px",
   border: "none",
   background: "transparent",
   cursor: "pointer",
@@ -74,10 +58,14 @@ export const TabButton = styled(motion.button)<{
   fontSize: "14px",
   whiteSpace: "nowrap",
   flexShrink: 0,
-  transition: "all 0.3s ease",
+  display: "flex",
+  alignItems: "center",
+  outline: "none",
+  WebkitTapHighlightColor: "transparent",
+  transition: "color 0.3s ease",
 
   [theme.breakpoints.down("md")]: {
-    padding: "8px 14px",
+    padding: "8px 16px",
     fontSize: "13px",
   },
 }));
@@ -85,9 +73,9 @@ export const TabButton = styled(motion.button)<{
 export const ActiveBackground = styled(motion.div)({
   position: "absolute",
   inset: 0,
-  borderRadius: "999px",
-  background: "var(--color-text-blue)",
-  boxShadow: "0 8px 24px rgba(37,99,235,0.45)",
+  borderRadius: "100px",
+  background: "var(--color-primary)",
+  boxShadow: "0 4px 12px rgba(235, 123, 51, 0.3)",
   zIndex: 0,
 });
 
@@ -96,6 +84,11 @@ export const TabText = styled("span")<{
 }>(({ $active }) => ({
   position: "relative",
   zIndex: 1,
-  color: $active ? "#ffffff" : "#6b7280",
+  color: $active ? "#ffffff" : "#64748b",
   transition: "color 0.3s ease",
 }));
+
+export const FilterWrapper = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+});
