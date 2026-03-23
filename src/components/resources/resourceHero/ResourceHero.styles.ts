@@ -54,11 +54,11 @@ export const ResourceCenterChip = styled(Chip)({
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "56px",
+  fontSize: "50px",
   fontWeight: 800,
   marginBottom: "20px",
   color: "var(--color-text-dark)",
-  lineHeight: 1.1,
+  lineHeight: "33px",
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",

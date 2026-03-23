@@ -56,6 +56,7 @@ export const PlayIconOverlay = styled(Box)({
   zIndex: 2,
   boxShadow: "0 0 20px rgba(235, 123, 51, 0.4)",
   transition: "all 0.3s ease",
+  cursor: "pointer",
   ".MuiCard-root:hover &": {
     transform: "translate(-50%, -50%) scale(1.1)",
     backgroundColor: "var(--color-primary-hover)",

@@ -1,6 +1,6 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { motion } from "framer-motion";
-import { Box } from "@mui/material";
+
 import {
   Hero,
   HeroContent,
@@ -44,13 +44,12 @@ const ResourceHero = () => (
         transition={{ duration: 0.6 }}
       >
         <ResourceCenterChip label="Resource Center" size="small" />
-        <Title variant="h1">Insights, Innovation & Impact</Title>
+        <Title >Insights, Innovation & Impact</Title>
         <Subtitle>
           Discover the latest trends, thought leadership, and success stories in
-          healthcare revenue cycle automation. Empowering providers with AI-driven intelligence.
+          healthcare revenue cycle automation.
         </Subtitle>
       </motion.div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -68,7 +67,7 @@ const ResourceHero = () => (
         </SearchWrapper>
       </motion.div>
       
-      <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+      {/* <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
         {['AI Automation', 'Case Studies', 'RCM Trends', 'Whitepapers'].map((tag, i) => (
           <motion.span
             key={tag}
@@ -80,7 +79,7 @@ const ResourceHero = () => (
             #{tag}
           </motion.span>
         ))}
-      </Box>
+      </Box> */}
     </HeroContent>
   </Hero>
 );

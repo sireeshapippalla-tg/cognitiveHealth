@@ -360,20 +360,30 @@ const Header = () => {
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
               boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-              overflow: "hidden"
+              overflow: "hidden",
             }}
           >
             <Box display="flex" gap={4}>
               {/* Left Side: Featured / Category */}
               <Box sx={{ width: 220, borderRight: "1px solid #F3F4F6", pr: 3 }}>
-                <Typography variant="overline" color="#F47A20" fontWeight={800} letterSpacing={1.2}>
+                <Typography
+                  variant="overline"
+                  color="#F47A20"
+                  fontWeight={800}
+                  letterSpacing={1.2}
+                >
                   Our Ecosystem
                 </Typography>
-                <Typography variant="h6" fontWeight={800} sx={{ mt: 1, mb: 2, color: "#111827", lineHeight: 1.2 }}>
+                <Typography
+                  variant="h6"
+                  fontWeight={800}
+                  sx={{ mt: 1, mb: 2, color: "#111827", lineHeight: 1.2 }}
+                >
                   Specialized AI Solutions for RCM
                 </Typography>
                 <Typography variant="body2" color="#6B7280" sx={{ mb: 3 }}>
-                  Deploy tailored AI agents to automate complexity across your entire revenue cycle.
+                  Deploy tailored AI agents to automate complexity across your
+                  entire revenue cycle.
                 </Typography>
                 <AppButton
                   variantType="outline"
@@ -436,11 +446,16 @@ const Header = () => {
               backgroundColor: "#ffffff",
               border: "1px solid #E5E7EB",
               boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-              overflow: "hidden"
+              overflow: "hidden",
             }}
           >
             <Box sx={{ mb: 2, px: 1 }}>
-              <Typography variant="overline" color="#F47A20" fontWeight={800} letterSpacing={1.2}>
+              <Typography
+                variant="overline"
+                color="#F47A20"
+                fontWeight={800}
+                letterSpacing={1.2}
+              >
                 Knowledge Center
               </Typography>
             </Box>
@@ -463,9 +478,23 @@ const Header = () => {
                 />
               ))}
             </Box>
-            <Box sx={{ mt: 3, pt: 2, borderTop: "1px solid #F3F4F6", textAlign: "center" }}>
+            <Box
+              sx={{
+                mt: 3,
+                pt: 2,
+                borderTop: "1px solid #F3F4F6",
+                textAlign: "center",
+              }}
+            >
               <Typography variant="body2" color="#6B7280">
-                Need help? <Box component="span" sx={{ color: "#F47A20", cursor: "pointer", fontWeight: 600 }} onClick={() => navigate("/contact-us")}>Contact Support</Box>
+                Need help?{" "}
+                <Box
+                  component="span"
+                  sx={{ color: "#F47A20", cursor: "pointer", fontWeight: 600 }}
+                  onClick={() => navigate("/contact-us")}
+                >
+                  Contact Support
+                </Box>
               </Typography>
             </Box>
           </Paper>
@@ -541,7 +570,6 @@ const Header = () => {
             >
               About Us
             </DrawerItem>
-
             <Box>
               <DrawerItem
                 active={location.pathname === "/resources"}
@@ -577,6 +605,12 @@ const Header = () => {
               </Collapse>
             </Box>
 
+            <DrawerItem
+              active={isActive("/faq")}
+              onClick={() => navigate("/faq")}
+            >
+              FAQ
+            </DrawerItem>
             <AppButton
               variantType="primary"
               onClick={() => handleNavigate("/contact-us")}

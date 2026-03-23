@@ -2,6 +2,7 @@ import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { CtaTrustText } from "./CallToActionSection.styles";
 
 const CTASection = () => {
   const navigate = useNavigate();
@@ -107,8 +108,7 @@ const CTASection = () => {
                 lineHeight: 1.6,
               }}
             >
-              Transform your revenue cycle with our expert-led, AI-powered solutions.
-              Join the future of healthcare operations today.
+             See how our healthcare expertise, advanced AI technology, and partnership approach can transform your revenue cycle operations.
             </Typography>
           </motion.div>
 
@@ -188,8 +188,12 @@ const CTASection = () => {
                 See Platform in Action
               </Button>
             </motion.div>
-          </Box>
 
+            
+          </Box>
+          <CtaTrustText>
+          Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
+        </CtaTrustText>
         </Box>
       </Container>
     </Box>
