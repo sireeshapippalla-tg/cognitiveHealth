@@ -104,8 +104,7 @@ const CTASection = () => {
                 lineHeight: 1.6,
               }}
             >
-              Transform your revenue cycle with our expert-led, AI-powered solutions.
-              Join the future of healthcare operations today.
+              See how our healthcare expertise, advanced AI technology, and partnership approach can transform your revenue cycle operations.
             </Typography>
           </motion.div>
 
@@ -184,8 +183,28 @@ const CTASection = () => {
               </Button>
             </motion.div>
           </Box>
-
+           {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: false }}
+          >
+            <Typography
+              sx={{
+                color: "#475569",
+                maxWidth: "600px",
+                margin: "0 auto",
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                lineHeight: 1,
+              }}
+            >
+              Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
+            </Typography>
+          </motion.div>
         </Box>
+
+        
       </Container>
     </Box>
   );

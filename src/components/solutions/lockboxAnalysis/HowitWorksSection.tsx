@@ -8,27 +8,27 @@ import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
 const steps: HowItWorksStep[] = [
   {
-    title: "Document Ingestion",
+    title: "Batch Receipt and Separating",
     description:
-      "Automated capture from physical and digital lockboxes. High-speed scanning and indexing of paper documents.",
+      "Receive digital image of the batches. separate individual unique letters.",
     icon: <MoveToInboxOutlinedIcon />,
   },
   {
-    title: "AI Character Recognition",
+    title: "AI Classification & Extraction",
     description:
-      "Advanced OCR and machine learning extract data from EOBs and checks. High-accuracy data capture even for non-standard formats.",
+      "Document type identification. Payment amount and payer data extraction. Check image and MICR data capture.",
     icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Validation & Matching",
+    title: "Validation & Quality Check",
     description:
-      "Data validated against provider systems. Automatic matching of checks to electronic remits and open invoices.",
+      "Automated business rule validation. Confidence scoring and exception flagging. Human review of low-confidence items.",
     icon: <ReportProblemOutlinedIcon />,
   },
   {
-    title: "Seamless Integration",
+    title: "Payment Data Output",
     description:
-      "Direct feed into the billing system. Daily reconciliation reports and unified cash position visibility.",
+      "Structured payment data sent to payment posting. Bank reconciliation file generation.Correspondence routed to appropriate teams.",
     icon: <InsightsOutlinedIcon />,
   },
 ];

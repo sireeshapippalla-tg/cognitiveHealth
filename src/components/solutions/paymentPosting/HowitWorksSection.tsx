@@ -26,7 +26,7 @@ const steps: HowItWorksStep[] = [
     icon: <ReportProblemOutlinedIcon />,
   },
   {
-    title: "Real-Time Reporting",
+    title: "Reconciliation & Reporting",
     description: "Daily bank reconciliation. Real-time cash position updates.",
     icon: <InsightsOutlinedIcon />,
   },
