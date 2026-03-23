@@ -355,7 +355,7 @@ export const CtaText = styled(Typography)({
   fontSize: "18px",
   color: "var(--color-text-muted)",
   marginBottom: "40px",
-  maxWidth: "500px",
+  // maxWidth: "500px",
   margin: "0 auto 40px",
   lineHeight: 1.6,
   position: "relative",
