@@ -46,7 +46,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <PlayIconOverlay>
           <PlayArrowIcon sx={{ fontSize: "36px" }} />
         </PlayIconOverlay>
-        <DurationBadge>{duration}</DurationBadge>
+        {duration &&
+          <DurationBadge>{duration}</DurationBadge>
+        }
       </CardImageWrapper>
 
       <CardContent>
