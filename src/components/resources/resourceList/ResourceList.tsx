@@ -23,11 +23,11 @@ const ResourceList = ({ activeTab }: ResourceListProps) => {
     switch (activeTab) {
       case 0:
         return resourcesData.filter((r) => r.type === "blog");
+      // case 1:
+      //   return resourcesData.filter((r) => r.type === "case-study");
       case 1:
-        return resourcesData.filter((r) => r.type === "case-study");
-      case 2:
         return resourcesData.filter((r) => r.type === "video");
-      case 3:
+      case 2:
         return resourcesData.filter((r) => r.type === "media");
       default:
         return resourcesData;

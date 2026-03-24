@@ -43,7 +43,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
       case "case-study":
         return "Read Case Study";
       default:
-        return "Read More Article";
+        return;
     }
   };
 
@@ -81,7 +81,9 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
 
         <ReadMoreLink to={link}>
           {getLinkText()}
-          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
+          {getLinkText() &&
+            <ArrowForwardIcon sx={{ fontSize: "18px" }} />
+          }
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

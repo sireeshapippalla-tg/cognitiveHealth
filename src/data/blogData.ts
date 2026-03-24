@@ -11,14 +11,14 @@ export interface Blog {
 }
 
 export const blogData: Blog[] = [
- {
+  {
     id: "1",
     type: "blog",
-    title: "Intelligent Document Processing – Revolutionizing Data Capture",
+    title: "Agentic AI Automation with Intent: A Practical Example in Denial Management",
     description:
-      "Discover how intelligent document processing is changing the way healthcare organizations capture, process, and utilize critical business data.",
+      "As the excitement around AI grows, it’s easy to conflate different forms of automation under the “Agentic AI” label.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
-    date: "November 28, 2024",
+    date: "July 17, 2025",
     readTime: "5 min read",
     category: "Document Processing",
     link: "",
@@ -26,11 +26,11 @@ export const blogData: Blog[] = [
   {
     id: "2",
     type: "blog",
-    title: "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
+    title: "Intelligent Document Processing - Revolutionizing Data Capture",
     description:
-      "Discover how intelligent document processing is changing the way healthcare organizations capture, process, and utilize critical business data.",
+      "Classifying large volumes of documents is essential to make them more manageable and, ultimately, obtain valuable insights.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
-    date: "November 28, 2024",
+    date: "June 13, 2025",
     readTime: "8 min read",
     category: "Best Practices",
     link: "",
@@ -40,9 +40,9 @@ export const blogData: Blog[] = [
     type: "blog",
     title: "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
     description:
-      "Learn how AI-powered document processing creates smarter, more efficient revenue cycles by automating complex document workflows and data extraction.",
+      "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
-    date: "November 28, 2024",
+    date: "June 11, 2025",
     readTime: "6 min read",
     category: "Revenue Cycle",
     link: "",
@@ -50,11 +50,23 @@ export const blogData: Blog[] = [
   {
     id: "4",
     type: "blog",
+    title: "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
+    description:
+      "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
+    date: "June 11, 2025",
+    readTime: "6 min read",
+    category: "Strategy",
+    link: "",
+  },
+  {
+    id: "5",
+    type: "blog",
     title: "Maximizing Business Value Requires the Vision of Intelligence in Automation",
     description:
-      "Explore why intelligent automation is essential for maximizing business value and achieving sustainable competitive advantage in healthcare.",
+      "The benefits of automating healthcare administrative tasks to gain efficiencies have been agreed in principle for some time now.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
-    date: "November 28, 2024",
+    date: "December 14, 2020",
     readTime: "6 min read",
     category: "Strategy",
     link: "",

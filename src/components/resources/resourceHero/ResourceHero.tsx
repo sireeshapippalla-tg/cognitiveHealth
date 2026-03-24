@@ -43,11 +43,12 @@ const ResourceHero = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <ResourceCenterChip label="Resource Center" size="small" />
-        <Title >Insights, Innovation & Impact</Title>
+        {/* <ResourceCenterChip label="Resource Center" size="small" /> */}
+        <Title >Intelligent Process Automation  Platform.</Title>
+        <Title>Purpose-built for Healthcare</Title>
         <Subtitle>
-          Discover the latest trends, thought leadership, and success stories in
-          healthcare revenue cycle automation.
+          iCAN™ (Integrated Cognitive Automation Neuron) is a versatile healthcare automation platform.
+          iCAN™ leverages artificial intelligence and machine learning to automate increasingly complex business processes.
         </Subtitle>
       </motion.div>
       <motion.div
@@ -66,7 +67,7 @@ const ResourceHero = () => (
           </SearchButton>
         </SearchWrapper>
       </motion.div>
-      
+
       {/* <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
         {['AI Automation', 'Case Studies', 'RCM Trends', 'Whitepapers'].map((tag, i) => (
           <motion.span

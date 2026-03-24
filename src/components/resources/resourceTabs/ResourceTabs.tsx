@@ -27,20 +27,20 @@ const ResourceTabs = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTabClickRef = React.useRef(false);
-  
+
   const tabs = [
     {
       value: "blog",
       label: "Blog",
       icon: <img src={BlogIcon} alt="Blog Icon" width={16} height={16} />,
     },
-    {
-      value: "case-study",
-      label: "Case Studies",
-      icon: (
-        <img src={CaseStudyIcon} alt="Case Study Icon" width={16} height={16} />
-      ),
-    },
+    // {
+    //   value: "case-study",
+    //   label: "Case Studies",
+    //   icon: (
+    //     <img src={CaseStudyIcon} alt="Case Study Icon" width={16} height={16} />
+    //   ),
+    // },
     {
       value: "videos",
       label: "Videos",
@@ -122,7 +122,7 @@ const ResourceTabs = () => {
               )}
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, position: 'relative', zIndex: 1 }}>
                 <motion.div
-                  animate={{ 
+                  animate={{
                     filter: activeTab === index ? 'brightness(0) invert(1)' : 'grayscale(1) opacity(0.6)',
                   }}
                   transition={{ duration: 0.3 }}
@@ -134,7 +134,7 @@ const ResourceTabs = () => {
             </TabButton>
           ))}
         </TabsContainer>
-
+        {/* 
         <FilterWrapper>
           <FormControl size="small" sx={{ minWidth: 140 }}>
             <Select
@@ -175,7 +175,7 @@ const ResourceTabs = () => {
               <MenuItem value="Popular">Popular</MenuItem>
             </Select>
           </FormControl>
-        </FilterWrapper>
+        </FilterWrapper> */}
       </StickyTabsWrapper>
 
       <BlogContainer>

@@ -173,21 +173,21 @@ const Header = () => {
         />
       ),
     },
-    {
-      title: "Case Studies",
-      hash: "case-study",
-      icon: (
-        <img
-          src={CaseStudyIcon}
-          alt="Case Study Icon"
-          style={{
-            width: 24,
-            height: 24,
-            filter: "brightness(0) invert(1)",
-          }}
-        />
-      ),
-    },
+    // {
+    //   title: "Case Studies",
+    //   hash: "case-study",
+    //   icon: (
+    //     <img
+    //       src={CaseStudyIcon}
+    //       alt="Case Study Icon"
+    //       style={{
+    //         width: 24,
+    //         height: 24,
+    //         filter: "brightness(0) invert(1)",
+    //       }}
+    //     />
+    //   ),
+    // },
     {
       title: "Videos",
       hash: "videos",
