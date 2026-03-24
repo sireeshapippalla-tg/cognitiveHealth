@@ -1,9 +1,7 @@
-import Healthcare from "../assets/Resources/HealthcareRCM.jpg"
-import AIcapabilities from "../assets/Resources/AIcapabilities.jpg"
-import Revenuecycle from "../assets/Resources/Revenuecycle.jpg"
-import Annualconference from "../assets/Resources/Annualconference.jpg"
-
-
+import Healthcare from "../assets/Resources/HealthcareRCM.jpg";
+import AIcapabilities from "../assets/Resources/AIcapabilities.jpg";
+import Revenuecycle from "../assets/Resources/Revenuecycle.jpg";
+import Annualconference from "../assets/Resources/Annualconference.jpg";
 
 export interface Media {
   id: string;
@@ -20,45 +18,70 @@ export const mediaData: Media[] = [
   {
     id: "1",
     type: "media",
-    title: "iCAN™ Platform Recognized as Top Innovation in Healthcare RCM",
+    title:
+      "Intentional and Strategic Outsourcing and Automation: A New Era of Revenue Cycle Management",
     description:
-      "Industry analysts name iCAN™ as a leading innovation in healthcare revenue cycle management automation technology.",
+      "Published in the 2025 Fall Edition of the NJ HFMA Garden State Focus, Renee Mary Stephens and Pavani Munjuluri –  On Intentional, strategic outsourcing + automation usher in a new era of Revenue Cycle Management. Read More",
     image: Healthcare,
-    date: "November 28, 2024",
-    category: "Award",
+    date: "November 3, 2025",
+    category: "",
     link: "/media/top-innovation-award",
   },
   {
     id: "2",
     type: "media",
-    title: "CognitiveHealth Raises Series B Funding to Expand AI Capabilities",
+    title: "Demystifying Al: Transforming Revenue Cycle Management (RCM)",
     description:
-      "Leading healthcare technology investors join Series B round to accelerate development of next-generation AI automation features..",
+      "Demystifying Al: Transforming Revenue Cycle Management (RCM) Published in the 2024 Summer Edition of the NJ HFMA Garden State Focus, Pavani Munjuluri, CEO - CognitiveHealth Technologies explores the early beginnings, the teen years and the current state of Al and things to be mindful of, in the context of the healthcare industry. Read More",
     image: AIcapabilities,
-    date: "November 28, 2024",
-    category: "Funding",
+    date: "February 5, 2025",
+    category: "",
     link: "/media/ai-capabilities-healthcare-rcm",
   },
   {
     id: "3",
     type: "media",
-    title: "CEO Featured in Healthcare IT News: The Future of Revenue Cycle Automation",
+    title: "Addressing the Critical Cyber Threats in US Healthcare",
     description:
-      "CognitiveHealth CEO discusses how intelligent automation is reshaping the future of healthcare revenue cycle management.",
+      "US health care is 17.3 percent of the US GDP and by itself now exceeds the GDP of Germany. It has grown to the point where the uninterrupted functioning of healthcare payments is vital to national security. In recent months, the healthcare industry has faced severe data security challenges, leading to breaches, and compromising patient trust. The Change [ ... ]",
     image: Revenuecycle,
-    date: "November 28, 2024",
-    category: "Press",
+    date: "June 30, 2024",
+    category: "",
     link: "/media/revenue-cycle-platform-overview",
   },
   {
     id: "4",
     type: "media",
-    title: "CognitiveHealth Wins Innovation Award at HFMA Annual Conference",
+    title:
+      "CognitiveHealth Technologies announces the appointment of Pavani Munjuluri as Chief Executive Officer.",
     description:
-      "The iCAN™ platform receives recognition for innovation in revenue cycle automation at the Healthcare Financial Management Association conference.",
+      "CognitiveHealth Technologies announces the appointment of Pavani Munjuluri as Chief Executive Officer. We are excited to announce Ms. Pavani Munjuluri as the Chief Executive Officer of CognitiveHealth Technologies. Pavani is the Co-founder and has been serving as COO for the last three years. She has been very successful in leading our product development and client [ ... ]",
     image: Annualconference,
-    date: "November 28, 2024",
-    category: "Award",
+    date: "January 6, 2022",
+    category: "",
     link: "/media/series-b-funding",
   },
+    {
+    id: "5",
+    type: "media",
+    title:
+      "How Yale-New Haven Uses IPA in Revenue Cycle to Tackle Inefficiency",
+    description:
+      "As the pandemic heads toward a second year with no further financial stimulus guaranteed, hospitals and health systems are seeking ways to reduce costs and improve revenue cycle performance. Intelligent process automation (IPA) is an emerging solution designed to optimize operations and increase productivity through a combination of process modeling, process automation, and artificial intelligence. [ ... ]",
+    image: Annualconference,
+    date: "December 16, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  },
+  {
+    id:"6",
+    type:"media",
+    title:"Automating Revenue Cycle On The Back End Improves Patient Engagement On The Front",
+     description:
+      "For one health system, robotic process automation equates to about 27,000 hours in a month saved, which correlates to around $500,000. Revenue cycle directors are seeing a clear path for automation to increase revenue, decrease denials, speed up prior authorization and claims, and remove many of the repetitive clicks that hamper daily operations. From an [ ... ]",
+    image: Annualconference,
+    date: "December 15, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  }
 ];
