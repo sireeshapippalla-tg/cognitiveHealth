@@ -2,7 +2,7 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
-import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
+// import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import { Box, Container, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -17,11 +17,11 @@ const features = [
     title: "Fragmented Systems and Data",
     description: "Disconnected systems, inconsistent data formats, and lack of integration create inefficiencies and limit visibility across the revenue cycle.",
   },
-  {
-    icon: <HandshakeOutlinedIcon sx={{ fontSize: 40 }} />,
-    title: "Compatibility",
-    description: "Our solutions seamlessly integrate with your existing EHR, HIS, and financial systems, ensuring minimal disruption and maximum ROI.",
-  },
+  // {
+  //   icon: <HandshakeOutlinedIcon sx={{ fontSize: 40 }} />,
+  //   title: "Compatibility",
+  //   description: "Our solutions seamlessly integrate with your existing EHR, HIS, and financial systems, ensuring minimal disruption and maximum ROI.",
+  // },
   {
     icon: <PeopleOutlineIcon sx={{ fontSize: 40 }} />,
     title: "Staffing Shortages",

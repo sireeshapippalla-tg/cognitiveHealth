@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   MenuItem,
   Select,
   FormControl,
+  Box,
   type SelectChangeEvent,
 } from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
@@ -15,6 +16,7 @@ import {
   TabButton,
   ActiveBackground,
   TabText,
+  FilterWrapper,
 } from "./ResourceTabs.styles";
 import BlogIcon from "../../../assets/Resources/Blog.svg";
 import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
@@ -25,7 +27,7 @@ const ResourceTabs = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTabClickRef = React.useRef(false);
-  // const tabHashMap = ["blog", "case-study", "videos", "media"];
+  
   const tabs = [
     {
       value: "blog",
@@ -55,7 +57,6 @@ const ResourceTabs = () => {
     tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")) || 0;
 
   useEffect(() => {
-    // If there is NO hash, user came from another page
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "auto" });
     }
@@ -63,17 +64,15 @@ const ResourceTabs = () => {
 
   useEffect(() => {
     if (!isTabClickRef.current) {
-      // Came from another page → start at top
       window.scrollTo({ top: 0, behavior: "auto" });
       return;
     }
 
-    // Internal tab click → scroll to content
     const element = document.getElementById("resources-content");
     if (!element) return;
 
     requestAnimationFrame(() => {
-      const yOffset = -190;
+      const yOffset = -220;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({
@@ -90,16 +89,15 @@ const ResourceTabs = () => {
     newValue: number,
   ) => {
     isTabClickRef.current = true;
-
     navigate(`/resources#${tabs[newValue].value}`, {
       replace: true,
     });
   };
+
   const [filter, setFilter] = useState("Filter By");
 
   const handleFilterChange = (event: SelectChangeEvent) => {
     setFilter(event.target.value);
-    // Implement filter logic here based on event.target.value
   };
 
   return (
@@ -117,62 +115,82 @@ const ResourceTabs = () => {
                   layoutId="activeTab"
                   transition={{
                     type: "spring",
-                    stiffness: 500,
-                    damping: 30,
+                    stiffness: 400,
+                    damping: 25,
                   }}
                 />
               )}
-
-              <TabText $active={activeTab === index}>{tab.label}</TabText>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, position: 'relative', zIndex: 1 }}>
+                <motion.div
+                  animate={{ 
+                    filter: activeTab === index ? 'brightness(0) invert(1)' : 'grayscale(1) opacity(0.6)',
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {tab.icon}
+                </motion.div>
+                <TabText $active={activeTab === index}>{tab.label}</TabText>
+              </Box>
             </TabButton>
           ))}
         </TabsContainer>
-        <FormControl size="small" sx={{ minWidth: 120 }}>
-          <Select
-            value={filter}
-            onChange={handleFilterChange}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
-            MenuProps={{
-               disablePortal: true,
-              PaperProps: {
-                sx: {
-                  zIndex: 3000,
+
+        <FilterWrapper>
+          <FormControl size="small" sx={{ minWidth: 140 }}>
+            <Select
+              value={filter}
+              onChange={handleFilterChange}
+              displayEmpty
+              inputProps={{ "aria-label": "Without label" }}
+              MenuProps={{
+                PaperProps: {
+                  sx: {
+                    zIndex: 5000,
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                    mt: 1
+                  },
                 },
-              },
-            }}
-            sx={{
-              // fontFamily: "Inter",
-              fontSize: "14px",
-              bgcolor: "#fff",
-              color: "#656565",
-              borderRadius: "8px",
-              "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#E5E7EB",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#D1D5DB",
-              },
-              typography: "body2",
-              fontWeight: 500,
-            }}
-          >
-            <MenuItem value="Filter By">Filter By</MenuItem>
-            <MenuItem value="Recent">Recent</MenuItem>
-            <MenuItem value="Popular">Popular</MenuItem>
-          </Select>
-        </FormControl>
+              }}
+              sx={{
+                fontSize: "14px",
+                bgcolor: "#f9fafb",
+                color: "#64748b",
+                borderRadius: "100px",
+                padding: "2px 12px",
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(0,0,0,0.05)",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(0,0,0,0.1)",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "var(--color-primary)",
+                },
+                fontWeight: 600,
+              }}
+            >
+              <MenuItem value="Filter By">Filter By</MenuItem>
+              <MenuItem value="Recent">Recent</MenuItem>
+              <MenuItem value="Popular">Popular</MenuItem>
+            </Select>
+          </FormControl>
+        </FilterWrapper>
       </StickyTabsWrapper>
+
       <BlogContainer>
-        <motion.div
-          id="resources-content"
-          key={activeTab}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <ResourceList activeTab={activeTab} />
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            id="resources-content"
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            <ResourceList activeTab={activeTab} />
+          </motion.div>
+        </AnimatePresence>
       </BlogContainer>
     </>
   );

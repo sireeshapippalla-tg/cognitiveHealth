@@ -1,8 +1,12 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { CtaTrustText } from "./CallToActionSection.styles";
 
 const CTASection = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -70,14 +74,14 @@ const CTASection = () => {
             viewport={{ once: false }}
           >
             <Typography
-             
+
               fontWeight={800}
               sx={{
                 mb: 2,
-               
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
-            lineHeight: 1.3,
-     
+
+                fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
+                lineHeight: 1.3,
+
                 background: "linear-gradient(135deg, #0f172a, #334155)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -122,37 +126,38 @@ const CTASection = () => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 aria-label="Request a Demo"
-                 sx={{
-                    px: 5,
-                    py: 1.6,
-                    borderRadius: "40px",
-                    fontWeight: "bold",
-                    textTransform: "none",
-                    position: "relative",
-                    overflow: "hidden",
-                    background: "#F47A20",
-                    // background:
-                    //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+                sx={{
+                  px: 5,
+                  py: 1.6,
+                  borderRadius: "40px",
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  position: "relative",
+                  overflow: "hidden",
+                  background: "#F47A20",
+                  // background:
+                  //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
 
-                    boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+                  boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
 
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: "-80%",
-                      width: "60%",
-                      height: "100%",
-                      background:
-                        "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
-                      transform: "skewX(-20deg)",
-                    },
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: "-80%",
+                    width: "60%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent)",
+                    transform: "skewX(-20deg)",
+                  },
 
-                    "&:hover::after": {
-                      left: "130%",
-                      transition: "0.7s",
-                    },
-                  }}
+                  "&:hover::after": {
+                    left: "130%",
+                    transition: "0.7s",
+                  },
+                }}
+                onClick={() => navigate("/contact-us")}
               >
                 Request a Demo
               </Button>
@@ -164,47 +169,34 @@ const CTASection = () => {
                 variant="outlined"
                 endIcon={<ArrowForwardIcon />}
                 aria-label="See Platform in Action"
-              sx={{
-                    px: 5,
-                    py: 1.6,
-                    borderRadius: "40px",
-                    textTransform: "none",
-                    fontWeight: 500,
-                    borderColor: "#F47A20",
-                    color: "#F47A20",
+                sx={{
+                  px: 5,
+                  py: 1.6,
+                  borderRadius: "40px",
+                  textTransform: "none",
+                  fontWeight: 500,
+                  borderColor: "#F47A20",
+                  color: "#F47A20",
 
-                    "&:hover": {
-                      background: "rgba(107,191,89,0.1)",
-                      borderColor: "#F47A20",
-                    },
-                  }}
+                  "&:hover": {
+                    background: "rgba(107,191,89,0.1)",
+                    borderColor: "#F47A20",
+                  },
+                }}
+                onClick={() => navigate("/resources#videos")}
               >
                 See Platform in Action
               </Button>
             </motion.div>
+
+
           </Box>
-           {/* Subtitle */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: false }}
-          >
-            <Typography
-              sx={{
-                color: "#475569",
-                maxWidth: "600px",
-                margin: "0 auto",
-                fontSize: { xs: "1rem", md: "1.1rem" },
-                lineHeight: 1,
-              }}
-            >
-              Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
-            </Typography>
-          </motion.div>
+          <CtaTrustText>
+            Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
+          </CtaTrustText>
         </Box>
 
-        
+
       </Container>
     </Box>
   );

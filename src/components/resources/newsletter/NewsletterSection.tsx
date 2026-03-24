@@ -14,11 +14,16 @@ const NewsletterSection = () => {
   const navigate = useNavigate();
   return (
     <Container maxWidth="lg">
-      <NewsletterWrapper>
+      <NewsletterWrapper
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <Title variant="h3">See What Autonomous RCM Can Do For You</Title>
         <Subtitle>
           Join leading healthcare organizations transforming their revenue cycle
-          with AI.
+          with AI. Experience the future of medical billing efficiency.
         </Subtitle>
         <ButtonContainer>
           <PrimaryButton

@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import { Box, Typography, Button,  Grid } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 
@@ -31,7 +31,7 @@ const SplitSection = ({
   return (
     <Box
       sx={{
-        px: { xs: 2, sm: 4 },
+        px: { xs: 2, md: "30px" },
         py: padding ? padding : { xs: 8, md: 10 },
         position: "relative",
         overflow: "hidden",
@@ -68,7 +68,7 @@ const SplitSection = ({
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <Box  sx={{ position: "relative", zIndex: 1,    padding:{xs:"20px", md:"30px 60px"}}}>
         <Grid
           container
           spacing={{ xs: 6, md: 8 }}
@@ -252,7 +252,7 @@ const SplitSection = ({
             </motion.div>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       
       {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
       <style>

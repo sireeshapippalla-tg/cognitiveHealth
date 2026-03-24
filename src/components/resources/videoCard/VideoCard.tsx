@@ -1,22 +1,18 @@
 import React from "react";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   StyledCard,
   CardImageWrapper,
   CardImage,
-  PlayButtonOverlay,
-  PlayButton,
   CategoryChip,
   CardContent,
   CardTitle,
   CardDescription,
-  Footer,
-  // WatchLink,
+  ActionButton,
   DurationBadge,
+  PlayIconOverlay,
 } from "./VideoCard.styles";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box } from "@mui/material";
 
 interface VideoCardProps {
   image: string;
@@ -24,7 +20,7 @@ interface VideoCardProps {
   title: string;
   description: string;
   link: string;
-  duration?: string;
+  duration: string;
   onPlay: () => void;
 }
 
@@ -33,59 +29,34 @@ const VideoCard: React.FC<VideoCardProps> = ({
   category,
   title,
   description,
-  // link,
   duration,
   onPlay,
 }) => {
   return (
-    <StyledCard onClick={onPlay}>
+    <StyledCard
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      onClick={onPlay}
+    >
       <CardImageWrapper>
         <CardImage src={image} alt={title} />
-        <CategoryChip label={category} />
-        <PlayButtonOverlay className="play-button">
-          <PlayButton
-            onClick={(e) => {
-              e.stopPropagation();
-              onPlay();
-            }}
-          >
-            <PlayArrowIcon />
-          </PlayButton>
-        </PlayButtonOverlay>
+        {category && <CategoryChip label={category} />}
+        <PlayIconOverlay>
+          <PlayArrowIcon sx={{ fontSize: "36px" }} />
+        </PlayIconOverlay>
+        <DurationBadge>{duration}</DurationBadge>
       </CardImageWrapper>
 
       <CardContent>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle variant="h5">{title}</CardTitle>
+        <CardDescription variant="body2">{description}</CardDescription>
 
-        <Footer>
-          <Box
-            onClick={(e) => {
-              e.stopPropagation();
-              onPlay();
-            }}
-            className="read-more-link"
-            sx={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "4px",
-              fontSize: "15px",
-              fontWeight: 600,
-              color: "#E88D3E",
-              cursor: "pointer",
-            }}
-          >
-            Watch Video
-            <ArrowForwardIcon fontSize="small" />
-          </Box>
-
-          {duration && (
-            <DurationBadge>
-              <AccessTimeOutlinedIcon />
-              <span>{duration}</span>
-            </DurationBadge>
-          )}
-        </Footer>
+        <ActionButton>
+          Watch Video
+          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
+        </ActionButton>
       </CardContent>
     </StyledCard>
   );
