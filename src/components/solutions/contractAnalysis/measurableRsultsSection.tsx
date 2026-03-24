@@ -13,26 +13,26 @@ import MetricsSection from "../../ui/metricsSection/MetricsSection";
 const stats = [
   {
     value: "$1.5M+",
-    title: "Annual Recovery",
-    description: "Average annual recovery per facility from variance detection",
+    title: "",
+    description: "Average Annual Underpayment Recovery Per facility from variance detection and appeals",
     icon: <AttachMoneyOutlinedIcon />,
   },
   {
     value: "99.9%",
-    title: "Payment Accuracy",
-    description: "Every payment checked against contract terms",
+    title: "",
+    description: "Payment Accuracy Validation Every payment checked against contract terms",
     icon: <VerifiedOutlinedIcon />,
   },
   {
     value: "24 Hours",
-    title: "Detection Time",
-    description: "From payment receipt to underpayment identification",
+    title: "",
+    description: "Variance Detection Time From payment receipt to underpayment identification",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "85%",
-    title: "Appeal Success",
-    description: "Contract-based appeals with documented evidence",
+    title: "",
+    description: "Underpayment Appeal Success Rate Contract-based appeals with documented evidence",
     icon: <TrendingUpOutlinedIcon />,
   },
 ];

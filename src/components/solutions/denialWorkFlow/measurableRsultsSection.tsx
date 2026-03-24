@@ -9,26 +9,26 @@ import MetricsSection from "../../ui/metricsSection/MetricsSection";
 const stats = [
   {
     value: "60%",
-    title: "Denial Reduction",
-    description: "Proactive prevention eliminates denials before submission",
+    title: "",
+    description: "Denial Rate Reduction Proactive prevention eliminates denials before submission",
     icon: <ShieldOutlinedIcon />,
   },
   {
     value: "85%",
-    title: "Appeal Success",
-    description: "AI-generated appeals with evidence-based arguments",
+    title: "",
+    description: "Appeal Success Rate AI-generated appeals with evidence-based arguments",
     icon: <CheckCircleOutlineOutlinedIcon />,
   },
   {
     value: "3 Days",
-    title: "Faster Turnaround",
+    title: "",
     description:
       "Average Appeal Turnaround From denial receipt to appeal submission",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "2M+",
-    title: "Annual Recovery",
+    title: "",
     description:
       "Average Annual Recovery Per facility from improved denial management",
     icon: <PaymentsOutlinedIcon />,

@@ -1,3 +1,4 @@
+
 import { Box, Typography } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -18,8 +19,22 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
     margin: "-100px",
   });
 
+  //  Extract numeric value
   const numericValue = parseFloat(value.replace(/[^\d.]/g, ""));
-  const count = useCountUp(isInView ? numericValue : 0, 2000);
+  const hasPercent = value.includes("%");
+  const hasText = /[a-zA-Z+]/.test(value);
+  const isRange = value.includes("-"); // ✅ FIX for 2-4%
+  const isPureText = hasText && isNaN(numericValue);
+
+  //  Animate only valid numbers
+  const count = useCountUp(
+    isInView && !isNaN(numericValue) ? numericValue : 0,
+    2000
+  );
+
+  //  Split number + text
+  const numberPart = value.replace(/[^\d.]/g, "");
+  const textPart = value.replace(/[\d.]/g, "").trim();
 
   return (
     <motion.div
@@ -39,8 +54,10 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          justifyContent: "center",
+          alignItems: "center",
           textAlign: "center",
+          gap: 1.5,
 
           transition: "0.3s",
 
@@ -48,50 +65,117 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
             transform: "translateY(-10px)",
             boxShadow: "0 25px 50px rgba(0,0,0,0.12)",
           },
-
-        //   "&::before": {
-        //     content: '""',
-        //     position: "absolute",
-        //     top: 0,
-        //     left: 0,
-        //     width: "100%",
-        //     height: "4px",
-        //     borderTopLeftRadius: "20px",
-        //     borderTopRightRadius: "20px",
-        //     background:
-        //       "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
-        //   },
         }}
       >
-        {/* VALUE */}
-        <Typography
+        {/*  VALUE */}
+        <Box
           sx={{
-            fontSize: { xs: "2.2rem", md: "2.8rem" },
-            padding:"10px",
-            fontWeight: 900,
-            background:
-              "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            minHeight: "70px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {value.includes("~") ? "~0%" : `${count.toFixed(1)}%`}
-        </Typography>
+          {isRange ? (
+            // ✅ RANGE VALUE
+            <Typography
+              sx={{
+                fontSize: { xs: "2.2rem", md: "2.8rem" },
+                fontWeight: 900,
+                lineHeight: 1.1,
+                background:
+                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {value}
+            </Typography>
+          ) : isPureText ? (
+            // ✅ PURE TEXT 
+            <Typography
+              sx={{
+                fontSize: { xs: "1.4rem", md: "1.8rem" },
+                fontWeight: 900,
+                lineHeight: 1.2,
+                textAlign: "center",
+                background:
+                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {value}
+            </Typography>
+          ) : hasText ? (
+            // ✅ MIXED 
+            <Box display="flex" alignItems="baseline" gap={0.5}>
+              <Typography
+                sx={{
+                  fontSize: { xs: "2.2rem", md: "2.8rem" },
+                  fontWeight: 900,
+                  lineHeight: 1,
+                  background:
+                    "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                {numberPart}
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize: { xs: "1rem", md: "1.2rem" },
+                  fontWeight: 700,
+                  color: "#6BBF59",
+                }}
+              >
+                {textPart}
+              </Typography>
+            </Box>
+          ) : (
+            // ✅ NORMAL % / NUMBER 
+            <Typography
+              sx={{
+                fontSize: { xs: "2.2rem", md: "2.8rem" },
+                fontWeight: 900,
+                lineHeight: 1.1,
+                background:
+                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {hasPercent
+                ? `${count.toFixed(0)}%`
+                : `${count.toFixed(0)}`}
+            </Typography>
+          )}
+        </Box>
 
         {/* TITLE */}
-        <Typography
-          sx={{
-            mt: 1,
-            fontSize: "15px",
-            fontWeight: 700,
-            color: "#F47A20",
-          }}
-        >
-          {title}
-        </Typography>
+        {title && (
+          <Typography
+            sx={{
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#F47A20",
+            }}
+          >
+            {title}
+          </Typography>
+        )}
 
         {/* DESCRIPTION */}
-        <Typography sx={{ mt: 1, color: "#6B7280", minHeight: "48px" }}>
+        <Typography
+          sx={{
+            color: "#6B7280",
+            fontSize: "0.95rem",
+            lineHeight: 1.5,
+            maxWidth: "220px",
+          }}
+        >
           {description}
         </Typography>
       </Box>

@@ -9,53 +9,73 @@ export interface Video {
   readTime: string;
   category?: string;
   link: string;
+  date: string;
 }
 
 export const videoData: Video[] = [
- {
+  {
     id: "1",
     type: "video",
-    title: "iCAN™ Platform Overview",
+    title: "On-demand webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’",
     description:
-      "Get a comprehensive overview of the iCAN™ platform and its intelligent automation capabilities.",
+      "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
     image: videos,
-    readTime: "12 min",
-    category: "Product Demo",
+    readTime: "",
+    category: "",
+    date: "February 23, 2025",
     link: "/videos/platform-overview",
   },
   {
     id: "2",
     type: "video",
-    title: "iCAN Correspondence Management",
+    title: "iCAN™ PlatformOverview",
     description:
-      "Learn how iCAN™ automates correspondence management to bring order to lockbox chaos.",
+      "iCAN™  is an AI-powered RCM platform that provides intuitive user experience for different personas and helps them gain greater visibility, build trust, increase efficiency and productivity.",
     image: videos,
-    readTime: "12 min",
-    category: "Feature Spotlight",
+    readTime: "",
+    category: "",
     link: "/videos/correspondence-management",
+    date: "February 5, 2025",
+
   },
   {
-  id: "3",
-  type: "video",
-  title: "Introducing iCAN",
-  description: "Get a comprehensive overview of the iCAN™ platform and its intelligent automation capabilities.",
-  image: videos,
-  readTime: "3 min",
-  category: "Introduction",
-  link: "/videos/iCAN-introduction",
-},
-{
+    id: "3",
+    type: "video",
+    title: "iCAN Correspondence Management",
+    description: "CognitiveHealth’s Intelligent automation platform, iCAN leverages AI and machine learning to read, sort and manage daily correspondence and frees up the staff time to handle more challenging tasks. This is a true application of AI in revenue cycle workflow for healthcare providers and payors",
+    image: videos,
+    readTime: "",
+    category: "",
+    link: "/videos/iCAN-introduction",
+    date: "December 14, 2020",
+
+  },
+  {
     id: "4",
+    type: "video",
+    title: "Introducing iCAN",
+    description:
+      "Introducing iCAN – an Intelligent Automation Platform built for the healthcare industry – learn more about iCAN in this brief video.",
+    image: videos,
+    readTime: "",
+    category: "",
+    link: "/videos/intelligent-process-automation",
+    date: "September 12, 2020",
+
+  },
+
+  {
+    id: "5",
     type: "video",
     title: "Opportunities for Intelligent Process Automation",
     description:
-      "Learn how iCAN™ automates correspondence management to bring order to lockbox chaos.",
+      "Visionary leaders are turning to Intelligent process automation to reduce costs and increase efficiencies. However the challenge is how to identify the best opportunities for your organization. – Learn how to identify the opportunities.",
     image: videos,
-    readTime: "12 min",
-    category: "Thought Leadership",
+    readTime: "",
+    category: "",
     link: "/videos/intelligent-process-automation",
+    date: "September 12, 2020",
+
   },
-
-
 
 ];

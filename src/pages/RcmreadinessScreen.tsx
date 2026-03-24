@@ -247,7 +247,7 @@ const RCMReadinessScreen: React.FC = () => {
       formData.append("score", score.toString());
       formData.append("file", pdfBlob, "RCM-AI-Assessment.pdf");
 
-      await fetch("/api/send-assessment-email", {
+      await fetch("http://localhost:5000/api/email/send-assessment-email", {
         method: "POST",
         body: formData,
       });

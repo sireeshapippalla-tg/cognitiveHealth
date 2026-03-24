@@ -11,7 +11,7 @@ import yaleImg from "../../../assets/yale.svg";
 import heroSectionImage from "../../../assets/HomeScreen.svg";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Button} from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 const HeroSection = () => {
@@ -100,12 +100,13 @@ const HeroSection = () => {
             opacity: 0.15,
           }}
         />
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        {/* <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}> */}
           <Box
             display="grid"
             gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
             gap={8}
             alignItems="center"
+            padding={{xs:"20px", md:"30px 60px"}}
           >
             {/* 🔥 LEFT CONTENT */}
             <motion.div
@@ -251,7 +252,7 @@ const HeroSection = () => {
               </Box>
             </motion.div>
           </Box>
-        </Container>
+        {/* </Container> */}
         {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
         <style>
           {`

@@ -84,7 +84,7 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
             sx={{
               color: open ? "#F47A20" : "#111827",
               transition: "color 0.4s ease",
-              fontSize: { xs: "1.2rem", md: "1.6rem" },
+              fontSize: { xs: "1rem", md: "24px" },
               letterSpacing: "-0.02em",
               lineHeight: 1.2
             }}

@@ -1,72 +1,96 @@
 import { styled } from "@mui/material/styles";
 import { Box, Typography, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
-export const NewsletterWrapper = styled(Box)({
-  backgroundColor: "#FFF7F2", // Light orange background
-  borderRadius: "24px",
-  padding: "64px 24px",
+export const NewsletterWrapper = motion(styled(Box)(({ theme }) => ({
+  background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+  borderRadius: "32px",
+  padding: "80px 48px",
   textAlign: "center",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "24px",
-  margin: "64px 0",
+  color: "#ffffff",
+  position: "relative",
+  overflow: "hidden",
+  marginTop: "100px",
+  marginBottom: "100px",
+  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "radial-gradient(circle at top right, rgba(235, 123, 51, 0.15) 0%, transparent 60%)",
+    pointerEvents: "none",
+  },
+  [theme.breakpoints.down("md")]: {
+    padding: "60px 24px",
+    borderRadius: "24px",
+  },
+})));
+
+export const Title = styled(Typography)(({ theme }) => ({
+  fontSize: "42px",
+  fontWeight: 800,
+  marginBottom: "24px",
+  lineHeight: 1.2,
+  maxWidth: "800px",
+  margin: "0 auto 24px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "32px",
+  },
+}));
+
+export const Subtitle = styled(Typography)({
+  fontSize: "18px",
+  color: "#94a3b8",
+  maxWidth: "600px",
+  margin: "0 auto 48px",
+  lineHeight: 1.6,
 });
 
-export const Title = styled(Typography)(() => ({
-  // fontFamily: "Inter",
-  fontWeight: 600,
-  lineHeight: "48px",
-  color: "var(--color-text-dark)",
-  marginBottom: "8px",
-}));
-
-export const Subtitle = styled(Typography)(() => ({
-  // fontFamily: "Inter",
-  color: "var(--color-text-light)",
-  fontSize: "20px",
-  maxWidth: "700px",
-  lineHeight: "150%",
-  marginBottom: "16px",
-}));
-
-export const ButtonContainer = styled(Box)({
+export const ButtonContainer = styled(Box)(({ theme }) => ({
   display: "flex",
-  gap: "16px",
-  flexWrap: "wrap",
   justifyContent: "center",
-});
+  gap: "20px",
+  flexWrap: "wrap",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    alignItems: "stretch",
+  },
+}));
 
 export const PrimaryButton = styled(Button)({
-  // fontFamily: "Inter",
-  backgroundColor: "#EB7724", // Orange color
-  color: "#fff",
+  backgroundColor: "var(--color-primary)",
+  color: "#ffffff",
+  padding: "14px 36px",
+  borderRadius: "100px",
+  fontSize: "16px",
+  fontWeight: 700,
   textTransform: "none",
-  borderRadius: "50px",
-  padding: "12px 32px",
-  fontWeight: 600,
-  lineHeight: "140%",
-  fontSize: "14px",
-  boxShadow: "0px 4px 12px rgba(232, 141, 62, 0.2)",
+  boxShadow: "0 10px 15px -3px rgba(235, 123, 51, 0.3)",
   "&:hover": {
-    backgroundColor: "#d67d2e",
-    boxShadow: "0px 6px 16px rgba(232, 141, 62, 0.3)",
+    backgroundColor: "var(--color-primary-hover)",
+    transform: "translateY(-2px)",
+    boxShadow: "0 20px 25px -5px rgba(235, 123, 51, 0.4)",
   },
+  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
 });
 
-export const SecondaryButton = styled(Button)(({ theme }) => ({
-  // fontFamily: "Inter",
-  backgroundColor: "#fff",
-  color: theme.palette.text.primary,
-  border: "1px solid #2F2F2F",
+export const SecondaryButton = styled(Button)({
+  backgroundColor: "rgba(255, 255, 255, 0.1)",
+  color: "#ffffff",
+  padding: "14px 36px",
+  borderRadius: "100px",
+  fontSize: "16px",
+  fontWeight: 700,
   textTransform: "none",
-  borderRadius: "50px",
-  padding: "12px 32px",
-  fontWeight: 500,
-  fontSize: "14px",
-  lineHeight: "140%",
+  border: "1px solid rgba(255, 255, 255, 0.2)",
+  backdropFilter: "blur(10px)",
   "&:hover": {
-    backgroundColor: "#f9fafb",
-    borderColor: "#D1D5DB",
+    backgroundColor: "rgba(255, 255, 255, 0.15)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
+    transform: "translateY(-2px)",
   },
-}));
+  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+});

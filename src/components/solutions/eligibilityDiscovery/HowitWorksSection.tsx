@@ -9,33 +9,33 @@ import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
 const steps: HowItWorksStep[] = [
   {
-    title: "Patient Search & Data Ingestion",
+    title: "Automated Eligibility Check",
     description:
-      "Automated capture of patient demographics. Direct integration with scheduling and ADT systems.",
+      "Real-time verification at scheduling or registration. Multi-payer batch verification overnight. Integration with EMR/practice management systems.",
     icon: <SearchOutlinedIcon />,
   },
   {
-    title: "Real-Time Eligibility Check",
+    title: "Benefit Discovery & Analysis",
     description:
-      "Instant 270/271 electronic transactions. Verification of active coverage, co-pay, and deductibles.",
+      "Extract detailed coverage information. Identify authorization requirements. Calculate patient responsibility estimates.",
     icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Benefit Level Extraction",
+    title: "Alert & Workflow Triggering",
     description:
-      "Detailed breakdown of service-specific benefits. Identification of secondary and tertiary payers.",
+      "Flag coverage issues for resolution. Trigger authorization workflows when needed. Notify financial counseling for high patient liability.",
     icon: <DescriptionOutlinedIcon />,
   },
   {
-    title: "Payer Policy Content Research",
+    title: "Continuous Monitoring",
     description:
-      "AI-driven research of specific payer rules. Documentation of prior authorization requirements.",
+      "Scheduled re-verification before appointments. Coverage change detection. Expired authorization alerts.",
     icon: <GavelOutlinedIcon />,
   },
   {
-    title: "Final Verification & Updates",
+    title: "Multiple Provider Settings",
     description:
-      "Consolidated verification report. Automatic update of patient records in the HIS/PMS.",
+      "Acute Care & Hospital Systems. Home Health & Hospice. Behavioral Health & Substance Use. Long-Term Care & Skilled Nursing Facilities. Specialty & Ambulatory Providers. Physician Practices & Medical Groups.",
     icon: <VerifiedOutlinedIcon />,
   },
 ];

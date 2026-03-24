@@ -8,31 +8,31 @@ import MetricsSection from "../../ui/metricsSection/MetricsSection";
 
 const stats = [
   {
-    value: "99.5%",
-    title: "Extraction Accuracy",
+    value: "95%",
+    title: "",
     description:
-      "Industry-leading accuracy in digitizing paper EOBs and checks",
+      "Straight-Through Processing Rate Majority of lockbox items require no human intervention",
     icon: <CloudDoneOutlinedIcon />,
   },
   {
-    value: "100%",
-    title: "Audit Visibility",
+    value: "Same Business Day",
+    title: "",
     description:
-      "Full digital trail for every document received in the lockbox",
+      "Average Mail-to-Data Time From mailbox receipt to posting-ready data",
     icon: <FindInPageOutlinedIcon />,
   },
   {
-    value: "X5",
-    title: "Faster Processing",
+    value: "70%",
+    title: "",
     description:
-      "Increase in processing speed compared to manual lockbox handling",
+      "Reduction in Manual Data Entry Eliminate typing from paper EOBs",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
-    value: "30%",
-    title: "Cost Reduction",
+    value: "2 Days",
+    title: "",
     description:
-      "Average reduction in operational overhead for lockbox management",
+      "Faster Cash Application Accelerated recognition of payments",
     icon: <TrendingUpOutlinedIcon />,
   },
 ];

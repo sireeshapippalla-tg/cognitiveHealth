@@ -9,27 +9,27 @@ import MetricsSection from "../../ui/metricsSection/MetricsSection";
 const stats = [
   {
     value: "95%",
-    title: "Claim Accuracy",
-    description: "Reduction in coding errors before initial submission",
+    title: "",
+    description: "Clean Claim Rate First-pass acceptance without errors or denials",
     icon: <VerifiedUserOutlinedIcon />,
   },
   {
-    value: "10+% ",
-    title: "Revenue Lift",
+    value: "70% ",
+    title: "",
     description:
-      "Increase in net patient revenue through charge capture optimization",
+      "Reduction in Claim Rework Catch and fix issues before submission",
     icon: <GppGoodOutlinedIcon />,
   },
   {
-    value: "X3",
-    title: "Review Velocity",
-    description: "Increase in pre-bill review speed using AI validation",
+    value: "50%",
+    title: "",
+    description: "Faster Coding Turnaround AI-assisted coding accelerates chart review",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
-    value: "50%",
-    title: "Audit Efficiency",
-    description: "Reduction in manual audit overhead for compliance teams",
+    value: "2-4%",
+    title: "",
+    description: "Revenue Capture Improvement Optimized coding captures appropriate reimbursement",
     icon: <SavingsOutlinedIcon />,
   },
 ];

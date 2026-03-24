@@ -23,11 +23,11 @@ const ResourceList = ({ activeTab }: ResourceListProps) => {
     switch (activeTab) {
       case 0:
         return resourcesData.filter((r) => r.type === "blog");
+      // case 1:
+      //   return resourcesData.filter((r) => r.type === "case-study");
       case 1:
-        return resourcesData.filter((r) => r.type === "case-study");
-      case 2:
         return resourcesData.filter((r) => r.type === "video");
-      case 3:
+      case 2:
         return resourcesData.filter((r) => r.type === "media");
       default:
         return resourcesData;
@@ -36,7 +36,7 @@ const ResourceList = ({ activeTab }: ResourceListProps) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={4}>
+      <Grid container spacing={6}>
         {filteredResources.map((resource) => (
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} key={resource.id}>
             {resource.type === "case-study" ? (

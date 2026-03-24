@@ -8,27 +8,27 @@ import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
 const steps: HowItWorksStep[] = [
   {
-    title: "Claim Capture & Ingestion",
+    title: "Pre-Submission Claim Intake",
     description:
-      "Automated import of unbilled claims and encounters. Multi-source data aggregation including clinical notes and orders.",
+      "Claims staged from billing system. Clinical documentation attached. Patient eligibility and authorization verified.",
     icon: <FactCheckOutlinedIcon />,
   },
   {
-    title: "AI Scrubbing & Validation",
+    title: "AI Validation & Scrubbing",
     description:
-      "Cross-check against payer-specific rules and CCI edits. Identification of missing codes, modifiers, or documentation.",
+      "Comprehensive edit checking (payer, NCCI, compliance).Coding validation against documentation.Reimbursement optimization analysis.",
     icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Variance Resolution",
+    title: "Exception Review & Correction",
     description:
-      "Intelligent routing of flagged claims to coders. AI-suggested corrections for common billing errors.",
+      "Flagged claims routed to coding staff.AI provides correction suggestions.Bulk resolution for recurring issues.",
     icon: <ReportProblemOutlinedIcon />,
   },
   {
-    title: "Final Audit & Release",
+    title: "Clean Claim Submission",
     description:
-      "Secondary quality check for high-value encounters. Clean claims released directly to the clearinghouse.",
+      "Validated claims released to clearinghouse.Real-time submission tracking.Error monitoring and continuous improvement.",
     icon: <VerifiedOutlinedIcon />,
   },
 ];

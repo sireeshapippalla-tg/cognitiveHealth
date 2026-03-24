@@ -8,27 +8,27 @@ import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 
 const steps: HowItWorksStep[] = [
   {
-    title: "Contract Ingestion & Storage",
+    title: "Contract Digitization & Modeling",
     description:
-      "Centralized repository for all payer contracts. OCR and data extraction from scanned agreements. Automated versioning and renewal tracking.",
+      "Upload contracts (PDF, paper, digital). AI extracts terms, schedules, and rules. System models expected reimbursement logic.",
     icon: <Inventory2OutlinedIcon />,
   },
   {
-    title: "Rule Configuration",
+    title: "Automated Payment Validation",
     description:
-      "Translate legalese into computer-parsable logic. Define complex reimbursement models (Fee schedules, % of charges, bundles). Map contract terms to claim data elements.",
+      "Every payment checked against contract. Expected vs actual reimbursement comparison. Expected vs actual reimbursement comparison.",
     icon: <SettingsSuggestOutlinedIcon />,
   },
   {
-    title: "Real-Time Payment Modeling",
+    title: "Underpayment Recovery",
     description:
-      "Calculate expected reimbursement for every claim. Cross-reference actual payments vs. contract terms. Flag underpayments and overpayments for immediate follow-up.",
+      "Auto-generation of appeal letters with contract citations.Supporting documentation compilation. Payer portal submission or mailing.",
     icon: <GavelOutlinedIcon />,
   },
   {
-    title: "Performance Analytics & Insights",
+    title: "Performance Monitoring & Insights",
     description:
-      "Payer compliance reporting. Net-to-expected revenue analysis. Strategy insights for upcoming contract negotiations.",
+      "Payer compliance tracking.Revenue leakage quantification.Strategic insights for contract negotiations.",
     icon: <VerifiedOutlinedIcon />,
   },
 ];

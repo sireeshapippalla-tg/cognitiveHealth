@@ -13,26 +13,26 @@ import MetricsSection from "../../ui/metricsSection/MetricsSection";
 const stats = [
   {
     value: "98%",
-    title: "Pre-Service Rate",
-    description: "Virtually all appointments verified before patient arrival",
+    title: "",
+    description: "Pre-Service Verification Rate Virtually all appointments verified before patient arrival",
     icon: <VerifiedUserOutlinedIcon />,
   },
   {
     value: "75%",
-    title: "Denial Reduction",
-    description: "Catch coverage issues before service delivery",
+    title: "",
+    description: "Reduction in Eligibility Denials Catch coverage issues before service delivery",
     icon: <ShieldOutlinedIcon />,
   },
   {
-    value: "30 Sec",
-    title: "Discovery Time",
-    description: "From patient check-in to confirmed eligibility",
+    value: "30 Seconds",
+    title: "",
+    description: "Average Verification Time From patient check-in to confirmed eligibility",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "40%",
-    title: "Bad Debt Decrease",
-    description: "Better verification reduces uncompensated services",
+    title: "",
+    description: "Decrease in Bad Debt Better coverage verification = fewer uncompensated services",
     icon: <SavingsOutlinedIcon />,
   },
 ];
