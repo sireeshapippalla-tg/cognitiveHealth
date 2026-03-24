@@ -21,7 +21,7 @@ export const mediaData: Media[] = [
     title:
       "Intentional and Strategic Outsourcing and Automation: A New Era of Revenue Cycle Management",
     description:
-      "Published in the 2025 Fall Edition of the NJ HFMA Garden State Focus, Renee Mary Stephens and Pavani Munjuluri –  On Intentional, strategic outsourcing + automation usher in a new era of Revenue Cycle Management. Read More",
+      "Published in the 2025 Fall Edition of the NJ HFMA Garden State Focus, Renee Mary Stephens and Pavani Munjuluri –  On Intentional, strategic outsourcing + automation usher in a new era of Revenue Cycle Management.",
     image: Healthcare,
     date: "November 3, 2025",
     category: "",
@@ -32,7 +32,7 @@ export const mediaData: Media[] = [
     type: "media",
     title: "Demystifying Al: Transforming Revenue Cycle Management (RCM)",
     description:
-      "Demystifying Al: Transforming Revenue Cycle Management (RCM) Published in the 2024 Summer Edition of the NJ HFMA Garden State Focus, Pavani Munjuluri, CEO - CognitiveHealth Technologies explores the early beginnings, the teen years and the current state of Al and things to be mindful of, in the context of the healthcare industry. Read More",
+      "Demystifying Al: Transforming Revenue Cycle Management (RCM) Published in the 2024 Summer Edition of the NJ HFMA Garden State Focus, Pavani Munjuluri, CEO - CognitiveHealth Technologies explores the early beginnings, the teen years and the current state of Al and things to be mindful of, in the context of the healthcare industry.",
     image: AIcapabilities,
     date: "February 5, 2025",
     category: "",
@@ -43,7 +43,7 @@ export const mediaData: Media[] = [
     type: "media",
     title: "Addressing the Critical Cyber Threats in US Healthcare",
     description:
-      "US health care is 17.3 percent of the US GDP and by itself now exceeds the GDP of Germany. It has grown to the point where the uninterrupted functioning of healthcare payments is vital to national security. In recent months, the healthcare industry has faced severe data security challenges, leading to breaches, and compromising patient trust. The Change [ ... ]",
+      "US health care is 17.3 percent of the US GDP and by itself now exceeds the GDP of Germany. It has grown to the point where the uninterrupted functioning of healthcare payments is vital to national security. In recent months, the healthcare industry has faced severe data security challenges, leading to breaches, and compromising patient trust.",
     image: Revenuecycle,
     date: "June 30, 2024",
     category: "",
@@ -55,32 +55,76 @@ export const mediaData: Media[] = [
     title:
       "CognitiveHealth Technologies announces the appointment of Pavani Munjuluri as Chief Executive Officer.",
     description:
-      "CognitiveHealth Technologies announces the appointment of Pavani Munjuluri as Chief Executive Officer. We are excited to announce Ms. Pavani Munjuluri as the Chief Executive Officer of CognitiveHealth Technologies. Pavani is the Co-founder and has been serving as COO for the last three years. She has been very successful in leading our product development and client [ ... ]",
+      "CognitiveHealth Technologies announces the appointment of Pavani Munjuluri as Chief Executive Officer. We are excited to announce Ms. Pavani Munjuluri as the Chief Executive Officer of CognitiveHealth Technologies. Pavani is the Co-founder and has been serving as COO for the last three years. She has been very successful in leading our product development and client",
     image: Annualconference,
     date: "January 6, 2022",
     category: "",
     link: "/media/series-b-funding",
   },
-    {
+  {
     id: "5",
     type: "media",
     title:
       "How Yale-New Haven Uses IPA in Revenue Cycle to Tackle Inefficiency",
     description:
-      "As the pandemic heads toward a second year with no further financial stimulus guaranteed, hospitals and health systems are seeking ways to reduce costs and improve revenue cycle performance. Intelligent process automation (IPA) is an emerging solution designed to optimize operations and increase productivity through a combination of process modeling, process automation, and artificial intelligence. [ ... ]",
+      "As the pandemic heads toward a second year with no further financial stimulus guaranteed, hospitals and health systems are seeking ways to reduce costs and improve revenue cycle performance. Intelligent process automation (IPA) is an emerging solution designed to optimize operations and increase productivity through a combination of process modeling, process automation, and artificial intelligence.",
     image: Annualconference,
     date: "December 16, 2020",
     category: "",
     link: "/media/series-b-funding",
   },
   {
-    id:"6",
-    type:"media",
-    title:"Automating Revenue Cycle On The Back End Improves Patient Engagement On The Front",
-     description:
-      "For one health system, robotic process automation equates to about 27,000 hours in a month saved, which correlates to around $500,000. Revenue cycle directors are seeing a clear path for automation to increase revenue, decrease denials, speed up prior authorization and claims, and remove many of the repetitive clicks that hamper daily operations. From an [ ... ]",
+    id: "6",
+    type: "media",
+    title: "Automating Revenue Cycle On The Back End Improves Patient Engagement On The Front",
+    description:
+      "For one health system, robotic process automation equates to about 27,000 hours in a month saved, which correlates to around $500,000. Revenue cycle directors are seeing a clear path for automation to increase revenue, decrease denials, speed up prior authorization and claims, and remove many of the repetitive clicks that hamper daily operations.",
     image: Annualconference,
     date: "December 15, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  },
+  {
+    id: "7",
+    type: "media",
+    title: "IPA in Healthcare: 2021 – The Year to Catch Up",
+    description:
+      "When it comes to intelligent process automation (IPA) in healthcare, multiple stakeholders drive technology adoption. Payers, providers and patients all bring their own unique interests and perspectives on how healthcare should operate and in what areas IPA should be used. 2021 is the right time to leverage and measure the benefits and successes of IPA",
+    image: Annualconference,
+    date: "December 3, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  },
+  {
+    id: "8",
+    type: "media",
+    title: "The Need for Intelligent Process Automation in the Revenue Cycle (October 22, 2020)",
+    description:
+      "Topic:  The Need for Intelligent Process Automation in the Revenue Cycle",
+    image: Annualconference,
+    date: "October 24, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  },
+  {
+    id: "9",
+    type: "media",
+    title: "Intelligent Process Automation (IPA) – technology and opportunities",
+    description:
+      "Pavani Munjuluri , Co-Founder and COO for Cognitive Health IT talks to Jim Tate about the use of Intelligent Process Automation in the Healthcare Revenue Cycle. Listen to her talking about the technology and the opportunities IPA can provide here;",
+    image: Annualconference,
+    date: "October 20, 2020",
+    category: "",
+    link: "/media/series-b-funding",
+  },
+  {
+    id: "10",
+    type: "media",
+    title: "CognitiveHealth Co-Founder Shares Intelligent Process Automation Best Practices",
+    description:
+      "In a recent article published by Healthcare IT Today,CognitiveHealth Technologies  co-founder Pavani Munjuluri  offers readers a glimpse into intelligent process automation (IPA) and how it’s benefiting providers in the wake of COVID-19.",
+    image: Annualconference,
+    date: "September 25, 2020",
     category: "",
     link: "/media/series-b-funding",
   }
