@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  MenuItem,
-  Select,
-  FormControl,
+  // MenuItem,
+  // Select,
+  // FormControl,
   Box,
-  type SelectChangeEvent,
 } from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
 import {
@@ -16,10 +15,10 @@ import {
   TabButton,
   ActiveBackground,
   TabText,
-  FilterWrapper,
+  // FilterWrapper,
 } from "./ResourceTabs.styles";
 import BlogIcon from "../../../assets/Resources/Blog.svg";
-import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
+// import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
 
@@ -94,11 +93,11 @@ const ResourceTabs = () => {
     });
   };
 
-  const [filter, setFilter] = useState("Filter By");
+  // const [filter, setFilter] = useState("Filter By");
 
-  const handleFilterChange = (event: SelectChangeEvent) => {
-    setFilter(event.target.value);
-  };
+  // const handleFilterChange = (event: SelectChangeEvent) => {
+  //   setFilter(event.target.value);
+  // };
 
   return (
     <>
