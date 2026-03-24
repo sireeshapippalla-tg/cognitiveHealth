@@ -62,6 +62,8 @@ export const Title = styled(Typography)(({ theme }) => ({
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
+  paddingBottom:"13px",
+  paddingTop:"10px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
