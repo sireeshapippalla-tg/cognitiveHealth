@@ -54,23 +54,39 @@ export const ResourceCenterChip = styled(Chip)({
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "50px",
+  fontSize: "45px",
   fontWeight: 800,
   marginBottom: "20px",
   color: "var(--color-text-dark)",
-  lineHeight: "33px",
+  lineHeight: "50px",
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
-  paddingBottom:"13px",
+  // paddingBottom:"13px",
   paddingTop:"10px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
   },
 }));
+export const SubTitle = styled(Typography)(({ theme }) => ({
+  fontSize: "38px",
+  fontWeight: 800,
+  marginBottom: "20px",
+  color: "var(--color-text-dark)",
+  lineHeight: "50px",
+  background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  paddingBottom:"13px",
 
-export const Subtitle = styled(Typography)(() => ({
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: "36px",
+  },
+}));
+
+export const Description = styled(Typography)(() => ({
   fontWeight: 400,
   color: "var(--color-text-light)",
   maxWidth: "700px",

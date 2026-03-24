@@ -15,8 +15,8 @@ const stats = [
     icon: <TaskAltOutlinedIcon />,
   },
   {
-    value: "~0%",
-    title: "Posting Errors",
+    value: "98%+",
+    title: "Posting Accuracy",
     description: "Virtually zero error rate with AI automation",
     icon: <ShieldOutlinedIcon />,
   },

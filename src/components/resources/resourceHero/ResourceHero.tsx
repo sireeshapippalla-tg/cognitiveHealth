@@ -5,13 +5,14 @@ import {
   Hero,
   HeroContent,
   Title,
-  Subtitle,
+  SubTitle,
   SearchWrapper,
-  ResourceCenterChip,
+  // ResourceCenterChip,
   StyledInput,
   SearchButton,
   BackgroundShapes,
   Shape,
+  Description,
 } from "./ResourceHero.styles";
 
 const ResourceHero = () => (
@@ -45,11 +46,11 @@ const ResourceHero = () => (
       >
         {/* <ResourceCenterChip label="Resource Center" size="small" /> */}
         <Title >Intelligent Process Automation  Platform.</Title>
-        <Title>Purpose-built for Healthcare</Title>
-        <Subtitle>
+        <SubTitle>Purpose-built for Healthcare</SubTitle>
+        <Description>
           iCAN™ (Integrated Cognitive Automation Neuron) is a versatile healthcare automation platform.
           iCAN™ leverages artificial intelligence and machine learning to automate increasingly complex business processes.
-        </Subtitle>
+        </Description>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

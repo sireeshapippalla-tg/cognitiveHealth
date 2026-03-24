@@ -33,7 +33,7 @@ export const videoData: Video[] = [
       "iCAN™  is an AI-powered RCM platform that provides intuitive user experience for different personas and helps them gain greater visibility, build trust, increase efficiency and productivity.",
     image: videos,
     readTime: "",
-    category: "Feature Spotlight",
+    category: "",
     link: "/videos/correspondence-management",
     date: "February 5, 2025",
 
@@ -45,7 +45,7 @@ export const videoData: Video[] = [
     description: "CognitiveHealth’s Intelligent automation platform, iCAN leverages AI and machine learning to read, sort and manage daily correspondence and frees up the staff time to handle more challenging tasks. This is a true application of AI in revenue cycle workflow for healthcare providers and payors",
     image: videos,
     readTime: "",
-    category: "Introduction",
+    category: "",
     link: "/videos/iCAN-introduction",
     date: "December 14, 2020",
 
@@ -58,7 +58,7 @@ export const videoData: Video[] = [
       "Introducing iCAN – an Intelligent Automation Platform built for the healthcare industry – learn more about iCAN in this brief video.",
     image: videos,
     readTime: "",
-    category: "Thought Leadership",
+    category: "",
     link: "/videos/intelligent-process-automation",
     date: "September 12, 2020",
 
@@ -72,7 +72,7 @@ export const videoData: Video[] = [
       "Visionary leaders are turning to Intelligent process automation to reduce costs and increase efficiencies. However the challenge is how to identify the best opportunities for your organization. – Learn how to identify the opportunities.",
     image: videos,
     readTime: "",
-    category: "Thought Leadership",
+    category: "",
     link: "/videos/intelligent-process-automation",
     date: "September 12, 2020",
 
