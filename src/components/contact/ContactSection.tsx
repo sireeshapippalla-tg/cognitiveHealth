@@ -204,8 +204,12 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useSaveContactMutation } from "../../services/apiSlice";
+import { toast } from "react-toastify";
 
 const ContactSection = () => {
+   const [saveContact] = useSaveContactMutation();
+  
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -251,9 +255,30 @@ const ContactSection = () => {
     setErrors(tempErrors);
     return isValid;
   };
-  const handleSubmit = () => {
-    if (validate()) {
-      console.log("Form submitted:", form);
+  const handleSubmit = async () => {
+    if (!validate()) return;
+
+    try {
+      await saveContact({
+        name: `${form.firstName} ${form.lastName}`.trim(),
+        email: form.email,
+        phone: form.phone,
+        message: form.message
+      }).unwrap();
+
+      toast.success("Message sent successfully! We will get back to you soon.");
+      
+      // Reset form
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error: any) {
+      toast.error(error.data?.error || "Failed to send message. Please try again.");
+      console.error(error);
     }
   };
   return (
