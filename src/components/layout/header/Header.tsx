@@ -36,7 +36,7 @@ import PreBill from "../../../assets/Prebill.svg";
 import PopoverCard from "../../ui/popoverCard/PopoverCard";
 
 import BlogIcon from "../../../assets/Resources/Blog.svg";
-import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
+// import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
 

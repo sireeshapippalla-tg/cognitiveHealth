@@ -1,7 +1,7 @@
-const Healthcare = "/images/media/media_strategic_outsourcing_1774338456677.png";
-const AIcapabilities = "/images/blog/blog_intelligence_automation_1774338269263.png";
-const Revenuecycle = "/images/blog/blog_revenue_cycle_1774338212683.png";
-const Annualconference = "/images/blog/blog_correspondence_management_1774338229969.png";
+// const Healthcare = "/images/media/media_strategic_outsourcing_1774338456677.png";
+// const AIcapabilities = "/images/blog/blog_intelligence_automation_1774338269263.png";
+// const Revenuecycle = "/images/blog/blog_revenue_cycle_1774338212683.png";
+// const Annualconference = "/images/blog/blog_correspondence_management_1774338229969.png";
 
 export interface Media {
   id: string;
