@@ -49,6 +49,7 @@ import {
   HeroSubtitle,
 } from "./Rcmreadiness.style";
 import AppButton from "../components/ui/appButton/AppButton";
+import { useSendAssessmentEmailMutation } from '../services/apiSlice';
 
 import logo from "../assets/cognitiveLogo.png";
 
@@ -154,7 +155,9 @@ const RCMReadinessScreen: React.FC = () => {
   const [score, setScore] = useState(0);
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
-  const [sending, setSending] = useState(false);
+
+  // RTK Query Mutations
+  const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
 
   const handleCheck = (key: string) =>
     setCheckedItems((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -170,15 +173,16 @@ const RCMReadinessScreen: React.FC = () => {
     if (!pdfRef.current) throw new Error("PDF container not found");
 
     const canvas = await html2canvas(pdfRef.current, {
-      scale: 2,
+      scale: 1,
       useCORS: true,
       allowTaint: true,
       scrollY: -window.scrollY,
     });
 
-    const imgData = canvas.toDataURL("image/png");
+    // JPEG at 60% quality keeps file size well under 5MB
+    const imgData = canvas.toDataURL("image/jpeg", 0.6);
 
-    const pdf = new jsPDF("p", "mm", "a4");
+    const pdf = new jsPDF("p", "mm", "a4", true); // true = compression enabled
 
     const pageWidth = 210;
     const pageHeight = 297;
@@ -206,7 +210,7 @@ const RCMReadinessScreen: React.FC = () => {
 
     let position = 40;
 
-    pdf.addImage(imgData, "PNG", margin, position, usableWidth, imgHeight);
+    pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
 
     let heightLeft = imgHeight - (pageHeight - 40);
 
@@ -214,7 +218,7 @@ const RCMReadinessScreen: React.FC = () => {
       position = heightLeft - imgHeight + 30;
 
       pdf.addPage();
-      pdf.addImage(imgData, "PNG", margin, position, usableWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
 
       heightLeft -= pageHeight - 40;
     }
@@ -232,34 +236,45 @@ const RCMReadinessScreen: React.FC = () => {
     }
 
     try {
-      setSending(true);
-
+      // 1. Generate PDF
       const pdfBlob = await generatePdfFromUI();
 
       if (!pdfBlob) {
         toast.error("Failed to generate PDF");
-        setSending(false);
         return;
       }
 
+      // 2. Send email via RTK Query mutation (also saves to DB internally on backend)
       const formData = new FormData();
       formData.append("email", email);
       formData.append("score", score.toString());
       formData.append("file", pdfBlob, "RCM-AI-Assessment.pdf");
 
-      await fetch("http://localhost:5000/api/email/send-assessment-email", {
-        method: "POST",
-        body: formData,
-      });
+      await sendAssessmentEmail(formData).unwrap();
 
       toast.success("Assessment report sent successfully!");
       setOpenEmailDialog(false);
       setEmail("");
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to send assessment report");
-    } finally {
-      setSending(false);
+    } catch (error: any) {
+      console.error("Email send error:", error);
+    
+      // If the backend returned a success status but RTK Query threw a parsing error, treat it as a success
+      if (error?.status === "PARSING_ERROR" && error?.originalStatus === 200) {
+        toast.success("Assessment report sent successfully!");
+        setOpenEmailDialog(false);
+        setEmail("");
+        return;
+      }
+
+      const errorMessage =
+        error?.data?.error ||
+        error?.data?.message ||
+        (typeof error?.data === "string" ? error.data : null) ||
+        error?.error ||
+        error?.message ||
+        "An unexpected error occurred while sending";
+
+      toast.error(errorMessage);
     }
   };
   const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
@@ -515,7 +530,7 @@ const RCMReadinessScreen: React.FC = () => {
 
         <Dialog
           open={openEmailDialog}
-          onClose={() => !sending && setOpenEmailDialog(false)}
+          onClose={() =>  setOpenEmailDialog(false)}
           maxWidth="xs"
           fullWidth
         >
@@ -524,7 +539,7 @@ const RCMReadinessScreen: React.FC = () => {
             <IconButton
               size="small"
               onClick={() => setOpenEmailDialog(false)}
-              disabled={sending}
+              disabled={isSending}
               sx={{
                 color: "var(--color-text-blue)",
                 backgroundColor: "#fff",
@@ -555,20 +570,20 @@ const RCMReadinessScreen: React.FC = () => {
           <StyledDialogActions>
             <Button
               onClick={() => setOpenEmailDialog(false)}
-              disabled={sending}
+              disabled={isSending}
             >
               Cancel
             </Button>
 
             <PrimaryButton
               variant="contained"
-              disabled={!email || sending}
+              disabled={!email || isSending}
               onClick={handleSendEmail}
               startIcon={
-                sending ? <CircularProgress size={16} color="inherit" /> : null
+                isSending ? <CircularProgress size={16} color="inherit" /> : null
               }
             >
-              {sending ? "Sending..." : "Send Report"}
+              {isSending ? "Sending..." : "Send Report"}
             </PrimaryButton>
             <Button
               onClick={async () => {

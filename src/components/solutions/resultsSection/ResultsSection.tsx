@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import emailjs from "@emailjs/browser";
+import { useSendResultsPdfMutation } from "../../../services/apiSlice";
 
 const stats = [
   {
@@ -51,14 +51,26 @@ const pdfList = [
 ];
 
 const ResultsSection = () => {
-  const [openEmailDialog, setOpenEmailDialog] = useState(false);
+ const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false); // Removed local loading state
+  // const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+
   const [openPdfList, setOpenPdfList] = useState(false);
   const [openPdfViewer, setOpenPdfViewer] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
 
-  const handleOpenPdfList = () => setOpenPdfList(true);
+  // RTK Query Mutations
+  const [sendPdf, { isLoading }] = useSendResultsPdfMutation();
+
+  // const handleOpenPdf = () => {
+  //   setOpenPdf(true);
+  //   setSelectedPdf(null);
+  // };
+
+  const handleOpenPdfList = () => {
+    setOpenPdfList(true);
+  };
   const handleSelectPdf = (file: string) => {
     setSelectedPdf(file);
     setOpenPdfList(false);
@@ -74,28 +86,67 @@ const ResultsSection = () => {
     setSelectedPdf(null);
   };
 
+  // const handleSendEmail = async () => {
+  //   if (!email) {
+  //     toast.error("Please enter work email");
+  //     return;
+  //   }
+
+  //   try {
+  //     setLoading(true);
+
+  //     await fetch("/api/send-results-pdf", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         email,
+  //         pdf: pdfFile,
+  //       }),
+  //     });
+
+  //     toast.success("PDF sent successfully to your email!");
+  //     setOpenEmailDialog(false);
+  //     setEmail("");
+  //   } catch (error) {
+  //     toast.error("Failed to send email");
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleSendEmail = async () => {
     if (!email) {
-      toast.error("Please enter work email");
+      toast.error("Please enter an email address");
       return;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
     try {
-      setLoading(true);
-      const absolutePdfLink = window.location.origin + pdfFile;
-      await emailjs.send(
-        "service_87hf7ak",
-        "template_xs1xiis",
-        { to_email: email, pdf_link: absolutePdfLink },
-        "97EUcQj5LwbXO5vNo",
-      );
+      // 1. Fetch the PDF file
+      const response = await fetch(pdfFile);
+      const blob = await response.blob();
+
+      // 3. Send email using RTK Query mutation
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("file", blob, "results.pdf");
+
+      await sendPdf(formData).unwrap();
+
       toast.success("PDF sent successfully to your email!");
       setOpenEmailDialog(false);
       setEmail("");
-    } catch (error) {
-      toast.error("Failed to send email");
-      console.log(error);
-    } finally {
-      setLoading(false);
+    } catch (error: any) {
+      toast.error(error.data?.error || error.message || "Failed to send email. Please try again.");
+      console.error(error);
     }
   };
 
@@ -360,7 +411,7 @@ const ResultsSection = () => {
           <Button
             fullWidth
             variant="contained"
-            disabled={!email || loading}
+            disabled={!email || isLoading}
             onClick={handleSendEmail}
             sx={{
               mt: 4,
@@ -370,7 +421,7 @@ const ResultsSection = () => {
               fontWeight: 800,
             }}
           >
-            {loading ? "Sending..." : "Send Report"}
+            {isLoading ? "Sending..." : "Send Report"}
           </Button>
         </DialogContent>
       </Dialog>
