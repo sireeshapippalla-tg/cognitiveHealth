@@ -1,5 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxMAnagement.jpeg";
-import paymentPostingImage from "../../../assets/solutions/editedimgs/lockbox.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/editedimgs/lockbox.jpeg";
+import paymentPostingImage from "../../../assets/heroBannerImages/Lockbox Management.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";

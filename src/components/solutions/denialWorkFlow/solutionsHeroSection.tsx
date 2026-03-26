@@ -1,5 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.jpeg";
-import denialsImage from "../../../assets/solutions/editedimgs/denials.jpeg";
+// import denialsImage from "../../../assets/solutions/editedimgs/denials.jpeg";
+import denialsImage from "../../../assets/heroBannerImages/denialsHero.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";

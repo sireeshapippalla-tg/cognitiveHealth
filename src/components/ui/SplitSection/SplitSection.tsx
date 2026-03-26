@@ -247,7 +247,7 @@ const SplitSection = ({
                   background: "#fff",
                   border: "1px solid #E5E7EB",
                   boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
-                  transform: "perspective(1000px) rotateX(3deg)",
+                  // transform: "perspective(1000px) rotateX(3deg)",
                 }}
               >
                 <img
@@ -256,6 +256,7 @@ const SplitSection = ({
                   style={{
                     width: "100%",
                     display: "block",
+                    imageRendering: "auto",
                   }}
                 />
               </Box>
