@@ -16,7 +16,7 @@ const CTASection = () => {
         justifyContent: "center",
         background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
         color: "#0f172a",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
       <Container maxWidth="lg">
@@ -57,12 +57,13 @@ const CTASection = () => {
               position: "absolute",
               width: "300px",
               height: "300px",
-              background: "radial-gradient(circle, #F47A20 20%, transparent 70%)",
+              background:
+                "radial-gradient(circle, #F47A20 20%, transparent 70%)",
               filter: "blur(100px)",
               top: "-150px",
               right: "-50px",
               opacity: 0.15,
-              pointerEvents: "none"
+              pointerEvents: "none",
             }}
           />
 
@@ -74,14 +75,13 @@ const CTASection = () => {
             viewport={{ once: false }}
           >
             <Typography
-
               fontWeight={800}
               sx={{
                 mb: 2,
 
                 fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
-                lineHeight: 1.3,
-
+                // lineHeight: 1.3,
+                lineHeight: { xs: 1.4, md: 1.3 },
                 background: "linear-gradient(135deg, #0f172a, #334155)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -108,7 +108,8 @@ const CTASection = () => {
                 lineHeight: 1.6,
               }}
             >
-              See how our healthcare expertise, advanced AI technology, and partnership approach can transform your revenue cycle operations.
+              See how our healthcare expertise, advanced AI technology, and
+              partnership approach can transform your revenue cycle operations.
             </Typography>
           </motion.div>
 
@@ -127,8 +128,10 @@ const CTASection = () => {
                 endIcon={<ArrowForwardIcon />}
                 aria-label="Request a Demo"
                 sx={{
-                  px: 5,
-                  py: 1.6,
+                  // px: 5,
+                  // py: 1.6,
+                  px: { xs: 3, sm: 4, md: 5 },
+                  py: { xs: 1.2, sm: 1.4, md: 1.6 },
                   borderRadius: "40px",
                   fontWeight: "bold",
                   textTransform: "none",
@@ -170,8 +173,10 @@ const CTASection = () => {
                 endIcon={<ArrowForwardIcon />}
                 aria-label="See Platform in Action"
                 sx={{
-                  px: 5,
-                  py: 1.6,
+                  // px: 5,
+                  // py: 1.6,
+                  px: { xs: 3, sm: 4, md: 5 }, 
+                  py: { xs: 1.2, sm: 1.4, md: 1.6 },
                   borderRadius: "40px",
                   textTransform: "none",
                   fontWeight: 500,
@@ -188,15 +193,12 @@ const CTASection = () => {
                 See Platform in Action
               </Button>
             </motion.div>
-
-
           </Box>
           <CtaTrustText>
-            Join 50+ healthcare organizations who trust CognitiveHealth to process 10M+ claims monthly.
+            Join 50+ healthcare organizations who trust CognitiveHealth to
+            process 10M+ claims monthly.
           </CtaTrustText>
         </Box>
-
-
       </Container>
     </Box>
   );

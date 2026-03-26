@@ -508,12 +508,28 @@ const Header = () => {
         onClose={() => setDrawerOpen(false)}
       >
         <DrawerContainer>
-          <CloseIconWrapper>
-            <IconButton onClick={() => setDrawerOpen(false)}>
-              <CloseIcon />
-            </IconButton>
-          </CloseIconWrapper>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <LogoImage
+              src={cognitiveLogo}
+              alt="CognitiveHealth"
+              onClick={() => {
+                navigate("/", { replace: false });
+                setDrawerOpen(false);
+              }}
+            />
 
+            <CloseIconWrapper>
+              <IconButton onClick={() => setDrawerOpen(false)}>
+                <CloseIcon />
+              </IconButton>
+            </CloseIconWrapper>
+          </div>
           <Stack spacing={3} mt={4}>
             <DrawerItem
               active={isActive("/")}
@@ -607,7 +623,10 @@ const Header = () => {
 
             <DrawerItem
               active={isActive("/faq")}
-              onClick={() => navigate("/faq")}
+              onClick={() => {
+                navigate("/faq");
+                setDrawerOpen(false);
+              }}
             >
               FAQ
             </DrawerItem>

@@ -134,6 +134,7 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
                   fontSize: { xs: "0.75rem", sm: "0.85rem" },
                   fontWeight: 600,
                   letterSpacing: "1px",
+                  padding:"0px 20px"
                   // textTransform: "uppercase",
                   // background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
                   // WebkitBackgroundClip: "text",

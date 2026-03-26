@@ -67,13 +67,12 @@ const TrustDeploymentSection = () => {
               >
                 <motion.div variants={itemVariants}>
                   <Typography
-                  
                     sx={{
                       fontWeight: 800,
-                      
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-            lineHeight: 1.3,
-         
+
+                      fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                     lineHeight:{ xs: 1.3, sm: 1.3, md: 1.2 },
+
                       textAlign: "center",
                       mb: 8,
                       color: "#0f172a",

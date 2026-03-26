@@ -53,6 +53,7 @@ const EnterpriseReadinessSection = () => {
               fontWeight: 800,
               color: "#0f172a",
               mb: 2,
+              lineHeight:{ xs: 1.3, sm: 1.3, md: 1.2 }
             }}
           >
             Built for Scale, Security, and <span style={{ color: "#4A90E2" }}>Reliability</span>

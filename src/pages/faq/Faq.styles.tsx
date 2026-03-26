@@ -4,42 +4,46 @@ import { motion } from "framer-motion";
 
 /* ================= HERO ================= */
 
-export const HeroSection = motion(styled(Box)(({ theme }) => ({
-  background: "#3b82f6",
-  padding: "100px 20px",
-  color: "#ffffff",
-  textAlign: "center",
-  position: "relative",
-  overflow: "hidden",
-  // Organic brand color elements
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: "-10%",
-    left: "10%",
-    width: "40%",
-    height: "100%",
-    background: "radial-gradient(circle at center, rgba(235, 123, 51, 0.08) 0%, transparent 70%)", // Orange
-    filter: "blur(60px)",
-    zIndex: 0,
-    pointerEvents: "none",
-  },
-  "&::after": {
-    content: '""',
-    position: "absolute",
-    bottom: "-10%",
-    right: "10%",
-    width: "40%",
-    height: "100%",
-    background: "radial-gradient(circle at center, rgba(121, 187, 67, 0.08) 0%, transparent 70%)", // Green
-    filter: "blur(60px)",
-    zIndex: 0,
-    pointerEvents: "none",
-  },
-  [theme.breakpoints.down("md")]: {
-    padding: "120px 16px 80px",
-  },
-})));
+export const HeroSection = motion(
+  styled(Box)(({ theme }) => ({
+    background: "#3b82f6",
+    padding: "100px 20px",
+    color: "#ffffff",
+    textAlign: "center",
+    position: "relative",
+    overflow: "hidden",
+    // Organic brand color elements
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: "-10%",
+      left: "10%",
+      width: "40%",
+      height: "100%",
+      background:
+        "radial-gradient(circle at center, rgba(235, 123, 51, 0.08) 0%, transparent 70%)", // Orange
+      filter: "blur(60px)",
+      zIndex: 0,
+      pointerEvents: "none",
+    },
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: "-10%",
+      right: "10%",
+      width: "40%",
+      height: "100%",
+      background:
+        "radial-gradient(circle at center, rgba(121, 187, 67, 0.08) 0%, transparent 70%)", // Green
+      filter: "blur(60px)",
+      zIndex: 0,
+      pointerEvents: "none",
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: "120px 16px 80px",
+    },
+  })),
+);
 
 export const HeroInner = styled(Box)({
   maxWidth: "900px",
@@ -50,7 +54,7 @@ export const HeroInner = styled(Box)({
 
 export const HeroTitle = styled(Typography)(({ theme }) => ({
   fontSize: "56px",
-  fontWeight: 400, 
+  fontWeight: 400,
   letterSpacing: "-0.02em",
   lineHeight: 1.1,
   color: "#ffffff",
@@ -89,14 +93,16 @@ export const UpdatedBadge = styled(Box)({
 
 /* ================= SEARCH ================= */
 
-export const SearchContainer = motion(styled(Box)({
-  maxWidth: "640px",
-  margin: "0 auto",
-  position: "relative",
-  zIndex: 10,
-}));
+export const SearchContainer = motion(
+  styled(Box)({
+    maxWidth: "640px",
+    margin: "0 auto",
+    position: "relative",
+    zIndex: 10,
+  }),
+);
 
-export const SearchInputWrapper = styled(Box)({
+export const SearchInputWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: "var(--color-white)",
   border: "none", // Remove border since background is already blue
   padding: "16px 32px",
@@ -107,8 +113,11 @@ export const SearchInputWrapper = styled(Box)({
   boxShadow: "0 10px 30px -10px rgba(0,0,0,0.2)",
   "&:focus-within": {
     boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)",
-  }
-});
+  },
+  [theme.breakpoints.down("md")]: {
+    padding: "10px",
+  },
+}));
 
 export const StyledInput = styled(InputBase)({
   width: "100%",
@@ -135,9 +144,10 @@ export const PageBackground = styled(Box)({
     transform: "translateX(-50%)",
     width: "60%",
     height: "600px",
-    background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.04) 0%, transparent 60%)", // Blue
+    background:
+      "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.04) 0%, transparent 60%)", // Blue
     pointerEvents: "none",
-  }
+  },
 });
 
 export const ContentWrapper = styled(Box)(({ theme }) => ({
@@ -156,7 +166,7 @@ export const ContentInner = styled(Box)({
 
 /* ================= TABS ================= */
 
-export const TabContainer = styled(Box)({
+export const TabContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   gap: "12px",
@@ -167,66 +177,101 @@ export const TabContainer = styled(Box)({
   borderRadius: "100px",
   width: "fit-content",
   margin: "0 auto 60px",
-});
 
-export const TabButton = styled("button")<{ $active?: boolean }>(({ $active }) => ({
-  padding: "12px 32px",
-  fontSize: "15px",
-  fontWeight: 600,
-  color: $active ? "var(--color-white)" : "var(--color-text-muted)",
-  background: $active ? "var(--color-primary)" : "transparent",
-  border: "none",
-  borderRadius: "100px",
-  cursor: "pointer",
-  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-  boxShadow: $active ? "0 8px 20px -5px rgba(235, 123, 51, 0.4)" : "none",
-  "&:hover": {
-    color: $active ? "var(--color-white)" : "var(--color-text-dark)",
-    background: $active ? "var(--color-primary)" : "rgba(0,0,0,0.02)",
+  maxWidth: "100%",
+  overflowX: "auto",
+  scrollbarWidth: "none",
+  scrollBehavior: "smooth",
+  "&::-webkit-scrollbar": {
+    display: "none",
+  },
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "flex-start",
+    padding: "6px 8px",
   },
 }));
+
+export const TabButton = styled("button")<{ $active?: boolean }>(
+  ({ $active, theme }) => ({
+    padding: "12px 32px",
+    fontSize: "15px",
+    fontWeight: 600,
+    color: $active ? "var(--color-white)" : "var(--color-text-muted)",
+    background: $active ? "var(--color-primary)" : "transparent",
+    border: "none",
+    borderRadius: "100px",
+    cursor: "pointer",
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    boxShadow: $active ? "0 8px 20px -5px rgba(235, 123, 51, 0.4)" : "none",
+    "&:hover": {
+      color: $active ? "var(--color-white)" : "var(--color-text-dark)",
+      background: $active ? "var(--color-primary)" : "rgba(0,0,0,0.02)",
+    },
+
+    whiteSpace: "nowrap",
+    flexShrink: 0,
+    display: "flex",
+    alignItems: "center",
+    outline: "none",
+    WebkitTapHighlightColor: "transparent",
+    // transition: "color 0.3s ease",
+
+    [theme.breakpoints.down("md")]: {
+      padding: "10px 16px",
+      fontSize: "13px",
+    },
+  }),
+);
 
 /* ================= ACCORDION ================= */
 
 export const AccordionContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
-  gap: "0px", 
+  gap: "0px",
 });
 
-export const AccordionItem = motion(styled(Box, {
-  shouldForwardProp: (prop) => prop !== "$expanded",
-})<{ $expanded?: boolean }>(({ $expanded }) => ({
-  backgroundColor: "transparent",
-  borderBottom: "1px solid",
-  borderColor: $expanded ? "rgba(235, 123, 51, 0.2)" : "var(--color-border-light)",
-  transition: "all 0.3s ease",
-})));
+export const AccordionItem = motion(
+  styled(Box, {
+    shouldForwardProp: (prop) => prop !== "$expanded",
+  })<{ $expanded?: boolean }>(({ $expanded }) => ({
+    backgroundColor: "transparent",
+    borderBottom: "1px solid",
+    borderColor: $expanded
+      ? "rgba(235, 123, 51, 0.2)"
+      : "var(--color-border-light)",
+    transition: "all 0.3s ease",
+  })),
+);
 
-export const AccordionHeader = styled(Box)<{ $expanded?: boolean }>(({ $expanded }) => ({
-  padding: "32px 0",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "flex-start",
-  cursor: "pointer",
-  userSelect: "none",
-  "&:hover .faq-title": {
-    color: "var(--color-primary)",
-  },
-  "&:hover .faq-icon": {
-    color: "var(--color-primary)",
-    transform: $expanded ? "rotate(180deg)" : "rotate(0deg)",
-  }
-}));
+export const AccordionHeader = styled(Box)<{ $expanded?: boolean }>(
+  ({ $expanded }) => ({
+    padding: "32px 0",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    cursor: "pointer",
+    userSelect: "none",
+    "&:hover .faq-title": {
+      color: "var(--color-primary)",
+    },
+    "&:hover .faq-icon": {
+      color: "var(--color-primary)",
+      transform: $expanded ? "rotate(180deg)" : "rotate(0deg)",
+    },
+  }),
+);
 
-export const SectionTitle = styled(Typography)<{ $expanded?: boolean }>(({ $expanded }) => ({
-  fontSize: "20px",
-  fontWeight: 500,
-  color: $expanded ? "var(--color-primary)" : "var(--color-text-dark)",
-  lineHeight: 1.5,
-  transition: "color 0.3s ease",
-  // maxWidth: "90%",
-}));
+export const SectionTitle = styled(Typography)<{ $expanded?: boolean }>(
+  ({ $expanded }) => ({
+    fontSize: "20px",
+    fontWeight: 500,
+    color: $expanded ? "var(--color-primary)" : "var(--color-text-dark)",
+    lineHeight: 1.5,
+    transition: "color 0.3s ease",
+    // maxWidth: "90%",
+  }),
+);
 
 export const IconWrapper = styled(Box, {
   shouldForwardProp: (prop) => prop !== "$expanded",
@@ -267,7 +312,7 @@ export const Paragraph = styled(Typography)({
   "& strong": {
     fontWeight: 600,
     color: "var(--color-text-dark)",
-  }
+  },
 });
 
 export const ListParagraph = styled(Box)({
@@ -297,8 +342,8 @@ export const ListParagraph = styled(Box)({
     "& strong": {
       fontWeight: 600,
       color: "var(--color-text-dark)",
-    }
-  }
+    },
+  },
 });
 
 export const NoResults = styled(motion.div)({
@@ -327,7 +372,8 @@ export const CtaSection = styled(Box)({
     left: "-10%",
     width: "50%",
     height: "150%",
-    background: "radial-gradient(circle at center, rgba(121, 187, 67, 0.08) 0%, transparent 60%)", // Green
+    background:
+      "radial-gradient(circle at center, rgba(121, 187, 67, 0.08) 0%, transparent 60%)", // Green
     pointerEvents: "none",
   },
   "&::after": {
@@ -337,9 +383,10 @@ export const CtaSection = styled(Box)({
     right: "-10%",
     width: "50%",
     height: "150%",
-    background: "radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%)", // Blue
+    background:
+      "radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 60%)", // Blue
     pointerEvents: "none",
-  }
+  },
 });
 
 export const CtaTitle = styled(Typography)({
@@ -362,7 +409,7 @@ export const CtaText = styled(Typography)({
   zIndex: 1,
 });
 
-export const CtaButton = styled("a")({
+export const CtaButton = styled("a")(({ theme }) => ({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -384,4 +431,7 @@ export const CtaButton = styled("a")({
     transform: "translateY(-2px)",
     boxShadow: "0 15px 30px -5px rgba(235, 123, 51, 0.4)",
   },
-});
+  [theme.breakpoints.down("md")]: {
+    padding: "12px",
+  },
+}));

@@ -117,15 +117,19 @@ const AdvisorySection: React.FC = () => {
                   className="advisor-avatar"
                   sx={{
                     flexShrink: 0,
-                    width: "140px",
-                    height: "140px",
+                    // width: "140px",
+                    // height: "140px",
+                    width: { xs: 70, md: 140 },
+                    height: { xs: 70, md: 140 },
                     borderRadius: "40px",
                     background:
                       "linear-gradient(135deg, rgba(107, 191, 89, 0.1) 0%, rgba(107, 191, 89, 0.2) 100%)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "3.5rem",
+                    // fontSize: "3.5rem",
+                    fontSize: { xs: "3rem", md: "3.5rem" },
+
                     fontWeight: 900,
                     color: "#6BBF59",
                     transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -168,6 +172,7 @@ const AdvisorySection: React.FC = () => {
                         width: "40px",
                         height: "2px",
                         background: "rgba(244, 122, 32, 0.3)",
+                        display: { xs: "none", md: "block" },
                       },
                     }}
                   >

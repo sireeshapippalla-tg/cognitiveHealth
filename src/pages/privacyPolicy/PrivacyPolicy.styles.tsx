@@ -80,6 +80,13 @@ export const Paragraph = styled(Typography)({
   lineHeight: 1.8,
   color: "#374151",
   marginBottom: "16px",
+  wordBreak: "break-word",
+  overflowWrap: "break-word",
+  whiteSpace: "normal",
+  "& a": {
+    wordBreak: "break-word",
+    overflowWrap: "break-word",
+  },
 });
 
 /* ================= LIST STYLES ================= */
