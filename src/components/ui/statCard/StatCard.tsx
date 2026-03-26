@@ -1,4 +1,3 @@
-
 import { Box, Typography } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -22,14 +21,14 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
   //  Extract numeric value
   const numericValue = parseFloat(value.replace(/[^\d.]/g, ""));
   const hasPercent = value.includes("%");
-  const hasText = /[a-zA-Z+]/.test(value);
+  const hasText = /[a-zA-Z]/.test(value);
   const isRange = value.includes("-"); // ✅ FIX for 2-4%
   const isPureText = hasText && isNaN(numericValue);
 
   //  Animate only valid numbers
   const count = useCountUp(
     isInView && !isNaN(numericValue) ? numericValue : 0,
-    2000
+    2000,
   );
 
   //  Split number + text
@@ -83,8 +82,7 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
                 fontSize: { xs: "2.2rem", md: "2.8rem" },
                 fontWeight: 900,
                 lineHeight: 1.1,
-                background:
-                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                background: "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -92,15 +90,14 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
               {value}
             </Typography>
           ) : isPureText ? (
-            // ✅ PURE TEXT 
+            // ✅ PURE TEXT
             <Typography
               sx={{
                 fontSize: { xs: "1.4rem", md: "1.8rem" },
                 fontWeight: 900,
                 lineHeight: 1.2,
                 textAlign: "center",
-                background:
-                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                background: "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -108,7 +105,7 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
               {value}
             </Typography>
           ) : hasText ? (
-            // ✅ MIXED 
+            // ✅ MIXED
             <Box display="flex" alignItems="baseline" gap={0.5}>
               <Typography
                 sx={{
@@ -135,20 +132,22 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
               </Typography>
             </Box>
           ) : (
-            // ✅ NORMAL % / NUMBER 
+            // ✅ NORMAL % / NUMBER
             <Typography
               sx={{
                 fontSize: { xs: "2.2rem", md: "2.8rem" },
                 fontWeight: 900,
                 lineHeight: 1.1,
-                background:
-                  "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+                background: "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
-              {hasPercent
+              {/* {hasPercent
                 ? `${count.toFixed(0)}%`
+                : `${count.toFixed(0)}`} */}
+              {hasPercent
+                ? `${count.toFixed(0)}${value.includes("+") ? "%+" : "%"}`
                 : `${count.toFixed(0)}`}
             </Typography>
           )}

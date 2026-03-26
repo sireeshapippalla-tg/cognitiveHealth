@@ -19,16 +19,22 @@ export const HeroInner = styled(Box)({
   margin: "0 auto",
 });
 
-export const HeroTitle = styled(Typography)({
+export const HeroTitle = styled(Typography)(({ theme }) => ({
   fontSize: "40px",
   fontWeight: 700,
-});
+   [theme.breakpoints.down("md")]: {
+      fontSize: "30px",
+  },
+}));
 
-export const HeroSubtitle = styled(Typography)({
+export const HeroSubtitle = styled(Typography)(({ theme }) => ({
   marginTop: "16px",
   fontSize: "18px",
   opacity: 0.9,
-});
+    [theme.breakpoints.down("md")]: {
+      fontSize: "18px",
+  },
+}));
 
 /* ================= CONTENT ================= */
 

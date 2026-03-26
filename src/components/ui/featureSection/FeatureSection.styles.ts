@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
 
 interface SectionProps {
   background?: string;
@@ -55,5 +56,17 @@ export const Subtitle = styled(Typography)(({ theme }) => ({
 
   [theme.breakpoints.down("md")]: {
     marginBottom: "24px",
+  },
+}));
+
+export const TimelineLine = styled(motion.div)(({ theme }) => ({
+  position: "absolute",
+  left: "40px",
+  top: 0,
+  width: "3px",
+  zIndex: 0,
+
+  [theme.breakpoints.down("md")]: {
+    left: "22px",
   },
 }));

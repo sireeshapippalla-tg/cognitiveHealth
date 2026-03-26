@@ -133,8 +133,10 @@ export const ReusableHowItWorks: React.FC<ReusableHowItWorksProps> = ({
                           top: "0",
                           left: { xs: "0px", md: isLeft ? "auto" : "-35px" },
                           right: { xs: "auto", md: isLeft ? "-35px" : "auto" },
-                          width: 70,
-                          height: 70,
+                          // width: 70,
+                          width: { xs: 50, md: 70 },
+                          height:{xs: 50, md: 70},
+                          // height: 70,
                           borderRadius: "50%",
                           background: themeColor,
                           display: "flex",
@@ -147,7 +149,8 @@ export const ReusableHowItWorks: React.FC<ReusableHowItWorksProps> = ({
                           "&:hover": {
                             transform: "scale(1.1)",
                           },
-                          "& svg": { fontSize: "2rem" }
+                          // "& svg": { fontSize: "2rem" }
+                           "& svg": { fontSize: { xs: "1.5rem", md: "2rem" } }
                         }}
                       >
                         {step.icon}

@@ -1,4 +1,4 @@
-import { Box, Typography, Button,  Grid } from "@mui/material";
+import { Box, Typography, Button, Grid } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 
@@ -31,8 +31,8 @@ const SplitSection = ({
   return (
     <Box
       sx={{
-        px: { xs: 2, md: "30px" },
-        py: padding ? padding : { xs: 8, md: 10 },
+        px: { sm: 2, md: "30px" },
+        py: padding ? padding : { sm: 8, md: 10 },
         position: "relative",
         overflow: "hidden",
         background: "#F9FAFB",
@@ -68,7 +68,13 @@ const SplitSection = ({
         }}
       />
 
-      <Box  sx={{ position: "relative", zIndex: 1,    padding:{xs:"20px", md:"30px 60px"}}}>
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          padding: { xs: "20px", md: "30px 60px" },
+        }}
+      >
         <Grid
           container
           spacing={{ xs: 6, md: 8 }}
@@ -102,9 +108,9 @@ const SplitSection = ({
                     display: "inline-block",
                     color: "#1F2937",
                     // lineHeight: 1.2,
-                    lineHeight: {xs:1.3, sm:1.3, md:1.2},
+                    lineHeight: { xs: 1.3, sm: 1.3, md: 1.2 },
                     mb: 1,
-                   
+
                     fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
                   }}
                 >
@@ -116,7 +122,7 @@ const SplitSection = ({
                     sx={{
                       fontSize: { xs: "1.8rem", sm: "2.4rem", md: "2.8rem" },
                       // lineHeight: 1.2,
-                      lineHeight: {xs:1.3, sm:1.3, md:1.2},
+                      lineHeight: { xs: 1.3, sm: 1.3, md: 1.2 },
                       // letterSpacing: "-0.02em",
                       mb: 2.5,
                       color: "#1F2937",
@@ -160,8 +166,10 @@ const SplitSection = ({
                         endIcon={<ArrowForwardIcon />}
                         onClick={primaryAction.onClick}
                         sx={{
-                          px: 4,
-                          py: 1.5,
+                          // px: 4,
+                          // py: 1.5,
+                          px: { xs: 3, sm: 4, md: 4 },
+                          py: { xs: 1.2, sm: 1.4, md: 1.5 },
                           borderRadius: "40px",
                           fontWeight: "bold",
                           textTransform: "none",
@@ -198,8 +206,10 @@ const SplitSection = ({
                         onClick={secondaryAction.onClick}
                         endIcon={<ArrowForwardIcon />}
                         sx={{
-                          px: 4,
-                          py: 1.5,
+                          // px: 4,
+                          // py: 1.5,
+                          px: { xs: 3, sm: 4, md: 4 },
+                          py: { xs: 1.2, sm: 1.4, md: 1.5 },
                           borderRadius: "40px",
                           textTransform: "none",
                           fontWeight: 600,
@@ -253,7 +263,7 @@ const SplitSection = ({
           </Grid>
         </Grid>
       </Box>
-      
+
       {/* 🔥 GRADIENT ANIMATION KEYFRAMES */}
       <style>
         {`

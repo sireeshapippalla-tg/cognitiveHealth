@@ -2,7 +2,13 @@ import { Box, Typography, Container } from "@mui/material";
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 
-import { Section, Inner, Title, Subtitle } from "./FeatureSection.styles";
+import {
+  Section,
+  Inner,
+  Title,
+  Subtitle,
+  TimelineLine,
+} from "./FeatureSection.styles";
 
 interface FeatureItem {
   icon: ReactNode;
@@ -34,7 +40,7 @@ const FeatureSection = ({
   return (
     <Section background={background} borderRadius={borderRadius}>
       <Inner>
-        <Container >
+        <Container>
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -48,9 +54,9 @@ const FeatureSection = ({
           </motion.div>
 
           {/* Timeline Container */}
-          <Box sx={{ position: "relative", py: 4, }}>
+          <Box sx={{ position: "relative", py: 4 }}>
             {/* The Continuous Vertical Line connecting all nodes */}
-            <motion.div
+            {/* <motion.div
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
               viewport={{ once: false, amount: 0.1 }}
@@ -58,6 +64,7 @@ const FeatureSection = ({
               style={{
                 position: "absolute",
                 left: "40px",
+
                 top: 0,
                 width: "3px",
                 background:
@@ -65,6 +72,17 @@ const FeatureSection = ({
                     ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
                     : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
                 zIndex: 0,
+              }}
+            /> */}
+            <TimelineLine
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              style={{
+                background:
+                  cardVariant === "pink"
+                    ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
+                    : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
               }}
             />
 
@@ -94,15 +112,21 @@ const FeatureSection = ({
                   >
                     <Box
                       sx={{
-                        width: "64px",
-                        height: "64px",
+                        // width: "64px",
+                        // height: "64px",
+                        width: { xs: 50, md: 64 },
+                        height: { xs: 50, md: 64 },
                         flexShrink: 0,
                         borderRadius: "50%",
-                        background: cardVariant === "pink"
-                          ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
-                          : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
+                        background:
+                          cardVariant === "pink"
+                            ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
+                            : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
                         border: "3px solid",
-                        borderColor: cardVariant === "pink" ? "rgba(244, 122, 32, 0.2)" : "rgba(74, 144, 226, 0.2)",
+                        borderColor:
+                          cardVariant === "pink"
+                            ? "rgba(244, 122, 32, 0.2)"
+                            : "rgba(74, 144, 226, 0.2)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -113,8 +137,9 @@ const FeatureSection = ({
                         "& img": {
                           width: "28px",
                           height: "28px",
+
                           objectFit: "contain",
-                          filter: "brightness(0) invert(1)", 
+                          filter: "brightness(0) invert(1)",
                         },
                       }}
                     >

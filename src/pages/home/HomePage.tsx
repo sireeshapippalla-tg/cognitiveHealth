@@ -15,7 +15,6 @@ const HomePage = () => {
       <ImpactSection />
       <TestimonialsSection />
       <HowItWorksSection />
-
       <CTASection />
     </>
   );

@@ -58,15 +58,18 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 800,
   marginBottom: "20px",
   color: "var(--color-text-dark)",
-  lineHeight: "50px",
+
+   lineHeight: "50px",
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   // paddingBottom:"13px",
   paddingTop:"10px",
 
+
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
+     lineHeight: "40px",
   },
 }));
 export const SubTitle = styled(Typography)(({ theme }) => ({
@@ -83,6 +86,7 @@ export const SubTitle = styled(Typography)(({ theme }) => ({
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
+    lineHeight: "45px",
   },
 }));
 
