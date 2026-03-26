@@ -1,5 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
-import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.jpeg";
+// import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.jpeg";
+import eligibilityDiscoveryImage from "../../../assets/heroBannerImages/Eligibility Discovery.png";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";

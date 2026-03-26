@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import SplitSection from "../ui/SplitSection/SplitSection";
 
-import mainImg from "../../assets/Main Image.svg";
+// import mainImg from "../../assets/Main Image.svg";
+import mainImg from "../../assets/heroBannerImages/Platform.png";
 import { Highlight } from "../ui/SplitSection/SplitSection.styles";
 
 const Hero = () => {
