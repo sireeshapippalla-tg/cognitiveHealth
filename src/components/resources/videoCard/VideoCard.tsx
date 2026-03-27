@@ -29,6 +29,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
   category,
   title,
   description,
+  link,
   duration,
   onPlay,
 }) => {
@@ -41,14 +42,31 @@ const VideoCard: React.FC<VideoCardProps> = ({
       onClick={onPlay}
     >
       <CardImageWrapper>
-        <CardImage src={image} alt={title} />
+        {link?.includes("youtube.com") ? (
+          <iframe
+            src={link}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+          />
+        ) : (
+          <>
+            <CardImage src={image} alt={title} />
+            <PlayIconOverlay onClick={onPlay}>
+              <PlayArrowIcon sx={{ fontSize: "36px" }} />
+            </PlayIconOverlay>
+          </>
+        )}
         {category && <CategoryChip label={category} />}
-        <PlayIconOverlay>
-          <PlayArrowIcon sx={{ fontSize: "36px" }} />
-        </PlayIconOverlay>
-        {duration &&
-          <DurationBadge>{duration}</DurationBadge>
-        }
+        {duration && <DurationBadge>{duration}</DurationBadge>}
       </CardImageWrapper>
 
       <CardContent>

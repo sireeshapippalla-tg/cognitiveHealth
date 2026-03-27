@@ -19,11 +19,11 @@ export const videoData: Video[] = [
     title: "On-demand webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’",
     description:
       "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
-    image: videos,
-    readTime: "",
-    category: "",
+    image: 'https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.jpg',
+    readTime: "51:30",
+    category: "Webinar",
     date: "February 23, 2025",
-    link: "/videos/platform-overview",
+    link: "https://www.youtube.com/embed/3a3R1NIcbt8?rel=0&modestbranding=1",
   },
   {
     id: "2",
@@ -34,7 +34,7 @@ export const videoData: Video[] = [
     image: videos,
     readTime: "",
     category: "",
-    link: "/videos/correspondence-management",
+    link: "https://www.youtube.com/embed/NHXElk5Z_r8",
     date: "February 5, 2025",
 
   },
@@ -46,7 +46,7 @@ export const videoData: Video[] = [
     image: videos,
     readTime: "",
     category: "",
-    link: "/videos/iCAN-introduction",
+    link: "https://www.youtube.com/embed/0axk8VtaQpc",
     date: "December 14, 2020",
 
   },
@@ -59,7 +59,7 @@ export const videoData: Video[] = [
     image: videos,
     readTime: "",
     category: "",
-    link: "/videos/intelligent-process-automation",
+    link: "https://www.youtube.com/embed/aFXLjVc8Xqo",
     date: "September 12, 2020",
 
   },
@@ -73,7 +73,7 @@ export const videoData: Video[] = [
     image: videos,
     readTime: "",
     category: "",
-    link: "/videos/intelligent-process-automation",
+    link: "https://www.youtube.com/embed/uxzbgCxW3qs",
     date: "September 12, 2020",
 
   },

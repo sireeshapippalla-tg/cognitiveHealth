@@ -12,13 +12,13 @@ export const BlogContainer = styled(Box)(({ theme }) => ({
 
 export const StickyTabsWrapper = styled(Box)(({ theme }) => ({
   position: "sticky",
-  top: 65,
-  zIndex: 1000, 
-  width: "100%", 
+  top: 56,
+  zIndex: 1000,
+  width: "100%",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "rgba(255, 255, 255, 0.8)", 
+  backgroundColor: "rgba(255, 255, 255, 0.8)",
   backdropFilter: "blur(12px)",
   borderBottom: "1px solid rgba(0,0,0,0.05)",
   padding: "16px 80px",
