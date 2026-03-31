@@ -17,6 +17,22 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import emailjs from "@emailjs/browser";
+import {
+  ButtonGroup,
+  CTAWrapper,
+  FooterText,
+  Glow,
+  Header,
+  OutlineButton,
+  PrimaryButton,
+  Section,
+  StatCard,
+  StatDivider,
+  StatLabel,
+  StatValue,
+  Title,
+  Subtitle,
+} from "./ResultsSection.style";
 
 const stats = [
   {
@@ -100,72 +116,31 @@ const ResultsSection = () => {
   };
 
   return (
-    <Box
-      sx={{
-        // py: { xs: 8, md: 12 },
-        paddingBottom: "30px",
-        background: "#fff",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <Section>
       {/* Dynamic Background: Ambient Glowing Orbs */}
-      <motion.div
-        animate={{
-          scale: [0.8, 1, 0.8],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        style={{
-          position: "absolute",
-          top: "-10%",
-          left: "0%",
-          width: "500px",
-          height: "500px",
-          background:
-            "radial-gradient(circle, rgba(244, 122, 32, 0.05) 0%, transparent 70%)",
-          zIndex: 0,
-          filter: "blur(80px)",
-        }}
+      <Glow
+        animate={{ scale: [0.8, 1, 0.8], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 15, repeat: Infinity }}
       />
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
-        <Box textAlign="center" mb={10}>
+        <Header>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
           >
-            <Typography
-              variant="h2"
-              fontWeight={900}
-              sx={{
-                mb: 2,
-                fontSize: "32px",
-                color: "#111827",
-                lineHeight: 1.1,
-                // letterSpacing: "-0.04em",
-                fontWeight: 600,
-              }}
-            >
+            <Title>
               See Real Results from Healthcare Organizations Like Yours
-            </Typography>
-            <Typography
-              sx={{
-                color: "#4B5563",
-                maxWidth: "650px",
-                mx: "auto",
-                fontSize: "1.2rem",
-                lineHeight: 1.6,
-                fontWeight: 500,
-              }}
-            >
+            </Title>
+
+            <Subtitle>
               Leading health systems, physician groups, and specialty providers
               are achieving breakthrough results with CognitiveHealth AI agents
-            </Typography>
+            </Subtitle>
           </motion.div>
-        </Box>
+        </Header>
 
         {/* ORGANIC METRICS CLUSTER: Staggered, Floating, Non-Grid feeling */}
         <Grid container spacing={6} justifyContent="center">
@@ -173,140 +148,43 @@ const ResultsSection = () => {
             <Grid
               size={{ xs: 12, sm: 6, md: 3 }}
               key={index}
-              sx={{ display: "flex" }}
+              sx={{ display: "flex", alignItems: "stretch" }}
             >
               <motion.div
+                style={{ width: "100%", display: "flex" }}
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: false, amount: 0.2 }}
               >
-                <Box
-                  sx={{
-                    p: 4,
-                    borderRadius: "20px",
-                    textAlign: "center",
-                    background: "linear-gradient(180deg, #ffffff, #f9fafb)",
-                    border: "1px solid #E5E7EB",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-
-                    transition: "all 0.3s ease",
-
-                    "&:hover": {
-                      transform: "translateY(-10px)",
-                      boxShadow: "0 20px 50px rgba(0,0,0,0.1)",
-                    },
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: { xs: "2.5rem", md: "3rem" },
-                      fontWeight: 900,
-                      mb: 1,
-                      padding: "10px",
-                      background: " #F47A20",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
-                    {stat.value}
-                  </Typography>
-                  <Box
-                    sx={{
-                      width: "95px",
-                      height: "4px",
-                      mx: "auto",
-                      // my: 2,
-                      marginBottom: "10px",
-                      borderRadius: "10px",
-                      background:
-                        "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      color: "#4B5563",
-                      fontSize: "0.95rem",
-                      fontWeight: 600,
-                      lineHeight: 1.5,
-                      maxWidth: "220px",
-                      mx: "auto",
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-                </Box>
+                <StatCard>
+                  <StatValue>{stat.value}</StatValue>
+                  <StatDivider />
+                  <StatLabel>{stat.label}</StatLabel>
+                </StatCard>
               </motion.div>
             </Grid>
           ))}
         </Grid>
 
         {/* CTA ACTIONS */}
-        <Box sx={{ textAlign: "center", mt: 10 }}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", sm: "row" },
-              gap: 3,
-              justifyContent: "center",
-              mb: 6,
-            }}
-          >
-            <Button
-              variant="contained"
+        <CTAWrapper>
+          <ButtonGroup>
+            <PrimaryButton
               onClick={handleOpenPdfList}
-              sx={{
-                px: 4,
-                py: 1.8,
-                borderRadius: "50px",
-                fontWeight: 900,
-                background: "#F47A20",
-                fontSize: "1rem",
-                textTransform: "none",
-                boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
-                "&:hover": { background: "#e65a00" },
-              }}
               endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
             >
               Read Customer Success Stories
-            </Button>
-            <Button
-              variant="outlined"
+            </PrimaryButton>
+            <OutlineButton
               onClick={() => setOpenEmailDialog(true)}
-              sx={{
-                px: 4,
-                py: 1.8,
-                borderRadius: "50px",
-                fontWeight: 900,
-                borderColor: "rgba(0,0,0,0.1)",
-                color: "#111827",
-                fontSize: "1rem",
-                textTransform: "none",
-                background: "#fff",
-                "&:hover": {
-                  borderColor: "#F47A20",
-                  color: "#F47A20",
-                  background: "rgba(244, 122, 32, 0.05)",
-                },
-              }}
               endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
             >
               Download Complete Results Package
-            </Button>
-          </Box>
+            </OutlineButton>
+          </ButtonGroup>
 
-          <Typography
-            sx={{
-              color: "#6B7280",
-              // fontWeight: 800,
-              // letterSpacing: "2px",
-              // textTransform: "uppercase",
-              fontSize: "16px",
-            }}
-          >
+          <FooterText>
             Join{" "}
             <Box component="span" sx={{ color: "#111827" }}>
               50+ healthcare organizations
@@ -316,8 +194,8 @@ const ResultsSection = () => {
               10M+ claims monthly
             </Box>{" "}
             with CognitiveHealth
-          </Typography>
-        </Box>
+          </FooterText>
+        </CTAWrapper>
       </Container>
 
       {/* REUSED DIALOGS - KEEPING LOGIC AS IS */}
@@ -466,7 +344,7 @@ const ResultsSection = () => {
           />
         </DialogContent>
       </Dialog>
-    </Box>
+    </Section>
   );
 };
 

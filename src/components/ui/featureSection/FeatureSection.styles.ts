@@ -10,6 +10,34 @@ interface TitleProps {
   align?: "center" | "left";
 }
 
+export const HeaderMotion = styled(motion.div)(() => ({
+  marginBottom: "40px",
+}));
+
+export const TimelineContainer = styled(Box)(() => ({
+  position: "relative",
+  paddingTop: "32px",
+  paddingBottom: "32px",
+}));
+
+export const TimelineItems = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "48px",
+}));
+
+export const TimelineRow = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "flex-start",
+  position: "relative",
+  zIndex: 1,
+  gap: "32px",
+
+  [theme.breakpoints.up("md")]: {
+    gap: "48px",
+  },
+}));
+
 export const Section = styled(Box, {
   shouldForwardProp: (prop) => prop !== "background",
 })<SectionProps>(({ theme, background, borderRadius }) => ({
@@ -61,7 +89,7 @@ export const Subtitle = styled(Typography)(({ theme }) => ({
 
 export const TimelineLine = styled(motion.div)(({ theme }) => ({
   position: "absolute",
-  left: "40px",
+  left: "30px",
   top: 0,
   width: "3px",
   zIndex: 0,
@@ -69,4 +97,81 @@ export const TimelineLine = styled(motion.div)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     left: "22px",
   },
+}));
+
+export const IconWrapper = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "variant",
+})<{ variant: "default" | "pink" }>(({ theme, variant }) => ({
+  width: "50px",
+  height: "50px",
+  flexShrink: 0,
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+
+  background:
+    variant === "pink"
+      ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
+      : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
+
+  border: "3px solid",
+  borderColor:
+    variant === "pink"
+      ? "rgba(244, 122, 32, 0.2)"
+      : "rgba(74, 144, 226, 0.2)",
+
+  boxShadow:
+    variant === "pink"
+      ? "0 8px 20px rgba(244, 122, 32, 0.3)"
+      : "0 8px 20px rgba(74, 144, 226, 0.3)",
+
+  "& img": {
+    width: "28px",
+    height: "28px",
+    objectFit: "contain",
+    filter: "brightness(0) invert(1)",
+  },
+
+  [theme.breakpoints.up("md")]: {
+    width: "64px",
+    height: "64px",
+  },
+}));
+
+export const ContentWrapper = styled(motion.div)(() => ({
+  flexGrow: 1,
+  paddingTop: "6px",
+}));
+
+export const ContentCard = styled(Box)(() => ({
+  background: "transparent",
+  borderBottom: "1px solid rgba(0,0,0,0.05)",
+  paddingBottom: "24px",
+}));
+
+export const ItemTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 800,
+  color: "#0f172a",
+  marginBottom: "12px",
+  fontSize: "1.3rem",
+
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.5rem",
+  },
+}));
+
+export const ItemDescription = styled(Typography)(() => ({
+  fontSize: "1rem",
+  lineHeight: 1.6,
+  color: "#475569",
+}));
+
+export const AnimatedTimelineLine = styled(TimelineLine)<{
+  variant: "default" | "pink";
+}>(({ variant }) => ({
+  background:
+    variant === "pink"
+      ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
+      : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
 }));
