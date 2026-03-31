@@ -1,75 +1,3 @@
-// import { Box } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-
-// export const TrustSection = styled(Box)(({ theme }) => ({
-//   marginTop: "30px",
-//   [theme.breakpoints.down("md")]: {
-//     textAlign: "center",
-//   },
-// }));
-
-// export const TrustTitle = styled(Box)(({ theme }) => ({
-//   // fontFamily: "Inter",
-//   fontSize: "16px",
-//   lineHeight: "24px",
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   gap: "16px",
-//   marginBottom: "32px",
-//   color: "#0E0E0E",
-//   fontWeight: 600,
-
-//   [theme.breakpoints.down("md")]: {
-//     flexDirection: "column",
-//     gap: "8px",
-//   },
-// }));
-
-// export const LogoGrid = styled(Box)(({ theme }) => ({
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "space-between",
-//   gap: "40px",
-//   flexWrap: "nowrap",
-
-//   [theme.breakpoints.down("md")]: {
-//     gap: "32px",
-//   },
-// }));
-
-// export const LogoImage = styled("img")(({ theme }) => ({
-//   height: "60px",
-//   maxWidth: "140px",
-//   objectFit: "contain",
-//   margin: "0 40px",
-
-//   [theme.breakpoints.down("md")]: {
-//     height: "24px",
-//   },
-// }));
-
-// export const LogoScrollWrapper = styled("div")({
-//   overflow: "hidden",
-//   width: "100%",
-//   "&:hover div": {
-//     animationPlayState: "paused",
-//   },
-// });
-
-// export const LogoTrack = styled("div")({
-//   display: "flex",
-//   width: "max-content",
-//   animation: "scroll linear infinite",
-//   "&:hover": {
-//     animationPlayState: "paused",
-//   },
-//   "@keyframes scroll": {
-//     "0%": { transform: "translateX(0)" },
-//     "100%": { transform: "translateX(-50%)" },
-//   },
-// });
-
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -180,3 +108,55 @@ export const LogoImage = styled("img")(({ theme }) => ({
     height: "28px",
   },
 }));
+
+import { Typography } from "@mui/material";
+import { motion } from "framer-motion";
+
+/* 🔥 Motion Wrapper */
+export const MotionWrapper = styled(motion.div)(() => ({}));
+
+/* 🔥 Title Motion Wrapper (replaces inline style) */
+export const TitleMotionWrapper = styled(motion.div)(() => ({
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+  marginBottom: "20px",
+}));
+
+/* 🔥 Title Text (replaces Typography sx) */
+export const TitleText = styled(Typography)(({ theme }) => ({
+  fontSize: "1rem",
+  letterSpacing: "1px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "0.85rem",
+    textAlign: "center",
+    margin: "0 auto 32px auto",
+  },
+
+  fontWeight: 600,
+  padding: "0px 20px",
+}));
+
+/* 🔥 Logo Card (replaces Box sx EXACTLY) */
+export const LogoCard = styled(Box)(() => ({
+  borderRadius: "12px",
+  padding: "10px 18px",
+  transition: "all 0.3s ease",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+
+  "&:hover": {
+    transform: "translateY(-6px) scale(1.05)",
+    background:
+      "linear-gradient(120deg, rgba(244,122,32,0.08), rgba(107,191,89,0.08))",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+  },
+}));
+
+/* 🔥 Dynamic animation duration (replaces inline style) */
+export const AnimatedLogoTrack = styled(LogoTrack)<{ speed: number }>(
+  ({ speed }) => ({
+    animationDuration: `${speed}s`,
+  }),
+);

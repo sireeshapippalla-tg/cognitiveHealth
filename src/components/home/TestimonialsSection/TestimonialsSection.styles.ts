@@ -1,24 +1,82 @@
-import { Box, styled } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 
-export const SectionContainer = styled(Box)(({ theme }) => ({
-  width: "100%",
-  // maxWidth: "1400px",
-  padding:"30px 80px",
-  margin: "0 auto",
+/* SECTION */
+export const Section = styled(Box)(({ theme }) => ({
+  padding: "64px 16px",
+  background: "#fff",
 
-  // marginTop:"40px",
-  [theme.breakpoints.down("md")]: {
-    padding: "16px",
+  [theme.breakpoints.up("md")]: {
+    padding: "64px 64px",
   },
 }));
-export const Wrapper = styled(Box)(({ theme }) => ({
- 
-  // padding: "32px",
-  textAlign: "center",
-  // maxWidth: "1100px",
-  margin: "0 auto",
 
-  [theme.breakpoints.down("sm")]: {
-    padding: "20px",
+/* TITLE */
+export const Title = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
+  fontWeight: 700,
+  marginBottom: "32px",
+  lineHeight: 1.2,
+  fontSize: "38px",
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: "24px",
+    lineHeight: 1.2,
   },
+}));
+
+/* CARD WRAPPER */
+export const MotionCard = styled(motion.div)(() => ({}));
+
+/* CARD */
+export const Card = styled(Box)(() => ({
+  position: "relative",
+  paddingLeft: "32px",
+  cursor: "pointer",
+  transition: "all 0.3s ease",
+
+  "&:hover .line": {
+    height: "100%",
+  },
+}));
+
+/* LEFT LINE */
+export const Line = styled(Box)(() => ({
+  position: "absolute",
+  left: 0,
+  top: 0,
+  width: "3px",
+  height: "40px",
+  background: "#ff6b35",
+  transition: "0.3s ease",
+}));
+
+/* ICON */
+export const QuoteIcon = styled("div")(() => ({
+  fontSize: "28px",
+  color: "#ff6b35",
+  marginBottom: "8px",
+}));
+
+/* TEXT */
+export const QuoteText = styled(Typography)(() => ({
+  color: "#444",
+  lineHeight: 1.8,
+  marginBottom: "24px",
+}));
+
+export const Author = styled(Typography)(() => ({
+  fontWeight: 600,
+  color: "#ff6b35",
+}));
+
+export const Company = styled(Typography)(() => ({
+  color: "#777",
+}));
+export const StyledQuoteIcon = styled(FormatQuoteIcon)(() => ({
+  fontSize: 28,
+  color: "#ff6b35",
+  marginBottom: "8px",
 }));

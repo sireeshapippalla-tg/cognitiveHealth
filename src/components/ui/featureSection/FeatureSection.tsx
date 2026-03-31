@@ -1,4 +1,4 @@
-import { Box, Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 
@@ -7,7 +7,16 @@ import {
   Inner,
   Title,
   Subtitle,
-  TimelineLine,
+  HeaderMotion,
+  TimelineContainer,
+  AnimatedTimelineLine,
+  TimelineItems,
+  TimelineRow,
+  IconWrapper,
+  ContentWrapper,
+  ContentCard,
+  ItemTitle,
+  ItemDescription,
 } from "./FeatureSection.styles";
 
 interface FeatureItem {
@@ -42,63 +51,33 @@ const FeatureSection = ({
       <Inner>
         <Container>
           {/* Header */}
-          <motion.div
+
+          <HeaderMotion
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            style={{ marginBottom: "40px" }}
           >
             <Title align={align} dangerouslySetInnerHTML={{ __html: title }} />
             {subtitle && <Subtitle>{subtitle}</Subtitle>}
-          </motion.div>
+          </HeaderMotion>
 
           {/* Timeline Container */}
-          <Box sx={{ position: "relative", py: 4 }}>
-            {/* The Continuous Vertical Line connecting all nodes */}
-            {/* <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: "100%" }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              style={{
-                position: "absolute",
-                left: "40px",
 
-                top: 0,
-                width: "3px",
-                background:
-                  cardVariant === "pink"
-                    ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
-                    : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
-                zIndex: 0,
-              }}
-            /> */}
-            <TimelineLine
+          <TimelineContainer>
+            {/* The Continuous Vertical Line connecting all nodes */}
+
+            <AnimatedTimelineLine
+              variant={cardVariant}
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              style={{
-                background:
-                  cardVariant === "pink"
-                    ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
-                    : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
-              }}
             />
 
             {/* Timeline Items */}
-            <Box display="flex" flexDirection="column" gap={6}>
+
+            <TimelineItems>
               {items.map((item, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: { xs: 4, md: 6 },
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
+                <TimelineRow key={index}>
                   {/* Glowing Node / Icon on the Line */}
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
@@ -110,87 +89,25 @@ const FeatureSection = ({
                       bounce: 0.4,
                     }}
                   >
-                    <Box
-                      sx={{
-                        // width: "64px",
-                        // height: "64px",
-                        width: { xs: 50, md: 64 },
-                        height: { xs: 50, md: 64 },
-                        flexShrink: 0,
-                        borderRadius: "50%",
-                        background:
-                          cardVariant === "pink"
-                            ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
-                            : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
-                        border: "3px solid",
-                        borderColor:
-                          cardVariant === "pink"
-                            ? "rgba(244, 122, 32, 0.2)"
-                            : "rgba(74, 144, 226, 0.2)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow:
-                          cardVariant === "pink"
-                            ? "0 8px 20px rgba(244, 122, 32, 0.3)"
-                            : "0 8px 20px rgba(74, 144, 226, 0.3)",
-                        "& img": {
-                          width: "28px",
-                          height: "28px",
-
-                          objectFit: "contain",
-                          filter: "brightness(0) invert(1)",
-                        },
-                      }}
-                    >
-                      {item.icon}
-                    </Box>
+                    <IconWrapper variant={cardVariant}>{item.icon}</IconWrapper>
                   </motion.div>
 
                   {/* Text Content Block */}
-                  <motion.div
+
+                  <ContentWrapper
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "easeOut",
-                    }}
-                    style={{ flexGrow: 1, paddingTop: "6px" }}
+                    transition={{ duration: 0.5 }}
                   >
-                    <Box
-                      sx={{
-                        background: "transparent",
-                        borderBottom: "1px solid rgba(0,0,0,0.05)",
-                        pb: 3,
-                      }}
-                    >
-                      <Typography
-                        variant="h4"
-                        sx={{
-                          fontWeight: 800,
-                          fontSize: { xs: "1.3rem", md: "1.5rem" },
-                          color: "#0f172a",
-                          mb: 1.5,
-                        }}
-                      >
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: "1rem",
-                          lineHeight: 1.6,
-                          color: "#475569",
-                        }}
-                      >
-                        {item.description}
-                      </Typography>
-                    </Box>
-                  </motion.div>
-                </Box>
+                    <ContentCard>
+                      <ItemTitle>{item.title}</ItemTitle>
+                      <ItemDescription>{item.description}</ItemDescription>
+                    </ContentCard>
+                  </ContentWrapper>
+                </TimelineRow>
               ))}
-            </Box>
-          </Box>
+            </TimelineItems>
+          </TimelineContainer>
         </Container>
       </Inner>
     </Section>
