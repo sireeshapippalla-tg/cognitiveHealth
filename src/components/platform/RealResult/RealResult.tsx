@@ -1,5 +1,5 @@
 
-import StatsSection from "../ui/stateSection/StatsSection";
+import StatsSection from "../../ui/stateSection/StatsSection";
 
 const RealResult = () => {
     const realResultItems = [

@@ -1,9 +1,9 @@
-import Network from "../../assets/Platform/SuperCharge/Network.svg";
-import Innovation from "../../assets/Platform/SuperCharge/Innovation.svg";
-import Scale from "../../assets/Platform/SuperCharge/Scale.svg";
-import Deploy from "../../assets/Platform/SuperCharge/Deploy.svg";
+import Network from "../../../assets/Platform/SuperCharge/Network.svg";
+import Innovation from "../../../assets/Platform/SuperCharge/Innovation.svg";
+import Scale from "../../../assets/Platform/SuperCharge/Scale.svg";
+import Deploy from "../../../assets/Platform/SuperCharge/Deploy.svg";
 
-import FeatureSection from "../ui/featureSection/FeatureSection";
+import FeatureSection from "../../ui/featureSection/FeatureSection";
 
 const features = [
   {
