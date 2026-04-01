@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@mui/material";
 import WhoWeAreSection from "../../components/aboutus/whoWeAre";
 import TeamSection from "../../components/aboutus/teamSecion";
 import AdvisorySection from "../../components/aboutus/advisorySection";
@@ -7,26 +6,26 @@ import CallToActionSection from "../../components/home/CTA/CTASection";
 import WhyWeExistSection from "../../components/aboutus/whyExistSection";
 import AboutUsHeroSection from "../../components/aboutus/aboutusHeroSection";
 import { motion } from "framer-motion";
+import { AboutPageWrapper, ContentContainer } from "./AboutUsPage.styles";
 
 const CognitiveHealthAboutPage: React.FC = () => {
   return (
-    <Box sx={{ overflowX: "hidden" }}>
+    <AboutPageWrapper>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <AboutUsHeroSection />
-        
-        <Box sx={{ position: "relative", zIndex: 1 }}>
+        <ContentContainer>
           <WhoWeAreSection />
           <WhyWeExistSection />
           <TeamSection />
           <AdvisorySection />
           <CallToActionSection />
-        </Box>
+        </ContentContainer>
       </motion.div>
-    </Box>
+    </AboutPageWrapper>
   );
 };
 

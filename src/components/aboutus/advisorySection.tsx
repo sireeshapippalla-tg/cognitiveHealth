@@ -1,6 +1,19 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, useTheme, useMediaQuery } from "@mui/material";
 import type { Advisor } from "../ui/advisoryCard/advisoryCard";
 import { motion } from "framer-motion";
+import {
+  SectionWrapper,
+  BackgroundDecoration,
+  HeaderBox,
+  SectionTitle,
+  SectionSubtitle,
+  AdvisorsContainer,
+  AdvisorCardWrapper,
+  AdvisorAvatar,
+  AdvisorName,
+  AdvisorRole,
+  AdvisorDescription,
+} from "./AdvisorySection.styles";
 
 const advisoryData: Advisor[] = [
   {
@@ -27,68 +40,29 @@ const advisoryData: Advisor[] = [
 ];
 
 const AdvisorySection: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Box
-      sx={{
-        py: { xs: 12, md: 15 },
-        background: "#fff",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background decoration */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "10%",
-          right: "-5%",
-          width: "500px",
-          height: "500px",
-          background:
-            "radial-gradient(circle, rgba(107, 191, 89, 0.05) 0%, transparent 70%)",
-          filter: "blur(80px)",
-          zIndex: 0,
-        }}
-      />
+    <SectionWrapper>
+      <BackgroundDecoration />
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
-        <Box textAlign="center" mb={12}>
+        <HeaderBox>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <Typography
-              variant="h3"
-              fontWeight={900}
-              sx={{
-                mb: 3,
-                fontSize: { xs: "20px", md: "28px" },
-                color: "#1F2937",
-                letterSpacing: "-0.04em",
-                lineHeight: 1.1,
-              }}
-            >
-              Advisory Team
-            </Typography>
-            <Typography
-              sx={{
-                color: "#6B7280",
-                maxWidth: "650px",
-                mx: "auto",
-                fontSize: "1.2rem",
-                lineHeight: 1.6,
-                fontWeight: 500,
-              }}
-            >
-              Our advisors are well-known thought leaders drawn from the
-              healthcare industry.
-            </Typography>
+            <SectionTitle variant="h3">Advisory Team</SectionTitle>
+            <SectionSubtitle>
+              Our advisors are well-known thought leaders drawn from the healthcare industry.
+            </SectionSubtitle>
           </motion.div>
-        </Box>
+        </HeaderBox>
 
-        <Box sx={{ maxWidth: "1000px", mx: "auto" }}>
+        <AdvisorsContainer>
           {advisoryData.map((advisor, index) => (
             <motion.div
               key={advisor.id}
@@ -97,105 +71,28 @@ const AdvisorySection: React.FC = () => {
               transition={{ duration: 0.7, delay: index * 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: { xs: "column", md: "row" },
-                  gap: { xs: 4, md: 8 },
-                  alignItems: "center",
-                  textAlign: { xs: "center", md: "left" },
-                  mb: 10,
-                  position: "relative",
-                  "&:hover .advisor-avatar": {
-                    transform: "scale(1.1) rotate(5deg)",
-                    boxShadow: "0 20px 40px rgba(107, 191, 89, 0.2)",
-                  },
-                  "&:hover .advisor-name": { color: "#F47A20" },
-                }}
-              >
-                <Box
-                  className="advisor-avatar"
-                  sx={{
-                    flexShrink: 0,
-                    // width: "140px",
-                    // height: "140px",
-                    width: { xs: 70, md: 140 },
-                    height: { xs: 70, md: 140 },
-                    borderRadius: "40px",
-                    background:
-                      "linear-gradient(135deg, rgba(107, 191, 89, 0.1) 0%, rgba(107, 191, 89, 0.2) 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    // fontSize: "3.5rem",
-                    fontSize: { xs: "3rem", md: "3.5rem" },
-
-                    fontWeight: 900,
-                    color: "#6BBF59",
-                    transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                    border: "1px solid rgba(107, 191, 89, 0.2)",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-                  }}
-                >
+              <AdvisorCardWrapper isMobile={isMobile}>
+                <AdvisorAvatar className="advisor-avatar">
                   {advisor.name.charAt(0)}
-                </Box>
+                </AdvisorAvatar>
 
                 <Box>
-                  <Typography
-                    className="advisor-name"
-                    variant="h4"
-                    fontWeight={900}
-                    sx={{
-                      mb: 1,
-                      color: "#1F2937",
-                      fontSize: { xs: "20px", md: "25px" },
-                      transition: "color 0.3s ease",
-                      letterSpacing: "-0.02em",
-                    }}
-                  >
+                  <AdvisorName className="advisor-name" variant="h4">
                     {advisor.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#F47A20",
-                      fontWeight: 800,
-                      fontSize: { xs: "16px", md: "18px" },
-                      // textTransform: "uppercase",
-
-                      mb: 3,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: { xs: "center", md: "flex-start" },
-                      gap: 2,
-                      "&::after": {
-                        content: '""',
-                        width: "40px",
-                        height: "2px",
-                        background: "rgba(244, 122, 32, 0.3)",
-                        display: { xs: "none", md: "block" },
-                      },
-                    }}
-                  >
+                  </AdvisorName>
+                  <AdvisorRole isMobile={isMobile}>
                     {advisor.role}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#4B5563",
-                      fontSize: "1.15rem",
-                      lineHeight: 1.8,
-                      maxWidth: "750px",
-                      fontWeight: 500,
-                    }}
-                  >
+                  </AdvisorRole>
+                  <AdvisorDescription>
                     {advisor.description}
-                  </Typography>
+                  </AdvisorDescription>
                 </Box>
-              </Box>
+              </AdvisorCardWrapper>
             </motion.div>
           ))}
-        </Box>
+        </AdvisorsContainer>
       </Container>
-    </Box>
+    </SectionWrapper>
   );
 };
 

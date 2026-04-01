@@ -1,20 +1,37 @@
-import { UpdatedBadge } from "../privacyPolicy/PrivacyPolicy.styles";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import SearchIcon from "@mui/icons-material/Search";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import {
   HeroSection,
   HeroInner,
   HeroTitle,
   HeroSubtitle,
+  PageBackground,
   ContentWrapper,
   ContentInner,
-  // PageTitle,
-  // UpdatedText,
   SectionBlock,
   SectionTitle,
   Paragraph,
-  StyledList,
-  StyledListItem,
-} from "./Terms.styles";
-
+  ListParagraph,
+  // UpdatedBadge,
+  SearchContainer,
+  SearchInputWrapper,
+  StyledInput,
+  AccordionContainer,
+  AccordionItem,
+  AccordionHeader,
+  AccordionContent,
+  IconWrapper,
+  NoResults,
+  CtaSection,
+  CtaTitle,
+  CtaText,
+  CtaButton,
+  UpdatedBadge,
+} from "../faq/Faq.styles";
 type TermBlock =
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
@@ -26,6 +43,10 @@ type TermSection = {
 };
 
 const TermsPage = () => {
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   const termsSections: TermSection[] = [
     {
       id: "introduction",
@@ -107,7 +128,6 @@ const TermsPage = () => {
         },
       ],
     },
-
     {
       id: "mustnot",
       title: "You must not:",
@@ -122,7 +142,6 @@ const TermsPage = () => {
         },
       ],
     },
-
     {
       id: "copyrights",
       title: "Copyrights",
@@ -144,7 +163,7 @@ const TermsPage = () => {
       ],
     },
     {
-      id: "limitations",
+      id: "changes",
       title: "Changes to Our Terms of Use and Privacy Policy",
       blocks: [
         {
@@ -155,54 +174,156 @@ const TermsPage = () => {
     },
   ];
 
+  const filteredSections = useMemo(() => {
+    if (!searchQuery) return termsSections;
+    const lowerQuery = searchQuery.toLowerCase();
+    return termsSections.filter(
+      (section) =>
+        section.title.toLowerCase().includes(lowerQuery) ||
+        section.blocks.some(
+          (block) =>
+            (block.type === "paragraph" && block.text.toLowerCase().includes(lowerQuery)) ||
+            (block.type === "list" && block.items.some(item => item.toLowerCase().includes(lowerQuery)))
+        )
+    );
+  }, [searchQuery, termsSections]);
+
+  const toggleAccordion = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
-    <>
-      {/* HERO */}
-      <HeroSection>
+    <Box sx={{ minHeight: "100vh" }}>
+      {/* HERO SECTION */}
+      <HeroSection
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <HeroInner>
-          <HeroTitle>Terms of Service</HeroTitle>
-             <UpdatedBadge>  This Terms of Use is effective January 1, 2024</UpdatedBadge>
-          <HeroSubtitle>
-            These Terms and Conditions govern your use of the CognitiveHealth
-            platform and services.
-          </HeroSubtitle>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          >
+            <UpdatedBadge>Effective Date: January 1, 2024</UpdatedBadge>
+            <HeroTitle>
+              Terms of Service
+            </HeroTitle>
+            <HeroSubtitle>
+              Governing your use of the CognitiveHealth platform and services
+            </HeroSubtitle>
+          </motion.div>
+
+          <SearchContainer
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          >
+            <SearchInputWrapper>
+              <SearchIcon sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }} />
+              <StyledInput
+                placeholder="Search terms topics..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </SearchInputWrapper>
+          </SearchContainer>
         </HeroInner>
       </HeroSection>
 
-      {/* CONTENT */}
-      <ContentWrapper>
-        <ContentInner>
-          {/* <PageTitle>Terms of Use</PageTitle>
-          <UpdatedText>Last Updated: January 1, 2024</UpdatedText> */}
-          {/* <UpdatedText>
-            This Terms of Use is effective January 1, 2024
-          </UpdatedText> */}
-          {termsSections.map((section) => (
-            <SectionBlock key={section.id} id={section.id}>
-              <SectionTitle>{section.title}</SectionTitle>
+      {/* CONTENT SECTION */}
+      <PageBackground>
+        <ContentWrapper>
+          <ContentInner>
+            <AccordionContainer>
+              <AnimatePresence mode="popLayout">
+                {filteredSections.length > 0 ? (
+                  filteredSections.map((section, index) => (
+                    <AccordionItem
+                      key={section.id}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ delay: index * 0.05, duration: 0.4 }}
+                      $expanded={expandedId === section.id}
+                    >
+                      <AccordionHeader $expanded={expandedId === section.id} onClick={() => toggleAccordion(section.id)}>
+                        <Box>
+                          <SectionTitle className="faq-title" $expanded={expandedId === section.id}>
+                            {section.title}
+                          </SectionTitle>
+                        </Box>
+                        <IconWrapper className="faq-icon" $expanded={expandedId === section.id}>
+                          <ExpandMoreIcon />
+                        </IconWrapper>
+                      </AccordionHeader>
 
-              {section.blocks.map((block: TermBlock, index: number) => {
-                if (block.type === "paragraph") {
-                  return <Paragraph key={index}>{block.text}</Paragraph>;
-                }
+                      <AnimatePresence>
+                        {expandedId === section.id && (
+                          <AccordionContent
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                          >
+                            <SectionBlock>
+                              {section.blocks.map((block: TermBlock, bIndex: number) => {
+                                if (block.type === "paragraph") {
+                                  return (
+                                    <Paragraph
+                                      key={bIndex}
+                                      sx={{ mb: 2 }}
+                                    >
+                                      {block.text}
+                                    </Paragraph>
+                                  );
+                                }
+                                if (block.type === "list") {
+                                  return (
+                                    <ListParagraph key={bIndex}>
+                                      <ul>
+                                        {block.items.map((item, i) => (
+                                          <li key={i}>{item}</li>
+                                        ))}
+                                      </ul>
+                                    </ListParagraph>
+                                  );
+                                }
+                                return null;
+                              })}
+                            </SectionBlock>
+                          </AccordionContent>
+                        )}
+                      </AnimatePresence>
+                    </AccordionItem>
+                  ))
+                ) : (
+                  <NoResults
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    No results found for "{searchQuery}". Please try another search term.
+                  </NoResults>
+                )}
+              </AnimatePresence>
+            </AccordionContainer>
 
-                if (block.type === "list") {
-                  return (
-                    <StyledList key={index}>
-                      {block.items.map((item: string, i: number) => (
-                        <StyledListItem key={i}>{item}</StyledListItem>
-                      ))}
-                    </StyledList>
-                  );
-                }
+            {/* CTA SECTION */}
+            <CtaSection>
+              <CtaTitle>Have Questions About Our Terms?</CtaTitle>
+              <CtaText>
+                Our legal team is available to provide clarification on any aspect of our service agreements.
+              </CtaText>
+              <CtaButton onClick={() => navigate("/contact-us")}>
+                Get in Touch
+              </CtaButton>
+            </CtaSection>
 
-                return null;
-              })}
-            </SectionBlock>
-          ))}
-        </ContentInner>
-      </ContentWrapper>
-    </>
+          </ContentInner>
+        </ContentWrapper>
+      </PageBackground>
+    </Box>
   );
 };
 

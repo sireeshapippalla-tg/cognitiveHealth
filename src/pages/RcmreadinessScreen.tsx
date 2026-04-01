@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import {
   Typography,
   Grid,
@@ -11,26 +12,21 @@ import {
   CircularProgress,
   IconButton,
   Box,
+  Fade,
+  LinearProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { toast } from "react-toastify";
-import { LinearProgress } from "@mui/material";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import {
-  // Container,
   HeaderWrapper,
-  // HeaderTitle,
-  // HeaderSubText,
   SectionPaper,
   SectionTitle,
   StyledCheckbox,
   ResultPaper,
-  // FooterWrapper,
-  // FooterEmail,
-  // FooterCaption,
   FolderStyledIcon,
   PaymentsStyledIcon,
   HospitalStyledIcon,
@@ -330,22 +326,6 @@ const RCMReadinessScreen: React.FC = () => {
                     {section.items.map((item, iIndex) => {
                       const key = `${sIndex}-${iIndex}`;
                       return (
-                        // <Stack
-                        //   key={key}
-                        //   direction="row"
-                        //   spacing={1}
-                        //   alignItems="flex-start"
-                        // >
-                        //   <StyledCheckbox
-                        //     size="small"
-                        //     checked={!!checkedItems[key]}
-                        //     onChange={() => handleCheck(key)}
-                        //     disabled={submitted}
-                        //   />
-                        //   <Typography variant="body2" color="#1f2937">
-                        //     {item.label}
-                        //   </Typography>
-                        // </Stack>
                         <Box
                           key={key}
                           sx={{
@@ -401,27 +381,6 @@ const RCMReadinessScreen: React.FC = () => {
             </Typography>
           </Stack>
         )}
-        {/* {submitted && (
-          <ResultPaper elevation={0}>
-            <Stack alignItems="center" spacing={2}>
-              <SuccessStyledIcon />
-              <Typography variant="h6" fontWeight={600}>
-                Your response has been submitted
-              </Typography>
-              <Typography>
-                Your Score: <strong>{score}</strong>
-              </Typography>
-              <Typography>
-                {score >= 15
-                  ? "Your organization is a prime candidate for AI automation."
-                  : "Your organization shows partial readiness."}
-              </Typography>
-              <Button variant="outlined" onClick={handleBack}>
-                Go Back
-              </Button>
-            </Stack>
-          </ResultPaper>
-        )} */}
 
         {submitted && (
           <ResultsWrapper>
@@ -475,7 +434,6 @@ const RCMReadinessScreen: React.FC = () => {
                     spacing={2}
                     mt={2}
                   >
-                    {/* Send Email Button */}
                     <AppButton
                       variantType="primary"
                       size="large"
@@ -484,7 +442,6 @@ const RCMReadinessScreen: React.FC = () => {
                       Send Email
                     </AppButton>
 
-                    {/* Connect With Experts Button */}
                     <AppButton
                       variantType="primary"
                       size="large"
@@ -493,107 +450,147 @@ const RCMReadinessScreen: React.FC = () => {
                       Meet Our Experts
                     </AppButton>
                   </Stack>
-
-                  {/* <Button variant="contained" size="large" onClick={handleBack}>
-                    Back to Assessment
-                  </Button> */}
                 </Stack>
               </ResultPaper>
             </Stack>
           </ResultsWrapper>
         )}
-        {/* <FooterWrapper>
-        <Typography variant="h5" color="var(--color-text-blue)">
-          Ready to automate your RCM workflows?
-        </Typography>
-        <Typography color="var(--color-text-blue)">Contact us at</Typography>
-        <FooterEmail variant="h6">info@cognitivehealthit.com</FooterEmail>
-        <FooterCaption variant="caption">
-          © CognitiveHealth – RCM Automation Solutions
-        </FooterCaption>
-      </FooterWrapper> */}
 
         <Dialog
           open={openEmailDialog}
           onClose={() => !sending && setOpenEmailDialog(false)}
           maxWidth="xs"
           fullWidth
+          slotProps={{
+            backdrop: {
+              style: {
+                backgroundColor: "rgba(10, 15, 30, 0.4)",
+                backdropFilter: "blur(12px)",
+              },
+            },
+          }}
+          PaperProps={{
+            sx: {
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              overflow: "visible",
+              outline: "none",
+            },
+          }}
+          TransitionComponent={Fade}
+          transitionDuration={400}
         >
-          <StyledDialogTitle>
-            Send Assessment Report
-            <IconButton
-              size="small"
-              onClick={() => setOpenEmailDialog(false)}
-              disabled={sending}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+          >
+            <Box
               sx={{
-                color: "var(--color-text-blue)",
-                backgroundColor: "#fff",
-                borderRadius: "100%",
-                ":hover": { backgroundColor: "#f3f4f6" },
+                position: "relative",
+                background: "rgba(255, 255, 255, 0.98)",
+                backdropFilter: "blur(20px)",
+                borderRadius: "32px",
+                padding: 4,
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                overflow: "visible",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: -2,
+                  zIndex: -1,
+                  background: "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
+                  borderRadius: "34px",
+                  opacity: 0.4,
+                  filter: "blur(8px)",
+                },
               }}
             >
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </StyledDialogTitle>
+              <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
+                <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
+                  <IconButton
+                    onClick={() => setOpenEmailDialog(false)}
+                    disabled={sending}
+                    sx={{
+                      width: 40,
+                      height: 40,
+                      background: "#fff",
+                      color: "#1e293b",
+                      boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
+                      border: "2px solid #fff",
+                      "&:hover": { color: "#ef4444" },
+                    }}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </motion.div>
+              </Box>
 
-          <DialogContent sx={{ padding: "24px" }}>
-            <Typography variant="body2" color="text.secondary" mb={2} mt={2}>
-              Enter the email address where you would like to receive the
-              report.
-            </Typography>
+              <Box mb={3} textAlign="center">
+                <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
+                  Send Assessment Report
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#64748b" }}>
+                  Enter the email address where you would like to receive your personalized roadmap.
+                </Typography>
+              </Box>
 
-            <TextField
-              label="Email Address"
-              type="email"
-              fullWidth
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="example@company.com"
-            />
-          </DialogContent>
+              <TextField
+                fullWidth
+                label="Email Address"
+                type="email"
+                placeholder="example@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "16px",
+                    backgroundColor: "rgba(248, 250, 252, 0.8)",
+                  },
+                }}
+              />
 
-          <StyledDialogActions>
-            <Button
-              onClick={() => setOpenEmailDialog(false)}
-              disabled={sending}
-            >
-              Cancel
-            </Button>
+              <Box mt={4} display="flex" flexDirection="column" gap={2}>
+                <PrimaryButton
+                  variant="contained"
+                  fullWidth
+                  disabled={!email || sending}
+                  onClick={handleSendEmail}
+                  startIcon={sending ? <CircularProgress size={16} color="inherit" /> : null}
+                  sx={{
+                    py: 1.8,
+                    borderRadius: "16px",
+                    fontWeight: 800,
+                    textTransform: "none",
+                  }}
+                >
+                  {sending ? "Generating PDF..." : "Send Assessment Report"}
+                </PrimaryButton>
 
-            <PrimaryButton
-              variant="contained"
-              disabled={!email || sending}
-              onClick={handleSendEmail}
-              startIcon={
-                sending ? <CircularProgress size={16} color="inherit" /> : null
-              }
-            >
-              {sending ? "Sending..." : "Send Report"}
-            </PrimaryButton>
-            <Button
-              onClick={async () => {
-                const newWindow = window.open("", "_blank"); // open immediately
-
-                try {
-                  const pdfBlob = await generatePdfFromUI();
-                  const url = URL.createObjectURL(pdfBlob);
-
-                  if (newWindow) {
-                    newWindow.location.href = url;
-                  }
-                } catch (err) {
-                  console.error(err);
-                  // if (newWindow) newWindow.close();
-                }
-              }}
-            >
-              Preview PDF
-            </Button>
-          </StyledDialogActions>
+                <Button
+                  fullWidth
+                  variant="text"
+                  sx={{ textTransform: "none", color: "#64748b", fontWeight: 600 }}
+                  onClick={async () => {
+                    const newWindow = window.open("", "_blank");
+                    try {
+                      const pdfBlob = await generatePdfFromUI();
+                      const url = URL.createObjectURL(pdfBlob);
+                      if (newWindow) newWindow.location.href = url;
+                    } catch (err) {
+                      console.error(err);
+                    }
+                  }}
+                >
+                  Preview PDF
+                </Button>
+              </Box>
+            </Box>
+          </motion.div>
         </Dialog>
       </HeaderWrapper>
     </>
-    // {/* </HeaderWrapper> */}
   );
 };
 
