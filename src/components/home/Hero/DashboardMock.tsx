@@ -72,8 +72,8 @@ const DashboardMock = () => {
                   />
                 </IconWrapper>
               </CardHeader>
-              <MetricValue sx={{ color: "#16a34a" }}>
-                <SpeedIcon sx={{ fontSize: 30, mr: 0.5, color: "#16a34a" }} />
+              <MetricValue sx={{ color: "var(--color-green)" }}>
+                <SpeedIcon sx={{ fontSize: 30, mr: 0.5, color: "var(--color-green)" }} />
                 426.79x
               </MetricValue>
               <CardTitle
@@ -103,7 +103,7 @@ const DashboardMock = () => {
                   sx={{
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: "#111827",
+                    color: "var(--color-gray-900)",
                   }}
                 >
                   44%
@@ -158,9 +158,9 @@ const DashboardMock = () => {
                   }}
                 >
                   <EmojiEventsOutlinedIcon
-                    sx={{ fontSize: 14, color: "#166534" }}
+                    sx={{ fontSize: 14, color: "var(--color-green)" }}
                   />
-                  <CardTitle sx={{ color: "#166534", fontSize: "14px" }}>
+                  <CardTitle sx={{ color: "var(--color-green)", fontSize: "14px" }}>
                     Excellent
                   </CardTitle>
                 </Stack>
@@ -214,7 +214,7 @@ const DashboardMock = () => {
 
         {/* BOTTOM CARD: Cash Flow */}
         <DashboardCard>
-          <CardTitle sx={{ fontSize: "14px", color: "#111827" }}>
+          <CardTitle sx={{ fontSize: "14px", color: "var(--color-gray-900)" }}>
             Cash Flow Analysis
           </CardTitle>
           <CardTitle sx={{ fontSize: "11px", fontWeight: 400, mb: 1 }}>
@@ -262,8 +262,8 @@ const DashboardMock = () => {
                         justifyContent: "center",
                       }}
                     >
-                      <ChartBar height={`${inflow}%`} color="#16a34a" />
-                      <ChartBar height={`${outflow}%`} color="#dc2626" />
+                      <ChartBar height={`${inflow}%`} color="var(--color-green)" />
+                      <ChartBar height={`${outflow}%`} color="var(--color-text-red)" />
                     </Box>
                   ))}
                 </BarsContainer>
@@ -294,7 +294,7 @@ const DashboardMock = () => {
                 sx={{
                   width: 8,
                   height: 8,
-                  bgcolor: "#16a34a",
+                  bgcolor: "var(--color-green)",
                   borderRadius: "2px",
                 }}
               />
@@ -305,7 +305,7 @@ const DashboardMock = () => {
                 sx={{
                   width: 8,
                   height: 8,
-                  bgcolor: "#dc2626",
+                  bgcolor: "var(--color-text-red)",
                   borderRadius: "2px",
                 }}
               />
@@ -320,19 +320,19 @@ const DashboardMock = () => {
           >
             <MetricWrapper>
               <CardTitle>Total Inflow</CardTitle>
-              <MetricValue sx={{ fontSize: "16px", color: "#16a34a" }}>
+              <MetricValue sx={{ fontSize: "16px", color: "var(--color-green)" }}>
                 $21.5M
               </MetricValue>
             </MetricWrapper>
             <MetricWrapper>
               <CardTitle>Total Outflow</CardTitle>
-              <MetricValue sx={{ fontSize: "16px", color: "#dc2626" }}>
+              <MetricValue sx={{ fontSize: "16px", color: "var(--color-text-red)" }}>
                 $17.4M
               </MetricValue>
             </MetricWrapper>
             <MetricWrapper>
               <CardTitle>Net Cash Flow</CardTitle>
-              <MetricValue sx={{ fontSize: "16px", color: "#16a34a" }}>
+              <MetricValue sx={{ fontSize: "16px", color: "var(--color-green)" }}>
                 +$4.1M
               </MetricValue>
             </MetricWrapper>

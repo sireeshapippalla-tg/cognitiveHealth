@@ -357,7 +357,7 @@ const Header = () => {
               borderRadius: "24px",
               p: 4,
               mt: 1,
-              backgroundColor: "#ffffff",
+              backgroundColor: "var(--color-white)",
               border: "1px solid #E5E7EB",
               boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
               overflow: "hidden",
@@ -368,7 +368,7 @@ const Header = () => {
               <Box sx={{ width: 220, borderRight: "1px solid #F3F4F6", pr: 3 }}>
                 <Typography
                   variant="overline"
-                  color="#F47A20"
+                  color="var(--color-primary)"
                   fontWeight={800}
                   letterSpacing={1.2}
                 >
@@ -377,11 +377,11 @@ const Header = () => {
                 <Typography
                   variant="h6"
                   fontWeight={800}
-                  sx={{ mt: 1, mb: 2, color: "#111827", lineHeight: 1.2 }}
+                  sx={{ mt: 1, mb: 2, color: "var(--color-gray-900)", lineHeight: 1.2 }}
                 >
                   Specialized AI Solutions for RCM
                 </Typography>
-                <Typography variant="body2" color="#6B7280" sx={{ mb: 3 }}>
+                <Typography variant="body2" color="var(--color-gray-500)" sx={{ mb: 3 }}>
                   Deploy tailored AI agents to automate complexity across your
                   entire revenue cycle.
                 </Typography>
@@ -443,7 +443,7 @@ const Header = () => {
               borderRadius: "24px",
               p: 3,
               mt: 1,
-              backgroundColor: "#ffffff",
+              backgroundColor: "var(--color-white)",
               border: "1px solid #E5E7EB",
               boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
               overflow: "hidden",
@@ -452,7 +452,7 @@ const Header = () => {
             <Box sx={{ mb: 2, px: 1 }}>
               <Typography
                 variant="overline"
-                color="#F47A20"
+                color="var(--color-primary)"
                 fontWeight={800}
                 letterSpacing={1.2}
               >
@@ -486,11 +486,11 @@ const Header = () => {
                 textAlign: "center",
               }}
             >
-              <Typography variant="body2" color="#6B7280">
+              <Typography variant="body2" color="var(--color-gray-500)">
                 Need help?{" "}
                 <Box
                   component="span"
-                  sx={{ color: "#F47A20", cursor: "pointer", fontWeight: 600 }}
+                  sx={{ color: "var(--color-primary)", cursor: "pointer", fontWeight: 600 }}
                   onClick={() => navigate("/contact-us")}
                 >
                   Contact Support

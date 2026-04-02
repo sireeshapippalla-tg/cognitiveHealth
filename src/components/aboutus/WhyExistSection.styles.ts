@@ -3,7 +3,7 @@ import { Box, Typography, styled } from "@mui/material";
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(8),
   paddingBottom: theme.spacing(9),
-  background: "#fff",
+  background: "var(--color-white)",
   position: "relative",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
@@ -27,7 +27,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(4),
   fontSize: "28px",
   fontWeight: 900,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   lineHeight: 1.1,
   [theme.breakpoints.down("md")]: {
     fontSize: "20px",
@@ -35,7 +35,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const SectionDescription = styled(Typography)({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   fontSize: "1.2rem",
   lineHeight: 1.7,
   marginBottom: "32px",
@@ -67,7 +67,7 @@ export const IconContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#F47A20",
+  color: "var(--color-primary)",
   boxShadow: "0 10px 20px rgba(0,0,0,0.02)",
   [theme.breakpoints.down("md")]: {
     width: 50,
@@ -77,13 +77,13 @@ export const IconContainer = styled(Box)(({ theme }) => ({
 
 export const FeatureTitle = styled(Typography)({
   marginBottom: "12px",
-  color: "#1F2937",
+  color: "var(--color-dark-gray)",
   fontWeight: 800,
   fontSize: "20px",
 });
 
 export const FeatureDescription = styled(Typography)({
-  color: "#6B7280",
+  color: "var(--color-gray-500)",
   fontSize: "1.1rem",
   lineHeight: 1.6,
   maxWidth: "500px",

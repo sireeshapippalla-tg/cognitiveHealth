@@ -15,7 +15,7 @@ export const MetricCard = ({
   title,
   description,
   icon,
-  color = "#6BBF59",
+  color = "var(--color-green)",
 }: MetricCardProps) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -65,7 +65,7 @@ export const MetricCard = ({
           variant="h2"
           fontWeight={950}
           sx={{
-            color: "#fff",
+            color: "var(--color-white)",
             fontSize: { xs: "2.5rem", md: "3.5rem" },
             lineHeight: 1.1,
             mb: 1,

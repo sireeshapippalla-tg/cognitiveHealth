@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(5),
   paddingBottom: theme.spacing(9),
-  background: "#fff",
+  background: "var(--color-white)",
   position: "relative",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
@@ -32,7 +32,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(6),
   fontSize: "28px",
   fontWeight: 900,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   lineHeight: 1.1,
   letterSpacing: "-0.04em",
   [theme.breakpoints.down("md")]: {
@@ -41,7 +41,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const ContentBox = styled(Box)(({ theme }) => ({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   fontSize: "18px",
   lineHeight: 1.8,
   fontWeight: 500,
@@ -53,14 +53,14 @@ export const ContentBox = styled(Box)(({ theme }) => ({
 }));
 
 export const HighlightText = styled("span")({
-  color: "#F47A20",
+  color: "var(--color-primary)",
   fontWeight: 900,
 });
 
 export const DecoratorLine = styled(Box)({
   width: "60px",
   height: "4px",
-  background: "#6BBF59",
+  background: "var(--color-green)",
   margin: "0 auto",
   marginBottom: "32px",
   borderRadius: "2px",
@@ -69,5 +69,5 @@ export const DecoratorLine = styled(Box)({
 
 export const ItalicText = styled("p")({
   fontStyle: "italic",
-  color: "#374151",
+  color: "var(--color-gray-600)",
 });

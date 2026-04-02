@@ -62,8 +62,8 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
                 boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
                 border: "1px solid rgba(255, 255, 255, 0.5)",
                 "&:hover": {
-                  background: "#fff",
-                  color: "#ef4444",
+                  background: "var(--color-white)",
+                  color: "var(--color-primary)",
                 },
               }}
             >

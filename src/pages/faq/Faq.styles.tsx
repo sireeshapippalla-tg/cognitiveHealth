@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 export const HeroSection = motion(
   styled(Box)(({ theme }) => ({
-    background: "#3b82f6",
+    background: "var(--color-text-blue)",
     padding: "100px 20px",
-    color: "#ffffff",
+    color: "var(--color-white)",
     textAlign: "center",
     position: "relative",
     overflow: "hidden",
@@ -57,11 +57,11 @@ export const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   letterSpacing: "-0.02em",
   lineHeight: 1.1,
-  color: "#ffffff",
+  color: "var(--color-white)",
   marginBottom: "24px",
   "& span": {
     fontWeight: 700,
-    color: "#fff", // changed to white for contrast against blue
+    color: "var(--color-white)", // changed to white for contrast against blue
   },
   [theme.breakpoints.down("md")]: {
     fontSize: "40px",
@@ -87,7 +87,7 @@ export const UpdatedBadge = styled(Box)({
   fontSize: "13px",
   fontWeight: 600,
   letterSpacing: "0.5px",
-  color: "#ffffff",
+  color: "var(--color-white)",
   marginBottom: "40px",
 });
 

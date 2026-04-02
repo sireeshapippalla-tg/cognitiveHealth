@@ -133,48 +133,7 @@ const ResourceTabs = () => {
             </TabButton>
           ))}
         </TabsContainer>
-        {/* 
-        <FilterWrapper>
-          <FormControl size="small" sx={{ minWidth: 140 }}>
-            <Select
-              value={filter}
-              onChange={handleFilterChange}
-              displayEmpty
-              inputProps={{ "aria-label": "Without label" }}
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    zIndex: 5000,
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                    mt: 1
-                  },
-                },
-              }}
-              sx={{
-                fontSize: "14px",
-                bgcolor: "#f9fafb",
-                color: "#64748b",
-                borderRadius: "100px",
-                padding: "2px 12px",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(0,0,0,0.05)",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(0,0,0,0.1)",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "var(--color-primary)",
-                },
-                fontWeight: 600,
-              }}
-            >
-              <MenuItem value="Filter By">Filter By</MenuItem>
-              <MenuItem value="Recent">Recent</MenuItem>
-              <MenuItem value="Popular">Popular</MenuItem>
-            </Select>
-          </FormControl>
-        </FilterWrapper> */}
+       
       </StickyTabsWrapper>
 
       <BlogContainer>

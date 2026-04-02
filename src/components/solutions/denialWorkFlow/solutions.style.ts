@@ -11,7 +11,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   // UNIQUE BACKGROUND: Gradient with brand colors
-  background: "linear-gradient(135deg, #111827 0%, #1F2937 100%)",
+  background: "linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-dark-gray) 100%)",
   padding: "120px 80px",
   position: "relative",
   overflow: "hidden",
@@ -87,7 +87,7 @@ export const StepsRow = styled(Box)(({ theme }) => ({
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
-  color: "#F47A20",
+  color: "var(--color-primary)",
   display: "flex",
   alignItems: "center",
   marginTop: "40px",
@@ -113,11 +113,11 @@ export const IconWrapper = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#F47A20",
+  color: "var(--color-primary)",
   transition: "all 0.3s ease",
   "& svg": { fontSize: "2rem" },
   "&:hover": {
      background: "rgba(244, 122, 32, 0.1)",
-     borderColor: "#F47A20"
+     borderColor: "var(--color-primary)"
   }
 });

@@ -22,7 +22,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 /* CONTAINER */
 export const Container = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
-  background: "#ffffff",
+  background: "var(--color-white)",
   // padding: "32px 16px",
   [theme.breakpoints.up("md")]: { padding: "64px 32px" },
   [theme.breakpoints.down("md")]: { padding: "20px" },
@@ -67,14 +67,14 @@ export const HeaderSubText = styled(Typography)(({ theme }) => ({
 
 /* SECTION CARD */
 export const SectionPaper = styled(Paper)(() => ({
-  // background: "#ffffff",
+  // background: "var(--color-white)",
   // border: "1px solid #e5e7eb",
   // borderRadius: 12,
   // padding: 16,
   // height: "100%",
   // [theme.breakpoints.up("md")]: { padding: 24 },
 
-  background: "#ffffff",
+  background: "var(--color-white)",
   border: "1px solid #e5e7eb",
   borderRadius: 12,
   padding: 20,
@@ -123,30 +123,20 @@ export const FooterCaption = styled(Typography)({
   color: "#6b7280",
 });
 
-/* ICON BASE */
-// const iconStyle = { color: "-var(--color-primary)", fontSize: 18 };
 
-// export const FolderStyledIcon = styled(FolderIcon)(iconStyle);
-// export const PaymentsStyledIcon = styled(PaymentsIcon)(iconStyle);
-// export const HospitalStyledIcon = styled(LocalHospitalIcon)(iconStyle);
-// export const TimeStyledIcon = styled(AccessTimeIcon)(iconStyle);
-// export const AIStyledIcon = styled(SmartToyIcon)(iconStyle);
-// export const HandshakeStyledIcon = styled(HandshakeIcon)(iconStyle);
-// export const TrendingStyledIcon = styled(TrendingDownIcon)(iconStyle);
-// export const InsightsStyledIcon = styled(InsightsIcon)(iconStyle);
 
 export const FolderStyledIcon = styled(FolderIcon)({
-  color: "#6366F1",
+  color: "var(--color-text-blue)",
   fontSize: 22,
 });
 
 export const PaymentsStyledIcon = styled(PaymentsIcon)({
-  color: "#22C55E",
+  color: "var(--color-green)",
   fontSize: 22,
 });
 
 export const HospitalStyledIcon = styled(LocalHospitalIcon)({
-  color: "#F97316",
+  color: "var(--color-primary)",
   fontSize: 22,
 });
 
@@ -195,7 +185,7 @@ export const StyledDialogActions = styled(DialogActions)(() => ({
 
 export const PrimaryButton = styled(Button)(() => ({
   backgroundColor: "var(--color-text-blue)",
-  color: "#fff",
+  color: "var(--color-white)",
   textTransform: "none",
   fontWeight: 500,
   "&:hover": {
@@ -207,7 +197,7 @@ export const HeroSection = styled(Box)({
   background: "var(--color-text-blue)",
   padding: "70px 20px",
   textAlign: "center",
-  color: "#fff",
+  color: "var(--color-white)",
   marginBottom: "40px",
 });
 

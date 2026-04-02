@@ -38,7 +38,7 @@ const TrustDeploymentSection = () => {
             sx={{
               position: "relative",
               borderRadius: "32px",
-              background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)",
+              background: "linear-gradient(135deg, var(--color-white) 0%, #f1f5f9 100%)",
               boxShadow: "0 30px 60px rgba(0, 0, 0, 0.05)",
               border: "1px solid rgba(0, 0, 0, 0.02)",
               overflow: "hidden",
@@ -83,7 +83,7 @@ const TrustDeploymentSection = () => {
                     <Box
                       component="span"
                       sx={{
-                        background: "linear-gradient(90deg, #F47A20, #4A90E2)",
+                        background: "linear-gradient(90deg, var(--color-primary), var(--color-text-blue))",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
@@ -144,7 +144,7 @@ const TrustDeploymentSection = () => {
                       <Typography
                         sx={{
                           fontSize: "0.95rem",
-                          color: "#475569",
+                          color: "var(--color-gray-500)",
                           fontWeight: 700,
                           textTransform: "uppercase",
                           letterSpacing: "1px",
@@ -176,7 +176,7 @@ const TrustDeploymentSection = () => {
                         >
                           <CheckCircleIcon
                             sx={{
-                              color: "#4A90E2",
+                              color: "var(--color-text-blue)",
                               fontSize: "1.8rem",
                               filter:
                                 "drop-shadow(0 4px 6px rgba(74,144,226,0.2))",
@@ -186,7 +186,7 @@ const TrustDeploymentSection = () => {
                             sx={{
                               fontWeight: 600,
                               fontSize: "1.1rem",
-                              color: "#334155",
+                              color: "var(--color-gray-600)",
                             }}
                           >
                             {item}
@@ -213,7 +213,7 @@ const TrustDeploymentSection = () => {
                         textTransform: "none",
                         position: "relative",
                         overflow: "hidden",
-                        background: "#F47A20",
+                        background: "var(--color-primary)",
                         // background:
                         //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
                         color: "white",

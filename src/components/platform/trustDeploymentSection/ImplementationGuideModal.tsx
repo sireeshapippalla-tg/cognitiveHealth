@@ -84,7 +84,7 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
               position: "absolute",
               inset: -2,
               zIndex: -1,
-              background: "linear-gradient(45deg, #4f8dfd, #3b82f6, #6366f1, #4f8dfd)",
+              background: "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
               borderRadius: "34px",
               opacity: 0.4,
               filter: "blur(8px)",
@@ -109,13 +109,13 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                 sx={{
                   width: 40,
                   height: 40,
-                  background: "#fff",
+                  background: "var(--color-white)",
                   color: "#1e293b",
                   boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                  border: "2px solid #fff",
+                  border: "2px solid var(--color-white)",
                   "&:hover": {
-                    background: "#fff",
-                    color: "#ef4444",
+                    background: "var(--color-white)",
+                    color: "var(--color-primary)",
                   },
                 }}
               >
@@ -126,10 +126,10 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
 
           <Box mb={4} textAlign="center">
             <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
-              Get the Transformation Roadmap
+              Get the Implementation Guide
             </Typography>
             <Typography variant="body1" color="#64748b">
-              Enter your work email and we'll send you our complete guide to intelligent revenue cycle automation.
+              Enter your work email and we’ll send you the Implementation Guide.
             </Typography>
           </Box>
 
@@ -155,9 +155,9 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
             
             <Typography
               variant="caption"
-              sx={{ color: "#94a3b8", mt: 1.5, display: "block", textAlign: "center" }}
+              sx={{ color: "var(--color-gray-600)", mt: 1.5, display: "block", textAlign: "center" }}
             >
-              No spam, just the insights you need for clinical and financial excellence.
+             We respect your privacy. No spam.
             </Typography>
 
             <Box mt={4} display="flex" gap={2}>
@@ -192,13 +192,14 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                   fontWeight: 700,
                   background: "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
                   boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
+                  // cursor: loading ? "not-allowed" : "pointer",
                   "&:hover": {
                     background: "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
                     boxShadow: "0 12px 24px rgba(244, 122, 32, 0.4)",
                   },
                 }}
               >
-                {loading ? "Processing..." : "Get the Guide"}
+                {loading ? "Processing..." : "Send Guide"}
               </Button>
             </Box>
           </Box>

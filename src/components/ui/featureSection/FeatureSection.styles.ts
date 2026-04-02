@@ -42,7 +42,7 @@ export const Section = styled(Box, {
   shouldForwardProp: (prop) => prop !== "background",
 })<SectionProps>(({ theme, background, borderRadius }) => ({
   width: "100%",
-  background: background ?? "#ffffff",
+  background: background ?? "var(--color-white)",
   padding: "20px 40px",
   borderRadius: borderRadius ?? "0px",
   [theme.breakpoints.down("md")]: {
@@ -61,12 +61,12 @@ export const Title = styled(Typography, {
   fontSize: "32px",
   fontWeight: 700,
   textAlign: align,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   marginBottom: "8px",
   lineHeight:"40px",
 
   "& span": {
-    color: "#ea580c",
+    color: "var(--color-primary-hover)",
   },
 
   [theme.breakpoints.down("md")]: {
@@ -172,6 +172,6 @@ export const AnimatedTimelineLine = styled(TimelineLine)<{
 }>(({ variant }) => ({
   background:
     variant === "pink"
-      ? "linear-gradient(to bottom, transparent, #F47A20, #E06912, transparent)"
-      : "linear-gradient(to bottom, transparent, #4A90E2, #6BBF59, transparent)",
+      ? "linear-gradient(to bottom, transparent, var(--color-primary), var(--color-primary-dark), transparent)"
+      : "linear-gradient(to bottom, transparent, var(--color-text-blue), var(--color-green), transparent)",
 }));

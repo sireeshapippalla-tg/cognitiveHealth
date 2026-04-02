@@ -8,7 +8,7 @@ export const Hero = styled(Box)(({ theme }) => ({
   textAlign: "center",
   position: "relative",
   overflow: "hidden",
-  background: "linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%)",
+  background: "linear-gradient(180deg, #f0f9ff 0%, var(--color-white) 100%)",
 
   [theme.breakpoints.down("md")]: {
     padding: "100px 16px 60px",
@@ -104,7 +104,7 @@ export const SearchWrapper = styled(Box)(() => ({
   maxWidth: 600,
   margin: "0 auto",
   position: "relative",
-  backgroundColor: "#fff",
+  backgroundColor: "var(--color-white)",
   borderRadius: "100px",
   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)",
   padding: "6px 6px 6px 16px",

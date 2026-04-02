@@ -188,11 +188,11 @@ const ResultsSection = () => {
 
           <FooterText>
             Join{" "}
-            <Box component="span" sx={{ color: "#111827" }}>
+            <Box component="span" sx={{ color: "var(--color-gray-900)" }}>
               50+ healthcare organizations
             </Box>{" "}
             processing{" "}
-            <Box component="span" sx={{ color: "#111827" }}>
+            <Box component="span" sx={{ color: "var(--color-gray-900)" }}>
               10M+ claims monthly
             </Box>{" "}
             with CognitiveHealth
@@ -245,7 +245,7 @@ const ResultsSection = () => {
                 position: "absolute",
                 inset: -2,
                 zIndex: -1,
-                background: "linear-gradient(45deg, #F47A20, #4A90E2, #6BBF59, #F47A20)",
+                background: "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
                 borderRadius: "34px",
                 opacity: 0.4,
                 filter: "blur(8px)",
@@ -260,11 +260,11 @@ const ResultsSection = () => {
                   sx={{
                     width: 40,
                     height: 40,
-                    background: "#fff",
+                    background: "var(--color-white)",
                     color: "#1e293b",
                     boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                    border: "2px solid #fff",
-                    "&:hover": { color: "#ef4444" },
+                    border: "2px solid var(--color-white)",
+                    "&:hover": { color: "var(--color-primary-hover)" },
                   }}
                 >
                   <CloseIcon fontSize="small" />
@@ -304,10 +304,10 @@ const ResultsSection = () => {
                 mt: 4,
                 py: 2,
                 borderRadius: "16px",
-                background: "#F47A20",
+                background: "var(--color-primary)",
                 fontWeight: 800,
                 boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
-                "&:hover": { background: "#e06910" },
+                "&:hover": { background: "var(--color-primary-dark)" },
               }}
             >
               {loading ? "Sending..." : "Send Report"}
@@ -361,7 +361,7 @@ const ResultsSection = () => {
                 position: "absolute",
                 inset: -2,
                 zIndex: -1,
-                background: "linear-gradient(45deg, #F47A20, #4A90E2, #6BBF59, #F47A20)",
+                background: "linear-gradient(45deg, var(--color-primary), var(--color-text-blue), var(--color-green), var(--color-primary))",
                 borderRadius: "42px",
                 opacity: 0.4,
                 filter: "blur(10px)",
@@ -376,11 +376,11 @@ const ResultsSection = () => {
                   sx={{
                     width: 44,
                     height: 44,
-                    background: "#fff",
+                    background: "var(--color-white)",
                     color: "#1e293b",
                     boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                    border: "2px solid #fff",
-                    "&:hover": { color: "#ef4444" },
+                    border: "2px solid var(--color-white)",
+                    "&:hover": { color: "var(--color-primary-hover)" },
                   }}
                 >
                   <CloseIcon />
@@ -425,19 +425,19 @@ const ResultsSection = () => {
                       width: 48,
                       height: 48,
                       borderRadius: "16px",
-                      background: "#fff",
+                      background: "var(--color-white)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
                     }}
                   >
-                    <PictureAsPdfIcon sx={{ color: "#F47A20", fontSize: 24 }} />
+                    <PictureAsPdfIcon sx={{ color: "var(--color-primary)", fontSize: 24 }} />
                   </Box>
                   <Typography fontWeight={700} sx={{ flex: 1, color: "#1f2937" }}>
                     {pdf.name}
                   </Typography>
-                  <ArrowForwardIosIcon sx={{ fontSize: 16, color: "#F47A20" }} />
+                  <ArrowForwardIosIcon sx={{ fontSize: 16, color: "var(--color-primary)" }} />
                 </Box>
               ))}
             </Box>
@@ -450,7 +450,7 @@ const ResultsSection = () => {
         open={openPdfViewer}
         onClose={handleCloseAll}
         fullScreen
-        PaperProps={{ sx: { background: "#fff" } }}
+        PaperProps={{ sx: { background: "var(--color-white)" } }}
         TransitionComponent={Fade}
       >
         <Box
@@ -460,7 +460,7 @@ const ResultsSection = () => {
             justifyContent: "space-between",
             alignItems: "center",
             borderBottom: "1px solid #f1f5f9",
-            background: "#fff",
+            background: "var(--color-white)",
             zIndex: 10,
           }}
         >

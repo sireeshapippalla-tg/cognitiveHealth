@@ -7,7 +7,7 @@ export const StyledCard = styled(Card)(() => ({
   textAlign: "center",
   boxShadow: "0 0 0 1px #e5e7eb",
   height: "100%",
-  backgroundColor: "#fff7f0",
+  backgroundColor: "var(--color-white)7f0",
 }));
 
 /* Avatar */

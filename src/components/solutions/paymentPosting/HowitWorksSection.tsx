@@ -41,7 +41,7 @@ const HowItWorksSection = () => {
       subtitle="Intelligent end-to-end automation from payment intake to final reconciliation"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

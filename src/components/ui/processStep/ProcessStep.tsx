@@ -25,7 +25,7 @@ export const ProcessStep = ({ icon, title, description }: ProcessStepProps) => (
         height: "80px",
         borderRadius: "24px",
         background: "rgba(107, 191, 89, 0.1)",
-        color: "#6BBF59",
+        color: "var(--color-green)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -34,8 +34,8 @@ export const ProcessStep = ({ icon, title, description }: ProcessStepProps) => (
         boxShadow: "0 10px 30px rgba(107, 191, 89, 0.1)",
         "& svg": { fontSize: "2.5rem" },
         "&:hover": {
-          background: "#6BBF59",
-          color: "#fff",
+          background: "var(--color-green)",
+          color: "var(--color-white)",
           boxShadow: "0 20px 40px rgba(107, 191, 89, 0.3)"
         }
       }}>
@@ -48,7 +48,7 @@ export const ProcessStep = ({ icon, title, description }: ProcessStepProps) => (
         fontWeight={850}
         sx={{
           fontSize: "1.2rem",
-          color: "#111827",
+          color: "var(--color-gray-900)",
           mb: 1.5,
           lineHeight: 1.3,
           letterSpacing: "-0.01em"
@@ -60,7 +60,7 @@ export const ProcessStep = ({ icon, title, description }: ProcessStepProps) => (
       <Typography
         sx={{
           fontSize: "1rem",
-          color: "#6B7280",
+          color: "var(--color-gray-500)",
           lineHeight: 1.6,
           fontWeight: 400
         }}

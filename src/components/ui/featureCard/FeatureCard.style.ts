@@ -124,6 +124,6 @@ export const LearnMoreButton = styled(Button)({
   zIndex: 1,
   "&:hover": {
     background: "transparent",
-    color: "#F47A20",
+    color: "var(--color-primary)",
   },
 });

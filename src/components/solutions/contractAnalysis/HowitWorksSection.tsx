@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
       subtitle="Ensuring clinical outcomes are matched by financial performance through rigorous contract compliance"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

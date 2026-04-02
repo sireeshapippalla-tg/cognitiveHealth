@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 /* CARD */
 export const CardRoot = styled(Box)(({ theme }) => ({
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   borderRadius: "16px",
   padding: "24px",
   border: "1px solid #e5e7eb",
@@ -35,7 +35,7 @@ export const IconWrapper = styled(Box)({
 export const CardTitle = styled(Typography)({
   fontSize: "16px",
   fontWeight: 600,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   marginBottom: "8px",
 });
 

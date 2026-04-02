@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
       subtitle="Transforming paper and digital lockbox data into actionable financial intelligence"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

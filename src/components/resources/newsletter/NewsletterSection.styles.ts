@@ -7,7 +7,7 @@ export const NewsletterWrapper = motion(styled(Box)(({ theme }) => ({
   borderRadius: "32px",
   padding: "80px 48px",
   textAlign: "center",
-  color: "#ffffff",
+  color: "var(--color-white)",
   position: "relative",
   overflow: "hidden",
   marginTop: "100px",
@@ -62,7 +62,7 @@ export const ButtonContainer = styled(Box)(({ theme }) => ({
 
 export const PrimaryButton = styled(Button)({
   backgroundColor: "var(--color-primary)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "14px 36px",
   borderRadius: "100px",
   fontSize: "16px",
@@ -79,7 +79,7 @@ export const PrimaryButton = styled(Button)({
 
 export const SecondaryButton = styled(Button)({
   backgroundColor: "rgba(255, 255, 255, 0.1)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "14px 36px",
   borderRadius: "100px",
   fontSize: "16px",

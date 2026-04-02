@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const FooterRoot = styled(Box)(({ theme }) => ({
   backgroundColor: "#2F2F2F",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "30px 80px",
 
   [theme.breakpoints.down("md")]: {
@@ -42,7 +42,7 @@ export const LogoWrapper = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
   padding: "10px 14px",
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   borderRadius: "10px",
   marginBottom: "16px",
   cursor:"pointer",
@@ -79,7 +79,7 @@ export const Heading = styled(Typography)({
   fontSize: 15,
   fontWeight: 600,
   marginBottom: 16,
-  color: "#ffffff",
+  color: "var(--color-white)",
 });
 
 /* LIST */
@@ -93,7 +93,7 @@ export const ListItem = styled("li")({
   // fontFamily: "Inter",
   fontSize: '14px',
   fontWeight: 400,
-  color: "#ECECEC",
+  color: "var(--color-white)",
   marginBottom: 5,
   cursor: "pointer",
 
@@ -107,17 +107,17 @@ export const FooterDivider = styled(Divider)({
   margin: "40px 0 24px",
   // width: '1224px',
   border: "1px solid",
-  backgroundColor: "#9F9F9F",
+  backgroundColor: "var(--color-gray-500)",
 });
 
 /* BOTTOM */
 export const Bottom = styled(Stack)(({ theme }) => ({
   // fontFamily: "Inter",
   fontSize: '14px',
-  color: "#cfd3d8",
+  color: "var(--color-gray-500)",
 
   "& a": {
-    color: "#EB7724",
+    color: "var(--color-primary)",
   },
 
   [theme.breakpoints.down("sm")]: {

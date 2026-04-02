@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(10),
   paddingBottom: theme.spacing(10),
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   position: "relative",
   overflow: "hidden",
   [theme.breakpoints.down("xs")]: {
@@ -114,5 +114,5 @@ export const CardDescription = styled(Typography)({
 });
 
 export const HighlightText = styled("span")({
-  color: "#E06912",
+  color: "var(--color-primary)",
 });

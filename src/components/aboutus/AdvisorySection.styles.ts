@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(12),
   paddingBottom: theme.spacing(15),
-  background: "#fff",
+  background: "var(--color-white)",
   position: "relative",
   overflow: "hidden",
   [theme.breakpoints.down("md")]: {
@@ -34,7 +34,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   marginBottom: theme.spacing(3),
   fontSize: "28px",
-  color: "#1F2937",
+  color: "var(--color-dark-gray)",
   letterSpacing: "-0.04em",
   lineHeight: 1.1,
   [theme.breakpoints.down("md")]: {
@@ -43,7 +43,7 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const SectionSubtitle = styled(Typography)({
-  color: "#6B7280",
+  color: "var(--color-gray-500)",
   maxWidth: "650px",
   margin: "0 auto",
   fontSize: "1.2rem",
@@ -70,7 +70,7 @@ export const AdvisorCardWrapper = styled(Box, {
     transform: "scale(1.1) rotate(5deg)",
     boxShadow: "0 20px 40px rgba(107, 191, 89, 0.2)",
   },
-  "&:hover .advisor-name": { color: "#F47A20" },
+  "&:hover .advisor-name": { color: "var(--color-primary)" },
 }));
 
 export const AdvisorAvatar = styled(Box)(({ theme }) => ({
@@ -84,7 +84,7 @@ export const AdvisorAvatar = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   fontSize: "3.5rem",
   fontWeight: 900,
-  color: "#6BBF59",
+  color: "var(--color-green)",
   transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
   border: "1px solid rgba(107, 191, 89, 0.2)",
   boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
@@ -97,7 +97,7 @@ export const AdvisorAvatar = styled(Box)(({ theme }) => ({
 
 export const AdvisorName = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
-  color: "#1F2937",
+  color: "var(--color-dark-gray)",
   fontWeight: 900,
   fontSize: "25px",
   transition: "color 0.3s ease",
@@ -110,7 +110,7 @@ export const AdvisorName = styled(Typography)(({ theme }) => ({
 export const AdvisorRole = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "isMobile",
 })<{ isMobile?: boolean }>(({ isMobile }) => ({
-  color: "#F47A20",
+  color: "var(--color-primary)",
   fontWeight: 800,
   fontSize: isMobile ? "16px" : "18px",
   marginBottom: "24px",
@@ -128,7 +128,7 @@ export const AdvisorRole = styled(Typography, {
 }));
 
 export const AdvisorDescription = styled(Typography)({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   fontSize: "1.15rem",
   lineHeight: 1.8,
   maxWidth: "750px",

@@ -105,13 +105,13 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
                 sx={{
                   width: isMobile ? 36 : 44,
                   height: isMobile ? 36 : 44,
-                  background: "#fff",
+                  background: "var(--color-white)",
                   color: "#1e293b",
                   boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                  border: "2px solid #fff",
+                  border: "2px solid var(--color-white)",
                   "&:hover": {
-                    background: "#fff",
-                    color: "#ef4444",
+                    background: "var(--color-white)",
+                    color: "var(--color-primary-hover)",
                   },
                 }}
               >
@@ -179,7 +179,7 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
 
                 <Typography
                   sx={{
-                    color: "#3b82f6",
+                    color: "var(--color-text-blue)",
                     fontWeight: 800,
                     fontSize: isMobile ? "0.8rem" : "0.95rem",
                     textTransform: "uppercase",

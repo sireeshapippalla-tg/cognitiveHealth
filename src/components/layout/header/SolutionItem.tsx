@@ -46,7 +46,7 @@ export const SolutionItem = ({
 
         "&:hover": {
           backgroundColor: "#ecfdf5",
-          color: "#16a34a",
+          color: "var(--color-green)",
         },
       }}
     >
@@ -79,12 +79,12 @@ export const SolutionItem = ({
           transition: "all 0.2s ease",
 
           // "&:hover": {
-          //   backgroundColor: "#fff7ed",
+          //   backgroundColor: "var(--color-white)7ed",
           // },
 
           "&:hover": {
             // backgroundColor: "#ecfdf5",
-            color: "#16a34a",
+            color: "var(--color-green)",
           },
         }}
       >
@@ -102,7 +102,7 @@ export const SolutionItem = ({
         <Typography fontSize={14} color="#6b7280">
           {desc}
         </Typography> */}
-        <Typography fontWeight={600} fontSize="15px" color="#111827" >
+        <Typography fontWeight={600} fontSize="15px" color="var(--color-gray-900)" >
           {title}
         </Typography>
 

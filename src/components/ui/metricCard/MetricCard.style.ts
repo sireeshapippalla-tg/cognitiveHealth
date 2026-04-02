@@ -19,7 +19,7 @@ export const StyledCard = styled(Card)({
 });
 
 export const ValueText = styled(Typography)(({ theme }) => ({
-  color: "#EB7724",
+  color: "var(--color-primary)",
   // fontFamily: "Inter",
   fontWeight: 600,
   // marginBottom: "12px",

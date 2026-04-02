@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
       subtitle="An intelligent approach to detecting, resolving, and preventing healthcare claim denials"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

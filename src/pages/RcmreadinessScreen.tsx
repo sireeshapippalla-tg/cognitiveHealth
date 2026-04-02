@@ -278,7 +278,7 @@ const RCMReadinessScreen: React.FC = () => {
             position: "sticky",
             top: 60,
             zIndex: 1000,
-            background: "#fff",
+            background: "var(--color-white)",
             paddingTop: "16px",
             paddingBottom: "16px",
             borderBottom: "1px solid #e5e7eb",
@@ -397,7 +397,7 @@ const RCMReadinessScreen: React.FC = () => {
                     You have checked <strong>{score}</strong> boxes.
                   </Typography>
 
-                  <Typography align="center" color="#374151">
+                  <Typography align="center" color="var(--color-gray-600)">
                     {score >= 15 ? (
                       <>
                         If you checked <strong>15 or more boxes</strong>, your
@@ -413,7 +413,7 @@ const RCMReadinessScreen: React.FC = () => {
                     )}
                   </Typography>
 
-                  <Typography align="center" color="#374151">
+                  <Typography align="center" color="var(--color-gray-600)">
                     {score >= 15 ? (
                       <>
                         You are likely facing significant manual burdens and
@@ -500,7 +500,7 @@ const RCMReadinessScreen: React.FC = () => {
                   position: "absolute",
                   inset: -2,
                   zIndex: -1,
-                  background: "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
+                  background: "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
                   borderRadius: "34px",
                   opacity: 0.4,
                   filter: "blur(8px)",
@@ -515,11 +515,11 @@ const RCMReadinessScreen: React.FC = () => {
                     sx={{
                       width: 40,
                       height: 40,
-                      background: "#fff",
+                      background: "var(--color-white)",
                       color: "#1e293b",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                      border: "2px solid #fff",
-                      "&:hover": { color: "#ef4444" },
+                      border: "2px solid var(--color-white)",
+                      "&:hover": { color: "var(--color-primary-dark)" },
                     }}
                   >
                     <CloseIcon fontSize="small" />

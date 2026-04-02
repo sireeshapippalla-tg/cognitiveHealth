@@ -2,7 +2,7 @@ import { styled, Box, Typography, Button } from "@mui/material";
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   padding: "30px 80px",
-  backgroundColor: "#fff7f2",
+  backgroundColor: "var(--color-white)7f2",
   
   [theme.breakpoints.down("md")]: {
     padding: "20px",
@@ -12,7 +12,7 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
 export const InnerContainer = styled(Box)(({ theme }) => ({
 //   maxWidth: 1100,
   margin: "0 auto",
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   borderRadius: 16,
   padding: theme.spacing(6),
   boxShadow: "0 10px 30px rgba(0,0,0,0.06)",

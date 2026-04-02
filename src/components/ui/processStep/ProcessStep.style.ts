@@ -15,14 +15,14 @@ export const IconBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#ffffff",
+  color: "var(--color-white)",
   margin: "0 auto 14px",
 });
 
 export const StepTitle = styled(Typography)({
   fontSize: "16px",
   fontWeight: 700,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   marginBottom: "6px",
 });
 

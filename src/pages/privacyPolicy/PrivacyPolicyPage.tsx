@@ -487,7 +487,7 @@ const PrivacyPolicyPage = () => {
                             <Box sx={{
                               fontSize: "12px",
                               fontWeight: 600,
-                              color: "#E8671A",
+                              color: "var(--color-primary-dark)",
                               textTransform: "uppercase",
                               letterSpacing: "0.5px",
                               mb: 1
@@ -519,7 +519,7 @@ const PrivacyPolicyPage = () => {
                                     <Typography
                                       key={bIndex}
                                       variant="h6"
-                                      sx={{ mt: 3, mb: 2, fontWeight: 500, color: '#111827', fontSize: '18px' }}
+                                      sx={{ mt: 3, mb: 2, fontWeight: 500, color: 'var(--color-gray-900)', fontSize: '18px' }}
                                     >
                                       {block.text}
                                     </Typography>

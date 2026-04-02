@@ -52,7 +52,7 @@ export const PlayIconOverlay = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#ffffff",
+  color: "var(--color-white)",
   zIndex: 2,
   boxShadow: "0 0 20px rgba(235, 123, 51, 0.4)",
   transition: "all 0.3s ease",
@@ -81,7 +81,7 @@ export const DurationBadge = styled(Box)({
   bottom: "16px",
   right: "16px",
   backgroundColor: "rgba(15, 23, 42, 0.8)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "4px 10px",
   borderRadius: "6px",
   fontSize: "12px",
@@ -102,7 +102,7 @@ export const CardTitle = styled(Typography)({
   fontSize: "20px",
   fontWeight: 800,
   lineHeight: "1.4",
-  color: "#0f172a",
+  color: "var(--color-text-dark)",
   letterSpacing: "-0.02em",
   ".MuiCard-root:hover &": {
     color: "var(--color-primary)",
@@ -112,7 +112,7 @@ export const CardTitle = styled(Typography)({
 export const CardDescription = styled(Typography)({
   fontSize: "15px",
   lineHeight: "1.6",
-  color: "#475569",
+  color: "var(--color-gray-500)",
   marginBottom: "16px",
 });
 

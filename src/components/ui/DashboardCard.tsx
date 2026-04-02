@@ -9,7 +9,7 @@ interface DashboardCardProps {
 export const DashboardCard = ({ children, sx = {} }: DashboardCardProps) => (
   <Box
     sx={{
-      backgroundColor: "#ffffff",
+      backgroundColor: "var(--color-white)",
       borderRadius: "16px",
       padding: "10px",
       boxShadow:

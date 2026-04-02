@@ -4,9 +4,16 @@
   --color-text-dark: #0e0e0e;
   --color-text-muted: #555555;
   --color-border-light: #e5e7eb;
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-text-light: #2f2f2f;
   --color-text-blue: #3b82f6;
-  --color-bg-lite:#f9fafb;
-  --color-green:#79bb43;
+  --color-bg-lite: #f9fafb;
+  --color-green: #79bb43;
+  --color-dark-gray: #1f2937;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4B5563;
+  --color-gray-900: #111827;
+  --color-error:#FF0000;
+ 
+
 }
