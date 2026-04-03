@@ -51,7 +51,7 @@ export const NavItemWrapper = styled(Box, {
   padding: "16px",
   paddingRight: "32px",
   borderRadius: "20px",
-  background: isActive ? "#ffffff" : "transparent",
+  background: isActive ? "var(--color-white)" : "transparent",
   boxShadow: isActive ? "0 20px 40px rgba(0,0,0,0.06)" : "none",
   border: "1px solid",
   borderColor: isActive ? "rgba(74, 144, 226, 0.2)" : "transparent",
@@ -60,7 +60,7 @@ export const NavItemWrapper = styled(Box, {
   cursor: "pointer",
   position: "relative",
   "&:hover": {
-    background: isActive ? "#ffffff" : "rgba(255,255,255,0.4)",
+    background: isActive ? "var(--color-white)" : "rgba(255,255,255,0.4)",
   },
 }));
 
@@ -111,7 +111,7 @@ export const ActiveIndicator = styled(motion.div)({
 export const DisplayStageBox = styled(Box)(({ theme }) => ({
   position: "relative",
   borderRadius: "32px",
-  background: "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)",
+  background: "linear-gradient(135deg, var(--color-white) 0%, #f1f5f9 100%)",
   border: "1px solid rgba(255,255,255,0.8)",
   boxShadow: "0 40px 80px rgba(0, 0, 0, 0.08)",
   overflow: "hidden",
@@ -187,5 +187,5 @@ export const StageDescription = styled(Typography)({
 });
 
 export const HighlightText = styled("span")({
-  color: "#4A90E2",
+  color: "var(--color-text-blue)",
 });

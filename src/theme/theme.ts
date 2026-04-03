@@ -4,7 +4,7 @@ const theme = createTheme({
   palette: {
     text: {
       primary: "#000000", // ✅ headings become pure black
-      secondary: "#4B5563", // ✅ body text gray
+      // secondary: "var(--color-gray-600)", // ✅ body text gray
     },
   },
 

@@ -62,7 +62,7 @@ export const MetricWrapper = styled(Box)({
 export const MetricValue = styled(Typography)({
   fontSize: "18px",
   fontWeight: 800,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   display: "flex",
   alignItems: "center",
   textAlign: "center",

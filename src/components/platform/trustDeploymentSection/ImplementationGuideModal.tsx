@@ -1,16 +1,16 @@
 import {
   Dialog,
-  DialogContent,
-  DialogActions,
   TextField,
   Typography,
   Button,
   Box,
   IconButton,
+  Fade,
 } from "@mui/material";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 interface Props {
   open: boolean;
@@ -26,10 +26,8 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
 
     try {
       setLoading(true);
-
-      // Replace this with your API call
+      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       toast.success("Guide sent successfully. Please check your inbox.");
       setEmail("");
       onClose();
@@ -42,82 +40,172 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
   };
 
   return (
-    <>
-      <Dialog
-        open={open}
-        onClose={onClose}
-        maxWidth="sm"
-        fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: 3,
-            overflow: "hidden",
+    <Dialog
+      open={open}
+      onClose={onClose}
+      maxWidth="sm"
+      fullWidth
+      slotProps={{
+        backdrop: {
+          style: {
+            backgroundColor: "rgba(10, 15, 30, 0.4)",
+            backdropFilter: "blur(12px)",
           },
-        }}
+        },
+      }}
+      PaperProps={{
+        sx: {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          overflow: "visible",
+          outline: "none",
+        },
+      }}
+      TransitionComponent={Fade}
+      transitionDuration={400}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
       >
-        {/* <DialogTitle>Get the Implementation Guide</DialogTitle> */}
-         <Box
-        sx={{
-          background: "linear-gradient(90deg, #4F8DFD, #3B82F6)",
-          color: "#fff",
-          px: 3,
-          py: 2,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Typography variant="h6" fontWeight={600}>
-          Get the Implementation Guide
-        </Typography>
-
-        <IconButton
-          onClick={onClose}
+        <Box
           sx={{
-            backgroundColor: "rgba(255,255,255,0.2)",
-            color: "#fff",
-            "&:hover": {
-              backgroundColor: "rgba(255,255,255,0.3)",
+            position: "relative",
+            background: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "32px",
+            padding: 5,
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            overflow: "visible",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              inset: -2,
+              zIndex: -1,
+              background: "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
+              borderRadius: "34px",
+              opacity: 0.4,
+              filter: "blur(8px)",
             },
           }}
-          size="small"
         >
-          <CloseIcon />
-        </IconButton>
-      </Box>
-
-        <DialogContent>
-          <Typography variant="body2" mb={2}>
-            Enter your work email and we’ll send you the Implementation Guide.
-          </Typography>
-
-          <TextField
-            fullWidth
-            label="Work Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <Typography
-            variant="caption"
-            color="text.secondary"
-            mt={1}
-            display="block"
+          {/* Close Button - Detached */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: -18,
+              right: -18,
+              zIndex: 10,
+            }}
           >
-            We respect your privacy. No spam.
-          </Typography>
-        </DialogContent>
+            <motion.div
+              whileHover={{ scale: 1.15, rotate: 90 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <IconButton
+                onClick={onClose}
+                sx={{
+                  width: 40,
+                  height: 40,
+                  background: "var(--color-white)",
+                  color: "#1e293b",
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
+                  border: "2px solid var(--color-white)",
+                  "&:hover": {
+                    background: "var(--color-white)",
+                    color: "var(--color-primary)",
+                  },
+                }}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </motion.div>
+          </Box>
 
-        <DialogActions>
-          <Button onClick={onClose}>Close</Button>
+          <Box mb={4} textAlign="center">
+            <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
+              Get the Implementation Guide
+            </Typography>
+            <Typography variant="body1" color="#64748b">
+              Enter your work email and we’ll send you the Implementation Guide.
+            </Typography>
+          </Box>
 
-          <Button variant="contained" onClick={handleSubmit} disabled={loading || !email}>
-            {loading ? "Sending..." : "Send Guide"}
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
+            <TextField
+              fullWidth
+              label="Work Email Address"
+              type="email"
+              variant="outlined"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                mb: 2,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "16px",
+                  backgroundColor: "rgba(248, 250, 252, 0.8)",
+                  "& fieldset": {
+                    borderColor: "rgba(226, 232, 240, 1)",
+                  },
+                },
+              }}
+            />
+            
+            <Typography
+              variant="caption"
+              sx={{ color: "var(--color-gray-600)", mt: 1.5, display: "block", textAlign: "center" }}
+            >
+             We respect your privacy. No spam.
+            </Typography>
+
+            <Box mt={4} display="flex" gap={2}>
+              <Button
+                fullWidth
+                variant="outlined"
+                onClick={onClose}
+                sx={{
+                  borderRadius: "16px",
+                  py: 1.8,
+                  textTransform: "none",
+                  fontWeight: 700,
+                  borderColor: "#e2e8f0",
+                  color: "#64748b",
+                  "&:hover": {
+                    borderColor: "#cbd5e1",
+                    backgroundColor: "#f8fafc",
+                  },
+                }}
+              >
+                Not now
+              </Button>
+              <Button
+                fullWidth
+                variant="contained"
+                onClick={handleSubmit}
+                disabled={loading || !email}
+                sx={{
+                  borderRadius: "16px",
+                  py: 1.8,
+                  textTransform: "none",
+                  fontWeight: 700,
+                  background: "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
+                  boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
+                  // cursor: loading ? "not-allowed" : "pointer",
+                  "&:hover": {
+                    background: "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
+                    boxShadow: "0 12px 24px rgba(244, 122, 32, 0.4)",
+                  },
+                }}
+              >
+                {loading ? "Processing..." : "Send Guide"}
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </motion.div>
+    </Dialog>
   );
 };
 

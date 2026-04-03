@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 
 export const BlogContainer = styled(Box)(({ theme }) => ({
   padding: "60px 80px",
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   [theme.breakpoints.down("md")]: {
     padding: "40px 20px",
   },
@@ -84,7 +84,7 @@ export const TabText = styled("span")<{
 }>(({ $active }) => ({
   position: "relative",
   zIndex: 1,
-  color: $active ? "#ffffff" : "#64748b",
+  color: $active ? "var(--color-white)" : "#64748b",
   transition: "color 0.3s ease",
 }));
 

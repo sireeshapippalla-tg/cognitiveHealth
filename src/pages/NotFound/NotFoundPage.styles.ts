@@ -14,7 +14,7 @@ export const Card = styled(Box)(({ theme }) => ({
   textAlign: "center",
   maxWidth: "520px",
   width: "100%",
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   padding: "48px 32px",
   borderRadius: "20px",
   boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
@@ -35,7 +35,7 @@ export const ErrorCode = styled(Typography)({
 export const Title = styled(Typography)({
   fontSize: "24px",
   fontWeight: 700,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   marginBottom: "12px",
 });
 
@@ -58,7 +58,7 @@ export const Actions = styled(Box)(({ theme }) => ({
 
 export const PrimaryButton = styled(Button)({
   backgroundColor: "var(--color-text-blue)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "10px 20px",
   borderRadius: "999px",
   textTransform: "none",
@@ -71,7 +71,7 @@ export const PrimaryButton = styled(Button)({
 
 export const SecondaryButton = styled(Button)({
   borderColor: "#d1d5db",
-  color: "#111827",
+  color: "var(--color-gray-900)",
   padding: "10px 20px",
   borderRadius: "999px",
   textTransform: "none",

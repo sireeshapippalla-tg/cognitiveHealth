@@ -32,7 +32,7 @@ export const Pill = styled(Box, {
   backgroundColor: variant === "orange" ? "-var(--color-primary)" : "var(--color-text-blue)",
 
   // fontFamily: "Inter",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "4px 14px",
   borderRadius: "999px",
   fontSize: "14px",

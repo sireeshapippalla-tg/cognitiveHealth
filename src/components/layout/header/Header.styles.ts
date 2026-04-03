@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Box } from "@mui/material";
 
 /* APP BAR */
 export const StyledAppBar = styled(AppBar)(({theme}) => ({
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   borderBottom: "1px solid #e5e7eb",
   // padding:"10px 30px"
    padding: "0px 60px",

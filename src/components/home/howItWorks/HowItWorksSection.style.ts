@@ -25,7 +25,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const StepsCard = styled(Box)({
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   borderRadius: "16px",
   // border: "1px solid #ECECEC",
   // padding: "28px 24px",
@@ -45,7 +45,7 @@ export const StepsRow = styled(Box)(({ theme }) => ({
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
-  color: "#EB7724",
+  color: "var(--color-primary)",
   display: "flex",
   alignItems: "center",
   margin: "0 12px",

@@ -49,7 +49,7 @@ const HowItWorksSection = () => {
       subtitle="Ensuring accurate coverage and reducing front-end denials through automated verification"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

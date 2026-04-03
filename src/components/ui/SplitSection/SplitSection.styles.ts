@@ -47,7 +47,7 @@ export const GridWrapper = styled(Box, {
 export const Eyebrow = styled(Typography)(({ theme }) => ({
   display: "inline-block",
   fontWeight: "bold",
-  color: "#1F2937",
+  color: "var(--color-dark-gray)",
   marginBottom: "8px",
   lineHeight: 1.2,
   fontSize: "2.8rem",
@@ -60,7 +60,7 @@ export const Eyebrow = styled(Typography)(({ theme }) => ({
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontWeight: "bold",
-  color: "#1F2937",
+  color: "var(--color-dark-gray)",
   marginBottom: "20px",
   lineHeight: 1.2,
   fontSize: "2.8rem",
@@ -72,7 +72,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Description = styled(Typography)(({ theme }) => ({
-  color: "#6B7280",
+  color: "var(--color-gray-500)",
   fontSize: "1.1rem",
   lineHeight: 1.6,
   marginBottom: "32px",
@@ -99,7 +99,8 @@ export const PrimaryButton = styled(Button)(() => ({
   textTransform: "none",
   position: "relative",
   overflow: "hidden",
-  background: "#F47A20",
+  background: "var(--color-primary)",
+  color: "var(--color-white)",
   fontSize: "1rem",
   padding: "10px 24px",
   boxShadow: "0 10px 20px rgba(244,122,32,0.2)",
@@ -125,14 +126,14 @@ export const SecondaryButton = styled(Button)(() => ({
   borderRadius: "40px",
   textTransform: "none",
   fontWeight: 600,
-  borderColor: "#F47A20",
-  color: "#F47A20",
+  borderColor: "var(--color-primary)",
+  color: "var(--color-primary)",
   fontSize: "1rem",
   padding: "10px 24px",
 
   "&:hover": {
     background: "rgba(107,191,89,0.05)",
-    borderColor: "#F47A20",
+    borderColor: "var(--color-primary)",
   },
 }));
 
@@ -140,7 +141,7 @@ export const SecondaryButton = styled(Button)(() => ({
 export const ImageCard = styled(Box)(() => ({
   borderRadius: "20px",
   overflow: "hidden",
-  background: "#fff",
+  background: "var(--color-white)",
   border: "1px solid #E5E7EB",
   boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
 }));
@@ -156,7 +157,7 @@ export const BlobTop = styled(motion.div)(() => ({
   position: "absolute",
   width: 220,
   height: 220,
-  background: "radial-gradient(circle, #F47A20, transparent)",
+  background: "radial-gradient(circle, var(--color-primary-dark), transparent)",
   filter: "blur(100px)",
   top: "-60px",
   left: "-60px",
@@ -176,7 +177,7 @@ export const BlobBottom = styled(motion.div)(() => ({
 
 export const Highlight = styled("span")(() => ({
   fontWeight: 900,
-  background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
+  background: "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   animation: "gradientMove 5s linear infinite",

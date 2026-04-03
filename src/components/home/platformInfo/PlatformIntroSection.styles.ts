@@ -7,8 +7,8 @@ export const Section = styled(Box)(({ theme }) => ({
   padding: "80px 32px",
   display: "flex",
   justifyContent: "center",
-  background: "radial-gradient(circle at center, #ffffff, #f1f5f9)",
-  color: "#0f172a",
+  background: "radial-gradient(circle at center, var(--color-white), #f1f5f9)",
+  color: "var(--color-text-dark)",
   position: "relative",
   overflow: "hidden",
 
@@ -22,7 +22,7 @@ export const Glow = styled(Box)(() => ({
   position: "absolute",
   width: "400px",
   height: "400px",
-  background: "radial-gradient(circle, #4A90E2 10%, transparent 70%)",
+  background: "radial-gradient(circle, var(--color-text-blue) 10%, transparent 70%)",
   filter: "blur(120px)",
   top: "-100px",
   left: "50%",
@@ -62,7 +62,7 @@ export const BadgeText = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   letterSpacing: "1.5px",
   textTransform: "uppercase",
-  color: "#fff",
+  color: "var(--color-white)",
 
   [theme.breakpoints.down("md")]: {
     letterSpacing: "1px",
@@ -91,7 +91,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const Highlight = styled("span")(() => ({
   fontStyle: "italic",
   fontFamily: "'Playfair Display', serif",
-  background: "linear-gradient(90deg, #E06912, #D4AF37)",
+  background: "linear-gradient(90deg, var(--color-primary), #D4AF37)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 }));
@@ -105,12 +105,12 @@ export const Break = styled("br")(({ theme }) => ({
 }));
 
 export const NormalText = styled("span")(() => ({
-  color: "#0f172a",
+  color: "var(--color-text-dark)",
 }));
 
 /* SUBTITLE */
 export const Subtitle = styled(Typography)(({ theme }) => ({
-  color: "#475569",
+  color: "var(--color-gray-600)",
   fontSize: "1.125rem",
   lineHeight: 1.7,
   maxWidth: "860px",

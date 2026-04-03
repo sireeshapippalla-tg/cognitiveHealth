@@ -12,7 +12,7 @@ export const StyledCard = motion(styled(Card)(() => ({
   boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
   overflow: "hidden",
   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-  backgroundColor: "#FFFFFF",
+  backgroundColor: "var(--color-white)",
   "&:hover": {
     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
     transform: "translateY(-8px)",
@@ -46,7 +46,7 @@ export const CategoryChip = styled(Chip)({
   top: "16px",
   left: "16px",
   backgroundColor: "var(--color-primary)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   fontWeight: 700,
   fontSize: "12px",
   height: "28px",
@@ -59,7 +59,7 @@ export const MetricBadge = styled(Box)({
   bottom: "16px",
   right: "16px",
   backgroundColor: "rgba(15, 23, 42, 0.8)",
-  color: "#ffffff",
+  color: "var(--color-white)",
   padding: "8px 16px",
   borderRadius: "12px",
   textAlign: "center",
@@ -102,7 +102,7 @@ export const CardTitle = styled(Typography)({
 export const CardDescription = styled(Typography)({
   fontSize: "15px",
   lineHeight: "1.6",
-  color: "#475569",
+  color: "var(--color-gray-600)",
   marginBottom: "16px",
 });
 

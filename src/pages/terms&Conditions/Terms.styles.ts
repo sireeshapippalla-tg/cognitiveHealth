@@ -6,7 +6,7 @@ import { Box, Typography } from "@mui/material";
 export const HeroSection = styled(Box)(({ theme }) => ({
   background: "var(--color-text-blue)",
   padding: "80px 20px",
-  color: "#fff",
+  color: "var(--color-white)",
   textAlign: "center",
 
   [theme.breakpoints.down("md")]: {
@@ -39,7 +39,7 @@ export const HeroSubtitle = styled(Typography)(({ theme }) => ({
 /* ================= CONTENT ================= */
 
 export const ContentWrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: "#ffffff",
+  backgroundColor: "var(--color-white)",
   padding: "60px 80px",
 
   [theme.breakpoints.down("md")]: {
@@ -59,7 +59,7 @@ export const PageTitle = styled(Typography)({
 });
 
 export const UpdatedText = styled(Typography)({
-  color: "#6B7280",
+  color: "var(--color-gray-500)",
   marginBottom: "48px",
 });
 
@@ -76,7 +76,7 @@ export const SectionTitle = styled(Typography)({
 export const Paragraph = styled(Typography)({
   fontSize: "16px",
   lineHeight: 1.8,
-  color: "#374151",
+  color: "var(--color-gray-600)",
   marginBottom: "16px",
 });
 
@@ -91,5 +91,5 @@ export const StyledListItem = styled("li")({
   marginBottom: "10px",
   fontSize: "16px",
   lineHeight: 1.8,
-  color: "#374151",
+  color: "var(--color-gray-600)",
 });

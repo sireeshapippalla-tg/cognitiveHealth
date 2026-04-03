@@ -58,7 +58,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Highlight = styled("span")({
-  color: "#EB7724",
+  color: "var(--color-primary)",
 });
 
 export const Subtitle = styled(Box)({
@@ -97,7 +97,7 @@ export const TrustTitle = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   gap: "16px",
   marginBottom: "32px",
-  color: "#0E0E0E",
+  color: "var(--color-text-dark)",
   fontWeight: 400,
 
   [theme.breakpoints.down("md")]: {

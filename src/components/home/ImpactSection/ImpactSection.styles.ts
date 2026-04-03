@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 /* SECTION */
 export const Section = styled(Box)(({ theme }) => ({
-  padding: "48px 16px",
+  padding: "30px 80px",
   background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
-  color: "#0f172a",
+  color: "var(--color-text-dark)",
 
-  [theme.breakpoints.up("md")]: {
-    padding: "64px 40px",
+  [theme.breakpoints.down("md")]: {
+    padding: "20px",
   },
 }));
 
@@ -24,7 +24,7 @@ export const Pill = styled(Typography)(() => ({
   padding: "6px 20px",
   borderRadius: "20px",
   background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
-  color: "#fff",
+  color: "var(--color-white)",
   fontSize: "0.75rem",
   fontWeight: 600,
   letterSpacing: "1px",
@@ -56,8 +56,8 @@ export const GridWrapper = styled(Box)(() => ({
 export const MotionCard = styled(motion.div)(() => ({
   position: "relative",
   borderRadius: "20px",
-  padding: "30px",
-  background: "rgba(255,255,255,1)",
+  padding: "10px",
+  background: "var(--color-white)",
   backdropFilter: "blur(12px)",
   border: "1px solid rgba(0,0,0,0.05)",
   boxShadow: "0 8px 30px rgba(0,0,0,0.05)",
@@ -94,7 +94,7 @@ export const CenterText = styled(Box)(() => ({
   transform: "translate(-50%, -50%)",
   fontSize: "26px",
   fontWeight: "bold",
-  color: "#F47A20",
+  color: "var(--color-primary)",
   pointerEvents: "none",
 }));
 
@@ -102,11 +102,11 @@ export const CenterText = styled(Box)(() => ({
 export const CardTitle = styled(Typography)(() => ({
   fontWeight: "bold",
   textAlign: "center",
-  color: "#0f172a",
+  color: "var(--color-text-dark)",
 }));
 
 export const CardDesc = styled(Typography)(() => ({
   textAlign: "center",
   marginTop: "8px",
-  color: "#475569",
+  color: "var(--color-gray-600)",
 }));

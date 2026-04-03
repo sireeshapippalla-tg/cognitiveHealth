@@ -9,7 +9,7 @@ export const MotionWrapper = styled(motion.div)(() => ({
 export const Card = styled(Box)(() => ({
   padding: "32px",
   borderRadius: "20px",
-  background: "linear-gradient(180deg, #fff, #f9fafb)",
+  background: "linear-gradient(180deg, var(--color-white), #f9fafb)",
   border: "1px solid #E5E7EB",
 
   height: "100%",
@@ -38,7 +38,7 @@ export const ValueWrapper = styled(Box)(() => ({
 export const GradientValue = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   lineHeight: 1.1,
-  background: "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+  background: "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 
@@ -54,7 +54,7 @@ export const PureTextValue = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   lineHeight: 1.2,
   textAlign: "center",
-  background: "linear-gradient(90deg, #F47A20, #6BBF59, #709cd0)",
+  background: "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 
@@ -73,7 +73,7 @@ export const MixedWrapper = styled(Box)(() => ({
 
 export const MixedText = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
-  color: "#6BBF59",
+  color: "var(--color-green)",
   fontSize: "1rem",
 
   [theme.breakpoints.up("md")]: {
@@ -84,11 +84,11 @@ export const MixedText = styled(Typography)(({ theme }) => ({
 export const TitleText = styled(Typography)(() => ({
   fontSize: "15px",
   fontWeight: 700,
-  color: "#F47A20",
+  color: "var(--color-primary)",
 }));
 
 export const DescriptionText = styled(Typography)(() => ({
-  color: "#6B7280",
+  color: "var(--color-text-gray)",
   fontSize: "0.95rem",
   lineHeight: 1.5,
   maxWidth: "220px",

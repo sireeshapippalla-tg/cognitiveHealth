@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
       subtitle="Ensuring clinical and financial data alignment before the claim ever leaves your system"
       steps={steps}
       themeColor="#F47A20"
-      backgroundColor="#fff"
+      backgroundColor="var(--color-white)"
     />
   );
 };

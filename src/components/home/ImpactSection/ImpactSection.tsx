@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Box } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import useCountUp from "../../ui/useCountUp";
 import {
@@ -12,46 +11,40 @@ import {
   MotionCard,
   Pill,
   RingWrapper,
+  Section,
   Title,
 } from "./ImpactSection.styles";
 
 const data = [
   {
     value: 93.8,
-    title: "Fully Reconciled Payments Virtually Zero Posting Errors",
+    title: "Fully Reconciled Payments",
     desc: "Fully Reconciled Payments - Virtually Zero Posting Errors",
-    color: "#F47A20",
+    color: "var(--color-primary)",
   },
   {
     value: 41.6,
     title: "Faster Turnaround Time",
     desc: "Faster Turnaround Time - From 3-5 Days To Under 4 Hours",
-    color: "#6BBF59",
+    color: "var(--color-green)",
   },
   {
     value: 85,
     title: "Staff Savings",
     desc: "Staff Savings - Efforts Re-Directed To Value Added Tasks",
-    color: "#4A90E2",
+    color: "var(--color-text-blue)",
   },
   {
     value: 26,
     title: "Faster Cash Application",
     desc: "Faster Cash Application - Improved A/R and Cash Flow",
-    color: "#F47A20",
+    color: "var(--color-primary)",
   },
 ];
 
 const ImpactSection = () => {
   return (
-    <Box
-      sx={{
-        px: { xs: 2, md: 5 },
-        py: { xs: 6, md: 8 },
-        background: "radial-gradient(circle at top, #f8fafc, #e2e8f0)",
-        color: "#0f172a",
-      }}
-    >
+    <Section>
       {/* Header */}
 
       <Header>
@@ -71,7 +64,7 @@ const ImpactSection = () => {
           <StatCard key={index} item={item} />
         ))}
       </GridWrapper>
-    </Box>
+    </Section>
   );
 };
 

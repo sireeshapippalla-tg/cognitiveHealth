@@ -27,7 +27,7 @@ import { styled, Box, Typography, IconButton } from "@mui/material";
 //   display: "flex",
 //   alignItems: "center",
 //   justifyContent: "center",
-//   color: "#fff",
+//   color: "var(--color-white)",
 // }));
 
 // /* Avatar */
@@ -102,7 +102,7 @@ export const IconCircle = styled(Box, {
   height: "54px",
   borderRadius: "30%",
   background: open ? "#F47A20" : "rgba(107, 191, 89, 0.15)",
-  color: open ? "#fff" : "#6BBF59",
+  color: open ? "var(--color-white)" : "#6BBF59",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -134,7 +134,7 @@ export const CardTitle = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "open",
 })<{ open: boolean }>(({ open, theme }) => ({
   fontWeight: 900,
-  color: open ? "#F47A20" : "#111827",
+  color: open ? "var(--color-primary)" : "var(--color-gray-900)",
   transition: "color 0.4s ease",
   fontSize: "1rem",
   letterSpacing: "-0.02em",
@@ -146,7 +146,7 @@ export const CardTitle = styled(Typography, {
 }));
 
 export const CardSubtitle = styled(Typography)(() => ({
-  color: "#6B7280",
+  color: "var(--color-gray-500)",
   fontWeight: 750,
   fontSize: "0.9rem",
   marginTop: "4px",
@@ -159,8 +159,8 @@ export const ExpandBtn = styled(IconButton, {
 })<{ open: boolean }>(({ open, theme }) => ({
   width: "48px",
   height: "48px",
-  background: open ? "#111827" : "rgba(0,0,0,0.04)",
-  color: open ? "#fff" : "#111827",
+  background: open ? "var(--color-gray-900)" : "rgba(0,0,0,0.04)",
+  color: open ? "var(--color-white)" : "var(--color-gray-900)",
   borderRadius: "16px",
   transition: "all 0.4s ease",
   transform: open ? "rotate(180deg)" : "rotate(0deg)",
@@ -185,7 +185,7 @@ export const Content = styled(Box)(({ theme }) => ({
 }));
 
 export const Description = styled(Typography)(() => ({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   fontSize: "1.125rem",
   lineHeight: 1.7,
   fontWeight: 500,
@@ -202,7 +202,7 @@ export const CollapseContent = styled(Box)(({ theme }) => ({
 }));
 
 export const DescriptionText = styled(Typography)(() => ({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   fontSize: "1.125rem",
   lineHeight: 1.7,
   fontWeight: 500,
@@ -210,7 +210,7 @@ export const DescriptionText = styled(Typography)(() => ({
 
 export const RichContent = styled(Box)(() => ({
   "& p, & li, & span": {
-    color: "#4B5563",
+    color: "var(--color-gray-600)",
     fontSize: "1.125rem",
     fontWeight: 500,
     lineHeight: 1.7,

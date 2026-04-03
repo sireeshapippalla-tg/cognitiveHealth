@@ -1,78 +1,12 @@
-// import {
-//   Dialog,
-//   DialogContent,
-//   IconButton,
-//   Avatar,
-//   Typography,
-//   Box,
-// } from "@mui/material";
-// import CloseIcon from "@mui/icons-material/Close";
-
-// interface Props {
-//   open: boolean;
-//   onClose: () => void;
-//   name: string;
-//   designation?: string;
-//   image?: string;
-//   description?: string;
-// }
-
-// const TeamMemberModal: React.FC<Props> = ({
-//   open,
-//   onClose,
-//   name,
-//   designation,
-//   image,
-//   description,
-// }) => {
-//   return (
-//     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-//       <DialogContent sx={{ p: 4, position: "relative" }}>
-//         <IconButton
-//           onClick={onClose}
-//           sx={{ position: "absolute", top: 12, right: 12 }}
-//         >
-//           <CloseIcon />
-//         </IconButton>
-
-//         <Box display="flex" alignItems="center" gap={3} mb={1}>
-//           <Avatar src={image} alt={name} sx={{ width: 100, height: 100 }} />
-//           <Box>
-//             <Typography variant="h6" fontWeight={700}>
-//               {name}
-//             </Typography>
-//             <Typography color="primary" fontWeight={500}>
-//               {designation}
-//             </Typography>
-//           </Box>
-//         </Box>
-
-//         <Typography
-//           sx={{
-//             lineHeight: 1.8,
-//             color: "text.secondary",
-
-//             fontSize: 16,
-//           }}
-//         >
-//           {description}
-//         </Typography>
-//       </DialogContent>
-//     </Dialog>
-//   );
-// };
-
-// export default TeamMemberModal;
-
 import {
   Dialog,
-  DialogContent,
   IconButton,
   Typography,
   Box,
   Avatar,
   useTheme,
   useMediaQuery,
+  Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
@@ -91,6 +25,9 @@ interface Props {
 const TeamMemberModal = ({ open, onClose, member }: Props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+
+  if (!member) return null;
 
   return (
     <Dialog
@@ -99,142 +36,176 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
       fullScreen={isMobile}
       maxWidth="md"
       fullWidth
-      PaperProps={{
-        sx: {
-          borderRadius: isMobile ? 0 : 4,
-          background: "rgba(255,255,255,0.95)",
-          backdropFilter: "blur(20px)",
-          overflow: "visible", 
+      slotProps={{
+        backdrop: {
+          style: {
+            backgroundColor: "rgba(10, 15, 30, 0.4)",
+            backdropFilter: "blur(12px)",
+          },
         },
       }}
-    >
-      <DialogContent
-        sx={{
-          // p: isMobile ? 3 : 6,
-          position: "relative",
+      PaperProps={{
+        sx: {
+          backgroundColor: "transparent",
+          boxShadow: "none",
           overflow: "visible",
-        }}
+          outline: "none",
+          mx: isMobile ? 0 : 2,
+        },
+      }}
+      TransitionComponent={Fade}
+      transitionDuration={400}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        style={{ width: "100%", outline: "none" }}
       >
-        {/* Close Button */}
-
-        {/* <IconButton
-          onClick={onClose}
-          sx={{ position: "absolute", top: 16, right: 16 }}
-        >
-          <CloseIcon />
-        </IconButton> */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.3, type: "spring" }}
-        >
-          <IconButton
-            onClick={onClose}
-            sx={{
+        <Box
+          sx={{
+            position: "relative",
+            background: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(20px)",
+            borderRadius: isMobile ? 0 : "40px",
+            padding: isMobile ? "60px 24px 32px" : 8,
+            border: isMobile ? "none" : "1px solid rgba(255, 255, 255, 0.3)",
+            boxShadow: isMobile ? "none" : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            overflow: "visible",
+            maxHeight: isMobile ? "100vh" : "85vh",
+            display: "flex",
+            flexDirection: "column",
+            "&::before": {
+              content: isMobile ? "none" : '""',
               position: "absolute",
-              top: -18,
-              right: -18, 
-              width: 38,
-              height: 38,
-              background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
-              color: "#fff",
-              boxShadow: "0 10px 25px rgba(14,165,233,0.4)",
-              border: "4px solid white",
-              transition: "all 0.3s ease",
-
-              "&:hover": {
-                transform: "scale(1.1)",
-                boxShadow: "0 14px 30px rgba(14,165,233,0.6)",
-              },
+              inset: -2,
+              zIndex: -1,
+              background: "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
+              borderRadius: "42px",
+              opacity: 0.4,
+              filter: "blur(8px)",
+            },
+          }}
+        >
+          {/* Close Button - Detached */}
+          <Box
+            sx={{
+              position: "fixed",
+              top: isMobile ? 12 : -18,
+              right: isMobile ? 12 : -18,
+              zIndex: 100,
             }}
           >
-            <CloseIcon />
-          </IconButton>
-        </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 90 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <IconButton
+                onClick={onClose}
+                sx={{
+                  width: isMobile ? 36 : 44,
+                  height: isMobile ? 36 : 44,
+                  background: "var(--color-white)",
+                  color: "#1e293b",
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
+                  border: "2px solid var(--color-white)",
+                  "&:hover": {
+                    background: "var(--color-white)",
+                    color: "var(--color-primary-hover)",
+                  },
+                }}
+              >
+                <CloseIcon fontSize={isMobile ? "small" : "medium"} />
+              </IconButton>
+            </motion.div>
+          </Box>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-        >
           <Box
-            display="flex"
-            flexDirection={isMobile ? "column" : "row"}
-            alignItems={isMobile ? "center" : "flex-start"}
-            gap={isMobile ? 4 : 6}
+            sx={{
+              display: "flex",
+              flexDirection: isMobile || isTablet ? "column" : "row",
+              alignItems: isMobile || isTablet ? "center" : "flex-start",
+              gap: isMobile ? 4 : 6,
+              overflowY: "auto",
+              pr: isMobile ? 0 : 1,
+              /* Custom Scrollbar */
+              "&::-webkit-scrollbar": { width: "6px" },
+              "&::-webkit-scrollbar-thumb": {
+                background: "rgba(0,0,0,0.05)",
+                borderRadius: "10px",
+              },
+            }}
           >
             {/* IMAGE SECTION */}
             <Box
               sx={{
-                width: isMobile ? 180 : 220,
-                height: isMobile ? 180 : 220,
-                borderRadius: "50%",
-                background: "conic-gradient(-var(--color-primary), #3b82f6, -var(--color-primary))",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                width: isMobile ? 180 : 240,
+                height: isMobile ? 180 : 240,
+                borderRadius: "32px",
+                background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1))",
+                padding: "2px",
                 flexShrink: 0,
+                position: "relative",
               }}
             >
-              <Box
+              <Avatar
+                src={member.image}
+                alt={member.title}
+                variant="rounded"
                 sx={{
-                  width: isMobile ? 160 : 200,
-                  height: isMobile ? 160 : 200,
-                  borderRadius: "50%",
-                  background: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "30px",
+                  boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
                 }}
-              >
-                <Avatar
-                  src={member.image}
-                  alt={member.title}
-                  sx={{
-                    width: isMobile ? 140 : 180,
-                    height: isMobile ? 140 : 180,
-                  }}
-                />
-              </Box>
+              />
             </Box>
 
             {/* TEXT SECTION */}
-            <Box flex={1} textAlign={isMobile ? "center" : "left"}>
-              <Typography variant={isMobile ? "h5" : "h4"} fontWeight={700}>
-                {member.title}
-              </Typography>
+            <Box flex={1} textAlign={isMobile || isTablet ? "center" : "left"}>
+              <Box mb={isMobile ? 1.5 : 2}>
+                <Typography
+                  variant={isMobile ? "h4" : "h3"}
+                  fontWeight={900}
+                  sx={{
+                    color: "#1f2937",
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.1,
+                    fontSize: isMobile ? "1.5rem" : "2.2rem",
+                  }}
+                >
+                  {member.title}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "var(--color-text-blue)",
+                    fontWeight: 800,
+                    fontSize: isMobile ? "0.8rem" : "0.95rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    mt: 1,
+                  }}
+                >
+                  {member.subtitle}
+                </Typography>
+              </Box>
 
               <Typography
                 sx={{
-                  color: "#3b82f6",
-                  fontWeight: 600,
-                  mb: 2,
+                  lineHeight: 1.45,
+                  color: "#4b5563",
+                  fontSize: isMobile ? "0.95rem" : "1.05rem",
+                  fontWeight: 500,
+                  whiteSpace: "normal",
                 }}
-              >
-                {member.subtitle}
-              </Typography>
-
-              <Typography
-                sx={{
-                  lineHeight: 1.8,
-                  color: "text.secondary",
-                  fontSize: isMobile ? 14 : 16,
-                  // whiteSpace: "pre-line",
-                }}
-
-                //           sx={{
-                //             lineHeight: 1.8,
-                //             color: "text.secondary",
-
-                //             fontSize: 16,
-                //           }}
               >
                 {member.description}
               </Typography>
             </Box>
           </Box>
-        </motion.div>
-      </DialogContent>
+        </Box>
+      </motion.div>
     </Dialog>
   );
 };

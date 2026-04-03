@@ -69,19 +69,7 @@ const ResourceHero = () => (
         </SearchWrapper>
       </motion.div>
 
-      {/* <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
-        {['AI Automation', 'Case Studies', 'RCM Trends', 'Whitepapers'].map((tag, i) => (
-          <motion.span
-            key={tag}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ delay: 0.5 + (i * 0.1) }}
-            style={{ fontSize: '14px', color: 'var(--color-text-light)', cursor: 'pointer' }}
-          >
-            #{tag}
-          </motion.span>
-        ))}
-      </Box> */}
+     
     </HeroContent>
   </Hero>
 );

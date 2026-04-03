@@ -26,7 +26,7 @@ export const Header = styled(Box)(() => ({
 export const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   marginBottom: "16px",
-  color: "#111827",
+  color: "var(--color-gray-900)",
   fontSize: "2.5rem",
 
  
@@ -36,7 +36,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 }));
 
 export const Subtitle = styled(Typography)(() => ({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   maxWidth: "600px",
   margin: "0 auto",
   fontSize: "1.1rem",
@@ -123,7 +123,7 @@ export const StepIcon = styled(Box, {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "#fff",
+  color: "var(--color-white)",
   zIndex: 2,
   boxShadow: `0 10px 25px ${themeColor}4D`,
   transition: "all 0.3s ease",
@@ -151,7 +151,7 @@ export const StepIcon = styled(Box, {
 /* TEXT */
 export const StepTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
-  color: "#111827",
+  color: "var(--color-gray-900)",
   marginBottom: "12px",
   fontSize: "1.25rem",
 
@@ -163,7 +163,7 @@ export const StepTitle = styled(Typography)(({ theme }) => ({
 export const StepDescription = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "isLeft",
 })<{ isLeft: boolean }>(({ theme, isLeft }) => ({
-  color: "#4B5563",
+  color: "var(--color-gray-600)",
   lineHeight: 1.6,
   fontSize: "0.95rem",
 

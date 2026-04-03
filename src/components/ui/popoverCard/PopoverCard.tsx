@@ -37,12 +37,12 @@ const PopoverCard = ({
             </Typography>
           )}
 
-          <Typography fontSize="14px" fontWeight={600} color="#111827">
+          <Typography fontSize="14px" fontWeight={600} color="var(--color-gray-900)">
             {title}
           </Typography>
 
           {description && (
-            <Typography fontSize="12px" color="#6B7280">
+            <Typography fontSize="12px" color="var(--color-gray-500)">
               {description}
             </Typography>
           )}

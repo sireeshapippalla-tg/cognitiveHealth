@@ -153,13 +153,13 @@ export const SecondaryButton = styled(Button)(() => ({
   borderRadius: "40px",
   textTransform: "none",
   fontWeight: 500,
-  borderColor: "#F47A20",
-  color: "#F47A20",
+  borderColor: "var(--color-primary)",
+  color: "var(--color-primary)",
   padding: "10px 20px",
 
   "&:hover": {
     background: "rgba(107,191,89,0.1)",
-    borderColor: "#F47A20",
+    borderColor: "var(--color-primary)",
   },
 
   "@media (min-width:600px)": {

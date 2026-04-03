@@ -1,11 +1,10 @@
 import { Grid } from "@mui/material";
-// import { type ExpandableItem } from "../ui/teamCard/expandableCard";
 import {
-  SectionContainer,
-  HeaderTitle,
-  HeaderSubtitle,
-  GridWrapper,
-} from "./aboutus.style";
+  StyledSectionContainer,
+  SectionHeaderTitle,
+  SectionHeaderSubtitle,
+  GridContainerWrapper,
+} from "./TeamSection.styles";
 
 import pavaniImg from "../../assets/aboutUs/pavaniImg.svg";
 import chittaranjanImg from "../../assets/aboutUs/chittaranjan.svg";
@@ -15,7 +14,7 @@ import nkImg from "../../assets/aboutUs/nk.svg";
 import rambabuImg from "../../assets/aboutUs/rambabu.svg";
 import vispiImg from "../../assets/aboutUs/vispi.svg";
 import TeamMemberCard from "../ui/teamCard/TeamMemberCard";
-// import simeonImg from "../../assets/aboutUs/simeon.svg";
+
 type ExpandableItem = {
   id: number;
   title: string;
@@ -23,17 +22,16 @@ type ExpandableItem = {
   image: string;
   description: string;
 };
+
 const teamData: ExpandableItem[] = [
   {
     id: 1,
-    // defaultOpen: true,
     title: "Pavani Munjuluri",
     subtitle: "Chief Executive Officer",
     image: pavaniImg,
     description: `With more than 18 years in healthcare, Pavani brings significant experience and expertise working with both payers and providers to address the
       challenges of a changing healthcare landscape. Prior to founding CognitiveHealth, Pavani was responsible for managing P&L for large organizations focused on analytics, business process management, and IT
-      consulting services with responsibility for managing up to $100M in business.
-`,
+      consulting services with responsibility for managing up to $100M in business.`,
   },
   {
     id: 2,
@@ -101,7 +99,7 @@ const teamData: ExpandableItem[] = [
                  an innate ability to direct cross-functional teams of experts to analyze systems
                  processes and implement infrastructural and process improvements in a
                  global environment.
-                \n\n
+                 \n\n
                  In addition, he brings a wealth of knowledge in Security, Telecom, Data Center,
                  Cloud Systems and Application Integration. His insight to future Hyper-
                  Convergent cloud technologies weaves together performance, risk,
@@ -130,24 +128,15 @@ const teamData: ExpandableItem[] = [
 
 const TeamSection = () => {
   return (
-    <SectionContainer
-      id="team"
-      maxWidth={false}
-    
-      // sx={{
-      //   py: 12,
-      //   background: "radial-gradient(circle at top, #eef2ff 0%, #ffffff 60%)",
-      //   position: "relative",
-      // }}
-    >
-      <HeaderTitle variant="h4">Our Team</HeaderTitle>
+    <StyledSectionContainer id="team" maxWidth={false}>
+      <SectionHeaderTitle variant="h4">Our Team</SectionHeaderTitle>
 
-      <HeaderSubtitle>
+      <SectionHeaderSubtitle>
         Our experienced team of professionals from the healthcare industry is
         committed to delivering results for our customers.
-      </HeaderSubtitle>
+      </SectionHeaderSubtitle>
 
-      <GridWrapper>
+      <GridContainerWrapper>
         <Grid container spacing={3}>
           {teamData.map((member) => (
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={member.id}>
@@ -155,8 +144,8 @@ const TeamSection = () => {
             </Grid>
           ))}
         </Grid>
-      </GridWrapper>
-    </SectionContainer>
+      </GridContainerWrapper>
+    </StyledSectionContainer>
   );
 };
 

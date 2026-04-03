@@ -6,7 +6,7 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 /* SECTION */
 export const Section = styled(Box)(({ theme }) => ({
   padding: "64px 16px",
-  background: "#fff",
+  background: "var(--color-white)",
 
   [theme.breakpoints.up("md")]: {
     padding: "64px 64px",
@@ -49,34 +49,34 @@ export const Line = styled(Box)(() => ({
   top: 0,
   width: "3px",
   height: "40px",
-  background: "#ff6b35",
+  background: "var(--color-primary)",
   transition: "0.3s ease",
 }));
 
 /* ICON */
 export const QuoteIcon = styled("div")(() => ({
   fontSize: "28px",
-  color: "#ff6b35",
+  color: "var(--color-primary)",
   marginBottom: "8px",
 }));
 
 /* TEXT */
 export const QuoteText = styled(Typography)(() => ({
-  color: "#444",
+  color: "var(--color-text-muted)",
   lineHeight: 1.8,
   marginBottom: "24px",
 }));
 
 export const Author = styled(Typography)(() => ({
   fontWeight: 600,
-  color: "#ff6b35",
+  color: "var(--color-primary)",
 }));
 
 export const Company = styled(Typography)(() => ({
-  color: "#777",
+  color: "var(--color-text-secondary)",
 }));
 export const StyledQuoteIcon = styled(FormatQuoteIcon)(() => ({
   fontSize: 28,
-  color: "#ff6b35",
+  color: "var(--color-primary)",
   marginBottom: "8px",
 }));

@@ -1,42 +1,3 @@
-// import { Box, Typography } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-
-// export const CardWrapper = styled(Box)({
-//   backgroundColor: "#fff7ed",
-//   borderRadius: "24px",
-//   padding: "40px",
-//   height: "100%",
-//   display: "flex",
-//   flexDirection: "column",
-//   justifyContent: "space-between",
-// });
-
-// export const QuoteText = styled(Typography)({
-//   fontSize: "16px",
-//   color: "#4b5563",
-//   lineHeight: 1.8,
-//   marginBottom: "32px",
-// });
-
-// export const AuthorName = styled(Typography)({
-//   color: "#ea580c",
-//   fontWeight: 700,
-//   fontSize: "16px",
-//   marginBottom: "4px",
-// });
-
-// export const RoleText = styled(Typography)({
-//   color: "#9ca3af",
-//   fontSize: "14px",
-// });
-
-// export const CompanyText = styled(Typography)({
-//   color: "#6b7280",
-//   fontSize: "14px",
-//   fontWeight: 500,
-// });
-
-
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -52,14 +13,12 @@ export const CardWrapper = styled(Box)({
   transition: "all 0.3s ease-in-out",
 
   "&:hover": {
-
     transform: "translateY(-4px)",
     borderColor: "transparent",
     "& .read-more-link": {
-      color: "#E88D3E", // Orange
- 
+      color: "var(--color-primary)", 
     },
-  }
+  },
 });
 
 export const QuoteText = styled(Typography)({
@@ -69,8 +28,7 @@ export const QuoteText = styled(Typography)({
   color: "#0E151B",
   lineHeight: "1.5",
   marginBottom: "32px",
-  textAlign:"left",
-  
+  textAlign: "left",
 });
 
 export const Footer = styled(Box)({
@@ -78,7 +36,7 @@ export const Footer = styled(Box)({
 });
 
 export const Divider = styled(Box)({
-//   width: "32px",
+  //   width: "32px",
   height: "1px",
   backgroundColor: "#ECECEC",
   marginBottom: "12px",
@@ -87,25 +45,24 @@ export const Divider = styled(Box)({
 
 export const AuthorName = styled(Typography)({
   // fontFamily: "Inter",
-  color: "#EB7724",
+  color: "var(--color-primary)",
   fontWeight: 500,
   fontSize: "18px",
   marginBottom: "4px",
   lineHeight: "130%",
-  textAlign:"left"
+  textAlign: "left",
 });
 
 export const RoleText = styled(Typography)({
-  color: "#9ca3af",
+  color: "var(--color-text-gray)",
   fontSize: "13px",
   marginBottom: "2px",
- 
 });
 
 export const CompanyText = styled(Typography)({
   // fontFamily: "Inter",
   fontWeight: 400,
-  color: "#2F2F2F",
+  color: "var(--color-text-dark)",
   fontSize: "16px",
-  textAlign:"left"
+  textAlign: "left",
 });
