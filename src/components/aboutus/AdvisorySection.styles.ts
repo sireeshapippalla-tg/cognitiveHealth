@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Container, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography } from "@mui/material";
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(12),
@@ -20,7 +19,8 @@ export const BackgroundDecoration = styled(Box)({
   right: "-5%",
   width: "500px",
   height: "500px",
-  background: "radial-gradient(circle, rgba(107, 191, 89, 0.05) 0%, transparent 70%)",
+  background:
+    "radial-gradient(circle, rgba(107, 191, 89, 0.05) 0%, transparent 70%)",
   filter: "blur(80px)",
   zIndex: 0,
 });
@@ -78,7 +78,8 @@ export const AdvisorAvatar = styled(Box)(({ theme }) => ({
   width: 140,
   height: 140,
   borderRadius: "40px",
-  background: "linear-gradient(135deg, rgba(107, 191, 89, 0.1) 0%, rgba(107, 191, 89, 0.2) 100%)",
+  background:
+    "linear-gradient(135deg, rgba(107, 191, 89, 0.1) 0%, rgba(107, 191, 89, 0.2) 100%)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

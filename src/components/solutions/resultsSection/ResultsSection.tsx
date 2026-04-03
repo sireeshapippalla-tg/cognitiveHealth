@@ -8,8 +8,6 @@ import {
   Button,
   Box,
   Container,
-  useTheme,
-  useMediaQuery,
   Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -245,7 +243,8 @@ const ResultsSection = () => {
                 position: "absolute",
                 inset: -2,
                 zIndex: -1,
-                background: "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
+                background:
+                  "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
                 borderRadius: "34px",
                 opacity: 0.4,
                 filter: "blur(8px)",
@@ -253,8 +252,13 @@ const ResultsSection = () => {
             }}
           >
             {/* Close Button - Detached */}
-            <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
-              <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
+            <Box
+              sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <IconButton
                   onClick={() => setOpenEmailDialog(false)}
                   sx={{
@@ -273,11 +277,17 @@ const ResultsSection = () => {
             </Box>
 
             <Box mb={3} textAlign="center">
-              <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
+              <Typography
+                variant="h5"
+                fontWeight={900}
+                color="#1e293b"
+                gutterBottom
+              >
                 Download Package
               </Typography>
               <Typography variant="body2" sx={{ color: "#64748b" }}>
-                Enter your work email and we'll send the complete results package instantly.
+                Enter your work email and we'll send the complete results
+                package instantly.
               </Typography>
             </Box>
 
@@ -361,7 +371,8 @@ const ResultsSection = () => {
                 position: "absolute",
                 inset: -2,
                 zIndex: -1,
-                background: "linear-gradient(45deg, var(--color-primary), var(--color-text-blue), var(--color-green), var(--color-primary))",
+                background:
+                  "linear-gradient(45deg, var(--color-primary), var(--color-text-blue), var(--color-green), var(--color-primary))",
                 borderRadius: "42px",
                 opacity: 0.4,
                 filter: "blur(10px)",
@@ -369,8 +380,13 @@ const ResultsSection = () => {
             }}
           >
             {/* Close Button - Detached */}
-            <Box sx={{ position: "absolute", top: -20, right: -20, zIndex: 10 }}>
-              <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
+            <Box
+              sx={{ position: "absolute", top: -20, right: -20, zIndex: 10 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <IconButton
                   onClick={handleCloseAll}
                   sx={{
@@ -432,12 +448,19 @@ const ResultsSection = () => {
                       boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
                     }}
                   >
-                    <PictureAsPdfIcon sx={{ color: "var(--color-primary)", fontSize: 24 }} />
+                    <PictureAsPdfIcon
+                      sx={{ color: "var(--color-primary)", fontSize: 24 }}
+                    />
                   </Box>
-                  <Typography fontWeight={700} sx={{ flex: 1, color: "#1f2937" }}>
+                  <Typography
+                    fontWeight={700}
+                    sx={{ flex: 1, color: "#1f2937" }}
+                  >
                     {pdf.name}
                   </Typography>
-                  <ArrowForwardIosIcon sx={{ fontSize: 16, color: "var(--color-primary)" }} />
+                  <ArrowForwardIosIcon
+                    sx={{ fontSize: 16, color: "var(--color-primary)" }}
+                  />
                 </Box>
               ))}
             </Box>
@@ -466,12 +489,18 @@ const ResultsSection = () => {
         >
           <Button
             onClick={handleBackToList}
-            startIcon={<ArrowForwardIosIcon sx={{ transform: "rotate(180deg)", fontSize: 14 }} />}
+            startIcon={
+              <ArrowForwardIosIcon
+                sx={{ transform: "rotate(180deg)", fontSize: 14 }}
+              />
+            }
             sx={{ fontWeight: 700, textTransform: "none", color: "#64748b" }}
           >
             Back to Stories
           </Button>
-          <Typography fontWeight={800} color="#1e293b">Customer Case Study</Typography>
+          <Typography fontWeight={800} color="#1e293b">
+            Customer Case Study
+          </Typography>
           <IconButton onClick={handleCloseAll} sx={{ color: "#1e293b" }}>
             <CloseIcon />
           </IconButton>
