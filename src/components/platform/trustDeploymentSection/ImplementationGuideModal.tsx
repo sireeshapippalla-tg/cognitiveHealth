@@ -55,7 +55,6 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
           },
         }}
       >
-        {/* <DialogTitle>Get the Implementation Guide</DialogTitle> */}
          <Box
         sx={{
           background: "linear-gradient(90deg, #4F8DFD, #3B82F6)",
