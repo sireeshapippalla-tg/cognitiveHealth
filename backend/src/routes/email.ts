@@ -89,4 +89,44 @@ router.post('/send-assessment-email', upload.single('file'), async (req: Request
   }
 });
 
+// POST /api/email/our-implementation-process-pdf - Send results PDF to user
+router.post('/our-implementation-process-pdf', upload.single('file'), async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { email } = req.body;
+    const file = req.file;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Please provide a valid email address.' });
+    }
+    if (!file) {
+      return res.status(400).json({ error: 'PDF file attachment is missing.' });
+    }
+
+    // 1. Save to Database
+    const dbQuery = 'INSERT INTO learn_about_our_implementation_process (email) VALUES (?)';
+    await pool.execute(dbQuery, [email]);
+
+    // 2. Send Email
+    await transporter.sendMail({
+      from: senderAddress(),
+      to: email,
+      subject: 'Your CognitiveHealth Implementation Process',
+      html: `
+        <p>Hello,</p>
+        <p>Thank you for your interest! Please find your complete implementation process attached to this email.</p>
+        <p>Best regards,<br/>The CognitiveHealth Team</p>
+      `,
+      attachments: [
+        { filename: file.originalname || 'our-implementation-process.pdf', content: file.buffer },
+      ],
+    });
+
+    res.status(200).json({ message: 'Email sent successfully' });
+  } catch (error) {
+    console.error('Error sending results email:', error);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
 export default router;

@@ -12,6 +12,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import CloseIcon from "@mui/icons-material/Close";
 
+import { useSendImplementationProcessPdfMutation } from "../../../services/apiSlice";
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -19,25 +21,38 @@ interface Props {
 
 const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [sendImplementationPdf, { isLoading }] = useSendImplementationProcessPdfMutation();
 
   const handleSubmit = async () => {
     if (!email) return;
 
-    try {
-      setLoading(true);
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
 
-      // Replace this with your API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // 1. Fetch the placeholder PDF file
+      const pdfPath = "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
+      const response = await fetch(pdfPath);
+      const blob = await response.blob();
+
+      // 2. Prepare FormData
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("file", blob, "our-implementation-process.pdf");
+
+      // 3. Send to Backend
+      await sendImplementationPdf(formData).unwrap();
 
       toast.success("Guide sent successfully. Please check your inbox.");
       setEmail("");
       onClose();
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      toast.error("Failed to send guide. Please try again.");
-    } finally {
-      setLoading(false);
+      toast.error(err.data?.error || "Failed to send guide. Please try again.");
     }
   };
 
@@ -112,8 +127,8 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
         <DialogActions>
           <Button onClick={onClose}>Close</Button>
 
-          <Button variant="contained" onClick={handleSubmit} disabled={loading || !email}>
-            {loading ? "Sending..." : "Send Guide"}
+          <Button variant="contained" onClick={handleSubmit} disabled={isLoading || !email}>
+            {isLoading ? "Sending..." : "Send Guide"}
           </Button>
         </DialogActions>
       </Dialog>

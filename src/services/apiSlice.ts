@@ -50,6 +50,15 @@ export const apiSlice = createApi({
       }),
     }),
 
+    // 6. POST /api/email/our-implementation-process-pdf
+    sendImplementationProcessPdf: builder.mutation({
+      query: (formData) => ({
+        url: '/email/our-implementation-process-pdf',
+        method: 'POST',
+        body: formData,
+      }),
+    }),
+
   }),
 });
 
@@ -59,4 +68,5 @@ export const {
   useGetSolutionsQuery,
   useSendResultsPdfMutation,
   useSendAssessmentEmailMutation,
+  useSendImplementationProcessPdfMutation,
 } = apiSlice;

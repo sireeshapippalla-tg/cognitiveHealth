@@ -39,7 +39,15 @@ CREATE TABLE IF NOT EXISTS solutions (
     icon VARCHAR(100) DEFAULT NULL
 );
 
--- 5. Insert some initial data into the solutions table so the frontend has something to display
+-- 5. Create the "learn_about_our_implementation_process" table (For Results Package)
+CREATE TABLE IF NOT EXISTS learn_about_our_implementation_process (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- 6. Insert some initial data into the solutions table so the frontend has something to display
 INSERT INTO solutions (tab_name, title, description, icon) VALUES 
 ('Tab 1', 'Solution Feature 1', 'This is the first dynamic solution feature pulled from the MySQL database.', 'StarIcon'),
 ('Tab 1', 'Solution Feature 2', 'Another great feature for Tab 1.', 'CheckIcon'),
