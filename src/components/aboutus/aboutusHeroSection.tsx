@@ -1,6 +1,6 @@
 import React from "react";
 import SplitSection from "../ui/SplitSection/SplitSection";
-import heroSectionImage from "../../assets/HomeScreen.svg";
+import heroSectionImage from "../../assets/heroBannerImages/aboutusBannerImg.png";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../ui/SplitSection/SplitSection.styles";
 

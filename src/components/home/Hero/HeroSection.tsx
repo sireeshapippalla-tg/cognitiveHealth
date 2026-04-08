@@ -8,7 +8,7 @@ import mindPathLogo from "../../../assets/mindpath-logo.svg";
 import mercyImg from "../../../assets/Resources/mercyLogo.png";
 import yaleImg from "../../../assets/yale.svg";
 
-import heroSectionImage from "../../../assets/HomeScreen.svg";
+import heroSectionImage from "../../../assets/heroBannerImages/homePageBanner.png";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
 import SplitSection from "../../ui/SplitSection/SplitSection";
