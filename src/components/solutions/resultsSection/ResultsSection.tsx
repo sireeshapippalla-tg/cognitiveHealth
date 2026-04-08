@@ -34,6 +34,8 @@ import {
   Subtitle,
 } from "./ResultsSection.style";
 
+import { useSendResultsPdfMutation } from "../../../services/emailApi";
+
 const stats = [
   {
     value: "93.8%",
@@ -69,10 +71,11 @@ const pdfList = [
 const ResultsSection = () => {
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
   const [openPdfList, setOpenPdfList] = useState(false);
   const [openPdfViewer, setOpenPdfViewer] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+
+    const [sendPdf, { isLoading }] = useSendResultsPdfMutation();
 
   const handleOpenPdfList = () => setOpenPdfList(true);
   const handleSelectPdf = (file: string) => {
@@ -90,28 +93,36 @@ const ResultsSection = () => {
     setSelectedPdf(null);
   };
 
-  const handleSendEmail = async () => {
+ const handleSendEmail = async () => {
     if (!email) {
-      toast.error("Please enter work email");
+      toast.error("Please enter an email address");
       return;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
     try {
-      setLoading(true);
-      const absolutePdfLink = window.location.origin + pdfFile;
-      await emailjs.send(
-        "service_87hf7ak",
-        "template_xs1xiis",
-        { to_email: email, pdf_link: absolutePdfLink },
-        "97EUcQj5LwbXO5vNo",
-      );
+      // 1. Fetch the PDF file
+      const response = await fetch(pdfFile);
+      const blob = await response.blob();
+
+      // 3. Send email using RTK Query mutation
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("file", blob, "results.pdf");
+
+      await sendPdf(formData).unwrap();
+
       toast.success("PDF sent successfully to your email!");
       setOpenEmailDialog(false);
       setEmail("");
-    } catch (error) {
-      toast.error("Failed to send email");
-      console.log(error);
-    } finally {
-      setLoading(false);
+    } catch (error: any) {
+      toast.error(error.data?.error || error.message || "Failed to send email. Please try again.");
+      console.error(error);
     }
   };
 
@@ -308,7 +319,7 @@ const ResultsSection = () => {
             <Button
               fullWidth
               variant="contained"
-              disabled={!email || loading}
+              disabled={!email || isLoading}
               onClick={handleSendEmail}
               sx={{
                 mt: 4,
@@ -320,7 +331,7 @@ const ResultsSection = () => {
                 "&:hover": { background: "var(--color-primary-dark)" },
               }}
             >
-              {loading ? "Sending..." : "Send Report"}
+              {isLoading ? "Sending..." : "Send Report"}
             </Button>
           </Box>
         </motion.div>

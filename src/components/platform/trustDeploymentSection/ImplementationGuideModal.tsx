@@ -11,6 +11,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
+import { useSendImplementationProcessPdfMutation } from "../../../services/emailApi";
 
 interface Props {
   open: boolean;
@@ -19,23 +20,38 @@ interface Props {
 
 const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [sendImplementationPdf, { isLoading }] = useSendImplementationProcessPdfMutation();
 
-  const handleSubmit = async () => {
+ const handleSubmit = async () => {
     if (!email) return;
 
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
     try {
-      setLoading(true);
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // 1. Fetch the placeholder PDF file
+      const pdfPath = "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
+      const response = await fetch(pdfPath);
+      const blob = await response.blob();
+
+      // 2. Prepare FormData
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("file", blob, "our-implementation-process.pdf");
+
+      // 3. Send to Backend
+      await sendImplementationPdf(formData).unwrap();
+
       toast.success("Guide sent successfully. Please check your inbox.");
       setEmail("");
       onClose();
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      toast.error("Failed to send guide. Please try again.");
-    } finally {
-      setLoading(false);
+      toast.error(err.data?.error || "Failed to send guide. Please try again.");
     }
   };
 
@@ -184,7 +200,7 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                 fullWidth
                 variant="contained"
                 onClick={handleSubmit}
-                disabled={loading || !email}
+                disabled={isLoading || !email}
                 sx={{
                   borderRadius: "16px",
                   py: 1.8,
@@ -192,14 +208,14 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                   fontWeight: 700,
                   background: "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
                   boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
-                  // cursor: loading ? "not-allowed" : "pointer",
+               
                   "&:hover": {
                     background: "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
                     boxShadow: "0 12px 24px rgba(244, 122, 32, 0.4)",
                   },
                 }}
               >
-                {loading ? "Processing..." : "Send Guide"}
+                {isLoading ? "Processing..." : "Send Guide"}
               </Button>
             </Box>
           </Box>
