@@ -33,6 +33,7 @@ import {
   CtaText,
   CtaButton,
 } from "./Faq.styles";
+import { ROUTES } from "../../routes";
 
 type TermBlock =
   | { type: "heading"; text: string }
@@ -666,7 +667,10 @@ const FaqPage = () => {
               <CtaText>
                 Ready to experience the CognitiveHealth difference? Connect with our team to learn how we can transform your revenue cycle operations.
               </CtaText>
-              <CtaButton onClick={() => navigate("/contact-us")}>
+              <CtaButton onClick={() =>
+                navigate(ROUTES.REQUEST_DEMO, {
+                  state: { fromLabel: "FAQ", fromPath: "/faq" },
+                })}>
                 Schedule a Demo
               </CtaButton>
             </CtaSection>
