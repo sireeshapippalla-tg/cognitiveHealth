@@ -55,8 +55,7 @@ const stats = [
   },
 ];
 
-const pdfFile =
-  "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
+const pdfFile = "/complete_reuslt_package_pdf.pdf";
 const pdfList = [
   {
     name: "National Provider Organization",

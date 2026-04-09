@@ -16,6 +16,7 @@ export const ROUTES = {
   TERMSCONDITIONS:'/terms',
   PRIVACYPOLICY:"/privacy-policy",
   FAQ:"/faq",
+  REQUEST_DEMO: "/request-demo",
   NOT_FOUND: "*",
 };
 

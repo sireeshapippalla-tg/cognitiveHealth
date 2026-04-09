@@ -4,6 +4,7 @@ import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Ana
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { ROUTES } from "../../../routes/RoutePaths";
 
 const SolutionsHeroSection = () => {
   const navigate = useNavigate();
@@ -21,7 +22,10 @@ const SolutionsHeroSection = () => {
       image={contractAnalysisImage}
       primaryAction={{
           label: "Request a Demo",
-          onClick: () => navigate("/contact-us"),
+          onClick: () =>
+            navigate(ROUTES.REQUEST_DEMO, {
+              state: { fromLabel: "Contract Analysis", fromPath: "/solutions#contractAnalysis" },
+            }),
         }}
         secondaryAction={{
           label: "See Platform in Action",

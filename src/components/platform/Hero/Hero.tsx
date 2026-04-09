@@ -4,6 +4,7 @@ import SplitSection from "../../ui/SplitSection/SplitSection";
 // import mainImg from "../../../assets/Main Image.svg";
 import mainImg from "../../../assets/heroBannerImages/Platform.png";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { ROUTES } from "../../../routes/RoutePaths";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -22,7 +23,10 @@ const Hero = () => {
         image={mainImg}
         primaryAction={{
           label: "Request a Demo",
-          onClick: () => navigate("/contact-us"),
+          onClick: () =>
+            navigate(ROUTES.REQUEST_DEMO, {
+              state: { fromLabel: "Platform", fromPath: "/platform" },
+            }),
         }}
         secondaryAction={{
           label: "See Platform in Action",

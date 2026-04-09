@@ -9,6 +9,7 @@ import {
   SecondaryButton,
 } from "./NewsletterSection.styles";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../routes/RoutePaths";
 
 const NewsletterSection = () => {
   const navigate = useNavigate();
@@ -28,7 +29,11 @@ const NewsletterSection = () => {
         <ButtonContainer>
           <PrimaryButton
             endIcon={<ArrowForwardIcon />}
-            onClick={() => navigate("/contact-us")}
+            onClick={() =>
+              navigate(ROUTES.REQUEST_DEMO, {
+                state: { fromLabel: "Resources", fromPath: "/resources" },
+              })
+            }
           >
             Request a Demo
           </PrimaryButton>

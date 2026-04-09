@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../routes/RoutePaths";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -107,7 +108,13 @@ const Footer = () => {
           <Box>
             <Heading>Contact</Heading>
             <List>
-              <ListItem onClick={() => navigate("/contact-us")}>
+              <ListItem
+                onClick={() =>
+                  navigate(ROUTES.REQUEST_DEMO, {
+                    state: { fromLabel: "Footer", fromPath: "/#contact" },
+                  })
+                }
+              >
                 Request Demo
               </ListItem>
               <ListItem

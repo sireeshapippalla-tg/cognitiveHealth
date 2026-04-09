@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { ROUTES } from "../../../routes/RoutePaths";
+
 const HeroSection = () => {
   const navigate = useNavigate();
   const logos = [
@@ -54,7 +56,10 @@ const HeroSection = () => {
         image={heroSectionImage}
         primaryAction={{
           label: "Request a Demo",
-          onClick: () => navigate("/contact-us"),
+          onClick: () =>
+            navigate(ROUTES.REQUEST_DEMO, {
+              state: { fromLabel: "Home", fromPath: "/" },
+            }),
         }}
         secondaryAction={{
           label: "See Platform in Action",

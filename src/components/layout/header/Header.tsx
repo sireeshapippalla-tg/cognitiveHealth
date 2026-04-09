@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate, useLocation } from "react-router-dom";
+import { ROUTES } from "../../../routes/RoutePaths";
 import { useState, useRef } from "react";
 
 import AppButton from "../../ui/appButton/AppButton";
@@ -76,8 +77,8 @@ const Header = () => {
   };
 
   /** ================= NAVIGATION ================= */
-  const handleNavigate = (path: string) => {
-    navigate(path);
+  const handleNavigate = (path: string, state?: any) => {
+    navigate(path, { state });
     setSolutionsOpen(false);
     setDrawerOpen(false);
     setMobileSolutionsOpen(false);
@@ -315,15 +316,30 @@ const Header = () => {
             </NavItem>
           </Stack>
 
-          {/* DESKTOP LOGIN */}
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
+          {/* DESKTOP ACTIONS */}
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            {/* <AppButton
+              variantType="outline"
+              onClick={() =>
+                handleNavigate(ROUTES.REQUEST_DEMO, {
+                  fromLabel: "Header",
+                  fromPath: location.pathname,
+                })
+              }
+            >
+              Request a Demo
+            </AppButton> */}
             <AppButton
               variantType="primary"
-              onClick={() => navigate("/contact-us")}
+              onClick={() => handleNavigate("/contact-us")}
             >
               Contact Us
             </AppButton>
-          </Box>
+          </Stack>
 
           {/* MOBILE MENU ICON */}
           <IconButton
@@ -630,6 +646,17 @@ const Header = () => {
             >
               FAQ
             </DrawerItem>
+            <AppButton
+              variantType="outline"
+              onClick={() =>
+                handleNavigate(ROUTES.REQUEST_DEMO, {
+                  fromLabel: "Menu",
+                  fromPath: location.pathname,
+                })
+              }
+            >
+              Request a Demo
+            </AppButton>
             <AppButton
               variantType="primary"
               onClick={() => handleNavigate("/contact-us")}
