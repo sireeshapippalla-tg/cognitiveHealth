@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useHubSpotTracking from "./hooks/useHubSpotTracking";
 
 import { AuthGuard, PublicRoute } from "./routes";
 import { ROUTES } from "./routes/RoutePaths";
@@ -26,8 +27,12 @@ import PrivacyPolicyPage from "./pages/privacyPolicy/PrivacyPolicyPage";
 import Faq from "./pages/faq/FaqPage";
 import SolutionsPage from "./pages/solutions/SolutionsPage";
 import ScrollToTop from "./components/common/ScrollToTop";
+import DemoModal from "./components/common/DemoModal";
+import RequestDemoPage from "./pages/demo/RequestDemoPage";
 
 const App = () => {
+  useHubSpotTracking();
+
   return (
     <>
       <ScrollToTop />
@@ -85,11 +90,13 @@ const App = () => {
           <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
           <Route path={ROUTES.FAQ} element={<Faq />} />
           <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
+          <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
         </Route>
 
         {/* ---------- FALLBACK ---------- */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <DemoModal />
     </>
   );
 };

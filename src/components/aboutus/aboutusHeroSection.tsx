@@ -3,6 +3,7 @@ import SplitSection from "../ui/SplitSection/SplitSection";
 import heroSectionImage from "../../assets/heroBannerImages/aboutusBannerImg.png";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../ui/SplitSection/SplitSection.styles";
+import { ROUTES } from "../../routes/RoutePaths";
 
 const AboutUsHeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +19,10 @@ const AboutUsHeroSection: React.FC = () => {
       image={heroSectionImage}
       primaryAction={{
         label: "Request a Demo",
-        onClick: () => navigate("/contact-us"),
+        onClick: () =>
+          navigate(ROUTES.REQUEST_DEMO, {
+            state: { fromLabel: "About Us", fromPath: "/about-us" },
+          }),
       }}
       secondaryAction={{
         label: "See Platform in Action",

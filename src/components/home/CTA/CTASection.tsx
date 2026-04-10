@@ -14,6 +14,7 @@ import {
   Subtitle,
   Title,
 } from "./CallToActionSection.styles";
+import { ROUTES } from "../../../routes/RoutePaths";
 
 const CTASection = () => {
   const navigate = useNavigate();
@@ -53,7 +54,11 @@ const CTASection = () => {
               <PrimaryButton
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
-                onClick={() => navigate("/contact-us")}
+                onClick={() =>
+                  navigate(ROUTES.REQUEST_DEMO, {
+                    state: { fromLabel: "Home", fromPath: "/" },
+                  })
+                }
               >
                 Request a Demo
               </PrimaryButton>
