@@ -293,7 +293,7 @@ const ResultsSection = () => {
 
             <TextField
               fullWidth
-              label="Work Email"
+              label="Work Email Address "
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"

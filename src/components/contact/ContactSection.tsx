@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   HeroSection,
@@ -92,7 +91,8 @@ const ContactSection = () => {
           <StyledInput
             label={
               <>
-                First Name <span style={{ color: "var(--color-error)" }}>*</span>
+                First Name{" "}
+                <span style={{ color: "var(--color-error)" }}>*</span>
               </>
             }
             placeholder="Enter Your First Name"
@@ -132,7 +132,7 @@ const ContactSection = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange("email", e.target.value)
             }
-             error={!!errors.email}
+            error={!!errors.email}
             helperText={errors.email}
           />
 
@@ -177,14 +177,22 @@ const ContactSection = () => {
             <InfoIconWrapper>
               <EmailIcon fontSize="small" />
             </InfoIconWrapper>
-            <InfoTextItem>info@cognitivehealthit.com</InfoTextItem>
+            <InfoTextItem
+              onCopy={(e) => e.preventDefault()}
+              onCut={(e) => e.preventDefault()}
+              onContextMenu={(e) => e.preventDefault()}
+            >
+              info@cognitivehealthit.com
+            </InfoTextItem>
           </InfoRow>
 
           <InfoRow>
             <InfoIconWrapper>
               <PhoneIcon fontSize="small" />
             </InfoIconWrapper>
-            <InfoTextItem>646-701-5030</InfoTextItem>
+            <InfoTextItem onMouseDown={(e) => e.preventDefault()}>
+              646-701-5030
+            </InfoTextItem>
           </InfoRow>
 
           <InfoRow>

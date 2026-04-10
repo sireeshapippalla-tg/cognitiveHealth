@@ -394,7 +394,7 @@ const RCMReadinessScreen: React.FC = () => {
                     You have checked <strong>{score}</strong> boxes.
                   </Typography>
 
-                  <Typography align="center" color="var(--color-gray-600)">
+                  {/* <Typography align="center" color="var(--color-gray-600)">
                     {score >= 15 ? (
                       <>
                         If you checked <strong>15 or more boxes</strong>, your
@@ -408,7 +408,7 @@ const RCMReadinessScreen: React.FC = () => {
                         automation.
                       </>
                     )}
-                  </Typography>
+                  </Typography> */}
 
                   <Typography align="center" color="var(--color-gray-600)">
                     {score >= 15 ? (
@@ -535,7 +535,7 @@ const RCMReadinessScreen: React.FC = () => {
 
               <TextField
                 fullWidth
-                label="Email Address"
+                label="Work Email Address"
                 type="email"
                 placeholder="example@company.com"
                 value={email}
@@ -580,7 +580,7 @@ const RCMReadinessScreen: React.FC = () => {
                     }
                   }}
                 >
-                  Preview PDF
+                  {/* Preview PDF */}
                 </Button>
               </Box>
             </Box>
