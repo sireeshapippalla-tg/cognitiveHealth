@@ -117,6 +117,11 @@ export const InfoIconWrapper = styled(Box)({
 export const InfoTextItem = styled(Typography)({
   fontSize: 14,
   color: "var(--color-dark-gray)",
+  userSelect: "none",         
+  WebkitUserSelect: "none",
+  MozUserSelect: "none",
+
+  cursor: "default",
 });
 
 export const InfoWrapper = styled(Box)({

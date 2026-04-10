@@ -1,9 +1,9 @@
-import { Box, Stack, Typography, Link } from "@mui/material";
+
+import { Box, Stack, Typography, Link, SvgIcon, type SvgIconProps } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
@@ -13,7 +13,6 @@ import {
   FooterRoot,
   Container,
   Brand,
-  // Logo,
   Description,
   Social,
   Heading,
@@ -21,11 +20,17 @@ import {
   ListItem,
   FooterDivider,
   Bottom,
-  // LogoWrapper,
 } from "./Footer.styles";
 
+/* ✅ NEW X (TWITTER) ICON */
+const XIcon = (props: SvgIconProps) => (
+  <SvgIcon {...props}>
+    <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.172l-5.62-7.357L3.5 22H.244l8.02-9.167L1 2h7.327l5.088 6.667L18.244 2zm-2.51 18h2.002L7.06 4H5.01l10.724 16z"/>
+  </SvgIcon>
+);
 const Footer = () => {
   const navigate = useNavigate();
+
   return (
     <FooterRoot>
       <Container>
@@ -37,14 +42,13 @@ const Footer = () => {
         >
           {/* BRAND */}
           <Brand>
-            {/* <LogoWrapper> */}
-              <img
-                src={cognitiveLogo}
-                alt="CognitiveHealth"
-                height={70}
-                onClick={() => navigate("/", { replace: false })}
-              />
-            {/* </LogoWrapper> */}
+            <img
+              src={cognitiveLogo}
+              alt="CognitiveHealth"
+              height={70}
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/", { replace: false })}
+            />
 
             <Description>
               Transform your revenue cycle
@@ -52,11 +56,23 @@ const Footer = () => {
               with autonomous AI agents
             </Description>
 
+            {/* ✅ SOCIAL ICONS */}
             <Social direction="row" spacing={2}>
-              <FacebookIcon />
-              <TwitterIcon />
-              <LinkedInIcon />
-              <YouTubeIcon />
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FacebookIcon />
+              </a>
+
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <XIcon /> {/* ✅ NEW X ICON */}
+              </a>
+
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon />
+              </a>
+
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <YouTubeIcon />
+              </a>
             </Social>
           </Brand>
 
@@ -100,7 +116,6 @@ const Footer = () => {
               <ListItem onClick={() => navigate("/resources#blog")}>
                 Blog
               </ListItem>
-              {/* <ListItem>Careers</ListItem> */}
             </List>
           </Box>
 
@@ -117,21 +132,13 @@ const Footer = () => {
               >
                 Request Demo
               </ListItem>
-              <ListItem
-                sx={{
-                  cursor: "default",
-                  pointerEvents: "none",
-                }}
-              >
-                Support
-              </ListItem>
               <ListItem onClick={() => navigate("/privacy-policy")}>
                 Privacy Policy
               </ListItem>
               <ListItem onClick={() => navigate("/terms")}>
                 Terms of Service
               </ListItem>
-               <ListItem onClick={() => navigate("/faq")}>
+              <ListItem onClick={() => navigate("/faq")}>
                 FAQ
               </ListItem>
             </List>
@@ -147,7 +154,9 @@ const Footer = () => {
           alignItems="center"
           spacing={2}
         >
-          <Typography>© 2026 CognitiveHealth</Typography>
+         <Typography>
+            © {new Date().getFullYear()} CognitiveHealth
+        </Typography>
 
           <Typography>
             All Rights Reserved |{" "}
