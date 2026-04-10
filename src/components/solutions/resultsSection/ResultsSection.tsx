@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { toast } from "react-toastify";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import emailjs from "@emailjs/browser";
+
 import {
   ButtonGroup,
   CTAWrapper,

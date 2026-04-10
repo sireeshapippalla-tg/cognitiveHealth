@@ -6,7 +6,6 @@ import cors from 'cors';
 
 // Import routes
 import contactRouter from './routes/contact';
-import solutionsRouter from './routes/solutions';
 import emailRouter from './routes/email';
 
 const app: Application = express();
@@ -18,7 +17,6 @@ app.use(express.json());
 
 // Mount routes
 app.use('/api/contact', contactRouter);
-app.use('/api/solutions', solutionsRouter);
 app.use('/api/email', emailRouter);
 
 

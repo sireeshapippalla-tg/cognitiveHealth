@@ -1,19 +1,8 @@
 import express, { Request, Response } from 'express';
 import pool from '../config/db';
-import nodemailer from 'nodemailer';
+import transporter from '../config/mailer';
 
 const router = express.Router();
-
-// Email transporter configuration for Brevo (formerly Sendinblue)
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: false, // true for 465, false for other ports (like 587)
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
 
 // POST /api/contact - Save contact form submission
 router.post('/', async (req: Request, res: Response): Promise<any> => {
