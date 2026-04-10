@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useHubSpotTracking from "./hooks/useHubSpotTracking";
 
 import { AuthGuard, PublicRoute } from "./routes";
 import { ROUTES } from "./routes/RoutePaths";
@@ -30,6 +31,8 @@ import DemoModal from "./components/common/DemoModal";
 import RequestDemoPage from "./pages/demo/RequestDemoPage";
 
 const App = () => {
+  useHubSpotTracking();
+
   return (
     <>
       <ScrollToTop />

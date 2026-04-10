@@ -19,7 +19,7 @@ const DemoModal: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // HubSpot Meeting Link - Uses VITE_HUBSPOT_MEETING_HANDLE from .env
-  const meetingHandle = import.meta.env.VITE_HUBSPOT_MEETING_HANDLE || "sirisha-pippalla7";
+  const meetingHandle = import.meta.env.VITE_HUBSPOT_MEETING_HANDLE;
   const hubspotMeetingUrl = `https://meetings.hubspot.com/${meetingHandle}?embed=true`;
 
   return (
