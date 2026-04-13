@@ -8,6 +8,7 @@ interface SEOProps {
   keywords?: string;
   ogType?: string;
   ogImage?: string;
+  schema?: object; // New Prop for Structured Data
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,9 +18,14 @@ const SEO: React.FC<SEOProps> = ({
   keywords,
   ogType = 'website',
   ogImage = 'https://cognitivehealthit.com/og-image.jpg',
+  schema,
 }) => {
   const siteTitle = 'CognitiveHealth';
-  const fullTitle = title ? `${siteTitle} | ${title}` : siteTitle;
+  
+  // Logic to handle homepage title differently (just "CognitiveHealth")
+  const isHome = !title || title === "AI-Powered RCM Solutions"; 
+  const fullTitle = isHome ? siteTitle : `${siteTitle} | ${title}`;
+  
   const defaultDescription = 'AI-powered Revenue Cycle Management solutions for Healthcare Providers.';
   const finalDescription = description || defaultDescription;
 
@@ -42,6 +48,13 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={finalDescription} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+      {/* Structured Data (JSON-LD) for AI / GEO */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
     </Helmet>
   );
 };
