@@ -17,8 +17,8 @@ const SolutionsPage = () => {
    const seoData: Record<string, { title: string; description: string; keywords: string; schema?: object }> = {
     paymentPosting: {
       title: "AI Payment Posting Solutions",
-      description: "Automate your payment posting process with AI. Reduce manual entry and increase accuracy in your healthcare revenue cycle.",
-      keywords: "Payment Posting AI, Automated Medical Billing, RCM Software",
+      description: "Discover how to automate healthcare payment posting with CognitiveHealth's AI agents. Reduce manual entry errors and speed up your revenue cycle.",
+      keywords: "Automatic payment posting medical billing, best AI for payment posting, automated RCM reconciliation, healthcare fintech tools",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -30,8 +30,8 @@ const SolutionsPage = () => {
     },
     lockboxManagement: {
       title: "AI Lockbox Analysis",
-      description: "Optimize your lockbox management with AI-powered data extraction and reconciliation.",
-      keywords: "Lockbox Analysis, Healthcare Lockbox, Automated Reconciliation",
+      description: "Optimize lockbox management using AI-powered data extraction. Automate the reconciliation of complex paper and digital deposits.",
+      keywords: "Healthcare lockbox automation, AI for lockbox analysis, best medical lockbox software, automated banking reconciliation",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -42,8 +42,8 @@ const SolutionsPage = () => {
     },
     denialWorkflow: {
       title: "AI Denial Management & Workflow",
-      description: "Identify and prevent insurance denials with automated workflows and AI-driven insights.",
-      keywords: "Denial Management, Insurance Denials AI, RCM Denial Prevention",
+      description: "Stop insurance denials with AI-driven insights and automated workflows. The best solution for preventing RCM denials in healthcare.",
+      keywords: "Best denial management software, prevent insurance denials AI, healthcare RCM automated workflows, medical billing denial prevention",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -54,8 +54,8 @@ const SolutionsPage = () => {
     },
     eligibilityDiscovery: {
       title: "AI Eligibility Discovery",
-      description: "Discover missing insurance coverage and improve reimbursement with AI eligibility checking.",
-      keywords: "Eligibility Discovery, Insurance Verification AI, Patient Eligibility",
+      description: "Automatically find missing insurance coverage and improve reimbursement with AI-powered eligibility verification.",
+      keywords: "Best insurance discovery tools RCM, AI eligibility checking healthcare, automated patient insurance verification",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -65,8 +65,8 @@ const SolutionsPage = () => {
     },
     contractAnalysis: {
       title: "AI Contract Analysis",
-      description: "Ensure accurate reimbursement by analyzing payer contracts with AI-powered insights.",
-      keywords: "Contract Analysis, Payer Contracts, RCM Contract Audit",
+      description: "Monitor payer compliance and analyze healthcare contracts with AI. Ensure you are getting paid every dollar according to your contract.",
+      keywords: "AI healthcare contract audit, analyze payer contracts RCM, best healthcare contract analysis software",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -75,8 +75,8 @@ const SolutionsPage = () => {
     },
     preBillReview: {
       title: "AI Pre-Bill Review Services",
-      description: "Catch errors before submission with AI-powered pre-bill review and audit tools.",
-      keywords: "Pre-Bill Review, Medical Claim Audit, AI Claim Scrubbing",
+      description: "Prevent claim rejections before they happen with AI claim scrubbing and pre-bill audits for healthcare providers.",
+      keywords: "Best pre-bill review software, automated medical claim scrubbing, AI audit healthcare billing, prevent rejected claims",
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
