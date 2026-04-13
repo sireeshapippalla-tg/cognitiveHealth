@@ -343,6 +343,7 @@ const Header = () => {
 
           {/* MOBILE MENU ICON */}
           <IconButton
+            aria-label="Toggle Menu"
             sx={{ display: { xs: "flex", md: "none" } }}
             onClick={() => setDrawerOpen(true)}
           >

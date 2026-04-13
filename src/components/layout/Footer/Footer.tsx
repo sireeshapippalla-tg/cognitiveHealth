@@ -58,19 +58,19 @@ const Footer = () => {
 
             {/* ✅ SOCIAL ICONS */}
             <Social direction="row" spacing={2}>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FacebookIcon />
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
                 <XIcon /> {/* ✅ NEW X ICON */}
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <LinkedInIcon />
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <YouTubeIcon />
               </a>
             </Social>
