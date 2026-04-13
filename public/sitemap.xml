@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cognitivehealthit.com/</loc>
+    <loc>https://cognitivehealthit.netlify.app/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/platform</loc>
+    <loc>https://cognitivehealthit.netlify.app/platform</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/solutions</loc>
+    <loc>https://cognitivehealthit.netlify.app/solutions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/solutions/payment-posting</loc>
+    <loc>https://cognitivehealthit.netlify.app/solutions/payment-posting</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/solutions/lockbox</loc>
+    <loc>https://cognitivehealthit.netlify.app/solutions/lockbox</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/solutions/denials</loc>
+    <loc>https://cognitivehealthit.netlify.app/solutions/denials</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/about-us</loc>
+    <loc>https://cognitivehealthit.netlify.app/about-us</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/resources</loc>
+    <loc>https://cognitivehealthit.netlify.app/resources</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/contact-us</loc>
+    <loc>https://cognitivehealthit.netlify.app/contact-us</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/rcm-readines</loc>
+    <loc>https://cognitivehealthit.netlify.app/rcm-readines</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cognitivehealthit.com/faq</loc>
+    <loc>https://cognitivehealthit.netlify.app/faq</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
