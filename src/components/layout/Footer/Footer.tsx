@@ -1,6 +1,6 @@
 
 import { Box, Stack, Typography, Link, SvgIcon, type SvgIconProps } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -25,11 +25,10 @@ import {
 /* ✅ NEW X (TWITTER) ICON */
 const XIcon = (props: SvgIconProps) => (
   <SvgIcon {...props}>
-    <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.172l-5.62-7.357L3.5 22H.244l8.02-9.167L1 2h7.327l5.088 6.667L18.244 2zm-2.51 18h2.002L7.06 4H5.01l10.724 16z"/>
+    <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.172l-5.62-7.357L3.5 22H.244l8.02-9.167L1 2h7.327l5.088 6.667L18.244 2zm-2.51 18h2.002L7.06 4H5.01l10.724 16z" />
   </SvgIcon>
 );
 const Footer = () => {
-  const navigate = useNavigate();
 
   return (
     <FooterRoot>
@@ -42,13 +41,14 @@ const Footer = () => {
         >
           {/* BRAND */}
           <Brand>
-            <img
-              src={cognitiveLogo}
-              alt="CognitiveHealth"
-              height={70}
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/", { replace: false })}
-            />
+            <RouterLink to="/">
+              <img
+                src={cognitiveLogo}
+                alt="CognitiveHealth"
+                loading="lazy"
+                style={{ cursor: "pointer" }}
+              />
+            </RouterLink>
 
             <Description>
               Transform your revenue cycle
@@ -80,22 +80,20 @@ const Footer = () => {
           <Box>
             <Heading>Solutions</Heading>
             <List>
-              <ListItem onClick={() => navigate("/solutions/payment-posting")}>
-                Cash Posting
+              <ListItem>
+                <RouterLink to={ROUTES.PAYMENTPOSTING}>Cash Posting</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/solutions/lockbox")}>
-                Lockbox Automation
+              <ListItem>
+                <RouterLink to={ROUTES.LOCKBOXANALYSIS}>Lockbox Automation</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/solutions/eligibility")}>
-                Eligibility Discovery
+              <ListItem>
+                <RouterLink to={ROUTES.ELIGIBILITYDISCOVERY}>Eligibility Discovery</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/solutions/denials")}>
-                Denials Workflow
+              <ListItem>
+                <RouterLink to={ROUTES.DENIALWORKFLOW}>Denials Workflow</RouterLink>
               </ListItem>
-              <ListItem
-                onClick={() => navigate("/solutions/contract-analysis")}
-              >
-                Contract Analytics
+              <ListItem>
+                <RouterLink to={ROUTES.CONTRACTANALYSIS}>Contract Analytics</RouterLink>
               </ListItem>
             </List>
           </Box>
@@ -104,17 +102,17 @@ const Footer = () => {
           <Box>
             <Heading>Company</Heading>
             <List>
-              <ListItem onClick={() => navigate("/about-us#team")}>
-                Leadership
+              <ListItem>
+                <RouterLink to="/about-us#team">Leadership</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/#customers")}>
-                Customers
+              <ListItem>
+                <RouterLink to="/#customers">Customers</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/resources")}>
-                Resources
+              <ListItem>
+                <RouterLink to="/resources">Resources</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/resources#blog")}>
-                Blog
+              <ListItem>
+                <RouterLink to="/resources#blog">Blog</RouterLink>
               </ListItem>
             </List>
           </Box>
@@ -123,23 +121,17 @@ const Footer = () => {
           <Box>
             <Heading>Contact</Heading>
             <List>
-              <ListItem
-                onClick={() =>
-                  navigate(ROUTES.REQUEST_DEMO, {
-                    state: { fromLabel: "Footer", fromPath: "/#contact" },
-                  })
-                }
-              >
-                Request Demo
+              <ListItem>
+                <RouterLink to={ROUTES.REQUEST_DEMO}>Request Demo</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/privacy-policy")}>
-                Privacy Policy
+              <ListItem>
+                <RouterLink to={ROUTES.PRIVACYPOLICY}>Privacy Policy</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/terms")}>
-                Terms of Service
+              <ListItem>
+                <RouterLink to={ROUTES.TERMSCONDITIONS}>Terms of Service</RouterLink>
               </ListItem>
-              <ListItem onClick={() => navigate("/faq")}>
-                FAQ
+              <ListItem>
+                <RouterLink to={ROUTES.FAQ}>FAQ</RouterLink>
               </ListItem>
             </List>
           </Box>
@@ -154,23 +146,23 @@ const Footer = () => {
           alignItems="center"
           spacing={2}
         >
-         <Typography>
+          <Typography>
             © {new Date().getFullYear()} CognitiveHealth
-        </Typography>
+          </Typography>
 
           <Typography>
             All Rights Reserved |{" "}
             <Link
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/terms")}
+              component={RouterLink}
+              to={ROUTES.TERMSCONDITIONS}
               underline="hover"
             >
               Terms and Conditions
             </Link>{" "}
             |{" "}
             <Link
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/privacy-policy")}
+              component={RouterLink}
+              to={ROUTES.PRIVACYPOLICY}
               underline="hover"
             >
               Privacy Policy

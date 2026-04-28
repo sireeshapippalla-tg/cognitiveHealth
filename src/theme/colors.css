@@ -1,8 +1,8 @@
 :root {
-  --color-primary: #eb7b33;
-  --color-primary-hover: #ea580c;
+  --color-primary: #d1641d; /* Accessible Orange */
+  --color-primary-hover: #b45309;
   --color-text-dark: #0e0e0e;
-  --color-text-muted: #555555;
+  --color-text-muted: #4B5563; /* Darkened for better contrast */
   --color-border-light: #e5e7eb;
   --color-white: #fff;
   --color-text-light: #2f2f2f;
@@ -10,7 +10,7 @@
   --color-bg-lite: #f9fafb;
   --color-green: #79bb43;
   --color-dark-gray: #1f2937;
-  --color-gray-500: #6b7280;
+  --color-gray-500: #4B5563; /* Darkened from #6b7280 for accessibility */
   --color-gray-600: #4B5563;
   --color-gray-900: #111827;
   --color-error:#FF0000;

@@ -33,6 +33,9 @@ interface Props {
   primaryAction?: Action;
   secondaryAction?: Action;
   padding?: string;
+  width?: string | number;   // New: Explicit Width
+  height?: string | number;  // New: Explicit Height
+  prioritize?: boolean;      // New: Fetch Priority for Hero
 }
 
 const SplitSection = ({
@@ -44,6 +47,9 @@ const SplitSection = ({
   primaryAction,
   secondaryAction,
   padding,
+  width = "auto",
+  height = "auto",
+  prioritize = false,
 }: Props) => {
   return (
     <Section padding={padding}>
@@ -135,7 +141,15 @@ const SplitSection = ({
             whileHover={{ rotate: 1 }}
           >
             <ImageCard>
-              <StyledImage src={image} alt="Visual" />
+              <StyledImage 
+                src={image} 
+                alt={typeof eyebrow === 'string' ? eyebrow : "Visual"} 
+                width={width}
+                height={height}
+                loading={prioritize ? "eager" : "lazy"}
+                // @ts-ignore - fetchpriority is a modern attribute
+                fetchpriority={prioritize ? "high" : "auto"}
+              />
             </ImageCard>
           </MotionImageWrapper>
         </GridWrapper>

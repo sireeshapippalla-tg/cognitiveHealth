@@ -52,8 +52,9 @@ const HeroSection = () => {
                 most complex RCM workflows—reducing costs by up to 80% while
                 accelerating cash flow and empowering your team to deliver
                 exceptional patient experiences."
-       
+
         image={heroSectionImage}
+        prioritize={true}
         primaryAction={{
           label: "Request a Demo",
           onClick: () =>

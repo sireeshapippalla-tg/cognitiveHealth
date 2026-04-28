@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,27 +9,29 @@ import { ROUTES } from "./routes/RoutePaths";
 
 import MainLayout from "./components/layout/MainLayout";
 
-import LoginPage from "./pages/auth/LoginPage";
-import HomePage from "./pages/home/HomePage";
-import PlatFormPage from "./pages/platform/PlatFormPage";
-import AboutUsPage from "./pages/aboutUs/AboutUsPage";
-import ResourcesPage from "./pages/resources/ResourcesPage";
-import NotFoundPage from "./pages/NotFound/NotFoundPage";
-import PaymentPostingPage from "./pages/solutions/PaymentPostingPage";
-import LockBoxAnalysisPage from "./pages/solutions/LockBoxAnalysisPage";
-import ContractAnalysisPage from "./pages/solutions/ContractAnalysisPage";
-import EligibilityDiscoveryPage from "./pages/solutions/EligibilityDiscoveryPage";
-import DenialWorkFlowPage from "./pages/solutions/DenialWorkFlowPage";
-import PreBillServicesPage from "./pages/solutions/PreBillServicesPage";
-import ContactUsPage from "./pages/contactUs/ContactUsPage";
-import RCMReadinessScreen from "./pages/RcmreadinessScreen";
-import TermsPage from "./pages/terms&Conditions/TermsPage";
-import PrivacyPolicyPage from "./pages/privacyPolicy/PrivacyPolicyPage";
-import Faq from "./pages/faq/FaqPage";
-import SolutionsPage from "./pages/solutions/SolutionsPage";
+// Lazy load all pages
+const LoginPage = lazy(() => import("./pages/auth/LoginPage"));
+const HomePage = lazy(() => import("./pages/home/HomePage"));
+const PlatFormPage = lazy(() => import("./pages/platform/PlatFormPage"));
+const AboutUsPage = lazy(() => import("./pages/aboutUs/AboutUsPage"));
+const ResourcesPage = lazy(() => import("./pages/resources/ResourcesPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"));
+const PaymentPostingPage = lazy(() => import("./pages/solutions/PaymentPostingPage"));
+const LockBoxAnalysisPage = lazy(() => import("./pages/solutions/LockBoxAnalysisPage"));
+const ContractAnalysisPage = lazy(() => import("./pages/solutions/ContractAnalysisPage"));
+const EligibilityDiscoveryPage = lazy(() => import("./pages/solutions/EligibilityDiscoveryPage"));
+const DenialWorkFlowPage = lazy(() => import("./pages/solutions/DenialWorkFlowPage"));
+const PreBillServicesPage = lazy(() => import("./pages/solutions/PreBillServicesPage"));
+const ContactUsPage = lazy(() => import("./pages/contactUs/ContactUsPage"));
+const RCMReadinessScreen = lazy(() => import("./pages/RcmreadinessScreen"));
+const TermsPage = lazy(() => import("./pages/terms&Conditions/TermsPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/privacyPolicy/PrivacyPolicyPage"));
+const Faq = lazy(() => import("./pages/faq/FaqPage"));
+const SolutionsPage = lazy(() => import("./pages/solutions/SolutionsPage"));
+const RequestDemoPage = lazy(() => import("./pages/demo/RequestDemoPage"));
+
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
-import RequestDemoPage from "./pages/demo/RequestDemoPage";
 
 const App = () => {
   useHubSpotTracking();
@@ -37,65 +40,67 @@ const App = () => {
     <>
       <ScrollToTop />
       <ToastContainer position="top-right" autoClose={3000} />
-      <Routes>
-        {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
-        <Route
-          path={ROUTES.LOGIN}
-          element={
-            <PublicRoute>
-              <LoginPage />
-            </PublicRoute>
-          }
-        />
+      <Suspense fallback={<div style={{ height: '100vh', background: 'var(--color-bg-lite)' }} />}>
+        <Routes>
+          {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
+          <Route
+            path={ROUTES.LOGIN}
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
 
-        {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
-        <Route
-          element={
-            <AuthGuard>
-              <MainLayout />
-            </AuthGuard>
-          }
-        >
-          <Route path={ROUTES.HOME} element={<HomePage />} />
-          <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
+          {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
           <Route
-            path={ROUTES.PAYMENTPOSTING}
-            element={<PaymentPostingPage />}
-          />
-          <Route
-            path={ROUTES.LOCKBOXANALYSIS}
-            element={<LockBoxAnalysisPage />}
-          />
-          <Route
-            path={ROUTES.CONTRACTANALYSIS}
-            element={<ContractAnalysisPage />}
-          />
-          <Route
-            path={ROUTES.ELIGIBILITYDISCOVERY}
-            element={<EligibilityDiscoveryPage />}
-          />
-          <Route
-            path={ROUTES.DENIALWORKFLOW}
-            element={<DenialWorkFlowPage />}
-          />
-          <Route
-            path={ROUTES.PREBILLSERVICES}
-            element={<PreBillServicesPage />}
-          />
-          <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
-          <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
-          <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
-          <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
-          <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
-          <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
-          <Route path={ROUTES.FAQ} element={<Faq />} />
-          <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
-          <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
-        </Route>
+            element={
+              <AuthGuard>
+                <MainLayout />
+              </AuthGuard>
+            }
+          >
+            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
+            <Route
+              path={ROUTES.PAYMENTPOSTING}
+              element={<PaymentPostingPage />}
+            />
+            <Route
+              path={ROUTES.LOCKBOXANALYSIS}
+              element={<LockBoxAnalysisPage />}
+            />
+            <Route
+              path={ROUTES.CONTRACTANALYSIS}
+              element={<ContractAnalysisPage />}
+            />
+            <Route
+              path={ROUTES.ELIGIBILITYDISCOVERY}
+              element={<EligibilityDiscoveryPage />}
+            />
+            <Route
+              path={ROUTES.DENIALWORKFLOW}
+              element={<DenialWorkFlowPage />}
+            />
+            <Route
+              path={ROUTES.PREBILLSERVICES}
+              element={<PreBillServicesPage />}
+            />
+            <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
+            <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
+            <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
+            <Route path={ROUTES.RCMREADINESS} element={<RCMReadinessScreen />} />
+            <Route path={ROUTES.TERMSCONDITIONS} element={<TermsPage />} />
+            <Route path={ROUTES.PRIVACYPOLICY} element={<PrivacyPolicyPage />} />
+            <Route path={ROUTES.FAQ} element={<Faq />} />
+            <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
+            <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
+          </Route>
 
-        {/* ---------- FALLBACK ---------- */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          {/* ---------- FALLBACK ---------- */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
       <DemoModal />
     </>
   );

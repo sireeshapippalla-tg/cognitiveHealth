@@ -90,15 +90,21 @@ export const List = styled("ul")({
 });
 
 export const ListItem = styled("li")({
-  // fontFamily: "Inter",
   fontSize: '14px',
   fontWeight: 400,
   color: "var(--color-white)",
-  marginBottom: 5,
+  marginBottom: 8,
   cursor: "pointer",
 
-  "&:hover": {
-    color: "var(--color-primary)", // orange
+  "& a": {
+    color: "inherit",
+    textDecoration: "none",
+    transition: "color 0.2s ease",
+    display: "inline-block",
+  },
+
+  "&:hover a": {
+    color: "var(--color-primary)",
   },
 });
 
