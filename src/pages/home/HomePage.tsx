@@ -6,17 +6,19 @@ import ImpactSection from "../../components/home/ImpactSection/ImpactSection";
 import TestimonialsSection from "../../components/home/TestimonialsSection/TestimonialsSection";
 import HowItWorksSection from "../../components/home/howItWorks/HowItWorksSection";
 import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const HomePage = () => {
+  const baseUrl = getBaseUrl();
   const homeSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://cognitivehealthit.netlify.app/#organization",
+        "@id": `${baseUrl}/#organization`,
         "name": "CognitiveHealth",
-        "url": "https://cognitivehealthit.netlify.app/",
-        "logo": "https://cognitivehealthit.netlify.app/logo.png",
+        "url": `${baseUrl}/`,
+        "logo": `${baseUrl}/logo.png`,
         "description": "CognitiveHealth is an AI-first healthcare technology company specialized in autonomous revenue cycle management (RCM).",
         "knowsAbout": ["Healthcare Revenue Cycle Management", "Autonomous AI Agents", "Medical Billing Automation", "Healthcare Fintech"],
         "sameAs": [

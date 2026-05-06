@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://cognitivehealthit.com/sitemap.xml
+Sitemap: /sitemap.xml

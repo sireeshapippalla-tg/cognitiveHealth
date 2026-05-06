@@ -8,14 +8,16 @@ import AboutUsHeroSection from "../../components/aboutus/aboutusHeroSection";
 import { motion } from "framer-motion";
 import { AboutPageWrapper, ContentContainer } from "./AboutUsPage.styles";
 import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const CognitiveHealthAboutPage: React.FC = () => {
+  const baseUrl = getBaseUrl();
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "CognitiveHealth",
     "description": "CognitiveHealth is on a mission to transform healthcare revenue cycle operations through agentic AI and intelligent automation.",
-    "url": "https://cognitivehealthit.netlify.app/about-us",
+    "url": `${baseUrl}/about-us`,
     "knowsAbout": ["Healthcare RCM", "Agentic AI", "Intelligent Process Automation (IPA)"]
   };
 

@@ -1,7 +1,9 @@
 import ContactSection from "../../components/contact/ContactSection";
 import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const ContactUsPage: React.FC = () => {
+  const baseUrl = getBaseUrl();
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -10,7 +12,7 @@ const ContactUsPage: React.FC = () => {
       "@type": "ContactPoint",
       "contactType": "Customer Support",
       "email": "info@cognitivehealthit.com",
-      "url": "https://cognitivehealthit.netlify.app/contact-us"
+      "url": `${baseUrl}/contact-us`
     }
   };
 

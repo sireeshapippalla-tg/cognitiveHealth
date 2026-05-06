@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# Cognitive Health Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Cognitive Health Website** project repository. This is a modern web application built for healthcare revenue cycle management (RCM) and financial solutions.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Cognitive Health Website serves as the main digital platform for offering automated and efficient RCM services, including:
 
-## React Compiler
+- **Payment Posting**
+- **Lockbox Analysis**
+- **Contract Analysis**
+- **Eligibility Discovery**
+- **Denial Workflow**
+- **Pre-Bill Services**
+- **RCM Readiness**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project is structured as a full-stack application with a robust front-end framework and an embedded Express back-end for API orchestration.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- **Framework**: React 18
+- **Build Tool**: Vite
+- **Language**: TypeScript
+- **State Management**: Redux Toolkit & React Redux
+- **Routing**: React Router v7
+- **Styling & UI**: Material-UI (MUI), Emotion, custom CSS variables
+- **Animations**: Framer Motion
+- **Utilities**: Axios, JWT Decode, JSPDF, HTML2Canvas
+- **Form/Interaction**: React Toastify
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend
+- Dedicated Node/Express server mapped via the `backend` workspace (configured in `package.json` scripts).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository and navigate to the project directory:
+   ```bash
+   cd cognitiveHealth
+   ```
+2. Install the dependencies for both frontend and backend:
+   ```bash
+   npm install
+   ```
+   *(Note: A `postinstall` script automatically runs `npm install` inside the `backend` folder.)*
+
+### Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev`: Starts the Vite development server for the frontend.
+- `npm run dev:backend`: Starts the backend development server.
+- `npm run start:backend`: Starts the backend server in production mode.
+- `npm run build`: Builds both the frontend and backend for production.
+- `npm run build:frontend`: Compiles TypeScript and builds the frontend via Vite.
+- `npm run build:backend`: Builds the backend.
+- `npm run lint`: Runs ESLint to catch formatting and code quality issues.
+- `npm run preview`: Locally previews the production build of the frontend.
+
+## Project Structure
+
+```
+cognitiveHealth/
+├── public/               # Static assets
+├── src/                  # React Frontend source code
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page-level components
+│   ├── routes/           # Routing configuration & guards
+│   ├── theme/            # Styling, CSS variables, and colors
+│   ├── hooks/            # Custom React hooks
+│   └── App.tsx           # Root component
+├── backend/              # Node.js backend configuration and APIs
+├── package.json          # Project dependencies and scripts
+└── vite.config.ts        # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Responsive Design**: Ensuring a seamless experience across desktop, tablet, and mobile interfaces.
+- **Authentication Guards**: Integrated protected routes and auth guards to secure specific areas of the application.
+- **HubSpot Tracking**: Integrated HubSpot capabilities for tracking user events and analytics.
+- **PDF Generation**: Capable of converting specific web components to PDFs using HTML2Canvas and JSPDF.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+Private repository. All rights reserved.
