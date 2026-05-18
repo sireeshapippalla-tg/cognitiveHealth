@@ -8,9 +8,10 @@ import { useState } from "react";
 
 interface ResourceListProps {
   activeTab: number;
+  searchQuery: string;
 }
 
-const ResourceList = ({ activeTab }: ResourceListProps) => {
+const ResourceList = ({ activeTab, searchQuery }: ResourceListProps) => {
   const [open, setOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
 
@@ -20,18 +21,34 @@ const ResourceList = ({ activeTab }: ResourceListProps) => {
   };
 
   const filteredResources = (() => {
+    let list = resourcesData;
     switch (activeTab) {
       case 0:
-        return resourcesData.filter((r) => r.type === "blog");
-      // case 1:
-      //   return resourcesData.filter((r) => r.type === "case-study");
+        list = resourcesData.filter((r) => r.type === "blog");
+        break;
       case 1:
-        return resourcesData.filter((r) => r.type === "video");
+        list = resourcesData.filter((r) => r.type === "video");
+        break;
       case 2:
-        return resourcesData.filter((r) => r.type === "media");
-      default:
-        return resourcesData;
+        list = resourcesData.filter((r) => r.type === "media");
+        break;
     }
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter((r) => 
+        r.title?.toLowerCase().includes(q) || 
+        r.description?.toLowerCase().includes(q)
+      );
+    }
+    
+    // Sort by date descending (latest first)
+    list.sort((a, b) => {
+      const dateA = "date" in a && a.date ? new Date(a.date).getTime() : 0;
+      const dateB = "date" in b && b.date ? new Date(b.date).getTime() : 0;
+      return dateB - dateA;
+    });
+
+    return list;
   })();
 
   return (

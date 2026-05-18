@@ -1,6 +1,7 @@
 import React from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import {
   StyledCard,
   CardImageWrapper,
@@ -42,6 +43,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       onClick={onPlay}
     >
       <CardImageWrapper>
+        {/* Always show image */}
         {link?.includes("youtube.com") ? (
           <iframe
             src={link}
@@ -59,19 +61,27 @@ const VideoCard: React.FC<VideoCardProps> = ({
           />
         ) : (
           <>
+
             <CardImage src={image} alt={title} />
+
+            {/* Play Button */}
             <PlayIconOverlay onClick={onPlay}>
               <PlayArrowIcon sx={{ fontSize: "36px" }} />
             </PlayIconOverlay>
           </>
         )}
         {category && <CategoryChip label={category} />}
+
+        {/* Duration */}
         {duration && <DurationBadge>{duration}</DurationBadge>}
       </CardImageWrapper>
 
       <CardContent>
         <CardTitle variant="h5">{title}</CardTitle>
-        <CardDescription variant="body2">{description}</CardDescription>
+
+        <CardDescription variant="body2">
+          {description}
+        </CardDescription>
 
         <ActionButton>
           Watch Video

@@ -1,7 +1,6 @@
 import  { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchIcon from "@mui/icons-material/Search";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {
@@ -24,7 +23,6 @@ import {
   AccordionItem,
   AccordionHeader,
   AccordionContent,
-  IconWrapper,
   NoResults,
   TabContainer,
   TabButton,
@@ -481,10 +479,6 @@ const FaqPage = () => {
     return filtered;
   }, [searchQuery, activeTab]);
 
-  const toggleAccordion = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
   const handleTabChange = (tab: "Platform" | "Solutions" | "General") => {
     setActiveTab(tab);
     setExpandedId(null); // Reset expanded item when switching tabs
@@ -571,7 +565,7 @@ const FaqPage = () => {
                       transition={{ delay: index * 0.05, duration: 0.4 }}
                       $expanded={expandedId === section.id}
                     >
-                      <AccordionHeader $expanded={expandedId === section.id} onClick={() => toggleAccordion(section.id)}>
+                      <AccordionHeader>
                         <Box>
                           {searchQuery && (
                             <Box sx={{
@@ -585,24 +579,14 @@ const FaqPage = () => {
                               {section.category}
                             </Box>
                           )}
-                          <SectionTitle className="faq-title" $expanded={expandedId === section.id}>
+                          <SectionTitle className="faq-title">
                             {section.title}
                           </SectionTitle>
                         </Box>
-                        <IconWrapper className="faq-icon" $expanded={expandedId === section.id}>
-                          <ExpandMoreIcon />
-                        </IconWrapper>
                       </AccordionHeader>
 
-                      <AnimatePresence>
-                        {expandedId === section.id && (
-                          <AccordionContent
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                          >
-                            <SectionBlock>
+                      <AccordionContent>
+                        <SectionBlock>
                               {section.blocks.map((block: TermBlock, bIndex: number) => {
                                 if (block.type === "heading") {
                                   return (
@@ -646,8 +630,6 @@ const FaqPage = () => {
                               })}
                             </SectionBlock>
                           </AccordionContent>
-                        )}
-                      </AnimatePresence>
                     </AccordionItem>
                   ))
                 ) : (

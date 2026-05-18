@@ -504,6 +504,7 @@ const handleSendEmail = async () => {
               <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
                 <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
                   <IconButton
+                    aria-label="Close dialog"
                     onClick={() => setOpenEmailDialog(false)}
                     disabled={isSending}
                     sx={{

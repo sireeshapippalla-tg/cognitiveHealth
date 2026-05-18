@@ -393,6 +393,7 @@ const Header = () => {
                 </Typography>
                 <Typography
                   variant="h6"
+                  component="p"
                   fontWeight={800}
                   sx={{ mt: 1, mb: 2, color: "var(--color-gray-900)", lineHeight: 1.2 }}
                 >
@@ -542,7 +543,7 @@ const Header = () => {
             />
 
             <CloseIconWrapper>
-              <IconButton onClick={() => setDrawerOpen(false)}>
+              <IconButton aria-label="Close Menu" onClick={() => setDrawerOpen(false)}>
                 <CloseIcon />
               </IconButton>
             </CloseIconWrapper>

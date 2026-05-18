@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/lockboxMAnagement.jpeg";
 // import paymentPostingImage from "../../../assets/solutions/editedimgs/lockbox.jpeg";
-import paymentPostingImage from "../../../assets/heroBannerImages/Lockbox Management.png";
+import paymentPostingImage from "../../../assets/heroBannerImages/Lockbox Management.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -19,6 +19,7 @@ const SolutionsHeroSection = () => {
   }
       description="Transform paper remittances and correspondence into digital workflows with AI-powered lockbox management that eliminates manual data entry and tracking"
       image={paymentPostingImage}
+      prioritize={true}
      primaryAction={{
           label: "Request a Demo",
           onClick: () =>

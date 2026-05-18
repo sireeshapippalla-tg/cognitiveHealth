@@ -1,4 +1,4 @@
-import ContactSection from "../../components/contact/ContactSection";
+import RequestDemoPage from "../demo/RequestDemoPage";
 import SEO from "../../components/SEO";
 import { getBaseUrl } from "../../utils/urlHelper";
 
@@ -24,7 +24,7 @@ const ContactUsPage: React.FC = () => {
         keywords="Contact CognitiveHealth, Healthcare IT Support, RCM Consultation"
         schema={contactSchema}
       />
-      <ContactSection />
+      <RequestDemoPage />
     </>
   );
 };

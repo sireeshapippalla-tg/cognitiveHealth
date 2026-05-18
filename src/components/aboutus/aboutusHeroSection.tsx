@@ -1,6 +1,6 @@
 import React from "react";
 import SplitSection from "../ui/SplitSection/SplitSection";
-import heroSectionImage from "../../assets/heroBannerImages/aboutusBannerImg.png";
+import heroSectionImage from "../../assets/heroBannerImages/aboutusBannerImg.webp";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../ui/SplitSection/SplitSection.styles";
 import { ROUTES } from "../../routes/RoutePaths";
@@ -17,6 +17,7 @@ const AboutUsHeroSection: React.FC = () => {
       }
       description="Healthcare technology company focused on transforming revenue cycle operations through intelligent automation. We help healthcare organizations reduce operational complexity, improve financial outcomes, and enable teams to focus on delivering exceptional patient care."
       image={heroSectionImage}
+      prioritize={true}
       primaryAction={{
         label: "Request a Demo",
         onClick: () =>

@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/payBill.jpeg";
 // import prebillImage from "../../../assets/solutions/editedimgs/prebill.jpeg";
-import prebillImage from "../../../assets/heroBannerImages/PreBill Services.png";
+import prebillImage from "../../../assets/heroBannerImages/PreBill Services.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -19,6 +19,7 @@ const SolutionsHeroSection = () => {
       }
       description="Catch errors before submission with AI-powered claim scrubbing, coding validation, and compliance checking—achieving 95%+ clean claim rates."
       image={prebillImage}
+      prioritize={true}
       primaryAction={{
         label: "Request a Demo",
         onClick: () =>

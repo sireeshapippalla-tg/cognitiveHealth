@@ -8,7 +8,7 @@ import { ReusableHowItWorks, type HowItWorksStep } from "../../ui/HowItWorks/Reu
 const steps: HowItWorksStep[] = [
   {
     title: "Take The Assessment",
-    description: "Link to a questionnaire",
+    description: "Calculate Your RCM Savings Potential",
     icon: <AssignmentIcon fontSize="small" />,
   },
   {

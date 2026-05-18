@@ -22,7 +22,11 @@ import BlogIcon from "../../../assets/Resources/Blog.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
 
-const ResourceTabs = () => {
+interface ResourceTabsProps {
+  searchQuery: string;
+}
+
+const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTabClickRef = React.useRef(false);
@@ -52,8 +56,8 @@ const ResourceTabs = () => {
     },
   ];
 
-  const activeTab =
-    tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")) || 0;
+  let activeTab = tabs.findIndex((tab) => tab.value === location.hash.replace("#", ""));
+  if (activeTab === -1) activeTab = 0;
 
   useEffect(() => {
     if (!location.hash) {
@@ -146,7 +150,7 @@ const ResourceTabs = () => {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <ResourceList activeTab={activeTab} />
+            <ResourceList activeTab={activeTab} searchQuery={searchQuery} />
           </motion.div>
         </AnimatePresence>
       </BlogContainer>

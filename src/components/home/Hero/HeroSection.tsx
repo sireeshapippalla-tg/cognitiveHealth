@@ -8,7 +8,7 @@ import mindPathLogo from "../../../assets/mindpath-logo.svg";
 import mercyImg from "../../../assets/Resources/mercyLogo.png";
 import yaleImg from "../../../assets/yale.svg";
 
-import heroSectionImage from "../../../assets/heroBannerImages/homePageBanner.png";
+import heroSectionImage from "../../../assets/heroBannerImages/homePageBanner.webp";
 import { useNavigate } from "react-router-dom";
 import TrustedLogos from "../../trustedLogos/TrustedLogos";
 import SplitSection from "../../ui/SplitSection/SplitSection";
@@ -48,7 +48,7 @@ const HeroSection = () => {
             <Highlight>Autonomous AI Agents</Highlight>
           </>
         }
-        description="Deploy a network of specialized AI agents that automate your
+        description="iCAN™ ONE is an Agentic AI layer that sits atop your existing EHR/PM. Deploy a network of specialized AI agents that automate your
                 most complex RCM workflows—reducing costs by up to 80% while
                 accelerating cash flow and empowering your team to deliver
                 exceptional patient experiences."

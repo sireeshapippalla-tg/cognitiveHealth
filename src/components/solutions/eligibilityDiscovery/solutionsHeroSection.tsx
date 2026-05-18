@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
 // import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.jpeg";
-import eligibilityDiscoveryImage from "../../../assets/heroBannerImages/Eligibility Discovery.png";
+import eligibilityDiscoveryImage from "../../../assets/heroBannerImages/Eligibility Discovery.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -21,6 +21,7 @@ const SolutionsHeroSection = () => {
       description="Verify coverage in real-time and eliminate claim denials due to 
                   eligibility issues before patients ever walk through your door."
       image={eligibilityDiscoveryImage}
+      prioritize={true}
       primaryAction={{
         label: "Request a Demo",
         onClick: () =>

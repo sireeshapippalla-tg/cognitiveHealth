@@ -57,7 +57,7 @@ const PlatformIntroSection = () => {
           viewport={{ once: false }}
         >
           <Subtitle>
-            Decades of revenue cycle leadership combined with cutting-edge
+            Decades of revenue cycle leadership across hospital systems, specialty practices, behavior health, long term services and supports, combined with cutting-edge
             intelligent automation, machine learning, generative AI, and
             enterprise-grade infrastructure, purpose-built to solve your
             toughest operational challenges.

@@ -17,6 +17,8 @@ export const ROUTES = {
   PRIVACYPOLICY:"/privacy-policy",
   FAQ:"/faq",
   REQUEST_DEMO: "/request-demo",
+  BLOG_DETAIL: "/resource/:slug",
+  MEDIA_DETAIL: "/media/:slug",
   NOT_FOUND: "*",
 };
 

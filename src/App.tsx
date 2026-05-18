@@ -29,6 +29,8 @@ const PrivacyPolicyPage = lazy(() => import("./pages/privacyPolicy/PrivacyPolicy
 const Faq = lazy(() => import("./pages/faq/FaqPage"));
 const SolutionsPage = lazy(() => import("./pages/solutions/SolutionsPage"));
 const RequestDemoPage = lazy(() => import("./pages/demo/RequestDemoPage"));
+const BlogDetailPage = lazy(() => import("./pages/resources/BlogDetailPage"));
+const MediaDetailPage = lazy(() => import("./pages/resources/MediaDetailPage"));
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
@@ -95,6 +97,8 @@ const App = () => {
             <Route path={ROUTES.FAQ} element={<Faq />} />
             <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
             <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
+            <Route path={ROUTES.BLOG_DETAIL} element={<BlogDetailPage />} />
+            <Route path={ROUTES.MEDIA_DETAIL} element={<MediaDetailPage />} />
           </Route>
 
           {/* ---------- FALLBACK ---------- */}

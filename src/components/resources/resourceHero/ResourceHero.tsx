@@ -15,7 +15,12 @@ import {
   Description,
 } from "./ResourceHero.styles";
 
-const ResourceHero = () => (
+interface ResourceHeroProps {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
   <Hero>
     <BackgroundShapes>
       <Shape
@@ -62,6 +67,8 @@ const ResourceHero = () => (
           <StyledInput
             placeholder="Search resources, articles, videos..."
             inputProps={{ "aria-label": "search resources" }}
+            value={searchQuery}
+            onChange={(e: any) => setSearchQuery(e.target.value)}
           />
           <SearchButton type="button" aria-label="search">
             Search

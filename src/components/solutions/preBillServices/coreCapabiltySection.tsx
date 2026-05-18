@@ -127,7 +127,7 @@ const CoreCapabilitiesSection = () => {
 
         <Grid container spacing={2}>
           {capabilities.map((item) => (
-            <Grid size={{ xs: 12 }} key={item.id}>
+            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={item.id}>
               <ExpandableCard item={item} variant="capability" />
             </Grid>
           ))}

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 
 // import mainImg from "../../../assets/Main Image.svg";
-import mainImg from "../../../assets/heroBannerImages/Platform.png";
+import mainImg from "../../../assets/heroBannerImages/Platform.webp";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
 import { ROUTES } from "../../../routes/RoutePaths";
 
@@ -21,6 +21,7 @@ const Hero = () => {
         description="The AI Agent Platform for Healthcare RCM"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}
+      prioritize={true}
         primaryAction={{
           label: "Request a Demo",
           onClick: () =>

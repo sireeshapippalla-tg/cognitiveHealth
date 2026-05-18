@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.jpeg";
 // import denialsImage from "../../../assets/solutions/editedimgs/denials.jpeg";
-import denialsImage from "../../../assets/heroBannerImages/denialsHero.png";
+import denialsImage from "../../../assets/heroBannerImages/denialsHero.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -18,6 +18,7 @@ const SolutionsHeroSection = () => {
       }
       description="Turn denials into recoveries with AI-powered prevention, root cause analysis, and automated appeal generation."
       image={denialsImage}
+      prioritize={true}
       primaryAction={{
         label: "Request a Demo",
         onClick: () =>

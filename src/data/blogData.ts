@@ -21,7 +21,7 @@ export const blogData: Blog[] = [
     date: "July 17, 2025",
     readTime: "",
     // category: "Document Processing",
-    link: "",
+    link: "/resource/agentic-ai-automation-with-intent",
   },
   {
     id: "2",
@@ -33,7 +33,7 @@ export const blogData: Blog[] = [
     date: "June 13, 2025",
     readTime: "",
     // category: "Best Practices",
-    link: "",
+    link: "/resource/intelligent-document-processing",
   },
   {
     id: "3",
@@ -45,7 +45,7 @@ export const blogData: Blog[] = [
     date: "June 11, 2025",
     readTime: "",
     // category: "Revenue Cycle",
-    link: "",
+    link: "/resource/ai-powered-intelligent-document-processing",
   },
   {
     id: "4",
@@ -57,7 +57,7 @@ export const blogData: Blog[] = [
     date: "June 11, 2025",
     readTime: "",
     // category: "Strategy",
-    link: "",
+    link: "/resource/lockbox-chaos-to-clarity",
   },
   {
     id: "5",
@@ -69,6 +69,6 @@ export const blogData: Blog[] = [
     date: "December 14, 2020",
     readTime: "",
     // category: "Strategy",
-    link: "",
+    link: "/resource/maximizing-business-value-vision",
   },
 ];

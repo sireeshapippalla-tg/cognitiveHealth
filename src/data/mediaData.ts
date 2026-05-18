@@ -59,7 +59,7 @@ export const mediaData: Media[] = [
     image: "/images/media/media_ceo_appointment_1774339201051.png",
     date: "January 6, 2022",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/ceo-appointment-pavani-munjuluri",
   },
   {
     id: "5",
@@ -71,7 +71,7 @@ export const mediaData: Media[] = [
     image: "/images/media/media_yale_ipa_1774339170668.png",
     date: "December 16, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/yale-new-haven-uses-ipa",
   },
   {
     id: "6",
@@ -82,7 +82,7 @@ export const mediaData: Media[] = [
     image: "/images/blog/blog_correspondence_management_1774338229969.png",
     date: "December 15, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/automating-revenue-cycle-back-end",
   },
   {
     id: "7",
@@ -93,7 +93,7 @@ export const mediaData: Media[] = [
     image: "/images/blog/blog_data_capture_1774338172464.png",
     date: "December 3, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/ipa-healthcare-2021-year-to-catch-up",
   },
   {
     id: "8",
@@ -104,7 +104,7 @@ export const mediaData: Media[] = [
     image: "/images/blog/blog_revenue_cycle_1774338212683.png",
     date: "October 24, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/need-for-ipa-revenue-cycle",
   },
   {
     id: "9",
@@ -115,7 +115,7 @@ export const mediaData: Media[] = [
     image: "/images/blog/blog_intelligence_automation_1774338269263.png",
     date: "October 20, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/ipa-technology-and-opportunities",
   },
   {
     id: "10",
@@ -126,6 +126,6 @@ export const mediaData: Media[] = [
     image: "/images/blog/blog_denial_management_1774338146868.png",
     date: "September 25, 2020",
     category: "",
-    link: "/media/series-b-funding",
+    link: "/media/co-founder-shares-ipa-best-practices",
   }
 ];

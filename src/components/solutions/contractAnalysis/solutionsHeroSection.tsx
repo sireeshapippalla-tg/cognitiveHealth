@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/payerContract.jpeg";
 // import contractAnalysisImage from "../../../assets/solutions/editedimgs/payerContractAnalysis.jpeg"
-import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Analysis.png"
+import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Analysis.webp"
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -20,6 +20,7 @@ const SolutionsHeroSection = () => {
       description="Ensure you're paid correctly every time with AI-powered contract 
             modeling, variance detection, and automated underpayment recovery."
       image={contractAnalysisImage}
+      prioritize={true}
       primaryAction={{
           label: "Request a Demo",
           onClick: () =>
