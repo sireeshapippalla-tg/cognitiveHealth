@@ -33,17 +33,11 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
     }
 
     try {
-      // 1. Fetch the placeholder PDF file
-      const pdfPath = "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
-      const response = await fetch(pdfPath);
-      const blob = await response.blob();
-
-      // 2. Prepare FormData
+      // Prepare FormData
       const formData = new FormData();
-      formData.append("email", email);
-      formData.append("file", blob, "our-implementation-process.pdf");
+      formData.append("toEmail", email);
 
-      // 3. Send to Backend
+      // Send to Backend via RTK Query mutation
       await sendImplementationPdf(formData).unwrap();
 
       toast.success("Guide sent successfully. Please check your inbox.");
@@ -51,7 +45,7 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
       onClose();
     } catch (err: any) {
       console.error(err);
-      toast.error(err.data?.error || "Failed to send guide. Please try again.");
+      toast.error(err.data?.error || err.message || "Failed to send guide. Please try again.");
     }
   };
 

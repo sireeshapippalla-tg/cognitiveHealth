@@ -44,6 +44,7 @@ import {
 import AppButton from "../components/ui/appButton/AppButton";
 
 import logo from "../assets/cognitiveLogo.png";
+
 import { useSendAssessmentEmailMutation } from "../services/emailApi";
 
 /* TYPES */
@@ -148,8 +149,11 @@ const RCMReadinessScreen: React.FC = () => {
   const [score, setScore] = useState(0);
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  
+  const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
 
-    const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
+  const isProcessing = isGeneratingPdf || isSending;
 
   const handleCheck = (key: string) =>
     setCheckedItems((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -217,6 +221,7 @@ const RCMReadinessScreen: React.FC = () => {
 
     return pdf.output("blob");
   };
+
 const handleSendEmail = async () => {
     if (!email) return;
 
@@ -228,27 +233,41 @@ const handleSendEmail = async () => {
     }
 
     try {
+      setIsGeneratingPdf(true);
+      // Wait for a tick so UI updates to show loading state before synchronous html2canvas freezes it
+      await new Promise((resolve) => setTimeout(resolve, 50)); 
+      
       // 1. Generate PDF
       const pdfBlob = await generatePdfFromUI();
 
       if (!pdfBlob) {
         toast.error("Failed to generate PDF");
+        setIsGeneratingPdf(false);
         return;
       }
 
-      // 2. Send email via RTK Query mutation (also saves to DB internally on backend)
+      setIsGeneratingPdf(false);
+
+      // 2. Send email via RTK Query mutation
       const formData = new FormData();
-      formData.append("email", email);
-      formData.append("score", score.toString());
-      formData.append("file", pdfBlob, "RCM-AI-Assessment.pdf");
+      formData.append("toEmail", email);
+      formData.append("attachments", pdfBlob, "RCM-AI-Assessment.pdf");
+      formData.append("countOfItems", score.toString());
 
       await sendAssessmentEmail(formData).unwrap();
 
       toast.success("Assessment report sent successfully!");
       setOpenEmailDialog(false);
       setEmail("");
+      
+      // Clear assessment state to return to initial view
+      setCheckedItems({});
+      setSubmitted(false);
+      setScore(0);
+      
     } catch (error: any) {
       console.error(error);
+      setIsGeneratingPdf(false);
       toast.error(error.data?.error || error.message || "An unexpected error occurred while sending");
     }
   };
@@ -427,6 +446,7 @@ const handleSendEmail = async () => {
                     direction={{ xs: "column", sm: "row" }}
                     spacing={2}
                     mt={2}
+                    data-html2canvas-ignore="true"
                   >
                     <AppButton
                       variantType="primary"
@@ -452,7 +472,7 @@ const handleSendEmail = async () => {
 
         <Dialog
           open={openEmailDialog}
-          onClose={() => !isSending && setOpenEmailDialog(false)}
+          onClose={() => !isProcessing && setOpenEmailDialog(false)}
           maxWidth="xs"
           fullWidth
           slotProps={{
@@ -506,7 +526,7 @@ const handleSendEmail = async () => {
                   <IconButton
                     aria-label="Close dialog"
                     onClick={() => setOpenEmailDialog(false)}
-                    disabled={isSending}
+                    disabled={isProcessing}
                     sx={{
                       width: 40,
                       height: 40,
@@ -550,9 +570,9 @@ const handleSendEmail = async () => {
                 <PrimaryButton
                   variant="contained"
                   fullWidth
-                  disabled={!email || isSending}
+                  disabled={!email || isProcessing}
                   onClick={handleSendEmail}
-                  startIcon={isSending ? <CircularProgress size={16} color="inherit" /> : null}
+                  startIcon={isProcessing ? <CircularProgress size={16} color="inherit" /> : null}
                   sx={{
                     py: 1.8,
                     borderRadius: "16px",
@@ -560,7 +580,7 @@ const handleSendEmail = async () => {
                     textTransform: "none",
                   }}
                 >
-                  {isSending ? "Generating PDF..." : "Send Assessment Report"}
+                  {isGeneratingPdf ? "Generating PDF..." : isSending ? "Sending Report..." : "Send Assessment Report"}
                 </PrimaryButton>
 
                 <Button
