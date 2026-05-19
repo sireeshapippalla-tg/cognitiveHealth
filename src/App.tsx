@@ -31,16 +31,16 @@ const SolutionsPage = lazy(() => import("./pages/solutions/SolutionsPage"));
 const RequestDemoPage = lazy(() => import("./pages/demo/RequestDemoPage"));
 const BlogDetailPage = lazy(() => import("./pages/resources/BlogDetailPage"));
 const MediaDetailPage = lazy(() => import("./pages/resources/MediaDetailPage"));
-const EligibilityVerificationSeoPage = lazy(() => import("./pages/faqsPages/EligibilityVerificationSeoPage"));
-const HealthcareDocumentManagementSeoPage = lazy(() => import("./pages/faqsPages/HealthcareDocumentManagementSeoPage"));
-const BehavioralHealthRcmSeoPage = lazy(() => import("./pages/faqsPages/BehavioralHealthRcmSeoPage"));
-const RevenueCycleManagementSeoPage = lazy(() => import("./pages/faqsPages/RevenueCycleManagementSeoPage"));
-const CashPostingAutomationSeoPage = lazy(() => import("./pages/faqsPages/CashPostingAutomationSeoPage"));
-const MedicalBillingServicesSeoPage = lazy(() => import("./pages/faqsPages/MedicalBillingServicesSeoPage"));
-const HealthcareBackOfficeSeoPage = lazy(() => import("./pages/faqsPages/HealthcareBackOfficeSeoPage"));
-const RcmAiBillingServicesSeoPage = lazy(() => import("./pages/faqsPages/RcmAiBillingServicesSeoPage"));
-const HealthcareClaimsProcessingSeoPage = lazy(() => import("./pages/faqsPages/HealthcareClaimsProcessingSeoPage"));
-const SpecialtyMedicalBillingSeoPage = lazy(() => import("./pages/faqsPages/SpecialtyMedicalBillingSeoPage"));
+const EligibilityVerificationFaqPage = lazy(() => import("./pages/faqsPages/EligibilityVerificationFaqPage"));
+const HealthcareDocumentManagementFaqPage = lazy(() => import("./pages/faqsPages/HealthcareDocumentManagementFaqPage"));
+const BehavioralHealthRcmFaqPage = lazy(() => import("./pages/faqsPages/BehavioralHealthRcmFaqPage"));
+const RevenueCycleManagementFaqPage = lazy(() => import("./pages/faqsPages/RevenueCycleManagementFaqPage"));
+const CashPostingAutomationFaqPage = lazy(() => import("./pages/faqsPages/CashPostingAutomationFaqPage"));
+const MedicalBillingServicesFaqPage = lazy(() => import("./pages/faqsPages/MedicalBillingServicesFaqPage"));
+const HealthcareBackOfficeFaqPage = lazy(() => import("./pages/faqsPages/HealthcareBackOfficeFaqPage"));
+const RcmAiBillingServicesFaqPage = lazy(() => import("./pages/faqsPages/RcmAiBillingServicesFaqPage"));
+const HealthcareClaimsProcessingFaqPage = lazy(() => import("./pages/faqsPages/HealthcareClaimsProcessingFaqPage"));
+const SpecialtyMedicalBillingFaqPage = lazy(() => import("./pages/faqsPages/SpecialtyMedicalBillingFaqPage"));
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
@@ -109,16 +109,16 @@ const App = () => {
             <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
             <Route path={ROUTES.BLOG_DETAIL} element={<BlogDetailPage />} />
             <Route path={ROUTES.MEDIA_DETAIL} element={<MediaDetailPage />} />
-            <Route path={ROUTES.ELIGIBILITY_VERIFICATION_SEO} element={<EligibilityVerificationSeoPage />} />
-            <Route path={ROUTES.HEALTHCARE_DOCUMENT_MANAGEMENT_SEO} element={<HealthcareDocumentManagementSeoPage />} />
-            <Route path={ROUTES.BEHAVIORAL_HEALTH_RCM_SEO} element={<BehavioralHealthRcmSeoPage />} />
-            <Route path={ROUTES.REVENUE_CYCLE_MANAGEMENT_SEO} element={<RevenueCycleManagementSeoPage />} />
-            <Route path={ROUTES.CASH_POSTING_AUTOMATION_SEO} element={<CashPostingAutomationSeoPage />} />
-            <Route path={ROUTES.MEDICAL_BILLING_SERVICES_SEO} element={<MedicalBillingServicesSeoPage />} />
-            <Route path={ROUTES.HEALTHCARE_BACK_OFFICE_SEO} element={<HealthcareBackOfficeSeoPage />} />
-            <Route path={ROUTES.RCM_AI_BILLING_SERVICES_SEO} element={<RcmAiBillingServicesSeoPage />} />
-            <Route path={ROUTES.HEALTHCARE_CLAIMS_PROCESSING_SEO} element={<HealthcareClaimsProcessingSeoPage />} />
-            <Route path={ROUTES.SPECIALTY_MEDICAL_BILLING_SEO} element={<SpecialtyMedicalBillingSeoPage />} />
+            <Route path={ROUTES.ELIGIBILITY_VERIFICATION_FAQ} element={<EligibilityVerificationFaqPage />} />
+            <Route path={ROUTES.HEALTHCARE_DOCUMENT_MANAGEMENT_FAQ} element={<HealthcareDocumentManagementFaqPage />} />
+            <Route path={ROUTES.BEHAVIORAL_HEALTH_RCM_FAQ} element={<BehavioralHealthRcmFaqPage />} />
+            <Route path={ROUTES.REVENUE_CYCLE_MANAGEMENT_FAQ} element={<RevenueCycleManagementFaqPage />} />
+            <Route path={ROUTES.CASH_POSTING_AUTOMATION_FAQ} element={<CashPostingAutomationFaqPage />} />
+            <Route path={ROUTES.MEDICAL_BILLING_SERVICES_FAQ} element={<MedicalBillingServicesFaqPage />} />
+            <Route path={ROUTES.HEALTHCARE_BACK_OFFICE_FAQ} element={<HealthcareBackOfficeFaqPage />} />
+            <Route path={ROUTES.RCM_AI_BILLING_SERVICES_FAQ} element={<RcmAiBillingServicesFaqPage />} />
+            <Route path={ROUTES.HEALTHCARE_CLAIMS_PROCESSING_FAQ} element={<HealthcareClaimsProcessingFaqPage />} />
+            <Route path={ROUTES.SPECIALTY_MEDICAL_BILLING_FAQ} element={<SpecialtyMedicalBillingFaqPage />} />
           </Route>
 
           {/* ---------- FALLBACK ---------- */}
