@@ -28,13 +28,16 @@ const SpecialtyMedicalBillingFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="subtitle2" sx={{ mb: 1, mt: 4, fontSize: { xs: '0.85rem', md: '0.95rem' }, textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600, color: 'primary.main', display: 'block' }}>
+            The future
+          </Typography>
+          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 2, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
             Overview
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
             In the specialized fields of healthcare, efficient revenue cycle management (RCM) is crucial to maintaining financial health and sustainability. CognitiveHealth offers tailored specialty medical billing services designed to address the unique challenges faced by specialty practices. Our advanced AI-driven solutions streamline processes, reduce errors, and enhance overall financial performance, making us a leader in specialty revenue cycle management.
           </Typography>
-          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
             Introducing iCAN™ – Network of AI Agents
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>

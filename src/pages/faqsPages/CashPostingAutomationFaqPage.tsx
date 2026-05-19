@@ -28,7 +28,10 @@ const CashPostingAutomationFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="subtitle2" sx={{ mb: 1, mt: 4, fontSize: { xs: '0.85rem', md: '0.95rem' }, textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600, color: 'primary.main', display: 'block' }}>
+            The future
+          </Typography>
+          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 2, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
             Introducing iCAN™
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>

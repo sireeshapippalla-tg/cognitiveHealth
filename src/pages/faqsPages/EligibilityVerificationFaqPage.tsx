@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 import { getBaseUrl } from '../../utils/urlHelper';
 
 // Custom content images
-import Frame_4_e1723042324127 from '../../assets/seo/Frame-4-e1723042324127.webp';
 import ican_automation_1 from '../../assets/seo/ican-automation-1.webp';
 import Vector_3 from '../../assets/seo/Vector-3.webp';
 import Vector_4 from '../../assets/seo/Vector-4.webp';
@@ -117,12 +116,12 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
               <Grid container spacing={6} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
                   <Box
-                    component="img"
-                    src={Frame_4_e1723042324127}
-                    alt=""
+                    // component="img"
+                    // src={Frame_4_e1723042324127}
+                    // alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -158,7 +157,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -179,13 +178,13 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4 }}>
                     iCAN Automate™ leverages advanced agent architecture and automated process mapping to record business processes in real-time, facilitating faster development and seamless deployment. The CognitiveHealth Automation Scale guides a business value model for better efficiency and ROI.
                   </Typography>
-                  <Box
+                  {/* <Box
                     component="img"
                     src={ican_automation_1}
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -196,7 +195,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       border: 'none',
                       boxShadow: 'none'
                     }}
-                  />
+                  /> */}
                 </Grid>
               </Grid>
             </motion.div>
@@ -220,10 +219,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -232,7 +231,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Automation Process Mapping
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -247,10 +246,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -259,7 +258,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Real-Time Recording
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -274,10 +273,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -286,7 +285,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Seamless Deployment
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -301,10 +300,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -313,7 +312,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Network of AI Agents
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -351,7 +350,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -386,10 +385,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -398,7 +397,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Data Processing
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -413,10 +412,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -425,7 +424,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Workflow Orchestration
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -440,10 +439,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -452,7 +451,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Data Standardization and Classification
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -481,7 +480,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -502,13 +501,13 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4 }}>
                     iCAN Predict™ uses GenAI, data analytics and machine learning to report, alert, and validate specific business process tasks. This automation covers complex tasks such as claims denial management, appeals, financial transaction management, and pre-service business processes.
                   </Typography>
-                  <Box
+                  {/* <Box
                     component="img"
                     src={ican_predict_1}
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -519,7 +518,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       border: 'none',
                       boxShadow: 'none'
                     }}
-                  />
+                  /> */}
                 </Grid>
               </Grid>
             </motion.div>
@@ -543,10 +542,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -555,7 +554,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Machine Learning and GenAI
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -570,10 +569,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -582,7 +581,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Predictive Analytics
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -597,10 +596,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -609,7 +608,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Intelligent Process Automation
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -647,7 +646,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '120px',
+                      maxHeight: '140px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -682,10 +681,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -694,7 +693,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Task Scheduling
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -709,10 +708,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -721,7 +720,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Monitoring and Alerts
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -736,10 +735,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -748,7 +747,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Reporting
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -778,7 +777,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       alt=""
                       sx={{
                         width: 'auto',
-                        maxHeight: '45px',
+                        maxHeight: '80px',
                         objectFit: 'contain',
                         borderRadius: 2,
                         p: 2,
@@ -793,7 +792,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       alt=""
                       sx={{
                         width: 'auto',
-                        maxHeight: '45px',
+                        maxHeight: '80px',
                         objectFit: 'contain',
                         borderRadius: 2,
                         p: 2,
@@ -803,7 +802,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       }}
                     /> */}
                   </Box>
-                  <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+                  <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
                     Benefits & Features
                   </Typography>
                   <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
@@ -838,10 +837,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -850,7 +849,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Manual Effort Savings
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -865,10 +864,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -877,7 +876,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Timely Responses
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -892,10 +891,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -904,7 +903,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Scalability
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -956,10 +955,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -968,7 +967,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Efficiency Improvement
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -983,10 +982,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -995,7 +994,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Remote Workforce Enablement
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -1010,10 +1009,10 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '45px',
+                      maxHeight: '80px',
                       objectFit: 'contain',
                       display: 'block',
-                      mx: 'auto',
+                      mx: 0,
                       my: 2,
                       borderRadius: 2,
                       p: 2,
@@ -1022,7 +1021,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                       boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                     }}
                   />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                     Audit Trail
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -1045,10 +1044,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
             >
               <Grid container spacing={6} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
-                  <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
-                    The future
-                  </Typography>
-                  <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+                  <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
                     Revenue Cycle Management
                   </Typography>
                   <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4 }}>
@@ -1069,94 +1065,106 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Grid container spacing={6} alignItems="center">
-                <Grid size={{ xs: 12, md: 4 }}>
-                  <Box
-                    component="img"
-                    src={Frame_6}
-                    alt=""
-                    sx={{
-                      width: 'auto',
-                      maxHeight: '45px',
-                      objectFit: 'contain',
-                      display: 'block',
-                      mx: 'auto',
-                      my: 2,
-                      borderRadius: 2,
-                      p: 0,
-                      bgcolor: 'transparent',
-                      border: 'none',
-                      boxShadow: 'none'
-                    }}
-                  />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
-                    Expertise and Experience
-                  </Typography>
-                  <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
-                    CognitiveHealth's team comprises GenAI architects, healthcare security and privacy experts, and revenue cycle SMEs with extensive experience managing RCM processes for healthcare providers of all sizes. Our team has successfully implemented AI-driven solutions in partnership with recognized health systems, nursing homes, and specialty care providers.
-                  </Typography>
-                  <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+              <Grid container spacing={6} alignItems="stretch">
+                <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'space-between' }}>
+                    <Box>
+                      <Box
+                        component="img"
+                        src={Frame_6}
+                        alt=""
+                        sx={{
+                          width: 'auto',
+                          maxHeight: '80px',
+                          objectFit: 'contain',
+                          display: 'block',
+                          mx: 0,
+                          my: 2,
+                          borderRadius: 2,
+                          p: 2,
+                          bgcolor: 'white',
+                          border: '1px solid var(--color-border, #e5e7eb)',
+                          boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                        }}
+                      />
+                      <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
+                        Expertise and Experience
+                      </Typography>
+                      <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
+                        CognitiveHealth's team comprises GenAI architects, healthcare security and privacy experts, and revenue cycle SMEs with extensive experience managing RCM processes for healthcare providers of all sizes. Our team has successfully implemented AI-driven solutions in partnership with recognized health systems, nursing homes, and specialty care providers.
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+                      <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+                    </Box>
                   </Box>
                 </Grid>
 
-                <Grid size={{ xs: 12, md: 4 }}>
-                  <Box
-                    component="img"
-                    src={Group_60}
-                    alt=""
-                    sx={{
-                      width: 'auto',
-                      maxHeight: '45px',
-                      objectFit: 'contain',
-                      display: 'block',
-                      mx: 'auto',
-                      my: 2,
-                      borderRadius: 2,
-                      p: 2,
-                      bgcolor: 'white',
-                      border: '1px solid var(--color-border, #e5e7eb)',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
-                    }}
-                  />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
-                    Commitment to Privacy and Security
-                  </Typography>
-                  <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
-                    CognitiveHealth's team comprises GenAI architects, healthcare security and privacy experts, and revenue cycle SMEs with extensive experience managing RCM processes for healthcare providers of all sizes. Our team has successfully implemented AI-driven solutions in partnership with recognized health systems, nursing homes, and specialty care providers.
-                  </Typography>
-                  <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+                <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'space-between' }}>
+                    <Box>
+                      <Box
+                        component="img"
+                        src={Group_60}
+                        alt=""
+                        sx={{
+                          width: 'auto',
+                          maxHeight: '80px',
+                          objectFit: 'contain',
+                          display: 'block',
+                          mx: 0,
+                          my: 2,
+                          borderRadius: 2,
+                          p: 2,
+                          bgcolor: 'white',
+                          border: '1px solid var(--color-border, #e5e7eb)',
+                          boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                        }}
+                      />
+                      <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
+                        Commitment to Privacy and Security
+                      </Typography>
+                      <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
+                        We understand your concerns about privacy and security. At CognitiveHealth, our infrastructure meets the highest standards, and we actively follow the latest AI trust and risk guidelines to ensure your safety.
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+                      <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+                    </Box>
                   </Box>
                 </Grid>
 
-                <Grid size={{ xs: 12, md: 4 }}>
-                  <Box
-                    component="img"
-                    src={Frame_5}
-                    alt=""
-                    sx={{
-                      width: 'auto',
-                      maxHeight: '45px',
-                      objectFit: 'contain',
-                      display: 'block',
-                      mx: 'auto',
-                      my: 2,
-                      borderRadius: 2,
-                      p: 0,
-                      bgcolor: 'transparent',
-                      border: 'none',
-                      boxShadow: 'none'
-                    }}
-                  />
-                  <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
-                    Proven ROI
-                  </Typography>
-                  <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
-                    Our AI-powered solutions deliver significant ROI by focusing on labor-intensive processes and minimizing human involvement to exceptional handling and oversight. By accelerating automation and eliminating redundancies, CognitiveHealth ensures rapid implementation and quick time-to-value.
-                  </Typography>
-                  <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+                <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', justifyContent: 'space-between' }}>
+                    <Box>
+                      <Box
+                        component="img"
+                        src={Frame_5}
+                        alt=""
+                        sx={{
+                          width: 'auto',
+                          maxHeight: '80px',
+                          objectFit: 'contain',
+                          display: 'block',
+                          mx: 0,
+                          my: 2,
+                          borderRadius: 2,
+                          p: 2,
+                          bgcolor: 'white',
+                          border: '1px solid var(--color-border, #e5e7eb)',
+                          boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+                        }}
+                      />
+                      <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
+                        Proven ROI
+                      </Typography>
+                      <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
+                        Our AI-powered solutions deliver significant ROI by focusing on labor-intensive processes and minimizing human involvement to exceptional handling and oversight. By accelerating automation and eliminating redundancies, CognitiveHealth ensures rapid implementation and quick time-to-value.
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', gap: 2, mt: 4, mb: 2, flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+                      <Button variant="text" href="/request-demo" color="primary" endIcon={<ArrowForwardIcon />} sx={{ fontWeight: 600, textTransform: 'none', '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' } }}>Learn more</Button>
+                    </Box>
                   </Box>
                 </Grid>
               </Grid>
@@ -1208,7 +1216,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
                     alt=""
                     sx={{
                       width: 'auto',
-                      maxHeight: '90px',
+                      maxHeight: '120px',
                       objectFit: 'contain',
                       display: 'block',
                       mx: 'auto',
@@ -1257,13 +1265,13 @@ const EligibilityVerificationFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="subtitle2" sx={{ mb: 1, mt: 4, fontSize: { xs: '0.85rem', md: '0.95rem' }, textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600, color: 'primary.main', display: 'block' }}>
             The future
           </Typography>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 2, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
             Eligibility Verification and Denial Management with AI Automation
           </Typography>
-          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
             Challenges in Eligibility Verification and Denial Management
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -1301,7 +1309,7 @@ const EligibilityVerificationFaqPage = () => {
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
             The process of managing denials is resource-intensive and requires meticulous attention to detail. Manual denial management often leads to extended reimbursement cycles and increased operational costs.
           </Typography>
-          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
             Benefits of AI Driven Automated Eligibility Verification and Denial Management
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
@@ -1333,7 +1341,7 @@ const EligibilityVerificationFaqPage = () => {
               <ListItemText primary="Enhanced Patient Experience: Faster eligibility verification enhances the patient experience by reducing wait times and ensuring transparency in coverage details." primaryTypographyProps={{ color: 'text.secondary', fontSize: '1.05rem' }} />
             </ListItem>
           </List>
-          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
             Introducing iCAN™ – Network of AI Agents for Healthcare Revenue Cycle Management
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>

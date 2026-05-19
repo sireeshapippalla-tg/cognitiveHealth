@@ -27,16 +27,16 @@ const HealthcareBackOfficeFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="subtitle2" sx={{ mb: 1, mt: 4, fontSize: { xs: '0.85rem', md: '0.95rem' }, textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600, color: 'primary.main', display: 'block' }}>
             The future
           </Typography>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 4, fontSize: { xs: '1.8rem', md: '2.4rem' } }}>
+          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 2, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
             Healthcare Back Office Solutions
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
             As the healthcare industry faces increasing demands for efficiency and accuracy, the need for optimized back office operations has never been greater. The back office functions as the backbone of any healthcare organization, ensuring that administrative tasks are handled smoothly so that healthcare providers can focus on what they do best: caring for patients. At CognitiveHealth, we understand the unique challenges faced by healthcare organizations and are dedicated to providing solutions that not only meet but exceed these demands.
           </Typography>
-          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3 }}>
+          <Typography variant="h5" component="h3" fontWeight={600} color="var(--color-text-dark, #1f2937)" sx={{ mb: 2, mt: 3, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
             Introducing iCAN™ – Network of AI Agents for Healthcare Revenue Cycle Management
           </Typography>
           <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
