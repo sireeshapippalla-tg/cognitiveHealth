@@ -91,8 +91,9 @@ const ContactSection = () => {
         phone: "",
         message: "",
       });
-    } catch (error: any) {
-      toast.error(error.data?.error || "Failed to send message. Please try again.");
+    } catch (error) {
+      const err = error as { data?: { error?: string } };
+      toast.error(err.data?.error || "Failed to send message. Please try again.");
       console.error(error);
     }
   };

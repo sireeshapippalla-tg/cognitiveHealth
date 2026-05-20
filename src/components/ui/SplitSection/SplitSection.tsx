@@ -147,7 +147,7 @@ const SplitSection = ({
                 width={width}
                 height={height}
                 loading={prioritize ? "eager" : "lazy"}
-                // @ts-ignore - fetchpriority is a modern attribute
+                // @ts-expect-error - fetchpriority is a modern attribute
                 fetchpriority={prioritize ? "high" : "auto"}
               />
             </ImageCard>

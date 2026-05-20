@@ -44,6 +44,7 @@ const TeamMemberCard = ({ member }: Props) => {
           {/* Arrow Button */}
           <IconButton
             onClick={() => setOpen(true)}
+            aria-label={`View ${member.title}'s profile`}
             sx={{
               position: "absolute",
               bottom: 8,

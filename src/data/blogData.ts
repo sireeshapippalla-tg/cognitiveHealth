@@ -1,3 +1,9 @@
+import BlogDenialManagement from "../assets/MediaCards/blog_denial_management.webp";
+import BlogDataCapture from "../assets/MediaCards/blog_data_capture.webp";
+import BlogRevenueCycle from "../assets/MediaCards/blog_revenue_cycle.webp";
+import BlogCorrespondenceManagement from "../assets/MediaCards/blog_correspondence_management.webp";
+import BlogIntelligenceAutomation from "../assets/MediaCards/blog_intelligence_automation.webp";
+
 export interface Blog {
   id: string;
   type: "blog";
@@ -17,7 +23,7 @@ export const blogData: Blog[] = [
     title: "Agentic AI Automation with Intent: A Practical Example in Denial Management",
     description:
       "As the excitement around AI grows, it’s easy to conflate different forms of automation under the “Agentic AI” label.",
-    image: "/images/blog/blog_denial_management_1774338146868.png",
+    image: BlogDenialManagement,
     date: "July 17, 2025",
     readTime: "",
     // category: "Document Processing",
@@ -29,7 +35,7 @@ export const blogData: Blog[] = [
     title: "Intelligent Document Processing - Revolutionizing Data Capture",
     description:
       "Classifying large volumes of documents is essential to make them more manageable and, ultimately, obtain valuable insights.",
-    image: "/images/blog/blog_data_capture_1774338172464.png",
+    image: BlogDataCapture,
     date: "June 13, 2025",
     readTime: "",
     // category: "Best Practices",
@@ -41,7 +47,7 @@ export const blogData: Blog[] = [
     title: "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
     description:
       "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
-    image: "/images/blog/blog_revenue_cycle_1774338212683.png",
+    image: BlogRevenueCycle,
     date: "June 11, 2025",
     readTime: "",
     // category: "Revenue Cycle",
@@ -53,7 +59,7 @@ export const blogData: Blog[] = [
     title: "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
     description:
       "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
-    image: "/images/blog/blog_correspondence_management_1774338229969.png",
+    image: BlogCorrespondenceManagement,
     date: "June 11, 2025",
     readTime: "",
     // category: "Strategy",
@@ -65,7 +71,7 @@ export const blogData: Blog[] = [
     title: "Maximizing Business Value Requires the Vision of Intelligence in Automation",
     description:
       "The benefits of automating healthcare administrative tasks to gain efficiencies have been agreed in principle for some time now.",
-    image: "/images/blog/blog_intelligence_automation_1774338269263.png",
+    image: BlogIntelligenceAutomation,
     date: "December 14, 2020",
     readTime: "",
     // category: "Strategy",

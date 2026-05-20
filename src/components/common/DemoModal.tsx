@@ -85,6 +85,7 @@ const DemoModal: React.FC = () => {
                 <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
                   <IconButton
                     onClick={closeDemoModal}
+                    aria-label="Close"
                     sx={{
                       width: 40,
                       height: 40,

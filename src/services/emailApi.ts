@@ -14,8 +14,11 @@ export const emailApi = api.injectEndpoints({
     // POST /api/email/send-assessment-email
     sendAssessmentEmail: builder.mutation({
       query: (formData) => ({
-        url: '/email/send-assessment-email',
+        url: `${import.meta.env.VITE_GLOBAL_COMMAND_CENTER_API_URL}/sendRcmAiReadinessAssessmentResults`,
         method: 'POST',
+        headers: {
+          "X-API-TOKEN": import.meta.env.VITE_GLOBAL_COMMAND_CENTER_API_TOKEN,
+        },
         body: formData,
       }),
     }),
@@ -23,8 +26,11 @@ export const emailApi = api.injectEndpoints({
     // POST /api/email/our-implementation-process-pdf
     sendImplementationProcessPdf: builder.mutation({
       query: (formData) => ({
-        url: '/email/our-implementation-process-pdf',
+        url: `${import.meta.env.VITE_GLOBAL_COMMAND_CENTER_API_URL}/sendCognitiveHealthImplementationProcess`,
         method: 'POST',
+        headers: {
+          "X-API-TOKEN": import.meta.env.VITE_GLOBAL_COMMAND_CENTER_API_TOKEN,
+        },
         body: formData,
       }),
     }),

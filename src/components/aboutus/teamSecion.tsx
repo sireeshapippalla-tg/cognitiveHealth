@@ -13,6 +13,7 @@ import albertImg from "../../assets/aboutUs/albert.svg";
 import nkImg from "../../assets/aboutUs/nk.svg";
 import rambabuImg from "../../assets/aboutUs/rambabu.svg";
 import vispiImg from "../../assets/aboutUs/vispi.svg";
+import simeonImg from "../../assets/aboutUs/simeon.webp";
 import TeamMemberCard from "../ui/teamCard/TeamMemberCard";
 
 type ExpandableItem = {
@@ -110,8 +111,7 @@ const teamData: ExpandableItem[] = [
     id: 8,
     title: "Simeon Friedman",
     subtitle: "Chief Financial Advisor",
-    image:
-      "https://cognitivehealthit.com/wp-content/uploads/elementor/thumbs/Simeon-Friedman-op68ukub1a4yjkd7fvvg4vuxvuscmkfjh39c8itrlq.jpg",
+    image: simeonImg,
     description: `Simeon Friedman has more than 18 years of experience in accounting,
                  financial analysis, tax and business consulting across a wide spectrum of
                  industries. These include manufacturing, real estate, wholesale distribution,

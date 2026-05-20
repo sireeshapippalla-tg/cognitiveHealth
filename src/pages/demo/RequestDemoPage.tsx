@@ -5,6 +5,11 @@ import { Link as RouterLink, useNavigate, useLocation } from "react-router-dom";
 import { ROUTES } from "../../routes/RoutePaths";
 import logo from "../../assets/cognitiveLogo.svg";
 
+interface LocationState {
+  fromLabel?: string;
+  fromPath?: string | number;
+}
+
 const RequestDemoPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -12,7 +17,9 @@ const RequestDemoPage: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // Get dynamic breadcrumb data from navigation state
-  const { fromLabel = "", fromPath = -1 } = (location.state as any) || {};
+  const state = location.state as LocationState | null;
+  const fromLabel = state?.fromLabel || "";
+  const fromPath = state?.fromPath !== undefined ? state.fromPath : -1;
 
   // Only show middle breadcrumb if it's a specific page (not Footer/Menu/Home)
   const showMiddleLink = fromLabel && !["Home", "Footer", "Menu", "Header"].includes(fromLabel);
@@ -69,7 +76,13 @@ const RequestDemoPage: React.FC = () => {
             </Link>
             {showMiddleLink && (
               <Link
-                onClick={() => navigate(fromPath)}
+                onClick={() => {
+                  if (typeof fromPath === "number") {
+                    navigate(fromPath);
+                  } else {
+                    navigate(fromPath);
+                  }
+                }}
                 sx={{ cursor: "pointer" }}
                 underline="hover"
                 color="inherit"

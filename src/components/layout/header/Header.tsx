@@ -77,7 +77,7 @@ const Header = () => {
   };
 
   /** ================= NAVIGATION ================= */
-  const handleNavigate = (path: string, state?: any) => {
+  const handleNavigate = (path: string, state?: unknown) => {
     navigate(path, { state });
     setSolutionsOpen(false);
     setDrawerOpen(false);
@@ -242,6 +242,8 @@ const Header = () => {
           <LogoImage
             src={cognitiveLogo}
             alt="CognitiveHealth"
+            width={180}
+            height={50}
             onClick={() => navigate("/", { replace: false })}
           />
 
@@ -536,6 +538,8 @@ const Header = () => {
             <LogoImage
               src={cognitiveLogo}
               alt="CognitiveHealth"
+              width={180}
+              height={50}
               onClick={() => {
                 navigate("/", { replace: false });
                 setDrawerOpen(false);

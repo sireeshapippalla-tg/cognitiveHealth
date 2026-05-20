@@ -180,7 +180,9 @@ export const CTAWrapper = styled(Box)(() => ({
   marginTop: "48px",
 }));
 
-export const CTAButton = styled(Button)<{ themeColor: string }>(
+export const CTAButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== "themeColor",
+})<{ themeColor: string }>(
   ({ themeColor }) => ({
     padding: "12px 40px",
     borderRadius: "40px",

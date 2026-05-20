@@ -1,21 +1,14 @@
 import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
 import {
   Typography,
   Grid,
   Stack,
   Divider,
   Button,
-  Dialog,
-  TextField,
-  CircularProgress,
-  IconButton,
   Box,
-  Fade,
   LinearProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import CloseIcon from "@mui/icons-material/Close";
 import { toast } from "react-toastify";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -26,17 +19,8 @@ import {
   SectionTitle,
   StyledCheckbox,
   ResultPaper,
-  FolderStyledIcon,
-  PaymentsStyledIcon,
-  HospitalStyledIcon,
-  TimeStyledIcon,
-  AIStyledIcon,
-  HandshakeStyledIcon,
-  TrendingStyledIcon,
-  InsightsStyledIcon,
   SuccessStyledIcon,
   ResultsWrapper,
-  PrimaryButton,
   HeroSection,
   HeroTitle,
   HeroSubtitle,
@@ -44,101 +28,10 @@ import {
 import AppButton from "../components/ui/appButton/AppButton";
 
 import logo from "../assets/cognitiveLogo.png";
+
 import { useSendAssessmentEmailMutation } from "../services/emailApi";
-
-/* TYPES */
-type ChecklistItem = { label: string };
-type SectionProps = {
-  title: string;
-  icon?: React.ReactNode;
-  items: ChecklistItem[];
-};
-
-/* DATA */
-const sections: SectionProps[] = [
-  {
-    title: "Correspondence Classification",
-    icon: <FolderStyledIcon />,
-    items: [
-      { label: "Receive daily high volumes of correspondence" },
-      { label: "Documents arrive via fax, email, portals, and mail" },
-      { label: "Staff manually reviews, labels, and sorts documents" },
-      { label: "Handling 5+ categories (denials, medical records, appeals)" },
-    ],
-  },
-  {
-    title: "Payment Posting & Reconciliation",
-    icon: <PaymentsStyledIcon />,
-    items: [
-      { label: "Manual posting of non-standard ERAs or paper EOBs" },
-      { label: "Significant delays in month-end reconciliation" },
-      { label: "Difficulty matching bulk payments to individual claims" },
-      { label: "High volume of unposted cash on the balance sheet" },
-    ],
-  },
-  {
-    title: "EMR & Facility Complexity",
-    icon: <HospitalStyledIcon />,
-    items: [
-      { label: "Operating across multiple incompatible EMR systems" },
-      { label: "Managing billing for multiple facility locations" },
-      { label: "Lack of centralized data integration between sites" },
-      { label: "Inconsistent data formats require manual work" },
-    ],
-  },
-  {
-    title: "Low Dollar Denials & Write-Offs",
-    icon: <TrendingStyledIcon />,
-    items: [
-      {
-        label:
-          "High volume of denials under $200–$500 that are written off or outsourced",
-      },
-      { label: "Cost-to-collect exceeds the potential recovery amount" },
-      { label: "Lack of granular visibility into small balance denial trends" },
-      { label: "Manual appeal process is too expensive for low balances" },
-    ],
-  },
-  {
-    title: "Measurable Impact Potential",
-    icon: <InsightsStyledIcon />,
-    items: [
-      { label: "Leadership has set goals to reduce DSO or AR days" },
-      { label: "Finance team requires ROI within 6–12 months" },
-      { label: "Goal to shift staff from data entry to high-value tasks" },
-      { label: "Need to reduce overall cost-to-collect" },
-    ],
-  },
-  {
-    title: "Operational Challenges",
-    icon: <TimeStyledIcon />,
-    items: [
-      { label: "Staff turnover or shortages in the RCM department" },
-      { label: "Missed appeal deadlines due to routing delays" },
-      { label: "Backlogs in work queues creating cash-flow delays" },
-    ],
-  },
-  {
-    title: "AI Compatibility & Readiness",
-    icon: <AIStyledIcon />,
-    items: [
-      { label: "Current inputs are digital (PDF, 835/837, scanned images)" },
-      { label: "IT team is open to API, SFTP, or secure pilot access" },
-      { label: "Workflows are documented or can be mapped clearly" },
-      { label: "Data is accessible via shared folders or DMS" },
-    ],
-  },
-  {
-    title: "Organizational Readiness",
-    icon: <HandshakeStyledIcon />,
-    items: [
-      { label: "Key stakeholders support automation" },
-      { label: "Budget is available for efficiency tools" },
-      { label: "Organization is willing to pilot new technology" },
-      { label: "There is a designated champion to drive the initiative" },
-    ],
-  },
-];
+import { sections } from "./RcmreadinessData";
+import { RcmreadinessEmailDialog } from "./RcmreadinessEmailDialog";
 
 const RCMReadinessScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -148,8 +41,11 @@ const RCMReadinessScreen: React.FC = () => {
   const [score, setScore] = useState(0);
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  
+  const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
 
-    const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
+  const isProcessing = isGeneratingPdf || isSending;
 
   const handleCheck = (key: string) =>
     setCheckedItems((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -161,7 +57,7 @@ const RCMReadinessScreen: React.FC = () => {
 
   const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
- const generatePdfFromUI = async (): Promise<Blob> => {
+  const generatePdfFromUI = async (): Promise<Blob> => {
     if (!pdfRef.current) throw new Error("PDF container not found");
 
     const canvas = await html2canvas(pdfRef.current, {
@@ -171,10 +67,8 @@ const RCMReadinessScreen: React.FC = () => {
       scrollY: -window.scrollY,
     });
 
-    // JPEG at 60% quality keeps file size well under 5MB
     const imgData = canvas.toDataURL("image/jpeg", 0.6);
-
-    const pdf = new jsPDF("p", "mm", "a4", true); // true = compression enabled
+    const pdf = new jsPDF("p", "mm", "a4", true);
 
     const pageWidth = 210;
     const pageHeight = 297;
@@ -183,7 +77,6 @@ const RCMReadinessScreen: React.FC = () => {
     const usableWidth = pageWidth - margin * 2;
     const imgHeight = (canvas.height * usableWidth) / canvas.width;
 
-    /* LOGO */
     const logoImg = new Image();
     logoImg.src = logo;
 
@@ -195,72 +88,90 @@ const RCMReadinessScreen: React.FC = () => {
 
     pdf.setFontSize(20);
     pdf.setTextColor(30, 64, 175);
-    // pdf.text("RCM AI Readiness Assessment", margin, 30);
     pdf.text("RCM AI Readiness Assessment", pageWidth / 2, 35, {
       align: "center",
     });
 
     let position = 40;
-
     pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
 
     let heightLeft = imgHeight - (pageHeight - 40);
 
     while (heightLeft > 0) {
       position = heightLeft - imgHeight + 30;
-
       pdf.addPage();
       pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
-
       heightLeft -= pageHeight - 40;
     }
 
     return pdf.output("blob");
   };
-const handleSendEmail = async () => {
+
+  const handleSendEmail = async () => {
     if (!email) return;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address");
       return;
     }
 
     try {
-      // 1. Generate PDF
+      setIsGeneratingPdf(true);
+      await new Promise((resolve) => setTimeout(resolve, 50)); 
+      
       const pdfBlob = await generatePdfFromUI();
 
       if (!pdfBlob) {
         toast.error("Failed to generate PDF");
+        setIsGeneratingPdf(false);
         return;
       }
 
-      // 2. Send email via RTK Query mutation (also saves to DB internally on backend)
+      setIsGeneratingPdf(false);
+
       const formData = new FormData();
-      formData.append("email", email);
-      formData.append("score", score.toString());
-      formData.append("file", pdfBlob, "RCM-AI-Assessment.pdf");
+      formData.append("toEmail", email);
+      formData.append("attachments", pdfBlob, "RCM-AI-Assessment.pdf");
+      formData.append("countOfItems", score.toString());
 
       await sendAssessmentEmail(formData).unwrap();
 
       toast.success("Assessment report sent successfully!");
       setOpenEmailDialog(false);
       setEmail("");
-    } catch (error: any) {
+      
+      setCheckedItems({});
+      setSubmitted(false);
+      setScore(0);
+      
+    } catch (error: unknown) {
       console.error(error);
-      toast.error(error.data?.error || error.message || "An unexpected error occurred while sending");
+      setIsGeneratingPdf(false);
+      const err = error as { data?: { error?: string }; message?: string };
+      toast.error(err.data?.error || err.message || "An unexpected error occurred while sending");
     }
   };
+
+  const handlePreviewPdf = async () => {
+    const newWindow = window.open("", "_blank");
+    try {
+      const pdfBlob = await generatePdfFromUI();
+      const url = URL.createObjectURL(pdfBlob);
+      if (newWindow) newWindow.location.href = url;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
   const selectedCount = Object.values(checkedItems).filter(Boolean).length;
   const progress = (selectedCount / totalItems) * 100;
+
   return (
-    // <HeaderWrapper>
     <>
       <HeroSection>
         <HeroTitle>Revenue Cycle Management AI Readiness Assessment</HeroTitle>
-
         <HeroSubtitle>
           Use this checklist to determine if your organization is ready for
           AI-driven RCM solutions.
@@ -285,7 +196,6 @@ const handleSendEmail = async () => {
             mb={1}
           >
             <Typography fontWeight={600}>Progress</Typography>
-
             <Typography color="text.secondary">
               {selectedCount} / {totalItems} selected
             </Typography>
@@ -391,22 +301,6 @@ const handleSendEmail = async () => {
                     You have checked <strong>{score}</strong> boxes.
                   </Typography>
 
-                  {/* <Typography align="center" color="var(--color-gray-600)">
-                    {score >= 15 ? (
-                      <>
-                        If you checked <strong>15 or more boxes</strong>, your
-                        organization is a prime candidate for AI-driven
-                        automation.
-                      </>
-                    ) : (
-                      <>
-                        If you checked <strong>fewer than 15 boxes</strong>,
-                        your organization shows partial readiness for AI
-                        automation.
-                      </>
-                    )}
-                  </Typography> */}
-
                   <Typography align="center" color="var(--color-gray-600)">
                     {score >= 15 ? (
                       <>
@@ -427,6 +321,7 @@ const handleSendEmail = async () => {
                     direction={{ xs: "column", sm: "row" }}
                     spacing={2}
                     mt={2}
+                    data-html2canvas-ignore="true"
                   >
                     <AppButton
                       variantType="primary"
@@ -450,140 +345,17 @@ const handleSendEmail = async () => {
           </ResultsWrapper>
         )}
 
-        <Dialog
+        <RcmreadinessEmailDialog
           open={openEmailDialog}
-          onClose={() => !isSending && setOpenEmailDialog(false)}
-          maxWidth="xs"
-          fullWidth
-          slotProps={{
-            backdrop: {
-              style: {
-                backgroundColor: "rgba(10, 15, 30, 0.4)",
-                backdropFilter: "blur(12px)",
-              },
-            },
-          }}
-          PaperProps={{
-            sx: {
-              backgroundColor: "transparent",
-              boxShadow: "none",
-              overflow: "visible",
-              outline: "none",
-            },
-          }}
-          TransitionComponent={Fade}
-          transitionDuration={400}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                background: "rgba(255, 255, 255, 0.98)",
-                backdropFilter: "blur(20px)",
-                borderRadius: "32px",
-                padding: 4,
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                overflow: "visible",
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  inset: -2,
-                  zIndex: -1,
-                  background: "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
-                  borderRadius: "34px",
-                  opacity: 0.4,
-                  filter: "blur(8px)",
-                },
-              }}
-            >
-              <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
-                <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
-                  <IconButton
-                    aria-label="Close dialog"
-                    onClick={() => setOpenEmailDialog(false)}
-                    disabled={isSending}
-                    sx={{
-                      width: 40,
-                      height: 40,
-                      background: "var(--color-white)",
-                      color: "#1e293b",
-                      boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                      border: "2px solid var(--color-white)",
-                      "&:hover": { color: "var(--color-primary-dark)" },
-                    }}
-                  >
-                    <CloseIcon fontSize="small" />
-                  </IconButton>
-                </motion.div>
-              </Box>
-
-              <Box mb={3} textAlign="center">
-                <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
-                  Send Assessment Report
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#64748b" }}>
-                  Enter the email address where you would like to receive your personalized roadmap.
-                </Typography>
-              </Box>
-
-              <TextField
-                fullWidth
-                label="Work Email Address"
-                type="email"
-                placeholder="example@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "16px",
-                    backgroundColor: "rgba(248, 250, 252, 0.8)",
-                  },
-                }}
-              />
-
-              <Box mt={4} display="flex" flexDirection="column" gap={2}>
-                <PrimaryButton
-                  variant="contained"
-                  fullWidth
-                  disabled={!email || isSending}
-                  onClick={handleSendEmail}
-                  startIcon={isSending ? <CircularProgress size={16} color="inherit" /> : null}
-                  sx={{
-                    py: 1.8,
-                    borderRadius: "16px",
-                    fontWeight: 800,
-                    textTransform: "none",
-                  }}
-                >
-                  {isSending ? "Generating PDF..." : "Send Assessment Report"}
-                </PrimaryButton>
-
-                <Button
-                  fullWidth
-                  variant="text"
-                  sx={{ textTransform: "none", color: "#64748b", fontWeight: 600 }}
-                  onClick={async () => {
-                    const newWindow = window.open("", "_blank");
-                    try {
-                      const pdfBlob = await generatePdfFromUI();
-                      const url = URL.createObjectURL(pdfBlob);
-                      if (newWindow) newWindow.location.href = url;
-                    } catch (err) {
-                      console.error(err);
-                    }
-                  }}
-                >
-                  {/* Preview PDF */}
-                </Button>
-              </Box>
-            </Box>
-          </motion.div>
-        </Dialog>
+          onClose={() => setOpenEmailDialog(false)}
+          email={email}
+          setEmail={setEmail}
+          isProcessing={isProcessing}
+          isGeneratingPdf={isGeneratingPdf}
+          isSending={isSending}
+          onSend={handleSendEmail}
+          onPreviewPdf={handlePreviewPdf}
+        />
       </HeaderWrapper>
     </>
   );

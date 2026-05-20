@@ -8,7 +8,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const senderAddress = () => `"CognitiveHealth" <${process.env.EMAIL_FROM || process.env.EMAIL_USER}>`;
 
 // POST /api/email/send-results-pdf - Send results PDF to user
-router.post('/send-results-pdf', upload.single('file'), async (req: Request, res: Response): Promise<any> => {
+router.post('/send-results-pdf', upload.single('file'), async (req: Request, res: Response) => {
   try {
     const { email } = req.body;
     const file = req.file;
@@ -48,7 +48,7 @@ router.post('/send-results-pdf', upload.single('file'), async (req: Request, res
 });
 
 // POST /api/email/send-assessment-email - Send RCM assessment PDF to user
-router.post('/send-assessment-email', upload.single('file'), async (req: Request, res: Response): Promise<any> => {
+router.post('/send-assessment-email', upload.single('file'), async (req: Request, res: Response) => {
   try {
     const { email, score } = req.body;
     const file = req.file;
@@ -90,7 +90,7 @@ router.post('/send-assessment-email', upload.single('file'), async (req: Request
 });
 
 // POST /api/email/our-implementation-process-pdf - Send results PDF to user
-router.post('/our-implementation-process-pdf', upload.single('file'), async (req: Request, res: Response): Promise<any> => {
+router.post('/our-implementation-process-pdf', upload.single('file'), async (req: Request, res: Response) => {
   try {
     const { email } = req.body;
     const file = req.file;

@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+interface HubSpotWindow extends Window {
+  _hsq?: unknown[][];
+}
+
 /**
  * Custom hook to track page views in HubSpot for Single Page Applications (SPA).
  */
@@ -9,7 +13,8 @@ const useHubSpotTracking = () => {
 
   useEffect(() => {
     // Access the HubSpot tracking queue
-    const _hsq = (window as any)._hsq = (window as any)._hsq || [];
+    const hWindow = window as unknown as HubSpotWindow;
+    const _hsq = hWindow._hsq = hWindow._hsq || [];
     
     // We use a small timeout to ensure the DOM title and other metadata 
     // are updated before HubSpot tracks the page view.

@@ -28,7 +28,7 @@ const AppButton = ({
       disableElevation
       startIcon={startIcon}
       endIcon={endIcon}
-      showBorder={showBorder}
+      {...(variantType === "outline" ? { showBorder } : {})}
     />
   );
 };

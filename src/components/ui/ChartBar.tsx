@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
+import type { SxProps } from "@mui/material";
 
 interface ChartBarProps {
   height: string | number; // e.g., "50%" or 50
   color: string;
-  sx?: any;
+  sx?: SxProps;
 }
 
 export const ChartBar = ({ height, color, sx = {} }: ChartBarProps) => (

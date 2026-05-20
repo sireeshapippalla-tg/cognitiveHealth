@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
+import type { SxProps } from "@mui/material";
 import type { ReactNode } from "react";
 
 interface DashboardCardProps {
   children: ReactNode;
-  sx?: any; // Allow style overrides
+  sx?: SxProps; // Allow style overrides
 }
 
 export const DashboardCard = ({ children, sx = {} }: DashboardCardProps) => (

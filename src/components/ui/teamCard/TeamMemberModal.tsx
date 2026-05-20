@@ -102,6 +102,7 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
             >
               <IconButton
                 onClick={onClose}
+                aria-label="Close"
                 sx={{
                   width: isMobile ? 36 : 44,
                   height: isMobile ? 36 : 44,
