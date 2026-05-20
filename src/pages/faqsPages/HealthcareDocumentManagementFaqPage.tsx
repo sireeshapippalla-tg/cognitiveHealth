@@ -1,19 +1,20 @@
-import { Typography } from '@mui/material';
-import { getBaseUrl } from '../../utils/urlHelper';
-import { FaqPageLayout } from './EligibilityVerificationFaqPage';
+import { Typography } from "@mui/material";
+import { getBaseUrl } from "../../utils/urlHelper";
+import { FaqPageLayout } from "./EligibilityVerificationFaqPage";
 
 const HealthcareDocumentManagementFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Healthcare Document Management With Generative AI",
-    "description": "Streamline your healthcare document management with our advanced AI solutions. Discover how our tools can enhance efficiency, reduce errors, and improve financial performance. Schedule a free demo today.",
-    "url": `${baseUrl}/healthcare-document-management-with-generative-ai`,
-    "publisher": {
+    name: "Healthcare Document Management With Generative AI",
+    description:
+      "Streamline your healthcare document management with our advanced AI solutions. Discover how our tools can enhance efficiency, reduce errors, and improve financial performance. Schedule a free demo today.",
+    url: `${baseUrl}/healthcare-document-management-with-generative-ai`,
+    publisher: {
       "@type": "Organization",
-      "name": "CognitiveHealth Technologies"
-    }
+      name: "CognitiveHealth Technologies",
+    },
   };
 
   return (
@@ -27,14 +28,161 @@ const HealthcareDocumentManagementFaqPage = () => {
       heroButtonUrl="/request-a-demo"
       section2Content={
         <>
-          <Typography variant="subtitle2" sx={{ mb: 1, mt: 4, fontSize: { xs: '0.85rem', md: '0.95rem' }, textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600, color: 'primary.main', display: 'block' }}>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              mb: 1,
+              mt: 4,
+              fontSize: { xs: "0.85rem", md: "0.95rem" },
+              textTransform: "uppercase",
+              letterSpacing: "1.5px",
+              fontWeight: 600,
+              color: "primary.main",
+              display: "block",
+            }}
+          >
             The future
           </Typography>
-          <Typography variant="h3" component="h2" fontWeight={700} color="var(--color-text-dark, #1f2937)" sx={{ mb: 3, mt: 2, fontSize: { xs: '1.4rem', md: '1.8rem' } }}>
-            Introducing iCAN™ - Network of AI Agents for Healthcare Revenue Cycle Management
+          <Typography
+            variant="h3"
+            component="h2"
+            fontWeight={700}
+            color="var(--color-text-dark, #1f2937)"
+            sx={{ mb: 3, mt: 2, fontSize: { xs: "1.4rem", md: "1.8rem" } }}
+          >
+            Introducing iCAN™ - Network of AI Agents for Healthcare Revenue
+            Cycle Management
           </Typography>
-          <Typography variant="body1" paragraph color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.8 }}>
-            iCAN™ is a Network of AI agents configured to run simple or complex workflows in the Healthcare Revenue Cycle. Built by CognitiveHealth, pioneers of healthcare process automation, AI powers iCAN™ and is purpose-built for the Healthcare Revenue Cycle.
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
+          >
+            iCAN™ is a Network of AI agents configured to run simple or complex
+            workflows in the Healthcare Revenue Cycle. Built by CognitiveHealth,
+            pioneers of healthcare process automation, AI powers iCAN™ and is
+            purpose-built for the Healthcare Revenue Cycle.
+          </Typography>
+        </>
+      }
+      scheduleDemoContent={
+        <>
+          <Typography
+            variant="h3"
+            component="h2"
+            fontWeight={700}
+            color="var(--color-text-dark, #1f2937)"
+            sx={{
+              mb: 3,
+              mt: 4,
+              fontSize: { xs: "1.8rem", md: "2.4rem" },
+            }}
+          >
+            Schedule a FREE Demo Today!
+          </Typography>
+
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            In the dynamic world of healthcare, automating critical processes
+            such as document management and correspondence handling is essential
+            for maintaining operational efficiency and compliance.
+            CognitiveHealth's iCANT platform provides a comprehensive solution
+            that addresses these challenges head-on, empowering healthcare
+            providers to focus on delivering exceptional patient care.
+          </Typography>
+
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            By embracing automation, healthcare organizations can significantly
+            reduce administrative burdens, enhance compliance, and improve
+            overall performance. Experience the future of healthcare document
+            management with CognitiveHealth's iCAN™ platform - a revolutionary
+            approach to document automation and correspondence management.
+          </Typography>
+
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            For healthcare providers looking to optimize their document
+            management processes, CognitiveHealth's iCANT platform offers a
+            comprehensive, scalable, and efficient solution. Embrace the
+            transformative power of Al in healthcare document management and
+            take the first step towards operational excellence today.
+          </Typography>
+
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            CognitiveHealth's team has extensive experience managing Healthcare
+            RCM processes for small, medium, and large healthcare providers and
+            systems. The team includes Al & GenAl Architects & developers,
+            Healthcare Security and Privacy experts, and Healthcare Revenue
+            Cycle SME's.
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            This experienced team of CognitiveHealth has partnered with
+            recognized health systems to build iCANT - Network of Al Agents.
+          </Typography>
+
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            iCANTM platform is purpose-built for healthcare.
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            color="text.secondary"
+            sx={{
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
+            }}
+          >
+            We understand your concerns about privacy and security. At
+            CognitiveHealth, our infrastructure meets the highest standards, and
+            we actively follow the latest Al trust and risk guidelines to ensure
+            your safety.
           </Typography>
         </>
       }
