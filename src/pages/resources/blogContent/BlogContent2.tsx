@@ -1,8 +1,9 @@
 import React from "react";
 import { BlogHeader, BlogTitle, BlogDate, BlogDescription, Author, SectionTitle, SectionContent, OutcomeList, InlineImageContainer, InlineImage, ImageCaption } from "../BlogDetailPage.styles";
+import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {
-  blog: any;
+  blog: Blog;
 }
 
 import IDPHeader from "../../../assets/Blogs/IDP-Header-768x324.webp";

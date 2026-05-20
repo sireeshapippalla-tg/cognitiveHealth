@@ -5,7 +5,7 @@ import transporter from '../config/mailer';
 const router = express.Router();
 
 // POST /api/contact - Save contact form submission
-router.post('/', async (req: Request, res: Response): Promise<any> => {
+router.post('/', async (req: Request, res: Response) => {
   try {
     const { name, email, phone, message } = req.body;
 
@@ -23,7 +23,7 @@ router.post('/', async (req: Request, res: Response): Promise<any> => {
     }
 
     const query = 'INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)';
-    const [result]: any = await pool.execute(query, [name, email, phone || null, message]);
+    const [result] = await pool.execute(query, [name, email, phone || null, message]) as unknown as [{ insertId: number }, unknown];
 
     // Beautiful HTML Template for the Company (Receiver)
     const emailHtml = `

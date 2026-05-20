@@ -63,7 +63,7 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "auto" });
     }
-  }, []);
+  }, [location.hash]);
 
   useEffect(() => {
     if (!isTabClickRef.current) {

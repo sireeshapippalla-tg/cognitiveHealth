@@ -53,6 +53,7 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
           >
             <IconButton
               onClick={onClose}
+              aria-label="Close"
               sx={{
                 width: 44,
                 height: 44,

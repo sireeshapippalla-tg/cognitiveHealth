@@ -43,9 +43,10 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
       toast.success("Guide sent successfully. Please check your inbox.");
       setEmail("");
       onClose();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      toast.error(err.data?.error || err.message || "Failed to send guide. Please try again.");
+      const error = err as { data?: { error?: string }; message?: string };
+      toast.error(error.data?.error || error.message || "Failed to send guide. Please try again.");
     }
   };
 
@@ -116,6 +117,7 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
             >
               <IconButton
                 onClick={onClose}
+                aria-label="Close"
                 sx={{
                   width: 40,
                   height: 40,

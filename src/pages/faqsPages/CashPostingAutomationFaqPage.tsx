@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { getBaseUrl } from "../../utils/urlHelper";
-import { FaqPageLayout } from "./EligibilityVerificationFaqPage";
+import { FaqPageLayout } from "./FaqPageLayout";
 
 const CashPostingAutomationFaqPage = () => {
   const baseUrl = getBaseUrl();

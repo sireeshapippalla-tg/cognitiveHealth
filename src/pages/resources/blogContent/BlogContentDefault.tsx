@@ -1,8 +1,9 @@
 import React from "react";
 import { BlogHeader, BlogTitle, BlogDate, BlogDescription, Author, SectionTitle, SectionContent } from "../BlogDetailPage.styles";
+import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {
-  blog: any;
+  blog: Blog;
 }
 
 export const BlogContentDefault: React.FC<BlogContentProps> = ({ blog }) => (

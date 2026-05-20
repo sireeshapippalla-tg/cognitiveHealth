@@ -1,13 +1,8 @@
 import {
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  Typography
 } from "@mui/material";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { getBaseUrl } from "../../utils/urlHelper";
-import { FaqPageLayout } from "./EligibilityVerificationFaqPage";
+import { FaqPageLayout } from "./FaqPageLayout";
 
 const SpecialtyMedicalBillingFaqPage = () => {
   const baseUrl = getBaseUrl();

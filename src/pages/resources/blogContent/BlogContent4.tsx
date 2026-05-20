@@ -2,9 +2,10 @@ import React from "react";
 import { BlogHeader, BlogTitle, BlogDate, BlogDescription, Author, SectionTitle, SectionContent, OutcomeList, InlineImageContainer, InlineImage, StyledResourceLink } from "../BlogDetailPage.styles";
 import { ROUTES } from "../../../routes/RoutePaths";
 import SevenReasons from "../../../assets/Blogs/seven-reasons-img-png.webp";
+import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {
-  blog: any;
+  blog: Blog;
 }
 
 export const BlogContent4: React.FC<BlogContentProps> = ({ blog }) => (

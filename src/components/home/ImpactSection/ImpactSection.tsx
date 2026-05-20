@@ -68,7 +68,14 @@ const ImpactSection = () => {
   );
 };
 
-const StatCard = ({ item }: any) => {
+interface StatItem {
+  value: number;
+  title: string;
+  desc: string;
+  color: string;
+}
+
+const StatCard = ({ item }: { item: StatItem }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
 

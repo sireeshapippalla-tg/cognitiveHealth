@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { getBaseUrl } from "../../utils/urlHelper";
-import { FaqPageLayout } from "./EligibilityVerificationFaqPage";
+import { FaqPageLayout } from "./FaqPageLayout";
 
 const HealthcareBackOfficeFaqPage = () => {
   const baseUrl = getBaseUrl();

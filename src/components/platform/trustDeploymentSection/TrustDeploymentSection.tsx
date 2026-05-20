@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Typography, Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ImplementationGuideModal from "./ImplementationGuideModal";
@@ -9,12 +10,12 @@ import { PrimaryButton } from "../../ui/appButton/AppButton.styles";
 const TrustDeploymentSection = () => {
   const [openModal, setOpenModal] = useState(false);
 
-  const containerVariants: any = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
 
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

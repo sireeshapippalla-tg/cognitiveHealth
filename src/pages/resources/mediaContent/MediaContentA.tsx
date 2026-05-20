@@ -7,9 +7,10 @@ import CognitiveFallPdf from "../../../assets/Media/Cognitive-Fall2025.pdf";
 import HfmaMagazinePdf from "../../../assets/Media/HFMA-magazine.pdf";
 import ThreatEnvImg from "../../../assets/Media/1721194338541.webp";
 import VispiImg from "../../../assets/Media/VispiGowadia.webp";
+import type { Media } from "../../../data/mediaData";
 
 export interface MediaContentProps {
-  media: any;
+  media: Media;
 }
 
 export const MediaContent1: React.FC<MediaContentProps> = () => (

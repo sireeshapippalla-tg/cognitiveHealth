@@ -120,10 +120,10 @@ export const FooterDivider = styled(Divider)({
 export const Bottom = styled(Stack)(({ theme }) => ({
   // fontFamily: "Inter",
   fontSize: '14px',
-  color: "var(--color-gray-500)",
+  color: "#D1D5DB",
 
   "& a": {
-    color: "var(--color-primary)",
+    color: "#F97316",
   },
 
   [theme.breakpoints.down("sm")]: {

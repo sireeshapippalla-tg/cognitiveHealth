@@ -32,7 +32,7 @@ const HowItWorksSection = () => {
       steps={steps}
       ctaText="Take Assessment →"
       onCtaClick={() => navigate("/rcm-readines")}
-      themeColor="#F47A20"
+      themeColor="#c2410c"
       backgroundColor="#f9fafb"
     />
   );

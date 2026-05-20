@@ -44,6 +44,7 @@ const SpecialtyMedicalBillingFaqPage = lazy(() => import("./pages/faqsPages/Spec
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
+import ScrollToTopButton from "./components/common/ScrollToTopButton";
 
 const App = () => {
   useHubSpotTracking();
@@ -126,6 +127,7 @@ const App = () => {
         </Routes>
       </Suspense>
       <DemoModal />
+      <ScrollToTopButton />
     </>
   );
 };

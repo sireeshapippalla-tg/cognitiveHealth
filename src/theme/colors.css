@@ -1,14 +1,14 @@
 :root {
-  --color-primary: #d1641d; /* Accessible Orange */
-  --color-primary-hover: #b45309;
+  --color-primary: #c2410c; /* Accessible Dark Orange (passes 4.5:1 AA contrast on white) */
+  --color-primary-hover: #9a3412;
   --color-text-dark: #0e0e0e;
   --color-text-muted: #4B5563; /* Darkened for better contrast */
   --color-border-light: #e5e7eb;
   --color-white: #fff;
   --color-text-light: #2f2f2f;
-  --color-text-blue: #3b82f6;
+  --color-text-blue: #1d4ed8; /* Darkened blue for gradient contrast compliance */
   --color-bg-lite: #f9fafb;
-  --color-green: #79bb43;
+  --color-green: #15803d; /* Darkened green for gradient contrast compliance */
   --color-dark-gray: #1f2937;
   --color-gray-500: #4B5563; /* Darkened from #6b7280 for accessibility */
   --color-gray-600: #4B5563;
