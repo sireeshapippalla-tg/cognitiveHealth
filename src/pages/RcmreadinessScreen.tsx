@@ -25,7 +25,7 @@ import {
 } from "./Rcmreadiness.style";
 import AppButton from "../components/ui/appButton/AppButton";
 
-import logo from "../assets/cognitiveLogo.png";
+import logo from "../assets/cognitiveLogo.webp";
 
 import { useSendAssessmentEmailMutation } from "../services/emailApi";
 import { sections } from "./RcmreadinessData";

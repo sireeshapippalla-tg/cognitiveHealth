@@ -1,4 +1,4 @@
-import videos from "../assets/Resources/videos.jpg";
+import videos from "../assets/Resources/videos.webp";
 
 export interface Video {
   id: string;
@@ -19,7 +19,7 @@ export const videoData: Video[] = [
     title: "[6] AI-based RCM: Is AI infrastructure capital intensive?",
     description:
       "Building AI infrastructure is often seen as capital intensive and difficult to control especially in industries that demand high privacy and compliance.",
-    image: "https://img.youtube.com/vi/f9EHI0N9l-U/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/f9EHI0N9l-U/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "July 19, 2025",
@@ -31,7 +31,7 @@ export const videoData: Video[] = [
     title: "[5] AI-based RCM: Compliance security protocols",
     description:
       "Handling sensitive healthcare data in the cloud requires more than just encryption — it demands a multi-layered compliance strategy and a cloud-native foundation built for security from day one.",
-    image: "https://img.youtube.com/vi/y-2psMw1CfA/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/y-2psMw1CfA/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "July 19, 2025",
@@ -43,7 +43,7 @@ export const videoData: Video[] = [
     title: "[4] AI-based RCM: Integration and Product Architecture",
     description:
       "Healthcare platforms today need to do more than just connect with EMRs — they need to be flexible, interoperable, and built for the future.",
-    image: "https://img.youtube.com/vi/ZWJvVdGTcGw/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/ZWJvVdGTcGw/maxresdefault.webp",
     readTime: "51:30",
     category: "Webinar",
     date: "July 19, 2025",
@@ -55,7 +55,7 @@ export const videoData: Video[] = [
     title: "[3] AI-based RCM: Protecting PHI in AI based platforms",
     description:
       "In the world of digital health, protecting PHI is non-negotiable. Learn how CognitiveHealth ensures compliance and security in AI-driven RCM.",
-    image: "https://img.youtube.com/vi/vU4H-J7gDWY/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/vU4H-J7gDWY/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "July 19, 2025",
@@ -67,7 +67,7 @@ export const videoData: Video[] = [
     title: "[2] AI-based RCM: Working with Agentic Technologies",
     description:
       "AI is everywhere but not all AI is created equal. In this clip, Pavani Munjuluri and Albert Porco dive into the world of agentic AI and how it's redefining autonomy within intelligent systems.",
-    image: "https://img.youtube.com/vi/YEsPc4CK-ms/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/YEsPc4CK-ms/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "July 19, 2025",
@@ -79,7 +79,7 @@ export const videoData: Video[] = [
     title: "[1] AI-based RCM: Training AI agents to Navigate Healthcare Complexity",
     description:
       "In this short but powerful conversation, Pavani Munjuluri and Albert Porco discuss how AI agents are trained to navigate healthcare complexity.",
-    image: "https://img.youtube.com/vi/P7vfHiUsw1E/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/P7vfHiUsw1E/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "July 19, 2025",
@@ -91,7 +91,7 @@ export const videoData: Video[] = [
     title: "10 - Benefits of AI on Staffing for Providers",
     description:
       "Learn how a behavioral health organization benefitted from the implementation of AI in its revenue cycle including the implementation of iCAN, CognitiveHealth's AI platform.",
-    image: "https://img.youtube.com/vi/5x2VseYLx7s/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/5x2VseYLx7s/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -103,7 +103,7 @@ export const videoData: Video[] = [
     title: "9 - Managing Multiple AI projects for Providers",
     description:
       "Learn how a behavioral health organization managed the implementation of multiple AI projects including iCAN, CognitiveHealth's AI-based platform.",
-    image: "https://img.youtube.com/vi/oH7AtKSclk0/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/oH7AtKSclk0/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -115,7 +115,7 @@ export const videoData: Video[] = [
     title: "8 - AI Implementation for Providers",
     description:
       "Come behind the scenes to understand how RCM processes were automated for a behavioral health organization with iCAN, CognitiveHealth's AI-based platform.",
-    image: "https://img.youtube.com/vi/Bf9mIAsgSpc/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/Bf9mIAsgSpc/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -127,7 +127,7 @@ export const videoData: Video[] = [
     title: "7 - Challenges in Cash Posting and Reconciliation for Providers",
     description:
       "Providers face numerous challenges with respect to cash posting and reconciliation in their revenue cycle. Learn how a behavioral health organization overcame them.",
-    image: "https://img.youtube.com/vi/l2fobEj81W0/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/l2fobEj81W0/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -139,7 +139,7 @@ export const videoData: Video[] = [
     title: "6 - AI Deployment Life Cycle Model",
     description:
       "The journey to AI-powered revenue cycle management isn’t just about technology—it’s a strategic transformation. Learn about the AI deployment life cycle.",
-    image: "https://img.youtube.com/vi/Y17BK77pPkM/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/Y17BK77pPkM/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -151,7 +151,7 @@ export const videoData: Video[] = [
     title: "5 - Staffing Challenges in Healthcare",
     description:
       "Due to myriad reasons like cost pressures and gig economy jobs, revenue cycle areas are hit hard by staffing challenges. Discover how AI offers a solution.",
-    image: "https://img.youtube.com/vi/QDgkCReN8BA/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/QDgkCReN8BA/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -163,7 +163,7 @@ export const videoData: Video[] = [
     title: "4 - Transformative Potential of AI",
     description:
       "The future of healthcare finance is already here—AI is transforming Revenue Cycle Management (RCM) by slashing denials, automating claims, and recovering revenue.",
-    image: "https://img.youtube.com/vi/zp-Gklis10o/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/zp-Gklis10o/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -175,7 +175,7 @@ export const videoData: Video[] = [
     title: "3 - Guidelines for AI Implementation",
     description:
       "Have you been struggling to implement AI in your group practice? In this clip, Pavani Munjuluri breaks down the guidelines for successful AI implementation.",
-    image: "https://img.youtube.com/vi/I2BezETp1ZM/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/I2BezETp1ZM/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -187,7 +187,7 @@ export const videoData: Video[] = [
     title: "2 - Regulatory frameworks to consider for safe and ethical AI",
     description:
       "As artificial intelligence continues to revolutionize healthcare, understanding the evolving regulatory landscape is critical for successful and ethical implementation.",
-    image: "https://img.youtube.com/vi/rpxZWFu1RiY/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/rpxZWFu1RiY/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -199,7 +199,7 @@ export const videoData: Video[] = [
     title: "1 - Key considerations for successful AI implementation in group practices",
     description:
       "Group practices experience growing pains while dealing with multiple banks, EMR systems, regular updates, and ongoing staff training. Learn key considerations for AI.",
-    image: "https://img.youtube.com/vi/JV0TFVIM-Ys/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/JV0TFVIM-Ys/maxresdefault.webp",
     readTime: "",
     category: "Webinar",
     date: "April 15, 2025",
@@ -211,7 +211,7 @@ export const videoData: Video[] = [
     title: "iCAN  - Correspondence Module",
     description:
       "Did you know that correspondence management is a key part of your Revenue Cycle Management (RCM) process, impacting both claims accuracy and speed?",
-    image: "https://img.youtube.com/vi/OvBiWi3XF_c/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/OvBiWi3XF_c/maxresdefault.webp",
     readTime: "",
     category: "Product",
     date: "April 15, 2025",
@@ -223,7 +223,7 @@ export const videoData: Video[] = [
     title: "Webinar replay: Reimagining Revenue Cycle Management (RCM) in Group Practices with AI",
     description:
       "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
-    image: "https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.webp",
     readTime: "51:30",
     category: "Webinar",
     date: "February 18, 2025",
@@ -283,7 +283,7 @@ export const videoData: Video[] = [
     title: "CognitiveHealth Intro Jan 2019",
     description:
       "CognitiveHealth is a pioneer in building healthcare digital platforms that help alleviate administrative burden from Payers and Providers, giving them more time to focus on patient care.",
-    image: "https://img.youtube.com/vi/DZPkze6KM08/maxresdefault.jpg",
+    image: "https://img.youtube.com/vi/DZPkze6KM08/maxresdefault.webp",
     readTime: "",
     category: "Product",
     date: "January 15, 2019",

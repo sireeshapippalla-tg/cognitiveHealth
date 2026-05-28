@@ -2,7 +2,7 @@ import MoveToInboxOutlinedIcon from "@mui/icons-material/MoveToInboxOutlined";
 import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
-import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.webp";
 import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
 import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 

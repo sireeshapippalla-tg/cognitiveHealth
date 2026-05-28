@@ -1,5 +1,5 @@
-// import paymentPostingImage from "../../../assets/solutions/bannerImages/payBill.jpeg";
-// import prebillImage from "../../../assets/solutions/editedimgs/prebill.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/payBill.webp";
+// import prebillImage from "../../../assets/solutions/editedimgs/prebill.webp";
 import prebillImage from "../../../assets/heroBannerImages/PreBill Services.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";

@@ -1,8 +1,8 @@
 import FeatureSection from "../../ui/featureSection/FeatureSection";
-// import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.png';
-// import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.png';
-// import paymentImage3 from '../../../assets/solutions/Payment Operations/paymentImage3.png';
-// import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentImage4.png';
+// import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.webp';
+// import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.webp';
+// import paymentImage3 from '../../../assets/solutions/Payment Operations/paymentImage3.webp';
+// import paymentImage4 from '../../../assets/solutions/Payment Operations/paymentImage4.webp';
 
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import AnalyticsOutlinedIcon from "@mui/icons-material/AnalyticsOutlined";

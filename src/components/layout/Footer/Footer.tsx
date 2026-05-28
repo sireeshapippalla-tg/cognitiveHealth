@@ -46,7 +46,9 @@ const Footer = () => {
                 src={cognitiveLogo}
                 alt="CognitiveHealth"
                 loading="lazy"
-                style={{ cursor: "pointer" }}
+                width={200}
+                height={50}
+                style={{ cursor: "pointer", width: "200px", height: "auto" }}
               />
             </RouterLink>
 

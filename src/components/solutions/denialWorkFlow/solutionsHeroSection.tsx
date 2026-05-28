@@ -1,5 +1,5 @@
-// import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.jpeg";
-// import denialsImage from "../../../assets/solutions/editedimgs/denials.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/denialsMAnagement.webp";
+// import denialsImage from "../../../assets/solutions/editedimgs/denials.webp";
 import denialsImage from "../../../assets/heroBannerImages/denialsHero.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";

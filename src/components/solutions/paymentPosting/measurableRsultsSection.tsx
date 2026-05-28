@@ -1,4 +1,4 @@
-import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.webp";
 
 import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";

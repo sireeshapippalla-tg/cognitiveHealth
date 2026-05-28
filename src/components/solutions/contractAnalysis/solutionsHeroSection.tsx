@@ -1,5 +1,5 @@
-// import paymentPostingImage from "../../../assets/solutions/bannerImages/payerContract.jpeg";
-// import contractAnalysisImage from "../../../assets/solutions/editedimgs/payerContractAnalysis.jpeg"
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/payerContract.webp";
+// import contractAnalysisImage from "../../../assets/solutions/editedimgs/payerContractAnalysis.webp"
 import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Analysis.webp"
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";

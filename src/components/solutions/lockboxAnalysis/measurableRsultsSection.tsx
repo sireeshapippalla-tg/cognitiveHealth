@@ -1,4 +1,4 @@
-import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.webp";
 
 import CloudDoneOutlinedIcon from "@mui/icons-material/CloudDoneOutlined";
 import FindInPageOutlinedIcon from "@mui/icons-material/FindInPageOutlined";

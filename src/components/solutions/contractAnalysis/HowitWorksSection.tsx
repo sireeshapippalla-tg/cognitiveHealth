@@ -2,7 +2,7 @@ import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import SettingsSuggestOutlinedIcon from "@mui/icons-material/SettingsSuggestOutlined";
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
-import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.webp";
 import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
 import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 

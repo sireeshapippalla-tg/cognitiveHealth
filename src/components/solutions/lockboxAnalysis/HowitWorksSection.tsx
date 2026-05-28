@@ -2,7 +2,7 @@ import MoveToInboxOutlinedIcon from "@mui/icons-material/MoveToInboxOutlined";
 import SettingsSuggestOutlinedIcon from "@mui/icons-material/SettingsSuggestOutlined";
 import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
 import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
-import paymentImage9 from "../../../assets/solutions/paymentImage9.png";
+import paymentImage9 from "../../../assets/solutions/paymentImage9.webp";
 import { ReusableHowItWorks } from "../../ui/HowItWorks/ReusableHowItWorks";
 import type { HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
 

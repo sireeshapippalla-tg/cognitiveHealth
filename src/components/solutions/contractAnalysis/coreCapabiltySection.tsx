@@ -4,11 +4,11 @@ import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
 
-// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.png";
-// import Zap from "../../../assets/solutions/Core Capabilities/Zap.png";
-// import Info from "../../../assets/solutions/Core Capabilities/Info.png";
-// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.png";
-// import Data from "../../../assets/solutions/Core Capabilities/Data.png";
+// import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.webp";
+// import Zap from "../../../assets/solutions/Core Capabilities/Zap.webp";
+// import Info from "../../../assets/solutions/Core Capabilities/Info.webp";
+// import Barchart from "../../../assets/solutions/Core Capabilities/BarChart.webp";
+// import Data from "../../../assets/solutions/Core Capabilities/Data.webp";
 import BulletList from "../../ui/BulletList";
 
 import ManageSearchOutlinedIcon from "@mui/icons-material/ManageSearchOutlined";

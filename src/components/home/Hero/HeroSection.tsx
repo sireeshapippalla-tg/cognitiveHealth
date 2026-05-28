@@ -4,7 +4,7 @@ import mcLeranLogo from "../../../assets/mcLeran.svg";
 import mindPathLogo from "../../../assets/mindpath-logo.svg";
 import qualityLogo from "../../../assets/Quality.svg";
 import welStreetLogo from "../../../assets/welStreet.svg";
-import mercyImg from "../../../assets/Resources/mercyLogo.png";
+import mercyImg from "../../../assets/Resources/mercyLogo.webp";
 import yaleImg from "../../../assets/yale.svg";
 
 import heroSectionImage from "../../../assets/heroBannerImages/homePageBanner.webp";
@@ -41,6 +41,8 @@ const HeroSection = () => {
                 exceptional patient experiences."
 
         image={heroSectionImage}
+        width={1920}
+        height={960}
         prioritize={true}
         primaryAction={{
           label: "Request a Demo",

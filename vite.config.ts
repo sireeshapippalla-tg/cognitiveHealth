@@ -10,8 +10,20 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
+const deferCssPlugin = () => {
+  return {
+    name: 'defer-css',
+    transformIndexHtml(html: string) {
+      return html.replace(
+        /<link([^>]+)rel=["']stylesheet["']([^>]*)>/gi,
+        '<link$1rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"$2><noscript><link$1rel="stylesheet"$2></noscript>'
+      );
+    }
+  };
+};
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), deferCssPlugin()],
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
@@ -19,6 +31,7 @@ export default defineConfig({
     },
   },
   build: {
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {

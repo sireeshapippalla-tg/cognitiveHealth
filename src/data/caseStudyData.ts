@@ -1,5 +1,5 @@
 
-import CaseStudies from "../assets/Resources/CaseStudies.jpg"
+import CaseStudies from "../assets/Resources/CaseStudies.webp"
 
 
 export interface CaseStudy {

@@ -8,7 +8,7 @@ import HowItWorksSection from "../../components/solutions/lockboxAnalysis/HowitW
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
 
 import waystarLogo from "../../assets/PayerPortalLogos/waystar.svg";
-import paySpanLogo from "../../assets/PayerPortalLogos/payspan.png";
+import paySpanLogo from "../../assets/PayerPortalLogos/payspan.webp";
 import zelisLogo from "../../assets/PayerPortalLogos/Zelis.svg";
 import optumLogo from "../../assets/PayerPortalLogos/optum.svg";
 import evernorthLogo from "../../assets/PayerPortalLogos/evernorth.svg";

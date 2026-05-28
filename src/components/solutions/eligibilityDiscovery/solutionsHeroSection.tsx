@@ -1,5 +1,5 @@
-// import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.jpeg";
-// import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.jpeg";
+// import paymentPostingImage from "../../../assets/solutions/bannerImages/eligilibityDiscovery.webp";
+// import eligibilityDiscoveryImage from "../../../assets/solutions/editedimgs/eligibilityDiscovery.webp";
 import eligibilityDiscoveryImage from "../../../assets/heroBannerImages/Eligibility Discovery.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";

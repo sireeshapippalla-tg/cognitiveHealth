@@ -7,9 +7,9 @@ import HowItWorksSection from "../../components/solutions/denialWorkFlow/HowitWo
 
 import avalityLogo from "../../assets/ClearingHouseLogos/availity.svg";
 import jpmorganLogo from "../../assets/ClearingHouseLogos/jp morgan.svg";
-import InovalonLogo from "../../assets/ClearingHouseLogos/inovalon.png";
+import InovalonLogo from "../../assets/ClearingHouseLogos/inovalon.webp";
 import trizettoLogo from "../../assets/ClearingHouseLogos/Trizetto.svg";
-import changeHealthcareLogo from "../../assets/ClearingHouseLogos/change_healthcare_logo.jpg";
+import changeHealthcareLogo from "../../assets/ClearingHouseLogos/change_healthcare_logo.webp";
 import optumLogo from "../../assets/PayerPortalLogos/optum.svg";
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
 

@@ -148,6 +148,8 @@ export const ImageCard = styled(Box)(() => ({
 
 export const StyledImage = styled("img")({
   width: "100%",
+  height: "auto",
+  objectFit: "contain",
   display: "block",
   imageRendering: "auto",
 });
