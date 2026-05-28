@@ -169,8 +169,8 @@ export const IcanAutomateSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Real-time process recording ensures accurate data capture
-                  and analysis.
+                  Real-time process recording ensures accurate data capture and
+                  analysis.
                 </Typography>
               </Grid>
 
@@ -212,8 +212,8 @@ export const IcanAutomateSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Purpose-built for healthcare, iCAN™ integrates with many
-                  EMRs and other business applications.
+                  Purpose-built for healthcare, iCAN™ integrates with many EMRs
+                  and other business applications.
                 </Typography>
               </Grid>
 

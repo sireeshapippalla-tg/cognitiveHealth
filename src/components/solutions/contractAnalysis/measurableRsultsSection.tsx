@@ -14,25 +14,29 @@ const stats = [
   {
     value: "$1.5M+",
     title: "",
-    description: "Average Annual Underpayment Recovery Per facility from variance detection and appeals",
+    description:
+      "Average Annual Underpayment Recovery Per facility from variance detection and appeals",
     icon: <AttachMoneyOutlinedIcon />,
   },
   {
     value: "99.9%",
     title: "",
-    description: "Payment Accuracy Validation Every payment checked against contract terms",
+    description:
+      "Payment Accuracy Validation Every payment checked against contract terms",
     icon: <VerifiedOutlinedIcon />,
   },
   {
     value: "24 Hours",
     title: "",
-    description: "Variance Detection Time From payment receipt to underpayment identification",
+    description:
+      "Variance Detection Time From payment receipt to underpayment identification",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "85%",
     title: "",
-    description: "Underpayment Appeal Success Rate Contract-based appeals with documented evidence",
+    description:
+      "Underpayment Appeal Success Rate Contract-based appeals with documented evidence",
     icon: <TrendingUpOutlinedIcon />,
   },
 ];

@@ -178,7 +178,6 @@ const RevenueCycleManagementFaqPage = () => {
           </Typography>
         </>
       }
-      
     />
   );
 };

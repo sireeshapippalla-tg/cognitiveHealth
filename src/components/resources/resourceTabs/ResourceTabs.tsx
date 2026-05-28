@@ -56,7 +56,9 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
     },
   ];
 
-  let activeTab = tabs.findIndex((tab) => tab.value === location.hash.replace("#", ""));
+  let activeTab = tabs.findIndex(
+    (tab) => tab.value === location.hash.replace("#", "")
+  );
   if (activeTab === -1) activeTab = 0;
 
   useEffect(() => {
@@ -89,7 +91,7 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
 
   const handleTabChange = (
     _event: React.MouseEvent<HTMLButtonElement>,
-    newValue: number,
+    newValue: number
   ) => {
     isTabClickRef.current = true;
     navigate(`/resources#${tabs[newValue].value}`, {
@@ -123,10 +125,21 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
                   }}
                 />
               )}
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, position: 'relative', zIndex: 1 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              >
                 <motion.div
                   animate={{
-                    filter: activeTab === index ? 'brightness(0) invert(1)' : 'grayscale(1) opacity(0.6)',
+                    filter:
+                      activeTab === index
+                        ? "brightness(0) invert(1)"
+                        : "grayscale(1) opacity(0.6)",
                   }}
                   transition={{ duration: 0.3 }}
                 >
@@ -137,7 +150,6 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
             </TabButton>
           ))}
         </TabsContainer>
-       
       </StickyTabsWrapper>
 
       <BlogContainer>

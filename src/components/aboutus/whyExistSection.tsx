@@ -60,7 +60,9 @@ const WhyWeExistSection = () => {
             >
               <SectionTitle variant="h2">Why We Exist</SectionTitle>
               <SectionDescription>
-                Healthcare organizations face unprecedented operational challenges that traditional approaches cannot solve. CognitiveHealth exists to address these critical pain points:
+                Healthcare organizations face unprecedented operational
+                challenges that traditional approaches cannot solve.
+                CognitiveHealth exists to address these critical pain points:
               </SectionDescription>
               <DecoratorLine />
             </motion.div>
@@ -78,13 +80,9 @@ const WhyWeExistSection = () => {
                   viewport={{ once: true }}
                 >
                   <FeatureCard>
-                    <IconContainer>
-                      {feature.icon}
-                    </IconContainer>
+                    <IconContainer>{feature.icon}</IconContainer>
                     <Box>
-                      <FeatureTitle variant="h5">
-                        {feature.title}
-                      </FeatureTitle>
+                      <FeatureTitle variant="h5">{feature.title}</FeatureTitle>
                       <FeatureDescription>
                         {feature.description}
                       </FeatureDescription>

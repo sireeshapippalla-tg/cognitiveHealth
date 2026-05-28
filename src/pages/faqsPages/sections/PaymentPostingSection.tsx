@@ -45,10 +45,10 @@ export const PaymentPostingSection: React.FC = () => {
                   sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 4 }}
                 >
                   iCAN™ Cash Management automates the tedious and error-prone
-                  manual reconciliation process, reducing data entry errors
-                  and improving efficiency. This module integrates seamlessly
-                  with existing workflows and supports a remote workforce,
-                  ensuring continuity even during challenging times.
+                  manual reconciliation process, reducing data entry errors and
+                  improving efficiency. This module integrates seamlessly with
+                  existing workflows and supports a remote workforce, ensuring
+                  continuity even during challenging times.
                 </Typography>
               </Grid>
             </Grid>
@@ -104,8 +104,7 @@ export const PaymentPostingSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Significant reduction in manual effort and data entry
-                  errors.
+                  Significant reduction in manual effort and data entry errors.
                 </Typography>
               </Grid>
 

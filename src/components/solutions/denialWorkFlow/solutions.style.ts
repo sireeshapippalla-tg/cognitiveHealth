@@ -11,7 +11,8 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 
 export const SectionContainer = styled(Box)(({ theme }) => ({
   // UNIQUE BACKGROUND: Gradient with brand colors
-  background: "linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-dark-gray) 100%)",
+  background:
+    "linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-dark-gray) 100%)",
   padding: "120px 80px",
   position: "relative",
   overflow: "hidden",
@@ -25,16 +26,17 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
     left: "-20%",
     width: "100%",
     height: "200%",
-    background: "radial-gradient(circle, rgba(244, 122, 32, 0.08), transparent 70%)",
+    background:
+      "radial-gradient(circle, rgba(244, 122, 32, 0.08), transparent 70%)",
     zIndex: 0,
-    pointerEvents: "none"
-  }
+    pointerEvents: "none",
+  },
 }));
 
 export const MeasureWrapper = styled(Box)(() => ({
   margin: "0 auto",
   position: "relative",
-  zIndex: 1
+  zIndex: 1,
 }));
 
 export const HowItSectionContainer = styled(Box)(({ theme }) => ({
@@ -52,9 +54,10 @@ export const HowItSectionContainer = styled(Box)(({ theme }) => ({
     right: 0,
     width: "400px",
     height: "400px",
-    background: "radial-gradient(circle, rgba(107, 191, 89, 0.05), transparent 70%)",
-    zIndex: 0
-  }
+    background:
+      "radial-gradient(circle, rgba(107, 191, 89, 0.05), transparent 70%)",
+    zIndex: 0,
+  },
 }));
 
 export const HowItWrapper = styled(Box)(({ theme }) => ({
@@ -71,7 +74,7 @@ export const HowItWrapper = styled(Box)(({ theme }) => ({
 
 export const StepsCard = styled(Box)(() => ({
   marginTop: 60,
-  position: "relative"
+  position: "relative",
 }));
 
 export const StepsRow = styled(Box)(({ theme }) => ({
@@ -81,9 +84,9 @@ export const StepsRow = styled(Box)(({ theme }) => ({
   gap: 40,
   flexWrap: "wrap",
   [theme.breakpoints.down("md")]: {
-     flexDirection: "column",
-     alignItems: "center"
-  }
+    flexDirection: "column",
+    alignItems: "center",
+  },
 }));
 
 export const ArrowBox = styled(Box)(({ theme }) => ({
@@ -117,7 +120,7 @@ export const IconWrapper = styled("div")({
   transition: "all 0.3s ease",
   "& svg": { fontSize: "2rem" },
   "&:hover": {
-     background: "rgba(244, 122, 32, 0.1)",
-     borderColor: "var(--color-primary)"
-  }
+    background: "rgba(244, 122, 32, 0.1)",
+    borderColor: "var(--color-primary)",
+  },
 });

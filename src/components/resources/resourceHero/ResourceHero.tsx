@@ -30,7 +30,14 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
           rotate: [0, 90, 0],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        sx={{ top: "-10%", left: "-10%", width: "40%", height: "60%", background: "radial-gradient(circle, rgba(235, 123, 51, 0.15) 0%, transparent 70%)" }}
+        sx={{
+          top: "-10%",
+          left: "-10%",
+          width: "40%",
+          height: "60%",
+          background:
+            "radial-gradient(circle, rgba(235, 123, 51, 0.15) 0%, transparent 70%)",
+        }}
       />
       <Shape
         animate={{
@@ -39,7 +46,14 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
           rotate: [0, -90, 0],
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-        sx={{ bottom: "-20%", right: "-10%", width: "50%", height: "70%", background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)" }}
+        sx={{
+          bottom: "-20%",
+          right: "-10%",
+          width: "50%",
+          height: "70%",
+          background:
+            "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+        }}
       />
     </BackgroundShapes>
 
@@ -50,11 +64,13 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         transition={{ duration: 0.6 }}
       >
         {/* <ResourceCenterChip label="Resource Center" size="small" /> */}
-        <Title >Intelligent Process Automation  Platform.</Title>
+        <Title>Intelligent Process Automation Platform.</Title>
         <SubTitle>Purpose-built for Healthcare</SubTitle>
         <Description>
-          iCAN™ (Integrated Cognitive Automation Neuron) is a versatile healthcare automation platform.
-          iCAN™ leverages artificial intelligence and machine learning to automate increasingly complex business processes.
+          iCAN™ (Integrated Cognitive Automation Neuron) is a versatile
+          healthcare automation platform. iCAN™ leverages artificial
+          intelligence and machine learning to automate increasingly complex
+          business processes.
         </Description>
       </motion.div>
       <motion.div
@@ -68,15 +84,15 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
             placeholder="Search resources, articles, videos..."
             inputProps={{ "aria-label": "search resources" }}
             value={searchQuery}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSearchQuery(e.target.value)
+            }
           />
           <SearchButton type="button" aria-label="search">
             Search
           </SearchButton>
         </SearchWrapper>
       </motion.div>
-
-     
     </HeroContent>
   </Hero>
 );

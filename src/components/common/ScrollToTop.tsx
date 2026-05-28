@@ -21,7 +21,6 @@
 
 // export default ScrollToTop;
 
-
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -30,9 +29,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const element = document.getElementById(
-        location.hash.replace("#", "")
-      );
+      const element = document.getElementById(location.hash.replace("#", ""));
 
       if (element) {
         window.scrollTo({

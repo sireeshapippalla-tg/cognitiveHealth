@@ -82,9 +82,7 @@ export const NavIconBox = styled(Box, {
     width: "20px",
     height: "20px",
     objectFit: "contain",
-    filter: isActive
-      ? "brightness(0) invert(1)"
-      : "brightness(0) opacity(0.5)",
+    filter: isActive ? "brightness(0) invert(1)" : "brightness(0) opacity(0.5)",
     transition: "all 0.3s ease",
   },
 }));
@@ -129,7 +127,8 @@ export const DisplayStageBox = styled(Box)(({ theme }) => ({
     position: "absolute",
     width: "400px",
     height: "400px",
-    background: "radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%)",
+    background:
+      "radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%)",
     top: "-100px",
     right: "-100px",
     filter: "blur(60px)",

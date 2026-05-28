@@ -31,10 +31,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Workbench}
     //     alt="Real-Time Coverage Verification Portal"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <VerifiedUserOutlinedIcon />,
     defaultOpen: true,
@@ -52,7 +52,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="Multi-Payer Coordination Manager" />,
+    // icon: <img width={48} height={48} src={Zap} alt="Multi-Payer Coordination Manager" loading="lazy" />,
     icon: <AccountTreeOutlinedIcon />,
   },
   {
@@ -68,7 +68,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Info} alt="Automated Patient Benefit Summaries" />,
+    // icon: <img width={48} height={48} src={Info} alt="Automated Patient Benefit Summaries" loading="lazy" />,
     icon: <AssignmentOutlinedIcon />,
   },
   {
@@ -84,7 +84,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Barchart} alt="Authorization Tracking and Alert System" />,
+    // icon: <img width={48} height={48} src={Barchart} alt="Authorization Tracking and Alert System" loading="lazy" />,
     icon: <NotificationsActiveOutlinedIcon />,
   },
   {
@@ -100,7 +100,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Data} alt="Scheduled Re-Verification Automation" />,
+    // icon: <img width={48} height={48} src={Data} alt="Scheduled Re-Verification Automation" loading="lazy" />,
     icon: <AutorenewOutlinedIcon />,
   },
 ];

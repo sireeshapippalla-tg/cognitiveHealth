@@ -31,8 +31,7 @@ const stats = [
   {
     value: "2 Days",
     title: "",
-    description:
-      "Faster Cash Application Accelerated recognition of payments",
+    description: "Faster Cash Application Accelerated recognition of payments",
     icon: <TrendingUpOutlinedIcon />,
   },
 ];

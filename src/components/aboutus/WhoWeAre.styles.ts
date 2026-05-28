@@ -25,7 +25,7 @@ export const BackgroundAura = motion(
       "radial-gradient(circle, rgba(107, 191, 89, 0.08) 0%, transparent 70%)",
     filter: "blur(60px)",
     zIndex: 0,
-  }),
+  })
 );
 
 export const SectionTitle = styled(Typography)(({ theme }) => ({

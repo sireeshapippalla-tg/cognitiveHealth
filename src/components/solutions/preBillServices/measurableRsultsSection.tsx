@@ -10,7 +10,8 @@ const stats = [
   {
     value: "95%",
     title: "",
-    description: "Clean Claim Rate First-pass acceptance without errors or denials",
+    description:
+      "Clean Claim Rate First-pass acceptance without errors or denials",
     icon: <VerifiedUserOutlinedIcon />,
   },
   {
@@ -23,13 +24,15 @@ const stats = [
   {
     value: "50%",
     title: "",
-    description: "Faster Coding Turnaround AI-assisted coding accelerates chart review",
+    description:
+      "Faster Coding Turnaround AI-assisted coding accelerates chart review",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "2-4%",
     title: "",
-    description: "Revenue Capture Improvement Optimized coding captures appropriate reimbursement",
+    description:
+      "Revenue Capture Improvement Optimized coding captures appropriate reimbursement",
     icon: <SavingsOutlinedIcon />,
   },
 ];

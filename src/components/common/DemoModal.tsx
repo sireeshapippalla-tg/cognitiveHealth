@@ -73,7 +73,8 @@ const DemoModal: React.FC = () => {
                   position: "absolute",
                   inset: -2,
                   zIndex: -1,
-                  background: "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
+                  background:
+                    "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
                   borderRadius: "34px",
                   opacity: 0.4,
                   filter: "blur(8px)",
@@ -82,7 +83,10 @@ const DemoModal: React.FC = () => {
             >
               {/* Close Button */}
               <Box sx={{ position: "absolute", right: 16, zIndex: 10 }}>
-                <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <IconButton
                     onClick={closeDemoModal}
                     aria-label="Close"
@@ -93,7 +97,7 @@ const DemoModal: React.FC = () => {
                       color: "#1e293b",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
                       border: "2px solid var(--color-white)",
-                      "&:hover": { 
+                      "&:hover": {
                         color: "var(--color-primary-dark)",
                         background: "var(--color-white)",
                       },
@@ -120,8 +124,12 @@ const DemoModal: React.FC = () => {
                 >
                   Schedule Your Personalized Demo
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#64748b", maxWidth: 500, mx: "auto" }}>
-                  Select a date and time from the calendar below to see the iCAN™ Platform in action.
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#64748b", maxWidth: 500, mx: "auto" }}
+                >
+                  Select a date and time from the calendar below to see the
+                  iCAN™ Platform in action.
                 </Typography>
               </Box>
 

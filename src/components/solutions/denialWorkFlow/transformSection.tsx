@@ -1,4 +1,3 @@
-
 import FeatureSection from "../../ui/featureSection/FeatureSection";
 // import paymentImage1 from '../../../assets/solutions/Payment Operations/paymentImage1.webp';
 // import paymentImage2 from '../../../assets/solutions/Payment Operations/paymentImage2.webp';
@@ -36,7 +35,6 @@ const features = [
       "Identify systemic issues driving denials across payers, providers, and service lines. Our analytics pinpoint exactly where to focus process improvements for maximum impact.",
   },
 ];
-
 
 const TransformSection = () => {
   return (

@@ -82,9 +82,7 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
           }}
         >
           {/* Close Button - Detached */}
-          <Box
-            sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}
-          >
+          <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
@@ -117,8 +115,8 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
               Download Package
             </Typography>
             <Typography variant="body2" sx={{ color: "#64748b" }}>
-              Enter your work email and we'll send the complete results
-              package instantly.
+              Enter your work email and we'll send the complete results package
+              instantly.
             </Typography>
           </Box>
 

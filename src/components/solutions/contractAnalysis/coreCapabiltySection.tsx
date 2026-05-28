@@ -32,10 +32,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Workbench}
     //     alt="Contract Intelligence Research Assistant"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <ManageSearchOutlinedIcon sx={{ fontSize: 30 }} />,
     defaultOpen: true,
@@ -53,7 +53,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="Payment Variance Detection System" />,
+    // icon: <img width={48} height={48} src={Zap} alt="Payment Variance Detection System" loading="lazy" />,
     icon: <BoltOutlinedIcon sx={{ fontSize: 30 }} />,
   },
   {
@@ -69,7 +69,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Info} alt="Contract Change Monitoring Service" />,
+    // icon: <img width={48} height={48} src={Info} alt="Contract Change Monitoring Service" loading="lazy" />,
     icon: <NotificationsActiveOutlinedIcon sx={{ fontSize: 30 }} />,
   },
   {
@@ -86,10 +86,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Barchart} // ⚠ ensure correct import name
     //     alt="Charge Master Synchronization Engine"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <SyncAltOutlinedIcon sx={{ fontSize: 30 }} />,
   },
@@ -106,7 +106,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Data} alt="Contract Performance Analytics Dashboard" />,
+    // icon: <img width={48} height={48} src={Data} alt="Contract Performance Analytics Dashboard" loading="lazy" />,
     icon: <BarChartOutlinedIcon sx={{ fontSize: 30 }} />,
   },
 ];

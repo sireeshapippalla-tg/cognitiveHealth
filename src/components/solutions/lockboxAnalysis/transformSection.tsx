@@ -11,28 +11,28 @@ import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 
 const features = [
   {
-    // icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    // icon: <img width={48} height={48} src={paymentImage1} alt="Centralized Payment" loading="lazy" />,
     icon: <AutoAwesomeIcon />,
     title: "Intelligent Document Processing ",
     description:
       "Extract payment and remittance data from paper EOBs, checks, and correspondence with 99%+ accuracy using advanced OCR and AI classification.",
   },
   {
-    // icon: <img src={paymentImage2} alt="Automated Posting" />,
+    // icon: <img width={48} height={48} src={paymentImage2} alt="Automated Posting" loading="lazy" />,
     icon: <AltRouteIcon />,
     title: "Automated Correspondence Routing ",
     description:
       "Classify incoming mail by document type (EOB, patient payment, correspondence) and route to appropriate work queues automatically, eliminating manual sorting.",
   },
   {
-    // icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    // icon: <img width={48} height={48} src={paymentImage3} alt="Reduced Errors" loading="lazy" />,
     icon: <PaymentsIcon />,
     title: "Accelerated Payment Recognition ",
     description:
       "Convert paper payments into digital posting data within hours of receipt, dramatically reducing mail-to-posting cycle time and improving cash flow visibility.",
   },
   {
-    // icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    // icon: <img width={48} height={48} src={paymentImage4} alt="Cash Visibility" loading="lazy" />,
     icon: <ReportProblemIcon />,
     title: "Exception Management ",
     description:

@@ -38,7 +38,7 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
   //  Animate only valid numbers
   const count = useCountUp(
     isInView && !isNaN(numericValue) ? numericValue : 0,
-    2000,
+    2000
   );
 
   //  Split number + text
@@ -53,8 +53,6 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       <Card>
-        
-
         <ValueWrapper>
           {isRange ? (
             //  RANGE VALUE

@@ -23,7 +23,10 @@ const SolutionsHeroSection = () => {
         label: "Request a Demo",
         onClick: () =>
           navigate(ROUTES.REQUEST_DEMO, {
-            state: { fromLabel: "Denial Workflow", fromPath: "/solutions#denialWorkflow" },
+            state: {
+              fromLabel: "Denial Workflow",
+              fromPath: "/solutions#denialWorkflow",
+            },
           }),
       }}
       secondaryAction={{

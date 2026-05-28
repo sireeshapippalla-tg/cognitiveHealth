@@ -79,11 +79,12 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
 
-        <ReadMoreLink to={link} state={{ fromTab: type === "video" ? "videos" : type }}>
+        <ReadMoreLink
+          to={link}
+          state={{ fromTab: type === "video" ? "videos" : type }}
+        >
           {getLinkText()}
-          {getLinkText() &&
-            <ArrowForwardIcon sx={{ fontSize: "18px" }} />
-          }
+          {getLinkText() && <ArrowForwardIcon sx={{ fontSize: "18px" }} />}
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

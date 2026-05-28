@@ -20,7 +20,8 @@ export const BackgroundGlow = styled(Box)({
   transform: "translate(-50%, -50%)",
   width: "500px",
   height: "500px",
-  background: "radial-gradient(circle, rgba(244,122,32,0.05) 0%, transparent 60%)",
+  background:
+    "radial-gradient(circle, rgba(244,122,32,0.05) 0%, transparent 60%)",
   filter: "blur(40px)",
   zIndex: 0,
 });

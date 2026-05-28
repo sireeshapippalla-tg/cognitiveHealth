@@ -25,7 +25,9 @@ interface RcmreadinessEmailDialogProps {
   onPreviewPdf?: () => void;
 }
 
-export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = ({
+export const RcmreadinessEmailDialog: React.FC<
+  RcmreadinessEmailDialogProps
+> = ({
   open,
   onClose,
   email,
@@ -81,7 +83,8 @@ export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = (
               position: "absolute",
               inset: -2,
               zIndex: -1,
-              background: "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
+              background:
+                "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
               borderRadius: "34px",
               opacity: 0.4,
               filter: "blur(8px)",
@@ -89,7 +92,10 @@ export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = (
           }}
         >
           <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
-            <motion.div whileHover={{ scale: 1.1, rotate: 90 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 90 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <IconButton
                 aria-label="Close dialog"
                 onClick={onClose}
@@ -110,11 +116,17 @@ export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = (
           </Box>
 
           <Box mb={3} textAlign="center">
-            <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
+            <Typography
+              variant="h5"
+              fontWeight={900}
+              color="#1e293b"
+              gutterBottom
+            >
               Send Assessment Report
             </Typography>
             <Typography variant="body2" sx={{ color: "#64748b" }}>
-              Enter the email address where you would like to receive your personalized roadmap.
+              Enter the email address where you would like to receive your
+              personalized roadmap.
             </Typography>
           </Box>
 
@@ -139,7 +151,11 @@ export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = (
               fullWidth
               disabled={!email || isProcessing}
               onClick={onSend}
-              startIcon={isProcessing ? <CircularProgress size={16} color="inherit" /> : null}
+              startIcon={
+                isProcessing ? (
+                  <CircularProgress size={16} color="inherit" />
+                ) : null
+              }
               sx={{
                 py: 1.8,
                 borderRadius: "16px",
@@ -147,14 +163,22 @@ export const RcmreadinessEmailDialog: React.FC<RcmreadinessEmailDialogProps> = (
                 textTransform: "none",
               }}
             >
-              {isGeneratingPdf ? "Generating PDF..." : isSending ? "Sending Report..." : "Send Assessment Report"}
+              {isGeneratingPdf
+                ? "Generating PDF..."
+                : isSending
+                  ? "Sending Report..."
+                  : "Send Assessment Report"}
             </PrimaryButton>
 
             {onPreviewPdf && (
               <Button
                 fullWidth
                 variant="text"
-                sx={{ textTransform: "none", color: "#64748b", fontWeight: 600 }}
+                sx={{
+                  textTransform: "none",
+                  color: "#64748b",
+                  fontWeight: 600,
+                }}
                 onClick={onPreviewPdf}
               >
                 {/* Preview PDF */}

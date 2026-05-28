@@ -1,9 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import {
-  CardContainer,
-  LeftContent,
-  IconWrapper,
-} from "./PopoverCard.styles";
+import { CardContainer, LeftContent, IconWrapper } from "./PopoverCard.styles";
 
 type PopoverCardProps = {
   icon: React.ReactNode;
@@ -37,7 +33,11 @@ const PopoverCard = ({
             </Typography>
           )}
 
-          <Typography fontSize="14px" fontWeight={600} color="var(--color-gray-900)">
+          <Typography
+            fontSize="14px"
+            fontWeight={600}
+            color="var(--color-gray-900)"
+          >
             {title}
           </Typography>
 

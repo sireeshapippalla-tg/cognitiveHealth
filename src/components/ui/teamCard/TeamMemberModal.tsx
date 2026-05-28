@@ -70,7 +70,9 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
             borderRadius: isMobile ? 0 : "40px",
             padding: isMobile ? "60px 24px 32px" : 8,
             border: isMobile ? "none" : "1px solid rgba(255, 255, 255, 0.3)",
-            boxShadow: isMobile ? "none" : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            boxShadow: isMobile
+              ? "none"
+              : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
             overflow: "visible",
             maxHeight: isMobile ? "100vh" : "85vh",
             display: "flex",
@@ -80,7 +82,8 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
               position: "absolute",
               inset: -2,
               zIndex: -1,
-              background: "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
+              background:
+                "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
               borderRadius: "42px",
               opacity: 0.4,
               filter: "blur(8px)",
@@ -143,7 +146,8 @@ const TeamMemberModal = ({ open, onClose, member }: Props) => {
                 width: isMobile ? 180 : 240,
                 height: isMobile ? 180 : 240,
                 borderRadius: "32px",
-                background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1))",
+                background:
+                  "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1))",
                 padding: "2px",
                 flexShrink: 0,
                 position: "relative",

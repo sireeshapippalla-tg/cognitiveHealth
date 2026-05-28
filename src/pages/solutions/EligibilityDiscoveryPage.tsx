@@ -11,7 +11,7 @@ import jpmorganLogo from "../../assets/ClearingHouseLogos/jp morgan.svg";
 import InovalonLogo from "../../assets/ClearingHouseLogos/inovalon.webp";
 import trizettoLogo from "../../assets/ClearingHouseLogos/Trizetto.svg";
 import changeHealthcareLogo from "../../assets/ClearingHouseLogos/change_healthcare_logo.webp";
-import optumLogo from "../../assets/PayerPortalLogos/optum.svg"
+import optumLogo from "../../assets/PayerPortalLogos/optum.svg";
 
 const EligibilityDiscoveryPage = () => {
   const logos = [
@@ -35,7 +35,7 @@ const EligibilityDiscoveryPage = () => {
       src: changeHealthcareLogo,
       alt: "Change Healthcare",
     },
-      {
+    {
       src: optumLogo,
       alt: "Optum",
     },

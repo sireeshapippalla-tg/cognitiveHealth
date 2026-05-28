@@ -1,4 +1,9 @@
-import React, { createContext, useContext, useState, type ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+} from "react";
 
 interface DemoContextType {
   isDemoModalOpen: boolean;
@@ -8,14 +13,18 @@ interface DemoContextType {
 
 const DemoContext = createContext<DemoContextType | undefined>(undefined);
 
-export const DemoProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const DemoProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const openDemoModal = () => setIsDemoModalOpen(true);
   const closeDemoModal = () => setIsDemoModalOpen(false);
 
   return (
-    <DemoContext.Provider value={{ isDemoModalOpen, openDemoModal, closeDemoModal }}>
+    <DemoContext.Provider
+      value={{ isDemoModalOpen, openDemoModal, closeDemoModal }}
+    >
       {children}
     </DemoContext.Provider>
   );

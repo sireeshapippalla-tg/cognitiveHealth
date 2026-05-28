@@ -4,7 +4,7 @@ import ResourceTabs from "../../components/resources/resourceTabs/ResourceTabs";
 import CTASection from "../../components/home/CTA/CTASection";
 import { ResourcePageWrapper } from "./ResourcesPage.styles";
 
-const ResourcesPage = () =>{
+const ResourcesPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (

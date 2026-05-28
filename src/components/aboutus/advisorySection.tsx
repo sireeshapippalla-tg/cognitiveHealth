@@ -57,7 +57,8 @@ const AdvisorySection: React.FC = () => {
           >
             <SectionTitle variant="h3">Advisory Team</SectionTitle>
             <SectionSubtitle>
-              Our advisors are well-known thought leaders drawn from the healthcare industry.
+              Our advisors are well-known thought leaders drawn from the
+              healthcare industry.
             </SectionSubtitle>
           </motion.div>
         </HeaderBox>
@@ -80,12 +81,8 @@ const AdvisorySection: React.FC = () => {
                   <AdvisorName className="advisor-name" variant="h4">
                     {advisor.name}
                   </AdvisorName>
-                  <AdvisorRole isMobile={isMobile}>
-                    {advisor.role}
-                  </AdvisorRole>
-                  <AdvisorDescription>
-                    {advisor.description}
-                  </AdvisorDescription>
+                  <AdvisorRole isMobile={isMobile}>{advisor.role}</AdvisorRole>
+                  <AdvisorDescription>{advisor.description}</AdvisorDescription>
                 </Box>
               </AdvisorCardWrapper>
             </motion.div>

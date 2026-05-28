@@ -48,11 +48,11 @@ export const RevenueCycleManagementSection: React.FC = () => {
                   The traditional revenue cycle is riddled with manual
                   processes, inefficiencies, and errors that can hinder
                   financial performance. CognitiveHealth's iCAN™ platform
-                  addresses these challenges head-on by integrating
-                  intelligent process automation specifically tailored for
-                  healthcare. Our AI-powered solutions encompass everything
-                  from pre-encounter to patient discharge, ensuring a seamless
-                  and efficient revenue cycle.
+                  addresses these challenges head-on by integrating intelligent
+                  process automation specifically tailored for healthcare. Our
+                  AI-powered solutions encompass everything from pre-encounter
+                  to patient discharge, ensuring a seamless and efficient
+                  revenue cycle.
                 </Typography>
               </Grid>
             </Grid>
@@ -118,12 +118,12 @@ export const RevenueCycleManagementSection: React.FC = () => {
                       sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                     >
                       CognitiveHealth's team comprises GenAI architects,
-                      healthcare security and privacy experts, and revenue
-                      cycle SMEs with extensive experience managing RCM
-                      processes for healthcare providers of all sizes. Our
-                      team has successfully implemented AI-driven solutions in
-                      partnership with recognized health systems, nursing
-                      homes, and specialty care providers.
+                      healthcare security and privacy experts, and revenue cycle
+                      SMEs with extensive experience managing RCM processes for
+                      healthcare providers of all sizes. Our team has
+                      successfully implemented AI-driven solutions in
+                      partnership with recognized health systems, nursing homes,
+                      and specialty care providers.
                     </Typography>
                   </Box>
                   <Box
@@ -203,10 +203,10 @@ export const RevenueCycleManagementSection: React.FC = () => {
                       color="text.secondary"
                       sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                     >
-                      We understand your concerns about privacy and security.
-                      At CognitiveHealth, our infrastructure meets the highest
-                      standards, and we actively follow the latest AI trust
-                      and risk guidelines to ensure your safety.
+                      We understand your concerns about privacy and security. At
+                      CognitiveHealth, our infrastructure meets the highest
+                      standards, and we actively follow the latest AI trust and
+                      risk guidelines to ensure your safety.
                     </Typography>
                   </Box>
                   <Box
@@ -287,9 +287,9 @@ export const RevenueCycleManagementSection: React.FC = () => {
                       sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                     >
                       Our AI-powered solutions deliver significant ROI by
-                      focusing on labor-intensive processes and minimizing
-                      human involvement to exceptional handling and oversight.
-                      By accelerating automation and eliminating redundancies,
+                      focusing on labor-intensive processes and minimizing human
+                      involvement to exceptional handling and oversight. By
+                      accelerating automation and eliminating redundancies,
                       CognitiveHealth ensures rapid implementation and quick
                       time-to-value.
                     </Typography>

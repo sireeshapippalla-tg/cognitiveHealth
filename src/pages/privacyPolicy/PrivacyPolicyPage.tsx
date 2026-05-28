@@ -46,8 +46,12 @@ const PrivacyPolicyPage = () => {
         section.title.toLowerCase().includes(lowerQuery) ||
         section.blocks.some(
           (block) =>
-            (block.type === "paragraph" && block.text.toLowerCase().includes(lowerQuery)) ||
-            (block.type === "list" && block.items.some((item: string) => item.toLowerCase().includes(lowerQuery)))
+            (block.type === "paragraph" &&
+              block.text.toLowerCase().includes(lowerQuery)) ||
+            (block.type === "list" &&
+              block.items.some((item: string) =>
+                item.toLowerCase().includes(lowerQuery)
+              ))
         )
     );
   }, [searchQuery]);
@@ -71,11 +75,10 @@ const PrivacyPolicyPage = () => {
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           >
             <UpdatedBadge>Version Date: 11/01/2024</UpdatedBadge>
-            <HeroTitle variant="h1">
-              Privacy Policy
-            </HeroTitle>
+            <HeroTitle variant="h1">Privacy Policy</HeroTitle>
             <HeroSubtitle>
-              How we collect, use, and protect your information at CognitiveHealthIT.com
+              How we collect, use, and protect your information at
+              CognitiveHealthIT.com
             </HeroSubtitle>
           </motion.div>
 
@@ -85,7 +88,9 @@ const PrivacyPolicyPage = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
             <SearchInputWrapper>
-              <SearchIcon sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }} />
+              <SearchIcon
+                sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }}
+              />
               <StyledInput
                 placeholder="Search privacy topics..."
                 value={searchQuery}
@@ -112,25 +117,36 @@ const PrivacyPolicyPage = () => {
                       transition={{ delay: index * 0.05, duration: 0.4 }}
                       $expanded={expandedId === section.id}
                     >
-                      <AccordionHeader $expanded={expandedId === section.id} onClick={() => toggleAccordion(section.id)}>
+                      <AccordionHeader
+                        $expanded={expandedId === section.id}
+                        onClick={() => toggleAccordion(section.id)}
+                      >
                         <Box>
                           {searchQuery && (
-                            <Box sx={{
-                              fontSize: "12px",
-                              fontWeight: 600,
-                              color: "var(--color-primary-dark)",
-                              textTransform: "uppercase",
-                              letterSpacing: "0.5px",
-                              mb: 1
-                            }}>
+                            <Box
+                              sx={{
+                                fontSize: "12px",
+                                fontWeight: 600,
+                                color: "var(--color-primary-dark)",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.5px",
+                                mb: 1,
+                              }}
+                            >
                               {section.title}
                             </Box>
                           )}
-                          <SectionTitle className="faq-title" $expanded={expandedId === section.id}>
+                          <SectionTitle
+                            className="faq-title"
+                            $expanded={expandedId === section.id}
+                          >
                             {section.title}
                           </SectionTitle>
                         </Box>
-                        <IconWrapper className="faq-icon" $expanded={expandedId === section.id}>
+                        <IconWrapper
+                          className="faq-icon"
+                          $expanded={expandedId === section.id}
+                        >
                           <ExpandMoreIcon />
                         </IconWrapper>
                       </AccordionHeader>
@@ -141,50 +157,70 @@ const PrivacyPolicyPage = () => {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                            transition={{
+                              duration: 0.4,
+                              ease: [0.04, 0.62, 0.23, 0.98],
+                            }}
                           >
                             <SectionBlock>
-                              {section.blocks.map((block: TermBlock, bIndex: number) => {
-                                if (block.type === "heading") {
-                                  return (
-                                    <Typography
-                                      key={bIndex}
-                                      variant="h6"
-                                      sx={{ mt: 3, mb: 2, fontWeight: 500, color: 'var(--color-gray-900)', fontSize: '18px' }}
-                                    >
-                                      {block.text}
-                                    </Typography>
-                                  );
+                              {section.blocks.map(
+                                (block: TermBlock, bIndex: number) => {
+                                  if (block.type === "heading") {
+                                    return (
+                                      <Typography
+                                        key={bIndex}
+                                        variant="h6"
+                                        sx={{
+                                          mt: 3,
+                                          mb: 2,
+                                          fontWeight: 500,
+                                          color: "var(--color-gray-900)",
+                                          fontSize: "18px",
+                                        }}
+                                      >
+                                        {block.text}
+                                      </Typography>
+                                    );
+                                  }
+                                  if (block.type === "paragraph") {
+                                    return (
+                                      <Paragraph
+                                        key={bIndex}
+                                        sx={{ mb: 2 }}
+                                        dangerouslySetInnerHTML={{
+                                          __html: block.text,
+                                        }}
+                                      />
+                                    );
+                                  }
+                                  if (block.type === "list") {
+                                    return (
+                                      <ListParagraph key={bIndex}>
+                                        <ul>
+                                          {(block.items as string[]).map(
+                                            (item: string, i: number) => (
+                                              <li
+                                                key={i}
+                                                dangerouslySetInnerHTML={{
+                                                  __html: item,
+                                                }}
+                                              />
+                                            )
+                                          )}
+                                        </ul>
+                                      </ListParagraph>
+                                    );
+                                  }
+                                  if (block.type === "link") {
+                                    return (
+                                      <Paragraph key={bIndex} sx={{ mt: 2 }}>
+                                        <a href={block.url}>{block.text}</a>
+                                      </Paragraph>
+                                    );
+                                  }
+                                  return null;
                                 }
-                                if (block.type === "paragraph") {
-                                  return (
-                                    <Paragraph
-                                      key={bIndex}
-                                      sx={{ mb: 2 }}
-                                      dangerouslySetInnerHTML={{ __html: block.text }}
-                                    />
-                                  );
-                                }
-                                if (block.type === "list") {
-                                  return (
-                                    <ListParagraph key={bIndex}>
-                                      <ul>
-                                        {(block.items as string[]).map((item: string, i: number) => (
-                                          <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-                                        ))}
-                                      </ul>
-                                    </ListParagraph>
-                                  );
-                                }
-                                if (block.type === "link") {
-                                  return (
-                                    <Paragraph key={bIndex} sx={{ mt: 2 }}>
-                                      <a href={block.url}>{block.text}</a>
-                                    </Paragraph>
-                                  );
-                                }
-                                return null;
-                              })}
+                              )}
                             </SectionBlock>
                           </AccordionContent>
                         )}
@@ -192,11 +228,9 @@ const PrivacyPolicyPage = () => {
                     </AccordionItem>
                   ))
                 ) : (
-                  <NoResults
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    No results found for "{searchQuery}". Please try another search term.
+                  <NoResults initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                    No results found for "{searchQuery}". Please try another
+                    search term.
                   </NoResults>
                 )}
               </AnimatePresence>
@@ -206,13 +240,13 @@ const PrivacyPolicyPage = () => {
             <CtaSection>
               <CtaTitle>Need More Clarity?</CtaTitle>
               <CtaText>
-                If you have specific questions about our privacy practices or data handling, our legal team is here to help.
+                If you have specific questions about our privacy practices or
+                data handling, our legal team is here to help.
               </CtaText>
               <CtaButton onClick={() => navigate("/contact-us")}>
                 Contact Legal Team
               </CtaButton>
             </CtaSection>
-
           </ContentInner>
         </ContentWrapper>
       </PageBackground>

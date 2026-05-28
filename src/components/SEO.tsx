@@ -1,6 +1,6 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { getBaseUrl } from '../utils/urlHelper';
+import React from "react";
+import { Helmet } from "react-helmet-async";
+import { getBaseUrl } from "../utils/urlHelper";
 
 interface SEOProps {
   title?: string;
@@ -17,19 +17,20 @@ const SEO: React.FC<SEOProps> = ({
   description,
   canonical,
   keywords,
-  ogType = 'website',
+  ogType = "website",
   ogImage,
   schema,
 }) => {
   const baseUrl = getBaseUrl();
   const finalOgImage = ogImage || `${baseUrl}/og-image.jpg`;
-  const siteTitle = 'CognitiveHealth';
-  
+  const siteTitle = "CognitiveHealth";
+
   // Logic to handle homepage title differently (just "CognitiveHealth")
-  const isHome = !title || title === "AI-Powered RCM Solutions"; 
+  const isHome = !title || title === "AI-Powered RCM Solutions";
   const fullTitle = isHome ? siteTitle : `${siteTitle} | ${title}`;
-  
-  const defaultDescription = 'AI-powered Revenue Cycle Management solutions for Healthcare Providers.';
+
+  const defaultDescription =
+    "AI-powered Revenue Cycle Management solutions for Healthcare Providers.";
   const finalDescription = description || defaultDescription;
 
   return (
@@ -54,9 +55,7 @@ const SEO: React.FC<SEOProps> = ({
 
       {/* Structured Data (JSON-LD) for AI / GEO */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
       )}
     </Helmet>
   );

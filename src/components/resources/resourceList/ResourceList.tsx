@@ -35,12 +35,13 @@ const ResourceList = ({ activeTab, searchQuery }: ResourceListProps) => {
     }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      list = list.filter((r) => 
-        r.title?.toLowerCase().includes(q) || 
-        r.description?.toLowerCase().includes(q)
+      list = list.filter(
+        (r) =>
+          r.title?.toLowerCase().includes(q) ||
+          r.description?.toLowerCase().includes(q)
       );
     }
-    
+
     // Sort by date descending (latest first)
     list.sort((a, b) => {
       const dateA = "date" in a && a.date ? new Date(a.date).getTime() : 0;

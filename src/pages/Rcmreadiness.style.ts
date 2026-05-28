@@ -123,8 +123,6 @@ export const FooterCaption = styled(Typography)({
   color: "#6b7280",
 });
 
-
-
 export const FolderStyledIcon = styled(FolderIcon)({
   color: "var(--color-text-blue)",
   fontSize: 22,

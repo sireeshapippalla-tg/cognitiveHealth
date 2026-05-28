@@ -12,7 +12,7 @@ export const Section = styled(Box)<{ padding?: string }>(
     [theme.breakpoints.down("md")]: {
       padding: "20px",
     },
-  }),
+  })
 );
 
 /* INNER WRAPPER */
@@ -179,7 +179,8 @@ export const BlobBottom = styled(motion.div)(() => ({
 
 export const Highlight = styled("span")(() => ({
   fontWeight: 900,
-  background: "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
+  background:
+    "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   animation: "gradientMove 5s linear infinite",

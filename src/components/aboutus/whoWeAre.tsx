@@ -24,7 +24,10 @@ const WhoWeAreSection: React.FC = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <Container maxWidth="md" sx={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+      <Container
+        maxWidth="md"
+        sx={{ position: "relative", zIndex: 1, textAlign: "center" }}
+      >
         <Box>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -43,14 +46,26 @@ const WhoWeAreSection: React.FC = () => {
           >
             <ContentBox>
               <p>
-                <HighlightText>CognitiveHealth</HighlightText> is dedicated to solving the toughest operational challenges in healthcare revenue cycle management through intelligent automation. We combine deep expertise with advanced technology to deliver measurable, sustainable results for health systems, physician groups, and specialty providers.
+                <HighlightText>CognitiveHealth</HighlightText> is dedicated to
+                solving the toughest operational challenges in healthcare
+                revenue cycle management through intelligent automation. We
+                combine deep expertise with advanced technology to deliver
+                measurable, sustainable results for health systems, physician
+                groups, and specialty providers.
               </p>
               <p>
-                Founded by revenue cycle leaders who experienced firsthand the inefficiencies and complexity of managing healthcare financial operations, we understand that technology must serve people, workflows, and outcomes—not the other way around.
+                Founded by revenue cycle leaders who experienced firsthand the
+                inefficiencies and complexity of managing healthcare financial
+                operations, we understand that technology must serve people,
+                workflows, and outcomes—not the other way around.
               </p>
               <DecoratorLine />
               <ItalicText>
-                Our approach is grounded in operational excellence, continuous improvement, and partnership. We work alongside healthcare organizations to automate repetitive tasks, reduce errors, and empower teams to focus on strategic, high-value work that drives financial performance and supports exceptional patient care.
+                Our approach is grounded in operational excellence, continuous
+                improvement, and partnership. We work alongside healthcare
+                organizations to automate repetitive tasks, reduce errors, and
+                empower teams to focus on strategic, high-value work that drives
+                financial performance and supports exceptional patient care.
               </ItalicText>
             </ContentBox>
           </motion.div>

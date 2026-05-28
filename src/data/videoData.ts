@@ -76,7 +76,8 @@ export const videoData: Video[] = [
   {
     id: "6",
     type: "video",
-    title: "[1] AI-based RCM: Training AI agents to Navigate Healthcare Complexity",
+    title:
+      "[1] AI-based RCM: Training AI agents to Navigate Healthcare Complexity",
     description:
       "In this short but powerful conversation, Pavani Munjuluri and Albert Porco discuss how AI agents are trained to navigate healthcare complexity.",
     image: "https://img.youtube.com/vi/P7vfHiUsw1E/maxresdefault.webp",
@@ -196,7 +197,8 @@ export const videoData: Video[] = [
   {
     id: "16",
     type: "video",
-    title: "1 - Key considerations for successful AI implementation in group practices",
+    title:
+      "1 - Key considerations for successful AI implementation in group practices",
     description:
       "Group practices experience growing pains while dealing with multiple banks, EMR systems, regular updates, and ongoing staff training. Learn key considerations for AI.",
     image: "https://img.youtube.com/vi/JV0TFVIM-Ys/maxresdefault.webp",
@@ -220,7 +222,8 @@ export const videoData: Video[] = [
   {
     id: "18",
     type: "video",
-    title: "Webinar replay: Reimagining Revenue Cycle Management (RCM) in Group Practices with AI",
+    title:
+      "Webinar replay: Reimagining Revenue Cycle Management (RCM) in Group Practices with AI",
     description:
       "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
     image: "https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.webp",
@@ -288,5 +291,5 @@ export const videoData: Video[] = [
     category: "Product",
     date: "January 15, 2019",
     link: "https://www.youtube.com/embed/DZPkze6KM08?rel=0&modestbranding=1",
-  }
+  },
 ];

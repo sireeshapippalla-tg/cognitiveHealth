@@ -20,9 +20,10 @@ interface Props {
 
 const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
   const [email, setEmail] = useState("");
-  const [sendImplementationPdf, { isLoading }] = useSendImplementationProcessPdfMutation();
+  const [sendImplementationPdf, { isLoading }] =
+    useSendImplementationProcessPdfMutation();
 
- const handleSubmit = async () => {
+  const handleSubmit = async () => {
     if (!email) return;
 
     // Validate email
@@ -46,7 +47,11 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
     } catch (err: unknown) {
       console.error(err);
       const error = err as { data?: { error?: string }; message?: string };
-      toast.error(error.data?.error || error.message || "Failed to send guide. Please try again.");
+      toast.error(
+        error.data?.error ||
+          error.message ||
+          "Failed to send guide. Please try again."
+      );
     }
   };
 
@@ -95,7 +100,8 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
               position: "absolute",
               inset: -2,
               zIndex: -1,
-              background: "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
+              background:
+                "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
               borderRadius: "34px",
               opacity: 0.4,
               filter: "blur(8px)",
@@ -137,7 +143,12 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
           </Box>
 
           <Box mb={4} textAlign="center">
-            <Typography variant="h5" fontWeight={900} color="#1e293b" gutterBottom>
+            <Typography
+              variant="h5"
+              fontWeight={900}
+              color="#1e293b"
+              gutterBottom
+            >
               Get the Implementation Guide
             </Typography>
             <Typography variant="body1" color="#64748b">
@@ -164,12 +175,17 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                 },
               }}
             />
-            
+
             <Typography
               variant="caption"
-              sx={{ color: "var(--color-gray-600)", mt: 1.5, display: "block", textAlign: "center" }}
+              sx={{
+                color: "var(--color-gray-600)",
+                mt: 1.5,
+                display: "block",
+                textAlign: "center",
+              }}
             >
-             We respect your privacy. No spam.
+              We respect your privacy. No spam.
             </Typography>
 
             <Box mt={4} display="flex" gap={2}>
@@ -202,11 +218,13 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
                   py: 1.8,
                   textTransform: "none",
                   fontWeight: 700,
-                  background: "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
+                  background:
+                    "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
                   boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
-               
+
                   "&:hover": {
-                    background: "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
+                    background:
+                      "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
                     boxShadow: "0 12px 24px rgba(244, 122, 32, 0.4)",
                   },
                 }}

@@ -66,15 +66,14 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
                   >
                     In the dynamic world of healthcare, automating critical
                     processes such as eligibility verification and denial
-                    management is essential for maintaining financial health
-                    and operational efficiency. CognitiveHealth's iCAN™
-                    platform provides a comprehensive solution that
-                    addresses these challenges head-on, empowering
-                    healthcare providers to focus on delivering exceptional
-                    patient care. By embracing automation, healthcare
-                    organizations can significantly reduce administrative
-                    burdens, enhance cash flow, and improve overall
-                    performance.
+                    management is essential for maintaining financial health and
+                    operational efficiency. CognitiveHealth's iCAN™ platform
+                    provides a comprehensive solution that addresses these
+                    challenges head-on, empowering healthcare providers to focus
+                    on delivering exceptional patient care. By embracing
+                    automation, healthcare organizations can significantly
+                    reduce administrative burdens, enhance cash flow, and
+                    improve overall performance.
                   </Typography>
 
                   <Typography
@@ -86,10 +85,10 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
                       lineHeight: 1.8,
                     }}
                   >
-                    Discover how CognitiveHealth can revolutionize your
-                    revenue cycle management. Schedule a free demo today to
-                    see our innovative solutions in action and learn how
-                    they can benefit your specialty practice.
+                    Discover how CognitiveHealth can revolutionize your revenue
+                    cycle management. Schedule a free demo today to see our
+                    innovative solutions in action and learn how they can
+                    benefit your specialty practice.
                   </Typography>
                   <Typography
                     variant="body1"
@@ -115,9 +114,9 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
                       lineHeight: 1.8,
                     }}
                   >
-                    This experienced team of CognitiveHealth has partnered
-                    with recognized health systems to build iCAN™ - Network
-                    of Al Agents.
+                    This experienced team of CognitiveHealth has partnered with
+                    recognized health systems to build iCAN™ - Network of Al
+                    Agents.
                   </Typography>
                   <Typography
                     variant="body1"
@@ -140,10 +139,10 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
                       lineHeight: 1.8,
                     }}
                   >
-                    We understand your concerns about privacy and security.
-                    At CognitiveHealth, our infrastructure meets the highest
-                    standards, and we actively follow the latest Al trust
-                    and risk guidelines to ensure your safety.
+                    We understand your concerns about privacy and security. At
+                    CognitiveHealth, our infrastructure meets the highest
+                    standards, and we actively follow the latest Al trust and
+                    risk guidelines to ensure your safety.
                   </Typography>
                 </>
               )}

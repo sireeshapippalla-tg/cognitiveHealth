@@ -22,8 +22,7 @@ export const Glow = styled(motion.div)(() => ({
   left: "5%",
   width: "300px",
   height: "300px",
-  background:
-    "radial-gradient(circle, rgba(107,191,89,0.1), transparent)",
+  background: "radial-gradient(circle, rgba(107,191,89,0.1), transparent)",
   filter: "blur(80px)",
 }));
 

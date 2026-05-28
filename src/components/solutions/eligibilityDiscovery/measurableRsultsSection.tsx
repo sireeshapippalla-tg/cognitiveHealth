@@ -14,25 +14,29 @@ const stats = [
   {
     value: "98%",
     title: "",
-    description: "Pre-Service Verification Rate Virtually all appointments verified before patient arrival",
+    description:
+      "Pre-Service Verification Rate Virtually all appointments verified before patient arrival",
     icon: <VerifiedUserOutlinedIcon />,
   },
   {
     value: "75%",
     title: "",
-    description: "Reduction in Eligibility Denials Catch coverage issues before service delivery",
+    description:
+      "Reduction in Eligibility Denials Catch coverage issues before service delivery",
     icon: <ShieldOutlinedIcon />,
   },
   {
     value: "30 Seconds",
     title: "",
-    description: "Average Verification Time From patient check-in to confirmed eligibility",
+    description:
+      "Average Verification Time From patient check-in to confirmed eligibility",
     icon: <AccessTimeOutlinedIcon />,
   },
   {
     value: "40%",
     title: "",
-    description: "Decrease in Bad Debt Better coverage verification = fewer uncompensated services",
+    description:
+      "Decrease in Bad Debt Better coverage verification = fewer uncompensated services",
     icon: <SavingsOutlinedIcon />,
   },
 ];

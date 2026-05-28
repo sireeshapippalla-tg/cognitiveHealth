@@ -12,25 +12,29 @@ const SolutionsHeroSection = () => {
     <SplitSection
       // eyebrow="Lockbox management "
       eyebrow={
-    <>
-      Lockbox {" "}
-      <Highlight>Management</Highlight>
-    </>
-  }
+        <>
+          Lockbox <Highlight>Management</Highlight>
+        </>
+      }
       description="Transform paper remittances and correspondence into digital workflows with AI-powered lockbox management that eliminates manual data entry and tracking"
       image={paymentPostingImage}
       prioritize={true}
-     primaryAction={{
-          label: "Request a Demo",
-          onClick: () =>
-            navigate(ROUTES.REQUEST_DEMO, {
-              state: { fromLabel: "Lockbox Management", fromPath: "/solutions#lockboxManagement" },
-            }),
-        }}
-        secondaryAction={{
-          label: "See Platform in Action",
-          onClick: () => {navigate("/resources#videos")},
-        }}
+      primaryAction={{
+        label: "Request a Demo",
+        onClick: () =>
+          navigate(ROUTES.REQUEST_DEMO, {
+            state: {
+              fromLabel: "Lockbox Management",
+              fromPath: "/solutions#lockboxManagement",
+            },
+          }),
+      }}
+      secondaryAction={{
+        label: "See Platform in Action",
+        onClick: () => {
+          navigate("/resources#videos");
+        },
+      }}
     />
   );
 };

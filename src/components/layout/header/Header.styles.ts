@@ -2,13 +2,13 @@ import { styled } from "@mui/material/styles";
 import { AppBar, Toolbar, Box } from "@mui/material";
 
 /* APP BAR */
-export const StyledAppBar = styled(AppBar)(({theme}) => ({
+export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: "var(--color-white)",
   borderBottom: "1px solid #e5e7eb",
   // padding:"10px 30px"
-   padding: "0px 60px",
-   [theme.breakpoints.down("md")]: {
-   padding:"0px"
+  padding: "0px 60px",
+  [theme.breakpoints.down("md")]: {
+    padding: "0px",
   },
 }));
 
@@ -33,11 +33,10 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   minHeight: 72, // desktop height
 
   [theme.breakpoints.down("md")]: {
-    minHeight: 56,        // 🔥 mobile height
-    padding: "0 16px",    // 🔥 mobile padding
+    minHeight: 56, // 🔥 mobile height
+    padding: "0 16px", // 🔥 mobile padding
   },
 }));
-
 
 /* LOGO */
 export const LogoImage = styled("img")({
@@ -45,7 +44,7 @@ export const LogoImage = styled("img")({
   cursor: "pointer",
   display: "block",
   // draggable: false,
-  
+
   "@media (max-width: 600px)": {
     height: 32,
   },
@@ -64,6 +63,7 @@ export const NavItem = styled("span")<{
   alignItems: "center",
   gap: 4,
   position: "relative",
+  whiteSpace: "nowrap",
 
   "&:hover": {
     color: "var(--color-primary)",
@@ -90,18 +90,17 @@ export const DrawerContainer = styled(Box)(() => ({
 
 export const DrawerItem = styled(Box, {
   shouldForwardProp: (prop) => prop !== "active",
-})<{ active?: boolean }>(({  active }) => ({
+})<{ active?: boolean }>(({ active }) => ({
   fontSize: 16,
   cursor: "pointer",
-
 
   "&:hover": {
     color: "var(--color-primary)",
   },
-    display: "flex",
+  display: "flex",
   alignItems: "center",
   justifyContent: "space-between", // 👈 pushes arrow right
-color: active ? "var(--color-primary)" : "var(--color-text-dark)",
+  color: active ? "var(--color-primary)" : "var(--color-text-dark)",
 }));
 
 export const CloseIconWrapper = styled(Box)(() => ({

@@ -40,8 +40,9 @@ const RCMReadinessScreen: React.FC = () => {
   const [openEmailDialog, setOpenEmailDialog] = useState(false);
   const [email, setEmail] = useState("");
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
-  
-  const [sendAssessmentEmail, { isLoading: isSending }] = useSendAssessmentEmailMutation();
+
+  const [sendAssessmentEmail, { isLoading: isSending }] =
+    useSendAssessmentEmailMutation();
 
   const isProcessing = isGeneratingPdf || isSending;
 
@@ -123,8 +124,8 @@ const RCMReadinessScreen: React.FC = () => {
 
     try {
       setIsGeneratingPdf(true);
-      await new Promise((resolve) => setTimeout(resolve, 50)); 
-      
+      await new Promise((resolve) => setTimeout(resolve, 50));
+
       const pdfBlob = await generatePdfFromUI();
 
       if (!pdfBlob) {
@@ -145,16 +146,19 @@ const RCMReadinessScreen: React.FC = () => {
       toast.success("Assessment report sent successfully!");
       setOpenEmailDialog(false);
       setEmail("");
-      
+
       setCheckedItems({});
       setSubmitted(false);
       setScore(0);
-      
     } catch (error: unknown) {
       console.error(error);
       setIsGeneratingPdf(false);
       const err = error as { data?: { error?: string }; message?: string };
-      toast.error(err.data?.error || err.message || "An unexpected error occurred while sending");
+      toast.error(
+        err.data?.error ||
+          err.message ||
+          "An unexpected error occurred while sending"
+      );
     }
   };
 

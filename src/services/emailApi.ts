@@ -1,4 +1,4 @@
-import { api } from './api';
+import { api } from "./api";
 
 export const emailApi = api.injectEndpoints({
   endpoints: (builder) => ({
@@ -6,7 +6,7 @@ export const emailApi = api.injectEndpoints({
     sendResultsPdf: builder.mutation({
       query: (formData) => ({
         url: `${import.meta.env.VITE_API_URL}/sendCognitiveHealthResultsPackage`,
-        method: 'POST',
+        method: "POST",
         headers: {
           "X-API-TOKEN": import.meta.env.VITE_TOKEN,
         },
@@ -18,7 +18,7 @@ export const emailApi = api.injectEndpoints({
     sendAssessmentEmail: builder.mutation({
       query: (formData) => ({
         url: `${import.meta.env.VITE_API_URL}/sendRcmAiReadinessAssessmentResults`,
-        method: 'POST',
+        method: "POST",
         headers: {
           "X-API-TOKEN": import.meta.env.VITE_TOKEN,
         },
@@ -30,7 +30,7 @@ export const emailApi = api.injectEndpoints({
     sendImplementationProcessPdf: builder.mutation({
       query: (formData) => ({
         url: `${import.meta.env.VITE_API_URL}/sendCognitiveHealthImplementationProcess`,
-        method: 'POST',
+        method: "POST",
         headers: {
           "X-API-TOKEN": import.meta.env.VITE_TOKEN,
         },

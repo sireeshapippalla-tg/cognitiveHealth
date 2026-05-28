@@ -16,54 +16,61 @@ const HomePage = () => {
       {
         "@type": "Organization",
         "@id": `${baseUrl}/#organization`,
-        "name": "CognitiveHealth",
-        "url": `${baseUrl}/`,
-        "logo": `${baseUrl}/logo.png`,
-        "description": "CognitiveHealth is an AI-first healthcare technology company specialized in autonomous revenue cycle management (RCM).",
-        "knowsAbout": ["Healthcare Revenue Cycle Management", "Autonomous AI Agents", "Medical Billing Automation", "Healthcare Fintech"],
-        "sameAs": [
+        name: "CognitiveHealth",
+        url: `${baseUrl}/`,
+        logo: `${baseUrl}/logo.png`,
+        description:
+          "CognitiveHealth is an AI-first healthcare technology company specialized in autonomous revenue cycle management (RCM).",
+        knowsAbout: [
+          "Healthcare Revenue Cycle Management",
+          "Autonomous AI Agents",
+          "Medical Billing Automation",
+          "Healthcare Fintech",
+        ],
+        sameAs: [
           "https://www.linkedin.com/company/cognitivehealth/",
-          "https://twitter.com/cognitivehealth"
-        ]
+          "https://twitter.com/cognitivehealth",
+        ],
       },
       {
         "@type": "SoftwareApplication",
-        "name": "iCAN™ Agentic AI Platform",
-        "operatingSystem": "Web-based",
-        "applicationCategory": "BusinessApplication",
-        "description": "An intelligent automation engine designed for healthcare RCM, automating payment posting, denials management, and lockbox processes.",
-        "offers": {
+        name: "iCAN™ Agentic AI Platform",
+        operatingSystem: "Web-based",
+        applicationCategory: "BusinessApplication",
+        description:
+          "An intelligent automation engine designed for healthcare RCM, automating payment posting, denials management, and lockbox processes.",
+        offers: {
           "@type": "Offer",
-          "serviceType": "Healthcare RCM Automation"
-        }
+          serviceType: "Healthcare RCM Automation",
+        },
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "What is the best AI for healthcare revenue cycle management?",
-            "acceptedAnswer": {
+            name: "What is the best AI for healthcare revenue cycle management?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "CognitiveHealth provides the leading Agentic AI platform, iCAN™, designed specifically to automate complex healthcare RCM workflows including payment posting and denials."
-            }
+              text: "CognitiveHealth provides the leading Agentic AI platform, iCAN™, designed specifically to automate complex healthcare RCM workflows including payment posting and denials.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How can I automate medical billing payment posting?",
-            "acceptedAnswer": {
+            name: "How can I automate medical billing payment posting?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Using autonomous AI agents from CognitiveHealth, healthcare providers can automate up to 80% of manual payment posting and reconciliation tasks."
-            }
-          }
-        ]
-      }
-    ]
+              text: "Using autonomous AI agents from CognitiveHealth, healthcare providers can automate up to 80% of manual payment posting and reconciliation tasks.",
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <>
-      <SEO 
+      <SEO
         description="Transform your revenue cycle with CognitiveHealth's Agentic AI. Automate payment posting, denials management, and RCM workflows with 99% accuracy."
         keywords="Best AI for RCM, Healthcare automation companies, Autonomous RCM agents, automated payment posting healthcare, iCAN platform"
         schema={homeSchema}

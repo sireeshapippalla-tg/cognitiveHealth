@@ -3,12 +3,23 @@ import { useParams, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconButton } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { BlogDetailWrapper, BlogContent, Breadcrumb, BreadcrumbLink } from "./BlogDetailPage.styles";
+import {
+  BlogDetailWrapper,
+  BlogContent,
+  Breadcrumb,
+  BreadcrumbLink,
+} from "./BlogDetailPage.styles";
 import SEO from "../../components/SEO";
 import { blogData } from "../../data/blogData";
 import CTASection from "../../components/home/CTA/CTASection";
 import { ROUTES } from "../../routes/RoutePaths";
-import { BlogContent1, BlogContent2, BlogContent3, BlogContent4, BlogContentDefault } from "./BlogContents";
+import {
+  BlogContent1,
+  BlogContent2,
+  BlogContent3,
+  BlogContent4,
+  BlogContentDefault,
+} from "./BlogContents";
 
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -44,15 +55,15 @@ const BlogDetailPage: React.FC = () => {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": blog.title,
-    "description": blog.description,
-    "image": blog.image,
-    "datePublished": blog.date,
-    "url": `${baseUrl}/resource/${slug}`,
-    "author": {
+    headline: blog.title,
+    description: blog.description,
+    image: blog.image,
+    datePublished: blog.date,
+    url: `${baseUrl}/resource/${slug}`,
+    author: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   // Render content based on blog ID
@@ -88,7 +99,9 @@ const BlogDetailPage: React.FC = () => {
           <Breadcrumb>
             <BreadcrumbLink to={ROUTES.HOME}>Home</BreadcrumbLink>
             <span> // </span>
-            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>Resources</BreadcrumbLink>
+            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>
+              Resources
+            </BreadcrumbLink>
             <span> // </span>
             <span>{blog.title}</span>
           </Breadcrumb>
@@ -136,4 +149,3 @@ const BlogDetailPage: React.FC = () => {
 };
 
 export default BlogDetailPage;
-

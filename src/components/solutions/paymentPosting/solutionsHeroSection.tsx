@@ -21,7 +21,10 @@ const SolutionsHeroSection = () => {
         label: "Request a Demo",
         onClick: () =>
           navigate(ROUTES.REQUEST_DEMO, {
-            state: { fromLabel: "Payment Posting", fromPath: "/solutions#paymentPosting" },
+            state: {
+              fromLabel: "Payment Posting",
+              fromPath: "/solutions#paymentPosting",
+            },
           }),
       }}
       secondaryAction={{

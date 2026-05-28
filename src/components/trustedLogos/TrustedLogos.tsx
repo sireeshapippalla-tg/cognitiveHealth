@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import {
   TrustSection,
@@ -11,7 +9,7 @@ import {
   AnimatedLogoTrack,
   LogoCard,
 } from "./TrustedLogos.styles";
-import { Box, } from "@mui/material";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 interface LogoItem {
@@ -38,8 +36,6 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
       viewport={{ once: false }}
     >
       <TrustSection>
-
-
         {title && (
           <TitleMotionWrapper
             initial={{ opacity: 0, y: -20 }}
@@ -53,12 +49,10 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
           </TitleMotionWrapper>
         )}
         <LogoScrollWrapper>
-
           <AnimatedLogoTrack speed={speed}>
             {[...Array(2)].map((_, index) => (
               <LogoGrid key={index}>
                 {logos.map((logo, i) => (
-
                   <LogoCard key={i}>
                     <LogoImage
                       src={logo.src}
@@ -72,7 +66,6 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
               </LogoGrid>
             ))}
           </AnimatedLogoTrack>
-
         </LogoScrollWrapper>
       </TrustSection>
     </motion.div>

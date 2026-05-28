@@ -45,9 +45,9 @@ export const IcanManageSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 4 }}
                 >
-                  iCAN Manage™ enables the scheduling, execution, and
-                  monitoring of tasks. This module promptly addresses alerts
-                  and escalations, allowing for efficient task management and
+                  iCAN Manage™ enables the scheduling, execution, and monitoring
+                  of tasks. This module promptly addresses alerts and
+                  escalations, allowing for efficient task management and
                   reporting.
                 </Typography>
               </Grid>

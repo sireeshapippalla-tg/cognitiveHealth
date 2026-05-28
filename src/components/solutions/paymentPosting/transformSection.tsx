@@ -11,7 +11,7 @@ import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlin
 
 const features = [
   {
-    // icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    // icon: <img width={48} height={48} src={paymentImage1} alt="Centralized Payment" loading="lazy" />,
     icon: <HubOutlinedIcon />,
 
     title: "Centralized Payment Processing",
@@ -19,7 +19,7 @@ const features = [
       "Consolidate all payment sources into a single, unified workbench for streamlined operations and enhanced visibility.",
   },
   {
-    // icon: <img src={paymentImage2} alt="Automated Posting" />,
+    // icon: <img width={48} height={48} src={paymentImage2} alt="Automated Posting" loading="lazy" />,
     icon: <SyncAltOutlinedIcon />,
 
     title: "Automated Posting and Reconciliation",
@@ -27,7 +27,7 @@ const features = [
       "Leverage AI-powered automation to match, post, and reconcile payments with unprecedented speed and accuracy.",
   },
   {
-    // icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    // icon: <img width={48} height={48} src={paymentImage3} alt="Reduced Errors" loading="lazy" />,
     icon: <SpeedOutlinedIcon />,
 
     title: "Reduced Errors and Faster Turnaround",
@@ -35,7 +35,7 @@ const features = [
       "Eliminate manual data entry errors and accelerate payment processing with intelligent automation and exception handling.",
   },
   {
-    // icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    // icon: <img width={48} height={48} src={paymentImage4} alt="Cash Visibility" loading="lazy" />,
     icon: <AccountBalanceOutlinedIcon />,
 
     title: "Real-Time Cash Visibility",

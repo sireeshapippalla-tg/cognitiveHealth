@@ -10,12 +10,10 @@ const SolutionsHeroSection = () => {
   const navigate = useNavigate();
   return (
     <SplitSection
-
       // eyebrow="Eligibility Discovery "
       eyebrow={
         <>
-          Eligibility{" "}
-          <Highlight>Discovery</Highlight>
+          Eligibility <Highlight>Discovery</Highlight>
         </>
       }
       description="Verify coverage in real-time and eliminate claim denials due to 
@@ -26,12 +24,17 @@ const SolutionsHeroSection = () => {
         label: "Request a Demo",
         onClick: () =>
           navigate(ROUTES.REQUEST_DEMO, {
-            state: { fromLabel: "Eligibility Discovery", fromPath: "/solutions#eligibilityDiscovery" },
+            state: {
+              fromLabel: "Eligibility Discovery",
+              fromPath: "/solutions#eligibilityDiscovery",
+            },
           }),
       }}
       secondaryAction={{
         label: "See Platform in Action",
-        onClick: () => {navigate("/resources#videos")},
+        onClick: () => {
+          navigate("/resources#videos");
+        },
       }}
     />
   );

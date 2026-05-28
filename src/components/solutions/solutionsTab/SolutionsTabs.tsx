@@ -34,22 +34,41 @@ const SolutionsTabs = () => {
       value: "paymentPosting",
       label: "Payment Posting",
       icon: (
-        <img src={Vector} alt="Vector Icon" style={{ width: 28, height: 28 }} />
+        <img
+          width={28}
+          height={28}
+          src={Vector}
+          alt="Vector Icon"
+          style={{ width: 28, height: 28 }}
+          loading="lazy"
+        />
       ),
     },
     {
       value: "lockboxManagement",
       label: "Lockbox Management",
-      icon: <img src={Frame} alt="Frame Icon" style={{ width: 28, height: 28 }} />,
+      icon: (
+        <img
+          width={28}
+          height={28}
+          src={Frame}
+          alt="Frame Icon"
+          style={{ width: 28, height: 28 }}
+          loading="lazy"
+        />
+      ),
     },
     {
       value: "denialWorkflow",
       label: "Denials Workflow",
       icon: (
         <img
+          width={28}
+          height={28}
           src={Workflow}
           alt="Workflow Icon"
           style={{ width: 28, height: 28 }}
+          loading="lazy"
         />
       ),
     },
@@ -58,9 +77,12 @@ const SolutionsTabs = () => {
       label: "Eligibility Discovery",
       icon: (
         <img
+          width={28}
+          height={28}
           src={Eligibility}
           alt="Eligibility Icon"
           style={{ width: 28, height: 28 }}
+          loading="lazy"
         />
       ),
     },
@@ -69,9 +91,12 @@ const SolutionsTabs = () => {
       label: "Contract Analysis",
       icon: (
         <img
+          width={28}
+          height={28}
           src={Analysis}
           alt="Analysis Icon"
           style={{ width: 28, height: 28 }}
+          loading="lazy"
         />
       ),
     },
@@ -80,15 +105,21 @@ const SolutionsTabs = () => {
       label: "Pre-Bill Review",
       icon: (
         <img
+          width={28}
+          height={28}
           src={PreBill}
           alt="Pre-Bill Icon"
           style={{ width: 28, height: 28 }}
+          loading="lazy"
         />
       ),
     },
   ];
 
-  const activeTab = Math.max(0, tabs.findIndex((tab) => tab.value === location.hash.replace("#", "")));
+  const activeTab = Math.max(
+    0,
+    tabs.findIndex((tab) => tab.value === location.hash.replace("#", ""))
+  );
 
   useEffect(() => {
     // If there is NO hash, user came from another page
@@ -123,7 +154,7 @@ const SolutionsTabs = () => {
 
   const handleTabChange = (
     _event: React.MouseEvent<HTMLButtonElement>,
-    newValue: number,
+    newValue: number
   ) => {
     isTabClickRef.current = true;
 
@@ -152,14 +183,17 @@ const SolutionsTabs = () => {
                 />
               )}
 
-              <Box sx={{ 
-                position: "relative", 
-                zIndex: 1, 
-                display: "flex", 
-                alignItems: "center", 
-                gap: 1.5,
-                filter: activeTab === index ? "brightness(0) invert(1)" : "none"
-              }}>
+              <Box
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1.5,
+                  filter:
+                    activeTab === index ? "brightness(0) invert(1)" : "none",
+                }}
+              >
                 {/* {tab.icon} */}
                 <TabText $active={activeTab === index}>{tab.label}</TabText>
               </Box>

@@ -42,7 +42,8 @@ export const termsSections: TermSection[] = [
   },
   {
     id: "gathering-use-disclosure",
-    title: "GATHERING, USE AND DISCLOSURE OF PERSONALLY IDENTIFYING INFORMATION",
+    title:
+      "GATHERING, USE AND DISCLOSURE OF PERSONALLY IDENTIFYING INFORMATION",
     blocks: [
       {
         type: "heading",

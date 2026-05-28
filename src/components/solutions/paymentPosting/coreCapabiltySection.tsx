@@ -30,7 +30,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Workbench} alt="Unified Payment Workbench" />,
+    // icon: <img width={48} height={48} src={Workbench} alt="Unified Payment Workbench" loading="lazy" />,
     icon: <DashboardOutlinedIcon />,
   },
   {
@@ -46,7 +46,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="Automated Payment Posting Engine" />,
+    // icon: <img width={48} height={48} src={Zap} alt="Automated Payment Posting Engine" loading="lazy" />,
     icon: <AutoModeOutlinedIcon />,
   },
   {
@@ -62,7 +62,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Info} alt="Exception and Variance Manager" />,
+    // icon: <img width={48} height={48} src={Info} alt="Exception and Variance Manager" loading="lazy" />,
     icon: <ReportProblemOutlinedIcon />,
   },
   {
@@ -78,7 +78,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={BarChart} alt="Real-Time Cash Analytics Dashboard" />,
+    // icon: <img width={48} height={48} src={BarChart} alt="Real-Time Cash Analytics Dashboard" loading="lazy" />,
     icon: <InsightsOutlinedIcon />,
   },
   {
@@ -94,7 +94,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    // icon: <img width={48} height={48} src={Data} alt="Multi-Source Data Connector" loading="lazy" />,
     icon: <HubOutlinedIcon />,
   },
 ];

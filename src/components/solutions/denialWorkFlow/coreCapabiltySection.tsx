@@ -11,13 +11,11 @@ import { Wrapper } from "./solutions.style";
 // import Data from "../../../assets/solutions/Core Capabilities/Data.webp";
 import BulletList from "../../ui/BulletList";
 
-
 import PriceCheckOutlinedIcon from "@mui/icons-material/PriceCheckOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import MedicalInformationOutlinedIcon from "@mui/icons-material/MedicalInformationOutlined";
 import PsychologyAltOutlinedIcon from "@mui/icons-material/PsychologyAltOutlined";
-
 
 const capabilities: ExpandableItem[] = [
   {
@@ -34,13 +32,12 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Workbench}
     //     alt="Low Dollar Denial Prioritization Engine"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <PriceCheckOutlinedIcon />,
-    
   },
   {
     id: 2,
@@ -55,7 +52,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="Proactive Denial Trigger System" />,
+    // icon: <img width={48} height={48} src={Zap} alt="Proactive Denial Trigger System" loading="lazy" />,
     icon: <ShieldOutlinedIcon />,
   },
   {
@@ -71,7 +68,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Info} alt="Automated Appeals Letter Generator" />,
+    // icon: <img width={48} height={48} src={Info} alt="Automated Appeals Letter Generator" loading="lazy" />,
     icon: <DescriptionOutlinedIcon />,
   },
   {
@@ -88,10 +85,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
-    //     src={Barchart}   
+    //   <img width={48} height={48}
+    //     src={Barchart}
     //     alt="Medical Records Request Orchestrator"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <MedicalInformationOutlinedIcon />,
   },
@@ -109,10 +106,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Data}
     //     alt="AI-Powered Resolution Recommendation Assistant"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <PsychologyAltOutlinedIcon />,
   },

@@ -19,25 +19,57 @@ import {
 
 const productIntelligenceItems = [
   {
-    icon: <img src={Architecture} alt="Architecture" />,
+    icon: (
+      <img
+        width={48}
+        height={48}
+        src={Architecture}
+        alt="Architecture"
+        loading="lazy"
+      />
+    ),
     title: "Hybrid AI Models ",
     description:
       "Combines large language models with specialized healthcare domain models trained on claims, physician notes, payer policies and correspondence, and regulatory frameworks, delivering accuracy that generic AI cannot match.",
   },
   {
-    icon: <img src={Healthcare} alt="Healthcare Expertise" />,
+    icon: (
+      <img
+        width={48}
+        height={48}
+        src={Healthcare}
+        alt="Healthcare Expertise"
+        loading="lazy"
+      />
+    ),
     title: "Deep Healthcare Domain Knowledge",
     description:
       "Purpose-built for healthcare complexity: 1,200+ payer rules, 20+ EMR integrations, specialty-specific workflows, and continuous regulatory updates, handling what makes healthcare unique.",
   },
   {
-    icon: <img src={Compatibility} alt="Compatibility" />,
+    icon: (
+      <img
+        width={48}
+        height={48}
+        src={Compatibility}
+        alt="Compatibility"
+        loading="lazy"
+      />
+    ),
     title: "Comprehensive Interoperability",
     description:
       "Native support for HL7, FHIR, X12 EDI, and modern APIs. Seamlessly connects with Epic, Cerner, Meditech, athenahealth, NextGen, and 15+ other EMRs plus hundreds of peripheral systems.",
   },
   {
-    icon: <img src={Enterprise} alt="Enterprise Scale" />,
+    icon: (
+      <img
+        width={48}
+        height={48}
+        src={Enterprise}
+        alt="Enterprise Scale"
+        loading="lazy"
+      />
+    ),
     title: "Intelligent Process Orchestration ",
     description:
       "AI agents work together across your entire revenue cycle, sharing insights, coordinating handoffs, and optimizing workflows from patient registration through final payment reconciliation.",
@@ -58,10 +90,12 @@ const ProductIntelligence = () => {
           transition={{ duration: 0.5 }}
         >
           <Title>
-            Enterprise AI Architecture Built for <HighlightText>Healthcare</HighlightText>
+            Enterprise AI Architecture Built for{" "}
+            <HighlightText>Healthcare</HighlightText>
           </Title>
           <SubtitleTextStyle>
-            Cutting-edge technology designed specifically for the complexity of healthcare operations
+            Cutting-edge technology designed specifically for the complexity of
+            healthcare operations
           </SubtitleTextStyle>
         </motion.div>
 
@@ -83,18 +117,12 @@ const ProductIntelligence = () => {
                   </BackgroundNumber>
 
                   {/* Icon */}
-                  <IconWrapper>
-                    {item.icon}
-                  </IconWrapper>
+                  <IconWrapper>{item.icon}</IconWrapper>
 
                   {/* Content */}
-                  <CardTitle variant="h3">
-                    {item.title}
-                  </CardTitle>
+                  <CardTitle variant="h3">{item.title}</CardTitle>
 
-                  <CardDescription>
-                    {item.description}
-                  </CardDescription>
+                  <CardDescription>{item.description}</CardDescription>
                 </CardContainer>
               </motion.div>
             </Grid>
@@ -106,4 +134,3 @@ const ProductIntelligence = () => {
 };
 
 export default ProductIntelligence;
-

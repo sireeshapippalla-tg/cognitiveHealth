@@ -92,7 +92,14 @@ const Header = () => {
       // path: "/solutions/payment-posting",
       hash: "paymentPosting",
       icon: (
-        <img src={Vector} alt="Vector Icon" style={{ width: 24, height: 24 }} />
+        <img
+          width={24}
+          height={24}
+          src={Vector}
+          alt="Vector Icon"
+          style={{ width: 24, height: 24 }}
+          loading="lazy"
+        />
       ),
     },
     {
@@ -101,7 +108,14 @@ const Header = () => {
       // path: "/solutions/lockbox",
       hash: "lockboxManagement",
       icon: (
-        <img src={Frame} alt="Frame Icon" style={{ width: 24, height: 24 }} />
+        <img
+          width={24}
+          height={24}
+          src={Frame}
+          alt="Frame Icon"
+          style={{ width: 24, height: 24 }}
+          loading="lazy"
+        />
       ),
     },
     {
@@ -111,9 +125,12 @@ const Header = () => {
       hash: "denialWorkflow",
       icon: (
         <img
+          width={24}
+          height={24}
           src={Eligibility}
           alt="Eligibility Icon"
           style={{ width: 24, height: 24 }}
+          loading="lazy"
         />
       ),
     },
@@ -124,9 +141,12 @@ const Header = () => {
       hash: "eligibilityDiscovery",
       icon: (
         <img
+          width={24}
+          height={24}
           src={Workflow}
           alt="Workflow Icon"
           style={{ width: 24, height: 24 }}
+          loading="lazy"
         />
       ),
     },
@@ -137,9 +157,12 @@ const Header = () => {
       hash: "contractAnalysis",
       icon: (
         <img
+          width={24}
+          height={24}
           src={Analysis}
           alt="Analysis Icon"
           style={{ width: 24, height: 24 }}
+          loading="lazy"
         />
       ),
     },
@@ -150,9 +173,12 @@ const Header = () => {
       hash: "preBillReview",
       icon: (
         <img
+          width={24}
+          height={24}
           src={PreBill}
           alt="PreBill Icon"
           style={{ width: 24, height: 24 }}
+          loading="lazy"
         />
       ),
     },
@@ -164,6 +190,8 @@ const Header = () => {
       hash: "blog",
       icon: (
         <img
+          width={48}
+          height={48}
           src={BlogIcon}
           alt="Blog Icon"
           style={{
@@ -171,6 +199,7 @@ const Header = () => {
             height: 24,
             filter: "brightness(0) invert(1)",
           }}
+          loading="lazy"
         />
       ),
     },
@@ -178,7 +207,7 @@ const Header = () => {
     //   title: "Case Studies",
     //   hash: "case-study",
     //   icon: (
-    //     <img
+    //     <img width={48} height={48}
     //       src={CaseStudyIcon}
     //       alt="Case Study Icon"
     //       style={{
@@ -186,7 +215,7 @@ const Header = () => {
     //         height: 24,
     //         filter: "brightness(0) invert(1)",
     //       }}
-    //     />
+    //     loading="lazy" />
     //   ),
     // },
     {
@@ -194,6 +223,8 @@ const Header = () => {
       hash: "videos",
       icon: (
         <img
+          width={48}
+          height={48}
           src={VideoIcon}
           alt="Video Icon"
           style={{
@@ -201,6 +232,7 @@ const Header = () => {
             height: 24,
             filter: "brightness(0) invert(1)",
           }}
+          loading="lazy"
         />
       ),
     },
@@ -209,6 +241,8 @@ const Header = () => {
       hash: "media",
       icon: (
         <img
+          width={48}
+          height={48}
           src={MediaIcon}
           alt="Media Icon"
           style={{
@@ -216,6 +250,7 @@ const Header = () => {
             height: 24,
             filter: "brightness(0) invert(1)",
           }}
+          loading="lazy"
         />
       ),
     },
@@ -250,7 +285,7 @@ const Header = () => {
           {/* ================= DESKTOP NAV ================= */}
           <Stack
             direction="row"
-            spacing={4}
+            spacing={{ md: 2, lg: 4 }}
             sx={{ display: { xs: "none", md: "flex" } }}
           >
             <NavItem active={isActive("/")} onClick={() => navigate("/")}>
@@ -397,11 +432,20 @@ const Header = () => {
                   variant="h6"
                   component="p"
                   fontWeight={800}
-                  sx={{ mt: 1, mb: 2, color: "var(--color-gray-900)", lineHeight: 1.2 }}
+                  sx={{
+                    mt: 1,
+                    mb: 2,
+                    color: "var(--color-gray-900)",
+                    lineHeight: 1.2,
+                  }}
                 >
                   Specialized AI Solutions for RCM
                 </Typography>
-                <Typography variant="body2" color="var(--color-gray-500)" sx={{ mb: 3 }}>
+                <Typography
+                  variant="body2"
+                  color="var(--color-gray-500)"
+                  sx={{ mb: 3 }}
+                >
                   Deploy tailored AI agents to automate complexity across your
                   entire revenue cycle.
                 </Typography>
@@ -510,7 +554,11 @@ const Header = () => {
                 Need help?{" "}
                 <Box
                   component="span"
-                  sx={{ color: "var(--color-primary)", cursor: "pointer", fontWeight: 600 }}
+                  sx={{
+                    color: "var(--color-primary)",
+                    cursor: "pointer",
+                    fontWeight: 600,
+                  }}
                   onClick={() => navigate("/contact-us")}
                 >
                   Contact Support
@@ -547,7 +595,10 @@ const Header = () => {
             />
 
             <CloseIconWrapper>
-              <IconButton aria-label="Close Menu" onClick={() => setDrawerOpen(false)}>
+              <IconButton
+                aria-label="Close Menu"
+                onClick={() => setDrawerOpen(false)}
+              >
                 <CloseIcon />
               </IconButton>
             </CloseIconWrapper>

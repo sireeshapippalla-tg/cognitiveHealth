@@ -82,7 +82,8 @@ export const mediaData: Media[] = [
   {
     id: "6",
     type: "media",
-    title: "Automating Revenue Cycle On The Back End Improves Patient Engagement On The Front",
+    title:
+      "Automating Revenue Cycle On The Back End Improves Patient Engagement On The Front",
     description:
       "For one health system, robotic process automation equates to about 27,000 hours in a month saved, which correlates to around $500,000. Revenue cycle directors are seeing a clear path for automation to increase revenue, decrease denials, speed up prior authorization and claims, and remove many of the repetitive clicks that hamper daily operations.",
     image: BlogCorrespondenceManagement,
@@ -104,7 +105,8 @@ export const mediaData: Media[] = [
   {
     id: "8",
     type: "media",
-    title: "The Need for Intelligent Process Automation in the Revenue Cycle (October 22, 2020)",
+    title:
+      "The Need for Intelligent Process Automation in the Revenue Cycle (October 22, 2020)",
     description:
       "Topic:  The Need for Intelligent Process Automation in the Revenue Cycle",
     image: BlogRevenueCycle,
@@ -115,7 +117,8 @@ export const mediaData: Media[] = [
   {
     id: "9",
     type: "media",
-    title: "Intelligent Process Automation (IPA) – technology and opportunities",
+    title:
+      "Intelligent Process Automation (IPA) – technology and opportunities",
     description:
       "Pavani Munjuluri , Co-Founder and COO for Cognitive Health IT talks to Jim Tate about the use of Intelligent Process Automation in the Healthcare Revenue Cycle. Listen to her talking about the technology and the opportunities IPA can provide here;",
     image: BlogIntelligenceAutomation,
@@ -126,12 +129,13 @@ export const mediaData: Media[] = [
   {
     id: "10",
     type: "media",
-    title: "CognitiveHealth Co-Founder Shares Intelligent Process Automation Best Practices",
+    title:
+      "CognitiveHealth Co-Founder Shares Intelligent Process Automation Best Practices",
     description:
       "In a recent article published by Healthcare IT Today,CognitiveHealth Technologies  co-founder Pavani Munjuluri  offers readers a glimpse into intelligent process automation (IPA) and how it’s benefiting providers in the wake of COVID-19.",
     image: BlogDenialManagement,
     date: "September 25, 2020",
     category: "",
     link: "/media/co-founder-shares-ipa-best-practices",
-  }
+  },
 ];

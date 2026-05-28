@@ -35,7 +35,6 @@ export const Logo = styled(Typography)({
   fontSize: 18,
   fontWeight: 700,
   marginBottom: 12,
-
 });
 
 export const LogoWrapper = styled(Box)({
@@ -45,12 +44,11 @@ export const LogoWrapper = styled(Box)({
   backgroundColor: "var(--color-white)",
   borderRadius: "10px",
   marginBottom: "16px",
-  cursor:"pointer",
+  cursor: "pointer",
 
   /* optional subtle shadow like design */
   boxShadow: "0 6px 16px rgba(0, 0, 0, 0.15)",
 });
-
 
 export const Description = styled(Typography)({
   // fontFamily: "Inter",
@@ -90,7 +88,7 @@ export const List = styled("ul")({
 });
 
 export const ListItem = styled("li")({
-  fontSize: '14px',
+  fontSize: "14px",
   fontWeight: 400,
   color: "var(--color-white)",
   marginBottom: 8,
@@ -119,7 +117,7 @@ export const FooterDivider = styled(Divider)({
 /* BOTTOM */
 export const Bottom = styled(Stack)(({ theme }) => ({
   // fontFamily: "Inter",
-  fontSize: '14px',
+  fontSize: "14px",
   color: "#D1D5DB",
 
   "& a": {

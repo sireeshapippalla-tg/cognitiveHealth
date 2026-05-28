@@ -33,9 +33,9 @@ interface Props {
   primaryAction?: Action;
   secondaryAction?: Action;
   padding?: string;
-  width?: string | number;   // New: Explicit Width
-  height?: string | number;  // New: Explicit Height
-  prioritize?: boolean;      // New: Fetch Priority for Hero
+  width?: string | number; // New: Explicit Width
+  height?: string | number; // New: Explicit Height
+  prioritize?: boolean; // New: Fetch Priority for Hero
 }
 
 const SplitSection = ({
@@ -141,9 +141,9 @@ const SplitSection = ({
             whileHover={{ rotate: 1 }}
           >
             <ImageCard>
-              <StyledImage 
-                src={image} 
-                alt={typeof eyebrow === 'string' ? eyebrow : "Visual"} 
+              <StyledImage
+                src={image}
+                alt={typeof eyebrow === "string" ? eyebrow : "Visual"}
                 width={width}
                 height={height}
                 loading={prioritize ? "eager" : "lazy"}

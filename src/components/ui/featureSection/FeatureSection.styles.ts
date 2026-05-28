@@ -63,7 +63,7 @@ export const Title = styled(Typography, {
   textAlign: align,
   color: "var(--color-gray-900)",
   marginBottom: "8px",
-  lineHeight:"40px",
+  lineHeight: "40px",
 
   "& span": {
     color: "var(--color-primary-hover)",
@@ -117,9 +117,7 @@ export const IconWrapper = styled(Box, {
 
   border: "3px solid",
   borderColor:
-    variant === "pink"
-      ? "rgba(244, 122, 32, 0.2)"
-      : "rgba(74, 144, 226, 0.2)",
+    variant === "pink" ? "rgba(244, 122, 32, 0.2)" : "rgba(74, 144, 226, 0.2)",
 
   boxShadow:
     variant === "pink"

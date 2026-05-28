@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Dialog,
-  IconButton,
-  Typography,
-  Box,
-  Fade,
-} from "@mui/material";
+import { Dialog, IconButton, Typography, Box, Fade } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -83,9 +77,7 @@ export const PdfListDialog: React.FC<PdfListDialogProps> = ({
           }}
         >
           {/* Close Button - Detached */}
-          <Box
-            sx={{ position: "absolute", top: -20, right: -20, zIndex: 10 }}
-          >
+          <Box sx={{ position: "absolute", top: -20, right: -20, zIndex: 10 }}>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
@@ -156,10 +148,7 @@ export const PdfListDialog: React.FC<PdfListDialogProps> = ({
                     sx={{ color: "var(--color-primary)", fontSize: 24 }}
                   />
                 </Box>
-                <Typography
-                  fontWeight={700}
-                  sx={{ flex: 1, color: "#1f2937" }}
-                >
+                <Typography fontWeight={700} sx={{ flex: 1, color: "#1f2937" }}>
                   {pdf.name}
                 </Typography>
                 <ArrowForwardIosIcon

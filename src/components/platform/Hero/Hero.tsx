@@ -12,16 +12,16 @@ const Hero = () => {
     <>
       <SplitSection
         // eyebrow="iCAN™ ONE"
-          eyebrow={
-    <>
-      iCAN™
-      <Highlight> ONE</Highlight>
-    </>
-  }
+        eyebrow={
+          <>
+            iCAN™
+            <Highlight> ONE</Highlight>
+          </>
+        }
         description="The AI Agent Platform for Healthcare RCM"
         // description="Deploy a purpose-built AI agent platform designed to automate..."
         image={mainImg}
-      prioritize={true}
+        prioritize={true}
         primaryAction={{
           label: "Request a Demo",
           onClick: () =>
@@ -31,7 +31,7 @@ const Hero = () => {
         }}
         secondaryAction={{
           label: "See Platform in Action",
-         onClick:() => navigate("/resources#videos")
+          onClick: () => navigate("/resources#videos"),
         }}
       />
     </>

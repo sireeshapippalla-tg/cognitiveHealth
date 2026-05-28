@@ -1,4 +1,4 @@
-import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 if (import.meta.env.DEV) {

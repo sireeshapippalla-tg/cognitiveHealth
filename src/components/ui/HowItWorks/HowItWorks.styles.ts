@@ -29,7 +29,6 @@ export const Title = styled(Typography)(({ theme }) => ({
   color: "var(--color-gray-900)",
   fontSize: "2.5rem",
 
- 
   [theme.breakpoints.down("md")]: {
     fontSize: "1.5rem",
   },
@@ -112,41 +111,43 @@ export const StepContents = styled(Box, {
 /* ICON */
 export const StepIcon = styled(Box, {
   shouldForwardProp: (prop) => prop !== "isLeft" && prop !== "themeColor",
-})<{ isLeft: boolean; themeColor: string }>(({ theme, isLeft, themeColor }) => ({
-  position: "absolute",
-  top: 0,
-  left: "0px",
-  width: "50px",
-  height: "50px",
-  borderRadius: "50%",
-  background: themeColor,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "var(--color-white)",
-  zIndex: 2,
-  boxShadow: `0 10px 25px ${themeColor}4D`,
-  transition: "all 0.3s ease",
+})<{ isLeft: boolean; themeColor: string }>(
+  ({ theme, isLeft, themeColor }) => ({
+    position: "absolute",
+    top: 0,
+    left: "0px",
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    background: themeColor,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "var(--color-white)",
+    zIndex: 2,
+    boxShadow: `0 10px 25px ${themeColor}4D`,
+    transition: "all 0.3s ease",
 
-  "&:hover": {
-    transform: "scale(1.1)",
-  },
-
-  "& svg": {
-    fontSize: "1.5rem",
-  },
-
-  [theme.breakpoints.up("md")]: {
-    left: isLeft ? "auto" : "-35px",
-    right: isLeft ? "-35px" : "auto",
-    width: "70px",
-    height: "70px",
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
 
     "& svg": {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
     },
-  },
-}));
+
+    [theme.breakpoints.up("md")]: {
+      left: isLeft ? "auto" : "-35px",
+      right: isLeft ? "-35px" : "auto",
+      width: "70px",
+      height: "70px",
+
+      "& svg": {
+        fontSize: "2rem",
+      },
+    },
+  })
+);
 
 /* TEXT */
 export const StepTitle = styled(Typography)(({ theme }) => ({
@@ -182,19 +183,17 @@ export const CTAWrapper = styled(Box)(() => ({
 
 export const CTAButton = styled(Button, {
   shouldForwardProp: (prop) => prop !== "themeColor",
-})<{ themeColor: string }>(
-  ({ themeColor }) => ({
-    padding: "12px 40px",
-    borderRadius: "40px",
-    fontWeight: "bold",
-    textTransform: "none",
-    background: themeColor,
-    color: "white",
-    boxShadow: `0 10px 25px ${themeColor}4D`,
+})<{ themeColor: string }>(({ themeColor }) => ({
+  padding: "12px 40px",
+  borderRadius: "40px",
+  fontWeight: "bold",
+  textTransform: "none",
+  background: themeColor,
+  color: "white",
+  boxShadow: `0 10px 25px ${themeColor}4D`,
 
-    "&:hover": {
-      background: themeColor,
-      filter: "brightness(0.9)",
-    },
-  })
-);
+  "&:hover": {
+    background: themeColor,
+    filter: "brightness(0.9)",
+  },
+}));

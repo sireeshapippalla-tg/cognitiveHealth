@@ -51,13 +51,13 @@ const ContractAnalysisPage = () => {
       {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />
-        {/* Payer Portal logos */}
+      {/* Payer Portal logos */}
       <div style={{ marginBottom: "50px" }}>
-      <TrustedLogos
-        title="Payer Portals already Cognitive AI Agents works on"
-        logos={logos}
-        speed={40}
-      />
+        <TrustedLogos
+          title="Payer Portals already Cognitive AI Agents works on"
+          logos={logos}
+          speed={40}
+        />
       </div>
       <MeasurableResultsSection />
       <HowItWorksSection />

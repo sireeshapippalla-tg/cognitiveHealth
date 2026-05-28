@@ -57,7 +57,11 @@ export const PdfViewerDialog: React.FC<PdfViewerDialogProps> = ({
         <Typography fontWeight={800} color="#1e293b">
           Customer Case Study
         </Typography>
-        <IconButton onClick={onClose} aria-label="Close" sx={{ color: "#1e293b" }}>
+        <IconButton
+          onClick={onClose}
+          aria-label="Close"
+          sx={{ color: "#1e293b" }}
+        >
           <CloseIcon />
         </IconButton>
       </Box>

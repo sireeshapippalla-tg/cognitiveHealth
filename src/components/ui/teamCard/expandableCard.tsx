@@ -45,7 +45,11 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
   };
 
   return (
-    <CardWrapper open={open} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <CardWrapper
+      open={open}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Header onClick={() => !isCapability && setOpen(!open)}>
         {/* ICON - ORGANIC CIRCLE */}
 
@@ -61,7 +65,9 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
         </Box>
 
         {!isCapability && (
-          <ExpandBtn open={open}>{open ? <RemoveIcon /> : <AddIcon />}</ExpandBtn>
+          <ExpandBtn open={open}>
+            {open ? <RemoveIcon /> : <AddIcon />}
+          </ExpandBtn>
         )}
       </Header>
       {/* </Box> */}

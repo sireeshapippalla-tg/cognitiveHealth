@@ -33,11 +33,13 @@ export const BackgroundShapes = styled(Box)({
   pointerEvents: "none",
 });
 
-export const Shape = motion(styled(Box)({
-  position: "absolute",
-  borderRadius: "50%",
-  filter: "blur(60px)",
-}));
+export const Shape = motion(
+  styled(Box)({
+    position: "absolute",
+    borderRadius: "50%",
+    filter: "blur(60px)",
+  })
+);
 
 export const ResourceCenterChip = styled(Chip)({
   backgroundColor: "rgba(235, 123, 51, 0.08)",
@@ -59,17 +61,16 @@ export const Title = styled(Typography)(({ theme }) => ({
   marginBottom: "20px",
   color: "var(--color-text-dark)",
 
-   lineHeight: "50px",
+  lineHeight: "50px",
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   // paddingBottom:"13px",
-  paddingTop:"10px",
-
+  paddingTop: "10px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
-     lineHeight: "40px",
+    lineHeight: "40px",
   },
 }));
 export const SubTitle = styled(Typography)(({ theme }) => ({
@@ -81,8 +82,7 @@ export const SubTitle = styled(Typography)(({ theme }) => ({
   background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
-  paddingBottom:"13px",
-
+  paddingBottom: "13px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
@@ -106,14 +106,16 @@ export const SearchWrapper = styled(Box)(() => ({
   position: "relative",
   backgroundColor: "var(--color-white)",
   borderRadius: "100px",
-  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)",
+  boxShadow:
+    "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)",
   padding: "6px 6px 6px 16px",
   display: "flex",
   alignItems: "center",
   border: "1px solid rgba(148, 163, 184, 0.1)",
   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
   "&:hover, &:focus-within": {
-    boxShadow: "0 25px 30px -5px rgba(0, 0, 0, 0.08), 0 15px 15px -5px rgba(0, 0, 0, 0.04)",
+    boxShadow:
+      "0 25px 30px -5px rgba(0, 0, 0, 0.08), 0 15px 15px -5px rgba(0, 0, 0, 0.04)",
     transform: "translateY(-2px)",
     borderColor: "var(--color-primary)",
   },

@@ -86,9 +86,9 @@ export const ActiveBackground = styled(motion.div)({
   position: "absolute",
   inset: 0,
   borderRadius: "24px",
-   background: "linear-gradient(135deg, #709cd0 0%, #4A90E2 100%)",
-    boxShadow: "0 10px 30px rgba(112,156,208,0.4)",
-   zIndex: 0,
+  background: "linear-gradient(135deg, #709cd0 0%, #4A90E2 100%)",
+  boxShadow: "0 10px 30px rgba(112,156,208,0.4)",
+  zIndex: 0,
 });
 
 export const TabText = styled("span")<{

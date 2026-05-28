@@ -27,25 +27,49 @@ const EnterpriseReadinessSection = () => {
 
   const enterpriseItems = [
     {
-      icon: <img src={Integration} alt="Integration" />,
+      icon: (
+        <img
+          width={48}
+          height={48}
+          src={Integration}
+          alt="Integration"
+          loading="lazy"
+        />
+      ),
       title: "Proven at Enterprise Scale",
       description:
         "Deployed across health systems processing 10M+ transactions monthly. Handles multiple facilities, diverse payer portfolios, varied specialties, and constantly evolving regulations simultaneously.",
     },
     {
-      icon: <img src={Deployement} alt="Deployment" />,
+      icon: (
+        <img
+          width={48}
+          height={48}
+          src={Deployement}
+          alt="Deployment"
+          loading="lazy"
+        />
+      ),
       title: "Security & Compliance First",
       description:
         "HITRUST CSF, SOC 2 Type II, with 95% uptime. Enterprise-grade encryption, role-based access controls, and comprehensive audit logging ensure your data stays secure.",
     },
     {
-      icon: <img src={Connectivity} alt="Connectivity" />,
+      icon: (
+        <img
+          width={48}
+          height={48}
+          src={Connectivity}
+          alt="Connectivity"
+          loading="lazy"
+        />
+      ),
       title: "Flexible Deployment Options",
       description:
         "Cloud-hosted (multi-tenant or single-tenant), private cloud deployment. Choose the option that fits your organization's security, compliance, and infrastructure requirements.",
     },
     {
-      icon: <img src={API} alt="API" />,
+      icon: <img width={48} height={48} src={API} alt="API" loading="lazy" />,
       title: "White-Glove Enterprise Support ",
       description:
         "Dedicated Customer Success Manager, 24/7/365 technical support with <15min response times, quarterly business reviews, and on-site training for large deployments.",
@@ -64,10 +88,12 @@ const EnterpriseReadinessSection = () => {
           style={{ textAlign: "center", marginBottom: "60px" }}
         >
           <HeaderTitle>
-            Built for Scale, Security, and <HighlightText>Reliability</HighlightText>
+            Built for Scale, Security, and{" "}
+            <HighlightText>Reliability</HighlightText>
           </HeaderTitle>
           <HeaderSubtitle>
-            Enterprise-grade infrastructure trusted by organizations processing billions in annual revenue
+            Enterprise-grade infrastructure trusted by organizations processing
+            billions in annual revenue
           </HeaderSubtitle>
         </motion.div>
 
@@ -90,9 +116,7 @@ const EnterpriseReadinessSection = () => {
                   >
                     <NavItemWrapper isActive={isActive}>
                       {/* Small Icon */}
-                      <NavIconBox isActive={isActive}>
-                        {item.icon}
-                      </NavIconBox>
+                      <NavIconBox isActive={isActive}>{item.icon}</NavIconBox>
 
                       {/* Title */}
                       <NavItemTitle isActive={isActive}>
@@ -101,9 +125,7 @@ const EnterpriseReadinessSection = () => {
 
                       {/* Active Indicator Line */}
                       {isActive && (
-                        <ActiveIndicator
-                          layoutId="activeIndicator"
-                        />
+                        <ActiveIndicator layoutId="activeIndicator" />
                       )}
                     </NavItemWrapper>
                   </motion.div>
@@ -155,4 +177,3 @@ const EnterpriseReadinessSection = () => {
 };
 
 export default EnterpriseReadinessSection;
-

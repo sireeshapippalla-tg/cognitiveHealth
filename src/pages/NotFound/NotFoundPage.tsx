@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import HomeIcon from "@mui/icons-material/Home";
@@ -30,10 +29,7 @@ const NotFoundPage = () => {
         </Description>
 
         <Actions>
-          <PrimaryButton
-            startIcon={<HomeIcon />}
-            onClick={() => navigate("/")}
-          >
+          <PrimaryButton startIcon={<HomeIcon />} onClick={() => navigate("/")}>
             Go to Home
           </PrimaryButton>
 

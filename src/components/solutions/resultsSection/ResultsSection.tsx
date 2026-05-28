@@ -1,8 +1,4 @@
-import {
-  Grid,
-  Box,
-  Container,
-} from "@mui/material";
+import { Grid, Box, Container } from "@mui/material";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -48,7 +44,6 @@ const stats = [
     label: "Decrease in Manual Work",
   },
 ];
-
 
 const pdfList = [
   {
@@ -99,8 +94,6 @@ const ResultsSection = () => {
     }
 
     try {
-
-
       // 3. Send email using RTK Query mutation
       const formData = new FormData();
       formData.append("toEmail", email);
@@ -113,7 +106,11 @@ const ResultsSection = () => {
       setEmail("");
     } catch (error: unknown) {
       const err = error as { data?: { error?: string }; message?: string };
-      toast.error(err.data?.error || err.message || "Failed to send email. Please try again.");
+      toast.error(
+        err.data?.error ||
+          err.message ||
+          "Failed to send email. Please try again."
+      );
       console.error(error);
     }
   };

@@ -47,7 +47,9 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
         schema={schema}
       />
 
-      <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      >
         {/* Hero Section */}
         <Box
           sx={{

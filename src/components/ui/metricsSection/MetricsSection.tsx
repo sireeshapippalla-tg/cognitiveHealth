@@ -31,9 +31,7 @@ const MetricsSection = ({
   stats,
 }: MetricsSectionProps) => {
   return (
-
     <Section>
-      
       <Glow
         animate={{
           scale: [1, 1.2, 1],
@@ -71,7 +69,6 @@ const MetricsSection = ({
         </GridWrapper>
       </StyledContainer>
     </Section>
-  
   );
 };
 

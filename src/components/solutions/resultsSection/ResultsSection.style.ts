@@ -8,7 +8,7 @@ import {
   Typography,
   Container,
 } from "@mui/material";
-import {motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const SectionContainer = styled(Box)({
   background: "#f9fafb",
@@ -49,8 +49,6 @@ export const Wrapper = styled(Box)({
   textAlign: "center",
   padding: "0 20px",
 });
-
-
 
 export const Title = styled(Typography)(() => ({
   fontSize: "32px",
@@ -113,7 +111,8 @@ export const StatDivider = styled(Box)(() => ({
   height: "4px",
   margin: "0 auto 10px",
   borderRadius: "10px",
-  background: "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
+  background:
+    "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
 }));
 
 export const StatLabel = styled(Typography)(() => ({
@@ -140,7 +139,6 @@ export const ButtonGroup = styled(Box)(({ theme }) => ({
     flexDirection: "column",
   },
 }));
-
 
 export const FooterText = styled(Typography)(() => ({
   color: "var(--color-gray-500)",

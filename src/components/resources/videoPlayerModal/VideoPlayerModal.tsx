@@ -1,6 +1,11 @@
 import { Dialog, IconButton, Box, Fade } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { VideoWrapper, Iframe, StyledDialog, CloseButtonWrapper } from "./VideoPlayerModal.styles";
+import {
+  VideoWrapper,
+  Iframe,
+  StyledDialog,
+  CloseButtonWrapper,
+} from "./VideoPlayerModal.styles";
 import { getVideoInfo } from "../../../utils/videoUtils";
 import { motion } from "framer-motion";
 

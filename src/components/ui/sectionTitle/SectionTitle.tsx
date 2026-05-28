@@ -28,9 +28,12 @@ export const SectionTitle = ({
       <Pill variant={pillVariant}>
         {pillIcon && (
           <img
+            width={48}
+            height={48}
             src={pillIcon}
             alt=""
             style={{ marginRight: 8, marginBottom: -4 }}
+            loading="lazy"
           />
         )}
         {pillText}

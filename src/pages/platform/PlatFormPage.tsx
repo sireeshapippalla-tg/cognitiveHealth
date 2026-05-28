@@ -11,8 +11,8 @@ import SEO from "../../components/SEO";
 const PlatFormPage = () => {
   return (
     <PageWrapper>
-      <SEO 
-        title="The iCAN Platform | AI for Healthcare" 
+      <SEO
+        title="The iCAN Platform | AI for Healthcare"
         description="Discover the iCAN platform - an intelligent automation engine designed for healthcare RCM. Built for scale, security, and performance."
         keywords="iCAN Platform, Healthcare AI, Intelligent Automation, RCM Technology"
       />
@@ -20,7 +20,7 @@ const PlatFormPage = () => {
       <SuperChargeSection />
       <ProductIntelligence />
       <EnterpriseReadinessSection />
-      <TrustDeploymentSection/>
+      <TrustDeploymentSection />
       {/* <RealResult /> */}
       <CallToActionSection />
     </PageWrapper>

@@ -3,16 +3,33 @@ import { useParams, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconButton } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { BlogDetailWrapper, BlogContent, BlogHeader, BlogTitle, BlogDate, Breadcrumb, BreadcrumbLink, Author } from "./BlogDetailPage.styles";
+import {
+  BlogDetailWrapper,
+  BlogContent,
+  BlogHeader,
+  BlogTitle,
+  BlogDate,
+  Breadcrumb,
+  BreadcrumbLink,
+  Author,
+} from "./BlogDetailPage.styles";
 import SEO from "../../components/SEO";
 import { mediaData } from "../../data/mediaData";
 import type { Media } from "../../data/mediaData";
 import CTASection from "../../components/home/CTA/CTASection";
 import { ROUTES } from "../../routes/RoutePaths";
-import { 
-  MediaContent1, MediaContent2, MediaContent3, MediaContent4, 
-  MediaContent5, MediaContent6, MediaContent7, MediaContent8, 
-  MediaContent9, MediaContent10, MediaContentDefault 
+import {
+  MediaContent1,
+  MediaContent2,
+  MediaContent3,
+  MediaContent4,
+  MediaContent5,
+  MediaContent6,
+  MediaContent7,
+  MediaContent8,
+  MediaContent9,
+  MediaContent10,
+  MediaContentDefault,
 } from "./MediaContents";
 
 const MediaDetailPage: React.FC = () => {
@@ -45,7 +62,9 @@ const MediaDetailPage: React.FC = () => {
     return (
       <BlogDetailWrapper style={{ padding: "120px 0", textAlign: "center" }}>
         <h2>Media Article Not Found</h2>
-        <BreadcrumbLink to={ROUTES.RESOURCES}>Return to Resources</BreadcrumbLink>
+        <BreadcrumbLink to={ROUTES.RESOURCES}>
+          Return to Resources
+        </BreadcrumbLink>
       </BlogDetailWrapper>
     );
   }
@@ -54,30 +73,41 @@ const MediaDetailPage: React.FC = () => {
   const mediaSchema = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "headline": media.title,
-    "description": media.description,
-    "image": media.image,
-    "datePublished": media.date,
-    "url": `${baseUrl}/media/${slug}`,
-    "author": {
+    headline: media.title,
+    description: media.description,
+    image: media.image,
+    datePublished: media.date,
+    url: `${baseUrl}/media/${slug}`,
+    author: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const renderMediaContent = (media: Media) => {
     switch (media.id) {
-      case "1": return <MediaContent1 media={media} />;
-      case "2": return <MediaContent2 media={media} />;
-      case "3": return <MediaContent3 media={media} />;
-      case "4": return <MediaContent4 media={media} />;
-      case "5": return <MediaContent5 media={media} />;
-      case "6": return <MediaContent6 media={media} />;
-      case "7": return <MediaContent7 media={media} />;
-      case "8": return <MediaContent8 media={media} />;
-      case "9": return <MediaContent9 media={media} />;
-      case "10": return <MediaContent10 media={media} />;
-      default: return <MediaContentDefault media={media} />;
+      case "1":
+        return <MediaContent1 media={media} />;
+      case "2":
+        return <MediaContent2 media={media} />;
+      case "3":
+        return <MediaContent3 media={media} />;
+      case "4":
+        return <MediaContent4 media={media} />;
+      case "5":
+        return <MediaContent5 media={media} />;
+      case "6":
+        return <MediaContent6 media={media} />;
+      case "7":
+        return <MediaContent7 media={media} />;
+      case "8":
+        return <MediaContent8 media={media} />;
+      case "9":
+        return <MediaContent9 media={media} />;
+      case "10":
+        return <MediaContent10 media={media} />;
+      default:
+        return <MediaContentDefault media={media} />;
     }
   };
 
@@ -98,7 +128,9 @@ const MediaDetailPage: React.FC = () => {
           <Breadcrumb>
             <BreadcrumbLink to={ROUTES.HOME}>Home</BreadcrumbLink>
             <span> // </span>
-            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>Resources</BreadcrumbLink>
+            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>
+              Resources
+            </BreadcrumbLink>
             <span> // </span>
             <span>{media.title}</span>
           </Breadcrumb>
@@ -125,7 +157,6 @@ const MediaDetailPage: React.FC = () => {
               To learn more about how CognitiveHealth Technologies can transform your organization's revenue cycle workflows, explore our comprehensive AI platform capabilities or request a personalized demonstration.
             </SectionContent>
           )} */}
-
         </BlogContent>
         <CTASection />
       </motion.div>

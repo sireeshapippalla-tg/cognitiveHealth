@@ -1,5 +1,11 @@
-
-import { Box, Stack, Typography, Link, SvgIcon, type SvgIconProps } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  Link,
+  SvgIcon,
+  type SvgIconProps,
+} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/RoutePaths";
 
@@ -29,7 +35,6 @@ const XIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 const Footer = () => {
-
   return (
     <FooterRoot>
       <Container>
@@ -60,19 +65,39 @@ const Footer = () => {
 
             {/* ✅ SOCIAL ICONS */}
             <Social direction="row" spacing={2}>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <FacebookIcon />
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+              >
                 <XIcon /> {/* ✅ NEW X ICON */}
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <LinkedInIcon />
               </a>
 
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
                 <YouTubeIcon />
               </a>
             </Social>
@@ -86,16 +111,24 @@ const Footer = () => {
                 <RouterLink to={ROUTES.PAYMENTPOSTING}>Cash Posting</RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.LOCKBOXANALYSIS}>Lockbox Automation</RouterLink>
+                <RouterLink to={ROUTES.LOCKBOXANALYSIS}>
+                  Lockbox Automation
+                </RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.ELIGIBILITYDISCOVERY}>Eligibility Discovery</RouterLink>
+                <RouterLink to={ROUTES.ELIGIBILITYDISCOVERY}>
+                  Eligibility Discovery
+                </RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.DENIALWORKFLOW}>Denials Workflow</RouterLink>
+                <RouterLink to={ROUTES.DENIALWORKFLOW}>
+                  Denials Workflow
+                </RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.CONTRACTANALYSIS}>Contract Analytics</RouterLink>
+                <RouterLink to={ROUTES.CONTRACTANALYSIS}>
+                  Contract Analytics
+                </RouterLink>
               </ListItem>
             </List>
           </Box>
@@ -127,10 +160,14 @@ const Footer = () => {
                 <RouterLink to={ROUTES.REQUEST_DEMO}>Request Demo</RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.PRIVACYPOLICY}>Privacy Policy</RouterLink>
+                <RouterLink to={ROUTES.PRIVACYPOLICY}>
+                  Privacy Policy
+                </RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to={ROUTES.TERMSCONDITIONS}>Terms of Service</RouterLink>
+                <RouterLink to={ROUTES.TERMSCONDITIONS}>
+                  Terms of Service
+                </RouterLink>
               </ListItem>
               <ListItem>
                 <RouterLink to={ROUTES.FAQ}>FAQ</RouterLink>
@@ -148,9 +185,7 @@ const Footer = () => {
           alignItems="center"
           spacing={2}
         >
-          <Typography>
-            © {new Date().getFullYear()} CognitiveHealth
-          </Typography>
+          <Typography>© {new Date().getFullYear()} CognitiveHealth</Typography>
 
           <Typography>
             All Rights Reserved |{" "}

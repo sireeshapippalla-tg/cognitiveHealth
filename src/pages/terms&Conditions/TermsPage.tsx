@@ -182,8 +182,12 @@ const TermsPage = () => {
         section.title.toLowerCase().includes(lowerQuery) ||
         section.blocks.some(
           (block) =>
-            (block.type === "paragraph" && block.text.toLowerCase().includes(lowerQuery)) ||
-            (block.type === "list" && block.items.some((item: string) => item.toLowerCase().includes(lowerQuery)))
+            (block.type === "paragraph" &&
+              block.text.toLowerCase().includes(lowerQuery)) ||
+            (block.type === "list" &&
+              block.items.some((item: string) =>
+                item.toLowerCase().includes(lowerQuery)
+              ))
         )
     );
   }, [searchQuery]);
@@ -207,9 +211,7 @@ const TermsPage = () => {
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           >
             <UpdatedBadge>Effective Date: January 1, 2024</UpdatedBadge>
-            <HeroTitle>
-              Terms of Service
-            </HeroTitle>
+            <HeroTitle>Terms of Service</HeroTitle>
             <HeroSubtitle>
               Governing your use of the CognitiveHealth platform and services
             </HeroSubtitle>
@@ -221,7 +223,9 @@ const TermsPage = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
             <SearchInputWrapper>
-              <SearchIcon sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }} />
+              <SearchIcon
+                sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }}
+              />
               <StyledInput
                 placeholder="Search terms topics..."
                 value={searchQuery}
@@ -248,13 +252,22 @@ const TermsPage = () => {
                       transition={{ delay: index * 0.05, duration: 0.4 }}
                       $expanded={expandedId === section.id}
                     >
-                      <AccordionHeader $expanded={expandedId === section.id} onClick={() => toggleAccordion(section.id)}>
+                      <AccordionHeader
+                        $expanded={expandedId === section.id}
+                        onClick={() => toggleAccordion(section.id)}
+                      >
                         <Box>
-                          <SectionTitle className="faq-title" $expanded={expandedId === section.id}>
+                          <SectionTitle
+                            className="faq-title"
+                            $expanded={expandedId === section.id}
+                          >
                             {section.title}
                           </SectionTitle>
                         </Box>
-                        <IconWrapper className="faq-icon" $expanded={expandedId === section.id}>
+                        <IconWrapper
+                          className="faq-icon"
+                          $expanded={expandedId === section.id}
+                        >
                           <ExpandMoreIcon />
                         </IconWrapper>
                       </AccordionHeader>
@@ -265,33 +278,37 @@ const TermsPage = () => {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                            transition={{
+                              duration: 0.4,
+                              ease: [0.04, 0.62, 0.23, 0.98],
+                            }}
                           >
                             <SectionBlock>
-                              {section.blocks.map((block: TermBlock, bIndex: number) => {
-                                if (block.type === "paragraph") {
-                                  return (
-                                    <Paragraph
-                                      key={bIndex}
-                                      sx={{ mb: 2 }}
-                                    >
-                                      {block.text}
-                                    </Paragraph>
-                                  );
+                              {section.blocks.map(
+                                (block: TermBlock, bIndex: number) => {
+                                  if (block.type === "paragraph") {
+                                    return (
+                                      <Paragraph key={bIndex} sx={{ mb: 2 }}>
+                                        {block.text}
+                                      </Paragraph>
+                                    );
+                                  }
+                                  if (block.type === "list") {
+                                    return (
+                                      <ListParagraph key={bIndex}>
+                                        <ul>
+                                          {(block.items as string[]).map(
+                                            (item: string, i: number) => (
+                                              <li key={i}>{item}</li>
+                                            )
+                                          )}
+                                        </ul>
+                                      </ListParagraph>
+                                    );
+                                  }
+                                  return null;
                                 }
-                                if (block.type === "list") {
-                                  return (
-                                    <ListParagraph key={bIndex}>
-                                      <ul>
-                                        {(block.items as string[]).map((item: string, i: number) => (
-                                          <li key={i}>{item}</li>
-                                        ))}
-                                      </ul>
-                                    </ListParagraph>
-                                  );
-                                }
-                                return null;
-                              })}
+                              )}
                             </SectionBlock>
                           </AccordionContent>
                         )}
@@ -299,11 +316,9 @@ const TermsPage = () => {
                     </AccordionItem>
                   ))
                 ) : (
-                  <NoResults
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    No results found for "{searchQuery}". Please try another search term.
+                  <NoResults initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                    No results found for "{searchQuery}". Please try another
+                    search term.
                   </NoResults>
                 )}
               </AnimatePresence>
@@ -313,13 +328,13 @@ const TermsPage = () => {
             <CtaSection>
               <CtaTitle>Have Questions About Our Terms?</CtaTitle>
               <CtaText>
-                Our legal team is available to provide clarification on any aspect of our service agreements.
+                Our legal team is available to provide clarification on any
+                aspect of our service agreements.
               </CtaText>
               <CtaButton onClick={() => navigate("/contact-us")}>
                 Get in Touch
               </CtaButton>
             </CtaSection>
-
           </ContentInner>
         </ContentWrapper>
       </PageBackground>

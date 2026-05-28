@@ -16,7 +16,8 @@ export const termsSections: TermSection[] = [
   {
     id: "platform-what-is-ican",
     category: "Platform",
-    title: "What is iCAN™ ONE and how is it different from other automation tools?",
+    title:
+      "What is iCAN™ ONE and how is it different from other automation tools?",
     blocks: [
       {
         type: "paragraph",
@@ -40,7 +41,8 @@ export const termsSections: TermSection[] = [
   {
     id: "platform-emr-systems",
     category: "Platform",
-    title: "Which EMR systems and healthcare platforms does iCAN™ ONE integrate with?",
+    title:
+      "Which EMR systems and healthcare platforms does iCAN™ ONE integrate with?",
     blocks: [
       {
         type: "paragraph",
@@ -143,7 +145,8 @@ export const termsSections: TermSection[] = [
   {
     id: "solutions-offerings",
     category: "Solutions",
-    title: "What specific solutions does CognitiveHealth offer for revenue cycle management?",
+    title:
+      "What specific solutions does CognitiveHealth offer for revenue cycle management?",
     blocks: [
       {
         type: "paragraph",
@@ -169,7 +172,8 @@ export const termsSections: TermSection[] = [
   {
     id: "solutions-results",
     category: "Solutions",
-    title: "What results can we expect from implementing CognitiveHealth solutions?",
+    title:
+      "What results can we expect from implementing CognitiveHealth solutions?",
     blocks: [
       {
         type: "paragraph",
@@ -221,7 +225,8 @@ export const termsSections: TermSection[] = [
   {
     id: "solutions-denial-rates",
     category: "Solutions",
-    title: "Can CognitiveHealth help reduce our denial rates and improve recovery?",
+    title:
+      "Can CognitiveHealth help reduce our denial rates and improve recovery?",
     blocks: [
       {
         type: "paragraph",
@@ -274,7 +279,8 @@ export const termsSections: TermSection[] = [
   {
     id: "eligibility-denial-management",
     category: "General",
-    title: "Eligibility verification and denial management AI automation in medical billing",
+    title:
+      "Eligibility verification and denial management AI automation in medical billing",
     blocks: [
       {
         type: "paragraph",
@@ -289,7 +295,8 @@ export const termsSections: TermSection[] = [
   {
     id: "healthcare-correspondence-document-management",
     category: "General",
-    title: "Healthcare correspondence document management with CognitiveHealth's iCAN™ Platform",
+    title:
+      "Healthcare correspondence document management with CognitiveHealth's iCAN™ Platform",
     blocks: [
       {
         type: "paragraph",
@@ -332,7 +339,8 @@ export const termsSections: TermSection[] = [
   {
     id: "optimizing-healthcare-cash-posting",
     category: "General",
-    title: "Optimizing healthcare cash posting with CognitiveHealth's iCAN™ Platform",
+    title:
+      "Optimizing healthcare cash posting with CognitiveHealth's iCAN™ Platform",
     blocks: [
       {
         type: "paragraph",
@@ -386,7 +394,8 @@ export const termsSections: TermSection[] = [
   {
     id: "transforming-healthcare-claims-processing",
     category: "General",
-    title: "Transforming healthcare claims processing with CognitiveHealth's AI-driven solutions",
+    title:
+      "Transforming healthcare claims processing with CognitiveHealth's AI-driven solutions",
     blocks: [
       {
         type: "paragraph",

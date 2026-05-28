@@ -10,13 +10,15 @@ const stats = [
   {
     value: "60%",
     title: "",
-    description: "Denial Rate Reduction Proactive prevention eliminates denials before submission",
+    description:
+      "Denial Rate Reduction Proactive prevention eliminates denials before submission",
     icon: <ShieldOutlinedIcon />,
   },
   {
     value: "85%",
     title: "",
-    description: "Appeal Success Rate AI-generated appeals with evidence-based arguments",
+    description:
+      "Appeal Success Rate AI-generated appeals with evidence-based arguments",
     icon: <CheckCircleOutlineOutlinedIcon />,
   },
   {

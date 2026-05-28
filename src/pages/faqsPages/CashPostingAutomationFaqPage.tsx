@@ -243,7 +243,7 @@ CognitiveHealth's solutions enhance operational efficiency and financial perform
             Healthcare Security and Privacy experts, and Healthcare Revenue
             Cycle SME's.
           </Typography>
-          
+
           <Typography
             variant="body1"
             paragraph

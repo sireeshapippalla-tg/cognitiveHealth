@@ -66,11 +66,11 @@ export const IcanPredictSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 4 }}
                 >
-                  iCAN Predict™ uses GenAI, data analytics and machine
-                  learning to report, alert, and validate specific business
-                  process tasks. This automation covers complex tasks such as
-                  claims denial management, appeals, financial transaction
-                  management, and pre-service business processes.
+                  iCAN Predict™ uses GenAI, data analytics and machine learning
+                  to report, alert, and validate specific business process
+                  tasks. This automation covers complex tasks such as claims
+                  denial management, appeals, financial transaction management,
+                  and pre-service business processes.
                 </Typography>
               </Grid>
             </Grid>
@@ -169,8 +169,8 @@ export const IcanPredictSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Leverage GenAI and the data to predict and mitigate
-                  potential issues in the revenue cycle.
+                  Leverage GenAI and the data to predict and mitigate potential
+                  issues in the revenue cycle.
                 </Typography>
               </Grid>
 

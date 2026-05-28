@@ -39,7 +39,8 @@ const TrustDeploymentSection = () => {
             sx={{
               position: "relative",
               borderRadius: "32px",
-              background: "linear-gradient(135deg, var(--color-white) 0%, #f1f5f9 100%)",
+              background:
+                "linear-gradient(135deg, var(--color-white) 0%, #f1f5f9 100%)",
               boxShadow: "0 30px 60px rgba(0, 0, 0, 0.05)",
               border: "1px solid rgba(0, 0, 0, 0.02)",
               overflow: "hidden",
@@ -72,7 +73,7 @@ const TrustDeploymentSection = () => {
                       fontWeight: 800,
 
                       fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-                     lineHeight:{ xs: 1.3, sm: 1.3, md: 1.2 },
+                      lineHeight: { xs: 1.3, sm: 1.3, md: 1.2 },
 
                       textAlign: "center",
                       mb: 8,
@@ -84,7 +85,8 @@ const TrustDeploymentSection = () => {
                     <Box
                       component="span"
                       sx={{
-                        background: "linear-gradient(90deg, var(--color-primary), var(--color-text-blue))",
+                        background:
+                          "linear-gradient(90deg, var(--color-primary), var(--color-text-blue))",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}

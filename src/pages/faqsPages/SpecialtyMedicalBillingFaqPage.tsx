@@ -1,6 +1,4 @@
-import {
-  Typography
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import { getBaseUrl } from "../../utils/urlHelper";
 import { FaqPageLayout } from "./FaqPageLayout";
 

@@ -61,7 +61,6 @@ const VideoCard: React.FC<VideoCardProps> = ({
           />
         ) : (
           <>
-
             <CardImage src={image} alt={title} />
 
             {/* Play Button */}
@@ -79,9 +78,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       <CardContent>
         <CardTitle variant="h5">{title}</CardTitle>
 
-        <CardDescription variant="body2">
-          {description}
-        </CardDescription>
+        <CardDescription variant="body2">{description}</CardDescription>
 
         <ActionButton>
           Watch Video

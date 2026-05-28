@@ -31,12 +31,12 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Workbench}
     //     alt="Pre-Submission Validation and Edit Engine"
-    //   />
+    //   loading="lazy" />
     // ),
-      icon: <FactCheckOutlinedIcon/>,
+    icon: <FactCheckOutlinedIcon />,
     defaultOpen: true,
   },
   {
@@ -52,7 +52,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="AI-Powered Coding Support Assistant" />,
+    // icon: <img width={48} height={48} src={Zap} alt="AI-Powered Coding Support Assistant" loading="lazy" />,
     icon: <BiotechOutlinedIcon />,
   },
   {
@@ -69,10 +69,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Info}
     //     alt="Intelligent Compliance Verification System"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <VerifiedUserOutlinedIcon />,
   },
@@ -90,10 +90,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
-    //     src={BarChart}   
+    //   <img width={48} height={48}
+    //     src={BarChart}
     //     alt="Streamlined Pre-Bill Review Workflow"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <AssignmentTurnedInOutlinedIcon />,
   },
@@ -110,7 +110,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Data} alt="Multi-Source Data Connector" />,
+    // icon: <img width={48} height={48} src={Data} alt="Multi-Source Data Connector" loading="lazy" />,
     icon: <HubOutlinedIcon />,
   },
 ];

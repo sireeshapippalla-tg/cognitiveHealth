@@ -7,28 +7,35 @@ export const ROUTES = {
   LOCKBOXANALYSIS: "/solutions/lockbox",
   DENIALWORKFLOW: "/solutions/denials",
   PREBILLSERVICES: "/solutions/pre-bill",
-  CONTRACTANALYSIS:"/solutions/contract-analysis",
-  ELIGIBILITYDISCOVERY:"/solutions/eligibility",
-  ELIGIBILITY_VERIFICATION_FAQ: "/eligibility-verification-and-denial-management-ai-automation",
-  HEALTHCARE_DOCUMENT_MANAGEMENT_FAQ: "/healthcare-document-management-with-generative-ai",
+  CONTRACTANALYSIS: "/solutions/contract-analysis",
+  ELIGIBILITYDISCOVERY: "/solutions/eligibility",
+  ELIGIBILITY_VERIFICATION_FAQ:
+    "/eligibility-verification-and-denial-management-ai-automation",
+  HEALTHCARE_DOCUMENT_MANAGEMENT_FAQ:
+    "/healthcare-document-management-with-generative-ai",
   BEHAVIORAL_HEALTH_RCM_FAQ: "/behavioral-health-rcm-with-generative-ai",
-  REVENUE_CYCLE_MANAGEMENT_FAQ: "/revenue-cycle-management-with-ai-powered-solutions",
-  CASH_POSTING_AUTOMATION_FAQ: "/streamline-your-cash-posting-with-automation-solutions",
-  MEDICAL_BILLING_SERVICES_FAQ: "/ai-driven-medical-billing-services-for-enhanced-revenue-cycle-management",
-  HEALTHCARE_BACK_OFFICE_FAQ: "/healthcare-back-office-with-advanced-ai-solutions",
+  REVENUE_CYCLE_MANAGEMENT_FAQ:
+    "/revenue-cycle-management-with-ai-powered-solutions",
+  CASH_POSTING_AUTOMATION_FAQ:
+    "/streamline-your-cash-posting-with-automation-solutions",
+  MEDICAL_BILLING_SERVICES_FAQ:
+    "/ai-driven-medical-billing-services-for-enhanced-revenue-cycle-management",
+  HEALTHCARE_BACK_OFFICE_FAQ:
+    "/healthcare-back-office-with-advanced-ai-solutions",
   RCM_AI_BILLING_SERVICES_FAQ: "/rcm-ai-powered-billing-services",
-  HEALTHCARE_CLAIMS_PROCESSING_FAQ: "/healthcare-claims-processing-with-ai-automation",
-  SPECIALTY_MEDICAL_BILLING_FAQ: "/specialty-medical-billing-with-generative-ai-rcm",
+  HEALTHCARE_CLAIMS_PROCESSING_FAQ:
+    "/healthcare-claims-processing-with-ai-automation",
+  SPECIALTY_MEDICAL_BILLING_FAQ:
+    "/specialty-medical-billing-with-generative-ai-rcm",
   ABOUTUS: "/about-us",
   RESOURCES: "/resources",
   CONTACTUS: "/contact-us",
-  RCMREADINESS:'/rcm-readines',
-  TERMSCONDITIONS:'/terms',
-  PRIVACYPOLICY:"/privacy-policy",
-  FAQ:"/faq",
+  RCMREADINESS: "/rcm-readines",
+  TERMSCONDITIONS: "/terms",
+  PRIVACYPOLICY: "/privacy-policy",
+  FAQ: "/faq",
   REQUEST_DEMO: "/request-demo",
   BLOG_DETAIL: "/resource/:slug",
   MEDIA_DETAIL: "/media/:slug",
   NOT_FOUND: "*",
 };
-

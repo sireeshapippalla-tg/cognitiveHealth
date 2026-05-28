@@ -22,7 +22,8 @@ export const Glow = styled(Box)(() => ({
   position: "absolute",
   width: "400px",
   height: "400px",
-  background: "radial-gradient(circle, var(--color-text-blue) 10%, transparent 70%)",
+  background:
+    "radial-gradient(circle, var(--color-text-blue) 10%, transparent 70%)",
   filter: "blur(120px)",
   top: "-100px",
   left: "50%",

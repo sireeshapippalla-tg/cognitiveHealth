@@ -28,14 +28,14 @@ export const HowItSectionContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const HowItWrapper = styled(Box)(({theme}) => ({
+export const HowItWrapper = styled(Box)(({ theme }) => ({
   // maxWidth: 1200,
   margin: "0 auto",
   padding: "16px",
   textAlign: "center",
-  marginTop:"30px",
+  marginTop: "30px",
   [theme.breakpoints.down("md")]: {
-    marginTop:"0px",
+    marginTop: "0px",
   },
 }));
 

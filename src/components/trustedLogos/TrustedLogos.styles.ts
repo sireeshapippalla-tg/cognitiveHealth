@@ -158,5 +158,5 @@ export const LogoCard = styled(Box)(() => ({
 export const AnimatedLogoTrack = styled(LogoTrack)<{ speed: number }>(
   ({ speed }) => ({
     animationDuration: `${speed}s`,
-  }),
+  })
 );

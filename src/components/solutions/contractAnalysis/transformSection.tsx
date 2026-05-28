@@ -11,28 +11,28 @@ import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 
 const features = [
   {
-    // icon: <img src={paymentImage1} alt="Centralized Payment" />,
+    // icon: <img width={48} height={48} src={paymentImage1} alt="Centralized Payment" loading="lazy" />,
     icon: <DescriptionOutlinedIcon />,
     title: "Intelligent Contract Modeling",
     description:
       "AI digitizes and models complex payer contract terms including tiered fee schedules, outlier payments, carve-outs, and incentive clauses—creating a single source of truth for expected reimbursement.",
   },
   {
-    // icon: <img src={paymentImage2} alt="Automated Posting" />,
+    // icon: <img width={48} height={48} src={paymentImage2} alt="Automated Posting" loading="lazy" />,
     icon: <AnalyticsOutlinedIcon />,
     title: "Automated Variance Detection",
     description:
       "Compare every payment against contract terms in real-time, flagging underpayments, incorrect contractual adjustments, and policy violations automatically—no manual calculation required.",
   },
   {
-    // icon: <img src={paymentImage3} alt="Reduced Errors" />,
+    // icon: <img width={48} height={48} src={paymentImage3} alt="Reduced Errors" loading="lazy" />,
     icon: <CurrencyExchangeOutlinedIcon />,
     title: "Underpayment Recovery Engine",
     description:
       "Generate evidence-based underpayment appeals with contract citations, expected vs actual calculations, and supporting documentation—recovering 85%+ of identified variances.",
   },
   {
-    // icon: <img src={paymentImage4} alt="Cash Visibility" />,
+    // icon: <img width={48} height={48} src={paymentImage4} alt="Cash Visibility" loading="lazy" />,
     icon: <InsightsOutlinedIcon />,
     title: "Contract Performance Analytics",
     description:

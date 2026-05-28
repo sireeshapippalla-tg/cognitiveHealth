@@ -3,7 +3,10 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { useNavigate } from "react-router-dom";
-import { ReusableHowItWorks, type HowItWorksStep } from "../../ui/HowItWorks/ReusableHowItWorks";
+import {
+  ReusableHowItWorks,
+  type HowItWorksStep,
+} from "../../ui/HowItWorks/ReusableHowItWorks";
 
 const steps: HowItWorksStep[] = [
   {

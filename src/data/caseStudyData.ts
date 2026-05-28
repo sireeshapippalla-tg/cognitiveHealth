@@ -1,6 +1,4 @@
-
-import CaseStudies from "../assets/Resources/CaseStudies.webp"
-
+import CaseStudies from "../assets/Resources/CaseStudies.webp";
 
 export interface CaseStudy {
   id: string;
@@ -39,7 +37,7 @@ export const caseStudyData: CaseStudy[] = [
     metricValue: "200+",
     metricLabel: "Hours Saved Monthly",
   },
-   {
+  {
     id: "3",
     type: "case-study",
     title: "Regional Hospital Network Streamlines Correspondence Management",
@@ -51,7 +49,7 @@ export const caseStudyData: CaseStudy[] = [
     metricValue: "70%",
     metricLabel: "Hours Saved Monthly",
   },
-   {
+  {
     id: "4",
     type: "case-study",
     title: "Academic Medical Center Optimizes Eligibility Discovery",

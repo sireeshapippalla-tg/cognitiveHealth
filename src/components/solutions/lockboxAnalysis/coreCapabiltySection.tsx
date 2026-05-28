@@ -1,4 +1,4 @@
-import { Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
 import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
@@ -33,10 +33,10 @@ const capabilities: ExpandableItem[] = [
     ),
     icon: <AutoAwesomeIcon sx={{ fontSize: 30 }} />,
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Workbench}
     //     alt="AI-Powered Correspondence Management System"
-    //   />
+    //   loading="lazy" />
     // ),
     defaultOpen: true,
   },
@@ -53,8 +53,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Zap} alt="Multi-Batch Processing Console" />,
-    icon: <BoltIcon sx={{ fontSize: 30}} />,
+    // icon: <img width={48} height={48} src={Zap} alt="Multi-Batch Processing Console" loading="lazy" />,
+    icon: <BoltIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 3,
@@ -70,10 +70,10 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
+    //   <img width={48} height={48}
     //     src={Info}
     //     alt="Intelligent Document Classification Engine"
-    //   />
+    //   loading="lazy" />
     // ),
     icon: <DescriptionIcon sx={{ fontSize: 30 }} />,
   },
@@ -91,12 +91,12 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: (
-    //   <img
-    //     src={Barchart}   
+    //   <img width={48} height={48}
+    //     src={Barchart}
     //     alt="Bank Integration and Download Automation"
-    //   />
+    //   loading="lazy" />
     // ),
-    icon: <AccountBalanceIcon sx={{ fontSize: 30 }} />
+    icon: <AccountBalanceIcon sx={{ fontSize: 30 }} />,
   },
   {
     id: 5,
@@ -111,8 +111,8 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    // icon: <img src={Data} alt="Continuous Quality Assurance Module" />,
-    icon: <VerifiedIcon sx={{ fontSize: 30}} />
+    // icon: <img width={48} height={48} src={Data} alt="Continuous Quality Assurance Module" loading="lazy" />,
+    icon: <VerifiedIcon sx={{ fontSize: 30 }} />,
   },
 ];
 

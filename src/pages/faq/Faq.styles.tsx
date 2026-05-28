@@ -42,7 +42,7 @@ export const HeroSection = motion(
     [theme.breakpoints.down("md")]: {
       padding: "120px 16px 80px",
     },
-  })),
+  }))
 );
 
 export const HeroInner = styled(Box)({
@@ -99,7 +99,7 @@ export const SearchContainer = motion(
     margin: "0 auto",
     position: "relative",
     zIndex: 10,
-  }),
+  })
 );
 
 export const SearchInputWrapper = styled(Box)(({ theme }) => ({
@@ -220,7 +220,7 @@ export const TabButton = styled("button")<{ $active?: boolean }>(
       padding: "10px 16px",
       fontSize: "13px",
     },
-  }),
+  })
 );
 
 /* ================= ACCORDION ================= */
@@ -241,7 +241,7 @@ export const AccordionItem = motion(
       ? "rgba(235, 123, 51, 0.2)"
       : "var(--color-border-light)",
     transition: "all 0.3s ease",
-  })),
+  }))
 );
 
 export const AccordionHeader = styled(Box)<{ $expanded?: boolean }>(
@@ -259,7 +259,7 @@ export const AccordionHeader = styled(Box)<{ $expanded?: boolean }>(
       color: "var(--color-primary)",
       transform: $expanded ? "rotate(180deg)" : "rotate(0deg)",
     },
-  }),
+  })
 );
 
 export const SectionTitle = styled(Typography)<{ $expanded?: boolean }>(
@@ -270,7 +270,7 @@ export const SectionTitle = styled(Typography)<{ $expanded?: boolean }>(
     lineHeight: 1.5,
     transition: "color 0.3s ease",
     // maxWidth: "90%",
-  }),
+  })
 );
 
 export const IconWrapper = styled(Box, {

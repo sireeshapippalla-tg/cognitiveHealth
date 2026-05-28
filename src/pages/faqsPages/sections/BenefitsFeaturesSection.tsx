@@ -71,13 +71,12 @@ export const BenefitsFeaturesSection: React.FC = () => {
                   sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 4 }}
                 >
                   With iCAN™ Correspondence, healthcare organizations can
-                  automate the management of thousands of correspondence
-                  pieces, saving significant manual effort and ensuring timely
-                  responses to denials and requests. By standardizing
-                  documents, executing customizable workflows, and leveraging
-                  advanced AI tools like OCR and NLP, iCAN™ transforms
-                  correspondence management into an efficient, automated
-                  process.
+                  automate the management of thousands of correspondence pieces,
+                  saving significant manual effort and ensuring timely responses
+                  to denials and requests. By standardizing documents, executing
+                  customizable workflows, and leveraging advanced AI tools like
+                  OCR and NLP, iCAN™ transforms correspondence management into
+                  an efficient, automated process.
                 </Typography>
               </Grid>
             </Grid>

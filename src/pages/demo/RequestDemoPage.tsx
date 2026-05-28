@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Typography, Container, useTheme, useMediaQuery, Breadcrumbs, Link } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  useTheme,
+  useMediaQuery,
+  Breadcrumbs,
+  Link,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import { Link as RouterLink, useNavigate, useLocation } from "react-router-dom";
 import { ROUTES } from "../../routes/RoutePaths";
@@ -22,7 +30,8 @@ const RequestDemoPage: React.FC = () => {
   const fromPath = state?.fromPath !== undefined ? state.fromPath : -1;
 
   // Only show middle breadcrumb if it's a specific page (not Footer/Menu/Home)
-  const showMiddleLink = fromLabel && !["Home", "Footer", "Menu", "Header"].includes(fromLabel);
+  const showMiddleLink =
+    fromLabel && !["Home", "Footer", "Menu", "Header"].includes(fromLabel);
 
   // HubSpot Meeting Link - Uses VITE_HUBSPOT_MEETING_HANDLE from .env
   const meetingHandle = import.meta.env.VITE_HUBSPOT_MEETING_HANDLE;
@@ -31,8 +40,8 @@ const RequestDemoPage: React.FC = () => {
   return (
     <Box
       sx={{
-        pt: { xs: 4, md:5 },
-        pb: { xs: 4, md:5 },
+        pt: { xs: 4, md: 5 },
+        pb: { xs: 4, md: 5 },
         minHeight: "100vh",
         background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
         position: "relative",
@@ -47,7 +56,8 @@ const RequestDemoPage: React.FC = () => {
           right: "-5%",
           width: "40%",
           height: "40%",
-          background: "radial-gradient(circle, rgba(55, 125, 255, 0.05) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(55, 125, 255, 0.05) 0%, transparent 70%)",
           zIndex: 0,
         }}
       />
@@ -58,7 +68,8 @@ const RequestDemoPage: React.FC = () => {
           left: "-5%",
           width: "40%",
           height: "40%",
-          background: "radial-gradient(circle, rgba(0, 196, 140, 0.05) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0, 196, 140, 0.05) 0%, transparent 70%)",
           zIndex: 0,
         }}
       />
@@ -71,7 +82,12 @@ const RequestDemoPage: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Breadcrumbs sx={{ mb: 4, color: "#64748b" }}>
-            <Link component={RouterLink} to={ROUTES.HOME} underline="hover" color="inherit">
+            <Link
+              component={RouterLink}
+              to={ROUTES.HOME}
+              underline="hover"
+              color="inherit"
+            >
               Home
             </Link>
             {showMiddleLink && (
@@ -90,7 +106,9 @@ const RequestDemoPage: React.FC = () => {
                 {fromLabel}
               </Link>
             )}
-            <Typography color="text.primary" fontWeight={500}>Request a Demo</Typography>
+            <Typography color="text.primary" fontWeight={500}>
+              Request a Demo
+            </Typography>
           </Breadcrumbs>
         </motion.div>
 
@@ -132,7 +150,8 @@ const RequestDemoPage: React.FC = () => {
                 lineHeight: 1.6,
               }}
             >
-              Experience the power of the iCAN™ Platform. Select a date and time that works best for you to see our AI integration in action.
+              Experience the power of the iCAN™ Platform. Select a date and time
+              that works best for you to see our AI integration in action.
             </Typography>
           </motion.div>
         </Box>
@@ -147,7 +166,8 @@ const RequestDemoPage: React.FC = () => {
             sx={{
               background: "#ffffff",
               borderRadius: "32px",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
+              boxShadow:
+                "0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
               border: "1px solid rgba(255,255,255,0.8)",
               overflow: "hidden",
               minHeight: "800px",
@@ -159,8 +179,9 @@ const RequestDemoPage: React.FC = () => {
                 left: 0,
                 right: 0,
                 height: "6px",
-                background: "linear-gradient(90deg, var(--color-primary), var(--color-green))",
-              }
+                background:
+                  "linear-gradient(90deg, var(--color-primary), var(--color-green))",
+              },
             }}
           >
             <iframe
@@ -177,7 +198,8 @@ const RequestDemoPage: React.FC = () => {
         {/* Footer Note */}
         <Box mt={6} textAlign="center">
           <Typography variant="body2" sx={{ color: "#94a3b8" }}>
-            By scheduling a demo, you agree to our Terms of Service and Privacy Policy.
+            By scheduling a demo, you agree to our Terms of Service and Privacy
+            Policy.
             <br />
             Need help? Contact us at support@cognitivehealthit.com
           </Typography>

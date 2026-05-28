@@ -2,22 +2,26 @@ import { styled } from "@mui/material/styles";
 import { Card, Box, Typography, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 
-export const StyledCard = motion(styled(Card)(() => ({
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  borderRadius: "20px",
-  border: "1px solid rgba(229, 231, 235, 0.5)",
-  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
-  overflow: "hidden",
-  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-  backgroundColor: "#FFFFFF",
-  "&:hover": {
-    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-    transform: "translateY(-8px)",
-    borderColor: "var(--color-primary)",
-  },
-})));
+export const StyledCard = motion(
+  styled(Card)(() => ({
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: "20px",
+    border: "1px solid rgba(229, 231, 235, 0.5)",
+    boxShadow:
+      "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
+    overflow: "hidden",
+    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+    backgroundColor: "#FFFFFF",
+    "&:hover": {
+      boxShadow:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transform: "translateY(-8px)",
+      borderColor: "var(--color-primary)",
+    },
+  }))
+);
 
 export const CardImageWrapper = styled(Box)({
   position: "relative",

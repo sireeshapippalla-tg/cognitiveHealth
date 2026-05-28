@@ -20,7 +20,8 @@ export const blogData: Blog[] = [
   {
     id: "1",
     type: "blog",
-    title: "Agentic AI Automation with Intent: A Practical Example in Denial Management",
+    title:
+      "Agentic AI Automation with Intent: A Practical Example in Denial Management",
     description:
       "As the excitement around AI grows, it’s easy to conflate different forms of automation under the “Agentic AI” label.",
     image: BlogDenialManagement,
@@ -44,7 +45,8 @@ export const blogData: Blog[] = [
   {
     id: "3",
     type: "blog",
-    title: "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
+    title:
+      "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
     description:
       "AI-powered Intelligent Document Processing For Smarter Healthcare Revenue Cycles",
     image: BlogRevenueCycle,
@@ -56,7 +58,8 @@ export const blogData: Blog[] = [
   {
     id: "4",
     type: "blog",
-    title: "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
+    title:
+      "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
     description:
       "From Lockbox Chaos to Clarity: Seven Reasons Why Providers Need AI-Powered Correspondence Management",
     image: BlogCorrespondenceManagement,
@@ -68,7 +71,8 @@ export const blogData: Blog[] = [
   {
     id: "5",
     type: "blog",
-    title: "Maximizing Business Value Requires the Vision of Intelligence in Automation",
+    title:
+      "Maximizing Business Value Requires the Vision of Intelligence in Automation",
     description:
       "The benefits of automating healthcare administrative tasks to gain efficiencies have been agreed in principle for some time now.",
     image: BlogIntelligenceAutomation,

@@ -1,6 +1,6 @@
 // import paymentPostingImage from "../../../assets/solutions/bannerImages/payerContract.webp";
 // import contractAnalysisImage from "../../../assets/solutions/editedimgs/payerContractAnalysis.webp"
-import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Analysis.webp"
+import contractAnalysisImage from "../../../assets/heroBannerImages/Contract Analysis.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
 import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
@@ -13,8 +13,7 @@ const SolutionsHeroSection = () => {
       // eyebrow="Contract Analysis "
       eyebrow={
         <>
-          Contract{" "}
-          <Highlight>Analysis</Highlight>
+          Contract <Highlight>Analysis</Highlight>
         </>
       }
       description="Ensure you're paid correctly every time with AI-powered contract 
@@ -22,16 +21,21 @@ const SolutionsHeroSection = () => {
       image={contractAnalysisImage}
       prioritize={true}
       primaryAction={{
-          label: "Request a Demo",
-          onClick: () =>
-            navigate(ROUTES.REQUEST_DEMO, {
-              state: { fromLabel: "Contract Analysis", fromPath: "/solutions#contractAnalysis" },
-            }),
-        }}
-        secondaryAction={{
-          label: "See Platform in Action",
-          onClick: () => {navigate("/resources#videos")},
-        }}
+        label: "Request a Demo",
+        onClick: () =>
+          navigate(ROUTES.REQUEST_DEMO, {
+            state: {
+              fromLabel: "Contract Analysis",
+              fromPath: "/solutions#contractAnalysis",
+            },
+          }),
+      }}
+      secondaryAction={{
+        label: "See Platform in Action",
+        onClick: () => {
+          navigate("/resources#videos");
+        },
+      }}
     />
   );
 };

@@ -47,10 +47,9 @@ export const IcanInsightSection: React.FC = () => {
                 >
                   iCAN Insight™ utilizes Natural Language Processing (NLP) and
                   Large Language Models (LLM) to process structured and
-                  unstructured data, enhancing automation. This module excels
-                  at managing large volumes of data, such as correspondence,
-                  by categorizing, indexing, and automating downstream
-                  workflows.
+                  unstructured data, enhancing automation. This module excels at
+                  managing large volumes of data, such as correspondence, by
+                  categorizing, indexing, and automating downstream workflows.
                 </Typography>
               </Grid>
 
@@ -169,8 +168,8 @@ export const IcanInsightSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Using AI Agents, iCAN™ automates the downstream workflow
-                  using the data and business process indicators.
+                  Using AI Agents, iCAN™ automates the downstream workflow using
+                  the data and business process indicators.
                 </Typography>
               </Grid>
 
@@ -212,9 +211,8 @@ export const IcanInsightSection: React.FC = () => {
                   color="text.secondary"
                   sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
                 >
-                  Using machine learning and NLP, iCAN™ standardizes,
-                  classifies documents and other assets extracts data from
-                  them.
+                  Using machine learning and NLP, iCAN™ standardizes, classifies
+                  documents and other assets extracts data from them.
                 </Typography>
               </Grid>
             </Grid>

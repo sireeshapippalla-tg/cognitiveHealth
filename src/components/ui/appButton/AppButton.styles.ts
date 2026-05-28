@@ -10,6 +10,7 @@ export const BaseButton = styled(Button)({
   padding: "10px 20px",
   textTransform: "none",
   fontWeight: 600,
+  whiteSpace: "nowrap",
 });
 
 /* Primary button */
@@ -36,6 +37,7 @@ export const OutlineButton = styled(Button, {
   padding: "10px 20px",
   textTransform: "none",
   fontWeight: 600,
+  whiteSpace: "nowrap",
   "&:hover": {
     backgroundColor: "rgba(249, 115, 22, 0.08)",
   },
