@@ -49,7 +49,7 @@ const stats = [
   },
 ];
 
-const pdfFile = "/complete_reuslt_package_pdf.pdf";
+
 const pdfList = [
   {
     name: "National Provider Organization",
@@ -99,14 +99,12 @@ const ResultsSection = () => {
     }
 
     try {
-      // 1. Fetch the PDF file
-      const response = await fetch(pdfFile);
-      const blob = await response.blob();
+
 
       // 3. Send email using RTK Query mutation
       const formData = new FormData();
-      formData.append("email", email);
-      formData.append("file", blob, "results.pdf");
+      formData.append("toEmail", email);
+      // formData.append("file", blob, "results.pdf");
 
       await sendPdf(formData).unwrap();
 
