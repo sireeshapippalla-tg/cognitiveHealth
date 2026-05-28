@@ -64,6 +64,8 @@ const TrustedLogos: React.FC<TrustedLogosProps> = ({
                       src={logo.src}
                       alt={logo.alt}
                       loading="lazy"
+                      width="120"
+                      height="40"
                     />
                   </LogoCard>
                 ))}

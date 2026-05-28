@@ -10,8 +10,6 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 
 import {
   HeaderWrapper,
@@ -59,6 +57,13 @@ const RCMReadinessScreen: React.FC = () => {
 
   const generatePdfFromUI = async (): Promise<Blob> => {
     if (!pdfRef.current) throw new Error("PDF container not found");
+
+    const [html2canvasModule, jsPDFModule] = await Promise.all([
+      import("html2canvas"),
+      import("jspdf"),
+    ]);
+    const html2canvas = html2canvasModule.default;
+    const jsPDF = jsPDFModule.default;
 
     const canvas = await html2canvas(pdfRef.current, {
       scale: 1,

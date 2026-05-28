@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CircularProgress, Typography, Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useHubSpotTracking from "./hooks/useHubSpotTracking";
@@ -53,7 +54,23 @@ const App = () => {
     <>
       <ScrollToTop />
       <ToastContainer position="top-right" autoClose={3000} />
-      <Suspense fallback={<div style={{ height: '100vh', background: 'var(--color-bg-lite)' }} />}>
+      <Suspense fallback={
+        <Box sx={{
+          height: '100vh', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          background: 'rgba(248, 250, 252, 0.6)', 
+          backdropFilter: 'blur(12px)',
+          gap: 2 
+        }}>
+          <CircularProgress size={48} thickness={4} sx={{ color: 'var(--color-primary)' }} />
+          <Typography variant="h6" fontWeight={600} color="#1e293b">
+            Loading CognitiveHealth...
+          </Typography>
+        </Box>
+      }>
         <Routes>
           {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
           <Route
