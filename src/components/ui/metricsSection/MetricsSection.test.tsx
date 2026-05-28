@@ -10,7 +10,8 @@ describe('MetricsSection Component', () => {
     
     render(
       <MetricsSection 
-        title="Performance" 
+        title="Key Metrics" 
+        subtitle="Subtitle text"
         stats={metrics} 
       />
     );

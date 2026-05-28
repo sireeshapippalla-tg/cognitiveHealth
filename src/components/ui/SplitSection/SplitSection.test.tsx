@@ -7,10 +7,7 @@ describe('SplitSection Component', () => {
     render(
       <SplitSection 
         title="Split Title" 
-        subtitle="Split Subtitle"
         image="test.webp"
-        imageAlt="Test Image"
-        features={[]}
       />
     );
     expect(screen.getByText('Split Title')).toBeInTheDocument();
