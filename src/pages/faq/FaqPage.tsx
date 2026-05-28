@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchIcon from "@mui/icons-material/Search";
@@ -204,9 +205,7 @@ const FaqPage = () => {
                                   <Paragraph
                                     key={bIndex}
                                     sx={{ mb: 2 }}
-                                    dangerouslySetInnerHTML={{
-                                      __html: block.text,
-                                    }}
+                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.text,) }}
                                   />
                                 );
                               }
@@ -218,9 +217,7 @@ const FaqPage = () => {
                                         (item: string, i: number) => (
                                           <li
                                             key={i}
-                                            dangerouslySetInnerHTML={{
-                                              __html: item,
-                                            }}
+                                            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item,) }}
                                           />
                                         )
                                       )}

@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { Container } from "@mui/material";
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
@@ -57,7 +58,7 @@ const FeatureSection = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Title align={align} dangerouslySetInnerHTML={{ __html: title }} />
+            <Title align={align} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }} />
             {subtitle && <Subtitle>{subtitle}</Subtitle>}
           </HeaderMotion>
 

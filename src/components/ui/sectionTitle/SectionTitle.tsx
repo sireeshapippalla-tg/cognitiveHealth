@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { Wrapper, Pill, Title, Subtitle } from "./SectionTitle.style";
 
 interface SectionTitleProps {
@@ -41,7 +42,7 @@ export const SectionTitle = ({
     )}
 
     <Title
-      dangerouslySetInnerHTML={{ __html: title }}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }}
       textcolor={textColor}
       // sx={{ marginBottom: subtitle ? "1px" : "20px" }}
     />

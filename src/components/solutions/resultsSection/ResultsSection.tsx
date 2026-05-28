@@ -45,14 +45,17 @@ const stats = [
   },
 ];
 
+import NationalProviderPdf from '../../../assets/docs/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf';
+import CopyProviderPdf from '../../../assets/docs/Copy-of-National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf';
+
 const pdfList = [
   {
     name: "National Provider Organization",
-    file: "/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf",
+    file: NationalProviderPdf,
   },
   {
     name: "Regional 7 Hospital Health System",
-    file: "/Copy-of-National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf",
+    file: CopyProviderPdf,
   },
 ];
 

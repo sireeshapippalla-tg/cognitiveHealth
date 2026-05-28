@@ -14,7 +14,7 @@ The Cognitive Health Website serves as the main digital platform for offering au
 - **Pre-Bill Services**
 - **RCM Readiness**
 
-The project is structured as a full-stack application with a robust front-end framework and an embedded Express back-end for API orchestration.
+The project is a standalone front-end application designed to connect to an external API service.
 
 ## Tech Stack
 
@@ -27,10 +27,8 @@ The project is structured as a full-stack application with a robust front-end fr
 - **Styling & UI**: Material-UI (MUI), Emotion, custom CSS variables
 - **Animations**: Framer Motion
 - **Utilities**: Axios, JWT Decode, JSPDF, HTML2Canvas
+- **Testing**: Vitest, React Testing Library, JSDOM
 - **Form/Interaction**: React Toastify
-
-### Backend
-- Dedicated Node/Express server mapped via the `backend` workspace (configured in `package.json` scripts).
 
 ## Getting Started
 
@@ -44,38 +42,34 @@ The project is structured as a full-stack application with a robust front-end fr
    ```bash
    cd cognitiveHealth
    ```
-2. Install the dependencies for both frontend and backend:
+2. Install the dependencies:
    ```bash
    npm install
    ```
-   *(Note: A `postinstall` script automatically runs `npm install` inside the `backend` folder.)*
 
 ### Available Scripts
 
 In the project directory, you can run:
 
-- `npm run dev`: Starts the Vite development server for the frontend.
-- `npm run dev:backend`: Starts the backend development server.
-- `npm run start:backend`: Starts the backend server in production mode.
-- `npm run build`: Builds both the frontend and backend for production.
-- `npm run build:frontend`: Compiles TypeScript and builds the frontend via Vite.
-- `npm run build:backend`: Builds the backend.
+- `npm run dev`: Starts the Vite development server.
+- `npm run build`: Compiles TypeScript and builds the app for production.
 - `npm run lint`: Runs ESLint to catch formatting and code quality issues.
-- `npm run preview`: Locally previews the production build of the frontend.
+- `npm run preview`: Locally previews the production build.
+- `npx vitest run`: Runs the automated test suite.
 
 ## Project Structure
 
 ```
 cognitiveHealth/
-├── public/               # Static assets
+├── public/               # Static assets and security headers
 ├── src/                  # React Frontend source code
 │   ├── components/       # Reusable UI components
 │   ├── pages/            # Page-level components
 │   ├── routes/           # Routing configuration & guards
 │   ├── theme/            # Styling, CSS variables, and colors
 │   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Testing and logic utilities
 │   └── App.tsx           # Root component
-├── backend/              # Node.js backend configuration and APIs
 ├── package.json          # Project dependencies and scripts
 └── vite.config.ts        # Vite configuration
 ```

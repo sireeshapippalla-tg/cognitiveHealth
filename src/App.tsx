@@ -5,13 +5,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useHubSpotTracking from "./hooks/useHubSpotTracking";
 
-import { AuthGuard, PublicRoute } from "./routes";
 import { ROUTES } from "./routes/RoutePaths";
 
 import MainLayout from "./components/layout/MainLayout";
 
 // Lazy load all pages
-const LoginPage = lazy(() => import("./pages/auth/LoginPage"));
 const HomePage = lazy(() => import("./pages/home/HomePage"));
 const PlatFormPage = lazy(() => import("./pages/platform/PlatFormPage"));
 const AboutUsPage = lazy(() => import("./pages/aboutUs/AboutUsPage"));
@@ -114,24 +112,8 @@ const App = () => {
         }
       >
         <Routes>
-          {/* ---------- PUBLIC ROUTES (NO HEADER / FOOTER) ---------- */}
-          <Route
-            path={ROUTES.LOGIN}
-            element={
-              <PublicRoute>
-                <LoginPage />
-              </PublicRoute>
-            }
-          />
-
-          {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
-          <Route
-            element={
-              <AuthGuard>
-                <MainLayout />
-              </AuthGuard>
-            }
-          >
+          {/* ---------- MAIN LAYOUT ---------- */}
+          <Route element={<MainLayout />}>
             <Route path={ROUTES.HOME} element={<HomePage />} />
             <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
             <Route
