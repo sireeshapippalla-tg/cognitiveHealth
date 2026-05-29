@@ -2,14 +2,11 @@ import { api } from "./api";
 
 export const emailApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    // POST /sendCognitiveHealthResultsPackage
+    // POST /api/email/send-results-pdf
     sendResultsPdf: builder.mutation({
       query: (formData) => ({
-        url: `${import.meta.env.VITE_API_URL}/sendCognitiveHealthResultsPackage`,
+        url: `${import.meta.env.VITE_API_URL}/send-results-pdf`,
         method: "POST",
-        headers: {
-          "X-API-TOKEN": import.meta.env.VITE_TOKEN,
-        },
         body: formData,
       }),
     }),
@@ -17,11 +14,8 @@ export const emailApi = api.injectEndpoints({
     // POST /api/email/send-assessment-email
     sendAssessmentEmail: builder.mutation({
       query: (formData) => ({
-        url: `${import.meta.env.VITE_API_URL}/sendRcmAiReadinessAssessmentResults`,
+        url: `${import.meta.env.VITE_API_URL}/send-assessment-email`,
         method: "POST",
-        headers: {
-          "X-API-TOKEN": import.meta.env.VITE_TOKEN,
-        },
         body: formData,
       }),
     }),
@@ -29,11 +23,8 @@ export const emailApi = api.injectEndpoints({
     // POST /api/email/our-implementation-process-pdf
     sendImplementationProcessPdf: builder.mutation({
       query: (formData) => ({
-        url: `${import.meta.env.VITE_API_URL}/sendCognitiveHealthImplementationProcess`,
+        url: `${import.meta.env.VITE_API_URL}/our-implementation-process-pdf`,
         method: "POST",
-        headers: {
-          "X-API-TOKEN": import.meta.env.VITE_TOKEN,
-        },
         body: formData,
       }),
     }),
