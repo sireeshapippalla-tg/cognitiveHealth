@@ -171,9 +171,9 @@ const RCMReadinessScreen: React.FC = () => {
       setIsGeneratingPdf(false);
 
       const formData = new FormData();
-      formData.append("toEmail", email);
-      formData.append("attachments", pdfBlob, "RCM-AI-Assessment.pdf");
-      formData.append("countOfItems", score.toString());
+      formData.append("email", email);
+      formData.append("file", pdfBlob, "RCM-AI-Assessment.pdf");
+      formData.append("score", score.toString());
 
       await sendAssessmentEmail(formData).unwrap();
 

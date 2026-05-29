@@ -36,7 +36,7 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
     try {
       // Prepare FormData
       const formData = new FormData();
-      formData.append("toEmail", email);
+      formData.append("email", email);
 
       // Send to Backend via RTK Query mutation
       await sendImplementationPdf(formData).unwrap();

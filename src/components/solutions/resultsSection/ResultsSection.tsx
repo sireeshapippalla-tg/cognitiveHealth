@@ -99,7 +99,7 @@ const ResultsSection = () => {
     try {
       // 3. Send email using RTK Query mutation
       const formData = new FormData();
-      formData.append("toEmail", email);
+      formData.append("email", email);
       // formData.append("file", blob, "results.pdf");
 
       await sendPdf(formData).unwrap();
