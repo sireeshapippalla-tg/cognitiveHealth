@@ -24,6 +24,12 @@ const deferCssPlugin = () => {
 
 export default defineConfig({
   plugins: [react(), deferCssPlugin()],
+  server: {
+    allowedHosts: ['icanweb.cognitivehealthit.com', 'cognitivehealthit.com'],
+  },
+  preview: {
+    allowedHosts: ['icanweb.cognitivehealthit.com', 'cognitivehealthit.com'],
+  },
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
