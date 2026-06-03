@@ -20,15 +20,16 @@ const DenialWorkFlowPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "SoftwareApplication", "Service"],
-    "name": "Denial Work Flow AI Automation",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "Streamline your revenue cycle with our advanced Denial Work Flow AI automation. Increase efficiency and reduce costs.",
-    "url": `${baseUrl}/solutions/${"Denial Work Flow".toLowerCase().replace(/\s+/g, '-')}`,
-    "provider": {
+    name: "Denial Work Flow AI Automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "Streamline your revenue cycle with our advanced Denial Work Flow AI automation. Increase efficiency and reduce costs.",
+    url: `${baseUrl}/solutions/${"Denial Work Flow".toLowerCase().replace(/\s+/g, "-")}`,
+    provider: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const logos = [

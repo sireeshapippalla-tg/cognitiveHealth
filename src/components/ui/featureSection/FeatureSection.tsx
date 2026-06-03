@@ -58,7 +58,10 @@ const FeatureSection = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Title align={align} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }} />
+            <Title
+              align={align}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }}
+            />
             {subtitle && <Subtitle>{subtitle}</Subtitle>}
           </HeaderMotion>
 

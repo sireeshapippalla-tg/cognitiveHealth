@@ -22,15 +22,16 @@ const LockBoxAnalysisPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "SoftwareApplication", "Service"],
-    "name": "Lock Box Analysis AI Automation",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "Streamline your revenue cycle with our advanced Lock Box Analysis AI automation. Increase efficiency and reduce costs.",
-    "url": `${baseUrl}/solutions/${"Lock Box Analysis".toLowerCase().replace(/\s+/g, '-')}`,
-    "provider": {
+    name: "Lock Box Analysis AI Automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "Streamline your revenue cycle with our advanced Lock Box Analysis AI automation. Increase efficiency and reduce costs.",
+    url: `${baseUrl}/solutions/${"Lock Box Analysis".toLowerCase().replace(/\s+/g, "-")}`,
+    provider: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const logos = [

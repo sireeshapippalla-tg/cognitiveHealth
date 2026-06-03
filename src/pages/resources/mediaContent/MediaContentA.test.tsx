@@ -1,10 +1,8 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../../utils/test-utils";
-// import MediaContentA from "./MediaContentA";
 
 describe("MediaContentA Component", () => {
   it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<MediaContentA />)
+    // To be implemented in the future if required
     expect(true).toBe(true);
   });
 });

@@ -205,7 +205,9 @@ const FaqPage = () => {
                                   <Paragraph
                                     key={bIndex}
                                     sx={{ mb: 2 }}
-                                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.text,) }}
+                                    dangerouslySetInnerHTML={{
+                                      __html: DOMPurify.sanitize(block.text),
+                                    }}
                                   />
                                 );
                               }
@@ -217,7 +219,9 @@ const FaqPage = () => {
                                         (item: string, i: number) => (
                                           <li
                                             key={i}
-                                            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item,) }}
+                                            dangerouslySetInnerHTML={{
+                                              __html: DOMPurify.sanitize(item),
+                                            }}
                                           />
                                         )
                                       )}

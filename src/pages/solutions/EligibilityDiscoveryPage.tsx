@@ -20,15 +20,16 @@ const EligibilityDiscoveryPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "SoftwareApplication", "Service"],
-    "name": "Eligibility Discovery AI Automation",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "Streamline your revenue cycle with our advanced Eligibility Discovery AI automation. Increase efficiency and reduce costs.",
-    "url": `${baseUrl}/solutions/${"Eligibility Discovery".toLowerCase().replace(/\s+/g, '-')}`,
-    "provider": {
+    name: "Eligibility Discovery AI Automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "Streamline your revenue cycle with our advanced Eligibility Discovery AI automation. Increase efficiency and reduce costs.",
+    url: `${baseUrl}/solutions/${"Eligibility Discovery".toLowerCase().replace(/\s+/g, "-")}`,
+    provider: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const logos = [

@@ -1,22 +1,32 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '../../../utils/test-utils';
-import PopoverCard from './PopoverCard';
+import { render, screen } from "../../../utils/test-utils";
+import PopoverCard from "./PopoverCard";
+import { describe, it, expect, vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 
-describe('PopoverCard Component', () => {
-  it('renders title and triggers onClick', () => {
-    const handleClick = vi.fn();
+describe("PopoverCard Component", () => {
+  it("renders title, label, and description", () => {
     render(
       <PopoverCard 
-        title="Card Title" 
-        icon={<span>Icon</span>} 
-        onClick={handleClick} 
+        title="Main Title" 
+        label="NEW" 
+        description="A cool new feature" 
+        icon={<span data-testid="popover-icon" />} 
+        onClick={() => {}} 
       />
     );
+    expect(screen.getByText("Main Title")).toBeInTheDocument();
+    expect(screen.getByText("NEW")).toBeInTheDocument();
+    expect(screen.getByText("A cool new feature")).toBeInTheDocument();
+    expect(screen.getByTestId("popover-icon")).toBeInTheDocument();
+  });
+
+  it("calls onClick when clicked", async () => {
+    const mockClick = vi.fn();
+    render(<PopoverCard title="Title" icon={<span />} onClick={mockClick} />);
     
-    const card = screen.getByText('Card Title');
-    expect(card).toBeInTheDocument();
-    
-    fireEvent.click(card);
-    expect(handleClick).toHaveBeenCalledTimes(1);
+    // The component might not be a standard button, but it is clickable
+    const titleText = screen.getByText("Title");
+    await userEvent.click(titleText);
+    expect(mockClick).toHaveBeenCalled();
   });
 });

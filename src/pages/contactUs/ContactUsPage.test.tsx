@@ -1,10 +1,15 @@
-import { describe, it, expect } from "vitest";
-// import { render } from "../../utils/test-utils";
-// import ContactUsPage from "./ContactUsPage";
+import { render, screen } from "../../utils/test-utils";
+import ContactUsPage from "./ContactUsPage";
+import { describe, it, expect, vi } from "vitest";
+
+vi.mock("../demo/RequestDemoPage", () => ({ default: () => <div data-testid="mock-request-demo" /> }));
+vi.mock("../../components/SEO", () => ({ default: () => <div data-testid="mock-seo" /> }));
 
 describe("ContactUsPage Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<ContactUsPage />)
-    expect(true).toBe(true);
+  it("renders SEO and RequestDemoPage", () => {
+    render(<ContactUsPage />);
+    
+    expect(screen.getByTestId("mock-seo")).toBeInTheDocument();
+    expect(screen.getByTestId("mock-request-demo")).toBeInTheDocument();
   });
 });

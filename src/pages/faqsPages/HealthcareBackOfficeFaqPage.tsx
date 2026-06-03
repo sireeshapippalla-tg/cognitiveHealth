@@ -18,21 +18,22 @@ const HealthcareBackOfficeFaqPage = () => {
     mainEntity: [
       {
         "@type": "Question",
-        "name": "What are the benefits of Healthcare Back Office With Advanced AI Solutions?",
-        "acceptedAnswer": {
+        name: "What are the benefits of Healthcare Back Office With Advanced AI Solutions?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
-        }
+          text: "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How does CognitiveHealth improve Healthcare Back Office With Advanced AI Solutions?",
-        "acceptedAnswer": {
+        name: "How does CognitiveHealth improve Healthcare Back Office With Advanced AI Solutions?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
-        }
-      }
-    ]};
+          text: "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle.",
+        },
+      },
+    ],
+  };
 
   return (
     <FaqPageLayout

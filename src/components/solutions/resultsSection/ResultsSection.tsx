@@ -45,8 +45,8 @@ const stats = [
   },
 ];
 
-import NationalProviderPdf from '../../../assets/docs/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf';
-import CopyProviderPdf from '../../../assets/docs/Copy-of-National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf';
+import NationalProviderPdf from "../../../assets/docs/National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
+import CopyProviderPdf from "../../../assets/docs/Copy-of-National-Provider-Organization-Achieves-3x-Faster-Revenue-Recognition.pdf";
 
 const pdfList = [
   {

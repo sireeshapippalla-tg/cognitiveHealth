@@ -19,6 +19,7 @@ The project is a standalone front-end application designed to connect to an exte
 ## Tech Stack
 
 ### Frontend
+
 - **Framework**: React 18
 - **Build Tool**: Vite
 - **Language**: TypeScript
@@ -33,6 +34,7 @@ The project is a standalone front-end application designed to connect to an exte
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher recommended)
 - npm or yarn
 
@@ -82,4 +84,5 @@ cognitiveHealth/
 - **PDF Generation**: Capable of converting specific web components to PDFs using HTML2Canvas and JSPDF.
 
 ## License
+
 Private repository. All rights reserved.

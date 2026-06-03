@@ -22,15 +22,16 @@ const PreBillServicesPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "SoftwareApplication", "Service"],
-    "name": "Pre Bill Services AI Automation",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "Streamline your revenue cycle with our advanced Pre Bill Services AI automation. Increase efficiency and reduce costs.",
-    "url": `${baseUrl}/solutions/${"Pre Bill Services".toLowerCase().replace(/\s+/g, '-')}`,
-    "provider": {
+    name: "Pre Bill Services AI Automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "Streamline your revenue cycle with our advanced Pre Bill Services AI automation. Increase efficiency and reduce costs.",
+    url: `${baseUrl}/solutions/${"Pre Bill Services".toLowerCase().replace(/\s+/g, "-")}`,
+    provider: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const logos = [

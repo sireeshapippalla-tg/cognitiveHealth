@@ -18,21 +18,22 @@ const MedicalBillingServicesFaqPage = () => {
     mainEntity: [
       {
         "@type": "Question",
-        "name": "What are the benefits of AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
-        "acceptedAnswer": {
+        name: "What are the benefits of AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
-        }
+          text: "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How does CognitiveHealth improve AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
-        "acceptedAnswer": {
+        name: "How does CognitiveHealth improve AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
-        }
-      }
-    ]};
+          text: "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle.",
+        },
+      },
+    ],
+  };
 
   return (
     <FaqPageLayout

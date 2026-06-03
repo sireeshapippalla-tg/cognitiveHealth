@@ -21,15 +21,16 @@ const PaymentPostingPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "SoftwareApplication", "Service"],
-    "name": "Payment Posting AI Automation",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "Streamline your revenue cycle with our advanced Payment Posting AI automation. Increase efficiency and reduce costs.",
-    "url": `${baseUrl}/solutions/${"Payment Posting".toLowerCase().replace(/\s+/g, '-')}`,
-    "provider": {
+    name: "Payment Posting AI Automation",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "Streamline your revenue cycle with our advanced Payment Posting AI automation. Increase efficiency and reduce costs.",
+    url: `${baseUrl}/solutions/${"Payment Posting".toLowerCase().replace(/\s+/g, "-")}`,
+    provider: {
       "@type": "Organization",
-      "name": "CognitiveHealth"
-    }
+      name: "CognitiveHealth",
+    },
   };
 
   const logos = [

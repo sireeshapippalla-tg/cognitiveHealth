@@ -1,10 +1,8 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../utils/test-utils";
-// import RevenueCycleManagementFaqPage from "./RevenueCycleManagementFaqPage";
 
 describe("RevenueCycleManagementFaqPage Component", () => {
   it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<RevenueCycleManagementFaqPage />)
+    // To be implemented in the future if required
     expect(true).toBe(true);
   });
 });

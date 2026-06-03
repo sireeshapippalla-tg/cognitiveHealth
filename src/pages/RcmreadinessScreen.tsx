@@ -73,7 +73,7 @@ const RCMReadinessScreen: React.FC = () => {
       useCORS: true,
       allowTaint: true,
       scrollY: -window.scrollY,
-      windowWidth: 1000, 
+      windowWidth: 1000,
     });
 
     const imgData = canvas.toDataURL("image/jpeg", 0.6);
@@ -93,7 +93,7 @@ const RCMReadinessScreen: React.FC = () => {
       logoImg.onload = resolve;
     });
 
-    // Draw the logo onto a canvas with a white background to prevent 
+    // Draw the logo onto a canvas with a white background to prevent
     // transparent areas from turning black when converted to JPEG/PDF.
     const logoCanvas = document.createElement("canvas");
     logoCanvas.width = logoImg.width || 350;
@@ -122,18 +122,28 @@ const RCMReadinessScreen: React.FC = () => {
 
     // If the content is taller than the page but not excessively so (e.g., less than 1.4x),
     // scale it down to fit perfectly on one page to avoid cutting elements in half.
-    if (imgHeight > maxAvailableHeight && imgHeight <= maxAvailableHeight * 1.4) {
+    if (
+      imgHeight > maxAvailableHeight &&
+      imgHeight <= maxAvailableHeight * 1.4
+    ) {
       const ratio = maxAvailableHeight / imgHeight;
       finalImgHeight = maxAvailableHeight;
       finalImgWidth = usableWidth * ratio;
       finalMarginX = margin + (usableWidth - finalImgWidth) / 2;
-      
-      pdf.addImage(imgData, "JPEG", finalMarginX, 40, finalImgWidth, finalImgHeight);
+
+      pdf.addImage(
+        imgData,
+        "JPEG",
+        finalMarginX,
+        40,
+        finalImgWidth,
+        finalImgHeight
+      );
     } else {
       // Standard multi-page logic for very long content
       let position = 40;
       pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
-      
+
       let heightLeft = imgHeight - (pageHeight - 40);
 
       while (heightLeft > 0) {
