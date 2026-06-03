@@ -6,7 +6,7 @@ const BehavioralHealthRcmFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Behavioral Health RCM With Generative AI",
     description:
       "Optimize your behavioral health revenue cycle management with our advanced solutions. Discover how our automation and analytics tools can streamline your operations and improve financial performance. Schedule a free consultation today.",
@@ -15,7 +15,24 @@ const BehavioralHealthRcmFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Behavioral Health RCM With Generative AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Behavioral Health RCM With Generative AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

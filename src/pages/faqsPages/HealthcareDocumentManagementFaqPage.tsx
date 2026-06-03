@@ -6,7 +6,7 @@ const HealthcareDocumentManagementFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Healthcare Document Management With Generative AI",
     description:
       "Streamline your healthcare document management with our advanced AI solutions. Discover how our tools can enhance efficiency, reduce errors, and improve financial performance. Schedule a free demo today.",
@@ -15,7 +15,24 @@ const HealthcareDocumentManagementFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Healthcare Document Management With Generative AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Healthcare Document Management With Generative AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

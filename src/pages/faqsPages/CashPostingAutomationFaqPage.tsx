@@ -13,7 +13,7 @@ const CashPostingAutomationFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "CognitiveHealth™ Generative AI For Healthcare RCM",
     description:
       "Revolutionize the Healthcare Revenue Cycle with AI Agents. Implement automation in the areas of cash posting, medical billing, reconciliation and correspondence workflows and more. Schedule a demo today.",
@@ -22,7 +22,24 @@ const CashPostingAutomationFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of CognitiveHealth™ Generative AI For Healthcare RCM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve CognitiveHealth™ Generative AI For Healthcare RCM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

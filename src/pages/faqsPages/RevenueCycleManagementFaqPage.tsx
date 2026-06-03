@@ -6,7 +6,7 @@ const RevenueCycleManagementFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Revenue Cycle Management With AI-Powered Solutions",
     description:
       "Discover how AI-powered solutions can transform your revenue cycle management. Our advanced automation and analytics tools streamline operations, enhance efficiency, and improve financial performance. Schedule a free demo today.",
@@ -15,7 +15,24 @@ const RevenueCycleManagementFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Revenue Cycle Management With AI-Powered Solutions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Revenue Cycle Management With AI-Powered Solutions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

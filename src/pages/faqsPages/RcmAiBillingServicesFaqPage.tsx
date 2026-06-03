@@ -6,7 +6,7 @@ const RcmAiBillingServicesFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "RCM AI-Powered Billing Services",
     description:
       "Discover how our advanced AI Powered RCM billing services can enhance your healthcare revenue cycle. Explore our solutions for automation, efficiency, and improved financial performance. Schedule a free consultation today.",
@@ -15,7 +15,24 @@ const RcmAiBillingServicesFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of RCM AI-Powered Billing Services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve RCM AI-Powered Billing Services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

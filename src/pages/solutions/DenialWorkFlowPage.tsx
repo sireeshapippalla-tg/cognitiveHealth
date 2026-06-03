@@ -12,8 +12,25 @@ import trizettoLogo from "../../assets/ClearingHouseLogos/Trizetto.svg";
 import changeHealthcareLogo from "../../assets/ClearingHouseLogos/change_healthcare_logo.webp";
 import optumLogo from "../../assets/PayerPortalLogos/optum.svg";
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
+import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const DenialWorkFlowPage = () => {
+  const baseUrl = getBaseUrl();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "SoftwareApplication", "Service"],
+    "name": "Denial Work Flow AI Automation",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "description": "Streamline your revenue cycle with our advanced Denial Work Flow AI automation. Increase efficiency and reduce costs.",
+    "url": `${baseUrl}/solutions/${"Denial Work Flow".toLowerCase().replace(/\s+/g, '-')}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "CognitiveHealth"
+    }
+  };
+
   const logos = [
     {
       src: avalityLogo,
@@ -42,6 +59,12 @@ const DenialWorkFlowPage = () => {
   ];
   return (
     <>
+      <SEO
+        title="Denial Work Flow | CognitiveHealth"
+        description="Streamline your revenue cycle with our advanced Denial Work Flow AI automation. Discover how CognitiveHealth can improve your financial performance."
+        keywords="Denial Work Flow, AI, Healthcare, RCM, Automation"
+        schema={schema}
+      />
       {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />

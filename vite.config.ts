@@ -24,11 +24,20 @@ const deferCssPlugin = () => {
 
 export default defineConfig({
   plugins: [react(), deferCssPlugin()],
-  server: {
-    allowedHosts: ['icanweb.cognitivehealthit.com', 'cognitivehealthit.com'],
-  },
-  preview: {
-    allowedHosts: ['icanweb.cognitivehealthit.com', 'cognitivehealthit.com'],
+server: {
+    host: "0.0.0.0",
+    port: 3000,
+ 
+    allowedHosts: [
+      "icanweb.cognitivehealthit.com",
+      "cognitivehealthit.com"
+    ],
+ 
+    hmr: {
+      host: "icanweb.cognitivehealthit.com",
+      protocol: "wss",
+      overlay: false,
+    },
   },
   resolve: {
     alias: {

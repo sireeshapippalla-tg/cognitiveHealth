@@ -12,8 +12,25 @@ import InovalonLogo from "../../assets/ClearingHouseLogos/inovalon.webp";
 import trizettoLogo from "../../assets/ClearingHouseLogos/Trizetto.svg";
 import changeHealthcareLogo from "../../assets/ClearingHouseLogos/change_healthcare_logo.webp";
 import optumLogo from "../../assets/PayerPortalLogos/optum.svg";
+import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const EligibilityDiscoveryPage = () => {
+  const baseUrl = getBaseUrl();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "SoftwareApplication", "Service"],
+    "name": "Eligibility Discovery AI Automation",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "description": "Streamline your revenue cycle with our advanced Eligibility Discovery AI automation. Increase efficiency and reduce costs.",
+    "url": `${baseUrl}/solutions/${"Eligibility Discovery".toLowerCase().replace(/\s+/g, '-')}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "CognitiveHealth"
+    }
+  };
+
   const logos = [
     {
       src: avalityLogo,
@@ -42,6 +59,12 @@ const EligibilityDiscoveryPage = () => {
   ];
   return (
     <>
+      <SEO
+        title="Eligibility Discovery | CognitiveHealth"
+        description="Streamline your revenue cycle with our advanced Eligibility Discovery AI automation. Discover how CognitiveHealth can improve your financial performance."
+        keywords="Eligibility Discovery, AI, Healthcare, RCM, Automation"
+        schema={schema}
+      />
       {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />

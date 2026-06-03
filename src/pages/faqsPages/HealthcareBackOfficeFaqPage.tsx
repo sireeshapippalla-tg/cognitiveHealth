@@ -6,7 +6,7 @@ const HealthcareBackOfficeFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Healthcare Back Office With Advanced AI Solutions",
     description:
       "Discover how our cutting-edge solutions in healthcare back office automation, workflow optimization, and data analytics can transform your operations. Schedule a free demo today to experience the benefits firsthand.",
@@ -15,7 +15,24 @@ const HealthcareBackOfficeFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Healthcare Back Office With Advanced AI Solutions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Healthcare Back Office With Advanced AI Solutions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

@@ -14,8 +14,25 @@ import evernorthLogo from "../../assets/PayerPortalLogos/evernorth.svg";
 import ecoLogo from "../../assets/PayerPortalLogos/echo.svg";
 import humanaLogo from "../../assets/PayerPortalLogos/Humana.svg";
 import TrustedLogos from "../../components/trustedLogos/TrustedLogos";
+import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 const ContractAnalysisPage = () => {
+  const baseUrl = getBaseUrl();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "SoftwareApplication", "Service"],
+    "name": "Contract Analysis AI Automation",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "description": "Streamline your revenue cycle with our advanced Contract Analysis AI automation. Increase efficiency and reduce costs.",
+    "url": `${baseUrl}/solutions/${"Contract Analysis".toLowerCase().replace(/\s+/g, '-')}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "CognitiveHealth"
+    }
+  };
+
   const logos = [
     {
       src: waystarLogo,
@@ -48,6 +65,12 @@ const ContractAnalysisPage = () => {
   ];
   return (
     <>
+      <SEO
+        title="Contract Analysis | CognitiveHealth"
+        description="Streamline your revenue cycle with our advanced Contract Analysis AI automation. Discover how CognitiveHealth can improve your financial performance."
+        keywords="Contract Analysis, AI, Healthcare, RCM, Automation"
+        schema={schema}
+      />
       {/* <SolutionsHeroSection /> */}
       <TransformSection />
       <CoreCapabilitiesSection />

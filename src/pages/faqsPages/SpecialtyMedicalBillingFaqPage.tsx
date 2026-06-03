@@ -6,7 +6,7 @@ const SpecialtyMedicalBillingFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Specialty Medical Billing With Generative AI RCM",
     description:
       "Enhance your specialty medical billing and revenue cycle management with our expert solutions. Discover how our advanced automation and analytics tools can streamline operations and improve financial performance.",
@@ -15,7 +15,24 @@ const SpecialtyMedicalBillingFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Specialty Medical Billing With Generative AI RCM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Specialty Medical Billing With Generative AI RCM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

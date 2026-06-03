@@ -6,7 +6,7 @@ const MedicalBillingServicesFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management",
     description:
       "Enhance your revenue cycle with our comprehensive AI-Driven medical billing solutions. From automation to dedicated support, we offer solutions tailored to your needs. Schedule a free demo to see how we can optimize your medical billing processes.",
@@ -15,7 +15,24 @@ const MedicalBillingServicesFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve AI-Driven Medical Billing Services For Enhanced Revenue Cycle Management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

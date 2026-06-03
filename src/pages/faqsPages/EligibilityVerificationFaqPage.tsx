@@ -13,7 +13,7 @@ const EligibilityVerificationFaqPage = () => {
   const baseUrl = getBaseUrl();
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": ["WebPage", "FAQPage"],
     name: "Eligibility Verification And Denial Management AI Automation",
     description:
       "Enhance your revenue cycle with our advanced eligibility verification and denial management automation solutions. Discover how our tools can streamline operations and improve financial performance. Schedule a free consultation today.",
@@ -22,7 +22,24 @@ const EligibilityVerificationFaqPage = () => {
       "@type": "Organization",
       name: "CognitiveHealth Technologies",
     },
-  };
+    mainEntity: [
+      {
+        "@type": "Question",
+        "name": "What are the benefits of Eligibility Verification And Denial Management AI Automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automating this process provides increased accuracy, efficiency, cost reduction, and faster turnaround times for healthcare providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CognitiveHealth improve Eligibility Verification And Denial Management AI Automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our iCAN™ AI platform automates complex workflows, reducing manual intervention, minimizing errors, and accelerating the revenue cycle."
+        }
+      }
+    ]};
 
   return (
     <FaqPageLayout

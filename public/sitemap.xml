@@ -1,69 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/platform</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/platform</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/solutions/payment-posting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/solutions</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/solutions/lockbox</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/solutions/payment-posting</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/solutions/denials</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/solutions/pre-bill</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/solutions/contract-analysis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/solutions/eligibility</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/eligibility-verification-and-denial-management-ai-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/solutions/lockbox</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/healthcare-document-management-with-generative-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/solutions/denials</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/behavioral-health-rcm-with-generative-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/about-us</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/revenue-cycle-management-with-ai-powered-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/streamline-your-cash-posting-with-automation-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/ai-driven-medical-billing-services-for-enhanced-revenue-cycle-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/healthcare-back-office-with-advanced-ai-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/rcm-ai-powered-billing-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/healthcare-claims-processing-with-ai-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/specialty-medical-billing-with-generative-ai-rcm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/about-us</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>/resources</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>/contact-us</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/resources</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/contact-us</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/rcm-readines</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>/rcm-readines</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>/faq</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://cognitivehealthit.com/faq</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/request-demo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://cognitivehealthit.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/platform</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/payment-posting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/lockbox</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/denials</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/pre-bill</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/contract-analysis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/solutions/eligibility</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/eligibility-verification-and-denial-management-ai-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/healthcare-document-management-with-generative-ai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/behavioral-health-rcm-with-generative-ai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/revenue-cycle-management-with-ai-powered-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/streamline-your-cash-posting-with-automation-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/ai-driven-medical-billing-services-for-enhanced-revenue-cycle-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/healthcare-back-office-with-advanced-ai-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/rcm-ai-powered-billing-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/healthcare-claims-processing-with-ai-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/specialty-medical-billing-with-generative-ai-rcm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/about-us</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/resources</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/contact-us</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/rcm-readines</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/request-demo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://icanweb.cognitivehealthit.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
