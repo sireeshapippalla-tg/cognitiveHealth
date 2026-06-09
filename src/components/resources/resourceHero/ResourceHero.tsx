@@ -64,13 +64,10 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         transition={{ duration: 0.6 }}
       >
         {/* <ResourceCenterChip label="Resource Center" size="small" /> */}
-        <Title>Intelligent Process Automation Platform.</Title>
-        <SubTitle>Purpose-built for Healthcare</SubTitle>
+        <Title>The Rise of Agentic AI in RCM</Title>
+        <SubTitle>Mastering the Autonomous Revenue Cycle</SubTitle>
         <Description>
-          iCAN™ (Integrated Cognitive Automation Neuron) is a versatile
-          healthcare automation platform. iCAN™ leverages artificial
-          intelligence and machine learning to automate increasingly complex
-          business processes.
+          Stay ahead of the curve with expert perspectives on Agentic AI. Explore case studies and technical deep-dives into the iCAN™ platform to see how intelligent agents are solving the most complex challenges in Healthcare RCM today.
         </Description>
       </motion.div>
       <motion.div
