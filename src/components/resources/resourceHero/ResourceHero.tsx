@@ -67,7 +67,7 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         <Title>The Rise of Agentic AI in RCM</Title>
         <SubTitle>Mastering the Autonomous Revenue Cycle</SubTitle>
         <Description>
-          Stay ahead of the curve with expert perspectives on Agentic AI. Explore case studies and technical deep-dives into the iCAN™ platform to see how intelligent agents are solving the most complex challenges in Healthcare RCM today.
+          Stay ahead of the curve with expert perspectives on <strong>Agentic AI.</strong> Explore case studies and technical deep-dives into the iCAN™ platform to see how intelligent agents are solving the most complex challenges in <strong>Healthcare RCM</strong> today.
         </Description>
       </motion.div>
       <motion.div

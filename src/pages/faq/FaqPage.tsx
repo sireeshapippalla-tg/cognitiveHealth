@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/SEO";
 import {
   HeroSection,
   HeroInner,
@@ -76,8 +77,45 @@ const FaqPage = () => {
     setExpandedId(null); // Reset expanded item when switching tabs
   };
 
+  const schemaOrgFaq = useMemo(() => {
+    const mainEntity = termsSections.map((section) => {
+      const answerText = section.blocks
+        .map((block) => {
+          if (block.type === "paragraph") return block.text;
+          if (block.type === "list")
+            return (
+              "<ul>" +
+              block.items.map((item: string) => `<li>${item}</li>`).join("") +
+              "</ul>"
+            );
+          return "";
+        })
+        .join(" ");
+
+      return {
+        "@type": "Question",
+        name: section.title,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answerText,
+        },
+      };
+    });
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: mainEntity,
+    };
+  }, []);
+
   return (
     <Box sx={{ minHeight: "100vh" }}>
+      <SEO
+        title="Frequently Asked Questions"
+        description="Everything you need to know about the iCAN™ ONE Platform and our AI-powered Revenue Cycle Solutions."
+        schema={schemaOrgFaq}
+      />
       {/* HERO SECTION */}
       <HeroSection
         initial={{ opacity: 0 }}
@@ -128,7 +166,7 @@ const FaqPage = () => {
                   $active={activeTab === "Platform"}
                   onClick={() => handleTabChange("Platform")}
                 >
-                  Platform Features
+                  Platform & Technology
                 </TabButton>
                 <TabButton
                   $active={activeTab === "Solutions"}

@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/SEO";
 import {
   HeroSection,
   HeroInner,
@@ -198,6 +199,10 @@ const TermsPage = () => {
 
   return (
     <Box sx={{ minHeight: "100vh" }}>
+      <SEO
+        title="Terms of Service"
+        description="Terms of Service governing your use of the CognitiveHealth platform and services."
+      />
       {/* HERO SECTION */}
       <HeroSection
         initial={{ opacity: 0 }}

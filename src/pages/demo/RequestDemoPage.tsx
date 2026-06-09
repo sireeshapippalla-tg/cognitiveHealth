@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 import { Link as RouterLink, useNavigate, useLocation } from "react-router-dom";
 import { ROUTES } from "../../routes/RoutePaths";
 import logo from "../../assets/cognitiveLogo.svg";
+import SEO from "../../components/SEO";
+import { getBaseUrl } from "../../utils/urlHelper";
 
 interface LocationState {
   fromLabel?: string;
@@ -37,6 +39,15 @@ const RequestDemoPage: React.FC = () => {
   const meetingHandle = import.meta.env.VITE_HUBSPOT_MEETING_HANDLE;
   const hubspotMeetingUrl = `https://meetings.hubspot.com/${meetingHandle}?embed=true`;
 
+  const baseUrl = getBaseUrl();
+  const demoSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Request a Demo | CognitiveHealth",
+    description: "Schedule your personalized demo of the iCAN™ Platform.",
+    url: `${baseUrl}/request-demo`,
+  };
+
   return (
     <Box
       sx={{
@@ -48,6 +59,11 @@ const RequestDemoPage: React.FC = () => {
         overflow: "hidden",
       }}
     >
+      <SEO
+        title="Request a Demo"
+        description="Schedule a personalized demo of the CognitiveHealth iCAN™ Platform."
+        schema={demoSchema}
+      />
       {/* Decorative background elements */}
       <Box
         sx={{

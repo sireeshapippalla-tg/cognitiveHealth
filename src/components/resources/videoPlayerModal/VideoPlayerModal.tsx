@@ -1,4 +1,5 @@
-import { Dialog, IconButton, Box, Fade } from "@mui/material";
+import { useState, useEffect } from "react";
+import { Dialog, IconButton, Box, Fade, CircularProgress } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   VideoWrapper,
@@ -21,6 +22,14 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
   onClose,
 }) => {
   const { type, src } = getVideoInfo(videoUrl);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (open) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsLoading(true);
+    }
+  }, [open, videoUrl]);
 
   return (
     <Dialog
@@ -93,11 +102,20 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
                 }}
               />
             ) : (
-              <Iframe
-                src={`${src}${src.includes("?") ? "&" : "?"}autoplay=1`}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
+              <>
+                {isLoading && (
+                  <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0f172a', borderRadius: '12px' }}>
+                    <CircularProgress size={60} thickness={4} sx={{ color: '#0ea5e9' }} />
+                  </Box>
+                )}
+                <Iframe
+                  src={`${src}${src.includes("?") ? "&" : "?"}autoplay=1`}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  onLoad={() => setIsLoading(false)}
+                  style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease-in-out' }}
+                />
+              </>
             )}
           </VideoWrapper>
         </StyledDialog>

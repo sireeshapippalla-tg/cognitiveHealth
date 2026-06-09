@@ -40,7 +40,7 @@ import BlogIcon from "../../../assets/Resources/Blog.svg";
 // import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
-
+// import PodcastsIcon from '@mui/icons-material/Podcasts';
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -254,6 +254,11 @@ const Header = () => {
         />
       ),
     },
+    // {
+    //   title: "Podcast",
+    //   hash: "podcast",
+    //   icon: <PodcastsIcon sx={{ color: 'white', width: 24, height: 24 }} />,
+    // },
   ];
 
   const handleOpenResources = (el: HTMLElement) => {
@@ -536,7 +541,7 @@ const Header = () => {
                   icon={item.icon}
                   title={item.title}
                   onClick={() => {
-                    navigate(`/resources#${item.hash}`);
+                      navigate(`/resources#${item.hash}`);
                     setResourcesOpen(false);
                   }}
                 />
@@ -681,7 +686,7 @@ const Header = () => {
                     <DrawerItem
                       key={item.hash}
                       active={location.hash === `#${item.hash}`}
-                      onClick={() => {
+                        onClick={() => {
                         navigate(`/resources#${item.hash}`);
                         setDrawerOpen(false);
                         setMobileResourcesOpen(false);

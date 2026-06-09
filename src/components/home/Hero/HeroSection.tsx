@@ -1,8 +1,8 @@
 import careLogo from "../../../assets/care.svg";
 import kaminLogo from "../../../assets/Kamin Logo.svg";
 import mcLeranLogo from "../../../assets/mcLeran.svg";
-import mindPathLogo from "../../../assets/mindpath-logo.svg";
-import qualityLogo from "../../../assets/Quality.svg";
+// import mindPathLogo from "../../../assets/mindpath-logo.svg";
+import qualityLogo from "../../../assets/QualityLogo.png";
 import welStreetLogo from "../../../assets/welStreet.svg";
 import mercyImg from "../../../assets/Resources/mercyLogo.webp";
 import yaleImg from "../../../assets/yale.svg";
@@ -23,7 +23,7 @@ const HeroSection = () => {
     { src: welStreetLogo, alt: "Wellstreet" },
     { src: qualityLogo, alt: "Quality Health Care" },
     { src: kaminLogo, alt: "Kamin Health" },
-    { src: mindPathLogo, alt: "MindPath Health" },
+    // { src: mindPathLogo, alt: "MindPath Health" },
     { src: mercyImg, alt: "Mercy Health" },
   ];
   return (

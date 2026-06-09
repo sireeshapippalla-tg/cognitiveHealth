@@ -34,7 +34,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       steps={steps}
       ctaText="Take Assessment →"
-      onCtaClick={() => navigate("/rcm-readines")}
+      onCtaClick={() => navigate("/assessment")}
       themeColor="#c2410c"
       backgroundColor="#f9fafb"
     />

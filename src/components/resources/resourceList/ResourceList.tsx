@@ -5,6 +5,10 @@ import VideoCard from "../videoCard/VideoCard";
 import { resourcesData } from "../../../data/resourcesData";
 import VideoPlayerModal from "../videoPlayerModal/VideoPlayerModal";
 import { useState } from "react";
+// import FeaturedEpisode from "../../../pages/podcast/components/FeaturedEpisode";
+// import PreviousEpisodes from "../../../pages/podcast/components/PreviousEpisodes";
+// import { podcastData } from "../../../data/podcastData";
+// import { Typography } from "@mui/material";
 
 interface ResourceListProps {
   activeTab: number;
@@ -14,6 +18,12 @@ interface ResourceListProps {
 const ResourceList = ({ activeTab, searchQuery }: ResourceListProps) => {
   const [open, setOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
+  // const [featuredPodcastId, setFeaturedPodcastId] = useState(podcastData[0].id);
+
+  // const handleSelectEpisode = (id: string) => {
+  //   setFeaturedPodcastId(id);
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
 
   const handlePlayVideo = (url: string) => {
     setVideoUrl(url);
@@ -32,6 +42,9 @@ const ResourceList = ({ activeTab, searchQuery }: ResourceListProps) => {
       case 2:
         list = resourcesData.filter((r) => r.type === "media");
         break;
+      // case 3:
+      //   list = resourcesData.filter((r) => r.type === "podcast");
+      //   break;
     }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
@@ -51,6 +64,18 @@ const ResourceList = ({ activeTab, searchQuery }: ResourceListProps) => {
 
     return list;
   })();
+
+  // if (activeTab === 3) {
+  //   return (
+  //     <Box sx={{ flexGrow: 1, mt: 4 }}>
+  //       <Typography variant="h4" sx={{ fontWeight: 800, color: '#0f172a', mb: 3 }}>
+  //         Featured Episode
+  //       </Typography>
+  //       <FeaturedEpisode featuredPodcastId={featuredPodcastId} />
+  //       <PreviousEpisodes featuredPodcastId={featuredPodcastId} onSelectEpisode={handleSelectEpisode} />
+  //     </Box>
+  //   );
+  // }
 
   return (
     <Box sx={{ flexGrow: 1 }}>

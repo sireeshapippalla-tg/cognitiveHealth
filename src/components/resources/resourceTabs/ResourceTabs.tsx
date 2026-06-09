@@ -21,6 +21,7 @@ import BlogIcon from "../../../assets/Resources/Blog.svg";
 // import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
+// import PodcastsIcon from "@mui/icons-material/Podcasts";
 
 interface ResourceTabsProps {
   searchQuery: string;
@@ -54,6 +55,11 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
       label: "Media",
       icon: <img src={MediaIcon} alt="Media Icon" width={16} height={16} />,
     },
+    // {
+    //   value: "podcast",
+    //   label: "Podcast",
+    //   icon: <PodcastsIcon sx={{ fontSize: 16, color: "inherit" }} />,
+    // },
   ];
 
   let activeTab = tabs.findIndex(

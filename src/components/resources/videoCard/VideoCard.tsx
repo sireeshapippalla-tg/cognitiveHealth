@@ -40,9 +40,8 @@ const VideoCard: React.FC<VideoCardProps> = ({
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      onClick={onPlay}
     >
-      <CardImageWrapper>
+      <CardImageWrapper onClick={onPlay} style={{ cursor: "pointer" }}>
         {/* Always show image */}
         {link?.includes("youtube.com") ? (
           <iframe
@@ -80,7 +79,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
         <CardDescription variant="body2">{description}</CardDescription>
 
-        <ActionButton>
+        <ActionButton onClick={onPlay} style={{ cursor: "pointer" }}>
           Watch Video
           <ArrowForwardIcon sx={{ fontSize: "18px" }} />
         </ActionButton>

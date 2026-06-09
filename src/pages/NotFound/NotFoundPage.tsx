@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import HomeIcon from "@mui/icons-material/Home";
+import SEO from "../../components/SEO";
 
 import {
   Wrapper,
@@ -18,6 +19,7 @@ const NotFoundPage = () => {
 
   return (
     <Wrapper>
+      <SEO title="Page Not Found" description="The page you are looking for does not exist." />
       <Card>
         <ErrorCode>404</ErrorCode>
 

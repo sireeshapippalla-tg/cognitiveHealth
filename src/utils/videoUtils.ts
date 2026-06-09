@@ -6,18 +6,21 @@ export const getVideoInfo = (url: string) => {
     return { type: "mp4" as VideoType, src: url };
   }
 
-  // // YouTube
-  // if (url.includes("youtube.com") || url.includes("youtu.be")) {
-  //   const id =
-  //     url.split("v=")[1]?.split("&")[0] ||
-  //     url.split("youtu.be/")[1]?.split("?")[0];
+  // YouTube
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    if (url.includes("youtube.com/embed/")) {
+      return { type: "youtube" as VideoType, src: url };
+    }
 
-  //   return {
-  //     type: "youtube" as VideoType,
-  //     // src: `https://www.youtube.com/embed/${id}?autoplay=1`,
-  //     src:`${id}`
-  //   };
-  // }
+    const id =
+      url.split("v=")[1]?.split("&")[0] ||
+      url.split("youtu.be/")[1]?.split("?")[0];
+
+    return {
+      type: "youtube" as VideoType,
+      src: `https://www.youtube.com/embed/${id}`
+    };
+  }
 
   // // Vimeo
   // if (url.includes("vimeo.com")) {

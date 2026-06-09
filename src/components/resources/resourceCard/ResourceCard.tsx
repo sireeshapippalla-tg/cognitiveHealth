@@ -23,7 +23,7 @@ interface ResourceCardProps {
   title: string;
   description: string;
   link: string;
-  type: "blog" | "case-study" | "video" | "media";
+  type: "blog" | "case-study" | "video" | "media" | "podcast";
 }
 
 const ResourceCard: React.FC<ResourceCardProps> = ({
@@ -42,6 +42,8 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
         return "Watch Video";
       case "case-study":
         return "Read Case Study";
+      case "podcast":
+        return "Listen Podcast";
       default:
         return "Read More";
     }

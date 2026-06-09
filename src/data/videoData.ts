@@ -219,19 +219,19 @@ export const videoData: Video[] = [
     date: "April 15, 2025",
     link: "https://www.youtube.com/embed/OvBiWi3XF_c?rel=0&modestbranding=1",
   },
-  {
-    id: "18",
-    type: "video",
-    title:
-      "Webinar replay: Reimagining Revenue Cycle Management (RCM) in Group Practices with AI",
-    description:
-      "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
-    image: "https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.webp",
-    readTime: "51:30",
-    category: "Webinar",
-    date: "February 18, 2025",
-    link: "https://www.youtube.com/embed/3a3R1NIcbt8?rel=0&modestbranding=1",
-  },
+  // {
+  //   id: "18",
+  //   type: "video",
+  //   title:
+  //     "Webinar replay: Reimagining Revenue Cycle Management (RCM) in Group Practices with AI",
+  //   description:
+  //     "Pavani Munjuluri, CEO, CognitiveHealth Technologies in conversation with Renee Stephens, Director, RCM, MindPath during the webinar ‘Reimagining Revenue Cycle Management (RCM) in Group Practices with AI’ hosted by MGMA Virginia.",
+  //   image: "https://img.youtube.com/vi/3a3R1NIcbt8/maxresdefault.webp",
+  //   readTime: "51:30",
+  //   category: "Webinar",
+  //   date: "February 18, 2025",
+  //   link: "https://www.youtube.com/embed/3a3R1NIcbt8?rel=0&modestbranding=1",
+  // },
   {
     id: "19",
     type: "video",

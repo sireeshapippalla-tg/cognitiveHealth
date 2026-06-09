@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/SEO";
 import {
   HeroSection,
   HeroInner,
@@ -63,6 +64,10 @@ const PrivacyPolicyPage = () => {
 
   return (
     <Box sx={{ minHeight: "100vh" }}>
+      <SEO
+        title="Privacy Policy"
+        description="How we collect, use, and protect your information at CognitiveHealth."
+      />
       {/* HERO SECTION */}
       <HeroSection
         initial={{ opacity: 0 }}

@@ -74,6 +74,7 @@ const HealthcareClaimsProcessingFaqPage = lazy(
 const SpecialtyMedicalBillingFaqPage = lazy(
   () => import("./pages/faqsPages/SpecialtyMedicalBillingFaqPage")
 );
+// const PodcastPage = lazy(() => import("./pages/podcast/PodcastPage"));
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
@@ -197,6 +198,7 @@ const App = () => {
               path={ROUTES.SPECIALTY_MEDICAL_BILLING_FAQ}
               element={<SpecialtyMedicalBillingFaqPage />}
             />
+            {/* <Route path={ROUTES.PODCAST} element={<PodcastPage />} /> */}
           </Route>
 
           {/* ---------- FALLBACK ---------- */}

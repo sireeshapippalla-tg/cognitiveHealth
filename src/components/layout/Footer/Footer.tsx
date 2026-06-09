@@ -3,14 +3,14 @@ import {
   Stack,
   Typography,
   Link,
-  SvgIcon,
-  type SvgIconProps,
+  // SvgIcon,
+  // type SvgIconProps,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/RoutePaths";
 
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import FacebookIcon from "@mui/icons-material/Facebook";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import cognitiveLogo from "../../../assets/white-logo.webp";
@@ -29,11 +29,11 @@ import {
 } from "./Footer.styles";
 
 /* ✅ NEW X (TWITTER) ICON */
-const XIcon = (props: SvgIconProps) => (
-  <SvgIcon {...props}>
-    <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.172l-5.62-7.357L3.5 22H.244l8.02-9.167L1 2h7.327l5.088 6.667L18.244 2zm-2.51 18h2.002L7.06 4H5.01l10.724 16z" />
-  </SvgIcon>
-);
+// const XIcon = (props: SvgIconProps) => (
+//   <SvgIcon {...props}>
+//     <path d="M18.244 2H21.5l-7.5 8.57L23 22h-7.172l-5.62-7.357L3.5 22H.244l8.02-9.167L1 2h7.327l5.088 6.667L18.244 2zm-2.51 18h2.002L7.06 4H5.01l10.724 16z" />
+//   </SvgIcon>
+// );
 const Footer = () => {
   return (
     <FooterRoot>
@@ -65,7 +65,7 @@ const Footer = () => {
 
             {/* ✅ SOCIAL ICONS */}
             <Social direction="row" spacing={2}>
-              <a
+              {/* <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +80,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
               >
-                <XIcon /> {/* ✅ NEW X ICON */}
+                <XIcon /> 
               </a>
 
               <a
@@ -90,10 +90,10 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon />
-              </a>
+              </a> */}
 
               <a
-                href="#"
+                href="https://www.youtube.com/@cognitivehealth"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
