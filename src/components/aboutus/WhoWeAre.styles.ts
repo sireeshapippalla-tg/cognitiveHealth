@@ -14,7 +14,7 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const BackgroundAura = motion(
+export const BackgroundAura = motion.create(
   styled(Box)({
     position: "absolute",
     top: "20%",

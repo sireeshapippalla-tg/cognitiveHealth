@@ -24,7 +24,7 @@ export const IcanInsightSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Grid container spacing={6} alignItems="center">
+            <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
               <Grid size={{ xs: 12, md: 6 }}>
                 <Typography
                   variant="h3"
@@ -60,6 +60,7 @@ export const IcanInsightSection: React.FC = () => {
                   alt=""
                   sx={{
                     width: "auto",
+                    maxWidth: "100%",
                     maxHeight: "140px",
                     objectFit: "contain",
                     display: "block",
@@ -87,7 +88,7 @@ export const IcanInsightSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Grid container spacing={6} alignItems="center">
+            <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
               <Grid size={{ xs: 12, md: 4 }}>
                 <Box
                   component="img"

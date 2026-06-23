@@ -209,18 +209,19 @@ const TrustDeploymentSection = () => {
                       }
                       onClick={() => setOpenModal(true)}
                       sx={{
-                        px: 5,
-                        py: 1.6,
+                        px: { xs: 3, sm: 5 },
+                        py: { xs: 1.2, sm: 1.6 },
                         borderRadius: "40px",
                         fontWeight: "bold",
                         textTransform: "none",
                         position: "relative",
                         overflow: "hidden",
                         background: "var(--color-primary)",
-                        // background:
-                        //   "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
                         color: "white",
                         boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+                        whiteSpace: { xs: "normal", sm: "nowrap" },
+                        fontSize: { xs: "0.9rem", sm: "1rem" },
+                        lineHeight: 1.3,
 
                         "&::after": {
                           content: '""',

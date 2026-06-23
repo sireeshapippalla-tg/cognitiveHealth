@@ -3,7 +3,7 @@ import { Card, Box, Typography, Chip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export const StyledCard = motion(
+export const StyledCard = motion.create(
   styled(Card)(() => ({
     height: "100%",
     display: "flex",

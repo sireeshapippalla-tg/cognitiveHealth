@@ -78,7 +78,7 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         <SearchWrapper>
           <SearchIcon sx={{ color: "#94a3b8", ml: 1 }} />
           <StyledInput
-            placeholder="Search resources, articles, videos..."
+            placeholder="Search resources..."
             inputProps={{ "aria-label": "search resources" }}
             value={searchQuery}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

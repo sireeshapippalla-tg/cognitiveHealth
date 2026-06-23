@@ -33,7 +33,7 @@ export const BackgroundShapes = styled(Box)({
   pointerEvents: "none",
 });
 
-export const Shape = motion(
+export const Shape = motion.create(
   styled(Box)({
     position: "absolute",
     borderRadius: "50%",
@@ -100,7 +100,7 @@ export const Description = styled(Typography)(() => ({
   opacity: 0.8,
 }));
 
-export const SearchWrapper = styled(Box)(() => ({
+export const SearchWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 600,
   margin: "0 auto",
   position: "relative",
@@ -119,26 +119,48 @@ export const SearchWrapper = styled(Box)(() => ({
     transform: "translateY(-2px)",
     borderColor: "var(--color-primary)",
   },
+  [theme.breakpoints.down("sm")]: {
+    padding: "4px 4px 4px 10px",
+  },
 }));
 
-export const StyledInput = styled(InputBase)({
+export const StyledInput = styled(InputBase)(({ theme }) => ({
   flex: 1,
   marginLeft: "12px",
   fontSize: "16px",
+  minWidth: 0,
+  "& input": {
+    minWidth: 0,
+    width: "100%",
+    paddingRight: "8px",
+  },
   "& input::placeholder": {
     color: "#64748b",
     opacity: 1,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "13px",
+    },
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "6px",
+    fontSize: "14px",
+  },
+}));
 
-export const SearchButton = styled(Button)({
+export const SearchButton = styled(Button)(({ theme }) => ({
   backgroundColor: "var(--color-primary)",
   color: "white",
   padding: "10px 28px",
   borderRadius: "100px",
   fontWeight: 600,
   textTransform: "none",
+  whiteSpace: "nowrap",
+  minWidth: "auto",
   "&:hover": {
     backgroundColor: "var(--color-primary-hover)",
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "8px 16px",
+    fontSize: "14px",
+  },
+}));

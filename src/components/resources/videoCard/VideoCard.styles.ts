@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Card, Box, Typography, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 
-export const StyledCard = motion(
+export const StyledCard = motion.create(
   styled(Card)(() => ({
     height: "100%",
     display: "flex",

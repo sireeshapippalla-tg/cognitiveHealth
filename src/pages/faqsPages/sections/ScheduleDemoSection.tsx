@@ -36,7 +36,7 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Grid container spacing={6} alignItems="center">
+          <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
             {/* Left Content */}
             <Grid size={{ xs: 12, md: 6 }}>
               {scheduleDemoContent || (

@@ -68,7 +68,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <Grid container spacing={6} alignItems="center">
+              <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
                   <Typography
                     variant="h2"
@@ -154,7 +154,7 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Grid container spacing={6} alignItems="center">
+              <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
                   <Box
                     sx={{

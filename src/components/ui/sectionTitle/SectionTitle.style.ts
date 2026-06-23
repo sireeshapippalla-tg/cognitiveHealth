@@ -29,18 +29,26 @@ export const Wrapper = styled(Box)<WrapperProps>(({ align, marginBottom }) => ({
 export const Pill = styled(Box, {
   shouldForwardProp: (prop) => prop !== "variant",
 })<PillProps>(({ variant = "primary" }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
   backgroundColor:
-    variant === "orange" ? "-var(--color-primary)" : "var(--color-text-blue)",
-
-  // fontFamily: "Inter",
+    variant === "orange" ? "var(--color-primary)" : "var(--color-text-blue)",
   color: "var(--color-white)",
-  padding: "4px 14px",
+  padding: "6px 16px",
   borderRadius: "999px",
   fontSize: "14px",
-  lineHeight: "150%",
+  lineHeight: "1.2",
   fontWeight: 600,
-  marginBottom: "10px",
+  marginBottom: "12px",
   letterSpacing: "0.3px",
+  maxWidth: "100%",
+  boxSizing: "border-box",
+
+  "& img": {
+    display: "block",
+    objectFit: "contain",
+  },
 }));
 
 export const Title = styled(Typography, {
@@ -69,8 +77,9 @@ export const Title = styled(Typography, {
   },
 }));
 
-export const Subtitle = styled(Typography)<SubtitleProps>(
-  ({ maxWidth, textColor }) => ({
+export const Subtitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "textColor",
+})<SubtitleProps>(({ maxWidth, textColor }) => ({
     // fontFamily: "Inter",
     fontWeight: 400,
     fontSize: "16px",

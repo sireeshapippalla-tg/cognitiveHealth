@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { IconButton } from "@mui/material";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { motion } from "framer-motion";
+
 import {
   BlogDetailWrapper,
   BlogContent,
@@ -26,23 +25,7 @@ const BlogDetailPage: React.FC = () => {
   const location = useLocation();
   const fromTab = location.state?.fromTab || "blog";
 
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   // Find the blog post by slug
   const blog = blogData.find((b) => b.link === `/resource/${slug}`);
@@ -110,40 +93,6 @@ const BlogDetailPage: React.FC = () => {
         </BlogContent>
         <CTASection />
       </motion.div>
-
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.3 }}
-            style={{
-              position: "fixed",
-              bottom: "40px",
-              right: "40px",
-              zIndex: 999,
-            }}
-          >
-            <IconButton
-              onClick={scrollToTop}
-              sx={{
-                bgcolor: "#0066cc",
-                color: "#ffffff",
-                width: "50px",
-                height: "50px",
-                boxShadow: "0 4px 20px rgba(0, 102, 204, 0.4)",
-                "&:hover": {
-                  bgcolor: "#0052a3",
-                },
-              }}
-              aria-label="scroll back to top"
-            >
-              <ArrowUpwardIcon />
-            </IconButton>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </BlogDetailWrapper>
   );
 };

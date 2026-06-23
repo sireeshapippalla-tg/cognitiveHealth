@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 /* ================= HERO ================= */
 
-export const HeroSection = motion(
+export const HeroSection = motion.create(
   styled(Box)(({ theme }) => ({
     background: "var(--color-text-blue)",
     padding: "100px 20px",
@@ -93,7 +93,7 @@ export const UpdatedBadge = styled(Box)({
 
 /* ================= SEARCH ================= */
 
-export const SearchContainer = motion(
+export const SearchContainer = motion.create(
   styled(Box)({
     maxWidth: "640px",
     margin: "0 auto",
@@ -231,7 +231,7 @@ export const AccordionContainer = styled(Box)({
   gap: "0px",
 });
 
-export const AccordionItem = motion(
+export const AccordionItem = motion.create(
   styled(Box, {
     shouldForwardProp: (prop) => prop !== "$expanded",
   })<{ $expanded?: boolean }>(({ $expanded }) => ({
