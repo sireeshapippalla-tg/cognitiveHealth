@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  // MenuItem,
-  // Select,
-  // FormControl,
-  Box,
-} from "@mui/material";
 import ResourceList from "../resourceList/ResourceList";
 import {
   BlogContainer,
@@ -15,8 +9,8 @@ import {
   TabButton,
   ActiveBackground,
   TabText,
-  // FilterWrapper,
-} from "./ResourceTabs.styles";
+  TabContentWrapper,
+} from "./ResourceTabs.style";
 import BlogIcon from "../../../assets/Resources/Blog.svg";
 // import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
@@ -55,11 +49,6 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
       label: "Media",
       icon: <img src={MediaIcon} alt="Media Icon" width={16} height={16} />,
     },
-    // {
-    //   value: "podcast",
-    //   label: "Podcast",
-    //   icon: <PodcastsIcon sx={{ fontSize: 16, color: "inherit" }} />,
-    // },
   ];
 
   let activeTab = tabs.findIndex(
@@ -131,15 +120,7 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
                   }}
                 />
               )}
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
+              <TabContentWrapper>
                 <motion.div
                   animate={{
                     filter:
@@ -152,7 +133,7 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
                   {tab.icon}
                 </motion.div>
                 <TabText $active={activeTab === index}>{tab.label}</TabText>
-              </Box>
+              </TabContentWrapper>
             </TabButton>
           ))}
         </TabsContainer>

@@ -13,7 +13,7 @@ import {
   RingWrapper,
   Section,
   Title,
-} from "./ImpactSection.styles";
+} from "./ImpactSection.style";
 
 const data = [
   {

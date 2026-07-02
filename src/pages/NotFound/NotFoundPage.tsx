@@ -12,7 +12,7 @@ import {
   Actions,
   PrimaryButton,
   SecondaryButton,
-} from "./NotFoundPage.styles";
+} from "./NotFoundPage.style";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

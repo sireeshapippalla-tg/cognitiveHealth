@@ -11,7 +11,7 @@ import {
   PureTextValue,
   TitleText,
   ValueWrapper,
-} from "./StatCard.styles";
+} from "./StatCard.style";
 
 interface StatCardProps {
   value: string;

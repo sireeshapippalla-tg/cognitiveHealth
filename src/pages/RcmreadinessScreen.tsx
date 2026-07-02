@@ -5,8 +5,6 @@ import {
   Stack,
   Divider,
   Button,
-  Box,
-  LinearProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -22,11 +20,13 @@ import {
   HeroSection,
   HeroTitle,
   HeroSubtitle,
+  StickyProgressBarBox,
+  StyledLinearProgress,
+  CheckboxRowBox,
+  CheckboxLabelText,
 } from "./Rcmreadiness.style";
 import AppButton from "../components/ui/appButton/AppButton";
-
-import logo from "../assets/cognitiveLogo.webp";
-
+import { generatePdfFromUI } from "../utils/pdfGenerator";
 import { useSendAssessmentEmailMutation } from "../services/emailApi";
 import { sections } from "./RcmreadinessData";
 import { RcmreadinessEmailDialog } from "./RcmreadinessEmailDialog";
@@ -56,107 +56,6 @@ const RCMReadinessScreen: React.FC = () => {
 
   const isAnyChecked = Object.values(checkedItems).some(Boolean);
 
-  const generatePdfFromUI = async (): Promise<Blob> => {
-    if (!pdfRef.current) throw new Error("PDF container not found");
-
-    const [html2canvasModule, jsPDFModule] = await Promise.all([
-      import("html2canvas"),
-      import("jspdf"),
-    ]);
-    const html2canvas = html2canvasModule.default;
-    const jsPDF = jsPDFModule.default;
-
-    // Use a fixed window width to ensure the layout remains consistent
-    // and doesn't get squeezed or stretched based on the user's monitor size.
-    const canvas = await html2canvas(pdfRef.current, {
-      scale: 2, // Use 2 for better text clarity in the PDF
-      useCORS: true,
-      allowTaint: true,
-      scrollY: -window.scrollY,
-      windowWidth: 1000,
-    });
-
-    const imgData = canvas.toDataURL("image/jpeg", 0.6);
-    const pdf = new jsPDF("p", "mm", "a4", true);
-
-    const pageWidth = 210;
-    const pageHeight = 297;
-    const margin = 15;
-
-    const usableWidth = pageWidth - margin * 2;
-    const imgHeight = (canvas.height * usableWidth) / canvas.width;
-
-    const logoImg = new Image();
-    logoImg.src = logo;
-
-    await new Promise((resolve) => {
-      logoImg.onload = resolve;
-    });
-
-    // Draw the logo onto a canvas with a white background to prevent
-    // transparent areas from turning black when converted to JPEG/PDF.
-    const logoCanvas = document.createElement("canvas");
-    logoCanvas.width = logoImg.width || 350;
-    logoCanvas.height = logoImg.height || 120;
-    const ctx = logoCanvas.getContext("2d");
-    if (ctx) {
-      ctx.fillStyle = "#FFFFFF";
-      ctx.fillRect(0, 0, logoCanvas.width, logoCanvas.height);
-      ctx.drawImage(logoImg, 0, 0);
-    }
-    const logoDataUrl = logoCanvas.toDataURL("image/jpeg", 1.0);
-
-    pdf.addImage(logoDataUrl, "JPEG", margin, 10, 35, 12);
-
-    pdf.setFontSize(20);
-    pdf.setTextColor(30, 64, 175);
-    pdf.text("RCM AI Readiness Assessment", pageWidth / 2, 35, {
-      align: "center",
-    });
-
-    let finalImgWidth = usableWidth;
-    let finalImgHeight = imgHeight;
-    let finalMarginX = margin;
-
-    const maxAvailableHeight = pageHeight - 45; // 40mm top offset + 5mm bottom margin
-
-    // If the content is taller than the page but not excessively so (e.g., less than 1.4x),
-    // scale it down to fit perfectly on one page to avoid cutting elements in half.
-    if (
-      imgHeight > maxAvailableHeight &&
-      imgHeight <= maxAvailableHeight * 1.4
-    ) {
-      const ratio = maxAvailableHeight / imgHeight;
-      finalImgHeight = maxAvailableHeight;
-      finalImgWidth = usableWidth * ratio;
-      finalMarginX = margin + (usableWidth - finalImgWidth) / 2;
-
-      pdf.addImage(
-        imgData,
-        "JPEG",
-        finalMarginX,
-        40,
-        finalImgWidth,
-        finalImgHeight
-      );
-    } else {
-      // Standard multi-page logic for very long content
-      let position = 40;
-      pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
-
-      let heightLeft = imgHeight - (pageHeight - 40);
-
-      while (heightLeft > 0) {
-        position = position - pageHeight; // Shift up by one full page height
-        pdf.addPage();
-        pdf.addImage(imgData, "JPEG", margin, position, usableWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-    }
-
-    return pdf.output("blob");
-  };
-
   const handleSendEmail = async () => {
     if (!email) return;
 
@@ -170,7 +69,8 @@ const RCMReadinessScreen: React.FC = () => {
       setIsGeneratingPdf(true);
       await new Promise((resolve) => setTimeout(resolve, 50));
 
-      const pdfBlob = await generatePdfFromUI();
+      if (!pdfRef.current) throw new Error("PDF container not found");
+      const pdfBlob = await generatePdfFromUI(pdfRef.current);
 
       if (!pdfBlob) {
         toast.error("Failed to generate PDF");
@@ -209,7 +109,8 @@ const RCMReadinessScreen: React.FC = () => {
   const handlePreviewPdf = async () => {
     const newWindow = window.open("", "_blank");
     try {
-      const pdfBlob = await generatePdfFromUI();
+      if (!pdfRef.current) throw new Error("PDF container not found");
+      const pdfBlob = await generatePdfFromUI(pdfRef.current);
       const url = URL.createObjectURL(pdfBlob);
       if (newWindow) newWindow.location.href = url;
     } catch (err) {
@@ -231,17 +132,7 @@ const RCMReadinessScreen: React.FC = () => {
         </HeroSubtitle>
       </HeroSection>
       <HeaderWrapper ref={pdfRef}>
-        <Box
-          sx={{
-            position: "sticky",
-            top: 60,
-            zIndex: 1000,
-            background: "var(--color-white)",
-            paddingTop: "16px",
-            paddingBottom: "16px",
-            borderBottom: "1px solid #e5e7eb",
-          }}
-        >
+        <StickyProgressBarBox>
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -254,19 +145,11 @@ const RCMReadinessScreen: React.FC = () => {
             </Typography>
           </Stack>
 
-          <LinearProgress
+          <StyledLinearProgress
             variant="determinate"
             value={progress}
-            sx={{
-              height: 8,
-              borderRadius: 10,
-              backgroundColor: "#e5e7eb",
-              "& .MuiLinearProgress-bar": {
-                backgroundColor: "var(--color-green)",
-              },
-            }}
           />
-        </Box>
+        </StickyProgressBarBox>
         <Grid container spacing={3} alignItems="stretch">
           {sections.map((section, sIndex) => (
             <Grid key={sIndex} size={{ xs: 12, md: 6 }}>
@@ -283,37 +166,18 @@ const RCMReadinessScreen: React.FC = () => {
                     {section.items.map((item, iIndex) => {
                       const key = `${sIndex}-${iIndex}`;
                       return (
-                        <Box
-                          key={key}
-                          sx={{
-                            display: "flex",
-                            alignItems: "flex-start",
-                          }}
-                        >
+                        <CheckboxRowBox key={key}>
                           <StyledCheckbox
                             size="small"
                             checked={!!checkedItems[key]}
                             onChange={() => handleCheck(key)}
                             disabled={submitted}
-                            sx={{
-                              p: 0,
-                              mt: "3px",
-                              mr: 1.5,
-                              flexShrink: 0,
-                            }}
                           />
 
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              flex: 1,
-                              lineHeight: 1.6,
-                              color: "#1f2937",
-                            }}
-                          >
+                          <CheckboxLabelText variant="body2">
                             {item.label}
-                          </Typography>
-                        </Box>
+                          </CheckboxLabelText>
+                        </CheckboxRowBox>
                       );
                     })}
                   </Stack>
@@ -342,9 +206,9 @@ const RCMReadinessScreen: React.FC = () => {
         {submitted && (
           <ResultsWrapper>
             <Stack alignItems="center">
-              <ResultPaper elevation={0} sx={{ maxWidth: 700, p: 6 }}>
+              <ResultPaper elevation={0}>
                 <Stack spacing={2} alignItems="center">
-                  <SuccessStyledIcon sx={{ fontSize: 60 }} />
+                  <SuccessStyledIcon />
 
                   <Typography variant="h5" fontWeight={700}>
                     Results Analysis

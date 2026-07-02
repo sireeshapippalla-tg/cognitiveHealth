@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import {
   SectionWrapper,
@@ -9,7 +9,8 @@ import {
   HighlightText,
   DecoratorLine,
   ItalicText,
-} from "./WhoWeAre.styles";
+  StyledContainer,
+} from "./WhoWeAre.style";
 
 const WhoWeAreSection: React.FC = () => {
   return (
@@ -24,9 +25,8 @@ const WhoWeAreSection: React.FC = () => {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <Container
+      <StyledContainer
         maxWidth="md"
-        sx={{ position: "relative", zIndex: 1, textAlign: "center" }}
       >
         <Box>
           <motion.div
@@ -70,7 +70,7 @@ const WhoWeAreSection: React.FC = () => {
             </ContentBox>
           </motion.div>
         </Box>
-      </Container>
+      </StyledContainer>
     </SectionWrapper>
   );
 };

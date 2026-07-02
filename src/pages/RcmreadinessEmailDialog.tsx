@@ -1,17 +1,19 @@
 import React from "react";
-import {
-  Dialog,
-  TextField,
-  CircularProgress,
-  IconButton,
-  Box,
-  Fade,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Fade, Typography, CircularProgress } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
-import { PrimaryButton } from "./Rcmreadiness.style";
+import {
+  StyledDialog,
+  ModalBox,
+  CloseBtnContainer,
+  CloseBtn,
+  HeaderBox,
+  SubtitleText,
+  EmailTextField,
+  ActionsBox,
+  DialogPrimaryButton,
+  PreviewButton,
+} from "./Rcmreadiness.style";
 
 interface RcmreadinessEmailDialogProps {
   open: boolean;
@@ -39,7 +41,7 @@ export const RcmreadinessEmailDialog: React.FC<
   onPreviewPdf,
 }) => {
   return (
-    <Dialog
+    <StyledDialog
       open={open}
       onClose={() => !isProcessing && onClose()}
       maxWidth="xs"
@@ -52,14 +54,6 @@ export const RcmreadinessEmailDialog: React.FC<
           },
         },
       }}
-      PaperProps={{
-        sx: {
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          overflow: "visible",
-          outline: "none",
-        },
-      }}
       TransitionComponent={Fade}
       transitionDuration={400}
     >
@@ -68,54 +62,23 @@ export const RcmreadinessEmailDialog: React.FC<
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            background: "rgba(255, 255, 255, 0.98)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "32px",
-            padding: 4,
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-            overflow: "visible",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              inset: -2,
-              zIndex: -1,
-              background:
-                "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
-              borderRadius: "34px",
-              opacity: 0.4,
-              filter: "blur(8px)",
-            },
-          }}
-        >
-          <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
+        <ModalBox>
+          <CloseBtnContainer>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
             >
-              <IconButton
+              <CloseBtn
                 aria-label="Close dialog"
                 onClick={onClose}
                 disabled={isProcessing}
-                sx={{
-                  width: 40,
-                  height: 40,
-                  background: "var(--color-white)",
-                  color: "#1e293b",
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                  border: "2px solid var(--color-white)",
-                  "&:hover": { color: "var(--color-primary-dark)" },
-                }}
               >
                 <CloseIcon fontSize="small" />
-              </IconButton>
+              </CloseBtn>
             </motion.div>
-          </Box>
+          </CloseBtnContainer>
 
-          <Box mb={3} textAlign="center">
+          <HeaderBox>
             <Typography
               variant="h5"
               fontWeight={900}
@@ -124,29 +87,23 @@ export const RcmreadinessEmailDialog: React.FC<
             >
               Send Assessment Report
             </Typography>
-            <Typography variant="body2" sx={{ color: "#64748b" }}>
+            <SubtitleText variant="body2">
               Enter the email address where you would like to receive your
               personalized roadmap.
-            </Typography>
-          </Box>
+            </SubtitleText>
+          </HeaderBox>
 
-          <TextField
+          <EmailTextField
             fullWidth
             label="Work Email Address"
             type="email"
             placeholder="example@company.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: "16px",
-                backgroundColor: "rgba(248, 250, 252, 0.8)",
-              },
-            }}
           />
 
-          <Box mt={4} display="flex" flexDirection="column" gap={2}>
-            <PrimaryButton
+          <ActionsBox>
+            <DialogPrimaryButton
               variant="contained"
               fullWidth
               disabled={!email || isProcessing}
@@ -156,37 +113,26 @@ export const RcmreadinessEmailDialog: React.FC<
                   <CircularProgress size={16} color="inherit" />
                 ) : null
               }
-              sx={{
-                py: 1.8,
-                borderRadius: "16px",
-                fontWeight: 800,
-                textTransform: "none",
-              }}
             >
               {isGeneratingPdf
                 ? "Generating PDF..."
                 : isSending
                   ? "Sending Report..."
                   : "Send Assessment Report"}
-            </PrimaryButton>
+            </DialogPrimaryButton>
 
             {onPreviewPdf && (
-              <Button
+              <PreviewButton
                 fullWidth
                 variant="text"
-                sx={{
-                  textTransform: "none",
-                  color: "#64748b",
-                  fontWeight: 600,
-                }}
                 onClick={onPreviewPdf}
               >
                 {/* Preview PDF */}
-              </Button>
+              </PreviewButton>
             )}
-          </Box>
-        </Box>
+          </ActionsBox>
+        </ModalBox>
       </motion.div>
-    </Dialog>
+    </StyledDialog>
   );
 };

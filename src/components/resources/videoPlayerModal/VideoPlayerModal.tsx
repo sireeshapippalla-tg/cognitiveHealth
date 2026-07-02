@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
-import { Dialog, IconButton, Box, Fade, CircularProgress } from "@mui/material";
+import { Fade } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {
   VideoWrapper,
   Iframe,
   StyledDialog,
   CloseButtonWrapper,
-} from "./VideoPlayerModal.styles";
+  DialogStyled,
+  CloseButton,
+  VideoElement,
+  LoaderOverlay,
+  LoaderProgress,
+} from "./VideoPlayerModal.style";
 import { getVideoInfo } from "../../../utils/videoUtils";
 import { motion } from "framer-motion";
 
@@ -32,7 +37,7 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
   }, [open, videoUrl]);
 
   return (
-    <Dialog
+    <DialogStyled
       open={open}
       onClose={onClose}
       maxWidth="md"
@@ -43,13 +48,6 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
             backgroundColor: "rgba(10, 15, 30, 0.4)",
             backdropFilter: "blur(12px)",
           },
-        },
-      }}
-      PaperProps={{
-        sx: {
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          overflow: "visible",
         },
       }}
       TransitionComponent={Fade}
@@ -65,63 +63,43 @@ const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
             whileHover={{ scale: 1.15, rotate: 90 }}
             whileTap={{ scale: 0.9 }}
           >
-            <IconButton
+            <CloseButton
               onClick={onClose}
               aria-label="Close"
-              sx={{
-                width: 44,
-                height: 44,
-                background: "rgba(255, 255, 255, 0.9)",
-                backdropFilter: "blur(4px)",
-                color: "#1e293b",
-                boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.5)",
-                "&:hover": {
-                  background: "var(--color-white)",
-                  color: "var(--color-primary)",
-                },
-              }}
             >
               <CloseIcon fontSize="small" />
-            </IconButton>
+            </CloseButton>
           </CloseButtonWrapper>
 
           <VideoWrapper>
             {type === "mp4" ? (
-              <Box
-                component="video"
+              <VideoElement
                 src={src}
                 controls
                 autoPlay
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                }}
               />
             ) : (
               <>
                 {isLoading && (
-                  <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0f172a', borderRadius: '12px' }}>
-                    <CircularProgress size={60} thickness={4} sx={{ color: '#0ea5e9' }} />
-                  </Box>
+                  <LoaderOverlay>
+                    <LoaderProgress size={60} thickness={4} />
+                  </LoaderOverlay>
                 )}
                 <Iframe
                   src={`${src}${src.includes("?") ? "&" : "?"}autoplay=1`}
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                   onLoad={() => setIsLoading(false)}
-                  style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease-in-out' }}
+                  $loading={isLoading}
                 />
               </>
             )}
           </VideoWrapper>
         </StyledDialog>
       </motion.div>
-    </Dialog>
+    </DialogStyled>
   );
 };
 
 export default VideoPlayerModal;
+

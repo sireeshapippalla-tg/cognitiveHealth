@@ -1,6 +1,11 @@
-import { Typography } from "@mui/material";
 import { getBaseUrl } from "../../utils/urlHelper";
 import { FaqPageLayout } from "./FaqPageLayout";
+import {
+  PageSubtitle,
+  PageTitle,
+  PageSectionHeading,
+  PageParagraph,
+} from "./faqPages.style";
 
 const SpecialtyMedicalBillingFaqPage = () => {
   const baseUrl = getBaseUrl();
@@ -46,36 +51,13 @@ const SpecialtyMedicalBillingFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography
-            variant="subtitle2"
-            sx={{
-              mb: 1,
-              mt: 4,
-              fontSize: { xs: "0.85rem", md: "0.95rem" },
-              textTransform: "uppercase",
-              letterSpacing: "1.5px",
-              fontWeight: 600,
-              color: "primary.main",
-              display: "block",
-            }}
-          >
+          <PageSubtitle variant="subtitle2">
             The future
-          </Typography>
-          <Typography
-            variant="h3"
-            component="h2"
-            fontWeight={700}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 3, mt: 2, fontSize: { xs: "1.4rem", md: "2.4rem" } }}
-          >
+          </PageSubtitle>
+          <PageTitle variant="h3" component="h2">
             Specialty Medical Billing with Al-Driven RCM Solutions
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.1rem", lineHeight: 1.8 }}
-          >
+          </PageTitle>
+          <PageParagraph variant="body1" paragraph>
             In the specialized fields of healthcare, efficient revenue cycle
             management (RCM) is crucial to maintaining financial health and
             sustainability. CognitiveHealth offers tailored specialty medical
@@ -83,22 +65,11 @@ const SpecialtyMedicalBillingFaqPage = () => {
             specialty practices. Our advanced AI-driven solutions streamline
             processes, reduce errors, and enhance overall financial performance,
             making us a leader in specialty revenue cycle management.
-          </Typography>
-          <Typography
-            variant="h5"
-            component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
-          >
+          </PageParagraph>
+          <PageSectionHeading variant="h5" component="h3">
             The Unique Needs of Specialty Practices
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.1rem", lineHeight: 1.8 }}
-          >
+          </PageSectionHeading>
+          <PageParagraph variant="body1" paragraph>
             Specialty practices, such as dermatology, cardiology, oncology,
             orthopedics, and neurology, face unique billing and coding
             challenges that differ significantly from general healthcare
@@ -107,151 +78,71 @@ const SpecialtyMedicalBillingFaqPage = () => {
             CognitiveHealth's solutions are specifically designed to meet these
             needs, ensuring that every aspect of the revenue cycle is handled
             with expertise and efficiency.
-          </Typography>
-          <Typography
-            variant="h5"
-            component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
-          >
+          </PageParagraph>
+          <PageSectionHeading variant="h5" component="h3">
             CognitiveHealth's Comprehensive RCM Solutions
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.1rem", lineHeight: 1.8 }}
-          >
+          </PageSectionHeading>
+          <PageParagraph variant="body1" paragraph>
             CognitiveHealth's iCAN™ platform is a revolutionary solution that
             integrates Al and machine learning to automate and optimize various
             aspects of the revenue cycle. Our platform is purpose-built for
             specialty practices, ensuring that from patient registration to
             final payment, all processes are managed accurately and efficiently.
-          </Typography>
-          <Typography
-            variant="h5"
-            component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
-          >
+          </PageParagraph>
+          <PageSectionHeading variant="h5" component="h3">
             Introducing iCAN™ - Network of Al Agents for Healthcare Revenue
             Cycle Management
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.1rem", lineHeight: 1.8 }}
-          >
+          </PageSectionHeading>
+          <PageParagraph variant="body1" paragraph>
             iCAN™ is a Network of Al agents configured to run simple or complex
             workflows in the Healthcare Revenue Cycle. Built by CognitiveHealth,
             pioneers of healthcare process automation, Al powers iCAN™ and is
             purpose- built for the Healthcare Revenue Cycle.
-          </Typography>
+          </PageParagraph>
         </>
       }
       scheduleDemoContent={
         <>
-          <Typography
-            variant="h3"
-            component="h2"
-            fontWeight={700}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{
-              mb: 3,
-              mt: 4,
-              fontSize: { xs: "1.8rem", md: "2.4rem" },
-            }}
-          >
+          <PageTitle variant="h3" component="h2">
             Schedule a FREE Demo Today!
-          </Typography>
+          </PageTitle>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             CognitiveHealth's Al-powered solutions for specialty revenue cycle
             management are designed to transform your RCM processes, enhancing
             efficiency, reducing errors, and improving financial performance. By
             leveraging advanced automation and analytics tools, we help
             specialty practices navigate the complexities of RCM with ease.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             Discover how CognitiveHealth can revolutionize your revenue cycle
             management. Schedule a free demo today to see our innovative
             solutions in action and learn how they can benefit your specialty
             practice.
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          </PageParagraph>
+          <PageParagraph variant="body1" paragraph>
             CognitiveHealth's team has extensive experience managing Healthcare
             RCM processes for small, medium, and large healthcare providers and
-            systems. The team includes Al & GenAl Architects & developers,
+            systems. The team includes Al & GenAI Architects & developers,
             Healthcare Security and Privacy experts, and Healthcare Revenue
             Cycle SME's.
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          </PageParagraph>
+          <PageParagraph variant="body1" paragraph>
             This experienced team of CognitiveHealth has partnered with
             recognized health systems to build iCANT - Network of Al Agents.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             iCANTM platform is purpose-built for healthcare.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             We understand your concerns about privacy and security. At
             CognitiveHealth, our infrastructure meets the highest standards, and
             we actively follow the latest Al trust and risk guidelines to ensure
             your safety.
-          </Typography>
+          </PageParagraph>
         </>
       }
     />

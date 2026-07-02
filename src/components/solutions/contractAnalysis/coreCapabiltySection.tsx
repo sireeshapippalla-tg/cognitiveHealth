@@ -37,7 +37,7 @@ const capabilities: ExpandableItem[] = [
     //     alt="Contract Intelligence Research Assistant"
     //   loading="lazy" />
     // ),
-    icon: <ManageSearchOutlinedIcon sx={{ fontSize: 30 }} />,
+    icon: <ManageSearchOutlinedIcon />,
     defaultOpen: true,
   },
   {
@@ -54,7 +54,7 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: <img width={48} height={48} src={Zap} alt="Payment Variance Detection System" loading="lazy" />,
-    icon: <BoltOutlinedIcon sx={{ fontSize: 30 }} />,
+    icon: <BoltOutlinedIcon />,
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: <img width={48} height={48} src={Info} alt="Contract Change Monitoring Service" loading="lazy" />,
-    icon: <NotificationsActiveOutlinedIcon sx={{ fontSize: 30 }} />,
+    icon: <NotificationsActiveOutlinedIcon />,
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ const capabilities: ExpandableItem[] = [
     //     alt="Charge Master Synchronization Engine"
     //   loading="lazy" />
     // ),
-    icon: <SyncAltOutlinedIcon sx={{ fontSize: 30 }} />,
+    icon: <SyncAltOutlinedIcon />,
   },
   {
     id: 5,
@@ -107,7 +107,7 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: <img width={48} height={48} src={Data} alt="Contract Performance Analytics Dashboard" loading="lazy" />,
-    icon: <BarChartOutlinedIcon sx={{ fontSize: 30 }} />,
+    icon: <BarChartOutlinedIcon />,
   },
 ];
 

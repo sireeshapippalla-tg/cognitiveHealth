@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import Integration from "../../../assets/Platform/Enterprise/Integration.svg";
 import Connectivity from "../../../assets/Platform/Enterprise/Connectivity.svg";
@@ -20,7 +20,8 @@ import {
   StageTitle,
   StageDescription,
   HighlightText,
-} from "./EnterpriseReadinessSection.styles";
+  StageInnerBox,
+} from "./EnterpriseReadinessSection.style";
 
 const EnterpriseReadinessSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -146,7 +147,7 @@ const EnterpriseReadinessSection = () => {
                 style={{ height: "100%" }}
               >
                 <DisplayStageBox>
-                  <Box sx={{ position: "relative", zIndex: 1 }}>
+                  <StageInnerBox>
                     {/* Massive Faint Icon in Background */}
                     <FaintIconBox>
                       {enterpriseItems[activeIndex].icon}
@@ -165,7 +166,7 @@ const EnterpriseReadinessSection = () => {
                     <StageDescription>
                       {enterpriseItems[activeIndex].description}
                     </StageDescription>
-                  </Box>
+                  </StageInnerBox>
                 </DisplayStageBox>
               </motion.div>
             </AnimatePresence>

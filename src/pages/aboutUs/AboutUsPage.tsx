@@ -6,7 +6,7 @@ import CallToActionSection from "../../components/home/CTA/CTASection";
 import WhyWeExistSection from "../../components/aboutus/whyExistSection";
 import AboutUsHeroSection from "../../components/aboutus/aboutusHeroSection";
 import { motion } from "framer-motion";
-import { AboutPageWrapper, ContentContainer } from "./AboutUsPage.styles";
+import { AboutPageWrapper, ContentContainer } from "./AboutUsPage.style";
 import SEO from "../../components/SEO";
 import { getBaseUrl } from "../../utils/urlHelper";
 

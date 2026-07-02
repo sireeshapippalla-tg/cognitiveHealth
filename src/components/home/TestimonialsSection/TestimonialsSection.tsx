@@ -10,7 +10,7 @@ import {
   Author,
   Company,
   StyledQuoteIcon,
-} from "./TestimonialsSection.styles";
+} from "./TestimonialsSection.style";
 
 const testimonials = [
   {

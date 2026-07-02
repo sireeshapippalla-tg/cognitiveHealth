@@ -3,7 +3,7 @@ import {
   SectionTitle,
   SectionContent,
   OutcomeList,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailPage.style";
 import type { MediaContentProps } from "./MediaContentA";
 
 export const MediaContentDefault: React.FC<MediaContentProps> = () => (

@@ -1,15 +1,17 @@
 import React from "react";
-import { Box } from "@mui/material";
 import {
   StyledExternalLinkText,
   SectionTitle,
   SectionContent,
   OutcomeList,
   InlineImageContainer,
-  InlineImage,
   ImageCaption,
   StyledResourceLink,
-} from "../BlogDetailPage.styles";
+  ReadMoreWrapper,
+  CenteredImageContainer,
+  ThreatImage,
+  AuthorImage,
+} from "../BlogDetailPage.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 import CognitiveFallPdf from "../../../assets/Media/Cognitive-Fall2025.pdf";
@@ -23,7 +25,7 @@ export interface MediaContentProps {
 }
 
 export const MediaContent1: React.FC<MediaContentProps> = () => (
-  <Box sx={{ mt: 2, mb: 4 }}>
+  <ReadMoreWrapper>
     <StyledExternalLinkText
       href={CognitiveFallPdf}
       target="_blank"
@@ -31,11 +33,11 @@ export const MediaContent1: React.FC<MediaContentProps> = () => (
     >
       Read More
     </StyledExternalLinkText>
-  </Box>
+  </ReadMoreWrapper>
 );
 
 export const MediaContent2: React.FC<MediaContentProps> = () => (
-  <Box sx={{ mt: 2, mb: 4 }}>
+  <ReadMoreWrapper>
     <StyledExternalLinkText
       href={HfmaMagazinePdf}
       target="_blank"
@@ -43,7 +45,7 @@ export const MediaContent2: React.FC<MediaContentProps> = () => (
     >
       Read More
     </StyledExternalLinkText>
-  </Box>
+  </ReadMoreWrapper>
 );
 
 export const MediaContent3: React.FC<MediaContentProps> = () => (
@@ -70,21 +72,15 @@ export const MediaContent3: React.FC<MediaContentProps> = () => (
     </SectionContent>
 
     <SectionTitle>Complex Healthcare Technology Environment</SectionTitle>
-    <Box sx={{ my: 4, display: "flex", justifyContent: "center" }}>
-      <img
+    <CenteredImageContainer>
+      <ThreatImage
         width={48}
         height={48}
         src={ThreatEnvImg}
         alt="Complex Healthcare Technology Environment Diagram"
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-          borderRadius: "8px",
-          boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-        }}
         loading="lazy"
       />
-    </Box>
+    </CenteredImageContainer>
     <SectionContent>
       Healthcare technologies have the potential to extend, save, and enhance
       lives. Technologies on the healthcare provider side range from those
@@ -224,10 +220,9 @@ export const MediaContent3: React.FC<MediaContentProps> = () => (
     </SectionContent>
 
     <InlineImageContainer>
-      <InlineImage
+      <AuthorImage
         src={VispiImg}
         alt="Vispi Gowadia"
-        style={{ maxWidth: "200px", borderRadius: "50%" }}
       />
       <ImageCaption>
         Author: Vispi Gowadia, VP Technologies, CognitiveHealth Technologies

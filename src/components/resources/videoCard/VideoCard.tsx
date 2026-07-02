@@ -13,7 +13,7 @@ import {
   ActionButton,
   DurationBadge,
   PlayIconOverlay,
-} from "./VideoCard.styles";
+} from "./VideoCard.style";
 
 interface VideoCardProps {
   image: string;
@@ -41,7 +41,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <CardImageWrapper onClick={onPlay} style={{ cursor: "pointer" }}>
+      <CardImageWrapper onClick={onPlay}>
         {/* Always show image */}
         {link?.includes("youtube.com") ? (
           <iframe
@@ -49,14 +49,6 @@ const VideoCard: React.FC<VideoCardProps> = ({
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-            }}
           />
         ) : (
           <>
@@ -64,7 +56,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
             {/* Play Button */}
             <PlayIconOverlay onClick={onPlay}>
-              <PlayArrowIcon sx={{ fontSize: "36px" }} />
+              <PlayArrowIcon />
             </PlayIconOverlay>
           </>
         )}
@@ -79,9 +71,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
         <CardDescription variant="body2">{description}</CardDescription>
 
-        <ActionButton onClick={onPlay} style={{ cursor: "pointer" }}>
+        <ActionButton onClick={onPlay}>
           Watch Video
-          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
+          <ArrowForwardIcon />
         </ActionButton>
       </CardContent>
     </StyledCard>

@@ -4,7 +4,7 @@ import {
   SectionHeaderTitle,
   SectionHeaderSubtitle,
   GridContainerWrapper,
-} from "./TeamSection.styles";
+} from "./TeamSection.style";
 
 import pavaniImg from "../../assets/aboutUs/pavaniImg.svg";
 import chittaranjanImg from "../../assets/aboutUs/chittaranjan.svg";

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { CardContainer, LeftContent, IconWrapper } from "./PopoverCard.styles";
+import { CardContainer, LeftContent, IconWrapper } from "./PopoverCard.style";
 
 type PopoverCardProps = {
   icon: React.ReactNode;

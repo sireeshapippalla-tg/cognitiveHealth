@@ -1,20 +1,8 @@
 import { podcastData } from "../../../data/podcastData";
-import { Box, Card, Grid, Fade } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, Grid, Fade } from "@mui/material";
 import FeaturedPlayerSection from "./FeaturedPlayerSection";
 import FeaturedInfoSection from "./FeaturedInfoSection";
-
-const GlassCard = styled(Card)(({ theme }) => ({
-  background: 'rgba(255, 255, 255, 0.95)',
-  backdropFilter: 'blur(20px)',
-  borderRadius: theme.spacing(3),
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
-  overflow: 'visible',
-  position: 'relative',
-  marginTop: theme.spacing(-10),
-  zIndex: 10,
-}));
+import { GlassCard } from "../PodcastPage.style";
 
 interface FeaturedEpisodeProps {
   featuredPodcastId?: string;

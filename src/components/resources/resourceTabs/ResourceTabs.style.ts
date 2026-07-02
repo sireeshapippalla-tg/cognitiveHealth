@@ -92,3 +92,12 @@ export const FilterWrapper = styled(Box)({
   display: "flex",
   alignItems: "center",
 });
+
+export const TabContentWrapper = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: theme.spacing(1),
+  position: "relative",
+  zIndex: 1,
+}));
+

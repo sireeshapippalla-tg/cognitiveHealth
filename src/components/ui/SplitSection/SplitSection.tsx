@@ -14,7 +14,7 @@ import {
   BlobBottom,
   MotionContent,
   MotionImageWrapper,
-} from "./SplitSection.styles";
+} from "./SplitSection.style";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";

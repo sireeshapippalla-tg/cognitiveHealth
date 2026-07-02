@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Container, Grid, Button } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
 import CTASection from "../../components/home/CTA/CTASection";
@@ -14,6 +14,18 @@ import { BenefitsFeaturesSection } from "./sections/BenefitsFeaturesSection";
 import { PaymentPostingSection } from "./sections/PaymentPostingSection";
 import { RevenueCycleManagementSection } from "./sections/RevenueCycleManagementSection";
 import { ScheduleDemoSection } from "./sections/ScheduleDemoSection";
+
+import {
+  LayoutWrapper,
+  HeroSection,
+  HeroTitle,
+  HeroSubtitle,
+  ButtonGroup,
+  GetStartedButton,
+  ContactSalesButton,
+  Section2Wrapper,
+  PlaceholderBox,
+} from "./FaqPageLayout.style";
 
 export interface ReusableFaqPageProps {
   seoTitle: string;
@@ -47,21 +59,9 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
         schema={schema}
       />
 
-      <Box
-        sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
-      >
+      <LayoutWrapper>
         {/* Hero Section */}
-        <Box
-          sx={{
-            backgroundImage: `url(${Frame_50}) !important`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            color: "white",
-            py: { xs: 8, md: 10 },
-            mt: "80px",
-          }}
-        >
+        <HeroSection $bgImage={Frame_50}>
           <Container maxWidth="lg">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -70,83 +70,41 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
             >
               <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
-                  <Typography
+                  <HeroTitle
                     variant="h2"
                     component="h1"
                     fontWeight={700}
                     gutterBottom
-                    sx={{
-                      fontSize: { xs: "2.3rem", md: "3.3rem" },
-                      lineHeight: 1.2,
-                    }}
                   >
                     {heroTitle}
-                  </Typography>
-                  <Typography
+                  </HeroTitle>
+                  <HeroSubtitle
                     variant="h5"
-                    sx={{
-                      opacity: 0.9,
-                      mt: 3,
-                      lineHeight: 1.6,
-                      fontSize: { xs: "1.1rem", md: "1.3rem" },
-                    }}
                   >
                     {heroSubtitle}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      gap: 2,
-                      mt: 4,
-                      mb: 2,
-                      flexWrap: "wrap",
-                      justifyContent: "flex-start",
-                    }}
-                  >
-                    <Button
+                  </HeroSubtitle>
+                  <ButtonGroup>
+                    <GetStartedButton
                       variant="contained"
                       href={heroButtonUrl}
-                      sx={{
-                        bgcolor: "white",
-                        color: "#0b1f38",
-                        fontWeight: 600,
-                        px: 4,
-                        py: 1.5,
-                        borderRadius: 2,
-                        textTransform: "none",
-                        "&:hover": { bgcolor: "#f3f4f6" },
-                      }}
                     >
                       Get Started
-                    </Button>
-                    <Button
+                    </GetStartedButton>
+                    <ContactSalesButton
                       variant="outlined"
                       href={heroButtonUrl}
-                      sx={{
-                        borderColor: "white",
-                        color: "white",
-                        fontWeight: 600,
-                        px: 4,
-                        py: 1.5,
-                        borderRadius: 2,
-                        textTransform: "none",
-                        "&:hover": {
-                          borderColor: "#e5e7eb",
-                          bgcolor: "rgba(255,255,255,0.08)",
-                        },
-                      }}
                     >
                       Contact Sales
-                    </Button>
-                  </Box>
+                    </ContactSalesButton>
+                  </ButtonGroup>
                 </Grid>
               </Grid>
             </motion.div>
           </Container>
-        </Box>
+        </HeroSection>
 
         {/* Section 2 */}
-        <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "#ffffff" }}>
+        <Section2Wrapper>
           <Container maxWidth="lg">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -156,27 +114,13 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
             >
               <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
                 <Grid size={{ xs: 12, md: 12 }}>
-                  <Box
-                    sx={{
-                      width: "auto",
-                      maxHeight: "140px",
-                      objectFit: "contain",
-                      display: "block",
-                      mx: "auto",
-                      my: 2,
-                      borderRadius: 2,
-                      p: 0,
-                      bgcolor: "transparent",
-                      border: "none",
-                      boxShadow: "none",
-                    }}
-                  />
+                  <PlaceholderBox />
                   {section2Content}
                 </Grid>
               </Grid>
             </motion.div>
           </Container>
-        </Box>
+        </Section2Wrapper>
 
         {/* Section 3 & 4: iCAN Automate™ */}
         <IcanAutomateSection />
@@ -206,7 +150,8 @@ export const FaqPageLayout: React.FC<ReusableFaqPageProps> = ({
         />
 
         <CTASection />
-      </Box>
+      </LayoutWrapper>
     </>
   );
 };
+

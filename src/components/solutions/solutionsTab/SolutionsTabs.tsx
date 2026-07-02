@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Box } from "@mui/material";
 import {
   BlogContainer,
   StickyTabsWrapper,
@@ -9,7 +8,8 @@ import {
   TabButton,
   ActiveBackground,
   TabText,
-} from "./SolutionsTabs.styles";
+  TabButtonInner,
+} from "./SolutionsTabs.style";
 
 import PaymentPostingPage from "../../../pages/solutions/PaymentPostingPage";
 import LockBoxAnalysisPage from "../../../pages/solutions/LockBoxAnalysisPage";
@@ -183,20 +183,10 @@ const SolutionsTabs = () => {
                 />
               )}
 
-              <Box
-                sx={{
-                  position: "relative",
-                  zIndex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1.5,
-                  filter:
-                    activeTab === index ? "brightness(0) invert(1)" : "none",
-                }}
-              >
+              <TabButtonInner $active={activeTab === index}>
                 {/* {tab.icon} */}
                 <TabText $active={activeTab === index}>{tab.label}</TabText>
-              </Box>
+              </TabButtonInner>
             </TabButton>
           ))}
         </TabsContainer>
@@ -221,3 +211,4 @@ const SolutionsTabs = () => {
 };
 
 export default SolutionsTabs;
+

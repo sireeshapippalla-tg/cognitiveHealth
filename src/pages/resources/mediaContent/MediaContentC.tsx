@@ -1,10 +1,19 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
 import {
   SectionContent,
   OutcomeList,
   ExternalLinkButton,
-} from "../BlogDetailPage.styles";
+  MarginContainer,
+  SectionContentWithMargin,
+} from "../BlogDetailPage.style";
+import {
+  QuoteBoxGreen,
+  QuoteTitleBlue,
+  BigQuoteMark,
+  VideoEmbedContainer,
+  AudioEmbedContainer,
+  OutcomeListDecimal,
+} from "../BlogDetailSpecial.style";
 import type { MediaContentProps } from "./MediaContentA";
 
 export const MediaContent7: React.FC<MediaContentProps> = () => (
@@ -18,43 +27,16 @@ export const MediaContent7: React.FC<MediaContentProps> = () => (
       in healthcare.
     </SectionContent>
 
-    <Box
-      sx={{
-        my: 4,
-        p: 4,
-        bgcolor: "#f8fafd",
-        borderRadius: "0 12px 12px 0",
-        borderLeft: "6px solid #4caf50",
-        position: "relative",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      <Typography
-        variant="h6"
-        sx={{ color: "#0066cc", fontWeight: 600, zIndex: 1 }}
-      >
+    <QuoteBoxGreen>
+      <QuoteTitleBlue variant="h6">
         IPA in Healthcare: Our Year to Catch Up
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: "120px",
-          fontWeight: 900,
-          color: "#e2edf8",
-          position: "absolute",
-          right: "20px",
-          top: "-20px",
-          lineHeight: 1,
-          userSelect: "none",
-        }}
-      >
+      </QuoteTitleBlue>
+      <BigQuoteMark>
         ”
-      </Typography>
-    </Box>
+      </BigQuoteMark>
+    </QuoteBoxGreen>
 
-    <Box sx={{ my: 4 }}>
+    <MarginContainer>
       <ExternalLinkButton
         href="https://www.healthitanswers.net/ipa-in-healthcare-our-year-to-catch-up/"
         target="_blank"
@@ -62,7 +44,7 @@ export const MediaContent7: React.FC<MediaContentProps> = () => (
       >
         Read Full Article on Health IT Answers
       </ExternalLinkButton>
-    </Box>
+    </MarginContainer>
   </>
 );
 
@@ -79,17 +61,7 @@ export const MediaContent8: React.FC<MediaContentProps> = () => (
       Pavani Munjulri, Co-Founder and COO, Cognitive Health IT
     </SectionContent>
 
-    <Box
-      sx={{
-        my: 4,
-        position: "relative",
-        paddingTop: "56.25%",
-        width: "100%",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-        borderRadius: "12px",
-        overflow: "hidden",
-      }}
-    >
+    <VideoEmbedContainer>
       <iframe
         src="https://fast.wistia.net/embed/iframe/3v0t6acnfs?videoFoam=true"
         title="The Need for Intelligent Process Automation in the Revenue Cycle"
@@ -103,7 +75,7 @@ export const MediaContent8: React.FC<MediaContentProps> = () => (
           border: "none",
         }}
       />
-    </Box>
+    </VideoEmbedContainer>
   </>
 );
 
@@ -119,16 +91,7 @@ export const MediaContent9: React.FC<MediaContentProps> = () => (
       provide here;
     </SectionContent>
 
-    <Box
-      sx={{
-        my: 4,
-        width: "100%",
-        height: "166px",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-        borderRadius: "12px",
-        overflow: "hidden",
-      }}
-    >
+    <AudioEmbedContainer>
       <iframe
         width="100%"
         height="166"
@@ -137,9 +100,9 @@ export const MediaContent9: React.FC<MediaContentProps> = () => (
         allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/hcnradio/guest-pavani-munjuluri&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
       />
-    </Box>
+    </AudioEmbedContainer>
 
-    <Box sx={{ my: 4 }}>
+    <MarginContainer>
       <ExternalLinkButton
         href="https://soundcloud.com/hcnradio/guest-pavani-munjuluri"
         target="_blank"
@@ -147,7 +110,7 @@ export const MediaContent9: React.FC<MediaContentProps> = () => (
       >
         Listen on SoundCloud
       </ExternalLinkButton>
-    </Box>
+    </MarginContainer>
   </>
 );
 
@@ -195,21 +158,21 @@ export const MediaContent10: React.FC<MediaContentProps> = () => (
       solutions, encouraging healthcare leaders to:
     </SectionContent>
 
-    <OutcomeList sx={{ listStyleType: "decimal", pl: 4 }}>
+    <OutcomeListDecimal>
       <li>Automate repetitive tasks to achieve the greatest impact.</li>
       <li>Embrace digital employees as part of the team.</li>
       <li>
         Take an enterprise view and leverage the IPA platform across
         departments.
       </li>
-    </OutcomeList>
+    </OutcomeListDecimal>
 
-    <SectionContent sx={{ mt: 4 }}>
+    <SectionContentWithMargin $mt={4}>
       Read the full article, including five additional IPA implementation best
       practices, here:
-    </SectionContent>
+    </SectionContentWithMargin>
 
-    <Box sx={{ my: 4 }}>
+    <MarginContainer>
       <ExternalLinkButton
         href="https://www.healthcareittoday.com/2020/08/27/when-is-ipa-intelligent-process-automation-right-for-you-best-practices-to-scale-and-implement-today/"
         target="_blank"
@@ -218,6 +181,6 @@ export const MediaContent10: React.FC<MediaContentProps> = () => (
         When is IPA (Intelligent Process Automation) Right for You? Best
         Practices to Scale and Implement Today
       </ExternalLinkButton>
-    </Box>
+    </MarginContainer>
   </>
 );

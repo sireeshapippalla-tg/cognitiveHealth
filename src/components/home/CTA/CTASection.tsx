@@ -13,7 +13,7 @@ import {
   StyledContainer,
   Subtitle,
   Title,
-} from "./CallToActionSection.styles";
+} from "./CallToActionSection.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 const CTASection = () => {

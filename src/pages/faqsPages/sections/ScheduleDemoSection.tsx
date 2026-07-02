@@ -1,8 +1,19 @@
 import React from "react";
-import { Box, Typography, Container, Grid, Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import { motion } from "framer-motion";
 
 import Logo_Neuron from "../../../assets/seo/Logo-Neuron.webp";
+
+import {
+  StyledSection,
+  StyledDemoContainer,
+  StyledTitle,
+  StyledParagraph,
+  StyledDemoButtonGroup,
+  StyledDemoButton,
+  ImageContainer,
+  LogoNeuron,
+} from "./sections.style";
 
 interface ScheduleDemoSectionProps {
   heroButtonUrl: string;
@@ -14,22 +25,8 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
   scheduleDemoContent,
 }) => {
   return (
-    <Box
-      sx={{
-        py: { xs: 6, md: 8 },
-        bgcolor: "var(--color-bg-lite, #f9fafb)",
-      }}
-    >
-      <Container
-        maxWidth="lg"
-        sx={{
-          bgcolor: "var(--color-bg-white, #ffffff)",
-          p: { xs: 4, md: 6 },
-          borderRadius: 4,
-          border: "1px solid var(--color-border, #e5e7eb)",
-          boxShadow: "0 10px 40px rgba(0,0,0,0.03)",
-        }}
-      >
+    <StyledSection $bgColor="var(--color-bg-lite, #f9fafb)">
+      <StyledDemoContainer maxWidth="lg">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -41,28 +38,16 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
             <Grid size={{ xs: 12, md: 6 }}>
               {scheduleDemoContent || (
                 <>
-                  <Typography
+                  <StyledTitle
                     variant="h3"
                     component="h2"
-                    fontWeight={700}
-                    color="var(--color-text-dark, #1f2937)"
-                    sx={{
-                      mb: 3,
-                      mt: 4,
-                      fontSize: { xs: "1.8rem", md: "2.4rem" },
-                    }}
                   >
                     Schedule a FREE Demo Today!
-                  </Typography>
+                  </StyledTitle>
 
-                  <Typography
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     In the dynamic world of healthcare, automating critical
                     processes such as eligibility verification and denial
@@ -74,136 +59,79 @@ export const ScheduleDemoSection: React.FC<ScheduleDemoSectionProps> = ({
                     automation, healthcare organizations can significantly
                     reduce administrative burdens, enhance cash flow, and
                     improve overall performance.
-                  </Typography>
+                  </StyledParagraph>
 
-                  <Typography
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     Discover how CognitiveHealth can revolutionize your revenue
                     cycle management. Schedule a free demo today to see our
                     innovative solutions in action and learn how they can
                     benefit your specialty practice.
-                  </Typography>
-                  <Typography
+                  </StyledParagraph>
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     CognitiveHealth's team has extensive experience managing
                     Healthcare RCM processes for small, medium, and large
                     healthcare providers and systems. The team includes Al &
                     GenAI Architects & developers, Healthcare Security and
                     Privacy experts, and Healthcare Revenue Cycle SME's.
-                  </Typography>
-                  <Typography
+                  </StyledParagraph>
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     This experienced team of CognitiveHealth has partnered with
                     recognized health systems to build iCAN™ - Network of Al
                     Agents.
-                  </Typography>
-                  <Typography
+                  </StyledParagraph>
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     iCANTM platform is purpose-built for healthcare.
-                  </Typography>
+                  </StyledParagraph>
 
-                  <Typography
+                  <StyledParagraph
                     variant="body1"
                     paragraph
-                    color="text.secondary"
-                    sx={{
-                      fontSize: "1.05rem",
-                      lineHeight: 1.8,
-                    }}
                   >
                     We understand your concerns about privacy and security. At
                     CognitiveHealth, our infrastructure meets the highest
                     standards, and we actively follow the latest Al trust and
                     risk guidelines to ensure your safety.
-                  </Typography>
+                  </StyledParagraph>
                 </>
               )}
 
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 2,
-                  mt: 4,
-                  mb: 2,
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                }}
-              >
-                <Button
+              <StyledDemoButtonGroup>
+                <StyledDemoButton
                   variant="contained"
                   color="primary"
                   href={heroButtonUrl}
-                  sx={{
-                    fontWeight: 600,
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 2,
-                    textTransform: "none",
-                    boxShadow: "0 4px 14px rgba(0, 102, 204, 0.3)",
-                  }}
                 >
                   Schedule Free Demo
-                </Button>
-              </Box>
+                </StyledDemoButton>
+              </StyledDemoButtonGroup>
             </Grid>
 
             {/* Right Image */}
             <Grid size={{ xs: 12, md: 6 }}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
-                }}
-              >
-                <Box
+              <ImageContainer>
+                <LogoNeuron
                   component="img"
                   src={Logo_Neuron}
                   alt="Schedule Demo"
-                  sx={{
-                    width: {
-                      xs: "120px",
-                      sm: "150px",
-                      md: "240px",
-                    },
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
                 />
-              </Box>
+              </ImageContainer>
             </Grid>
           </Grid>
         </motion.div>
-      </Container>
-    </Box>
+      </StyledDemoContainer>
+    </StyledSection>
   );
 };
+

@@ -33,11 +33,29 @@ export const BackgroundShapes = styled(Box)({
   pointerEvents: "none",
 });
 
-export const Shape = motion.create(
+export const ShapeOne = motion.create(
   styled(Box)({
     position: "absolute",
     borderRadius: "50%",
     filter: "blur(60px)",
+    top: "-10%",
+    left: "-10%",
+    width: "40%",
+    height: "60%",
+    background: "radial-gradient(circle, rgba(235, 123, 51, 0.15) 0%, transparent 70%)",
+  })
+);
+
+export const ShapeTwo = motion.create(
+  styled(Box)({
+    position: "absolute",
+    borderRadius: "50%",
+    filter: "blur(60px)",
+    bottom: "-20%",
+    right: "-10%",
+    width: "50%",
+    height: "70%",
+    background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
   })
 );
 
@@ -118,6 +136,10 @@ export const SearchWrapper = styled(Box)(({ theme }) => ({
       "0 25px 30px -5px rgba(0, 0, 0, 0.08), 0 15px 15px -5px rgba(0, 0, 0, 0.04)",
     transform: "translateY(-2px)",
     borderColor: "var(--color-primary)",
+  },
+  "& svg": {
+    color: "#94a3b8",
+    marginLeft: theme.spacing(1),
   },
   [theme.breakpoints.down("sm")]: {
     padding: "4px 4px 4px 10px",

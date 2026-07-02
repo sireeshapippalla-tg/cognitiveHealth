@@ -3,7 +3,7 @@
 import paymentPostingImage from "../../../assets/heroBannerImages/Lockbox Management.webp";
 import SplitSection from "../../ui/SplitSection/SplitSection";
 import { useNavigate } from "react-router-dom";
-import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { Highlight } from "../../ui/SplitSection/SplitSection.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 const SolutionsHeroSection = () => {

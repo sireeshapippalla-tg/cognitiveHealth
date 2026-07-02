@@ -6,12 +6,13 @@ import {
   BlogDescription,
   Author,
   SectionTitle,
+  SectionTitleSmall,
   SectionContent,
   OutcomeList,
   InlineImageContainer,
   InlineImage,
   ImageCaption,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailPage.style";
 import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {
@@ -168,9 +169,9 @@ export const BlogContent2: React.FC<BlogContentProps> = ({ blog }) => (
       </ImageCaption>
     </InlineImageContainer>
 
-    <SectionTitle sx={{ fontSize: "22px", marginTop: "32px" }}>
+    <SectionTitleSmall>
       Dataset
-    </SectionTitle>
+    </SectionTitleSmall>
     <SectionContent>
       This is the most important element we need to gather data for training the
       classifier. The dataset needs to contain enough documents or examples for

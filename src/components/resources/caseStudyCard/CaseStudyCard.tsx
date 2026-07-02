@@ -12,7 +12,7 @@ import {
   CardTitle,
   CardDescription,
   ReadMoreLink,
-} from "./CaseStudyCard.styles";
+} from "./CaseStudyCard.style";
 
 interface CaseStudyCardProps {
   image: string;
@@ -57,7 +57,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
 
         <ReadMoreLink to={link}>
           Read Case Study
-          <ArrowForwardIcon sx={{ fontSize: "18px" }} />
+          <ArrowForwardIcon />
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

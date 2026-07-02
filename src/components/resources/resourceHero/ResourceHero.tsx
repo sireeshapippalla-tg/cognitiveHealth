@@ -11,9 +11,10 @@ import {
   StyledInput,
   SearchButton,
   BackgroundShapes,
-  Shape,
+  ShapeOne,
+  ShapeTwo,
   Description,
-} from "./ResourceHero.styles";
+} from "./ResourceHero.style";
 
 interface ResourceHeroProps {
   searchQuery: string;
@@ -23,37 +24,21 @@ interface ResourceHeroProps {
 const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
   <Hero>
     <BackgroundShapes>
-      <Shape
+      <ShapeOne
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
           rotate: [0, 90, 0],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        sx={{
-          top: "-10%",
-          left: "-10%",
-          width: "40%",
-          height: "60%",
-          background:
-            "radial-gradient(circle, rgba(235, 123, 51, 0.15) 0%, transparent 70%)",
-        }}
       />
-      <Shape
+      <ShapeTwo
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.2, 0.4, 0.2],
           rotate: [0, -90, 0],
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-        sx={{
-          bottom: "-20%",
-          right: "-10%",
-          width: "50%",
-          height: "70%",
-          background:
-            "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
-        }}
       />
     </BackgroundShapes>
 
@@ -76,7 +61,7 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <SearchWrapper>
-          <SearchIcon sx={{ color: "#94a3b8", ml: 1 }} />
+          <SearchIcon />
           <StyledInput
             placeholder="Search resources..."
             inputProps={{ "aria-label": "search resources" }}
@@ -95,3 +80,4 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
 );
 
 export default ResourceHero;
+

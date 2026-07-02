@@ -48,6 +48,7 @@ export const Pill = styled(Box, {
   "& img": {
     display: "block",
     objectFit: "contain",
+    marginRight: "8px",
   },
 }));
 

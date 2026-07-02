@@ -1,6 +1,12 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
+
+export const StyledContainer = styled(Container)({
+  position: "relative",
+  zIndex: 1,
+  textAlign: "center",
+});
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(5),

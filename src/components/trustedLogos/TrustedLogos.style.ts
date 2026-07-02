@@ -123,7 +123,7 @@ export const TitleMotionWrapper = styled(motion.div)(() => ({
   marginBottom: "20px",
 }));
 
-/* 🔥 Title Text (replaces Typography sx) */
+
 export const TitleText = styled(Typography)(({ theme }) => ({
   fontSize: "1rem",
   letterSpacing: "1px",
@@ -137,7 +137,6 @@ export const TitleText = styled(Typography)(({ theme }) => ({
   padding: "0px 20px",
 }));
 
-/* 🔥 Logo Card (replaces Box sx EXACTLY) */
 export const LogoCard = styled(Box)(() => ({
   borderRadius: "12px",
   padding: "10px 18px",

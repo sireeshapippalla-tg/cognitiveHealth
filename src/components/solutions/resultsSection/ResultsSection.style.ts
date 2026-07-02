@@ -2,11 +2,10 @@ import { styled } from "@mui/material/styles";
 import {
   Box,
   Button,
-  DialogActions,
-  DialogTitle,
   Stack,
   Typography,
   Container,
+  Grid,
 } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -38,6 +37,12 @@ export const StyledContainer = styled(Container)(() => ({
   position: "relative",
   zIndex: 1,
 }));
+
+export const StatGridItem = styled(Grid)({
+  display: "flex",
+  alignItems: "stretch",
+});
+
 export const Header = styled(Box)(() => ({
   textAlign: "center",
   marginBottom: "80px",
@@ -145,10 +150,15 @@ export const FooterText = styled(Typography)(() => ({
   fontSize: "16px",
 }));
 
+export const HighlightText = styled("span")({
+  color: "var(--color-gray-900)",
+});
+
 export const CtaActions = styled(Stack)({
   justifyContent: "center",
   marginTop: "32px",
 });
+
 export const PrimaryButtonStyles = {
   backgroundColor: "var(--color-primary)",
   padding: "12px 20px",
@@ -159,19 +169,6 @@ export const PrimaryButtonStyles = {
     backgroundColor: "var(--color-primary-dark)",
   },
 };
-export const StyledDialogTitle = styled(DialogTitle)(() => ({
-  backgroundColor: "var(--color-text-blue)",
-  color: "var(--color-white)",
-  fontWeight: 600,
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "16px 24px",
-}));
-
-export const StyledDialogActions = styled(DialogActions)(() => ({
-  padding: "16px 24px",
-}));
 
 export const PrimaryButton = styled(Button)(() => ({
   padding: "12px 24px",
@@ -182,6 +179,9 @@ export const PrimaryButton = styled(Button)(() => ({
   textTransform: "none",
   boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
   color: "var(--color-white)",
+  "& svg": {
+    fontSize: "14px",
+  },
   "&:hover": {
     background: "var(--color-primary-dark)",
     color: "var(--color-text-dark)",
@@ -198,7 +198,9 @@ export const OutlineButton = styled(Button)(() => ({
   textTransform: "none",
   background: "var(--color-white)",
   border: "1px solid rgba(0,0,0,0.1)",
-
+  "& svg": {
+    fontSize: "14px",
+  },
   "&:hover": {
     borderColor: "var(--color-primary)",
     color: "var(--color-primary)",

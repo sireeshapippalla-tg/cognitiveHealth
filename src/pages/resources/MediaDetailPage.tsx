@@ -10,7 +10,7 @@ import {
   Breadcrumb,
   BreadcrumbLink,
   Author,
-} from "./BlogDetailPage.styles";
+} from "./BlogDetailPage.style";
 import SEO from "../../components/SEO";
 import { mediaData } from "../../data/mediaData";
 import type { Media } from "../../data/mediaData";
@@ -130,11 +130,7 @@ const MediaDetailPage: React.FC = () => {
 
           {renderMediaContent(media)}
 
-          {/* {media.id !== "1" && media.id !== "2" && media.id !== "3" && (
-            <SectionContent sx={{ mt: 6 }}>
-              To learn more about how CognitiveHealth Technologies can transform your organization's revenue cycle workflows, explore our comprehensive AI platform capabilities or request a personalized demonstration.
-            </SectionContent>
-          )} */}
+
         </BlogContent>
         <CTASection />
       </motion.div>

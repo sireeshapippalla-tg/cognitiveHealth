@@ -1,9 +1,10 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { CircularProgress, Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useHubSpotTracking from "./hooks/useHubSpotTracking";
+import { LoadingWrapper, LoadingSpinner } from "./App.style";
 
 import { ROUTES } from "./routes/RoutePaths";
 
@@ -89,27 +90,15 @@ const App = () => {
       <ToastContainer position="top-right" autoClose={3000} />
       <Suspense
         fallback={
-          <Box
-            style={{
-              height: "100vh",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              background: "rgba(248, 250, 252, 0.6)",
-              backdropFilter: "blur(12px)",
-              gap: "16px",
-            }}
-          >
-            <CircularProgress
+          <LoadingWrapper>
+            <LoadingSpinner
               size={48}
               thickness={4}
-              sx={{ color: "var(--color-primary)" }}
             />
             <Typography variant="h6" fontWeight={600} color="#1e293b">
               Loading CognitiveHealth...
             </Typography>
-          </Box>
+          </LoadingWrapper>
         }
       >
         <Routes>

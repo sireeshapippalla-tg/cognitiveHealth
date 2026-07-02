@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SearchIcon from "@mui/icons-material/Search";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -13,26 +12,29 @@ import {
   PageBackground,
   ContentWrapper,
   ContentInner,
-  SectionBlock,
-  SectionTitle,
-  Paragraph,
-  ListParagraph,
-  // UpdatedBadge,
   SearchContainer,
   SearchInputWrapper,
   StyledInput,
+  CtaSection,
+  CtaTitle,
+  CtaText,
+  CtaButton,
+  UpdatedBadge,
+  FaqWrapper,
+} from "../faq/Faq.style";
+import {
+  SectionBlock,
+  SectionTitle,
+  ListParagraph,
   AccordionContainer,
   AccordionItem,
   AccordionHeader,
   AccordionContent,
   IconWrapper,
   NoResults,
-  CtaSection,
-  CtaTitle,
-  CtaText,
-  CtaButton,
-  UpdatedBadge,
-} from "../faq/Faq.styles";
+  StyledSearchIcon,
+  TermsParagraph,
+} from "../faq/FaqAccordion.style";
 type TermBlock =
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
@@ -198,7 +200,7 @@ const TermsPage = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <FaqWrapper>
       <SEO
         title="Terms of Service"
         description="Terms of Service governing your use of the CognitiveHealth platform and services."
@@ -228,9 +230,7 @@ const TermsPage = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
             <SearchInputWrapper>
-              <SearchIcon
-                sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }}
-              />
+              <StyledSearchIcon />
               <StyledInput
                 placeholder="Search terms topics..."
                 value={searchQuery}
@@ -293,9 +293,9 @@ const TermsPage = () => {
                                 (block: TermBlock, bIndex: number) => {
                                   if (block.type === "paragraph") {
                                     return (
-                                      <Paragraph key={bIndex} sx={{ mb: 2 }}>
+                                      <TermsParagraph key={bIndex}>
                                         {block.text}
-                                      </Paragraph>
+                                      </TermsParagraph>
                                     );
                                   }
                                   if (block.type === "list") {
@@ -343,7 +343,7 @@ const TermsPage = () => {
           </ContentInner>
         </ContentWrapper>
       </PageBackground>
-    </Box>
+    </FaqWrapper>
   );
 };
 

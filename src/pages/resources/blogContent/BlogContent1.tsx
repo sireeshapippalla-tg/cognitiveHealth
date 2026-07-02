@@ -8,12 +8,14 @@ import {
   SectionTitle,
   SectionContent,
   OutcomeList,
+  Highlight,
+} from "../BlogDetailPage.style";
+import {
   Table,
   TableHeader,
   TableRow,
   TableCell,
-  Highlight,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailSpecial.style";
 import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {

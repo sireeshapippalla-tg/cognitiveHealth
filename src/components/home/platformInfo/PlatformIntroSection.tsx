@@ -10,7 +10,7 @@ import {
   Break,
   NormalText,
   Subtitle,
-} from "./PlatformIntroSection.styles";
+} from "./PlatformIntroSection.style";
 
 const PlatformIntroSection = () => {
   return (

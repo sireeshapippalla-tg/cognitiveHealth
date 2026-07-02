@@ -1,4 +1,15 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography, styled, Container } from "@mui/material";
+
+export const StyledContainer = styled(Container)({
+  position: "relative",
+  zIndex: 1,
+});
+
+export const FeatureListWrapper = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(6),
+}));
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(8),
@@ -69,9 +80,15 @@ export const IconContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   color: "var(--color-primary)",
   boxShadow: "0 10px 20px rgba(0,0,0,0.02)",
+  "& svg": {
+    fontSize: 40,
+  },
   [theme.breakpoints.down("md")]: {
     width: 50,
     height: 50,
+    "& svg": {
+      fontSize: 28,
+    },
   },
 }));
 

@@ -188,3 +188,8 @@ export const StageDescription = styled(Typography)({
 export const HighlightText = styled("span")({
   color: "var(--color-text-blue)",
 });
+
+export const StageInnerBox = styled(Box)({
+  position: "relative",
+  zIndex: 1,
+});

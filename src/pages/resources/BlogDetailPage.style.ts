@@ -126,39 +126,6 @@ export const OutcomeList = styled("ul")({
   },
 });
 
-export const Table = styled("table")({
-  width: "100%",
-  borderCollapse: "collapse",
-  marginBottom: "32px",
-  backgroundColor: "#fff",
-});
-
-export const TableHeader = styled("th")({
-  backgroundColor: "#f5f5f5",
-  padding: "16px",
-  textAlign: "left",
-  fontWeight: 600,
-  fontSize: "14px",
-  color: "var(--color-text-primary)",
-  borderBottom: "2px solid #e0e0e0",
-});
-
-export const TableRow = styled("tr")({
-  "&:nth-of-type(even)": {
-    backgroundColor: "#f9f9f9",
-  },
-  "&:hover": {
-    backgroundColor: "#f0f0f0",
-  },
-});
-
-export const TableCell = styled("td")({
-  padding: "16px",
-  borderBottom: "1px solid #e0e0e0",
-  fontSize: "14px",
-  color: "var(--color-text-primary)",
-});
-
 export const InlineImageContainer = styled(Box)({
   margin: "32px 0",
   textAlign: "center",
@@ -216,4 +183,58 @@ export const StyledExternalLinkText = styled("a")({
     color: "#004499",
     textDecoration: "underline",
   },
+});
+
+export const SectionTitleSmall = styled(SectionTitle)({
+  fontSize: "22px",
+  marginTop: "32px",
+  "@media (max-width: 768px)": {
+    fontSize: "18px",
+  },
+});
+
+export const SectionContentWithMargin = styled(SectionContent)<{ $mt?: number; $mb?: number }>(({ $mt, $mb }) => ({
+  marginTop: $mt !== undefined ? `${$mt * 8}px` : undefined,
+  marginBottom: $mb !== undefined ? `${$mb * 8}px` : undefined,
+}));
+
+export const ReadMoreWrapper = styled(Box)({
+  marginTop: "16px",
+  marginBottom: "32px",
+});
+
+export const CenteredImageContainer = styled(Box)({
+  marginTop: "32px",
+  marginBottom: "32px",
+  display: "flex",
+  justifyContent: "center",
+});
+
+export const ThreatImage = styled("img")({
+  maxWidth: "100%",
+  height: "auto",
+  borderRadius: "8px",
+  boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+});
+
+export const AuthorImage = styled("img")({
+  maxWidth: "200px",
+  borderRadius: "50%",
+});
+
+export const ItalicInfoText = styled(SectionContent)({
+  fontStyle: "italic",
+  color: "#666",
+  marginTop: "16px",
+});
+
+export const ItalicSourceText = styled(SectionContent)({
+  fontStyle: "italic",
+  color: "#666",
+  marginTop: "32px",
+});
+
+export const MarginContainer = styled(Box)({
+  marginTop: "32px",
+  marginBottom: "32px",
 });

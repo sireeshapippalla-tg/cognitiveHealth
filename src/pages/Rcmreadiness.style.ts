@@ -7,6 +7,10 @@ import {
   DialogTitle,
   DialogActions,
   Button,
+  Dialog,
+  IconButton,
+  TextField,
+  LinearProgress,
 } from "@mui/material";
 
 import FolderIcon from "@mui/icons-material/Folder";
@@ -32,10 +36,12 @@ export const Container = styled(Box)(({ theme }) => ({
 export const HeaderWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 1200,
   margin: "0 auto",
-  // textAlign: "center",
-  // padding: "40px 16px",
-  // [theme.breakpoints.up("md")]: { padding: "34px 16px" },
-  [theme.breakpoints.down("md")]: { padding: "20px" },
+  paddingLeft: "24px",
+  paddingRight: "24px",
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: "20px",
+    paddingRight: "20px",
+  },
 }));
 export const ResultsWrapper = styled(Box)(({ theme }) => ({
   maxWidth: 1000,
@@ -91,20 +97,24 @@ export const SectionTitle = styled(Typography)({
 
 export const StyledCheckbox = styled(Checkbox)({
   color: "-var(--color-primary)",
-  padding: 4,
-  marginTop: 2,
+  padding: 0,
+  marginTop: "3px",
+  marginRight: "12px",
+  flexShrink: 0,
   "&.Mui-checked": { color: "-var(--color-primary)" },
 });
 
 /* RESULT */
 export const ResultPaper = styled(Paper)(({ theme }) => ({
-  // marginTop: 48,
-  padding: 24,
+  padding: 48,
   borderRadius: 12,
   textAlign: "center",
   background: "#eff6ff",
   border: "1px solid #bfdbfe",
-  [theme.breakpoints.up("md")]: { padding: 40 },
+  maxWidth: 700,
+  width: "100%",
+  margin: "0 auto",
+  [theme.breakpoints.down("md")]: { padding: 24 },
 }));
 
 /* FOOTER */
@@ -165,7 +175,7 @@ export const InsightsStyledIcon = styled(InsightsIcon)({
 
 export const SuccessStyledIcon = styled(CheckCircleIcon)({
   color: "var(--color-green)",
-  fontSize: 48,
+  fontSize: 60,
 });
 export const StyledDialogTitle = styled(DialogTitle)(() => ({
   backgroundColor: "var(--color-text-blue)",
@@ -191,13 +201,18 @@ export const PrimaryButton = styled(Button)(() => ({
   },
 }));
 
-export const HeroSection = styled(Box)({
+export const HeroSection = styled(Box)(({ theme }) => ({
   background: "var(--color-text-blue)",
-  padding: "70px 20px",
+  padding: "80px 20px",
   textAlign: "center",
   color: "var(--color-white)",
   marginBottom: "40px",
-});
+  marginTop: "56px",
+  [theme.breakpoints.up("md")]: {
+    marginTop: "64px",
+    padding: "90px 20px",
+  },
+}));
 
 export const HeroTitle = styled(Typography)({
   fontSize: "40px",
@@ -208,4 +223,135 @@ export const HeroSubtitle = styled(Typography)({
   marginTop: "16px",
   fontSize: "18px",
   opacity: 0.9,
+});
+
+export const StyledDialog = styled(Dialog)({
+  "& .MuiDialog-paper": {
+    backgroundColor: "transparent",
+    boxShadow: "none",
+    overflow: "visible",
+    outline: "none",
+  },
+});
+
+export const ModalBox = styled(Box)(({ theme }) => ({
+  position: "relative",
+  background: "rgba(255, 255, 255, 0.98)",
+  backdropFilter: "blur(20px)",
+  borderRadius: "32px",
+  padding: theme.spacing(4),
+  border: "1px solid rgba(255, 255, 255, 0.3)",
+  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+  overflow: "visible",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    inset: -2,
+    zIndex: -1,
+    background:
+      "linear-gradient(45deg, var(--color-text-blue), var(--color-green), var(--color-primary), var(--color-text-blue))",
+    borderRadius: "34px",
+    opacity: 0.4,
+    filter: "blur(8px)",
+  },
+}));
+
+export const CloseBtnContainer = styled(Box)({
+  position: "absolute",
+  top: -16,
+  right: -16,
+  zIndex: 10,
+});
+
+export const CloseBtn = styled(IconButton)({
+  width: 40,
+  height: 40,
+  background: "var(--color-white)",
+  color: "#1e293b",
+  boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
+  border: "2px solid var(--color-white)",
+  "&:hover": {
+    color: "var(--color-primary-dark)",
+  },
+});
+
+export const HeaderBox = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(3),
+  textAlign: "center",
+}));
+
+export const SubtitleText = styled(Typography)({
+  color: "#64748b",
+});
+
+export const EmailTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    borderRadius: "16px",
+    backgroundColor: "rgba(248, 250, 252, 0.8)",
+  },
+});
+
+export const ActionsBox = styled(Box)(({ theme }) => ({
+  marginTop: theme.spacing(4),
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(2),
+}));
+
+export const DialogPrimaryButton = styled(PrimaryButton)(({ theme }) => ({
+  paddingTop: theme.spacing(1.8),
+  paddingBottom: theme.spacing(1.8),
+  borderRadius: "16px",
+  fontWeight: 800,
+}));
+
+export const PreviewButton = styled(Button)({
+  textTransform: "none",
+  color: "#64748b",
+  fontWeight: 600,
+});
+
+export const StickyProgressBarBox = styled(Box)(({ theme }) => ({
+  position: "sticky",
+  top: 64,
+  zIndex: 1000,
+  background: "rgba(255, 255, 255, 0.95)",
+  backdropFilter: "blur(12px)",
+  paddingTop: "16px",
+  paddingBottom: "16px",
+  paddingLeft: "20px",
+  paddingRight: "20px",
+  borderRadius: "16px",
+  marginBottom: "32px",
+  border: "1px solid rgba(229, 231, 235, 0.8)",
+  boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)",
+  [theme.breakpoints.down("md")]: {
+    top: 56,
+    borderRadius: "12px",
+    paddingLeft: "12px",
+    paddingRight: "12px",
+  },
+}));
+
+export const StyledLinearProgress = styled(LinearProgress)({
+  height: 12,
+  borderRadius: 6,
+  backgroundColor: "#f3f4f6",
+  boxShadow: "inset 0 1px 2px rgba(0, 0, 0, 0.05)",
+  "& .MuiLinearProgress-bar": {
+    borderRadius: 6,
+    background: "linear-gradient(90deg, var(--color-text-blue) 0%, var(--color-green) 100%)",
+    transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+  },
+});
+
+export const CheckboxRowBox = styled(Box)({
+  display: "flex",
+  alignItems: "flex-start",
+});
+
+export const CheckboxLabelText = styled(Typography)({
+  flex: 1,
+  lineHeight: 1.6,
+  color: "#1f2937",
 });

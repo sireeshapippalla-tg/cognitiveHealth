@@ -2,7 +2,7 @@ import React from "react";
 import SplitSection from "../ui/SplitSection/SplitSection";
 import heroSectionImage from "../../assets/heroBannerImages/aboutusBannerImg.webp";
 import { useNavigate } from "react-router-dom";
-import { Highlight } from "../ui/SplitSection/SplitSection.styles";
+import { Highlight } from "../ui/SplitSection/SplitSection.style";
 import { ROUTES } from "../../routes/RoutePaths";
 
 const AboutUsHeroSection: React.FC = () => {

@@ -18,7 +18,7 @@ import {
   ContentCard,
   ItemTitle,
   ItemDescription,
-} from "./FeatureSection.styles";
+} from "./FeatureSection.style";
 
 interface FeatureItem {
   icon: ReactNode;

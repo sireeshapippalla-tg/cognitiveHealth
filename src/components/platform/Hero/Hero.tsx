@@ -3,7 +3,7 @@ import SplitSection from "../../ui/SplitSection/SplitSection";
 
 // import mainImg from "../../../assets/Main Image.svg";
 import mainImg from "../../../assets/heroBannerImages/Platform.webp";
-import { Highlight } from "../../ui/SplitSection/SplitSection.styles";
+import { Highlight } from "../../ui/SplitSection/SplitSection.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 
 const Hero = () => {

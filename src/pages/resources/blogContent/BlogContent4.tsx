@@ -7,11 +7,12 @@ import {
   Author,
   SectionTitle,
   SectionContent,
+  SectionContentWithMargin,
   OutcomeList,
   InlineImageContainer,
   InlineImage,
   StyledResourceLink,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailPage.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 import SevenReasons from "../../../assets/Blogs/seven-reasons-img-png.webp";
 import type { Blog } from "../../../data/blogData";
@@ -208,11 +209,11 @@ export const BlogContent4: React.FC<BlogContentProps> = ({ blog }) => (
       for additional staff.
     </SectionContent>
 
-    <SectionContent sx={{ mt: 4 }}>
+    <SectionContentWithMargin $mt={4}>
       Meet with our experts to learn more about iCAN™:{" "}
       <StyledResourceLink to={ROUTES.REQUEST_DEMO}>
         REQUEST A MEETING
       </StyledResourceLink>
-    </SectionContent>
+    </SectionContentWithMargin>
   </>
 );

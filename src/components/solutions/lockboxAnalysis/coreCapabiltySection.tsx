@@ -31,7 +31,7 @@ const capabilities: ExpandableItem[] = [
         ]}
       />
     ),
-    icon: <AutoAwesomeIcon sx={{ fontSize: 30 }} />,
+    icon: <AutoAwesomeIcon />,
     // icon: (
     //   <img width={48} height={48}
     //     src={Workbench}
@@ -54,7 +54,7 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: <img width={48} height={48} src={Zap} alt="Multi-Batch Processing Console" loading="lazy" />,
-    icon: <BoltIcon sx={{ fontSize: 30 }} />,
+    icon: <BoltIcon />,
   },
   {
     id: 3,
@@ -75,7 +75,7 @@ const capabilities: ExpandableItem[] = [
     //     alt="Intelligent Document Classification Engine"
     //   loading="lazy" />
     // ),
-    icon: <DescriptionIcon sx={{ fontSize: 30 }} />,
+    icon: <DescriptionIcon />,
   },
   {
     id: 4,
@@ -96,7 +96,7 @@ const capabilities: ExpandableItem[] = [
     //     alt="Bank Integration and Download Automation"
     //   loading="lazy" />
     // ),
-    icon: <AccountBalanceIcon sx={{ fontSize: 30 }} />,
+    icon: <AccountBalanceIcon />,
   },
   {
     id: 5,
@@ -112,7 +112,7 @@ const capabilities: ExpandableItem[] = [
       />
     ),
     // icon: <img width={48} height={48} src={Data} alt="Continuous Quality Assurance Module" loading="lazy" />,
-    icon: <VerifiedIcon sx={{ fontSize: 30 }} />,
+    icon: <VerifiedIcon />,
   },
 ];
 

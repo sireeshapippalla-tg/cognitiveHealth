@@ -120,6 +120,9 @@ export const ReadMoreLink = styled(Link)({
   textDecoration: "none",
   marginTop: "auto",
   transition: "all 0.3s ease",
+  "& svg": {
+    fontSize: "18px",
+  },
   "&:hover": {
     gap: "10px",
   },

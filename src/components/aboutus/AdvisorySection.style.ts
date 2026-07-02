@@ -1,5 +1,10 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
+
+export const StyledContainer = styled(Container)({
+  position: "relative",
+  zIndex: 1,
+});
 
 export const SectionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(12),

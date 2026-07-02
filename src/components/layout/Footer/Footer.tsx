@@ -26,7 +26,7 @@ import {
   ListItem,
   FooterDivider,
   Bottom,
-} from "./Footer.styles";
+} from "./Footer.style";
 
 /* ✅ NEW X (TWITTER) ICON */
 // const XIcon = (props: SvgIconProps) => (

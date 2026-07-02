@@ -7,7 +7,7 @@ import {
   BlogContent,
   Breadcrumb,
   BreadcrumbLink,
-} from "./BlogDetailPage.styles";
+} from "./BlogDetailPage.style";
 import SEO from "../../components/SEO";
 import { blogData } from "../../data/blogData";
 import CTASection from "../../components/home/CTA/CTASection";

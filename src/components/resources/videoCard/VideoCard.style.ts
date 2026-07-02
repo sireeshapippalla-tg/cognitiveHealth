@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import { Card, Box, Typography, Chip } from "@mui/material";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const StyledCard = motion.create(
@@ -15,26 +14,30 @@ export const StyledCard = motion.create(
     overflow: "hidden",
     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
     backgroundColor: "#FFFFFF",
-    position: "relative",
     "&:hover": {
       boxShadow:
         "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       transform: "translateY(-8px)",
       borderColor: "var(--color-primary)",
-      "& .read-more-link": {
-        color: "var(--color-primary-hover)",
-        gap: "8px",
-      },
     },
   }))
 );
 
 export const CardImageWrapper = styled(Box)({
   position: "relative",
-  paddingTop: "60%", // 5:3 aspect ratio
+  paddingTop: "60%",
   width: "100%",
   overflow: "hidden",
   background: "#f1f5f9",
+  cursor: "pointer",
+  "& iframe": {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    border: "none",
+  },
 });
 
 export const CardImage = styled("img")({
@@ -50,6 +53,32 @@ export const CardImage = styled("img")({
   },
 });
 
+export const PlayIconOverlay = styled(Box)({
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "60px",
+  height: "60px",
+  backgroundColor: "rgba(235, 123, 51, 0.9)",
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "var(--color-white)",
+  zIndex: 2,
+  boxShadow: "0 0 20px rgba(235, 123, 51, 0.4)",
+  transition: "all 0.3s ease",
+  cursor: "pointer",
+  "& svg": {
+    fontSize: "36px",
+  },
+  ".MuiCard-root:hover &": {
+    transform: "translate(-50%, -50%) scale(1.1)",
+    backgroundColor: "var(--color-primary-hover)",
+  },
+});
+
 export const CategoryChip = styled(Chip)({
   position: "absolute",
   top: "16px",
@@ -60,12 +89,21 @@ export const CategoryChip = styled(Chip)({
   fontSize: "12px",
   height: "28px",
   backdropFilter: "blur(8px)",
-  boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
-  border: "1px solid rgba(255, 255, 255, 0.5)",
   zIndex: 2,
-  "& .MuiChip-label": {
-    padding: "0 12px",
-  },
+});
+
+export const DurationBadge = styled(Box)({
+  position: "absolute",
+  bottom: "16px",
+  right: "16px",
+  backgroundColor: "rgba(15, 23, 42, 0.8)",
+  color: "var(--color-white)",
+  padding: "4px 10px",
+  borderRadius: "6px",
+  fontSize: "12px",
+  fontWeight: 600,
+  backdropFilter: "blur(4px)",
+  zIndex: 2,
 });
 
 export const CardContent = styled(Box)({
@@ -76,37 +114,12 @@ export const CardContent = styled(Box)({
   gap: "12px",
 });
 
-export const MetaInfo = styled(Box)(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "16px",
-  fontSize: "13px",
-  fontWeight: 500,
-  color: "#64748b",
-  marginBottom: "4px",
-  "& svg": {
-    fontSize: "16px",
-    color: "#94a3b8",
-  },
-  [theme.breakpoints.down("sm")]: {
-    flexWrap: "wrap",
-    gap: "8px",
-  },
-}));
-
-export const MetaItem = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  gap: "6px",
-});
-
 export const CardTitle = styled(Typography)({
   fontSize: "20px",
   fontWeight: 800,
   lineHeight: "1.4",
-  color: "#0f172a",
+  color: "var(--color-text-dark)",
   letterSpacing: "-0.02em",
-  transition: "color 0.3s ease",
   ".MuiCard-root:hover &": {
     color: "var(--color-primary)",
   },
@@ -115,21 +128,23 @@ export const CardTitle = styled(Typography)({
 export const CardDescription = styled(Typography)({
   fontSize: "15px",
   lineHeight: "1.6",
-  color: "#475569",
-  marginBottom: "20px",
-  flexGrow: 1,
+  color: "var(--color-gray-500)",
+  marginBottom: "16px",
 });
 
-export const ReadMoreLink = styled(Link)({
+export const ActionButton = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
   gap: "6px",
   fontSize: "15px",
   fontWeight: 700,
   color: "var(--color-primary)",
-  textDecoration: "none",
   marginTop: "auto",
+  cursor: "pointer",
   transition: "all 0.3s ease",
+  "& svg": {
+    fontSize: "18px",
+  },
   "&:hover": {
     gap: "10px",
   },

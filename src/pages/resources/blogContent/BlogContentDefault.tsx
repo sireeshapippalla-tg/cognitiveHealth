@@ -7,7 +7,7 @@ import {
   Author,
   SectionTitle,
   SectionContent,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailPage.style";
 import type { Blog } from "../../../data/blogData";
 
 export interface BlogContentProps {

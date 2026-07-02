@@ -8,7 +8,7 @@ import {
   TitleText,
   AnimatedLogoTrack,
   LogoCard,
-} from "./TrustedLogos.styles";
+} from "./TrustedLogos.style";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 

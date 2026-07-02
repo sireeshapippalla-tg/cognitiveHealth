@@ -33,7 +33,6 @@ export const SectionTitle = ({
             height={20}
             src={pillIcon}
             alt=""
-            style={{ marginRight: 8 }}
             loading="lazy"
           />
         )}
@@ -44,7 +43,6 @@ export const SectionTitle = ({
     <Title
       dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(title) }}
       textcolor={textColor}
-      // sx={{ marginBottom: subtitle ? "1px" : "20px" }}
     />
 
     {subtitle && (

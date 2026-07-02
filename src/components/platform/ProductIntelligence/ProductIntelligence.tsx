@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import Healthcare from "../../../assets/Platform/ProductIntellijence/Healthcare.svg";
 import Architecture from "../../../assets/Platform/ProductIntellijence/Architecture.svg";
@@ -15,7 +15,8 @@ import {
   CardTitle,
   CardDescription,
   HighlightText,
-} from "./ProductIntelligence.styles";
+  StyledContainer,
+} from "./ProductIntelligence.style";
 
 const productIntelligenceItems = [
   {
@@ -82,7 +83,7 @@ const ProductIntelligence = () => {
       {/* Soft background glow */}
       <BackgroundGlow />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <StyledContainer maxWidth="lg">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +129,7 @@ const ProductIntelligence = () => {
             </Grid>
           ))}
         </Grid>
-      </Container>
+      </StyledContainer>
     </SectionWrapper>
   );
 };

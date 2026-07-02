@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Collapse } from "@mui/material";
+import { Collapse } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
@@ -14,8 +14,9 @@ import {
   IconCircle,
   IconImage,
   RichContent,
+  TitleContainer,
 } from "./expandableCard.style";
-import { MotionContent } from "../SplitSection/SplitSection.styles";
+import { MotionContent } from "../SplitSection/SplitSection.style";
 
 export interface ExpandableItem {
   id: number;
@@ -57,12 +58,12 @@ const ExpandableCard: React.FC<Props> = ({ item, variant = "team" }) => {
           {isCapability ? item.icon : <IconImage src={item.image} />}
         </IconCircle>
 
-        <Box sx={{ flex: 1 }}>
+        <TitleContainer>
           <CardTitle open={open}>{item.title}</CardTitle>
           {item.subtitle && !isCapability && (
             <CardSubtitle>{item.subtitle}</CardSubtitle>
           )}
-        </Box>
+        </TitleContainer>
 
         {!isCapability && (
           <ExpandBtn open={open}>

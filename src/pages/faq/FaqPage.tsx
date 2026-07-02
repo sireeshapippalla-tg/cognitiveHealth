@@ -2,7 +2,6 @@ import DOMPurify from "dompurify";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchIcon from "@mui/icons-material/Search";
-import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../components/SEO";
 import {
@@ -13,26 +12,30 @@ import {
   PageBackground,
   ContentWrapper,
   ContentInner,
-  SectionBlock,
-  SectionTitle,
-  Paragraph,
-  ListParagraph,
-  // UpdatedBadge,
   SearchContainer,
   SearchInputWrapper,
   StyledInput,
-  AccordionContainer,
-  AccordionItem,
-  AccordionHeader,
-  AccordionContent,
-  NoResults,
   TabContainer,
   TabButton,
   CtaSection,
   CtaTitle,
   CtaText,
   CtaButton,
-} from "./Faq.styles";
+  FaqWrapper,
+} from "./Faq.style";
+import {
+  SectionBlock,
+  SectionTitle,
+  Paragraph,
+  ListParagraph,
+  AccordionContainer,
+  AccordionItem,
+  AccordionHeader,
+  AccordionContent,
+  NoResults,
+  CategoryBadge,
+  BlockHeading,
+} from "./FaqAccordion.style";
 import { ROUTES } from "../../routes";
 
 import { termsSections, type TermBlock } from "./FaqData";
@@ -80,17 +83,17 @@ const FaqPage = () => {
   const schemaOrgFaq = useMemo(() => {
     const mainEntity = termsSections.map((section) => {
       const answerText = section.blocks
-        .map((block) => {
-          if (block.type === "paragraph") return block.text;
-          if (block.type === "list")
-            return (
-              "<ul>" +
-              block.items.map((item: string) => `<li>${item}</li>`).join("") +
-              "</ul>"
-            );
-          return "";
-        })
-        .join(" ");
+          .map((block) => {
+            if (block.type === "paragraph") return block.text;
+            if (block.type === "list")
+              return (
+                  "<ul>" +
+                  block.items.map((item: string) => `<li>${item}</li>`).join("") +
+                  "</ul>"
+              );
+            return "";
+          })
+          .join(" ");
 
       return {
         "@type": "Question",
@@ -110,7 +113,7 @@ const FaqPage = () => {
   }, []);
 
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <FaqWrapper>
       <SEO
         title="Frequently Asked Questions"
         description="Everything you need to know about the iCAN™ ONE Platform and our AI-powered Revenue Cycle Solutions."
@@ -128,7 +131,6 @@ const FaqPage = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           >
-            {/* <UpdatedBadge>AI-POWERED FAQ</UpdatedBadge> */}
             <HeroTitle variant="h1">Frequently Asked Questions</HeroTitle>
             <HeroSubtitle>
               Everything you need to know about the iCAN™ ONE Platform and our
@@ -143,7 +145,7 @@ const FaqPage = () => {
           >
             <SearchInputWrapper>
               <SearchIcon
-                sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }}
+                style={{ color: "var(--color-text-muted)", marginRight: "8px", fontSize: 24 }}
               />
               <StyledInput
                 placeholder="Search for answers..."
@@ -196,25 +198,16 @@ const FaqPage = () => {
                       $expanded={expandedId === section.id}
                     >
                       <AccordionHeader>
-                        <Box>
+                        <ContentInner>
                           {searchQuery && (
-                            <Box
-                              sx={{
-                                fontSize: "12px",
-                                fontWeight: 600,
-                                color: "var(--color-primary-dark)",
-                                textTransform: "uppercase",
-                                letterSpacing: "0.5px",
-                                mb: 1,
-                              }}
-                            >
+                            <CategoryBadge>
                               {section.category}
-                            </Box>
+                            </CategoryBadge>
                           )}
                           <SectionTitle className="faq-title">
                             {section.title}
                           </SectionTitle>
-                        </Box>
+                        </ContentInner>
                       </AccordionHeader>
 
                       <AccordionContent>
@@ -223,26 +216,18 @@ const FaqPage = () => {
                             (block: TermBlock, bIndex: number) => {
                               if (block.type === "heading") {
                                 return (
-                                  <Typography
+                                  <BlockHeading
                                     key={bIndex}
                                     variant="h6"
-                                    sx={{
-                                      mt: 3,
-                                      mb: 2,
-                                      fontWeight: 500,
-                                      color: "var(--color-gray-900)",
-                                      fontSize: "18px",
-                                    }}
                                   >
                                     {block.text}
-                                  </Typography>
+                                  </BlockHeading>
                                 );
                               }
                               if (block.type === "paragraph") {
                                 return (
                                   <Paragraph
                                     key={bIndex}
-                                    sx={{ mb: 2 }}
                                     dangerouslySetInnerHTML={{
                                       __html: DOMPurify.sanitize(block.text),
                                     }}
@@ -269,7 +254,7 @@ const FaqPage = () => {
                               }
                               if (block.type === "link") {
                                 return (
-                                  <Paragraph key={bIndex} sx={{ mt: 2 }}>
+                                  <Paragraph key={bIndex}>
                                     <a href={block.url}>{block.text}</a>
                                   </Paragraph>
                                 );
@@ -311,7 +296,7 @@ const FaqPage = () => {
           </ContentInner>
         </ContentWrapper>
       </PageBackground>
-    </Box>
+    </FaqWrapper>
   );
 };
 

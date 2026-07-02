@@ -1,13 +1,16 @@
-import {
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import { ListItemText } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { getBaseUrl } from "../../utils/urlHelper";
 import { FaqPageLayout } from "./FaqPageLayout";
+import {
+  PageSubtitle,
+  PageTitle,
+  PageSectionHeading,
+  PageParagraph,
+  StyledList,
+  StyledListItem,
+  StyledListItemIcon,
+} from "./faqPages.style";
 
 const EligibilityVerificationFaqPage = () => {
   const baseUrl = getBaseUrl();
@@ -53,56 +56,38 @@ const EligibilityVerificationFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography
+          <PageSubtitle
             variant="subtitle2"
-            sx={{
-              mb: 1,
-              mt: 4,
-              fontSize: { xs: "0.85rem", md: "0.95rem" },
-              textTransform: "uppercase",
-              letterSpacing: "1.5px",
-              fontWeight: 600,
-              color: "primary.main",
-              display: "block",
-            }}
           >
             The future
-          </Typography>
-          <Typography
+          </PageSubtitle>
+          <PageTitle
             variant="h3"
             component="h2"
-            fontWeight={700}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 3, mt: 2, fontSize: { xs: "1.4rem", md: "1.8rem" } }}
           >
             Eligibility Verification and Denial Management with AI Automation
-          </Typography>
-          <Typography
+          </PageTitle>
+          <PageSectionHeading
             variant="h5"
             component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
           >
             Challenges in Eligibility Verification and Denial Management
-          </Typography>
-          <Typography
+          </PageSectionHeading>
+          <PageParagraph
             variant="body1"
             paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
           >
             Eligibility verification is a foundational step in the RCM process,
             yet it remains fraught with complexities. Manual verification
             methods are time-consuming and prone to errors, leading to claim
             denials, delays in reimbursement, and increased administrative
             costs. Healthcare providers often face challenges such as:
-          </Typography>
-          <List sx={{ mb: 3 }}>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+          </PageParagraph>
+          <StyledList>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Inaccurate patient information"
                 primaryTypographyProps={{
@@ -110,11 +95,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Changes in insurance coverage"
                 primaryTypographyProps={{
@@ -122,11 +107,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Complex insurance policies"
                 primaryTypographyProps={{
@@ -134,11 +119,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="High administrative burden"
                 primaryTypographyProps={{
@@ -146,51 +131,42 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-          </List>
-          <Typography
+            </StyledListItem>
+          </StyledList>
+          <PageParagraph
             variant="body1"
             paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
           >
             These issues can result in claim denials and reduced cash flow,
             underscoring the need for a more efficient and reliable approach.
-          </Typography>
-          <Typography
+          </PageParagraph>
+          <PageParagraph
             variant="body1"
             paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
           >
             The process of managing denials is resource-intensive and requires
             meticulous attention to detail. Manual denial management often leads
             to extended reimbursement cycles and increased operational costs.
-          </Typography>
-          <Typography
+          </PageParagraph>
+          <PageSectionHeading
             variant="h5"
             component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
           >
             Benefits of AI Driven Automated Eligibility Verification and Denial
             Management
-          </Typography>
-          <Typography
+          </PageSectionHeading>
+          <PageParagraph
             variant="body1"
             paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
           >
             Automating the eligibility verification process offers numerous
             benefits, including:
-          </Typography>
-          <List sx={{ mb: 3 }}>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+          </PageParagraph>
+          <StyledList>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Accuracy and Efficiency: AI-driven Eligibility and automation and insurance discovery process ensures that patient insurance information is verified accurately and promptly, reducing the likelihood of claim denials due to eligibility issues."
                 primaryTypographyProps={{
@@ -198,11 +174,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Real-time Verification: Automated systems provide real-time verification, allowing healthcare providers to confirm patient eligibility at the point of service."
                 primaryTypographyProps={{
@@ -210,11 +186,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Cost Reduction: By minimizing manual intervention, automation reduces administrative costs and frees up staff to focus on more strategic tasks."
                 primaryTypographyProps={{
@@ -222,11 +198,11 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-            <ListItem sx={{ py: 0.5, px: 0 }}>
-              <ListItemIcon sx={{ minWidth: "32px" }}>
+            </StyledListItem>
+            <StyledListItem>
+              <StyledListItemIcon>
                 <CheckCircleOutlineIcon color="primary" fontSize="small" />
-              </ListItemIcon>
+              </StyledListItemIcon>
               <ListItemText
                 primary="Enhanced Patient Experience: Faster eligibility verification enhances the patient experience by reducing wait times and ensuring transparency in coverage details."
                 primaryTypographyProps={{
@@ -234,29 +210,24 @@ const EligibilityVerificationFaqPage = () => {
                   fontSize: "1.05rem",
                 }}
               />
-            </ListItem>
-          </List>
-          <Typography
+            </StyledListItem>
+          </StyledList>
+          <PageSectionHeading
             variant="h5"
             component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
           >
             Introducing iCAN™ – Network of AI Agents for Healthcare Revenue
             Cycle Management
-          </Typography>
-          <Typography
+          </PageSectionHeading>
+          <PageParagraph
             variant="body1"
             paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
           >
             iCAN™ is a Network of AI agents configured to run simple or complex
             workflows in the Healthcare Revenue Cycle. Built by CognitiveHealth,
             pioneers of healthcare process automation, AI powers iCAN™ and is
             purpose-built for the Healthcare Revenue Cycle.
-          </Typography>
+          </PageParagraph>
         </>
       }
     />
@@ -264,3 +235,4 @@ const EligibilityVerificationFaqPage = () => {
 };
 
 export default EligibilityVerificationFaqPage;
+

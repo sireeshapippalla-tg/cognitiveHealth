@@ -1,9 +1,8 @@
 import DOMPurify from "dompurify";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SearchIcon from "@mui/icons-material/Search";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../components/SEO";
 import {
@@ -14,25 +13,32 @@ import {
   PageBackground,
   ContentWrapper,
   ContentInner,
-  SectionBlock,
-  SectionTitle,
-  Paragraph,
-  ListParagraph,
   SearchContainer,
   SearchInputWrapper,
   StyledInput,
+  CtaSection,
+  CtaTitle,
+  CtaText,
+  CtaButton,
+  UpdatedBadge,
+  FaqWrapper,
+} from "../faq/Faq.style";
+import {
+  SectionBlock,
+  SectionTitle,
+  ListParagraph,
   AccordionContainer,
   AccordionItem,
   AccordionHeader,
   AccordionContent,
   IconWrapper,
   NoResults,
-  CtaSection,
-  CtaTitle,
-  CtaText,
-  CtaButton,
-  UpdatedBadge,
-} from "../faq/Faq.styles";
+  StyledSearchIcon,
+  TermsParagraph,
+  CategoryBadge,
+  BlockHeading,
+  ParagraphWithMarginTop,
+} from "../faq/FaqAccordion.style";
 import { termsSections, type TermBlock } from "./PrivacyPolicyData";
 
 const PrivacyPolicyPage = () => {
@@ -63,7 +69,7 @@ const PrivacyPolicyPage = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <FaqWrapper>
       <SEO
         title="Privacy Policy"
         description="How we collect, use, and protect your information at CognitiveHealth."
@@ -94,9 +100,7 @@ const PrivacyPolicyPage = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
             <SearchInputWrapper>
-              <SearchIcon
-                sx={{ color: "var(--color-text-muted)", mr: 1, fontSize: 24 }}
-              />
+              <StyledSearchIcon />
               <StyledInput
                 placeholder="Search privacy topics..."
                 value={searchQuery}
@@ -129,18 +133,9 @@ const PrivacyPolicyPage = () => {
                       >
                         <Box>
                           {searchQuery && (
-                            <Box
-                              sx={{
-                                fontSize: "12px",
-                                fontWeight: 600,
-                                color: "var(--color-primary-dark)",
-                                textTransform: "uppercase",
-                                letterSpacing: "0.5px",
-                                mb: 1,
-                              }}
-                            >
+                            <CategoryBadge>
                               {section.title}
-                            </Box>
+                            </CategoryBadge>
                           )}
                           <SectionTitle
                             className="faq-title"
@@ -173,26 +168,18 @@ const PrivacyPolicyPage = () => {
                                 (block: TermBlock, bIndex: number) => {
                                   if (block.type === "heading") {
                                     return (
-                                      <Typography
+                                      <BlockHeading
                                         key={bIndex}
                                         variant="h6"
-                                        sx={{
-                                          mt: 3,
-                                          mb: 2,
-                                          fontWeight: 500,
-                                          color: "var(--color-gray-900)",
-                                          fontSize: "18px",
-                                        }}
                                       >
                                         {block.text}
-                                      </Typography>
+                                      </BlockHeading>
                                     );
                                   }
                                   if (block.type === "paragraph") {
                                     return (
-                                      <Paragraph
+                                      <TermsParagraph
                                         key={bIndex}
-                                        sx={{ mb: 2 }}
                                         dangerouslySetInnerHTML={{
                                           __html: DOMPurify.sanitize(
                                             block.text
@@ -222,9 +209,9 @@ const PrivacyPolicyPage = () => {
                                   }
                                   if (block.type === "link") {
                                     return (
-                                      <Paragraph key={bIndex} sx={{ mt: 2 }}>
+                                      <ParagraphWithMarginTop key={bIndex}>
                                         <a href={block.url}>{block.text}</a>
-                                      </Paragraph>
+                                      </ParagraphWithMarginTop>
                                     );
                                   }
                                   return null;
@@ -259,7 +246,7 @@ const PrivacyPolicyPage = () => {
           </ContentInner>
         </ContentWrapper>
       </PageBackground>
-    </Box>
+    </FaqWrapper>
   );
 };
 

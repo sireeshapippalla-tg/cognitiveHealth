@@ -221,3 +221,7 @@ export const RichContent = styled(Box)(() => ({
     marginTop: "12px",
   },
 }));
+
+export const TitleContainer = styled(Box)({
+  flex: 1,
+});

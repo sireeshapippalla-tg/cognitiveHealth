@@ -1,4 +1,4 @@
-import { Grid, Box, Container } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -19,6 +19,9 @@ import {
   StatValue,
   Title,
   Subtitle,
+  StyledContainer,
+  StatGridItem,
+  HighlightText,
 } from "./ResultsSection.style";
 
 import { useSendResultsPdfMutation } from "../../../services/emailApi";
@@ -126,7 +129,7 @@ const ResultsSection = () => {
         transition={{ duration: 15, repeat: Infinity }}
       />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <StyledContainer maxWidth="lg">
         <Header>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -148,10 +151,9 @@ const ResultsSection = () => {
         {/* ORGANIC METRICS CLUSTER: Staggered, Floating, Non-Grid feeling */}
         <Grid container spacing={6} justifyContent="center">
           {stats.map((stat, index) => (
-            <Grid
+            <StatGridItem
               size={{ xs: 12, sm: 6, md: 3 }}
               key={index}
-              sx={{ display: "flex", alignItems: "stretch" }}
             >
               <motion.div
                 style={{ width: "100%", display: "flex" }}
@@ -166,7 +168,7 @@ const ResultsSection = () => {
                   <StatLabel>{stat.label}</StatLabel>
                 </StatCard>
               </motion.div>
-            </Grid>
+            </StatGridItem>
           ))}
         </Grid>
 
@@ -175,13 +177,13 @@ const ResultsSection = () => {
           <ButtonGroup>
             <PrimaryButton
               onClick={handleOpenPdfList}
-              endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+              endIcon={<ArrowForwardIosIcon />}
             >
               Read Customer Success Stories
             </PrimaryButton>
             <OutlineButton
               onClick={() => setOpenEmailDialog(true)}
-              endIcon={<ArrowForwardIosIcon sx={{ fontSize: 14 }} />}
+              endIcon={<ArrowForwardIosIcon />}
             >
               Download Complete Results Package
             </OutlineButton>
@@ -189,17 +191,17 @@ const ResultsSection = () => {
 
           <FooterText>
             Join{" "}
-            <Box component="span" sx={{ color: "var(--color-gray-900)" }}>
+            <HighlightText>
               50+ healthcare organizations
-            </Box>{" "}
+            </HighlightText>{" "}
             processing{" "}
-            <Box component="span" sx={{ color: "var(--color-gray-900)" }}>
+            <HighlightText>
               10M+ claims monthly
-            </Box>{" "}
+            </HighlightText>{" "}
             with CognitiveHealth
           </FooterText>
         </CTAWrapper>
-      </Container>
+      </StyledContainer>
 
       {/* SUBCOMPONENTS */}
       <EmailDialog
@@ -229,3 +231,4 @@ const ResultsSection = () => {
 };
 
 export default ResultsSection;
+

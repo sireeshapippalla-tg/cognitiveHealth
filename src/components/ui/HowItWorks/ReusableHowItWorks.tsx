@@ -18,7 +18,7 @@ import {
   TimelineWrapper,
   Title,
   VerticalLine,
-} from "./HowItWorks.styles";
+} from "./HowItWorks.style";
 
 export interface HowItWorksStep {
   title: string;

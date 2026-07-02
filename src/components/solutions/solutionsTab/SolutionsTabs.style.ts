@@ -99,3 +99,13 @@ export const TabText = styled("span")<{
   fontWeight: 900,
   letterSpacing: "0.5px",
 }));
+
+export const TabButtonInner = styled("div")<{ $active: boolean }>(({ $active }) => ({
+  position: "relative",
+  zIndex: 1,
+  display: "flex",
+  alignItems: "center",
+  gap: "12px",
+  filter: $active ? "brightness(0) invert(1)" : "none",
+}));
+

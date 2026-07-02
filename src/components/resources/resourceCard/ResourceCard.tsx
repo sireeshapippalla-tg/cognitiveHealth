@@ -10,7 +10,7 @@ import {
   CardDescription,
   ReadMoreLink,
   MetaItem,
-} from "./ResourceCard.styles";
+} from "./ResourceCard.style";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -86,7 +86,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
           state={{ fromTab: type === "video" ? "videos" : type }}
         >
           {getLinkText()}
-          {getLinkText() && <ArrowForwardIcon sx={{ fontSize: "18px" }} />}
+          {getLinkText() && <ArrowForwardIcon />}
         </ReadMoreLink>
       </CardContent>
     </StyledCard>

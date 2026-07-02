@@ -2,7 +2,7 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
-import { Container, Grid, Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { motion } from "framer-motion";
 import {
   SectionWrapper,
@@ -14,29 +14,31 @@ import {
   IconContainer,
   FeatureTitle,
   FeatureDescription,
-} from "./WhyExistSection.styles";
+  StyledContainer,
+  FeatureListWrapper,
+} from "./WhyExistSection.style";
 
 const features = [
   {
-    icon: <ErrorOutlineIcon sx={{ fontSize: 40 }} />,
+    icon: <ErrorOutlineIcon />,
     title: "Operational Complexity",
     description:
       "Healthcare revenue cycle operations involve countless manual tasks, exceptions, and edge cases that slow down teams and increase costs.",
   },
   {
-    icon: <StorageOutlinedIcon sx={{ fontSize: 40 }} />,
+    icon: <StorageOutlinedIcon />,
     title: "Fragmented Systems and Data",
     description:
       "Disconnected systems, inconsistent data formats, and lack of integration create inefficiencies and limit visibility across the revenue cycle.",
   },
   {
-    icon: <PeopleOutlineIcon sx={{ fontSize: 40 }} />,
+    icon: <PeopleOutlineIcon />,
     title: "Staffing Shortages",
     description:
       "Healthcare organizations face persistent challenges recruiting and retaining skilled revenue cycle staff, making automation critical.",
   },
   {
-    icon: <TrendingDownIcon sx={{ fontSize: 40 }} />,
+    icon: <TrendingDownIcon />,
     title: "Rising Costs and Slower Cash Flow",
     description:
       "Manual processes, errors, and delays lead to higher operating costs, extended AR days, and reduced cash flow performance.",
@@ -48,7 +50,7 @@ const WhyWeExistSection = () => {
     <SectionWrapper>
       <BackgroundAbstract />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <StyledContainer maxWidth="lg">
         <Grid container spacing={10} alignItems="center">
           {/* LEFT: CONTENT FOCUS */}
           <Grid size={{ xs: 12, md: 5 }}>
@@ -70,7 +72,7 @@ const WhyWeExistSection = () => {
 
           {/* RIGHT: UNIQUE FEATURE FLOW */}
           <Grid size={{ xs: 12, md: 7 }}>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <FeatureListWrapper>
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -90,10 +92,10 @@ const WhyWeExistSection = () => {
                   </FeatureCard>
                 </motion.div>
               ))}
-            </Box>
+            </FeatureListWrapper>
           </Grid>
         </Grid>
-      </Container>
+      </StyledContainer>
     </SectionWrapper>
   );
 };

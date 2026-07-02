@@ -1,15 +1,17 @@
 import React from "react";
-import {
-  Dialog,
-  IconButton,
-  Typography,
-  TextField,
-  Button,
-  Box,
-  Fade,
-} from "@mui/material";
+import { Fade, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
+import {
+  StyledDialog,
+  ModalBox,
+  CloseBtnContainer,
+  CloseBtn,
+  HeaderBox,
+  EmailTextField,
+  SubmitButton,
+  SubtitleText,
+} from "./ResultsDialog.style";
 
 interface EmailDialogProps {
   open: boolean;
@@ -29,7 +31,7 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
   onSend,
 }) => {
   return (
-    <Dialog
+    <StyledDialog
       open={open}
       onClose={onClose}
       maxWidth="xs"
@@ -42,14 +44,6 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
           },
         },
       }}
-      PaperProps={{
-        sx: {
-          backgroundColor: "transparent",
-          boxShadow: "none",
-          overflow: "visible",
-          outline: "none",
-        },
-      }}
       TransitionComponent={Fade}
       transitionDuration={400}
     >
@@ -58,54 +52,23 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            background: "rgba(255, 255, 255, 0.98)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "32px",
-            padding: 4,
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-            overflow: "visible",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              inset: -2,
-              zIndex: -1,
-              background:
-                "linear-gradient(45deg, var(--color-primary-hover), var(--color-text-blue), var(--color-green), var(--color-primary))",
-              borderRadius: "34px",
-              opacity: 0.4,
-              filter: "blur(8px)",
-            },
-          }}
-        >
+        <ModalBox>
           {/* Close Button - Detached */}
-          <Box sx={{ position: "absolute", top: -16, right: -16, zIndex: 10 }}>
+          <CloseBtnContainer>
             <motion.div
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.9 }}
             >
-              <IconButton
+              <CloseBtn
                 onClick={onClose}
                 aria-label="Close"
-                sx={{
-                  width: 40,
-                  height: 40,
-                  background: "var(--color-white)",
-                  color: "#1e293b",
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
-                  border: "2px solid var(--color-white)",
-                  "&:hover": { color: "var(--color-primary-hover)" },
-                }}
               >
                 <CloseIcon fontSize="small" />
-              </IconButton>
+              </CloseBtn>
             </motion.div>
-          </Box>
+          </CloseBtnContainer>
 
-          <Box mb={3} textAlign="center">
+          <HeaderBox>
             <Typography
               variant="h5"
               fontWeight={900}
@@ -114,45 +77,30 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
             >
               Download Package
             </Typography>
-            <Typography variant="body2" sx={{ color: "#64748b" }}>
+            <SubtitleText variant="body2">
               Enter your work email and we'll send the complete results package
               instantly.
-            </Typography>
-          </Box>
+            </SubtitleText>
+          </HeaderBox>
 
-          <TextField
+          <EmailTextField
             fullWidth
             label="Work Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: "16px",
-                backgroundColor: "rgba(248, 250, 252, 0.8)",
-              },
-            }}
           />
 
-          <Button
+          <SubmitButton
             fullWidth
             variant="contained"
             disabled={!email || isLoading}
             onClick={onSend}
-            sx={{
-              mt: 4,
-              py: 2,
-              borderRadius: "16px",
-              background: "var(--color-primary)",
-              fontWeight: 800,
-              boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
-              "&:hover": { background: "var(--color-primary-dark)" },
-            }}
           >
             {isLoading ? "Sending..." : "Send Report"}
-          </Button>
-        </Box>
+          </SubmitButton>
+        </ModalBox>
       </motion.div>
-    </Dialog>
+    </StyledDialog>
   );
 };

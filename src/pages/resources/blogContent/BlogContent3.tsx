@@ -7,9 +7,10 @@ import {
   Author,
   SectionTitle,
   SectionContent,
+  SectionContentWithMargin,
   OutcomeList,
   StyledResourceLink,
-} from "../BlogDetailPage.styles";
+} from "../BlogDetailPage.style";
 import { ROUTES } from "../../../routes/RoutePaths";
 import type { Blog } from "../../../data/blogData";
 
@@ -169,19 +170,19 @@ export const BlogContent3: React.FC<BlogContentProps> = ({ blog }) => (
       excellence, cost savings, and better patient outcomes.
     </SectionContent>
 
-    <SectionContent sx={{ mt: 4 }}>
+    <SectionContentWithMargin $mt={4}>
       Learn more from our RCM experts:{" "}
       <StyledResourceLink to={ROUTES.REQUEST_DEMO}>
         REQUEST A DEMO
       </StyledResourceLink>
-    </SectionContent>
+    </SectionContentWithMargin>
 
-    <SectionContent sx={{ mt: 2 }}>
+    <SectionContentWithMargin $mt={2}>
       Suggested reading:
       <br />
       <StyledResourceLink to="/resource/intelligent-document-processing">
         Intelligent Document Processing
       </StyledResourceLink>
-    </SectionContent>
+    </SectionContentWithMargin>
   </>
 );

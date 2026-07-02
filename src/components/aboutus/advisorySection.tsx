@@ -1,4 +1,4 @@
-import { Box, Container, useTheme, useMediaQuery } from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 import type { Advisor } from "../ui/advisoryCard/advisoryCard";
 import { motion } from "framer-motion";
 import {
@@ -13,7 +13,8 @@ import {
   AdvisorName,
   AdvisorRole,
   AdvisorDescription,
-} from "./AdvisorySection.styles";
+  StyledContainer,
+} from "./AdvisorySection.style";
 
 const advisoryData: Advisor[] = [
   {
@@ -47,7 +48,7 @@ const AdvisorySection: React.FC = () => {
     <SectionWrapper>
       <BackgroundDecoration />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <StyledContainer maxWidth="lg">
         <HeaderBox>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -88,7 +89,7 @@ const AdvisorySection: React.FC = () => {
             </motion.div>
           ))}
         </AdvisorsContainer>
-      </Container>
+      </StyledContainer>
     </SectionWrapper>
   );
 };

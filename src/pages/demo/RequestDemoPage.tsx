@@ -1,12 +1,8 @@
 import React from "react";
 import {
-  Box,
   Typography,
-  Container,
   useTheme,
   useMediaQuery,
-  Breadcrumbs,
-  Link,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link as RouterLink, useNavigate, useLocation } from "react-router-dom";
@@ -14,6 +10,22 @@ import { ROUTES } from "../../routes/RoutePaths";
 import logo from "../../assets/cognitiveLogo.svg";
 import SEO from "../../components/SEO";
 import { getBaseUrl } from "../../utils/urlHelper";
+import {
+  PageWrapper,
+  GlowOrbOne,
+  GlowOrbTwo,
+  StyledContainer,
+  StyledBreadcrumbs,
+  BreadcrumbLink,
+  HeaderBox,
+  HeaderLogo,
+  HeroTitle,
+  PrimaryHighlightSpan,
+  HeroDescription,
+  CalendarCard,
+  FooterBox,
+  FooterNoteText,
+} from "./RequestDemoPage.style";
 
 interface LocationState {
   fromLabel?: string;
@@ -49,65 +61,34 @@ const RequestDemoPage: React.FC = () => {
   };
 
   return (
-    <Box
-      sx={{
-        pt: { xs: 4, md: 5 },
-        pb: { xs: 4, md: 5 },
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <PageWrapper>
       <SEO
         title="Request a Demo"
         description="Schedule a personalized demo of the CognitiveHealth iCAN™ Platform."
         schema={demoSchema}
       />
       {/* Decorative background elements */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "-10%",
-          right: "-5%",
-          width: "40%",
-          height: "40%",
-          background:
-            "radial-gradient(circle, rgba(55, 125, 255, 0.05) 0%, transparent 70%)",
-          zIndex: 0,
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "-10%",
-          left: "-5%",
-          width: "40%",
-          height: "40%",
-          background:
-            "radial-gradient(circle, rgba(0, 196, 140, 0.05) 0%, transparent 70%)",
-          zIndex: 0,
-        }}
-      />
+      <GlowOrbOne />
+      <GlowOrbTwo />
 
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <StyledContainer maxWidth="lg">
         {/* Breadcrumbs */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Breadcrumbs sx={{ mb: 4, color: "#64748b" }}>
-            <Link
+          <StyledBreadcrumbs>
+            <BreadcrumbLink
               component={RouterLink}
               to={ROUTES.HOME}
               underline="hover"
               color="inherit"
             >
               Home
-            </Link>
+            </BreadcrumbLink>
             {showMiddleLink && (
-              <Link
+              <BreadcrumbLink
                 onClick={() => {
                   if (typeof fromPath === "number") {
                     navigate(fromPath);
@@ -115,62 +96,41 @@ const RequestDemoPage: React.FC = () => {
                     navigate(fromPath);
                   }
                 }}
-                sx={{ cursor: "pointer" }}
                 underline="hover"
                 color="inherit"
               >
                 {fromLabel}
-              </Link>
+              </BreadcrumbLink>
             )}
             <Typography color="text.primary" fontWeight={500}>
               Request a Demo
             </Typography>
-          </Breadcrumbs>
+          </StyledBreadcrumbs>
         </motion.div>
 
         {/* Header Section */}
-        <Box textAlign="center" mb={6}>
+        <HeaderBox>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Box
-              component="img"
+            <HeaderLogo
               src={logo}
               alt="CognitiveHealth Logo"
-              sx={{ height: 48, mb: 3, mx: "auto", display: "block" }}
             />
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 900,
-                color: "#1e293b",
-                mb: 2,
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
-                letterSpacing: "-0.02em",
-              }}
-            >
+            <HeroTitle variant="h2">
               Schedule Your{" "}
-              <Box component="span" sx={{ color: "var(--color-primary)" }}>
+              <PrimaryHighlightSpan>
                 Personalized Demo
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#64748b",
-                maxWidth: 700,
-                mx: "auto",
-                fontWeight: 400,
-                lineHeight: 1.6,
-              }}
-            >
+              </PrimaryHighlightSpan>
+            </HeroTitle>
+            <HeroDescription variant="h6">
               Experience the power of the iCAN™ Platform. Select a date and time
               that works best for you to see our AI integration in action.
-            </Typography>
+            </HeroDescription>
           </motion.div>
-        </Box>
+        </HeaderBox>
 
         {/* Calendar Container */}
         <motion.div
@@ -178,50 +138,28 @@ const RequestDemoPage: React.FC = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <Box
-            sx={{
-              background: "#ffffff",
-              borderRadius: "32px",
-              boxShadow:
-                "0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
-              border: "1px solid rgba(255,255,255,0.8)",
-              overflow: "hidden",
-              minHeight: "800px",
-              position: "relative",
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "6px",
-                background:
-                  "linear-gradient(90deg, var(--color-primary), var(--color-green))",
-              },
-            }}
-          >
+          <CalendarCard>
             <iframe
               src={hubspotMeetingUrl}
               width="100%"
               height={isMobile ? "700" : "800"}
               frameBorder="0"
-              style={{ border: "none" }}
               title="HubSpot Meetings"
             />
-          </Box>
+          </CalendarCard>
         </motion.div>
 
         {/* Footer Note */}
-        <Box mt={6} textAlign="center">
-          <Typography variant="body2" sx={{ color: "#94a3b8" }}>
+        <FooterBox>
+          <FooterNoteText variant="body2">
             By scheduling a demo, you agree to our Terms of Service and Privacy
             Policy.
             <br />
             Need help? Contact us at support@cognitivehealthit.com
-          </Typography>
-        </Box>
-      </Container>
-    </Box>
+          </FooterNoteText>
+        </FooterBox>
+      </StyledContainer>
+    </PageWrapper>
   );
 };
 

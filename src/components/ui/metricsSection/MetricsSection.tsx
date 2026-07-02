@@ -7,7 +7,7 @@ import {
   HeaderWrapper,
   Section,
   StyledContainer,
-} from "./MetricsSection.styles";
+} from "./MetricsSection.style";
 
 interface StatItem {
   value: string;

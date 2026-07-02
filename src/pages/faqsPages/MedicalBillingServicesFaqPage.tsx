@@ -1,6 +1,11 @@
-import { Typography } from "@mui/material";
 import { getBaseUrl } from "../../utils/urlHelper";
 import { FaqPageLayout } from "./FaqPageLayout";
+import {
+  PageSubtitle,
+  PageTitle,
+  PageSectionHeading,
+  PageParagraph,
+} from "./faqPages.style";
 
 const MedicalBillingServicesFaqPage = () => {
   const baseUrl = getBaseUrl();
@@ -46,147 +51,63 @@ const MedicalBillingServicesFaqPage = () => {
       heroButtonUrl="/request-demo"
       section2Content={
         <>
-          <Typography
-            variant="subtitle2"
-            sx={{
-              mb: 1,
-              mt: 4,
-              fontSize: { xs: "0.85rem", md: "0.95rem" },
-              textTransform: "uppercase",
-              letterSpacing: "1.5px",
-              fontWeight: 600,
-              color: "primary.main",
-              display: "block",
-            }}
-          >
+          <PageSubtitle variant="subtitle2">
             The future
-          </Typography>
-          <Typography
-            variant="h3"
-            component="h2"
-            fontWeight={700}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 3, mt: 2, fontSize: { xs: "1.4rem", md: "1.8rem" } }}
-          >
+          </PageSubtitle>
+          <PageTitle variant="h3" component="h2">
             Why Choose CognitiveHealth™ AI Solutions for your Medical Billing?
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
-          >
+          </PageTitle>
+          <PageParagraph variant="body1" paragraph>
             At CognitiveHealth™, we understand the complexities and challenges
             faced by healthcare providers in managing revenue cycles. Our iCAN™
             platform leverages advanced AI tools to automate and optimize
             various medical billing processes, delivering substantial benefits:
-          </Typography>
-          <Typography
-            variant="h5"
-            component="h3"
-            fontWeight={600}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{ mb: 2, mt: 3, fontSize: { xs: "1.1rem", md: "1.25rem" } }}
-          >
+          </PageParagraph>
+          <PageSectionHeading variant="h5" component="h3">
             Introducing iCAN™ – Network of AI Agents for Healthcare Revenue
             Cycle Management
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{ fontSize: "1.05rem", lineHeight: 1.8 }}
-          >
+          </PageSectionHeading>
+          <PageParagraph variant="body1" paragraph>
             iCAN™ is a Network of AI agents configured to run simple or complex
             workflows in the Healthcare Revenue Cycle. Built by CognitiveHealth,
             pioneers of healthcare process automation, AI powers iCAN™ and is
             purpose-built for the Healthcare Revenue Cycle.
-          </Typography>
+          </PageParagraph>
         </>
       }
       scheduleDemoContent={
         <>
-          <Typography
-            variant="h3"
-            component="h2"
-            fontWeight={700}
-            color="var(--color-text-dark, #1f2937)"
-            sx={{
-              mb: 3,
-              mt: 4,
-              fontSize: { xs: "1.8rem", md: "2.4rem" },
-            }}
-          >
+          <PageTitle variant="h3" component="h2">
             Schedule a FREE Demo Today!
-          </Typography>
+          </PageTitle>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             Ready to revolutionize your medical billing processes and enhance
             your revenue cycle management? Schedule a Free Demo with
             CognitiveHealth™ to see how our Al-driven solutions can be tailored
             to meet your specific needs.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             Experience the future of medical billing with CognitiveHealth™ and
             take the first step towards a more efficient, cost-effective revenue
             cycle management system.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             This experienced team of CognitiveHealth has partnered with
             recognized health systems to build iCANT - Network of Al Agents.
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          </PageParagraph>
+          <PageParagraph variant="body1" paragraph>
             iCANTM platform is purpose-built for healthcare.
-          </Typography>
+          </PageParagraph>
 
-          <Typography
-            variant="body1"
-            paragraph
-            color="text.secondary"
-            sx={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-            }}
-          >
+          <PageParagraph variant="body1" paragraph>
             We understand your concerns about privacy and security. At
             CognitiveHealth, our infrastructure meets the highest standards, and
             we actively follow the latest Al trust and risk guidelines to ensure
             your safety.
-          </Typography>
+          </PageParagraph>
         </>
       }
     />

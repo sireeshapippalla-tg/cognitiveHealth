@@ -1,6 +1,6 @@
 import { type ButtonProps } from "@mui/material";
 import React from "react";
-import { OutlineButton, PrimaryButton } from "./AppButton.styles";
+import { OutlineButton, PrimaryButton } from "./AppButton.style";
 
 type AppButtonProps = ButtonProps & {
   variantType?: "primary" | "outline";
