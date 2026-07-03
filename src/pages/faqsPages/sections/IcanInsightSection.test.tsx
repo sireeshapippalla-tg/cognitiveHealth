@@ -4,7 +4,7 @@ import { IcanInsightSection } from "./IcanInsightSection";
 
 describe("IcanInsightSection Component", () => {
   it("renders correctly", () => {
-    render(<IcanInsightSection insights={[]} />);
+    render(<IcanInsightSection />);
     expect(true).toBe(true);
   });
 });

@@ -4,10 +4,10 @@ import AdvisorCard from "./advisoryCard";
 
 describe("AdvisorCard Component", () => {
   const mockAdvisor = {
+    id: 1,
     name: "Jane Doe",
-    title: "Advisor",
-    image: "test.jpg",
-    bio: "Bio text"
+    role: "Advisor",
+    description: "Bio text"
   };
   it("renders correctly", () => {
     render(<AdvisorCard advisor={mockAdvisor} />);

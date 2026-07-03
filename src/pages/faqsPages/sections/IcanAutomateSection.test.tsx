@@ -4,7 +4,7 @@ import { IcanAutomateSection } from "./IcanAutomateSection";
 
 describe("IcanAutomateSection Component", () => {
   it("renders correctly", () => {
-    render(<IcanAutomateSection items={[]} />);
+    render(<IcanAutomateSection />);
     expect(true).toBe(true);
   });
 });

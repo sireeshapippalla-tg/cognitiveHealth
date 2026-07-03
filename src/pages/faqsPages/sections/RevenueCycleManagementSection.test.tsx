@@ -4,7 +4,7 @@ import { RevenueCycleManagementSection } from "./RevenueCycleManagementSection";
 
 describe("RevenueCycleManagementSection Component", () => {
   it("renders correctly", () => {
-    render(<RevenueCycleManagementSection items={[]} />);
+    render(<RevenueCycleManagementSection />);
     expect(true).toBe(true);
   });
 });

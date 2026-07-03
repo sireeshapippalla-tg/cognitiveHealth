@@ -4,6 +4,7 @@ import ExpandableCard from "./expandableCard";
 
 describe("ExpandableCard Component", () => {
   const mockItem = {
+    id: 1,
     title: "Title",
     desc: "Description"
   };

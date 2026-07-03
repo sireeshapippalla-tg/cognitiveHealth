@@ -4,7 +4,14 @@ import { PdfViewerDialog } from "./PdfViewerDialog";
 
 describe("PdfViewerDialog Component", () => {
   it("renders correctly", () => {
-    render(<PdfViewerDialog open={true} onClose={() => {}} pdfUrl="http://example.com" />);
+    render(
+      <PdfViewerDialog
+        open={true}
+        onClose={() => {}}
+        onBack={() => {}}
+        selectedPdf="http://example.com"
+      />
+    );
     expect(true).toBe(true);
   });
 });

@@ -4,7 +4,15 @@ import ResourceCard from "./ResourceCard";
 
 describe("ResourceCard Component", () => {
   it("renders correctly", () => {
-    render(<ResourceCard />);
+    render(
+      <ResourceCard
+        image="test.jpg"
+        title="Title"
+        description="Description"
+        link="/test"
+        type="blog"
+      />
+    );
     expect(true).toBe(true);
   });
 });

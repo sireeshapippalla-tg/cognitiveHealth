@@ -4,7 +4,7 @@ import { IcanManageSection } from "./IcanManageSection";
 
 describe("IcanManageSection Component", () => {
   it("renders correctly", () => {
-    render(<IcanManageSection items={[]} />);
+    render(<IcanManageSection />);
     expect(true).toBe(true);
   });
 });

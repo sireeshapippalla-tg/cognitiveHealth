@@ -4,7 +4,7 @@ import { PaymentPostingSection } from "./PaymentPostingSection";
 
 describe("PaymentPostingSection Component", () => {
   it("renders correctly", () => {
-    render(<PaymentPostingSection items={[]} />);
+    render(<PaymentPostingSection />);
     expect(true).toBe(true);
   });
 });

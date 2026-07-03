@@ -4,10 +4,10 @@ import TeamMemberModal from "./TeamMemberModal";
 
 describe("TeamMemberModal Component", () => {
   const mockMember = {
-    name: "Jane Doe",
-    title: "Member",
+    title: "Jane Doe",
+    subtitle: "Member",
     image: "test.jpg",
-    bio: "Bio text"
+    description: "Bio text"
   };
   it("renders correctly", () => {
     render(<TeamMemberModal open={true} onClose={() => {}} member={mockMember} />);

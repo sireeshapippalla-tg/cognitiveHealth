@@ -4,7 +4,7 @@ import ResourceHero from "./ResourceHero";
 
 describe("ResourceHero Component", () => {
   it("renders correctly", () => {
-    render(<ResourceHero />);
+    render(<ResourceHero searchQuery="" setSearchQuery={() => {}} />);
     expect(true).toBe(true);
   });
 });

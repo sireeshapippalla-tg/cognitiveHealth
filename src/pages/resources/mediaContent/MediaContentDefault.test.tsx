@@ -1,9 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { render } from "../../../utils/test-utils";
 import { MediaContentDefault } from "./MediaContentDefault";
+import type { Media } from "../../../data/mediaData";
 
 describe("MediaContentDefault Component", () => {
-  const mockMedia = {
+  const mockMedia: Media = {
     id: "def",
     type: "media",
     title: "Title",
@@ -11,7 +12,7 @@ describe("MediaContentDefault Component", () => {
     image: "img.jpg",
     date: "date",
     link: "link"
-  } as any;
+  };
   it("renders correctly", () => {
     render(<MediaContentDefault media={mockMedia} />);
     expect(true).toBe(true);

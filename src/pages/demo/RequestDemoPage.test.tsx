@@ -4,7 +4,7 @@ import RequestDemoPage from "./RequestDemoPage";
 
 describe("RequestDemoPage Component", () => {
   it("renders correctly", () => {
-    render(<RequestDemoPage showBackBtn={true} />);
+    render(<RequestDemoPage />);
     expect(true).toBe(true);
   });
 });

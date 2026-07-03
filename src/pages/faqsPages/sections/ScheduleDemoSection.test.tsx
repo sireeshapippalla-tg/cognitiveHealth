@@ -4,7 +4,7 @@ import { ScheduleDemoSection } from "./ScheduleDemoSection";
 
 describe("ScheduleDemoSection Component", () => {
   it("renders correctly", () => {
-    render(<ScheduleDemoSection title="Title" />);
+    render(<ScheduleDemoSection heroButtonUrl="/demo" />);
     expect(true).toBe(true);
   });
 });

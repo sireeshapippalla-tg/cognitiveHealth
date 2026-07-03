@@ -4,7 +4,7 @@ import { IcanPredictSection } from "./IcanPredictSection";
 
 describe("IcanPredictSection Component", () => {
   it("renders correctly", () => {
-    render(<IcanPredictSection items={[]} />);
+    render(<IcanPredictSection />);
     expect(true).toBe(true);
   });
 });

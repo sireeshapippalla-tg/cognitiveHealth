@@ -4,7 +4,7 @@ import StatCard from "./StatCard";
 
 describe("StatCard Component", () => {
   it("renders correctly", () => {
-    render(<StatCard title="Title" value="Value" change="+10%" label="Label" />);
+    render(<StatCard title="Title" value="10%" description="Description" />);
     expect(true).toBe(true);
   });
 });

@@ -4,7 +4,7 @@ import { BenefitsFeaturesSection } from "./BenefitsFeaturesSection";
 
 describe("BenefitsFeaturesSection Component", () => {
   it("renders correctly", () => {
-    render(<BenefitsFeaturesSection title="Title" benefits={[]} features={[]} />);
+    render(<BenefitsFeaturesSection />);
     expect(true).toBe(true);
   });
 });
