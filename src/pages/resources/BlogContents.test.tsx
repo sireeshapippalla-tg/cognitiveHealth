@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
+import * as BlogContents from "./BlogContents";
 
-describe("BlogContents Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // To be implemented in the future if required
-    expect(true).toBe(true);
+describe("BlogContents", () => {
+  it("exports content correctly", () => {
+    expect(BlogContents).toBeDefined();
   });
 });

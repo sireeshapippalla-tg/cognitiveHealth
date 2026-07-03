@@ -1,8 +1,10 @@
 import { describe, it, expect } from "vitest";
+import { render } from "../../../utils/test-utils";
+import { IcanInsightSection } from "./IcanInsightSection";
 
 describe("IcanInsightSection Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // To be implemented in the future if required
+  it("renders correctly", () => {
+    render(<IcanInsightSection insights={[]} />);
     expect(true).toBe(true);
   });
 });

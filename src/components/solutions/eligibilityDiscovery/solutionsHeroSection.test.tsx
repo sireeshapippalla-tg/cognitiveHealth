@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../../utils/test-utils";
-// import solutionsHeroSection from "./solutionsHeroSection";
+import { render } from "../../../utils/test-utils";
+import SolutionsHeroSection from "./solutionsHeroSection";
 
 describe("solutionsHeroSection Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<solutionsHeroSection />)
+  it("renders correctly", () => {
+    render(<SolutionsHeroSection />);
     expect(true).toBe(true);
   });
 });

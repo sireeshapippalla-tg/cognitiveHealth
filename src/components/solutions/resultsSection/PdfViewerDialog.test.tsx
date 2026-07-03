@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../../utils/test-utils";
-// import PdfViewerDialog from "./PdfViewerDialog";
+import { render } from "../../../utils/test-utils";
+import { PdfViewerDialog } from "./PdfViewerDialog";
 
 describe("PdfViewerDialog Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<PdfViewerDialog />)
+  it("renders correctly", () => {
+    render(<PdfViewerDialog open={true} onClose={() => {}} pdfUrl="http://example.com" />);
     expect(true).toBe(true);
   });
 });

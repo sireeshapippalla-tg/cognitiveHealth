@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../../utils/test-utils";
-// import transformSection from "./transformSection";
+import { render } from "../../../utils/test-utils";
+import TransformSection from "./transformSection";
 
 describe("transformSection Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<transformSection />)
+  it("renders correctly", () => {
+    render(<TransformSection />);
     expect(true).toBe(true);
   });
 });

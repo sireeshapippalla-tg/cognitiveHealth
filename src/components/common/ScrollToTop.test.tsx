@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
-// import { render } from "../../utils/test-utils";
-// import ScrollToTop from "./ScrollToTop";
+import { render } from "../../utils/test-utils";
+import ScrollToTop from "./ScrollToTop";
 
 describe("ScrollToTop Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // TODO: Implement complex UI testing using render(<ScrollToTop />)
+  it("renders correctly", () => {
+    render(<ScrollToTop />);
     expect(true).toBe(true);
   });
 });

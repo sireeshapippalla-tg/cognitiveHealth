@@ -7,13 +7,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import { store } from "../app/store";
 import theme from "../theme/theme";
 import { HelmetProvider } from "react-helmet-async";
+import { DemoProvider } from "../context/DemoContext";
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <HelmetProvider>
-          <BrowserRouter>{children}</BrowserRouter>
+          <BrowserRouter>
+            <DemoProvider>{children}</DemoProvider>
+          </BrowserRouter>
         </HelmetProvider>
       </ThemeProvider>
     </Provider>

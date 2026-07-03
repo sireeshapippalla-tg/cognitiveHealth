@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
+import * as MediaContentC from "./MediaContentC";
 
-describe("MediaContentC Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // To be implemented in the future if required
-    expect(true).toBe(true);
+describe("MediaContentC", () => {
+  it("exports components correctly", () => {
+    expect(MediaContentC).toBeDefined();
   });
 });

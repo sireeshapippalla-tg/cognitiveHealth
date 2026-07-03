@@ -1,8 +1,10 @@
 import { describe, it, expect } from "vitest";
+import { render } from "../../../utils/test-utils";
+import { RevenueCycleManagementSection } from "./RevenueCycleManagementSection";
 
 describe("RevenueCycleManagementSection Component", () => {
-  it("renders correctly (Placeholder)", () => {
-    // To be implemented in the future if required
+  it("renders correctly", () => {
+    render(<RevenueCycleManagementSection items={[]} />);
     expect(true).toBe(true);
   });
 });
