@@ -43,7 +43,7 @@ const MeasurableResultsSection = () => {
       pillIcon={paymentImage9}
       pillText="Accuracy Before Billing"
       title="Measurable Results"
-      subtitle="Real outcomes from healthcare organizations using the iCAN™ Pre-Bill Review solution"
+      subtitle="Real outcomes from healthcare organizations using the iCAN™ Pre-Bill Services solution"
       stats={stats}
     />
   );

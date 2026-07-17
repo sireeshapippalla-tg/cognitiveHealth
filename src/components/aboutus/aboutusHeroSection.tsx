@@ -11,8 +11,7 @@ const AboutUsHeroSection: React.FC = () => {
     <SplitSection
       eyebrow={
         <>
-          About <Highlight>CognitiveHealth</Highlight> Agentic AI platform
-          instead of Intelligent Process Automation
+          <Highlight>CognitiveHealth</Highlight> Agentic AI platform
         </>
       }
       description="Healthcare technology company focused on transforming revenue cycle operations through intelligent automation. We help healthcare organizations reduce operational complexity, improve financial outcomes, and enable teams to focus on delivering exceptional patient care."
@@ -28,7 +27,7 @@ const AboutUsHeroSection: React.FC = () => {
       secondaryAction={{
         label: "See Platform in Action",
         onClick: () => {
-          navigate("/resources#videos");
+          navigate("/resources/videos");
         },
       }}
     />

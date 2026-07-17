@@ -14,7 +14,7 @@ export const TrustSection = styled(Box)(() => ({
     position: "absolute",
     width: "220px",
     height: "220px",
-    background: "radial-gradient(circle, #F47A20, transparent)",
+    background: "radial-gradient(circle, #eb7b33, transparent)",
     filter: "blur(120px)",
     top: "-60px",
     left: "-60px",
@@ -30,10 +30,6 @@ export const TrustTitle = styled(Box)(() => ({
   marginBottom: "40px",
   fontWeight: 700,
 
-  // 🔥 gradient text
-  background: "linear-gradient(90deg, #F47A20, #6BBF59, #4A90E2)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
 }));
 
 export const LogoScrollWrapper = styled("div")({
@@ -41,7 +37,6 @@ export const LogoScrollWrapper = styled("div")({
   width: "100%",
   position: "relative",
 
-  // 🔥 edge fade mask
   WebkitMaskImage:
     "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
   maskImage:
@@ -49,21 +44,6 @@ export const LogoScrollWrapper = styled("div")({
 
   "&:hover div": {
     animationPlayState: "paused",
-  },
-
-  // 🔥 center spotlight
-  "&::after": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: "200px",
-    height: "100%",
-    background:
-      "radial-gradient(circle, rgba(255,255,255,0.9), transparent 70%)",
-    pointerEvents: "none",
-    zIndex: 2,
   },
 });
 
@@ -148,7 +128,7 @@ export const LogoCard = styled(Box)(() => ({
   "&:hover": {
     transform: "translateY(-6px) scale(1.05)",
     background:
-      "linear-gradient(120deg, rgba(244,122,32,0.08), rgba(107,191,89,0.08))",
+      "linear-gradient(120deg, rgba(235,123,51,0.08), rgba(107,191,89,0.08))",
     boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
   },
 }));

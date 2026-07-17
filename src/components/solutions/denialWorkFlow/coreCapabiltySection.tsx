@@ -1,9 +1,6 @@
-import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
-import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
-
 // import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.webp";
 // import Zap from "../../../assets/solutions/Core Capabilities/Zap.webp";
 // import Info from "../../../assets/solutions/Core Capabilities/Info.webp";
@@ -16,6 +13,7 @@ import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import MedicalInformationOutlinedIcon from "@mui/icons-material/MedicalInformationOutlined";
 import PsychologyAltOutlinedIcon from "@mui/icons-material/PsychologyAltOutlined";
+import CoreCapabilitiesLayout from "../CoreCapabilitiesLayout";
 
 const capabilities: ExpandableItem[] = [
   {
@@ -125,13 +123,14 @@ const CoreCapabilitiesSection = () => {
           marginBottom={30}
         />
 
-        <Grid container spacing={2}>
+        {/* <Grid container spacing={2}>
           {capabilities.map((item) => (
             <Grid size={{ xs: 12, md: 6, lg: 4 }} key={item.id}>
               <ExpandableCard item={item} variant="capability" />
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
+        <CoreCapabilitiesLayout items={capabilities} />
       </Wrapper>
     </div>
   );

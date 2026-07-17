@@ -4,7 +4,7 @@ import ResourceTabs from "./ResourceTabs";
 
 describe("ResourceTabs Component", () => {
   it("renders correctly", () => {
-    render(<ResourceTabs searchQuery="" />);
+    render(<ResourceTabs />);
     expect(true).toBe(true);
   });
 });

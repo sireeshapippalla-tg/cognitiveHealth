@@ -27,7 +27,7 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "200%",
     background:
-      "radial-gradient(circle, rgba(244, 122, 32, 0.08), transparent 70%)",
+      "radial-gradient(circle, rgba(235, 123, 51, 0.08), transparent 70%)",
     zIndex: 0,
     pointerEvents: "none",
   },
@@ -111,7 +111,7 @@ export const ButtonsRow = styled(Box)(() => ({
 export const IconWrapper = styled("div")({
   width: 64,
   height: 64,
-  border: "1.5px solid rgba(244, 122, 32, 0.2)",
+  border: "1.5px solid rgba(235, 123, 51, 0.2)",
   borderRadius: "20px",
   display: "flex",
   alignItems: "center",
@@ -120,7 +120,7 @@ export const IconWrapper = styled("div")({
   transition: "all 0.3s ease",
   "& svg": { fontSize: "2rem" },
   "&:hover": {
-    background: "rgba(244, 122, 32, 0.1)",
+    background: "rgba(235, 123, 51, 0.1)",
     borderColor: "var(--color-primary)",
   },
 });

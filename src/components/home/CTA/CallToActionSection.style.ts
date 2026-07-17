@@ -46,7 +46,7 @@ export const Card = styled(Box)(({ theme }) => ({
     inset: 0,
     padding: "1.5px",
     borderRadius: "32px",
-    background: "linear-gradient(135deg, #F47A20, #6BBF59, #4A90E2)",
+    background: "linear-gradient(135deg, #eb7b33, #6BBF59, #4A90E2)",
     WebkitMask:
       "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
     WebkitMaskComposite: "xor",
@@ -60,7 +60,7 @@ export const Glow = styled(Box)(() => ({
   position: "absolute",
   width: "300px",
   height: "300px",
-  background: "radial-gradient(circle, #F47A20 20%, transparent 70%)",
+  background: "radial-gradient(circle, #eb7b33 20%, transparent 70%)",
   filter: "blur(100px)",
   top: "-150px",
   right: "-50px",
@@ -76,11 +76,8 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontWeight: 800,
   marginBottom: "16px",
   lineHeight: 1.4,
-  background: "linear-gradient(135deg, #0f172a, #334155)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
+  color: "#0f172a",
   fontSize: "1.75rem",
-
   [theme.breakpoints.up("sm")]: {
     fontSize: "2.25rem",
   },
@@ -120,8 +117,8 @@ export const PrimaryButton = styled(Button)(() => ({
   textTransform: "none",
   position: "relative",
   overflow: "hidden",
-  background: "#F47A20",
-  boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+  background: "#eb7b33",
+  boxShadow: "0 10px 25px rgba(235, 123, 51, 0.3)",
   padding: "10px 20px",
 
   "&::after": {

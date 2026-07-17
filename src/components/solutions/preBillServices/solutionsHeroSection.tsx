@@ -32,7 +32,7 @@ const SolutionsHeroSection = () => {
       secondaryAction={{
         label: "See Platform in Action",
         onClick: () => {
-          navigate("/resources#videos");
+          navigate("/resources/videos");
         },
       }}
     />

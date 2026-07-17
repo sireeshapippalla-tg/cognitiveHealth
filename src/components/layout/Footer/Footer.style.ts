@@ -121,7 +121,7 @@ export const Bottom = styled(Stack)(({ theme }) => ({
   color: "#D1D5DB",
 
   "& a": {
-    color: "#F97316",
+    color: "#eb7b33",
   },
 
   [theme.breakpoints.down("sm")]: {

@@ -68,7 +68,7 @@ const CTASection = () => {
               <SecondaryButton
                 variant="outlined"
                 endIcon={<ArrowForwardIcon />}
-                onClick={() => navigate("/resources#videos")}
+                onClick={() => navigate("/resources/videos")}
               >
                 See Platform in Action
               </SecondaryButton>

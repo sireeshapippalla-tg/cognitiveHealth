@@ -102,7 +102,7 @@ const SolutionsTabs = () => {
     },
     {
       value: "preBillReview",
-      label: "Pre-Bill Review",
+      label: "Pre-Bill Services",
       icon: (
         <img
           width={28}
@@ -116,17 +116,30 @@ const SolutionsTabs = () => {
     },
   ];
 
-  const activeTab = Math.max(
-    0,
-    tabs.findIndex((tab) => tab.value === location.hash.replace("#", ""))
-  );
+  const getActiveTab = (pathname: string) => {
+    if (pathname.includes("/lockbox")) return 1;
+    if (pathname.includes("/denials")) return 2;
+    if (pathname.includes("/eligibility")) return 3;
+    if (pathname.includes("/contract-analysis")) return 4;
+    if (pathname.includes("/pre-bill")) return 5;
+    return 0; // paymentPosting
+  };
+
+  const activeTab = getActiveTab(location.pathname);
+
+  const tabPaths = [
+    "/solutions/payment-posting",
+    "/solutions/lockbox",
+    "/solutions/denials",
+    "/solutions/eligibility",
+    "/solutions/contract-analysis",
+    "/solutions/pre-bill",
+  ];
 
   useEffect(() => {
-    // If there is NO hash, user came from another page
-    if (!location.hash) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
-  }, [location.hash]);
+    // If there is NO hash/path match, user came from another page
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
 
   useEffect(() => {
     if (!isTabClickRef.current) {
@@ -150,7 +163,7 @@ const SolutionsTabs = () => {
     });
 
     isTabClickRef.current = false;
-  }, [location.hash]);
+  }, [location.pathname]);
 
   const handleTabChange = (
     _event: React.MouseEvent<HTMLButtonElement>,
@@ -158,7 +171,7 @@ const SolutionsTabs = () => {
   ) => {
     isTabClickRef.current = true;
 
-    navigate(`/solutions#${tabs[newValue].value}`, {
+    navigate(tabPaths[newValue], {
       replace: true,
     });
   };

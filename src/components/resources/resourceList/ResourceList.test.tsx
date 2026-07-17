@@ -4,7 +4,7 @@ import ResourceList from "./ResourceList";
 
 describe("ResourceList Component", () => {
   it("renders correctly", () => {
-    render(<ResourceList activeTab={0} searchQuery="" />);
+    render(<ResourceList activeTab={0} />);
     expect(true).toBe(true);
   });
 });

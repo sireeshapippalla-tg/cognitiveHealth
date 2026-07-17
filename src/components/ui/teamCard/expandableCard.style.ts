@@ -66,16 +66,16 @@ export const CardWrapper = styled(Box, {
   marginBottom: "12px",
   overflow: "hidden",
   transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
-  background: open ? "rgba(244, 122, 32, 0.05)" : "transparent",
+  background: open ? "#eb7b33" : "transparent",
   borderRadius: "32px",
   border: "1px solid",
-  borderColor: open ? "rgba(244, 122, 32, 0.3)" : "rgba(0, 0, 0, 0.06)",
+  borderColor: open ? "rgba(235, 123, 51, 0.3)" : "rgba(0, 0, 0, 0.06)",
   padding: "16px",
   position: "relative",
 
   "&:hover": {
-    borderColor: open ? "rgba(244, 122, 32, 0.4)" : "rgba(107, 191, 89, 0.4)",
-    background: open ? "rgba(244, 122, 32, 0.07)" : "rgba(0, 0, 0, 0.02)",
+    borderColor: open ? "rgba(235, 123, 51, 0.4)" : "rgba(107, 191, 89, 0.4)",
+    background: open ? "rgba(235, 123, 51, 0.07)" : "rgba(0, 0, 0, 0.02)",
   },
 
   "@media (min-width:900px)": {
@@ -101,7 +101,7 @@ export const IconCircle = styled(Box, {
   width: "54px",
   height: "54px",
   borderRadius: "30%",
-  background: open ? "#F47A20" : "rgba(107, 191, 89, 0.15)",
+  background: open ? "#eb7b33" : "rgba(107, 191, 89, 0.15)",
   color: open ? "var(--color-white)" : "#6BBF59",
   display: "flex",
   alignItems: "center",
@@ -109,7 +109,7 @@ export const IconCircle = styled(Box, {
   transition: "all 0.4s ease",
   transform: open ? "rotate(10deg) scale(1.1)" : "rotate(0deg) scale(1)",
   flexShrink: 0,
-  boxShadow: open ? "0 15px 30px rgba(244,122,32,0.2)" : "none",
+  boxShadow: open ? "0 15px 30px rgba(235, 123, 51, 0.2)" : "none",
 
   "& svg": {
     fontSize: "2rem",
@@ -132,9 +132,9 @@ export const IconImage = styled("img")({
 
 export const CardTitle = styled(Typography, {
   shouldForwardProp: (prop) => prop !== "open",
-})<{ open: boolean }>(({ open, theme }) => ({
+})<{ open: boolean }>(({ theme }) => ({
   fontWeight: 900,
-  color: open ? "var(--color-primary)" : "var(--color-gray-900)",
+  color: "var(--color-gray-900)",
   transition: "color 0.4s ease",
   fontSize: "1rem",
   letterSpacing: "-0.02em",

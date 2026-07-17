@@ -1,4 +1,4 @@
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import { motion } from "framer-motion";
 
 import {
@@ -6,22 +6,22 @@ import {
   HeroContent,
   Title,
   SubTitle,
-  SearchWrapper,
+  // SearchWrapper,
   // ResourceCenterChip,
-  StyledInput,
-  SearchButton,
+  // StyledInput,
+  // SearchButton,
   BackgroundShapes,
   ShapeOne,
   ShapeTwo,
   Description,
 } from "./ResourceHero.style";
 
-interface ResourceHeroProps {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
-}
+// interface ResourceHeroProps {
+//   searchQuery: string;
+//   setSearchQuery: (query: string) => void;
+// }
 
-const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
+const ResourceHero = () => (
   <Hero>
     <BackgroundShapes>
       <ShapeOne
@@ -60,7 +60,7 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <SearchWrapper>
+        {/* <SearchWrapper>
           <SearchIcon />
           <StyledInput
             placeholder="Search resources..."
@@ -73,7 +73,7 @@ const ResourceHero = ({ searchQuery, setSearchQuery }: ResourceHeroProps) => (
           <SearchButton type="button" aria-label="search">
             Search
           </SearchButton>
-        </SearchWrapper>
+        </SearchWrapper> */}
       </motion.div>
     </HeroContent>
   </Hero>

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Box, Chip } from "@mui/material";
 import {
   StyledCard,
   CardImageWrapper,
@@ -49,6 +51,8 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
     }
   };
 
+  const showImage = type !== "blog" && type !== "media";
+
   return (
     <StyledCard
       layout
@@ -56,12 +60,34 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <CardImageWrapper>
-        <CardImage src={image} alt={title} />
-        {category && <CategoryChip label={category} />}
-      </CardImageWrapper>
+      {showImage ? (
+        <Link
+          to={link}
+          state={{ fromTab: type === "video" ? "videos" : type }}
+          style={{ display: "block", overflow: "hidden" }}
+        >
+          <CardImageWrapper>
+            <CardImage src={image} alt={title} />
+            {category && <CategoryChip label={category} />}
+          </CardImageWrapper>
+        </Link>
+      ) : null}
 
       <CardContent>
+        {!showImage && category && (
+          <Box sx={{ mb: 1 }}>
+            <Chip
+              label={category}
+              size="small"
+              sx={{
+                backgroundColor: "rgba(235, 123, 51, 0.1)",
+                color: "#eb7b33",
+                fontWeight: 700,
+                fontSize: "12px",
+              }}
+            />
+          </Box>
+        )}
         <MetaInfo>
           {date && (
             <MetaItem>

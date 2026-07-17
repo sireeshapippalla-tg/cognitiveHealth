@@ -178,7 +178,7 @@ export const SuccessStyledIcon = styled(CheckCircleIcon)({
   fontSize: 60,
 });
 export const StyledDialogTitle = styled(DialogTitle)(() => ({
-  backgroundColor: "var(--color-text-blue)",
+  backgroundColor: "#eb7b33",
   color: "#FFFFFF",
   fontWeight: 600,
   display: "flex",

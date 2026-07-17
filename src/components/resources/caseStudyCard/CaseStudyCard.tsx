@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   StyledCard,
@@ -40,16 +41,18 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <CardImageWrapper>
-        <CardImage src={image} alt={title} />
-        {category && <CategoryChip label={category} />}
-        {metricValue && (
-          <MetricBadge>
-            <MetricValue>{metricValue}</MetricValue>
-            <MetricLabel>{metricLabel}</MetricLabel>
-          </MetricBadge>
-        )}
-      </CardImageWrapper>
+      <Link to={link} style={{ display: "block", overflow: "hidden" }}>
+        <CardImageWrapper>
+          <CardImage src={image} alt={title} />
+          {category && <CategoryChip label={category} />}
+          {metricValue && (
+            <MetricBadge>
+              <MetricValue>{metricValue}</MetricValue>
+              <MetricLabel>{metricLabel}</MetricLabel>
+            </MetricBadge>
+          )}
+        </CardImageWrapper>
+      </Link>
 
       <CardContent>
         <CardTitle>{title}</CardTitle>

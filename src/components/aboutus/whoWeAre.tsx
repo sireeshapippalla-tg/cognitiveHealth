@@ -6,7 +6,6 @@ import {
   BackgroundAura,
   SectionTitle,
   ContentBox,
-  HighlightText,
   DecoratorLine,
   ItalicText,
   StyledContainer,
@@ -46,7 +45,7 @@ const WhoWeAreSection: React.FC = () => {
           >
             <ContentBox>
               <p>
-                <HighlightText>CognitiveHealth</HighlightText> is dedicated to
+                CognitiveHealth is dedicated to
                 solving the toughest operational challenges in healthcare
                 revenue cycle management through intelligent automation. We
                 combine deep expertise with advanced technology to deliver

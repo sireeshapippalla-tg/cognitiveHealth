@@ -14,7 +14,6 @@ import {
   IconWrapper,
   CardTitle,
   CardDescription,
-  HighlightText,
   StyledContainer,
 } from "./ProductIntelligence.style";
 
@@ -91,8 +90,7 @@ const ProductIntelligence = () => {
           transition={{ duration: 0.5 }}
         >
           <Title>
-            Enterprise AI Architecture Built for{" "}
-            <HighlightText>Healthcare</HighlightText>
+            Enterprise AI Architecture Built for{" "}Healthcare
           </Title>
           <SubtitleTextStyle>
             Cutting-edge technology designed specifically for the complexity of

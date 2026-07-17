@@ -72,7 +72,7 @@ export const TabButton = styled(motion.button)<{
   gap: "10px",
 
   "&:hover": {
-    background: !$active ? "rgba(244, 122, 32, 0.05)" : "transparent",
+    background: !$active ? "#eb7b33" : "transparent",
     transform: !$active ? "translateY(-2px)" : "none",
   },
 

@@ -31,7 +31,7 @@ export const StyledCard = motion.create(
 
 export const CardImageWrapper = styled(Box)({
   position: "relative",
-  paddingTop: "60%", // 5:3 aspect ratio
+  paddingTop: "45%", // reduced aspect ratio for more compact image height
   width: "100%",
   overflow: "hidden",
   background: "#f1f5f9",

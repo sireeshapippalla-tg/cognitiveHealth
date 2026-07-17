@@ -65,9 +65,7 @@ export const TrustDeploymentTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const GradientSpan = styled("span")({
-  background: "linear-gradient(90deg, var(--color-primary), var(--color-text-blue))",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
+  color: "inherit",
 });
 
 export const GridContainer = styled(Box)(({ theme }) => ({
@@ -169,7 +167,7 @@ export const ImplementationButton = styled(PrimaryButton)(({ theme }) => ({
   overflow: "hidden",
   background: "var(--color-primary)",
   color: "white",
-  boxShadow: "0 10px 25px rgba(244,122,32,0.3)",
+  boxShadow: "0 10px 25px rgba(235, 123, 51, 0.3)",
   whiteSpace: "normal",
   fontSize: "0.9rem",
   lineHeight: 1.3,
@@ -281,11 +279,11 @@ export const SubmitButton = styled(Button)(({ theme }) => ({
   paddingBottom: theme.spacing(1.8),
   textTransform: "none",
   fontWeight: 700,
-  background: "linear-gradient(135deg, #F47A20 0%, #ff8c3a 100%)",
-  boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
+  background: "#eb7b33",
+  boxShadow: "0 10px 20px rgba(235, 123, 51, 0.3)",
   "&:hover": {
-    background: "linear-gradient(135deg, #ff8c3a 0%, #f47a20 100%)",
-    boxShadow: "0 12px 24px rgba(244, 122, 32, 0.4)",
+    background: "#eb7b33",
+    boxShadow: "0 12px 24px rgba(235, 123, 51, 0.4)",
   },
 }));
 

@@ -2,12 +2,14 @@ import { render, screen } from "../../utils/test-utils";
 import SolutionsPage from "./SolutionsPage";
 import { describe, it, expect, vi } from "vitest";
 
+let mockPathname = "";
 let mockHash = "";
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual("react-router-dom");
   return {
     ...actual,
     useLocation: () => ({
+      pathname: mockPathname,
       hash: mockHash,
     }),
   };
@@ -26,6 +28,7 @@ vi.mock("../../components/SEO", () => ({ default: () => <div data-testid="mock-s
 
 describe("SolutionsPage Component", () => {
   it("renders payment posting hero by default (no hash)", () => {
+    mockPathname = "/solutions/payment-posting";
     mockHash = "";
     render(<SolutionsPage />);
     expect(screen.getByTestId("mock-seo")).toBeInTheDocument();
@@ -34,14 +37,16 @@ describe("SolutionsPage Component", () => {
     expect(screen.getByTestId("mock-results")).toBeInTheDocument();
   });
 
-  it("renders lockbox hero when hash is #lockboxManagement", () => {
-    mockHash = "#lockboxManagement";
+  it("renders lockbox hero when path includes /lockbox", () => {
+    mockPathname = "/solutions/lockbox";
+    mockHash = "";
     render(<SolutionsPage />);
     expect(screen.getByTestId("mock-lockbox-hero")).toBeInTheDocument();
   });
 
-  it("renders denial workflow hero when hash is #denialWorkflow", () => {
-    mockHash = "#denialWorkflow";
+  it("renders denial workflow hero when path includes /denials", () => {
+    mockPathname = "/solutions/denials";
+    mockHash = "";
     render(<SolutionsPage />);
     expect(screen.getByTestId("mock-denial-hero")).toBeInTheDocument();
   });

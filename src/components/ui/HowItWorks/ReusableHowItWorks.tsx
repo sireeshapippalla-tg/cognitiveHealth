@@ -46,7 +46,7 @@ export const ReusableHowItWorks: React.FC<ReusableHowItWorksProps> = ({
   steps,
   ctaText,
   onCtaClick,
-  themeColor = "#c2410c",
+  themeColor = "#eb7b33",
   // backgroundColor = "#f9fafb",
 }) => {
   const theme = useTheme();

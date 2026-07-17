@@ -1,8 +1,7 @@
-import { Grid } from "@mui/material";
 import type { ExpandableItem } from "../../ui/teamCard/expandableCard";
-import ExpandableCard from "../../ui/teamCard/expandableCard";
 import { SectionTitle } from "../../ui/sectionTitle/SectionTitle";
 import { Wrapper } from "./solutions.style";
+import CoreCapabilitiesLayout from "../CoreCapabilitiesLayout";
 // import Workbench from "../../../assets/solutions/Core Capabilities/Workbench.webp";
 // import Zap from "../../../assets/solutions/Core Capabilities/Zap.webp";
 // import Info from "../../../assets/solutions/Core Capabilities/Info.webp";
@@ -105,17 +104,9 @@ const CoreCapabilitiesSection = () => {
       <Wrapper>
         <SectionTitle
           title="Core Capabilities"
-          // subtitle="Powerful features designed to streamline every aspect of payment processing and reconciliation"
           marginBottom={30}
         />
-
-        <Grid container spacing={2}>
-          {capabilities.map((item) => (
-            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={item.id}>
-              <ExpandableCard item={item} variant="capability" />
-            </Grid>
-          ))}
-        </Grid>
+        <CoreCapabilitiesLayout items={capabilities} />
       </Wrapper>
     </div>
   );

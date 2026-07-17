@@ -41,7 +41,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       subtitle="An intelligent approach to detecting, resolving, and preventing healthcare claim denials"
       steps={steps}
-      themeColor="#F47A20"
+      themeColor="#eb7b33"
       backgroundColor="var(--color-white)"
     />
   );

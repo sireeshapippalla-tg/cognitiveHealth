@@ -1,14 +1,15 @@
 import React from "react";
-import { Fade, Typography } from "@mui/material";
+import {
+  Dialog,
+  DialogContent,
+  IconButton,
+  Typography,
+  Button,
+  Box,
+  Fade,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {
-  FullScreenDialog,
-  ViewerHeaderBox,
-  BackButton,
-  HeaderCloseBtn,
-  ViewerContent,
-} from "./ResultsDialog.style";
 
 interface PdfViewerDialogProps {
   open: boolean;
@@ -24,41 +25,57 @@ export const PdfViewerDialog: React.FC<PdfViewerDialogProps> = ({
   selectedPdf,
 }) => {
   return (
-    <FullScreenDialog
+    <Dialog
       open={open}
       onClose={onClose}
+      fullScreen
+      PaperProps={{ sx: { background: "var(--color-white)" } }}
       TransitionComponent={Fade}
     >
-      <ViewerHeaderBox>
-        <BackButton
+      <Box
+        sx={{
+          p: 2,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          borderBottom: "1px solid #f1f5f9",
+          background: "var(--color-white)",
+          zIndex: 10,
+        }}
+      >
+        <Button
           onClick={onBack}
           startIcon={
-            <ArrowForwardIosIcon />
+            <ArrowForwardIosIcon
+              sx={{ transform: "rotate(180deg)", fontSize: 14 }}
+            />
           }
+          sx={{ fontWeight: 700, textTransform: "none", color: "#64748b" }}
         >
           Back to Stories
-        </BackButton>
+        </Button>
         <Typography fontWeight={800} color="#1e293b">
           Customer Case Study
         </Typography>
-        <HeaderCloseBtn
+        <IconButton
           onClick={onClose}
           aria-label="Close"
+          sx={{ color: "#1e293b" }}
         >
           <CloseIcon />
-        </HeaderCloseBtn>
-      </ViewerHeaderBox>
-      <ViewerContent>
+        </IconButton>
+      </Box>
+      <DialogContent sx={{ p: 0, background: "#f8fafc" }}>
         {selectedPdf && (
           <iframe
             src={`${selectedPdf}#toolbar=0`}
             width="100%"
             height="100%"
+            style={{ border: "none" }}
             title="PDF Viewer"
           />
         )}
-      </ViewerContent>
-    </FullScreenDialog>
+      </DialogContent>
+    </Dialog>
   );
 };
-

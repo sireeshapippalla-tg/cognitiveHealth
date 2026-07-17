@@ -59,8 +59,8 @@ const PreviousEpisodes: React.FC<PreviousEpisodesProps> = ({ featuredPodcastId, 
                   <img src={episode.image} alt={episode.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', }} className="episode-img" />
                   <ImageOverlay />
                   <CardChipContainer>
-                     <GlassChip label={`EP ${podcastData.length - podcastData.findIndex(e => e.id === episode.id)}`} size="small" $fontWeight={700} />
-                     <GlassChip label={episode.readTime} size="small" $fontWeight={600} />
+                     <GlassChip label={`EP ${podcastData.length - podcastData.findIndex(e => e.id === episode.id)}`} size="small" $fontWeight={700} $bg="rgba(235, 123, 51, 0.95)" />
+                     <GlassChip label={episode.readTime} size="small" $fontWeight={600} $bg="rgba(29, 78, 216, 0.8)" />
                   </CardChipContainer>
                   <PlayButtonGroup className="play-btn-group">
                     <PlayAudioButton 

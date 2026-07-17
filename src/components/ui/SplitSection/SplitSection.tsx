@@ -69,19 +69,19 @@ const SplitSection = ({
           <MotionContent
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={{
-              hidden: { opacity: 0, x: reverse ? 30 : -30 },
+              hidden: { opacity: 0, x: reverse ? 15 : -15 },
               visible: {
                 opacity: 1,
                 x: 0,
-                transition: { staggerChildren: 0.1, duration: 0.6 },
+                transition: { staggerChildren: 0.05, duration: 0.3 },
               },
             }}
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
+                hidden: { opacity: 0, y: 8 },
                 visible: { opacity: 1, y: 0 },
               }}
             >
@@ -91,7 +91,7 @@ const SplitSection = ({
 
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
+                hidden: { opacity: 0, y: 8 },
                 visible: { opacity: 1, y: 0 },
               }}
             >
@@ -100,7 +100,7 @@ const SplitSection = ({
 
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
+                hidden: { opacity: 0, y: 8 },
                 visible: { opacity: 1, y: 0 },
               }}
             >
@@ -137,7 +137,7 @@ const SplitSection = ({
             initial={{ opacity: 0, x: reverse ? -60 : 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             whileHover={{ rotate: 1 }}
           >
             <ImageCard>

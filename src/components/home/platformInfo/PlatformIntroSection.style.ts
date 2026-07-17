@@ -46,7 +46,7 @@ export const MotionWrapper = styled(motion.div)(() => ({}));
 export const Badge = styled(Box)(({ theme }) => ({
   display: "inline-block",
   borderRadius: "50px",
-  background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
+  background: "#eb7b33",
   border: "1px solid rgba(0, 0, 0, 0.05)",
   backdropFilter: "blur(10px)",
   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)",
@@ -92,9 +92,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const Highlight = styled("span")(() => ({
   fontStyle: "italic",
   fontFamily: "'Playfair Display', serif",
-  background: "linear-gradient(90deg, var(--color-primary), #D4AF37)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
+  // color: "var(--color-primary)",
 }));
 
 export const Break = styled("br")(({ theme }) => ({

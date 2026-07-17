@@ -2,7 +2,7 @@ import BlogDenialManagement from "../assets/MediaCards/blog_denial_management.we
 import BlogDataCapture from "../assets/MediaCards/blog_data_capture.webp";
 import BlogRevenueCycle from "../assets/MediaCards/blog_revenue_cycle.webp";
 import BlogCorrespondenceManagement from "../assets/MediaCards/blog_correspondence_management.webp";
-import BlogIntelligenceAutomation from "../assets/MediaCards/blog_intelligence_automation.webp";
+// import BlogIntelligenceAutomation from "../assets/MediaCards/blog_intelligence_automation.webp";
 
 export interface Blog {
   id: string;
@@ -28,7 +28,7 @@ export const blogData: Blog[] = [
     date: "July 17, 2025",
     readTime: "",
     // category: "Document Processing",
-    link: "/resource/agentic-ai-automation-with-intent",
+    link: "/resources/blog/agentic-ai-automation-with-intent",
   },
   {
     id: "2",
@@ -40,7 +40,7 @@ export const blogData: Blog[] = [
     date: "June 13, 2025",
     readTime: "",
     // category: "Best Practices",
-    link: "/resource/intelligent-document-processing",
+    link: "/resources/blog/intelligent-document-processing",
   },
   {
     id: "3",
@@ -53,7 +53,7 @@ export const blogData: Blog[] = [
     date: "June 11, 2025",
     readTime: "",
     // category: "Revenue Cycle",
-    link: "/resource/ai-powered-intelligent-document-processing",
+    link: "/resources/blog/ai-powered-intelligent-document-processing",
   },
   {
     id: "4",
@@ -66,19 +66,19 @@ export const blogData: Blog[] = [
     date: "June 11, 2025",
     readTime: "",
     // category: "Strategy",
-    link: "/resource/lockbox-chaos-to-clarity",
+    link: "/resources/blog/lockbox-chaos-to-clarity",
   },
-  {
-    id: "5",
-    type: "blog",
-    title:
-      "Maximizing Business Value Requires the Vision of Intelligence in Automation",
-    description:
-      "The benefits of automating healthcare administrative tasks to gain efficiencies have been agreed in principle for some time now.",
-    image: BlogIntelligenceAutomation,
-    date: "December 14, 2020",
-    readTime: "",
-    // category: "Strategy",
-    link: "/resource/maximizing-business-value-vision",
-  },
+  // {
+  //   id: "5",
+  //   type: "blog",
+  //   title:
+  //     "Maximizing Business Value Requires the Vision of Intelligence in Automation",
+  //   description:
+  //     "The benefits of automating healthcare administrative tasks to gain efficiencies have been agreed in principle for some time now.",
+  //   image: BlogIntelligenceAutomation,
+  //   date: "December 14, 2020",
+  //   readTime: "",
+  //   // category: "Strategy",
+  //   link: "/resources/blog/maximizing-business-value-vision",
+  // },
 ];

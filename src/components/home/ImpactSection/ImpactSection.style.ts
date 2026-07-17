@@ -23,7 +23,7 @@ export const Pill = styled(Typography)(() => ({
   display: "inline-block",
   padding: "6px 20px",
   borderRadius: "20px",
-  background: "linear-gradient(90deg,#F47A20,#6BBF59,#4A90E2)",
+  background: "#eb7b33",
   color: "var(--color-white)",
   fontSize: "0.75rem",
   fontWeight: 600,
@@ -63,6 +63,12 @@ export const MotionCard = styled(motion.div)(() => ({
   boxShadow: "0 8px 30px rgba(0,0,0,0.05)",
   cursor: "pointer",
   overflow: "hidden",
+  transition: "box-shadow 0.3s ease, transform 0.3s ease",
+
+  "&:hover": {
+    transform: "translateY(-6px)",
+    boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
+  },
 }));
 
 /* GLOW */
@@ -92,7 +98,7 @@ export const CenterText = styled(Box)(() => ({
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  fontSize: "26px",
+  fontSize: "20px",
   fontWeight: "bold",
   color: "var(--color-primary)",
   pointerEvents: "none",
@@ -109,4 +115,8 @@ export const CardDesc = styled(Typography)(() => ({
   textAlign: "center",
   marginTop: "8px",
   color: "var(--color-gray-600)",
+  fontSize: "0.875rem",
+  lineHeight: 1.5,
+  minHeight: "3em",       /* reserve space — no layout shift */
+  transition: "opacity 0.3s ease, transform 0.3s ease",
 }));

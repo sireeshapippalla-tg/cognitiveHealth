@@ -180,7 +180,7 @@ export const BlogContent3: React.FC<BlogContentProps> = ({ blog }) => (
     <SectionContentWithMargin $mt={2}>
       Suggested reading:
       <br />
-      <StyledResourceLink to="/resource/intelligent-document-processing">
+      <StyledResourceLink to="/resources/blog/intelligent-document-processing">
         Intelligent Document Processing
       </StyledResourceLink>
     </SectionContentWithMargin>

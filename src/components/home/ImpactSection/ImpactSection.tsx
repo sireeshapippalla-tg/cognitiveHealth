@@ -17,13 +17,15 @@ import {
 
 const data = [
   {
-    value: 93.8,
+    value: 100,
     title: "Fully Reconciled Payments",
     desc: "Fully Reconciled Payments - Virtually Zero Posting Errors",
     color: "var(--color-primary)",
   },
   {
-    value: 41.6,
+    value: 100,
+    countTarget: 4,
+    isMultiplier: true,
     title: "Faster Turnaround Time",
     desc: "Faster Turnaround Time - From 3-5 Days To Under 4 Hours",
     color: "var(--color-green)",
@@ -70,6 +72,8 @@ const ImpactSection = () => {
 
 interface StatItem {
   value: number;
+  countTarget?: number;
+  isMultiplier?: boolean;
   title: string;
   desc: string;
   color: string;
@@ -84,11 +88,11 @@ const StatCard = ({ item }: { item: StatItem }) => {
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (item.value / 100) * circumference;
-  const count = useCountUp(inView ? item.value : 0, 2000);
+  const targetVal = item.countTarget !== undefined ? item.countTarget : item.value;
+  const count = useCountUp(inView ? targetVal : 0, 2000);
   return (
     <MotionCard
       ref={ref}
-      whileHover={{ scale: 1.05, boxShadow: `0 20px 40px ${item.color}20` }}
     >
       {/* Glow effect */}
 
@@ -106,7 +110,7 @@ const StatCard = ({ item }: { item: StatItem }) => {
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#F47A20" />
+              <stop offset="0%" stopColor="#eb7b33" />
               <stop offset="50%" stopColor="#6BBF59" />
               <stop offset="100%" stopColor="#4A90E2" />
             </linearGradient>
@@ -124,7 +128,7 @@ const StatCard = ({ item }: { item: StatItem }) => {
 
           {/* Animated circle */}
           <motion.circle
-            stroke={`url(#gradient-${item.value})`} // 👈 USE HERE
+            stroke={`url(#gradient-${item.value})`}
             fill="transparent"
             strokeWidth={stroke}
             strokeDasharray={circumference + " " + circumference}
@@ -143,7 +147,11 @@ const StatCard = ({ item }: { item: StatItem }) => {
 
         {/* Number */}
 
-        <CenterText>{count.toFixed(1)}%</CenterText>
+        <CenterText>
+          {item.isMultiplier
+            ? (inView ? `${Math.round(count)}x` : `${item.countTarget}x`)
+            : (inView ? `${count.toFixed(1)}%` : `${item.value.toFixed(1)}%`)}
+        </CenterText>
       </RingWrapper>
 
       {/* Title */}
@@ -152,12 +160,11 @@ const StatCard = ({ item }: { item: StatItem }) => {
 
       {/* Hover Reveal */}
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileHover={{ opacity: 1, y: 0 }}
-      >
-        <CardDesc>{item.desc}</CardDesc>
-      </motion.div>
+      <div>
+        <CardDesc>
+          {item.desc}
+        </CardDesc>
+      </div>
     </MotionCard>
   );
 };

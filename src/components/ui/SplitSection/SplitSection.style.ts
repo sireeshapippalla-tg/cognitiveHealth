@@ -103,7 +103,7 @@ export const PrimaryButton = styled(Button)(() => ({
   color: "var(--color-white)",
   fontSize: "1rem",
   padding: "10px 24px",
-  boxShadow: "0 10px 20px rgba(244,122,32,0.2)",
+  boxShadow: "0 10px 20px rgba(235, 123, 51, 0.2)",
 
   "&::after": {
     content: '""',
@@ -179,12 +179,6 @@ export const BlobBottom = styled(motion.div)(() => ({
 
 export const Highlight = styled("span")(() => ({
   fontWeight: 900,
-  background:
-    "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  animation: "gradientMove 5s linear infinite",
-  backgroundSize: "200% auto",
 }));
 
 export const MotionContent = styled(motion.div)(() => ({

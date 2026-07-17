@@ -41,7 +41,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       subtitle="Ensuring clinical and financial data alignment before the claim ever leaves your system"
       steps={steps}
-      themeColor="#F47A20"
+      themeColor="#eb7b33"
       backgroundColor="var(--color-white)"
     />
   );

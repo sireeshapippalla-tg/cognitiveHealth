@@ -41,7 +41,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       subtitle="Ensuring clinical outcomes are matched by financial performance through rigorous contract compliance"
       steps={steps}
-      themeColor="#F47A20"
+      themeColor="#eb7b33"
       backgroundColor="var(--color-white)"
     />
   );

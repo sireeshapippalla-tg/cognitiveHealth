@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export const Hero = styled(Box)(({ theme }) => ({
   backgroundColor: "#f8fafc",
-  padding: "120px 24px 80px",
+  padding: "120px 24px 40px",
   textAlign: "center",
   position: "relative",
   overflow: "hidden",
   background: "linear-gradient(180deg, #f0f9ff 0%, var(--color-white) 100%)",
 
   [theme.breakpoints.down("md")]: {
-    padding: "100px 16px 60px",
+    padding: "100px 16px 30px",
   },
 }));
 
@@ -77,15 +77,9 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "45px",
   fontWeight: 800,
   marginBottom: "20px",
-  color: "var(--color-text-dark)",
-
+  color: "#0f172a",
   lineHeight: "50px",
-  background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  // paddingBottom:"13px",
   paddingTop: "10px",
-
   [theme.breakpoints.down("md")]: {
     fontSize: "36px",
     lineHeight: "40px",
@@ -95,13 +89,9 @@ export const SubTitle = styled(Typography)(({ theme }) => ({
   fontSize: "20px",
   fontWeight: 800,
   marginBottom: "20px",
-  color: "var(--color-text-dark)",
+  color: "#0f172a",
   lineHeight: "36px",
-  background: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
   paddingBottom: "13px",
-
   [theme.breakpoints.down("md")]: {
     fontSize: "24px",
     lineHeight: "32px",
@@ -112,7 +102,7 @@ export const Description = styled(Typography)(() => ({
   fontWeight: 400,
   color: "var(--color-text-light)",
   maxWidth: "700px",
-  margin: "0 auto 48px",
+  margin: "0 auto 8px",
   fontSize: "18px",
   lineHeight: "1.6",
   opacity: 0.8,

@@ -52,7 +52,7 @@ const HeroSection = () => {
         }}
         secondaryAction={{
           label: "See Platform in Action",
-          onClick: () => navigate("/resources#videos"),
+          onClick: () => navigate("/resources/videos"),
         }}
       />
 

@@ -112,16 +112,16 @@ export const IconWrapper = styled(Box, {
 
   background:
     variant === "pink"
-      ? "linear-gradient(135deg, #F47A20 0%, #E06912 100%)"
+      ? "#eb7b33"
       : "linear-gradient(135deg, #4A90E2 0%, #2b568c 100%)",
 
   border: "3px solid",
   borderColor:
-    variant === "pink" ? "rgba(244, 122, 32, 0.2)" : "rgba(74, 144, 226, 0.2)",
+    variant === "pink" ? "rgba(235, 123, 51, 0.2)" : "rgba(74, 144, 226, 0.2)",
 
   boxShadow:
     variant === "pink"
-      ? "0 8px 20px rgba(244, 122, 32, 0.3)"
+      ? "0 8px 20px rgba(235, 123, 51, 0.3)"
       : "0 8px 20px rgba(74, 144, 226, 0.3)",
 
   "& img": {

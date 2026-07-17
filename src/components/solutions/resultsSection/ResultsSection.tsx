@@ -114,8 +114,8 @@ const ResultsSection = () => {
       const err = error as { data?: { error?: string }; message?: string };
       toast.error(
         err.data?.error ||
-          err.message ||
-          "Failed to send email. Please try again."
+        err.message ||
+        "Failed to send email. Please try again."
       );
       console.error(error);
     }

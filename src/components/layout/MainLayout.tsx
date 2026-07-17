@@ -1,8 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./header/Header";
 import Footer from "./Footer/Footer";
 
 const MainLayout = () => {
+  const location = useLocation();
   return (
     <>
       <div
@@ -12,7 +13,7 @@ const MainLayout = () => {
 
         {/* Page content */}
         <main style={{ flex: 1 }}>
-          <Outlet />
+          <Outlet key={location.pathname} />
         </main>
 
         <Footer />

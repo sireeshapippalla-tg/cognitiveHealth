@@ -94,18 +94,29 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
 
             <Collapse in={mobileSolutionsOpen}>
               <Stack spacing={2} pl={2} mt={1}>
-                {solutionLinks.map((item) => (
-                  <DrawerItem
-                    key={item.title}
-                    active={location.hash === `#${item.hash}`}
-                    onClick={() => {
-                      navigate(`/solutions#${item.hash}`);
-                      onClose();
-                    }}
-                  >
-                    {item.title}
-                  </DrawerItem>
-                ))}
+                {solutionLinks.map((item) => {
+                  const hashToRoute: Record<string, string> = {
+                    paymentPosting: "/solutions/payment-posting",
+                    lockboxManagement: "/solutions/lockbox",
+                    denialWorkflow: "/solutions/denials",
+                    eligibilityDiscovery: "/solutions/eligibility",
+                    contractAnalysis: "/solutions/contract-analysis",
+                    preBillReview: "/solutions/pre-bill",
+                  };
+                  const route = hashToRoute[item.hash] || "/solutions";
+                  return (
+                    <DrawerItem
+                      key={item.title}
+                      active={location.pathname === route}
+                      onClick={() => {
+                        navigate(route);
+                        onClose();
+                      }}
+                    >
+                      {item.title}
+                    </DrawerItem>
+                  );
+                })}
               </Stack>
             </Collapse>
           </Box>
@@ -118,7 +129,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
           </DrawerItem>
           <Box>
             <DrawerItem
-              active={location.pathname === "/resources"}
+              active={location.pathname.startsWith("/resources")}
               onClick={() => setMobileResourcesOpen((prev) => !prev)}
             >
               <span>Resources</span>
@@ -130,9 +141,9 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
                 {resourceLinks.map((item) => (
                   <DrawerItem
                     key={item.hash}
-                    active={location.hash === `#${item.hash}`}
+                    active={location.pathname === `/resources/${item.hash}`}
                     onClick={() => {
-                      navigate(`/resources#${item.hash}`);
+                      navigate(`/resources/${item.hash}`);
                       onClose();
                       setMobileResourcesOpen(false);
                     }}
@@ -154,7 +165,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             FAQ
           </DrawerItem>
           <AppButton
-            variantType="outline"
+            variantType="primary"
             onClick={() =>
               handleNavigate(ROUTES.REQUEST_DEMO, {
                 fromLabel: "Menu",
@@ -163,12 +174,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             }
           >
             Request a Demo
-          </AppButton>
-          <AppButton
-            variantType="primary"
-            onClick={() => handleNavigate("/contact-us")}
-          >
-            Contact Us
           </AppButton>
         </Stack>
       </DrawerContainer>

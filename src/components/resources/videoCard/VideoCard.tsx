@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, CircularProgress } from "@mui/material";
 
 import {
   StyledCard,
@@ -34,6 +35,8 @@ const VideoCard: React.FC<VideoCardProps> = ({
   duration,
   onPlay,
 }) => {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   return (
     <StyledCard
       layout
@@ -42,27 +45,47 @@ const VideoCard: React.FC<VideoCardProps> = ({
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <CardImageWrapper onClick={onPlay}>
-        {/* Always show image */}
         {link?.includes("youtube.com") ? (
-          <iframe
-            src={link}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <>
+            {!iframeLoaded && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  bgcolor: "rgba(0, 0, 0, 0.05)"
+                }}
+              >
+                <CircularProgress color="primary" />
+              </Box>
+            )}
+            <iframe
+              src={link}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              onLoad={() => setIframeLoaded(true)}
+              style={{
+                opacity: iframeLoaded ? 1 : 0,
+                transition: "opacity 0.3s ease-in-out"
+              }}
+            />
+          </>
         ) : (
           <>
             <CardImage src={image} alt={title} />
-
-            {/* Play Button */}
             <PlayIconOverlay onClick={onPlay}>
               <PlayArrowIcon />
             </PlayIconOverlay>
           </>
         )}
         {category && <CategoryChip label={category} />}
-
-        {/* Duration */}
         {duration && <DurationBadge>{duration}</DurationBadge>}
       </CardImageWrapper>
 

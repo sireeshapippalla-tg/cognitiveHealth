@@ -128,7 +128,7 @@ export const AdvisorRole = styled(Typography, {
     content: '""',
     width: "40px",
     height: "2px",
-    background: "rgba(244, 122, 32, 0.3)",
+    background: "#eb7b33",
     display: isMobile ? "none" : "block",
   },
 }));

@@ -1,5 +1,6 @@
-import { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Suspense } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { lazyWithRetry as lazy } from "./utils/lazyWithRetry";
 import { Typography } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,24 +17,7 @@ const PlatFormPage = lazy(() => import("./pages/platform/PlatFormPage"));
 const AboutUsPage = lazy(() => import("./pages/aboutUs/AboutUsPage"));
 const ResourcesPage = lazy(() => import("./pages/resources/ResourcesPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFoundPage"));
-const PaymentPostingPage = lazy(
-  () => import("./pages/solutions/PaymentPostingPage")
-);
-const LockBoxAnalysisPage = lazy(
-  () => import("./pages/solutions/LockBoxAnalysisPage")
-);
-const ContractAnalysisPage = lazy(
-  () => import("./pages/solutions/ContractAnalysisPage")
-);
-const EligibilityDiscoveryPage = lazy(
-  () => import("./pages/solutions/EligibilityDiscoveryPage")
-);
-const DenialWorkFlowPage = lazy(
-  () => import("./pages/solutions/DenialWorkFlowPage")
-);
-const PreBillServicesPage = lazy(
-  () => import("./pages/solutions/PreBillServicesPage")
-);
+
 const ContactUsPage = lazy(() => import("./pages/contactUs/ContactUsPage"));
 const RCMReadinessScreen = lazy(() => import("./pages/RcmreadinessScreen"));
 const TermsPage = lazy(() => import("./pages/terms&Conditions/TermsPage"));
@@ -75,7 +59,7 @@ const HealthcareClaimsProcessingFaqPage = lazy(
 const SpecialtyMedicalBillingFaqPage = lazy(
   () => import("./pages/faqsPages/SpecialtyMedicalBillingFaqPage")
 );
-// const PodcastPage = lazy(() => import("./pages/podcast/PodcastPage"));
+const PodcastPage = lazy(() => import("./pages/podcast/PodcastPage"));
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import DemoModal from "./components/common/DemoModal";
@@ -108,30 +92,34 @@ const App = () => {
             <Route path={ROUTES.PLATFORM} element={<PlatFormPage />} />
             <Route
               path={ROUTES.PAYMENTPOSTING}
-              element={<PaymentPostingPage />}
+              element={<SolutionsPage />}
             />
             <Route
               path={ROUTES.LOCKBOXANALYSIS}
-              element={<LockBoxAnalysisPage />}
+              element={<SolutionsPage />}
             />
             <Route
               path={ROUTES.CONTRACTANALYSIS}
-              element={<ContractAnalysisPage />}
+              element={<SolutionsPage />}
             />
             <Route
               path={ROUTES.ELIGIBILITYDISCOVERY}
-              element={<EligibilityDiscoveryPage />}
+              element={<SolutionsPage />}
             />
             <Route
               path={ROUTES.DENIALWORKFLOW}
-              element={<DenialWorkFlowPage />}
+              element={<SolutionsPage />}
             />
             <Route
               path={ROUTES.PREBILLSERVICES}
-              element={<PreBillServicesPage />}
+              element={<SolutionsPage />}
             />
             <Route path={ROUTES.ABOUTUS} element={<AboutUsPage />} />
-            <Route path={ROUTES.RESOURCES} element={<ResourcesPage />} />
+            <Route
+              path={ROUTES.RESOURCES}
+              element={<Navigate to="/resources/blogs" replace />}
+            />
+            <Route path={ROUTES.RESOURCES_TAB} element={<ResourcesPage />} />
             <Route path={ROUTES.CONTACTUS} element={<ContactUsPage />} />
             <Route
               path={ROUTES.RCMREADINESS}
@@ -143,7 +131,10 @@ const App = () => {
               element={<PrivacyPolicyPage />}
             />
             <Route path={ROUTES.FAQ} element={<Faq />} />
-            <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
+            <Route
+              path={ROUTES.SOLUTIONS}
+              element={<Navigate to={ROUTES.PAYMENTPOSTING} replace />}
+            />
             <Route path={ROUTES.REQUEST_DEMO} element={<RequestDemoPage />} />
             <Route path={ROUTES.BLOG_DETAIL} element={<BlogDetailPage />} />
             <Route path={ROUTES.MEDIA_DETAIL} element={<MediaDetailPage />} />
@@ -187,7 +178,7 @@ const App = () => {
               path={ROUTES.SPECIALTY_MEDICAL_BILLING_FAQ}
               element={<SpecialtyMedicalBillingFaqPage />}
             />
-            {/* <Route path={ROUTES.PODCAST} element={<PodcastPage />} /> */}
+            <Route path={ROUTES.PODCAST} element={<PodcastPage />} />
           </Route>
 
           {/* ---------- FALLBACK ---------- */}

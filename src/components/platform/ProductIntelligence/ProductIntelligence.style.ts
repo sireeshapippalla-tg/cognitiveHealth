@@ -25,8 +25,8 @@ export const BackgroundGlow = styled(Box)({
   transform: "translate(-50%, -50%)",
   width: "500px",
   height: "500px",
-  background:
-    "radial-gradient(circle, rgba(244,122,32,0.05) 0%, transparent 60%)",
+  // background:
+  //   "radial-gradient(circle, #eb7b33 0%, transparent 60%)",
   filter: "blur(40px)",
   zIndex: 0,
 });
@@ -74,7 +74,7 @@ export const BackgroundNumber = styled(Typography)({
   right: "15px",
   fontSize: "8rem",
   fontWeight: 900,
-  color: "rgba(244, 122, 32, 0.12)",
+  color: "hsla(23, 82%, 56%, 0.12)",
   lineHeight: 1,
   zIndex: -1,
   userSelect: "none",
@@ -85,8 +85,8 @@ export const IconWrapper = styled(Box)({
   height: "60px",
   marginBottom: "24px",
   borderRadius: "14px",
-  background: "linear-gradient(135deg, #F47A20 0%, #E06912 100%)",
-  boxShadow: "0 8px 16px rgba(244, 122, 32, 0.3)",
+  background: "#eb7b33",
+  boxShadow: "0 8px 16px rgba(235, 123, 51, 0.3)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -120,5 +120,5 @@ export const CardDescription = styled(Typography)({
 });
 
 export const HighlightText = styled("span")({
-  color: "var(--color-primary)",
+  color: "inherit",
 });

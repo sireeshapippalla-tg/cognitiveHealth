@@ -33,7 +33,7 @@ export const ModalContainer = styled(Box)(({ theme }) => ({
     position: "absolute",
     inset: -2,
     zIndex: -1,
-    background: "linear-gradient(45deg, #3b82f6, #10b981, #f47a20, #3b82f6)",
+    background: "linear-gradient(45deg, #3b82f6, #10b981, #eb7b33, #3b82f6)",
     borderRadius: "42px",
     opacity: 0.4,
     filter: "blur(8px)",

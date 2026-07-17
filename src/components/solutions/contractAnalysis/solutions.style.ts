@@ -7,7 +7,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   },
 }));
 export const SectionContainer = styled(Box)(({ theme }) => ({
-  background: "#ea580c",
+  background: "#eb7b33",
   padding: "30px 80px",
   [theme.breakpoints.down("md")]: {
     padding: "20px",

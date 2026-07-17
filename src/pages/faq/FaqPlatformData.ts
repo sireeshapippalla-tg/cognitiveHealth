@@ -48,11 +48,11 @@ export const platformQuestions: TermSection[] = [
   {
     id: "platform-security-compliance",
     category: "Platform",
-    title: "Is CognitiveHealth’s platform secure and complaint with HIPAA and other industry standards?",
+    title: "Is CognitiveHealth’s platform secure and compliant with HIPAA and other industry standards?",
     blocks: [
       {
         type: "paragraph",
-        text: "CognitiveHealth is operates in a <strong>HIPAA compliant</strong> and <strong>SOC 2 Type II certified</strong> data center. All data is protected with AES-256 encryption at rest and TLS 1.2+ encryption in transit. We conduct regular third-party penetration testing and vulnerability assessments to ensure enterprise-grade security.",
+        text: "CognitiveHealth operates in a <strong>HIPAA compliant</strong> and <strong>SOC 2 Type II certified</strong> data center. All data is protected with AES-256 encryption at rest and TLS 1.2+ encryption in transit. We conduct regular third-party penetration testing and vulnerability assessments to ensure enterprise-grade security.",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const platformQuestions: TermSection[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "Yes. While iCAN™ ONE achieves up to 95% autonomy in routine workflows, our <strong>Human-in-the-Loop (HITL) framework</strong> ensures that high-value exceptions or complex clinical denials etc are automatically routed to your staff for final verification, maintaining 100% auditability and control.",
+        text: "Yes. While iCAN™ ONE achieves up to 95% autonomy in routine workflows, our <strong>Human-in-the-Loop (HITL) framework</strong> ensures that high-value exceptions or complex clinical denials are automatically routed to your staff for final verification, maintaining 100% auditability and control.",
       },
     ],
   },

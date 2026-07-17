@@ -74,7 +74,7 @@ export const IconContainer = styled(Box)(({ theme }) => ({
   width: 70,
   height: 70,
   borderRadius: "24px",
-  background: "rgba(244, 122, 32, 0.05)",
+  background: "white",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

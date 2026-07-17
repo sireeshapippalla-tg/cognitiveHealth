@@ -12,7 +12,17 @@ import SEO from "../../components/SEO";
 
 const SolutionsPage = () => {
   const location = useLocation();
-  const activeTab = location.hash.replace("#", "") || "paymentPosting";
+  
+  const getActiveTab = (pathname: string) => {
+    if (pathname.includes("/lockbox")) return "lockboxManagement";
+    if (pathname.includes("/denials")) return "denialWorkflow";
+    if (pathname.includes("/eligibility")) return "eligibilityDiscovery";
+    if (pathname.includes("/contract-analysis")) return "contractAnalysis";
+    if (pathname.includes("/pre-bill")) return "preBillReview";
+    return "paymentPosting";
+  };
+
+  const activeTab = getActiveTab(location.pathname);
 
   const seoData: Record<
     string,
@@ -90,7 +100,7 @@ const SolutionsPage = () => {
       },
     },
     preBillReview: {
-      title: "AI Pre-Bill Review Services",
+      title: "AI Pre-Bill Services",
       description:
         "Prevent claim rejections before they happen with AI claim scrubbing and pre-bill audits for healthcare providers.",
       keywords:
@@ -98,7 +108,7 @@ const SolutionsPage = () => {
       schema: {
         "@context": "https://schema.org",
         "@type": "Service",
-        name: "AI Pre-Bill Review",
+        name: "AI Pre-Bill Services",
       },
     },
   };

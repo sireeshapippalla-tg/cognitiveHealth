@@ -35,6 +35,7 @@ import cognitiveLogo from "../../../assets/cognitiveLogo.svg";
 import PopoverCard from "../../ui/popoverCard/PopoverCard";
 import { solutionLinks, resourceLinks } from "./HeaderData";
 import { MobileDrawer } from "./MobileDrawer";
+import { ROUTES } from "../../../routes";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ const Header = () => {
           {/* ================= DESKTOP NAV ================= */}
           <DesktopNavStack
             direction="row"
-            spacing={{ md: 2, lg: 4 }}
+            spacing={{ md: 1, lg: 4 }}
           >
             <NavItem active={isActive("/")} onClick={() => navigate("/")}>
               Home
@@ -145,7 +146,7 @@ const Header = () => {
               onMouseLeave={handleCloseResources}
             >
               <NavItem
-                active={resourcesOpen || location.pathname === "/resources"}
+                active={resourcesOpen || location.pathname.startsWith("/resources")}
               >
                 Resources
                 <ArrowIcon
@@ -166,9 +167,12 @@ const Header = () => {
           >
             <AppButton
               variantType="primary"
-              onClick={() => handleNavigate("/contact-us")}
+              onClick={() => handleNavigate(ROUTES.REQUEST_DEMO, {
+                fromLabel: "Header",
+                fromPath: location.pathname,
+              })}
             >
-              Contact Us
+              Request a Demo
             </AppButton>
           </DesktopActionsStack>
 
@@ -234,18 +238,29 @@ const Header = () => {
               {/* Right Side: Grid of Solutions */}
               <Box flex={1}>
                 <SolutionsGrid>
-                  {solutionLinks.map((item) => (
-                    <PopoverCard
-                      key={item.title}
-                      icon={item.icon}
-                      title={item.title}
-                      description={item.desc}
-                      onClick={() => {
-                        navigate(`/solutions#${item.hash}`);
-                        setSolutionsOpen(false);
-                      }}
-                    />
-                  ))}
+                  {solutionLinks.map((item) => {
+                    const hashToRoute: Record<string, string> = {
+                      paymentPosting: "/solutions/payment-posting",
+                      lockboxManagement: "/solutions/lockbox",
+                      denialWorkflow: "/solutions/denials",
+                      eligibilityDiscovery: "/solutions/eligibility",
+                      contractAnalysis: "/solutions/contract-analysis",
+                      preBillReview: "/solutions/pre-bill",
+                    };
+                    const route = hashToRoute[item.hash] || "/solutions";
+                    return (
+                      <PopoverCard
+                        key={item.title}
+                        icon={item.icon}
+                        title={item.title}
+                        description={item.desc}
+                        onClick={() => {
+                          navigate(route);
+                          setSolutionsOpen(false);
+                        }}
+                      />
+                    );
+                  })}
                 </SolutionsGrid>
               </Box>
             </Box>
@@ -287,7 +302,7 @@ const Header = () => {
                   icon={item.icon}
                   title={item.title}
                   onClick={() => {
-                    navigate(`/resources#${item.hash}`);
+                    navigate(`/resources/${item.hash}`);
                     setResourcesOpen(false);
                   }}
                 />

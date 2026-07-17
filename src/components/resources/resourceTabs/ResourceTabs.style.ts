@@ -12,7 +12,7 @@ export const BlogContainer = styled(Box)(({ theme }) => ({
 
 export const StickyTabsWrapper = styled(Box)(({ theme }) => ({
   position: "sticky",
-  top: 56,
+  // top: 36,
   zIndex: 1000,
   width: "100%",
   display: "flex",

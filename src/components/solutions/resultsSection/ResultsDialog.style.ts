@@ -13,7 +13,7 @@ import {
 
 
 export const StyledDialogTitle = styled(DialogTitle)(() => ({
-  backgroundColor: "var(--color-text-blue)",
+  backgroundColor: "#eb7b33",
   color: "var(--color-white)",
   fontWeight: 600,
   display: "flex",
@@ -33,7 +33,7 @@ export const PrimaryButton = styled(Button)(() => ({
   background: "var(--color-primary)",
   fontSize: "1rem",
   textTransform: "none",
-  boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
+  boxShadow: "0 15px 30px rgba(235, 123, 51, 0.3)",
   color: "var(--color-white)",
   "& svg": {
     fontSize: "14px",
@@ -60,7 +60,7 @@ export const OutlineButton = styled(Button)(() => ({
   "&:hover": {
     borderColor: "var(--color-primary)",
     color: "var(--color-primary)",
-    background: "rgba(244, 122, 32, 0.05)",
+    background: "#eb7b33",
   },
 }));
 
@@ -137,7 +137,7 @@ export const SubmitButton = styled(Button)(({ theme }) => ({
   borderRadius: "16px",
   background: "var(--color-primary)",
   fontWeight: 800,
-  boxShadow: "0 10px 20px rgba(244, 122, 32, 0.3)",
+  boxShadow: "0 10px 20px rgba(235, 123, 51, 0.3)",
   "&:hover": {
     background: "var(--color-primary-dark)",
   },
@@ -194,11 +194,11 @@ export const PdfItemRow = styled(Box)(({ theme }) => ({
   borderRadius: "24px",
   cursor: "pointer",
   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-  background: "rgba(244, 122, 32, 0.03)",
+  background: "rgba(235, 123, 51, 0.03)",
   display: "flex",
   alignItems: "center",
   gap: theme.spacing(3),
-  border: "1px solid rgba(244, 122, 32, 0.1)",
+  border: "1px solid rgba(235, 123, 51, 0.1)",
   "& .pdf-name": {
     flex: 1,
     color: "#1f2937",
@@ -209,10 +209,10 @@ export const PdfItemRow = styled(Box)(({ theme }) => ({
     color: "var(--color-primary)",
   },
   "&:hover": {
-    background: "rgba(244, 122, 32, 0.1)",
-    borderColor: "rgba(244, 122, 32, 0.3)",
+    background: "rgba(235, 123, 51, 0.1)",
+    borderColor: "rgba(235, 123, 51, 0.3)",
     transform: "translateX(12px)",
-    boxShadow: "0 10px 20px rgba(244, 122, 32, 0.1)",
+    boxShadow: "0 10px 20px rgba(235, 123, 51, 0.1)",
   },
 }));
 

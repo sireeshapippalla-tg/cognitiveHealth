@@ -9,8 +9,8 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/RoutePaths";
 
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import cognitiveLogo from "../../../assets/white-logo.webp";
@@ -65,8 +65,8 @@ const Footer = () => {
 
             {/* ✅ SOCIAL ICONS */}
             <Social direction="row" spacing={2}>
-              {/* <a
-                href="#"
+              <a
+                href="https://www.facebook.com/profile.php?id=61563305037887"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -74,23 +74,23 @@ const Footer = () => {
                 <FacebookIcon />
               </a>
 
-              <a
+              {/* <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
               >
-                <XIcon /> 
-              </a>
+                <XIcon />
+              </a> */}
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/cognitivehealth-technologies-llc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon />
-              </a> */}
+              </a>
 
               <a
                 href="https://www.youtube.com/@cognitivehealth"
@@ -130,6 +130,11 @@ const Footer = () => {
                   Contract Analytics
                 </RouterLink>
               </ListItem>
+              <ListItem>
+                <RouterLink to={ROUTES.PREBILLSERVICES}>
+                  Pre-Bill Services
+                </RouterLink>
+              </ListItem>
             </List>
           </Box>
 
@@ -147,7 +152,7 @@ const Footer = () => {
                 <RouterLink to="/resources">Resources</RouterLink>
               </ListItem>
               <ListItem>
-                <RouterLink to="/resources#blog">Blog</RouterLink>
+                <RouterLink to="/resources/blogs">Blog</RouterLink>
               </ListItem>
             </List>
           </Box>
@@ -158,16 +163,6 @@ const Footer = () => {
             <List>
               <ListItem>
                 <RouterLink to={ROUTES.REQUEST_DEMO}>Request Demo</RouterLink>
-              </ListItem>
-              <ListItem>
-                <RouterLink to={ROUTES.PRIVACYPOLICY}>
-                  Privacy Policy
-                </RouterLink>
-              </ListItem>
-              <ListItem>
-                <RouterLink to={ROUTES.TERMSCONDITIONS}>
-                  Terms of Service
-                </RouterLink>
               </ListItem>
               <ListItem>
                 <RouterLink to={ROUTES.FAQ}>FAQ</RouterLink>
@@ -194,7 +189,7 @@ const Footer = () => {
               to={ROUTES.TERMSCONDITIONS}
               underline="hover"
             >
-              Terms and Conditions
+              Terms of Service
             </Link>{" "}
             |{" "}
             <Link

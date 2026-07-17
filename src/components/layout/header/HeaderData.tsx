@@ -9,6 +9,7 @@ import PreBill from "../../../assets/Prebill.svg";
 import BlogIcon from "../../../assets/Resources/Blog.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
+import PodcastIcon from "../../../assets/Resources/podcast.svg";
 
 export interface SolutionLink {
   title: string;
@@ -20,6 +21,7 @@ export interface SolutionLink {
 export interface ResourceLink {
   title: string;
   hash: string;
+  route?: string;
   icon: React.ReactNode;
 }
 
@@ -119,7 +121,7 @@ export const solutionLinks: SolutionLink[] = [
 export const resourceLinks: ResourceLink[] = [
   {
     title: "Blog",
-    hash: "blog",
+    hash: "blogs",
     icon: (
       <img
         width={48}
@@ -162,6 +164,24 @@ export const resourceLinks: ResourceLink[] = [
         height={48}
         src={MediaIcon}
         alt="Media Icon"
+        style={{
+          width: 24,
+          height: 24,
+          filter: "brightness(0) invert(1)",
+        }}
+        loading="lazy"
+      />
+    ),
+  },
+  {
+    title: "Podcast",
+    hash: "podcast",
+    icon: (
+      <img
+        width={48}
+        height={48}
+        src={PodcastIcon}
+        alt="Podcast Icon"
         style={{
           width: 24,
           height: 24,

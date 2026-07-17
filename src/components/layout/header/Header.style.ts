@@ -9,6 +9,9 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   borderBottom: "1px solid #e5e7eb",
   // padding:"10px 30px"
   padding: "0px 60px",
+  [theme.breakpoints.down("lg")]: {
+    padding: "0px 24px",
+  },
   [theme.breakpoints.down("md")]: {
     padding: "0px",
   },
@@ -55,10 +58,10 @@ export const LogoImage = styled("img")({
 /* NAV ITEM */
 export const NavItem = styled("span")<{
   active?: boolean;
-}>(({ active }) => ({
+}>(({ active, theme }) => ({
   cursor: "pointer",
   fontWeight: active ? 600 : 500,
-  fontSize: "large",
+  fontSize: "1rem",
   color: active ? "var(--color-primary)" : "var(--color-text-dark)",
   transition: "color 0.2s ease",
   display: "inline-flex",
@@ -66,6 +69,10 @@ export const NavItem = styled("span")<{
   gap: 4,
   position: "relative",
   whiteSpace: "nowrap",
+
+  [theme.breakpoints.between("md", "lg")]: {
+    fontSize: "0.875rem",
+  },
 
   "&:hover": {
     color: "var(--color-primary)",

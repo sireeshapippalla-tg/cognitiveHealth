@@ -2,9 +2,9 @@ import { styled, keyframes } from "@mui/system";
 import { Box, Typography, IconButton, Chip } from "@mui/material";
 
 export const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+  0% { box-shadow: 0 0 0 0 #eb7b33; }
+  70% { box-shadow: 0 0 0 15px rgba(235, 123, 51, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(235, 123, 51, 0); }
 `;
 
 export const float = keyframes`
@@ -56,13 +56,13 @@ export const MediaControls = styled(Box)({
 });
 
 export const PlayButtonPrimary = styled(IconButton)({
-  backgroundColor: '#0ea5e9',
+  backgroundColor: '#eb7b33',
   color: 'white',
   width: 72,
   height: 72,
-  boxShadow: '0 10px 25px -5px rgba(14, 165, 233, 0.5)',
+  boxShadow: '0 10px 25px -5px rgba(235, 123, 51, 0.5)',
   '&:hover': {
-    backgroundColor: '#0284c7',
+    backgroundColor: '#eb7b33',
     transform: 'scale(1.05)',
   },
   transition: 'all 0.2s ease-in-out',
@@ -96,7 +96,7 @@ export const ProgressBar = styled(Box)({
 export const ProgressFill = styled(Box)<{ $width: number }>((props) => ({
   width: `${props.$width}%`,
   height: '100%',
-  backgroundColor: '#0ea5e9',
+  backgroundColor: 'var(--color-text-blue)',
   borderRadius: 3,
   position: 'relative',
   transition: 'width 0.1s linear',

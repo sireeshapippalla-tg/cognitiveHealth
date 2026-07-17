@@ -47,11 +47,11 @@ const features = [
 const SuperChargeSection = () => {
   return (
     <FeatureSection
-      title="Super Charge Your Revenue Cycle With <span>AI Agents</span>"
+      title="Super Charge Your Revenue Cycle With AI Agents"
       subtitle="A unified network of specialized AI agents designed exclusively for revenue cycle operations."
       background="#f9fafb"
       items={features}
-      // linkText="Learn More"
+    // linkText="Learn More"
     />
   );
 };

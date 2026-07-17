@@ -14,12 +14,12 @@ export const solutionsQuestions: TermSection[] = [
       {
         type: "list",
         items: [
-          "<strong>Payment Posting & Advanced Reconciliation:</strong> Automated cash posting with 93.8% reconciliation accuracy",
+          "<strong>Payment Posting & Advanced Reconciliation:</strong> Automated cash posting with 99.8% reconciliation accuracy",
           "<strong>Lockbox Management:</strong> Streamlined processing of patient and insurance payments",
           "<strong>Denials Workflow:</strong> Intelligent denial prevention and resolution, reducing denials by 60%",
           "<strong>Eligibility Discovery:</strong> Automated patient eligibility verification and benefits discovery",
           "<strong>Contract Analysis:</strong> AI-powered payer contract review and underpayment detection",
-          "<strong>Pre-Bill Review:</strong> Claims scrubbing and validation before submission to maximize clean claims",
+          "<strong>Pre-Bill Services:</strong> Claims scrubbing and validation before submission to maximize clean claims",
         ],
       },
       {
@@ -41,11 +41,11 @@ export const solutionsQuestions: TermSection[] = [
       {
         type: "list",
         items: [
-          "<strong>93.8% Clean Claim and Reconciliation Accuracy:</strong> Virtually eliminate posting errors",
+          "<strong>99.8% Clean Claim and Reconciliation Accuracy:</strong> Virtually eliminate posting errors",
           "<strong>60% Reduction in Denial Rates:</strong> Proactive prevention and faster resolution",
           "<strong>$2M+ Annual Revenue Recovery:</strong> Per facility through improved cash flow and reduced leakage",
           "<strong>80% Decrease in Manual Work:</strong> Free your team to focus on high-value activities",
-          "<strong>41.6% Faster Turnaround:</strong> From 3-5 days to under 4 hours for key processes",
+          "<strong>95.8% Faster Turnaround:</strong> From 3-5 days to under 4 hours for key processes",
           "<strong>26% Faster Cash Application:</strong> Improved A/R and accelerated cash flow",
           "<strong>85% Staff Savings:</strong> Redirect efforts to value-added patient services",
         ],
@@ -77,7 +77,7 @@ export const solutionsQuestions: TermSection[] = [
       },
       {
         type: "paragraph",
-        text: "Organizations report reducing reconciliation complexity by over 50%, cutting onshore oversight nearly in half, and achieving 93.8% fully reconciled payments with virtually zero posting errors.",
+        text: "Organizations report reducing reconciliation complexity by over 50%, cutting onshore oversight nearly in half, and achieving 99.8% fully reconciled payments with virtually zero posting errors.",
       },
     ],
   },

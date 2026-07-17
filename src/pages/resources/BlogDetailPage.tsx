@@ -23,12 +23,12 @@ import {
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
-  const fromTab = location.state?.fromTab || "blog";
+  const fromTab = location.state?.fromTab || "blogs";
 
 
 
   // Find the blog post by slug
-  const blog = blogData.find((b) => b.link === `/resource/${slug}`);
+  const blog = blogData.find((b) => b.link === `/resources/blog/${slug}`);
 
   if (!blog) {
     return <div>Blog not found</div>;
@@ -42,7 +42,7 @@ const BlogDetailPage: React.FC = () => {
     description: blog.description,
     image: blog.image,
     datePublished: blog.date,
-    url: `${baseUrl}/resource/${slug}`,
+    url: `${baseUrl}/resources/blog/${slug}`,
     author: {
       "@type": "Organization",
       name: "CognitiveHealth",
@@ -82,7 +82,7 @@ const BlogDetailPage: React.FC = () => {
           <Breadcrumb>
             <BreadcrumbLink to={ROUTES.HOME}>Home</BreadcrumbLink>
             <span> // </span>
-            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>
+            <BreadcrumbLink to={`/resources/${fromTab === "blog" ? "blogs" : fromTab}`}>
               Resources
             </BreadcrumbLink>
             <span> // </span>

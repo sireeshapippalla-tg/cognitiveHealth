@@ -54,6 +54,9 @@ export const TakeawaysList = styled("ul")({
     marginBottom: '8px',
     lineHeight: 1.7,
     fontSize: '1.05rem',
+    '&::marker': {
+      color: '#15803d',
+    },
   },
 });
 
@@ -84,8 +87,8 @@ export const AuthorAvatar = styled(Avatar)({
 });
 
 export const LatestChip = styled(Chip)({
-  backgroundColor: '#e0f2fe !important',
-  color: '#0284c7 !important',
+  backgroundColor: 'rgba(235, 123, 51, 0.1) !important',
+  color: '#eb7b33 !important',
   fontWeight: 700,
 });
 

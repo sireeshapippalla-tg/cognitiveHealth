@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ResourceList from "../resourceList/ResourceList";
 import {
@@ -15,20 +15,20 @@ import BlogIcon from "../../../assets/Resources/Blog.svg";
 // import CaseStudyIcon from "../../../assets/Resources/Casestudy.svg";
 import VideoIcon from "../../../assets/Resources/video.svg";
 import MediaIcon from "../../../assets/Resources/media.svg";
-// import PodcastsIcon from "@mui/icons-material/Podcasts";
+import PodcastIcon from "../../../assets/Resources/podcast.svg";
 
-interface ResourceTabsProps {
-  searchQuery: string;
-}
+// interface ResourceTabsProps {
+//   searchQuery: string;
+// }
 
-const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
-  const location = useLocation();
+const ResourceTabs = () => {
   const navigate = useNavigate();
+  const { tab } = useParams<{ tab: string }>();
   const isTabClickRef = React.useRef(false);
 
   const tabs = [
     {
-      value: "blog",
+      value: "blogs",
       label: "Blog",
       icon: <img src={BlogIcon} alt="Blog Icon" width={16} height={16} />,
     },
@@ -49,18 +49,15 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
       label: "Media",
       icon: <img src={MediaIcon} alt="Media Icon" width={16} height={16} />,
     },
+    {
+      value: "podcast",
+      label: "Podcast",
+      icon: <img src={PodcastIcon} alt="Podcast Icon" width={16} height={16} />,
+    },
   ];
 
-  let activeTab = tabs.findIndex(
-    (tab) => tab.value === location.hash.replace("#", "")
-  );
+  let activeTab = tabs.findIndex((t) => t.value === tab);
   if (activeTab === -1) activeTab = 0;
-
-  useEffect(() => {
-    if (!location.hash) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
-  }, [location.hash]);
 
   useEffect(() => {
     if (!isTabClickRef.current) {
@@ -82,16 +79,14 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
     });
 
     isTabClickRef.current = false;
-  }, [location.hash]);
+  }, [tab]);
 
   const handleTabChange = (
     _event: React.MouseEvent<HTMLButtonElement>,
     newValue: number
   ) => {
     isTabClickRef.current = true;
-    navigate(`/resources#${tabs[newValue].value}`, {
-      replace: true,
-    });
+    navigate(`/resources/${tabs[newValue].value}`);
   };
 
   // const [filter, setFilter] = useState("Filter By");
@@ -149,7 +144,7 @@ const ResourceTabs = ({ searchQuery }: ResourceTabsProps) => {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <ResourceList activeTab={activeTab} searchQuery={searchQuery} />
+            <ResourceList activeTab={activeTab} />
           </motion.div>
         </AnimatePresence>
       </BlogContainer>

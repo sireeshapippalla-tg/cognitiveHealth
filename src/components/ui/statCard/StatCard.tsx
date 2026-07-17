@@ -69,9 +69,13 @@ const StatCard = ({ value, title, description, index = 0 }: StatCardProps) => {
             </MixedWrapper>
           ) : (
             <GradientValue>
-              {hasPercent
-                ? `${count.toFixed(0)}${value.includes("+") ? "%+" : "%"}`
-                : `${count.toFixed(0)}`}
+              {isInView ? (
+                hasPercent
+                  ? `${count.toFixed(0)}${value.includes("+") ? "%+" : "%"}`
+                  : `${count.toFixed(0)}`
+              ) : (
+                value
+              )}
             </GradientValue>
           )}
         </ValueWrapper>

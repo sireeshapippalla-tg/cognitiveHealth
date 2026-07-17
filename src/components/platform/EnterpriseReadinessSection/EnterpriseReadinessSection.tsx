@@ -19,7 +19,6 @@ import {
   StageIconBox,
   StageTitle,
   StageDescription,
-  HighlightText,
   StageInnerBox,
 } from "./EnterpriseReadinessSection.style";
 
@@ -89,8 +88,7 @@ const EnterpriseReadinessSection = () => {
           style={{ textAlign: "center", marginBottom: "60px" }}
         >
           <HeaderTitle>
-            Built for Scale, Security, and{" "}
-            <HighlightText>Reliability</HighlightText>
+            Built for Scale, Security, and{" "} Reliability
           </HeaderTitle>
           <HeaderSubtitle>
             Enterprise-grade infrastructure trusted by organizations processing

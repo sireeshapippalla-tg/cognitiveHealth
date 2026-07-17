@@ -48,7 +48,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       subtitle="Ensuring accurate coverage and reducing front-end denials through automated verification"
       steps={steps}
-      themeColor="#F47A20"
+      themeColor="#eb7b33"
       backgroundColor="var(--color-white)"
     />
   );

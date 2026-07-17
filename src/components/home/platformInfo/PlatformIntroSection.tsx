@@ -20,10 +20,10 @@ const PlatformIntroSection = () => {
       <StyledContainer maxWidth="lg">
         {/* Badge */}
         <MotionWrapper
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: true }}
         >
           <Badge>
             <BadgeText>
@@ -35,10 +35,10 @@ const PlatformIntroSection = () => {
 
         {/* Title */}
         <MotionWrapper
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true }}
         >
           <Title>
             <Highlight>CognitiveHealth’s iCAN™ ONE &nbsp;</Highlight>
@@ -51,10 +51,10 @@ const PlatformIntroSection = () => {
 
         {/* Subtitle */}
         <MotionWrapper
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          viewport={{ once: true }}
         >
           <Subtitle>
             Decades of revenue cycle leadership across hospital systems,

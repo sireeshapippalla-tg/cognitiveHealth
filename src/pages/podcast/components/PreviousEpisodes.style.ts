@@ -13,7 +13,7 @@ export const PrevHeader = styled(Box)({
 });
 
 export const ViewAllButton = styled(Typography)({
-  color: '#0ea5e9',
+  color: '#eb7b33',
   fontWeight: 700,
   cursor: 'pointer',
   '&:hover': {
@@ -83,8 +83,8 @@ export const PrevTitle = styled(Typography)({
   color: '#0f172a',
 });
 
-export const GlassChip = styled(Chip)<{ $fontWeight?: number }>(({ $fontWeight }) => ({
-  backgroundColor: 'rgba(0,0,0,0.6) !important',
+export const GlassChip = styled(Chip)<{ $fontWeight?: number; $bg?: string }>(({ $fontWeight, $bg }) => ({
+  backgroundColor: `${$bg || 'rgba(0,0,0,0.6)'} !important`,
   color: '#fff !important',
   fontWeight: $fontWeight || 600,
   backdropFilter: 'blur(4px)',
@@ -92,12 +92,12 @@ export const GlassChip = styled(Chip)<{ $fontWeight?: number }>(({ $fontWeight }
 
 export const PlayAudioButton = styled(IconButton)({
   backgroundColor: 'rgba(255,255,255,0.95)',
-  color: '#0ea5e9',
+  color: '#1d4ed8',
   width: 48,
   height: 48,
   boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)',
   '&:hover': {
-    backgroundColor: '#0ea5e9',
+    backgroundColor: '#1d4ed8',
     color: '#fff',
     transform: 'scale(1.1)',
   },
@@ -105,12 +105,12 @@ export const PlayAudioButton = styled(IconButton)({
 
 export const WatchVideoButton = styled(IconButton)({
   backgroundColor: 'rgba(255,255,255,0.95)',
-  color: '#0f172a',
+  color: '#15803d',
   width: 48,
   height: 48,
   boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)',
   '&:hover': {
-    backgroundColor: '#0f172a',
+    backgroundColor: '#15803d',
     color: '#fff',
     transform: 'scale(1.1)',
   },

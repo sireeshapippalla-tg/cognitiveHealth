@@ -60,8 +60,11 @@ export const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   color: "#1e293b",
   marginBottom: theme.spacing(2),
-  fontSize: "2.5rem",
+  fontSize: "2rem",
   letterSpacing: "-0.02em",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2.5rem",
+  },
   [theme.breakpoints.up("md")]: {
     fontSize: "3.5rem",
   },
@@ -80,27 +83,72 @@ export const HeroDescription = styled(Typography)(() => ({
   lineHeight: 1.6,
 })) as typeof Typography;
 
-export const CalendarCard = styled(Box)({
-  background: "#ffffff",
-  borderRadius: "32px",
-  boxShadow: "0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
-  border: "1px solid rgba(255,255,255,0.8)",
+export const UnifiedDemoCard = styled(Box)({
+  // background: "#ffffff",
+  // borderRadius: "32px",
+  // boxShadow: "0 20px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
+  // border: "1px solid rgba(255,255,255,0.8)",
   overflow: "hidden",
-  minHeight: "800px",
   position: "relative",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: "6px",
-    background: "linear-gradient(90deg, var(--color-primary), var(--color-green))",
-  },
-  "& iframe": {
-    border: "none",
-  },
 }) as typeof Box;
+
+export const ContactPane = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(5),
+  height: "100%",
+  boxSizing: "border-box",
+  display: "flex",
+  flexDirection: "column",
+  // justifyContent: "center",
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(4),
+  },
+})) as typeof Box;
+
+export const CalendarPane = styled(Box)({
+  height: "100%",
+  position: "relative",
+  overflowX: "auto",
+  WebkitOverflowScrolling: "touch",
+}) as typeof Box;
+
+
+export const ContactItem = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "flex-start",
+  gap: theme.spacing(2.5),
+  "& svg": {
+    color: "var(--color-primary)",
+    fontSize: "1.75rem",
+    marginTop: "4px",
+    flexShrink: 0,
+  },
+}));
+
+export const ContactLabel = styled(Typography)({
+  fontWeight: 700,
+  color: "#1e293b",
+  fontSize: "1.1rem",
+  marginBottom: "4px",
+}) as typeof Typography;
+
+export const ContactValue = styled(Typography)({
+  color: "#64748b",
+  fontSize: "1rem",
+  lineHeight: 1.6,
+  wordBreak: "break-word",
+  overflowWrap: "break-word",
+  "& a": {
+    color: "var(--color-primary)",
+    textDecoration: "none",
+    fontWeight: 600,
+    transition: "color 0.2s ease",
+    "&:hover": {
+      color: "var(--color-green)",
+      textDecoration: "underline",
+    },
+  },
+}) as typeof Typography;
+
 
 export const FooterNoteText = styled(Typography)({
   color: "#94a3b8",

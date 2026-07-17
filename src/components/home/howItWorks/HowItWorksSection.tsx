@@ -35,7 +35,7 @@ const HowItWorksSection = () => {
       steps={steps}
       ctaText="Take Assessment →"
       onCtaClick={() => navigate("/assessment")}
-      themeColor="#c2410c"
+      themeColor="#eb7b33"
       backgroundColor="#f9fafb"
     />
   );

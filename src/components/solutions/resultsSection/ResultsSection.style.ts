@@ -27,8 +27,8 @@ export const Glow = styled(motion.div)(() => ({
   left: "0%",
   width: "500px",
   height: "500px",
-  background:
-    "radial-gradient(circle, rgba(244, 122, 32, 0.05) 0%, transparent 70%)",
+  // background:
+  //   "radial-gradient(circle, #eb7b33 0%, transparent 70%)",
   zIndex: 0,
   filter: "blur(80px)",
 }));
@@ -177,7 +177,7 @@ export const PrimaryButton = styled(Button)(() => ({
   background: "var(--color-primary)",
   fontSize: "1rem",
   textTransform: "none",
-  boxShadow: "0 15px 30px rgba(244,122,32,0.3)",
+  boxShadow: "0 15px 30px rgba(235, 123, 51, 0.3)",
   color: "var(--color-white)",
   "& svg": {
     fontSize: "14px",
@@ -204,6 +204,6 @@ export const OutlineButton = styled(Button)(() => ({
   "&:hover": {
     borderColor: "var(--color-primary)",
     color: "var(--color-primary)",
-    background: "rgba(244, 122, 32, 0.05)",
+    // background: "#eb7b33",
   },
 }));

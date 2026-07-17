@@ -34,7 +34,7 @@ const MediaDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
   const fromTab = location.state?.fromTab || "media";
-  const media = mediaData.find((m) => m.link === `/media/${slug}`);
+  const media = mediaData.find((m) => m.link === `/resources/media/${slug}`);
 
   if (!media) {
     return (
@@ -55,7 +55,7 @@ const MediaDetailPage: React.FC = () => {
     description: media.description,
     image: media.image,
     datePublished: media.date,
-    url: `${baseUrl}/media/${slug}`,
+    url: `${baseUrl}/resources/media/${slug}`,
     author: {
       "@type": "Organization",
       name: "CognitiveHealth",
@@ -106,7 +106,7 @@ const MediaDetailPage: React.FC = () => {
           <Breadcrumb>
             <BreadcrumbLink to={ROUTES.HOME}>Home</BreadcrumbLink>
             <span> // </span>
-            <BreadcrumbLink to={`${ROUTES.RESOURCES}#${fromTab}`}>
+            <BreadcrumbLink to={`/resources/${fromTab === "blog" ? "blogs" : fromTab}`}>
               Resources
             </BreadcrumbLink>
             <span> // </span>

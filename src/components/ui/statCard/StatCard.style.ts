@@ -38,13 +38,8 @@ export const ValueWrapper = styled(Box)(() => ({
 export const GradientValue = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   lineHeight: 1.1,
-  background:
-    "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-
+  color: "var(--color-primary)",
   fontSize: "2.8rem",
-
   [theme.breakpoints.down("md")]: {
     fontSize: "2.2rem",
   },
@@ -54,13 +49,8 @@ export const PureTextValue = styled(Typography)(({ theme }) => ({
   fontWeight: 900,
   lineHeight: 1.2,
   textAlign: "center",
-  background:
-    "linear-gradient(90deg, var(--color-primary), var(--color-green), var(--color-text-blue))",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-
+  color: "var(--color-primary)",
   fontSize: "1.4rem",
-
   [theme.breakpoints.up("md")]: {
     fontSize: "1.8rem",
   },

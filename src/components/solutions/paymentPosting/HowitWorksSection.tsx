@@ -40,7 +40,7 @@ const HowItWorksSection = () => {
       title="How It Works"
       subtitle="Intelligent end-to-end automation from payment intake to final reconciliation"
       steps={steps}
-      themeColor="#F47A20"
+      themeColor="#eb7b33"
       backgroundColor="var(--color-white)"
     />
   );

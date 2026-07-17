@@ -186,7 +186,7 @@ export const StageDescription = styled(Typography)({
 });
 
 export const HighlightText = styled("span")({
-  color: "var(--color-text-blue)",
+  color: "inherit",
 });
 
 export const StageInnerBox = styled(Box)({

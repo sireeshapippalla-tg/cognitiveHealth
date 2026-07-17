@@ -3,9 +3,9 @@ import { Box, Typography, Card, Container, Chip } from "@mui/material";
 
 // Animations
 export const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(235, 123, 51, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(235, 123, 51, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(235, 123, 51, 0); }
 `;
 
 export const float = keyframes`
@@ -23,7 +23,7 @@ export const PodcastPageWrapper = styled(Box)({
 
 // PodcastHero.tsx
 export const HeroBox = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+  background: 'linear-gradient(135deg, #090e1a 0%, #0c1c38 100%)',
   color: '#fff',
   padding: theme.spacing(12, 0, 16, 0),
   position: 'relative',
@@ -35,7 +35,7 @@ export const HeroBox = styled(Box)(({ theme }) => ({
     left: '-10%',
     width: '60%',
     height: '200%',
-    background: 'radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(0,0,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(235, 123, 51, 0.15) 0%, rgba(0,0,0,0) 70%)',
     transform: 'rotate(30deg)',
   },
   '&::after': {
@@ -45,7 +45,7 @@ export const HeroBox = styled(Box)(({ theme }) => ({
     right: '-10%',
     width: '60%',
     height: '200%',
-    background: 'radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0) 70%)',
+    background: 'radial-gradient(circle, rgba(107, 191, 89, 0.15) 0%, rgba(0,0,0,0) 70%)',
     transform: 'rotate(-30deg)',
   }
 }));
@@ -62,9 +62,7 @@ export const HeroTitle = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   marginBottom: theme.spacing(3),
   letterSpacing: '-0.02em',
-  background: 'linear-gradient(to right, #fff, #94a3b8)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
+  color: '#ffffff',
   [theme.breakpoints.up('md')]: {
     fontSize: '4rem',
   },

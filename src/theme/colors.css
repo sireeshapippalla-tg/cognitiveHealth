@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #c2410c; /* Accessible Dark Orange (passes 4.5:1 AA contrast on white) */
-  --color-primary-hover: #9a3412;
+  --color-primary: #eb7b33; /* Accessible Dark Orange (passes 4.5:1 AA contrast on white) */
+  --color-primary-hover: #eb7b33;
   --color-text-dark: #0e0e0e;
   --color-text-muted: #4b5563; /* Darkened for better contrast */
   --color-border-light: #e5e7eb;
