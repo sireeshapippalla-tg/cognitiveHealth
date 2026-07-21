@@ -176,7 +176,7 @@ const SolutionsTabs = () => {
     });
   };
   return (
-    <BlogContainer>
+    <>
       <StickyTabsWrapper>
         <TabsContainer>
           {tabs.map((tab, index) => (
@@ -219,7 +219,7 @@ const SolutionsTabs = () => {
         {activeTab === 4 && <ContractAnalysisPage />}
         {activeTab === 5 && <PreBillServicesPage />}
       </motion.div>
-    </BlogContainer>
+    </>
   );
 };
 

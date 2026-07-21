@@ -176,6 +176,7 @@ export const CoreCapabilitiesLayout: React.FC<CoreCapabilitiesLayoutProps> = ({ 
                 key={item.id}
                 active={isActive}
                 onClick={() => setActiveIndex(index)}
+                onMouseEnter={() => setActiveIndex(index)}
                 whileHover={{ scale: isActive ? 1 : 1.01 }}
                 whileTap={{ scale: 0.98 }}
               >

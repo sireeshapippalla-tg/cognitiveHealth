@@ -27,7 +27,7 @@ The project is a standalone front-end application designed to connect to an exte
 - **Routing**: React Router v7
 - **Styling & UI**: Material-UI (MUI), Emotion, custom CSS variables
 - **Animations**: Framer Motion
-- **Utilities**: Axios, JWT Decode, JSPDF, HTML2Canvas
+- **Utilities**: DOMPurify, JSPDF, HTML2Canvas, React Helmet Async
 - **Testing**: Vitest, React Testing Library, JSDOM
 - **Form/Interaction**: React Toastify
 

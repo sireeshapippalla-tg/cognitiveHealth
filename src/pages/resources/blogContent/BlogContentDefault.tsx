@@ -19,7 +19,7 @@ export const BlogContentDefault: React.FC<BlogContentProps> = ({ blog }) => (
     <BlogHeader>
       <BlogDate>{blog.date}</BlogDate>
       <BlogTitle>{blog.title}</BlogTitle>
-      <Author>by superadmin | {blog.date}</Author>
+      <Author> {blog.date}</Author>
       <BlogDescription>{blog.description}</BlogDescription>
     </BlogHeader>
 
