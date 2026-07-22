@@ -1,6 +1,7 @@
 import {
   Typography,
   Fade,
+  Box,
 } from "@mui/material";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -116,9 +117,14 @@ const ImplementationGuideModal: React.FC<Props> = ({ open, onClose }) => {
           </HeaderBox>
 
           <FormWrapper noValidate>
+            <Box sx={{ textAlign: "left", mb: 0.5 }}>
+              <Typography variant="subtitle2" sx={{ fontWeight: 700, color: "#475569", ml: 1 }}>
+                Work Email Address
+              </Typography>
+            </Box>
             <EmailTextField
               fullWidth
-              label="Work Email Address"
+              placeholder="example@company.com"
               type="email"
               variant="outlined"
               value={email}

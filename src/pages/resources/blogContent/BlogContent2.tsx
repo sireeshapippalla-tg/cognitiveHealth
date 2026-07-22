@@ -29,7 +29,7 @@ export const BlogContent2: React.FC<BlogContentProps> = ({ blog }) => (
     <BlogHeader>
       <BlogDate>{blog.date}</BlogDate>
       <BlogTitle>{blog.title}</BlogTitle>
-      <Author>by superadmin | {blog.date}</Author>
+      <Author>{blog.date}</Author>
       <InlineImageContainer>
         <InlineImage
           src={IDPHeader}

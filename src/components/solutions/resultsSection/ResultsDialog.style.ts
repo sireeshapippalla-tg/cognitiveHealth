@@ -127,6 +127,9 @@ export const EmailTextField = styled(TextField)({
   "& .MuiOutlinedInput-root": {
     borderRadius: "16px",
     backgroundColor: "rgba(248, 250, 252, 0.8)",
+    "& input": {
+      paddingLeft: "20px",
+    },
   },
 });
 

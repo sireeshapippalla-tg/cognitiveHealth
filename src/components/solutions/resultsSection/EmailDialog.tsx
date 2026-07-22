@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade, Typography } from "@mui/material";
+import { Fade, Typography, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import {
@@ -83,9 +83,14 @@ export const EmailDialog: React.FC<EmailDialogProps> = ({
             </SubtitleText>
           </HeaderBox>
 
+          <Box sx={{ textAlign: "left", mb: 0.5 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, color: "#475569", ml: 1 }}>
+              Work Email Address
+            </Typography>
+          </Box>
           <EmailTextField
             fullWidth
-            label="Work Email Address"
+            placeholder="example@company.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"

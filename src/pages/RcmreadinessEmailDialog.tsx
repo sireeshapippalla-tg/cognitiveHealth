@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade, Typography, CircularProgress } from "@mui/material";
+import { Fade, Typography, CircularProgress, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import {
@@ -93,9 +93,13 @@ export const RcmreadinessEmailDialog: React.FC<
             </SubtitleText>
           </HeaderBox>
 
+          <Box sx={{ textAlign: "left", mb: 0.5 }}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, color: "#475569", ml: 1 }}>
+              Work Email Address
+            </Typography>
+          </Box>
           <EmailTextField
             fullWidth
-            label="Work Email Address"
             type="email"
             placeholder="example@company.com"
             value={email}

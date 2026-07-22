@@ -249,6 +249,9 @@ export const EmailTextField = styled(TextField)(({ theme }) => ({
     "& fieldset": {
       borderColor: "rgba(226, 232, 240, 1)",
     },
+    "& input": {
+      paddingLeft: "20px",
+    },
   },
 }));
 
