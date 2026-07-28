@@ -7,8 +7,8 @@ import {
   BadgeText,
   Title,
   Highlight,
-  Break,
-  NormalText,
+  // Break,
+  // NormalText,
   Subtitle,
 } from "./PlatformIntroSection.style";
 
@@ -41,11 +41,10 @@ const PlatformIntroSection = () => {
           viewport={{ once: true }}
         >
           <Title>
-            <Highlight>CognitiveHealth’s iCAN™ ONE &nbsp;</Highlight>
-            <Break />
-            <NormalText>
-              Platform: Where Deep RCM Expertise Meets Advanced AI
-            </NormalText>
+            <Highlight>CognitiveHealth’s iCAN™ ONE &nbsp;
+              {/* <NormalText> */}
+              Platform: Where Deep RCM Expertise Meets Advanced AI</Highlight>
+            {/* </NormalText> */}
           </Title>
         </MotionWrapper>
 

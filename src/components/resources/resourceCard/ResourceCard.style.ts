@@ -118,9 +118,32 @@ export const CardDescription = styled(Typography)({
   color: "#475569",
   marginBottom: "20px",
   flexGrow: 1,
+  display: "-webkit-box",
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: "vertical",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
 });
 
 export const ReadMoreLink = styled(Link)({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "6px",
+  fontSize: "15px",
+  fontWeight: 700,
+  color: "var(--color-primary)",
+  textDecoration: "none",
+  marginTop: "auto",
+  transition: "all 0.3s ease",
+  "& svg": {
+    fontSize: "18px",
+  },
+  "&:hover": {
+    gap: "10px",
+  },
+});
+
+export const ExternalLink = styled("a")({
   display: "inline-flex",
   alignItems: "center",
   gap: "6px",

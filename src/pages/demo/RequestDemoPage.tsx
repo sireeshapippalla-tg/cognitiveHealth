@@ -168,7 +168,7 @@ const RequestDemoPage: React.FC = () => {
                         <Box>
                           <ContactLabel>Email Us</ContactLabel>
                           <ContactValue>
-                            <a href="mailto:Monica@cognitivehealthit.com">Monica@cognitivehealthit.com</a>
+                            <a href="mailto:Info@CognitiveHelathit.com">Info@CognitiveHelathit.com</a>
                           </ContactValue>
                         </Box>
                       </ContactItem>

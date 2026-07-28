@@ -314,7 +314,7 @@ const Header = () => {
                 <ContactSupportSpan
                   onClick={() => navigate("/contact-us")}
                 >
-                  Contact Support
+                  Contact Us
                 </ContactSupportSpan>
               </Typography>
             </ResourcesFooter>

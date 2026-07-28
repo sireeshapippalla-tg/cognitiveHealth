@@ -11,6 +11,7 @@ import {
   CardTitle,
   CardDescription,
   ReadMoreLink,
+  ExternalLink,
   MetaItem,
 } from "./ResourceCard.style";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
@@ -61,16 +62,32 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {showImage ? (
-        <Link
-          to={link}
-          state={{ fromTab: type === "video" ? "videos" : type }}
-          style={{ display: "block", overflow: "hidden" }}
-        >
-          <CardImageWrapper>
-            <CardImage src={image} alt={title} />
-            {category && <CategoryChip label={category} />}
-          </CardImageWrapper>
-        </Link>
+        link.startsWith("http") ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "block", overflow: "hidden" }}
+          >
+            <CardImageWrapper>
+              <CardImage src={image} alt={title} />
+              {category && <CategoryChip label={category} />}
+            </CardImageWrapper>
+          </a>
+        ) : (
+          <Link
+            to={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            state={{ fromTab: type === "video" ? "videos" : type }}
+            style={{ display: "block", overflow: "hidden" }}
+          >
+            <CardImageWrapper>
+              <CardImage src={image} alt={title} />
+              {category && <CategoryChip label={category} />}
+            </CardImageWrapper>
+          </Link>
+        )
       ) : null}
 
       <CardContent>
@@ -105,15 +122,28 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
         </MetaInfo>
 
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription>
+          {(!description || description.trim() === "")
+            ? "No description"
+            : description}
+        </CardDescription>
 
-        <ReadMoreLink
-          to={link}
-          state={{ fromTab: type === "video" ? "videos" : type }}
-        >
-          {getLinkText()}
-          {getLinkText() && <ArrowForwardIcon />}
-        </ReadMoreLink>
+        {link.startsWith("http") ? (
+          <ExternalLink href={link} target="_blank" rel="noopener noreferrer">
+            {getLinkText()}
+            {getLinkText() && <ArrowForwardIcon />}
+          </ExternalLink>
+        ) : (
+          <ReadMoreLink
+            to={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            state={{ fromTab: type === "video" ? "videos" : type }}
+          >
+            {getLinkText()}
+            {getLinkText() && <ArrowForwardIcon />}
+          </ReadMoreLink>
+        )}
       </CardContent>
     </StyledCard>
   );

@@ -113,7 +113,14 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
         <CardDescription variant="body2">{description}</CardDescription>
 
-        <ActionButton>
+        <ActionButton onClick={(e) => {
+          e.stopPropagation();
+          if (link?.includes("youtube.com")) {
+            window.open(link, "_blank");
+          } else if (onPlay) {
+            onPlay();
+          }
+        }}>
           Watch Video
           <ArrowForwardIcon sx={{ fontSize: "18px" }} />
         </ActionButton>

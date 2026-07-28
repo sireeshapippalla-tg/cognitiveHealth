@@ -89,9 +89,17 @@ export const Title = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const Highlight = styled("span")(() => ({
+export const Highlight = styled("span")(({ theme }) => ({
+  fontSize: "1.6rem",
+
   fontStyle: "italic",
   fontFamily: "'Playfair Display', serif",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "1rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.6rem",
+  },
   // color: "var(--color-primary)",
 }));
 
